@@ -31163,6 +31163,28 @@
               "type": "boolean"
             },
             "style": "form"
+          },
+          {
+            "description": "A sort to apply to the list of AgentControl configs.",
+            "explode": true,
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "A filter to apply to the list.",
+            "explode": true,
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form"
           }
         ],
         "responses": {
@@ -55072,6 +55094,11 @@
             "description": "Timestamp of when the access token was last used",
             "example": "0",
             "$ref": "#/components/schemas/UnixMillis"
+          },
+          "expiry": {
+            "description": "Timestamp of when the access token expires. Omitted when the token has no expiry.",
+            "example": "1735689600000",
+            "$ref": "#/components/schemas/UnixMillis"
           }
         }
       },
@@ -59644,6 +59671,7 @@
               }
             ]
           },
+          "usedInCount": 5,
           "provider": "provider",
           "name": "name",
           "id": "id",
@@ -59715,6 +59743,10 @@
           "isRestricted": {
             "description": "Whether the model is restricted",
             "type": "boolean"
+          },
+          "usedInCount": {
+            "description": "Number of distinct AgentControl configs that reference this model",
+            "type": "integer"
           }
         },
         "required": [
@@ -59859,6 +59891,7 @@
                   }
                 ]
               },
+              "usedInCount": 5,
               "provider": "provider",
               "name": "name",
               "id": "id",
@@ -59971,6 +60004,7 @@
                   }
                 ]
               },
+              "usedInCount": 5,
               "provider": "provider",
               "name": "name",
               "id": "id",

@@ -25,7 +25,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The type of change to make to the removal date for this user from individual targeting for this flag.</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InstructionUserRequestKind? Kind { get; set; }
         /// <summary>The time, in Unix milliseconds, when LaunchDarkly should remove the user from individual targeting for this flag. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpireUserTargetDate&lt;/code&gt; or &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;.</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>ID of a variation on the flag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +63,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "flagKey", n => { FlagKey = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InstructionUserRequestKind>(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
                 { "variationId", n => { VariationId = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
@@ -77,7 +77,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("flagKey", FlagKey);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InstructionUserRequestKind>("kind", Kind);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteStringValue("variationId", VariationId);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

@@ -34,6 +34,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The expiry property</summary>
+        public long? Expiry { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,6 +143,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "customRoleIds", n => { CustomRoleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultApiVersion", n => { DefaultApiVersion = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "expiry", n => { Expiry = n.GetLongValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "inlineRole", n => { InlineRole = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Statement>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Statement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastModified", n => { LastModified = n.GetLongValue(); } },
@@ -166,6 +169,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("customRoleIds", CustomRoleIds);
             writer.WriteIntValue("defaultApiVersion", DefaultApiVersion);
             writer.WriteStringValue("description", Description);
+            writer.WriteLongValue("expiry", Expiry);
             writer.WriteStringValue("_id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Statement>("inlineRole", InlineRole);
             writer.WriteLongValue("lastModified", LastModified);

@@ -27,7 +27,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string UserKey { get; set; }
 #endif
         /// <summary>The time, in Unix milliseconds, when the user should be removed from this segment. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;addExpireUserTargetDate&lt;/code&gt; or &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;.</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>The version of the segment to update. Required if &lt;code&gt;kind&lt;/code&gt; is &lt;code&gt;updateExpireUserTargetDate&lt;/code&gt;.</summary>
         public int? Version { get; set; }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchSegmentInstructionKind>(); } },
                 { "targetType", n => { TargetType = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchSegmentInstructionTargetType>(); } },
                 { "userKey", n => { UserKey = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchSegmentInstructionKind>("kind", Kind);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchSegmentInstructionTargetType>("targetType", TargetType);
             writer.WriteStringValue("userKey", UserKey);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

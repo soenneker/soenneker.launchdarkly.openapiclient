@@ -104,6 +104,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
+        /// <summary>Number of distinct AgentControl configs that reference this model</summary>
+        public int? UsedInCount { get; set; }
         /// <summary>The version property</summary>
         public int? Version { get; set; }
         /// <summary>
@@ -146,6 +148,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigParamsProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigParamsProperty.CreateFromDiscriminatorValue); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "usedInCount", n => { UsedInCount = n.GetIntValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -171,6 +174,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigParamsProperty>("params", Params);
             writer.WriteStringValue("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteIntValue("usedInCount", UsedInCount);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

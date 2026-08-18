@@ -30773,6 +30773,22 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "A sort to apply to the list of AgentControl configs.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "A filter to apply to the list.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -51939,6 +51955,10 @@
           "lastUsed": {
             "type": "integer",
             "format": "int64"
+          },
+          "expiry": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -53346,6 +53366,7 @@
           "value": {
             "type": "integer",
             "description": "The time, in Unix milliseconds, when LaunchDarkly should remove the user from individual targeting for this flag. Required if \u003Ccode\u003Ekind\u003C/code\u003E is \u003Ccode\u003EaddExpireUserTargetDate\u003C/code\u003E or \u003Ccode\u003EupdateExpireUserTargetDate\u003C/code\u003E.",
+            "format": "int64",
             "example": 1653469200000
           },
           "version": {
@@ -53512,6 +53533,7 @@
           "value": {
             "type": "integer",
             "description": "The time, in Unix milliseconds, when the user should be removed from this segment. Required if \u003Ccode\u003Ekind\u003C/code\u003E is \u003Ccode\u003EaddExpireUserTargetDate\u003C/code\u003E or \u003Ccode\u003EupdateExpireUserTargetDate\u003C/code\u003E.",
+            "format": "int64",
             "example": 1653469200000
           },
           "version": {
@@ -56067,6 +56089,10 @@
           "isRestricted": {
             "type": "boolean",
             "description": "Whether the model is restricted"
+          },
+          "usedInCount": {
+            "type": "integer",
+            "description": "Number of distinct AgentControl configs that reference this model"
           }
         },
         "example": {
@@ -56174,6 +56200,7 @@
               }
             ]
           },
+          "usedInCount": 5,
           "provider": "provider",
           "name": "name",
           "id": "id",
@@ -56332,6 +56359,7 @@
                   }
                 ]
               },
+              "usedInCount": 5,
               "provider": "provider",
               "name": "name",
               "id": "id",
@@ -56444,6 +56472,7 @@
                   }
                 ]
               },
+              "usedInCount": 5,
               "provider": "provider",
               "name": "name",
               "id": "id",
