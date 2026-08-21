@@ -9,7 +9,6 @@ using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiTools;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ContextKinds;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments;
-using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Evaluations;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ExperimentationSettings;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Experiments;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagDefaults;
@@ -63,11 +62,6 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.EnvironmentsRequestBuilder Environments
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The evaluations property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Evaluations.EvaluationsRequestBuilder Evaluations
-        {
-            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Evaluations.EvaluationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The experimentationSettings property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ExperimentationSettings.ExperimentationSettingsRequestBuilder ExperimentationSettings
