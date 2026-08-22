@@ -219,7 +219,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Account.IpAllowlist
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IpAllowlistRequestBuilderGetQueryParameters 
         {
-            /// <summary>The number of entries to return. When omitted, all matching entries are returned. Maximum is 100.</summary>
+            /// <summary>The number of entries to return. Defaults to 20. Maximum is 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The number of entries to skip. Used for pagination.</summary>

@@ -36742,7 +36742,7 @@
           {
             "name": "limit",
             "in": "query",
-            "description": "The number of entries to return. When omitted, all matching entries are returned. Maximum is 100.",
+            "description": "The number of entries to return. Defaults to 20. Maximum is 100.",
             "schema": {
               "type": "integer"
             }
@@ -47974,6 +47974,7 @@
       },
       "MetricGroupPost": {
         "required": [
+          "key",
           "name",
           "kind",
           "maintainerId",

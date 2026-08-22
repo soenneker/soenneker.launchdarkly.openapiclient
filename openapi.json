@@ -37745,7 +37745,7 @@
             "style": "form"
           },
           {
-            "description": "The number of entries to return. When omitted, all matching entries are returned. Maximum is 100.",
+            "description": "The number of entries to return. Defaults to 20. Maximum is 100.",
             "explode": true,
             "in": "query",
             "name": "limit",
@@ -50447,6 +50447,7 @@
       "MetricGroupPost": {
         "type": "object",
         "required": [
+          "key",
           "name",
           "kind",
           "maintainerId",
