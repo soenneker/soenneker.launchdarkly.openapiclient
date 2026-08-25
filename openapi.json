@@ -52091,6 +52091,78 @@
       "PhaseStatus": {
         "type": "string"
       },
+      "PipelineReleasePhase": {
+        "type": "object",
+        "required": [
+          "_id",
+          "_name",
+          "complete",
+          "_creationDate",
+          "_audiences"
+        ],
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The phase ID",
+            "example": "1234a56b7c89d012345e678f"
+          },
+          "_name": {
+            "type": "string",
+            "description": "The release phase name",
+            "example": "Phase 1 - Testing"
+          },
+          "complete": {
+            "type": "boolean",
+            "description": "Whether this phase is complete",
+            "example": true
+          },
+          "_creationDate": {
+            "description": "Timestamp of when the release phase was created",
+            "example": "1684262711507",
+            "$ref": "#/components/schemas/UnixMillis"
+          },
+          "_completionDate": {
+            "description": "Timestamp of when the release phase was completed",
+            "example": "1684262711509",
+            "$ref": "#/components/schemas/UnixMillis"
+          },
+          "_completedBy": {
+            "description": "Details about how this phase was marked as complete",
+            "$ref": "#/components/schemas/CompletedBy"
+          },
+          "_audiences": {
+            "type": "array",
+            "description": "A logical grouping of one or more environments that share attributes for rolling out changes",
+            "items": {
+              "$ref": "#/components/schemas/ReleaseAudience"
+            }
+          },
+          "status": {
+            "description": "Status of the phase",
+            "example": "Started",
+            "enum": [
+              "NotStarted",
+              "ReadyToStart",
+              "Started",
+              "Paused",
+              "Complete"
+            ],
+            "$ref": "#/components/schemas/PhaseStatus"
+          },
+          "started": {
+            "type": "boolean",
+            "description": "Whether or not this phase has started"
+          },
+          "_startedDate": {
+            "description": "Timestamp of when the release phase was started",
+            "$ref": "#/components/schemas/UnixMillis"
+          },
+          "configuration": {
+            "description": "The phase configuration",
+            "$ref": "#/components/schemas/PhaseConfiguration"
+          }
+        }
+      },
       "PostFlagScheduledChangesInput": {
         "type": "object",
         "required": [
@@ -52752,7 +52824,7 @@
             "type": "array",
             "description": "An ordered list of the release pipeline phases",
             "items": {
-              "$ref": "#/components/schemas/ReleasePhase"
+              "$ref": "#/components/schemas/PipelineReleasePhase"
             }
           },
           "_version": {
@@ -52881,78 +52953,6 @@
             "type": "string",
             "description": "The randomization unit for the measured rollout",
             "example": "user"
-          }
-        }
-      },
-      "ReleasePhase": {
-        "type": "object",
-        "required": [
-          "_id",
-          "_name",
-          "complete",
-          "_creationDate",
-          "_audiences"
-        ],
-        "properties": {
-          "_id": {
-            "type": "string",
-            "description": "The phase ID",
-            "example": "1234a56b7c89d012345e678f"
-          },
-          "_name": {
-            "type": "string",
-            "description": "The release phase name",
-            "example": "Phase 1 - Testing"
-          },
-          "complete": {
-            "type": "boolean",
-            "description": "Whether this phase is complete",
-            "example": true
-          },
-          "_creationDate": {
-            "description": "Timestamp of when the release phase was created",
-            "example": "1684262711507",
-            "$ref": "#/components/schemas/UnixMillis"
-          },
-          "_completionDate": {
-            "description": "Timestamp of when the release phase was completed",
-            "example": "1684262711509",
-            "$ref": "#/components/schemas/UnixMillis"
-          },
-          "_completedBy": {
-            "description": "Details about how this phase was marked as complete",
-            "$ref": "#/components/schemas/CompletedBy"
-          },
-          "_audiences": {
-            "type": "array",
-            "description": "A logical grouping of one or more environments that share attributes for rolling out changes",
-            "items": {
-              "$ref": "#/components/schemas/ReleaseAudience"
-            }
-          },
-          "status": {
-            "description": "Status of the phase",
-            "example": "Started",
-            "enum": [
-              "NotStarted",
-              "ReadyToStart",
-              "Started",
-              "Paused",
-              "Complete"
-            ],
-            "$ref": "#/components/schemas/PhaseStatus"
-          },
-          "started": {
-            "type": "boolean",
-            "description": "Whether or not this phase has started"
-          },
-          "_startedDate": {
-            "description": "Timestamp of when the release phase was started",
-            "$ref": "#/components/schemas/UnixMillis"
-          },
-          "configuration": {
-            "description": "The phase configuration",
-            "$ref": "#/components/schemas/PhaseConfiguration"
           }
         }
       },

@@ -35,10 +35,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>An ordered list of the release pipeline phases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase>? Phases { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase>? Phases { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase> Phases { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase> Phases { get; set; }
 #endif
         /// <summary>The release pipeline description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_canceledAt", n => { CanceledAt = n.GetLongValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "phases", n => { Phases = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "phases", n => { Phases = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "releasePipelineDescription", n => { ReleasePipelineDescription = n.GetStringValue(); } },
                 { "releasePipelineKey", n => { ReleasePipelineKey = n.GetStringValue(); } },
                 { "_releaseVariationId", n => { ReleaseVariationId = n.GetStringValue(); } },
@@ -111,7 +111,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteLongValue("_canceledAt", CanceledAt);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty>("_links", Links);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase>("phases", Phases);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase>("phases", Phases);
             writer.WriteStringValue("releasePipelineDescription", ReleasePipelineDescription);
             writer.WriteStringValue("releasePipelineKey", ReleasePipelineKey);
             writer.WriteStringValue("_releaseVariationId", ReleaseVariationId);

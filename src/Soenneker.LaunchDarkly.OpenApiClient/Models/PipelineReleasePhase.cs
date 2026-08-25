@@ -9,7 +9,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReleasePhase : IAdditionalDataHolder, IParsable
+    public partial class PipelineReleasePhase : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,10 +37,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhaseConfiguration? Configuration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhaseConfiguration? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhaseConfiguration Configuration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhaseConfiguration Configuration { get; set; }
 #endif
         /// <summary>The creationDate property</summary>
         public long? CreationDate { get; set; }
@@ -73,21 +73,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase"/> and sets the default values.
         /// </summary>
-        public ReleasePhase()
+        public PipelineReleasePhase()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhase();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "complete", n => { Complete = n.GetBoolValue(); } },
                 { "_completedBy", n => { CompletedBy = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CompletedBy>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.CompletedBy.CreateFromDiscriminatorValue); } },
                 { "_completionDate", n => { CompletionDate = n.GetLongValue(); } },
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhaseConfiguration>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhaseConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhaseConfiguration>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhaseConfiguration.CreateFromDiscriminatorValue); } },
                 { "_creationDate", n => { CreationDate = n.GetLongValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "_name", n => { Name = n.GetStringValue(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("complete", Complete);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CompletedBy>("_completedBy", CompletedBy);
             writer.WriteLongValue("_completionDate", CompletionDate);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePhaseConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhaseConfiguration>("configuration", Configuration);
             writer.WriteLongValue("_creationDate", CreationDate);
             writer.WriteStringValue("_id", Id);
             writer.WriteStringValue("_name", Name);

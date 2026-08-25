@@ -49360,6 +49360,65 @@
           "type": "string"
         }
       },
+      "PipelineReleasePhase": {
+        "required": [
+          "_id",
+          "_name",
+          "complete",
+          "_creationDate",
+          "_audiences"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The phase ID",
+            "example": "1234a56b7c89d012345e678f"
+          },
+          "_name": {
+            "type": "string",
+            "description": "The release phase name",
+            "example": "Phase 1 - Testing"
+          },
+          "complete": {
+            "type": "boolean",
+            "description": "Whether this phase is complete",
+            "example": true
+          },
+          "_creationDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "_completionDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "_completedBy": {
+            "$ref": "#/components/schemas/CompletedBy"
+          },
+          "_audiences": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReleaseAudience"
+            },
+            "description": "A logical grouping of one or more environments that share attributes for rolling out changes"
+          },
+          "status": {
+            "type": "string"
+          },
+          "started": {
+            "type": "boolean",
+            "description": "Whether or not this phase has started"
+          },
+          "_startedDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "configuration": {
+            "$ref": "#/components/schemas/PipelineReleasePhaseConfiguration"
+          }
+        }
+      },
       "PostFlagScheduledChangesInput": {
         "required": [
           "executionDate",
@@ -49934,7 +49993,7 @@
           "phases": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ReleasePhase"
+              "$ref": "#/components/schemas/PipelineReleasePhase"
             },
             "description": "An ordered list of the release pipeline phases"
           },
@@ -50052,65 +50111,6 @@
             "type": "string",
             "description": "The randomization unit for the measured rollout",
             "example": "user"
-          }
-        }
-      },
-      "ReleasePhase": {
-        "required": [
-          "_id",
-          "_name",
-          "complete",
-          "_creationDate",
-          "_audiences"
-        ],
-        "type": "object",
-        "properties": {
-          "_id": {
-            "type": "string",
-            "description": "The phase ID",
-            "example": "1234a56b7c89d012345e678f"
-          },
-          "_name": {
-            "type": "string",
-            "description": "The release phase name",
-            "example": "Phase 1 - Testing"
-          },
-          "complete": {
-            "type": "boolean",
-            "description": "Whether this phase is complete",
-            "example": true
-          },
-          "_creationDate": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "_completionDate": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "_completedBy": {
-            "$ref": "#/components/schemas/CompletedBy"
-          },
-          "_audiences": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReleaseAudience"
-            },
-            "description": "A logical grouping of one or more environments that share attributes for rolling out changes"
-          },
-          "status": {
-            "type": "string"
-          },
-          "started": {
-            "type": "boolean",
-            "description": "Whether or not this phase has started"
-          },
-          "_startedDate": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "configuration": {
-            "$ref": "#/components/schemas/ReleasePhaseConfiguration"
           }
         }
       },
@@ -82933,6 +82933,9 @@
       "PhaseConfigurationProperty": {
         "type": "object"
       },
+      "PipelineReleasePhaseConfiguration": {
+        "type": "object"
+      },
       "PostFlagScheduledChangesInputInstructionsItem": {
         "type": "object",
         "additionalProperties": {
@@ -82994,9 +82997,6 @@
           "$ref": "#/components/schemas/Link"
         },
         "description": "The location and content type of related resources"
-      },
-      "ReleasePhaseConfiguration": {
-        "type": "object"
       },
       "ReleaseProgressionLinksProperty": {
         "type": "object",
