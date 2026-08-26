@@ -38800,6 +38800,748 @@
         ]
       }
     },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers": {
+      "get": {
+        "description": "List all adaptive triggers for a resource.",
+        "operationId": "listAdaptiveTriggers",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": true,
+            "in": "query",
+            "name": "resourceKind",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/AdaptiveTriggerResourceKind"
+            },
+            "style": "form"
+          },
+          {
+            "explode": true,
+            "in": "query",
+            "name": "resourceKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "The number of items to return.",
+            "explode": true,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 50,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.",
+            "explode": true,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdaptiveTriggers"
+                }
+              }
+            },
+            "description": "Adaptive Triggers list"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "List adaptive triggers"
+      },
+      "post": {
+        "description": "Create a new adaptive trigger for a resource.",
+        "operationId": "postAdaptiveTrigger",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAdaptiveTriggerRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdaptiveTrigger"
+                }
+              }
+            },
+            "description": "Adaptive Trigger created"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Create an adaptive trigger"
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerID}": {
+      "delete": {
+        "description": "Delete a single adaptive trigger.",
+        "operationId": "deleteAdaptiveTrigger",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "triggerID",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Delete an adaptive trigger"
+      },
+      "get": {
+        "description": "Get a single adaptive trigger.",
+        "operationId": "getAdaptiveTrigger",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "triggerID",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdaptiveTrigger"
+                }
+              }
+            },
+            "description": "Trigger"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Get an adaptive trigger"
+      },
+      "patch": {
+        "description": "Update a single adaptive trigger.",
+        "operationId": "patchAdaptiveTrigger",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "triggerID",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAdaptiveTriggerRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdaptiveTrigger"
+                }
+              }
+            },
+            "description": "Adaptive Trigger updated"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Update an adaptive trigger"
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerID}/enable": {
+      "post": {
+        "description": "Enable an adaptive trigger.",
+        "operationId": "postEnableAdaptiveTrigger",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "triggerID",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Enable an adaptive trigger"
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerID}/disable": {
+      "post": {
+        "description": "Disable an adaptive trigger.",
+        "operationId": "postDisableAdaptiveTrigger",
+        "parameters": [
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "triggerID",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No content"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Rate Limited"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Disable an adaptive trigger"
+      }
+    },
     "/api/v2/engineering-insights/charts/deployments/frequency": {
       "get": {
         "responses": {
@@ -58547,6 +59289,7 @@
           "name": "name",
           "description": "description",
           "evaluationMetricKey": "evaluationMetricKey",
+          "defaultVariationKey": "defaultVariationKey",
           "isInverted": true,
           "tags": [
             "tags",
@@ -58554,6 +59297,10 @@
           ]
         },
         "properties": {
+          "defaultVariationKey": {
+            "description": "Key of the variation this config serves by default",
+            "type": "string"
+          },
           "description": {
             "type": "string"
           },
@@ -81858,6 +82605,411 @@
           "key",
           "name"
         ],
+        "type": "object"
+      },
+      "AdaptiveTriggerSource": {
+        "$ref": "#/components/schemas/ObservabilityAlertSource"
+      },
+      "ObservabilityAlertSource": {
+        "example": {
+          "alertId": 0,
+          "type": "observabilityAlert"
+        },
+        "properties": {
+          "type": {
+            "enum": [
+              "observabilityAlert"
+            ],
+            "type": "string"
+          },
+          "alertId": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "alertId",
+          "type"
+        ],
+        "type": "object"
+      },
+      "AdaptiveTriggers": {
+        "example": {
+          "_links": {
+            "next": {
+              "href": "href",
+              "type": "type"
+            },
+            "last": {
+              "href": "href",
+              "type": "type"
+            },
+            "prev": {
+              "href": "href",
+              "type": "type"
+            },
+            "self": {
+              "href": "href",
+              "type": "type"
+            },
+            "first": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "totalCount": 5,
+          "items": [
+            {
+              "resourceKind": "flag",
+              "createdAt": 6,
+              "task": {
+                "instructions": [
+                  {
+                    "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "kind": "updateFallthroughVariationOrRollout",
+                    "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "kind": "updateFallthroughVariationOrRollout",
+                    "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              },
+              "resourceKey": "resourceKey",
+              "name": "name",
+              "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "triggerSource": {
+                "alertId": 0,
+                "type": "observabilityAlert"
+              },
+              "enabled": true,
+              "updatedAt": 1
+            },
+            {
+              "resourceKind": "flag",
+              "createdAt": 6,
+              "task": {
+                "instructions": [
+                  {
+                    "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "kind": "updateFallthroughVariationOrRollout",
+                    "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "kind": "updateFallthroughVariationOrRollout",
+                    "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              },
+              "resourceKey": "resourceKey",
+              "name": "name",
+              "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "triggerSource": {
+                "alertId": 0,
+                "type": "observabilityAlert"
+              },
+              "enabled": true,
+              "updatedAt": 1
+            }
+          ]
+        },
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/AdaptiveTriggersPaginatedLinks"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/AdaptiveTrigger"
+            },
+            "type": "array"
+          },
+          "totalCount": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "totalCount"
+        ],
+        "type": "object"
+      },
+      "AdaptiveTrigger": {
+        "example": {
+          "resourceKind": "flag",
+          "createdAt": 6,
+          "task": {
+            "instructions": [
+              {
+                "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "kind": "updateFallthroughVariationOrRollout",
+                "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+              },
+              {
+                "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "kind": "updateFallthroughVariationOrRollout",
+                "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+              }
+            ]
+          },
+          "resourceKey": "resourceKey",
+          "name": "name",
+          "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "triggerSource": {
+            "alertId": 0,
+            "type": "observabilityAlert"
+          },
+          "enabled": true,
+          "updatedAt": 1
+        },
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "resourceKind": {
+            "$ref": "#/components/schemas/AdaptiveTriggerResourceKind"
+          },
+          "resourceKey": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "triggerSource": {
+            "$ref": "#/components/schemas/ObservabilityAlertSource"
+          },
+          "task": {
+            "$ref": "#/components/schemas/AdaptiveTriggerTask"
+          },
+          "createdAt": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "updatedAt": {
+            "format": "int64",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "createdAt",
+          "enabled",
+          "id",
+          "name",
+          "resourceKey",
+          "resourceKind",
+          "task",
+          "triggerSource",
+          "updatedAt"
+        ],
+        "type": "object"
+      },
+      "AdaptiveTriggerTask": {
+        "example": {
+          "instructions": [
+            {
+              "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "kind": "updateFallthroughVariationOrRollout",
+              "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+            },
+            {
+              "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "kind": "updateFallthroughVariationOrRollout",
+              "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+            }
+          ]
+        },
+        "properties": {
+          "instructions": {
+            "items": {
+              "$ref": "#/components/schemas/AdaptiveTriggerInstruction"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "instructions"
+        ],
+        "type": "object"
+      },
+      "AdaptiveTriggerInstruction": {
+        "example": {
+          "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "kind": "updateFallthroughVariationOrRollout",
+          "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+        },
+        "properties": {
+          "kind": {
+            "enum": [
+              "updateFallthroughVariationOrRollout",
+              "updateRuleVariationOrRollout"
+            ],
+            "type": "string"
+          },
+          "variationId": {
+            "format": "uuid",
+            "type": "string"
+          },
+          "ruleId": {
+            "description": "The targeting rule this adaptive trigger acts on. Required for updateRuleVariationOrRollout instructions.",
+            "format": "uuid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "variationId"
+        ],
+        "type": "object"
+      },
+      "AdaptiveTriggerResourceKind": {
+        "enum": [
+          "flag",
+          "ai-config"
+        ],
+        "type": "string"
+      },
+      "CreateAdaptiveTriggerRequest": {
+        "example": {
+          "resourceKind": "flag",
+          "task": {
+            "instructions": [
+              {
+                "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "kind": "updateFallthroughVariationOrRollout",
+                "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+              },
+              {
+                "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "kind": "updateFallthroughVariationOrRollout",
+                "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+              }
+            ]
+          },
+          "resourceKey": "resourceKey",
+          "name": "name",
+          "triggerSource": {
+            "alertId": 0,
+            "type": "observabilityAlert"
+          }
+        },
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "resourceKind": {
+            "$ref": "#/components/schemas/AdaptiveTriggerResourceKind"
+          },
+          "resourceKey": {
+            "type": "string"
+          },
+          "triggerSource": {
+            "$ref": "#/components/schemas/ObservabilityAlertSource"
+          },
+          "task": {
+            "$ref": "#/components/schemas/AdaptiveTriggerTask"
+          }
+        },
+        "required": [
+          "name",
+          "resourceKey",
+          "resourceKind",
+          "task",
+          "triggerSource"
+        ],
+        "type": "object"
+      },
+      "UpdateAdaptiveTriggerRequest": {
+        "example": {
+          "task": {
+            "instructions": [
+              {
+                "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "kind": "updateFallthroughVariationOrRollout",
+                "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+              },
+              {
+                "variationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "kind": "updateFallthroughVariationOrRollout",
+                "ruleId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+              }
+            ]
+          },
+          "name": "name"
+        },
+        "minProperties": 1,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "task": {
+            "$ref": "#/components/schemas/AdaptiveTriggerTask"
+          }
+        },
+        "type": "object"
+      },
+      "AdaptiveTriggersPaginatedLinks": {
+        "example": {
+          "next": {
+            "href": "href",
+            "type": "type"
+          },
+          "last": {
+            "href": "href",
+            "type": "type"
+          },
+          "prev": {
+            "href": "href",
+            "type": "type"
+          },
+          "self": {
+            "href": "href",
+            "type": "type"
+          },
+          "first": {
+            "href": "href",
+            "type": "type"
+          }
+        },
+        "properties": {
+          "first": {
+            "$ref": "#/components/schemas/ExperimentationLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/ExperimentationLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/ExperimentationLink"
+          },
+          "prev": {
+            "$ref": "#/components/schemas/ExperimentationLink"
+          },
+          "self": {
+            "$ref": "#/components/schemas/ExperimentationLink"
+          }
+        },
+        "required": [
+          "self"
+        ],
+        "type": "object"
+      },
+      "ExperimentationLink": {
+        "example": {
+          "href": "href",
+          "type": "type"
+        },
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
         "type": "object"
       },
       "DeploymentCollectionRep": {

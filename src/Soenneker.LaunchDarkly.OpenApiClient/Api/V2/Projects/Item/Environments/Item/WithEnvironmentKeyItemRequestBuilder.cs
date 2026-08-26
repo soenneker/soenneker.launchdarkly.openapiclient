@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.AdaptiveTriggers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ApiKey;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextAttributes;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextInstances;
@@ -28,6 +29,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithEnvironmentKeyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The adaptiveTriggers property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.AdaptiveTriggers.AdaptiveTriggersRequestBuilder AdaptiveTriggers
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.AdaptiveTriggers.AdaptiveTriggersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The apiKey property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ApiKey.ApiKeyRequestBuilder ApiKey
         {

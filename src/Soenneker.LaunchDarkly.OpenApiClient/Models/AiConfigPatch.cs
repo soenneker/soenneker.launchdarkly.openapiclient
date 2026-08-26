@@ -14,6 +14,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Key of the variation this config serves by default</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultVariationKey { get; set; }
+#nullable restore
+#else
+        public string DefaultVariationKey { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +97,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "defaultVariationKey", n => { DefaultVariationKey = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "evaluationMetricKey", n => { EvaluationMetricKey = n.GetStringValue(); } },
                 { "isInverted", n => { IsInverted = n.GetBoolValue(); } },
@@ -105,6 +114,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("defaultVariationKey", DefaultVariationKey);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("evaluationMetricKey", EvaluationMetricKey);
             writer.WriteBoolValue("isInverted", IsInverted);
