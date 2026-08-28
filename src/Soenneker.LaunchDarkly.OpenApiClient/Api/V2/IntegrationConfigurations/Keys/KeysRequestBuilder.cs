@@ -16,7 +16,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.
     public partial class KeysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.integrationConfigurations.keys.item collection</summary>
-        /// <param name="position">Integration key</param>
+        /// <param name="position">A key that corresponds to the third-party integration you are configuring. For example, `mezmo`.</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder this[string position]
         {

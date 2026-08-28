@@ -9297,11 +9297,11 @@
           {
             "name": "integrationKey",
             "in": "path",
-            "description": "Integration key",
+            "description": "A key that corresponds to the third-party integration you are configuring. For example, \u0060mezmo\u0060.",
             "required": true,
             "schema": {
               "type": "string",
-              "description": "Integration key",
+              "description": "A key that corresponds to the third-party integration you are configuring. For example, \u0060mezmo\u0060.",
               "format": "string"
             }
           }
@@ -37713,6 +37713,9 @@
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers": {
       "get": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "List adaptive triggers",
         "description": "List all adaptive triggers for a resource.",
         "operationId": "ListAdaptiveTriggers",
@@ -37835,6 +37838,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "Create an adaptive trigger",
         "description": "Create a new adaptive trigger for a resource.",
         "operationId": "PostAdaptiveTrigger",
@@ -37942,6 +37948,9 @@
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerId}": {
       "delete": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "Delete an adaptive trigger",
         "description": "Delete a single adaptive trigger.",
         "operationId": "DeleteAdaptiveTrigger",
@@ -38029,6 +38038,9 @@
         }
       },
       "get": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "Get an adaptive trigger",
         "description": "Get a single adaptive trigger.",
         "operationId": "GetAdaptiveTrigger",
@@ -38123,6 +38135,9 @@
         }
       },
       "patch": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "Update an adaptive trigger",
         "description": "Update a single adaptive trigger.",
         "operationId": "PatchAdaptiveTrigger",
@@ -38229,6 +38244,9 @@
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerId}/enable": {
       "post": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "Enable an adaptive trigger",
         "description": "Enable an adaptive trigger.",
         "operationId": "PostEnableAdaptiveTrigger",
@@ -38318,6 +38336,9 @@
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerId}/disable": {
       "post": {
+        "tags": [
+          "Adaptive triggers"
+        ],
         "summary": "Disable an adaptive trigger",
         "description": "Disable an adaptive trigger.",
         "operationId": "PostDisableAdaptiveTrigger",
@@ -88642,6 +88663,10 @@
     {
       "name": "Account usage (beta)",
       "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nThe account usage API lets you query for metrics about how your account is using LaunchDarkly. To learn more, read [Account usage metrics](https://launchdarkly.com/docs/home/account/metrics).\n\nEach endpoint returns time-series data in the form of an array of data points with timestamps. Each one contains data for that time from one or more series. It also includes a metadata array describing what each of the series is.\n"
+    },
+    {
+      "name": "Adaptive triggers",
+      "description": "Adaptive triggers automatically update the targeting of a feature flag or AgentControl config when a trigger source, such as an observability alert, fires. Each adaptive trigger pairs a trigger source with a task that describes the change to make, such as updating the variation served by the default rule or by a specific targeting rule.\n\nUsing the adaptive triggers API, you can create, read, update, enable, disable, and delete adaptive triggers.\n"
     },
     {
       "name": "AgentControl",

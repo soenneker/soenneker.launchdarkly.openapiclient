@@ -46,6 +46,10 @@
       "description": "> ### This feature is in beta\n>\n> To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n>\n> Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nThe account usage API lets you query for metrics about how your account is using LaunchDarkly. To learn more, read [Account usage metrics](https://launchdarkly.com/docs/home/account/metrics).\n\nEach endpoint returns time-series data in the form of an array of data points with timestamps. Each one contains data for that time from one or more series. It also includes a metadata array describing what each of the series is.\n"
     },
     {
+      "name": "Adaptive triggers",
+      "description": "Adaptive triggers automatically update the targeting of a feature flag or AgentControl config when a trigger source, such as an observability alert, fires. Each adaptive trigger pairs a trigger source with a task that describes the change to make, such as updating the variation served by the default rule or by a specific targeting rule.\n\nUsing the adaptive triggers API, you can create, read, update, enable, disable, and delete adaptive triggers.\n"
+    },
+    {
       "name": "AgentControl",
       "description": "The AgentControl API allows you to create, retrieve, and edit AgentControl configs, config variations, and AI model configurations.\n\n**This product name has changed, but the API has not.** AgentControl was previously called AI Configs. Resources previously called \"AI Configs\" are now referred to as \"AgentControl configs\" or \"configs.\" This is not a breaking change to the API. Existing AI Configs API endpoints, paths, request/response bodies, and operation IDs are unchanged. Integrations that use those resources still work and do not need modification.\n\nAn AgentControl config is a resource in LaunchDarkly that you can use to customize, test, and roll out new large language models (LLMs) within your generative AI applications. Within each config, you define one or more variations, each of which includes a model configuration and one or more messages. The model configuration can be a standard one from the list provided by LaunchDarkly, or you can define your own custom AI model configuration.\n\nTo learn more, read [AgentControl](https://launchdarkly.com/docs/home/agentcontrol).\n"
     },
@@ -9599,12 +9603,12 @@
           {
             "name": "integrationKey",
             "in": "path",
-            "description": "Integration key",
+            "description": "A key that corresponds to the third-party integration you are configuring. For example, `mezmo`.",
             "required": true,
             "schema": {
               "type": "string",
               "format": "string",
-              "description": "Integration key"
+              "description": "A key that corresponds to the third-party integration you are configuring. For example, `mezmo`."
             }
           }
         ],
@@ -38935,7 +38939,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "List adaptive triggers"
+        "summary": "List adaptive triggers",
+        "tags": [
+          "Adaptive triggers"
+        ]
       },
       "post": {
         "description": "Create a new adaptive trigger for a resource.",
@@ -39044,7 +39051,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Create an adaptive trigger"
+        "summary": "Create an adaptive trigger",
+        "tags": [
+          "Adaptive triggers"
+        ]
       }
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerID}": {
@@ -39139,7 +39149,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Delete an adaptive trigger"
+        "summary": "Delete an adaptive trigger",
+        "tags": [
+          "Adaptive triggers"
+        ]
       },
       "get": {
         "description": "Get a single adaptive trigger.",
@@ -39239,7 +39252,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Get an adaptive trigger"
+        "summary": "Get an adaptive trigger",
+        "tags": [
+          "Adaptive triggers"
+        ]
       },
       "patch": {
         "description": "Update a single adaptive trigger.",
@@ -39349,7 +39365,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Update an adaptive trigger"
+        "summary": "Update an adaptive trigger",
+        "tags": [
+          "Adaptive triggers"
+        ]
       }
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerID}/enable": {
@@ -39444,7 +39463,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Enable an adaptive trigger"
+        "summary": "Enable an adaptive trigger",
+        "tags": [
+          "Adaptive triggers"
+        ]
       }
     },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers/{triggerID}/disable": {
@@ -39539,7 +39561,10 @@
             "description": "Internal server error"
           }
         },
-        "summary": "Disable an adaptive trigger"
+        "summary": "Disable an adaptive trigger",
+        "tags": [
+          "Adaptive triggers"
+        ]
       }
     },
     "/api/v2/engineering-insights/charts/deployments/frequency": {
