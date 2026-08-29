@@ -76,7 +76,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeysForGetSdkKeys>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeysForGetSdkKeys.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new server-side or mobile SDK key.
+        /// Create a new server-side or mobile SDK key.Deleted SDK keys are retained for 180 days. During that period you cannot reuse the `key` of a deleted SDK key, even though the deleted key no longer appears in the list of SDK keys for the environment.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKey"/></returns>
         /// <param name="body">The request body</param>
@@ -128,7 +128,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
             return requestInfo;
         }
         /// <summary>
-        /// Create a new server-side or mobile SDK key.
+        /// Create a new server-side or mobile SDK key.Deleted SDK keys are retained for 180 days. During that period you cannot reuse the `key` of a deleted SDK key, even though the deleted key no longer appears in the list of SDK keys for the environment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

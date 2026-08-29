@@ -37274,7 +37274,7 @@
           "SDK Keys (beta)"
         ],
         "summary": "Create SDK key",
-        "description": "Create a new server-side or mobile SDK key.",
+        "description": "Create a new server-side or mobile SDK key.\n\nDeleted SDK keys are retained for 180 days. During that period you cannot reuse the \u0060key\u0060 of a deleted SDK key, even though the deleted key no longer appears in the list of SDK keys for the environment.",
         "operationId": "PostSdkKey",
         "parameters": [
           {
