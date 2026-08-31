@@ -38170,6 +38170,157 @@
         ]
       }
     },
+    "/api/v2/projects/{projectKey}/sdk-keys": {
+      "get": {
+        "description": "Get all SDK keys for a given project across environments.",
+        "operationId": "getProjectSdkKeys",
+        "parameters": [
+          {
+            "description": "Version of the endpoint.",
+            "explode": false,
+            "in": "header",
+            "name": "LD-API-Version",
+            "required": true,
+            "schema": {
+              "enum": [
+                "beta"
+              ],
+              "type": "string",
+              "x-enum-varnames": [
+                "GetProjectSdkKeysParamsLDAPIVersionBeta"
+              ]
+            },
+            "style": "simple"
+          },
+          {
+            "example": "default",
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "description": "A queryfilter expression to apply to the list of SDK keys. Supports the following fields and operators: `kind` (`equals`, `anyOf`; values: \"sdk\", \"mobile\"), `active` (`equals`, `anyOf`; values: `true`, `false`), `environmentKey` (`equals`, `anyOf`; values: environment keys), `viewKey` (`equals`, `anyOf`; values: view key strings — returns only SDK keys linked to the specified view(s)), `name` (`equals` only; returns SDK keys whose name or key contains the value, matched case-insensitively). Example: `kind anyOf [\"sdk\",\"mobile\"], environmentKey anyOf [\"production\",\"test\"], viewKey equals my-view, name equals \"production\"`.",
+            "explode": true,
+            "in": "query",
+            "name": "filter",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "The number of SDK keys to return. Defaults to 20. Maximum is 100.",
+            "explode": true,
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "The number of SDK keys to skip. Used for pagination.",
+            "explode": true,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            },
+            "style": "form"
+          },
+          {
+            "description": "A comma-separated list of fields to expand in the response. Supported fields: `environmentSummary`, `viewSummaries`.",
+            "explode": true,
+            "in": "query",
+            "name": "expand",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form"
+          },
+          {
+            "description": "A sort to apply to the list of SDK keys. Supported field: `createdAt`. Prefix the field with `-` to sort in descending order (for example, `-createdAt`).",
+            "explode": true,
+            "in": "query",
+            "name": "sort",
+            "required": false,
+            "schema": {
+              "enum": [
+                "createdAt",
+                "-createdAt"
+              ],
+              "type": "string"
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkKeys"
+                }
+              }
+            },
+            "description": "Successful response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Get all project SDK keys",
+        "tags": [
+          "SDK Keys (beta)"
+        ]
+      }
+    },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys": {
       "get": {
         "description": "Get all SDK keys for a given project and environment. Can filter by kind.",
@@ -38799,6 +38950,135 @@
           }
         },
         "summary": "Update SDK key",
+        "tags": [
+          "SDK Keys (beta)"
+        ]
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey}/views": {
+      "put": {
+        "description": "Replace the set of views associated with an SDK key. The `viewKeys` field is required. To remove all views from the SDK key, pass an empty `viewKeys` array.",
+        "operationId": "putSdkKeyViews",
+        "parameters": [
+          {
+            "description": "Version of the endpoint.",
+            "explode": false,
+            "in": "header",
+            "name": "LD-API-Version",
+            "required": true,
+            "schema": {
+              "enum": [
+                "beta"
+              ],
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "projectKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "environmentKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "explode": false,
+            "in": "path",
+            "name": "sdkKeyKey",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "style": "simple"
+          },
+          {
+            "description": "A comma-separated list of fields to expand in the response. Supported fields: `viewSummaries`.",
+            "explode": true,
+            "in": "query",
+            "name": "expand",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "style": "form"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SdkKeyViewsPut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkKeyForPutSdkKeyViews"
+                }
+              }
+            },
+            "description": "Successful response"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Bad request"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Not found"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "summary": "Replace SDK key views",
         "tags": [
           "SDK Keys (beta)"
         ]
@@ -82341,6 +82621,13 @@
             "properties": {
               "environmentSummary": {
                 "$ref": "#/components/schemas/SdkKeysEnvironmentSummary"
+              },
+              "viewSummaries": {
+                "description": "Summaries of views associated with the SDK key.",
+                "items": {
+                  "$ref": "#/components/schemas/ViewSummary"
+                },
+                "type": "array"
               }
             },
             "type": "object"
@@ -82418,6 +82705,183 @@
           "_version": 5,
           "key": "key"
         }
+      },
+      "SdkKeys": {
+        "example": {
+          "_links": {
+            "self": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "totalCount": 7,
+          "items": [
+            {
+              "_links": {
+                "parent": {
+                  "href": "href",
+                  "type": "type"
+                },
+                "self": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "kind": "sdk",
+              "description": "description",
+              "environmentSummary": {
+                "color": "F5A623",
+                "_links": {
+                  "self": {
+                    "href": "/api/v2/projects/my-project/environments/my-environment",
+                    "type": "application/json"
+                  }
+                },
+                "name": "My Environment",
+                "key": "environment-key-123abc"
+              },
+              "_createdByMemberId": "_createdByMemberId",
+              "isDefault": true,
+              "viewSummaries": [
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                },
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                }
+              ],
+              "_createdAt": 6,
+              "name": "name",
+              "expiry": 0,
+              "value": "value",
+              "_updatedAt": 1,
+              "_version": 5,
+              "key": "key"
+            },
+            {
+              "_links": {
+                "parent": {
+                  "href": "href",
+                  "type": "type"
+                },
+                "self": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "kind": "sdk",
+              "description": "description",
+              "environmentSummary": {
+                "color": "F5A623",
+                "_links": {
+                  "self": {
+                    "href": "/api/v2/projects/my-project/environments/my-environment",
+                    "type": "application/json"
+                  }
+                },
+                "name": "My Environment",
+                "key": "environment-key-123abc"
+              },
+              "_createdByMemberId": "_createdByMemberId",
+              "isDefault": true,
+              "viewSummaries": [
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                },
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                }
+              ],
+              "_createdAt": 6,
+              "name": "name",
+              "expiry": 0,
+              "value": "value",
+              "_updatedAt": 1,
+              "_version": 5,
+              "key": "key"
+            }
+          ]
+        },
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/SdkKeysSelfLink"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/SdkKeyListItem"
+            },
+            "type": "array"
+          },
+          "totalCount": {
+            "description": "The total number of SDK keys matching the query, before pagination.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "items",
+          "totalCount"
+        ],
+        "type": "object"
       },
       "SdkKeysForGetSdkKeys": {
         "example": {
@@ -82535,6 +82999,13 @@
           "expiry": {
             "format": "int64",
             "type": "integer"
+          },
+          "viewKeys": {
+            "description": "List of view keys to associate with the SDK key.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
           }
         },
         "required": [
@@ -82563,6 +83034,27 @@
             "type": "integer"
           }
         },
+        "type": "object"
+      },
+      "SdkKeyViewsPut": {
+        "example": {
+          "viewKeys": [
+            "viewKeys",
+            "viewKeys"
+          ]
+        },
+        "properties": {
+          "viewKeys": {
+            "description": "The complete target list of view keys to associate with this SDK key. An empty array removes all views from the SDK key.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "viewKeys"
+        ],
         "type": "object"
       },
       "SdkKeysSelfLink": {

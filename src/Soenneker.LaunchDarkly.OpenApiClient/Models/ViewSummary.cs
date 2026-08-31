@@ -9,22 +9,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SdkKeyPost : IAdditionalDataHolder, IParsable
+    public partial class ViewSummary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The optional description of the SDK key.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The expiry property</summary>
-        public long? Expiry { get; set; }
-        /// <summary>The user-defined key of the SDK key.</summary>
+        /// <summary>The key of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -32,9 +22,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The kind of SDK key. Can be either &quot;sdk&quot; (server-side) or &quot;mobile&quot; (mobile). Defaults to &quot;sdk&quot; when not explicitly defined.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPostKind? Kind { get; set; }
-        /// <summary>The human-readable name of the SDK key.</summary>
+        /// <summary>The location and content type of related resources</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? Links { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get; set; }
+#endif
+        /// <summary>The human-readable name of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -42,30 +38,30 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>List of view keys to associate with the SDK key.</summary>
+        /// <summary>The resourceSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ViewKeys { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewResourceSummary? ResourceSummary { get; set; }
 #nullable restore
 #else
-        public List<string> ViewKeys { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewResourceSummary ResourceSummary { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPost"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewSummary"/> and sets the default values.
         /// </summary>
-        public SdkKeyPost()
+        public ViewSummary()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPost"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPost CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPost();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,12 +71,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "expiry", n => { Expiry = n.GetLongValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPostKind>(); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "viewKeys", n => { ViewKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resourceSummary", n => { ResourceSummary = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewResourceSummary>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewResourceSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,12 +84,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("description", Description);
-            writer.WriteLongValue("expiry", Expiry);
             writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SdkKeyPostKind>("kind", Kind);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks>("_links", Links);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("viewKeys", ViewKeys);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewResourceSummary>("resourceSummary", ResourceSummary);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

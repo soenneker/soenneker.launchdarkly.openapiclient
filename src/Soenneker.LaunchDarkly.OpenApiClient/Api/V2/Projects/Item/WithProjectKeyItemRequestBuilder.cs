@@ -17,6 +17,7 @@ using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Layers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.MetricGroups;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePipelines;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.SdkKeys;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ViewAssociations;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Views;
 using Soenneker.LaunchDarkly.OpenApiClient.Models;
@@ -102,6 +103,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder ReleasePolicies
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sdkKeys property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.SdkKeys.SdkKeysRequestBuilder SdkKeys
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.SdkKeys.SdkKeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The viewAssociations property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ViewAssociations.ViewAssociationsRequestBuilder ViewAssociations

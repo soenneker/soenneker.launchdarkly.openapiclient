@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.SdkKeys.Item.Views;
 using Soenneker.LaunchDarkly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSdkKeyKeyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The views property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.SdkKeys.Item.Views.ViewsRequestBuilder Views
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.SdkKeys.Item.Views.ViewsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.SdkKeys.Item.WithSdkKeyKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -37147,6 +37147,128 @@
         }
       }
     },
+    "/api/v2/projects/{projectKey}/sdk-keys": {
+      "get": {
+        "tags": [
+          "SDK Keys (beta)"
+        ],
+        "summary": "Get all project SDK keys",
+        "description": "Get all SDK keys for a given project across environments.",
+        "operationId": "GetProjectSdkKeys",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "A queryfilter expression to apply to the list of SDK keys. Supports the following fields and operators: \u0060kind\u0060 (\u0060equals\u0060, \u0060anyOf\u0060; values: \u0022sdk\u0022, \u0022mobile\u0022), \u0060active\u0060 (\u0060equals\u0060, \u0060anyOf\u0060; values: \u0060true\u0060, \u0060false\u0060), \u0060environmentKey\u0060 (\u0060equals\u0060, \u0060anyOf\u0060; values: environment keys), \u0060viewKey\u0060 (\u0060equals\u0060, \u0060anyOf\u0060; values: view key strings \u2014 returns only SDK keys linked to the specified view(s)), \u0060name\u0060 (\u0060equals\u0060 only; returns SDK keys whose name or key contains the value, matched case-insensitively). Example: \u0060kind anyOf [\u0022sdk\u0022,\u0022mobile\u0022], environmentKey anyOf [\u0022production\u0022,\u0022test\u0022], viewKey equals my-view, name equals \u0022production\u0022\u0060.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of SDK keys to return. Defaults to 20. Maximum is 100.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of SDK keys to skip. Used for pagination.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "A comma-separated list of fields to expand in the response. Supported fields: \u0060environmentSummary\u0060, \u0060viewSummaries\u0060.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "A sort to apply to the list of SDK keys. Supported field: \u0060createdAt\u0060. Prefix the field with \u0060-\u0060 to sort in descending order (for example, \u0060-createdAt\u0060).",
+            "schema": {
+              "$ref": "#/components/schemas/GetProjectSdkKeysSortParameter"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkKeys"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys": {
       "get": {
         "tags": [
@@ -37690,6 +37812,121 @@
           },
           "409": {
             "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/sdk-keys/{sdkKeyKey}/views": {
+      "put": {
+        "tags": [
+          "SDK Keys (beta)"
+        ],
+        "summary": "Replace SDK key views",
+        "description": "Replace the set of views associated with an SDK key. The \u0060viewKeys\u0060 field is required. To remove all views from the SDK key, pass an empty \u0060viewKeys\u0060 array.",
+        "operationId": "PutSdkKeyViews",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sdkKeyKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "A comma-separated list of fields to expand in the response. Supported fields: \u0060viewSummaries\u0060.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SdkKeyViewsPut"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkKeyForPutSdkKeyViews"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -78756,6 +78993,13 @@
           },
           "environmentSummary": {
             "$ref": "#/components/schemas/SdkKeysEnvironmentSummary"
+          },
+          "viewSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViewSummary"
+            },
+            "description": "Summaries of views associated with the SDK key."
           }
         },
         "example": {
@@ -78829,6 +79073,183 @@
           "_updatedAt": 1,
           "_version": 5,
           "key": "key"
+        }
+      },
+      "SdkKeys": {
+        "required": [
+          "items",
+          "totalCount"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/SdkKeysSelfLink"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SdkKeyListItem"
+            }
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "The total number of SDK keys matching the query, before pagination."
+          }
+        },
+        "example": {
+          "_links": {
+            "self": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "totalCount": 7,
+          "items": [
+            {
+              "_links": {
+                "parent": {
+                  "href": "href",
+                  "type": "type"
+                },
+                "self": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "kind": "sdk",
+              "description": "description",
+              "environmentSummary": {
+                "color": "F5A623",
+                "_links": {
+                  "self": {
+                    "href": "/api/v2/projects/my-project/environments/my-environment",
+                    "type": "application/json"
+                  }
+                },
+                "name": "My Environment",
+                "key": "environment-key-123abc"
+              },
+              "_createdByMemberId": "_createdByMemberId",
+              "isDefault": true,
+              "viewSummaries": [
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                },
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                }
+              ],
+              "_createdAt": 6,
+              "name": "name",
+              "expiry": 0,
+              "value": "value",
+              "_updatedAt": 1,
+              "_version": 5,
+              "key": "key"
+            },
+            {
+              "_links": {
+                "parent": {
+                  "href": "href",
+                  "type": "type"
+                },
+                "self": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "kind": "sdk",
+              "description": "description",
+              "environmentSummary": {
+                "color": "F5A623",
+                "_links": {
+                  "self": {
+                    "href": "/api/v2/projects/my-project/environments/my-environment",
+                    "type": "application/json"
+                  }
+                },
+                "name": "My Environment",
+                "key": "environment-key-123abc"
+              },
+              "_createdByMemberId": "_createdByMemberId",
+              "isDefault": true,
+              "viewSummaries": [
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                },
+                {
+                  "_links": {
+                    "parent": {
+                      "href": "href",
+                      "type": "type"
+                    },
+                    "self": {
+                      "href": "href",
+                      "type": "type"
+                    }
+                  },
+                  "resourceSummary": {
+                    "flagCount": 5,
+                    "segmentCount": 2
+                  },
+                  "name": "name",
+                  "key": "key"
+                }
+              ],
+              "_createdAt": 6,
+              "name": "name",
+              "expiry": 0,
+              "value": "value",
+              "_updatedAt": 1,
+              "_version": 5,
+              "key": "key"
+            }
+          ]
         }
       },
       "SdkKeysForGetSdkKeys": {
@@ -78935,6 +79356,13 @@
           "expiry": {
             "type": "integer",
             "format": "int64"
+          },
+          "viewKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of view keys to associate with the SDK key."
           }
         },
         "example": {
@@ -78969,6 +79397,27 @@
           "name": "name",
           "description": "description",
           "expiry": 0
+        }
+      },
+      "SdkKeyViewsPut": {
+        "required": [
+          "viewKeys"
+        ],
+        "type": "object",
+        "properties": {
+          "viewKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The complete target list of view keys to associate with this SDK key. An empty array removes all views from the SDK key."
+          }
+        },
+        "example": {
+          "viewKeys": [
+            "viewKeys",
+            "viewKeys"
+          ]
         }
       },
       "SdkKeysSelfLink": {
@@ -79913,6 +80362,13 @@
         "properties": {
           "environmentSummary": {
             "$ref": "#/components/schemas/SdkKeysEnvironmentSummary"
+          },
+          "viewSummaries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ViewSummary"
+            },
+            "description": "Summaries of views associated with the SDK key."
           }
         }
       },
@@ -88584,6 +89040,28 @@
             {
               "value": "aiConfigs",
               "name": "AiConfigs"
+            }
+          ]
+        }
+      },
+      "GetProjectSdkKeysSortParameter": {
+        "enum": [
+          "createdAt",
+          "-createdAt"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjectSdkKeysSortParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "createdAt",
+              "name": "CreatedAt"
+            },
+            {
+              "value": "-createdAt",
+              "name": "CreatedAt1"
             }
           ]
         }
