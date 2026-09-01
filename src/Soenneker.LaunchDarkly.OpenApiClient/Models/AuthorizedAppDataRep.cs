@@ -14,6 +14,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The icon for this authorized application, if it has one</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IconUrl { get; set; }
+#nullable restore
+#else
+        public string IconUrl { get; set; }
+#endif
         /// <summary>The ID of the authorized application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +30,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Whether this application acted on behalf of the member in this entry. When true, the member and the application are co-authors of the change rather than the member acting alone. Omitted for applications that act on their own.</summary>
+        public bool? IsAgent { get; set; }
         /// <summary>Whether the application is authorized through SCIM</summary>
         public bool? IsScim { get; set; }
         /// <summary>The links property</summary>
@@ -73,7 +83,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "iconUrl", n => { IconUrl = n.GetStringValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
+                { "isAgent", n => { IsAgent = n.GetBoolValue(); } },
                 { "isScim", n => { IsScim = n.GetBoolValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuthorizedAppDataRepLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuthorizedAppDataRepLinksProperty.CreateFromDiscriminatorValue); } },
                 { "maintainerName", n => { MaintainerName = n.GetStringValue(); } },
@@ -87,7 +99,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("iconUrl", IconUrl);
             writer.WriteStringValue("_id", Id);
+            writer.WriteBoolValue("isAgent", IsAgent);
             writer.WriteBoolValue("isScim", IsScim);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuthorizedAppDataRepLinksProperty>("_links", Links);
             writer.WriteStringValue("maintainerName", MaintainerName);

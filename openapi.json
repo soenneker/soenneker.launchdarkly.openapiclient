@@ -43526,9 +43526,18 @@
             "type": "string",
             "description": "The authorized application name"
           },
+          "iconUrl": {
+            "type": "string",
+            "description": "The icon for this authorized application, if it has one"
+          },
           "maintainerName": {
             "type": "string",
             "description": "The name of the maintainer for this authorized application"
+          },
+          "isAgent": {
+            "type": "boolean",
+            "description": "Whether this application acted on behalf of the member in this entry. When true, the member and the application are co-authors of the change rather than the member acting alone. Omitted for applications that act on their own.",
+            "example": true
           }
         }
       },
