@@ -161,10 +161,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The lastUsedInGuardedRollout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep? LastUsedInGuardedRollout { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep? LastUsedInGuardedRollout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep LastUsedInGuardedRollout { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep LastUsedInGuardedRollout { get; set; }
 #endif
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -359,7 +359,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "lastModified", n => { LastModified = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Modification>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Modification.CreateFromDiscriminatorValue); } },
                 { "lastSeen", n => { LastSeen = n.GetLongValue(); } },
                 { "lastUsedInExperiment", n => { LastUsedInExperiment = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentExperimentRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentExperimentRep.CreateFromDiscriminatorValue); } },
-                { "lastUsedInGuardedRollout", n => { LastUsedInGuardedRollout = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep.CreateFromDiscriminatorValue); } },
+                { "lastUsedInGuardedRollout", n => { LastUsedInGuardedRollout = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep.CreateFromDiscriminatorValue); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricRepLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricRepLinksProperty.CreateFromDiscriminatorValue); } },
                 { "_maintainer", n => { Maintainer = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary.CreateFromDiscriminatorValue); } },
                 { "maintainerId", n => { MaintainerId = n.GetStringValue(); } },
@@ -421,7 +421,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Modification>("lastModified", LastModified);
             writer.WriteLongValue("lastSeen", LastSeen);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentExperimentRep>("lastUsedInExperiment", LastUsedInExperiment);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep>("lastUsedInGuardedRollout", LastUsedInGuardedRollout);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep>("lastUsedInGuardedRollout", LastUsedInGuardedRollout);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricRepLinksProperty>("_links", Links);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary>("_maintainer", Maintainer);
             writer.WriteStringValue("maintainerId", MaintainerId);

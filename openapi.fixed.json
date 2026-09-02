@@ -44328,63 +44328,6 @@
           }
         }
       },
-      "DependentMeasuredRolloutRep": {
-        "required": [
-          "_id",
-          "flagKey",
-          "flagName",
-          "environmentKey",
-          "environmentName",
-          "status",
-          "creationDate",
-          "_links"
-        ],
-        "type": "object",
-        "properties": {
-          "_id": {
-            "type": "string",
-            "description": "The guarded rollout measured rollout Id",
-            "example": "885ccadf-181b-4a9a-8414-7ad6f7ba2db0"
-          },
-          "flagKey": {
-            "type": "string",
-            "description": "The guarded rollout flag key ",
-            "example": "my-flag"
-          },
-          "flagName": {
-            "type": "string",
-            "description": "The guarded rollout flag name ",
-            "example": "My Flag"
-          },
-          "flagPurpose": {
-            "type": "string",
-            "description": "The guarded rollout flag purpose",
-            "example": "migration"
-          },
-          "environmentKey": {
-            "type": "string",
-            "description": "The guarded rollout environment key",
-            "example": "production"
-          },
-          "environmentName": {
-            "type": "string",
-            "description": "The guarded rollout environment name",
-            "example": "Production"
-          },
-          "status": {
-            "type": "string",
-            "description": "The guarded rollout status",
-            "example": "monitoring"
-          },
-          "creationDate": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "_links": {
-            "$ref": "#/components/schemas/DependentMeasuredRolloutRepLinksProperty"
-          }
-        }
-      },
       "DependentMetricGroupRep": {
         "required": [
           "key",
@@ -44505,6 +44448,63 @@
             "type": "string",
             "description": "The context kind chosen as the analysis unit for this metric in the iteration. If null, analysis uses the iteration\u0027s randomization unit.",
             "example": "user"
+          }
+        }
+      },
+      "DependentReleasePhaseRep": {
+        "required": [
+          "_id",
+          "flagKey",
+          "flagName",
+          "environmentKey",
+          "environmentName",
+          "status",
+          "creationDate",
+          "_links"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The guarded rollout measured rollout Id",
+            "example": "885ccadf-181b-4a9a-8414-7ad6f7ba2db0"
+          },
+          "flagKey": {
+            "type": "string",
+            "description": "The guarded rollout flag key ",
+            "example": "my-flag"
+          },
+          "flagName": {
+            "type": "string",
+            "description": "The guarded rollout flag name ",
+            "example": "My Flag"
+          },
+          "flagPurpose": {
+            "type": "string",
+            "description": "The guarded rollout flag purpose",
+            "example": "migration"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The guarded rollout environment key",
+            "example": "production"
+          },
+          "environmentName": {
+            "type": "string",
+            "description": "The guarded rollout environment name",
+            "example": "Production"
+          },
+          "status": {
+            "type": "string",
+            "description": "The guarded rollout status",
+            "example": "monitoring"
+          },
+          "creationDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/DependentReleasePhaseRepLinksProperty"
           }
         }
       },
@@ -49821,7 +49821,7 @@
             "$ref": "#/components/schemas/DependentExperimentRep"
           },
           "lastUsedInGuardedRollout": {
-            "$ref": "#/components/schemas/DependentMeasuredRolloutRep"
+            "$ref": "#/components/schemas/DependentReleasePhaseRep"
           },
           "isActive": {
             "type": "boolean",
@@ -81488,19 +81488,6 @@
         },
         "description": "The location and content type of related resources"
       },
-      "DependentMeasuredRolloutRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/internal/projects/my-project/environments/production/automated-releases/885ccadf-181b-4a9a-8414-7ad6f7ba2db0",
-            "type": "application/json"
-          }
-        }
-      },
       "DependentMetricGroupRepLinks": {
         "type": "object",
         "additionalProperties": {
@@ -81544,6 +81531,19 @@
         "example": {
           "self": {
             "href": "/api/v2/metrics/my-project/my-metric",
+            "type": "application/json"
+          }
+        }
+      },
+      "DependentReleasePhaseRepLinks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources",
+        "example": {
+          "self": {
+            "href": "/internal/projects/my-project/environments/production/automated-releases/885ccadf-181b-4a9a-8414-7ad6f7ba2db0",
             "type": "application/json"
           }
         }
@@ -83831,13 +83831,6 @@
         },
         "description": "The location and content type of related resources"
       },
-      "DependentMeasuredRolloutRepLinksProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
       "DependentMetricGroupRepLinksProperty": {
         "type": "object",
         "additionalProperties": {
@@ -83853,6 +83846,13 @@
         "description": "The location and content type of related resources"
       },
       "DependentMetricOrMetricGroupRepLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources"
+      },
+      "DependentReleasePhaseRepLinksProperty": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/Link"

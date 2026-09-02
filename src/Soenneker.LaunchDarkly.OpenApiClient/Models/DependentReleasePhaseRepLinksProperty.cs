@@ -11,26 +11,26 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// The location and content type of related resources
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DependentMeasuredRolloutRepLinksProperty : IAdditionalDataHolder, IParsable
+    public partial class DependentReleasePhaseRepLinksProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty"/> and sets the default values.
         /// </summary>
-        public DependentMeasuredRolloutRepLinksProperty()
+        public DependentReleasePhaseRepLinksProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

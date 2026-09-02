@@ -9,7 +9,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DependentMeasuredRolloutRep : IAdditionalDataHolder, IParsable
+    public partial class DependentReleasePhaseRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -67,10 +67,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty Links { get; set; }
 #endif
         /// <summary>The guarded rollout status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,21 +81,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep"/> and sets the default values.
         /// </summary>
-        public DependentMeasuredRolloutRep()
+        public DependentReleasePhaseRep()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRep();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRep();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "flagName", n => { FlagName = n.GetStringValue(); } },
                 { "flagPurpose", n => { FlagPurpose = n.GetStringValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -130,7 +130,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("flagName", FlagName);
             writer.WriteStringValue("flagPurpose", FlagPurpose);
             writer.WriteStringValue("_id", Id);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentMeasuredRolloutRepLinksProperty>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DependentReleasePhaseRepLinksProperty>("_links", Links);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
