@@ -31550,7 +31550,7 @@
     "/api/v2/projects/{projectKey}/ai-tools/{toolKey}/references": {
       "get": {
         "tags": [
-          "AI Configs"
+          "AgentControl"
         ],
         "summary": "List AI tool references",
         "description": "Get all AgentControl config variations that currently reference this tool.",
@@ -33953,7 +33953,7 @@
         "tags": [
           "AgentControl"
         ],
-        "summary": "List agent optimization runs",
+        "summary": "List latest agent optimization result per run",
         "description": "Get the most recent result for each unique run of an agent optimization.",
         "operationId": "ListAgentOptimizationResults",
         "parameters": [
@@ -34222,7 +34222,7 @@
     "/api/v2/projects/{projectKey}/agent-optimizations/{optimizationKey}/runs": {
       "get": {
         "tags": [
-          "AI Configs"
+          "AgentControl"
         ],
         "summary": "List agent optimization runs",
         "description": "Get one run summary per distinct run_id across all versions of an agent optimization config, ordered by created_at DESC.",

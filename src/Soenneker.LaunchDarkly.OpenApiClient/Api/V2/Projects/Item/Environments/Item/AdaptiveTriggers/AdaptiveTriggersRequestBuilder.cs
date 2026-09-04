@@ -176,15 +176,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
             public int? Offset { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("resourceKey")]
             public string? ResourceKey { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("resourceKey")]
             public string ResourceKey { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("resourceKind")]
             public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerResourceKind? ResourceKind { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

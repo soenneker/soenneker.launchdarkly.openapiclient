@@ -32112,7 +32112,7 @@
         },
         "summary": "List AI tool references",
         "tags": [
-          "AI Configs"
+          "AgentControl"
         ]
       }
     },
@@ -34688,7 +34688,7 @@
             "description": "Internal server error"
           }
         },
-        "summary": "List agent optimization runs",
+        "summary": "List latest agent optimization result per run",
         "tags": [
           "AgentControl"
         ]
@@ -34995,7 +34995,7 @@
         },
         "summary": "List agent optimization runs",
         "tags": [
-          "AI Configs"
+          "AgentControl"
         ]
       }
     },
@@ -45902,7 +45902,7 @@
             "description": "The location and content type of related resources"
           },
           "_site": {
-            "description": "Details on how to access the dependent flag in the LaunchDarkly UI",
+            "description": "A link to access the dependent flag in the LaunchDarkly UI. The href is an opaque URL; do not parse or rely on its structure.",
             "example": "{ \"href\": \"/example-project/example-environment/features/example-dependent-flag\", \"type\": \"text/html\" }",
             "$ref": "#/components/schemas/Link"
           }
@@ -45934,7 +45934,7 @@
             "description": "The location and content type of related resources"
           },
           "_site": {
-            "description": "Details on how to access the dependent flag in this environment in the LaunchDarkly UI",
+            "description": "A link to access the dependent flag in this environment in the LaunchDarkly UI. The href is an opaque URL; do not parse or rely on its structure.",
             "example": "{ \"href\": \"/example-project/example-environment/features/example-dependent-flag\", \"type\": \"text/html\" }",
             "$ref": "#/components/schemas/Link"
           }
@@ -45963,7 +45963,7 @@
             "description": "The location and content type of related resources"
           },
           "_site": {
-            "description": "Details on how to access the prerequisite flag in the LaunchDarkly UI",
+            "description": "A link to access the prerequisite flag in the LaunchDarkly UI. The href is an opaque URL; do not parse or rely on its structure.",
             "example": "{ \"href\": \"/example-project/~/features/example-prereq-flag\", \"type\": \"text/html\" }",
             "$ref": "#/components/schemas/Link"
           }
@@ -48269,7 +48269,7 @@
             }
           },
           "_site": {
-            "description": "Details on how to access the flag configuration in the LaunchDarkly UI",
+            "description": "A link to access the flag configuration in the LaunchDarkly UI. The href is an opaque URL; do not parse or rely on its structure. Use resource keys or _links for programmatic navigation.",
             "$ref": "#/components/schemas/Link"
           },
           "_access": {
@@ -52812,7 +52812,7 @@
             "description": "The location and content type of related resources"
           },
           "_site": {
-            "description": "Details on how to access the prerequisite flag in the LaunchDarkly UI",
+            "description": "A link to access the prerequisite flag in the LaunchDarkly UI. The href is an opaque URL; do not parse or rely on its structure.",
             "example": "{ \"href\": \"/example-project/~/features/example-prereq-flag\", \"type\": \"text/html\" }",
             "$ref": "#/components/schemas/Link"
           }
