@@ -26,7 +26,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public bool? ConfirmChanges { get; set; }
         /// <summary>Whether the environment is critical</summary>
         public bool? Critical { get; set; }
-        /// <summary>Enables tracking detailed information for new flags by default</summary>
+        /// <summary>The initial value of trackEvents for flags created in this environment. Does not affect existing flags. Required for Data Export, but doesn&apos;t enable Data Export on its own.</summary>
         public bool? DefaultTrackEvents { get; set; }
         /// <summary>The default time (in minutes) that the PHP SDK can cache feature flag rules locally</summary>
         public int? DefaultTtl { get; set; }
