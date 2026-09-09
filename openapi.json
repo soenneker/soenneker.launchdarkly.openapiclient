@@ -27109,11 +27109,12 @@
           {
             "name": "sdkType",
             "in": "query",
-            "description": "An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.",
+            "description": "Deprecated. This endpoint reports server-side connections only, so `server` is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use `GET /api/v2/usage/streams/{source}`.",
+            "deprecated": true,
             "schema": {
               "type": "string",
               "format": "string",
-              "description": "An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type."
+              "description": "Deprecated. This endpoint reports server-side connections only, so `server` is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use `GET /api/v2/usage/streams/{source}`."
             }
           },
           {
@@ -27129,11 +27130,11 @@
           {
             "name": "groupBy",
             "in": "query",
-            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkType`, `sdkAppId`.",
+            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkAppId`.<br/>`sdkType` is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility.",
             "schema": {
               "type": "string",
               "format": "string",
-              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkType`, `sdkAppId`."
+              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.<br/>Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkAppId`.<br/>`sdkType` is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility."
             }
           },
           {

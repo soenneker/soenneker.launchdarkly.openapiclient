@@ -148,7 +148,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.ServiceConnections
             [QueryParameter("granularity")]
             public string Granularity { get; set; }
 #endif
-            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkType`, `sdkAppId`.</summary>
+            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `connectionType`, `relayVersion`, `sdkName`, `sdkVersion`, `sdkAppId`.&lt;br/&gt;`sdkType` is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("groupBy")]
@@ -198,7 +198,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.ServiceConnections
             [QueryParameter("sdkName")]
             public string SdkName { get; set; }
 #endif
-            /// <summary>An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.</summary>
+            /// <summary>Deprecated. This endpoint reports server-side connections only, so `server` is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use `GET /api/v2/usage/streams/{source}`.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sdkType")]

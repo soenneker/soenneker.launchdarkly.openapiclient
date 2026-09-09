@@ -26775,10 +26775,11 @@
           {
             "name": "sdkType",
             "in": "query",
-            "description": "An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.",
+            "description": "Deprecated. This endpoint reports server-side connections only, so \u0060server\u0060 is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use \u0060GET /api/v2/usage/streams/{source}\u0060.",
+            "deprecated": true,
             "schema": {
               "type": "string",
-              "description": "An SDK type to filter results by. Can be specified multiple times, one query parameter per SDK type.",
+              "description": "Deprecated. This endpoint reports server-side connections only, so \u0060server\u0060 is the only value that returns data and omitting the parameter is equivalent. Any other value returns an empty series. To report client-side connections, use \u0060GET /api/v2/usage/streams/{source}\u0060.",
               "format": "string"
             }
           },
@@ -26795,10 +26796,10 @@
           {
             "name": "groupBy",
             "in": "query",
-            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060connectionType\u0060, \u0060relayVersion\u0060, \u0060sdkName\u0060, \u0060sdkVersion\u0060, \u0060sdkType\u0060, \u0060sdkAppId\u0060.",
+            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060connectionType\u0060, \u0060relayVersion\u0060, \u0060sdkName\u0060, \u0060sdkVersion\u0060, \u0060sdkAppId\u0060.\u003Cbr/\u003E\u0060sdkType\u0060 is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility.",
             "schema": {
               "type": "string",
-              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060connectionType\u0060, \u0060relayVersion\u0060, \u0060sdkName\u0060, \u0060sdkVersion\u0060, \u0060sdkType\u0060, \u0060sdkAppId\u0060.",
+              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060connectionType\u0060, \u0060relayVersion\u0060, \u0060sdkName\u0060, \u0060sdkVersion\u0060, \u0060sdkAppId\u0060.\u003Cbr/\u003E\u0060sdkType\u0060 is no longer offered: this endpoint reports server-side connections only, so grouping by it returns a single group. It is still accepted, for compatibility.",
               "format": "string"
             }
           },
