@@ -91,7 +91,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationsResponse>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edit an existing variation of an AI Config. This creates a new version of the variation.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.Here&apos;s an example:```  {    &quot;messages&quot;: [      {        &quot;role&quot;: &quot;system&quot;,        &quot;content&quot;: &quot;The new message&quot;      }    ]  }```
+        /// Edit an existing variation of an AI Config. This creates a new version of the variation.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.If the variation is in use in a project environment where approval settings require review for this AI Config, this endpoint returns 403 and the change must be submitted through an approval request.Here&apos;s an example:```  {    &quot;messages&quot;: [      {        &quot;role&quot;: &quot;system&quot;,        &quot;content&quot;: &quot;The new message&quot;      }    ]  }```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return requestInfo;
         }
         /// <summary>
-        /// Edit an existing variation of an AI Config. This creates a new version of the variation.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.Here&apos;s an example:```  {    &quot;messages&quot;: [      {        &quot;role&quot;: &quot;system&quot;,        &quot;content&quot;: &quot;The new message&quot;      }    ]  }```
+        /// Edit an existing variation of an AI Config. This creates a new version of the variation.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.If the variation is in use in a project environment where approval settings require review for this AI Config, this endpoint returns 403 and the change must be submitted through an approval request.Here&apos;s an example:```  {    &quot;messages&quot;: [      {        &quot;role&quot;: &quot;system&quot;,        &quot;content&quot;: &quot;The new message&quot;      }    ]  }```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
