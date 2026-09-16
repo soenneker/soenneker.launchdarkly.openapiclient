@@ -41668,6 +41668,13 @@
             },
             "description": "An array of member IDs. These members are notified to review the approval request."
           },
+          "notifyTeamKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of team keys, if teams were specified when the approval request was created. The members of these teams are listed in \u003Ccode\u003EnotifyMemberIds\u003C/code\u003E, resolved when the request was made. Team membership may have changed since then."
+          },
           "appliedDate": {
             "type": "integer",
             "format": "int64"
@@ -45025,6 +45032,13 @@
             },
             "description": "An array of member IDs. These members are notified to review the approval request."
           },
+          "notifyTeamKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of team keys, if teams were specified when the approval request was created. The members of these teams are listed in \u003Ccode\u003EnotifyMemberIds\u003C/code\u003E, resolved when the request was made. Team membership may have changed since then."
+          },
           "appliedDate": {
             "type": "integer",
             "format": "int64"
@@ -46494,6 +46508,13 @@
               "type": "string"
             },
             "description": "An array of member IDs. These members are notified to review the approval request."
+          },
+          "notifyTeamKeys": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of team keys, if teams were specified when the approval request was created. The members of these teams are listed in \u003Ccode\u003EnotifyMemberIds\u003C/code\u003E, resolved when the request was made. Team membership may have changed since then."
           },
           "appliedDate": {
             "type": "integer",

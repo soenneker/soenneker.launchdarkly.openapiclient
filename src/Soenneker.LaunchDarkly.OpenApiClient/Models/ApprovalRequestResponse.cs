@@ -116,6 +116,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> NotifyMemberIds { get; set; }
 #endif
+        /// <summary>An array of team keys, if teams were specified when the approval request was created. The members of these teams are listed in &lt;code&gt;notifyMemberIds&lt;/code&gt;, resolved when the request was made. Team membership may have changed since then.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? NotifyTeamKeys { get; set; }
+#nullable restore
+#else
+        public List<string> NotifyTeamKeys { get; set; }
+#endif
         /// <summary>ID of scheduled change to edit or delete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,6 +210,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "integrationMetadata", n => { IntegrationMetadata = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata.CreateFromDiscriminatorValue); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestResponseLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestResponseLinksProperty.CreateFromDiscriminatorValue); } },
                 { "notifyMemberIds", n => { NotifyMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "notifyTeamKeys", n => { NotifyTeamKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "operatingOnId", n => { OperatingOnId = n.GetStringValue(); } },
                 { "requestorId", n => { RequestorId = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
@@ -234,6 +243,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata>("integrationMetadata", IntegrationMetadata);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestResponseLinksProperty>("_links", Links);
             writer.WriteCollectionOfPrimitiveValues<string>("notifyMemberIds", NotifyMemberIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("notifyTeamKeys", NotifyTeamKeys);
             writer.WriteStringValue("operatingOnId", OperatingOnId);
             writer.WriteStringValue("requestorId", RequestorId);
             writer.WriteStringValue("resourceId", ResourceId);
