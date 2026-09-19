@@ -9304,6 +9304,15 @@
               "description": "A key that corresponds to the third-party integration you are configuring. For example, \u0060mezmo\u0060.",
               "format": "string"
             }
+          },
+          {
+            "name": "includePending",
+            "in": "query",
+            "description": "When \u0060true\u0060, includes pending two-step setup drafts that were created using \u0060/setup\u0060 but are not yet finalized. Defaults to \u0060false\u0060, which returns only active configurations.",
+            "schema": {
+              "type": "boolean",
+              "description": "When \u0060true\u0060, includes pending two-step setup drafts that were created using \u0060/setup\u0060 but are not yet finalized. Defaults to \u0060false\u0060, which returns only active configurations."
+            }
           }
         ],
         "responses": {
@@ -12394,7 +12403,7 @@
           "Environments"
         ],
         "summary": "List environments",
-        "description": "Return a list of environments for the specified project.\n\nBy default, this returns the first 20 environments. Page through this list with the \u0060limit\u0060 parameter and by following the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 links in the \u0060_links\u0060 field that returns. If those links do not appear, the pages they refer to don\u0027t exist. For example, the \u0060first\u0060 and \u0060prev\u0060 links will be missing from the response on the first page, because there is no previous page and you cannot return to the first page when you are already on the first page.\n\n### Filtering environments\n\nLaunchDarkly supports two fields for filters:\n- \u0060query\u0060 is a string that matches against the environments\u0027 names and keys. It is not case sensitive.\n- \u0060tags\u0060 is a \u0060\u002B\u0060-separated list of environment tags. It filters the list of environments that have all of the tags in the list.\n\nFor example, the filter \u0060filter=query:abc,tags:tag-1\u002Btag-2\u0060 matches environments with the string \u0060abc\u0060 in their name or key and also are tagged with \u0060tag-1\u0060 and \u0060tag-2\u0060. The filter is not case-sensitive.\n\nThe documented values for \u0060filter\u0060 query parameters are prior to URL encoding. For example, the \u0060\u002B\u0060 in \u0060filter=tags:tag-1\u002Btag-2\u0060 must be encoded to \u0060%2B\u0060.\n\n### Sorting environments\n\nLaunchDarkly supports the following fields for sorting:\n\n- \u0060createdOn\u0060 sorts by the creation date of the environment.\n- \u0060critical\u0060 sorts by whether the environments are marked as critical.\n- \u0060name\u0060 sorts by environment name.\n\nFor example, \u0060sort=name\u0060 sorts the response by environment name in ascending order.\n",
+        "description": "Return a list of environments for the specified project.\n\nBy default, this returns the first 20 environments. Page through this list with the \u0060limit\u0060 parameter and by following the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 links in the \u0060_links\u0060 field that returns. If those links do not appear, the pages they refer to don\u0027t exist. For example, the \u0060first\u0060 and \u0060prev\u0060 links will be missing from the response on the first page, because there is no previous page and you cannot return to the first page when you are already on the first page.\n\n### Filtering environments\n\nLaunchDarkly supports the following fields for filters:\n- \u0060query\u0060 is a string that matches against the environments\u0027 names and keys. It is not case sensitive.\n- \u0060tags\u0060 is a \u0060\u002B\u0060-separated list of environment tags. It filters the list of environments that have all of the tags in the list.\n- \u0060critical\u0060 is a boolean filter. \u0060critical:true\u0060 returns only environments marked as critical, and \u0060critical:false\u0060 returns only non-critical environments.\n\nFor example, the filter \u0060filter=query:abc,tags:tag-1\u002Btag-2\u0060 matches environments with the string \u0060abc\u0060 in their name or key and also are tagged with \u0060tag-1\u0060 and \u0060tag-2\u0060. The filter is not case-sensitive.\n\nThe documented values for \u0060filter\u0060 query parameters are prior to URL encoding. For example, the \u0060\u002B\u0060 in \u0060filter=tags:tag-1\u002Btag-2\u0060 must be encoded to \u0060%2B\u0060.\n\n### Sorting environments\n\nLaunchDarkly supports the following fields for sorting:\n\n- \u0060createdOn\u0060 sorts by the creation date of the environment.\n- \u0060critical\u0060 sorts by whether the environments are marked as critical.\n- \u0060name\u0060 sorts by environment name.\n\nFor example, \u0060sort=name\u0060 sorts the response by environment name in ascending order.\n",
         "operationId": "GetEnvironmentsByProject",
         "parameters": [
           {

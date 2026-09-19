@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIntegrationKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/integration-configurations/keys/{integrationKey}", pathParameters)
+        public WithIntegrationKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/integration-configurations/keys/{integrationKey}{?includePending*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIntegrationKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/integration-configurations/keys/{integrationKey}", rawUrl)
+        public WithIntegrationKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/integration-configurations/keys/{integrationKey}{?includePending*}", rawUrl)
         {
         }
         /// <summary>
@@ -46,11 +46,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationCollectionRep?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationCollectionRep?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder.WithIntegrationKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationCollectionRep> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationCollectionRep> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder.WithIntegrationKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -106,11 +106,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder.WithIntegrationKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder.WithIntegrationKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -148,6 +148,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.IntegrationConfigurations.Keys.Item.WithIntegrationKeyItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Get all integration configurations with the specified integration key. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).).
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithIntegrationKeyItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>When `true`, includes pending two-step setup drafts that were created using `/setup` but are not yet finalized. Defaults to `false`, which returns only active configurations.</summary>
+            [QueryParameter("includePending")]
+            public bool? IncludePending { get; set; }
         }
     }
 }
