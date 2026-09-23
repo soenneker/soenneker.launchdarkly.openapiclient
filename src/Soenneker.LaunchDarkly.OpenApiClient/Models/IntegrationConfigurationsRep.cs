@@ -98,7 +98,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string RedshiftIAMTrustPolicy { get; set; }
 #endif
-        /// <summary>SQL setup scripts (4 parts) for Redshift Native Experimentation setup. Present only for setup endpoint responses.</summary>
+        /// <summary>SQL setup scripts (4 parts) for Redshift native Experimentation setup. Present on setup endpoint responses and, rehydrated from the persisted config, on active (finalized) Redshift native Experimentation configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RedshiftSetupScripts { get; set; }
