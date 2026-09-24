@@ -173,7 +173,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
             /// <summary>Specifies the maximum number of context instances to return (max: 50, default: 20)</summary>
             [QueryParameter("limit")]
             public long? Limit { get; set; }
-            /// <summary>Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying `ts` for this value, or descending order by specifying `-ts`.</summary>
+            /// <summary>Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a `400` response, so omit it.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]

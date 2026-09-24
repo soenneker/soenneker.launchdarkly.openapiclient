@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.WarehouseExport
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarehouseExportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/warehouse-export{?aggregationType*,destination*,environmentKey*,from*,granularity*,groupBy*,projectKey*,to*}", pathParameters)
+        public WarehouseExportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/warehouse-export{?aggregationType*,destination*,destinationKind*,environmentKey*,from*,granularity*,groupBy*,projectKey*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.WarehouseExport
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarehouseExportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/warehouse-export{?aggregationType*,destination*,environmentKey*,from*,granularity*,groupBy*,projectKey*,to*}", rawUrl)
+        public WarehouseExportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/warehouse-export{?aggregationType*,destination*,destinationKind*,environmentKey*,from*,granularity*,groupBy*,projectKey*,to*}", rawUrl)
         {
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.WarehouseExport
             [QueryParameter("aggregationType")]
             public string AggregationType { get; set; }
 #endif
-            /// <summary>A destination kind to filter results by. Can be specified multiple times, one query parameter per destination kind.&lt;br/&gt;Valid values: `snowflake-v2`, `databricks`, `bigquery`, `redshift`, `clickhouse`.</summary>
+            /// <summary>A Warehouse configuration kind to filter results by. Cannot be combined with `destinationKind`. Existing behavior is unchanged. Can be specified multiple times.&lt;br/&gt;Valid values: `snowflake-v2`, `databricks`, `bigquery`, `redshift`, `clickhouse`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("destination")]
@@ -117,6 +117,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.WarehouseExport
 #else
             [QueryParameter("destination")]
             public string Destination { get; set; }
+#endif
+            /// <summary>A Warehouse configuration kind to filter results by. Cannot be combined with `destination`. Can be specified multiple times.&lt;br/&gt;Valid values: `snowflake-v2`, `databricks`, `bigquery`, `redshift`, `clickhouse`, `s3`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("destinationKind")]
+            public string? DestinationKind { get; set; }
+#nullable restore
+#else
+            [QueryParameter("destinationKind")]
+            public string DestinationKind { get; set; }
 #endif
             /// <summary>An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +158,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.WarehouseExport
             [QueryParameter("granularity")]
             public string Granularity { get; set; }
 #endif
-            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `destination`.</summary>
+            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `destination`, `destinationKind`. The two destination dimensions return the same raw Warehouse configuration kinds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("groupBy")]

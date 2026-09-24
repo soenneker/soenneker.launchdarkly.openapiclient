@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DataExportEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/data-export-events{?aggregationType*,environmentKey*,eventKind*,from*,granularity*,groupBy*,projectKey*,to*}", pathParameters)
+        public DataExportEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/data-export-events{?aggregationType*,destinationKind*,environmentKey*,eventKind*,from*,granularity*,groupBy*,projectKey*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DataExportEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/data-export-events{?aggregationType*,environmentKey*,eventKind*,from*,granularity*,groupBy*,projectKey*,to*}", rawUrl)
+        public DataExportEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/usage/data-export-events{?aggregationType*,destinationKind*,environmentKey*,eventKind*,from*,granularity*,groupBy*,projectKey*,to*}", rawUrl)
         {
         }
         /// <summary>
@@ -108,6 +108,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
             [QueryParameter("aggregationType")]
             public string AggregationType { get; set; }
 #endif
+            /// <summary>A Streaming configuration kind to filter results by. Values preserve raw product identity; `snowflake` is legacy Streaming Snowflake and is distinct from Warehouse `snowflake-v2`. Can be specified multiple times.&lt;br/&gt;Valid values: `kinesis`, `google-pubsub`, `mparticle`, `segment`, `azure-event-hubs`, `snowflake`, `unknown`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("destinationKind")]
+            public string? DestinationKind { get; set; }
+#nullable restore
+#else
+            [QueryParameter("destinationKind")]
+            public string DestinationKind { get; set; }
+#endif
             /// <summary>An environment key to filter results by. If specified, exactly one `projectKey` must be provided. Can be specified multiple times, one query parameter per environment key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,7 +158,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
             [QueryParameter("granularity")]
             public string Granularity { get; set; }
 #endif
-            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: `environmentId`, `eventKind`.</summary>
+            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: `environmentId`, `eventKind`, `destinationKind`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("groupBy")]

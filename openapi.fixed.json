@@ -13307,10 +13307,11 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+            "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
+            "deprecated": true,
             "schema": {
               "type": "string",
-              "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+              "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
               "format": "string"
             }
           },
@@ -13463,10 +13464,11 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+            "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
+            "deprecated": true,
             "schema": {
               "type": "string",
-              "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+              "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
               "format": "string"
             }
           },
@@ -13706,10 +13708,11 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+            "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
+            "deprecated": true,
             "schema": {
               "type": "string",
-              "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+              "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
               "format": "string"
             }
           },
@@ -14015,10 +14018,11 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+            "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
+            "deprecated": true,
             "schema": {
               "type": "string",
-              "description": "Specifies a field by which to sort. LaunchDarkly supports sorting by timestamp in ascending order by specifying \u0060ts\u0060 for this value, or descending order by specifying \u0060-ts\u0060.",
+              "description": "Deprecated. This endpoint does not support sorting. Requests that include this parameter are rejected with a \u0060400\u0060 response, so omit it.",
               "format": "string"
             }
           },
@@ -24694,12 +24698,22 @@
             }
           },
           {
-            "name": "groupBy",
+            "name": "destinationKind",
             "in": "query",
-            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060environmentId\u0060, \u0060eventKind\u0060.",
+            "description": "A Streaming configuration kind to filter results by. Values preserve raw product identity; \u0060snowflake\u0060 is legacy Streaming Snowflake and is distinct from Warehouse \u0060snowflake-v2\u0060. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060kinesis\u0060, \u0060google-pubsub\u0060, \u0060mparticle\u0060, \u0060segment\u0060, \u0060azure-event-hubs\u0060, \u0060snowflake\u0060, \u0060unknown\u0060.",
             "schema": {
               "type": "string",
-              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060environmentId\u0060, \u0060eventKind\u0060.",
+              "description": "A Streaming configuration kind to filter results by. Values preserve raw product identity; \u0060snowflake\u0060 is legacy Streaming Snowflake and is distinct from Warehouse \u0060snowflake-v2\u0060. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060kinesis\u0060, \u0060google-pubsub\u0060, \u0060mparticle\u0060, \u0060segment\u0060, \u0060azure-event-hubs\u0060, \u0060snowflake\u0060, \u0060unknown\u0060.",
+              "format": "string"
+            }
+          },
+          {
+            "name": "groupBy",
+            "in": "query",
+            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060environmentId\u0060, \u0060eventKind\u0060, \u0060destinationKind\u0060.",
+            "schema": {
+              "type": "string",
+              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060environmentId\u0060, \u0060eventKind\u0060, \u0060destinationKind\u0060.",
               "format": "string"
             }
           },
@@ -27754,22 +27768,32 @@
             }
           },
           {
-            "name": "destination",
+            "name": "destinationKind",
             "in": "query",
-            "description": "A destination kind to filter results by. Can be specified multiple times, one query parameter per destination kind.\u003Cbr/\u003EValid values: \u0060snowflake-v2\u0060, \u0060databricks\u0060, \u0060bigquery\u0060, \u0060redshift\u0060, \u0060clickhouse\u0060.",
+            "description": "A Warehouse configuration kind to filter results by. Cannot be combined with \u0060destination\u0060. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060snowflake-v2\u0060, \u0060databricks\u0060, \u0060bigquery\u0060, \u0060redshift\u0060, \u0060clickhouse\u0060, \u0060s3\u0060.",
             "schema": {
               "type": "string",
-              "description": "A destination kind to filter results by. Can be specified multiple times, one query parameter per destination kind.\u003Cbr/\u003EValid values: \u0060snowflake-v2\u0060, \u0060databricks\u0060, \u0060bigquery\u0060, \u0060redshift\u0060, \u0060clickhouse\u0060.",
+              "description": "A Warehouse configuration kind to filter results by. Cannot be combined with \u0060destination\u0060. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060snowflake-v2\u0060, \u0060databricks\u0060, \u0060bigquery\u0060, \u0060redshift\u0060, \u0060clickhouse\u0060, \u0060s3\u0060.",
+              "format": "string"
+            }
+          },
+          {
+            "name": "destination",
+            "in": "query",
+            "description": "A Warehouse configuration kind to filter results by. Cannot be combined with \u0060destinationKind\u0060. Existing behavior is unchanged. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060snowflake-v2\u0060, \u0060databricks\u0060, \u0060bigquery\u0060, \u0060redshift\u0060, \u0060clickhouse\u0060.",
+            "schema": {
+              "type": "string",
+              "description": "A Warehouse configuration kind to filter results by. Cannot be combined with \u0060destinationKind\u0060. Existing behavior is unchanged. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060snowflake-v2\u0060, \u0060databricks\u0060, \u0060bigquery\u0060, \u0060redshift\u0060, \u0060clickhouse\u0060.",
               "format": "string"
             }
           },
           {
             "name": "groupBy",
             "in": "query",
-            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060destination\u0060.",
+            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060destination\u0060, \u0060destinationKind\u0060. The two destination dimensions return the same raw Warehouse configuration kinds.",
             "schema": {
               "type": "string",
-              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060destination\u0060.",
+              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060destination\u0060, \u0060destinationKind\u0060. The two destination dimensions return the same raw Warehouse configuration kinds.",
               "format": "string"
             }
           },
