@@ -56,7 +56,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string FlagPurpose { get; set; }
 #endif
-        /// <summary>The guarded rollout measured rollout Id</summary>
+        /// <summary>The guarded rollout release phase ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

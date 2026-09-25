@@ -22517,7 +22517,7 @@
           "Teams"
         ],
         "summary": "List teams",
-        "description": "Return a list of teams.\n\nBy default, this returns the first 20 teams. Page through this list with the \u0060limit\u0060 parameter and by following the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 links in the \u0060_links\u0060 field that returns. If those links do not appear, the pages they refer to don\u0027t exist. For example, the \u0060first\u0060 and \u0060prev\u0060 links will be missing from the response on the first page, because there is no previous page and you cannot return to the first page when you are already on the first page.\n\n### Filtering teams\n\nLaunchDarkly supports the following fields for filters:\n\n- \u0060query\u0060 is a string that matches against the teams\u0027 names and keys. It is not case-sensitive.\n  - A request with \u0060query:abc\u0060 returns teams with the string \u0060abc\u0060 in their name or key.\n- \u0060nomembers\u0060 is a boolean that filters the list of teams who have 0 members\n  - A request with \u0060nomembers:true\u0060 returns teams that have 0 members\n  - A request with \u0060nomembers:false\u0060 returns teams that have 1 or more members\n\n### Expanding the teams response\nLaunchDarkly supports expanding several fields in the \u0022List teams\u0022 response. By default, these fields are **not** included in the response.\n\nTo expand the response, append the \u0060expand\u0060 query parameter and add a comma-separated list with any of the following fields:\n\n* \u0060members\u0060 includes the total count of members that belong to the team.\n* \u0060roles\u0060 includes a paginated list of the custom roles that you have assigned to the team.\n* \u0060roleAttributes\u0060 includes a list of the role attributes that you have assigned to the team.\n* \u0060projects\u0060 includes a paginated list of the projects that the team has any write access to.\n* \u0060maintainers\u0060 includes a paginated list of the maintainers that you have assigned to the team.\n\nFor example, \u0060expand=members,maintainers\u0060 includes the \u0060members\u0060 and \u0060maintainers\u0060 fields in the response.\n",
+        "description": "Return a list of teams.\n\nBy default, this returns the first 20 teams. Page through this list with the \u0060limit\u0060 parameter and by following the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 links in the \u0060_links\u0060 field that returns. If those links do not appear, the pages they refer to don\u0027t exist. For example, the \u0060first\u0060 and \u0060prev\u0060 links will be missing from the response on the first page, because there is no previous page and you cannot return to the first page when you are already on the first page.\n\n### Filtering teams\n\nLaunchDarkly supports the following fields for filters:\n\n- \u0060query\u0060 is a string that matches against the teams\u0027 names and keys. It is not case-sensitive.\n  - A request with \u0060query:abc\u0060 returns teams with the string \u0060abc\u0060 in their name or key.\n- \u0060nomembers\u0060 is a boolean that filters the list of teams who have 0 members\n  - A request with \u0060nomembers:true\u0060 returns teams that have 0 members\n  - A request with \u0060nomembers:false\u0060 returns teams that have 1 or more members\n\n### Sorting teams\n\nLaunchDarkly supports the following fields for sorting:\n\n- \u0060name\u0060 sorts by team name. It is not case-sensitive.\n- \u0060memberCount\u0060 sorts by the number of members on the team.\n\nBy default, the sort is in ascending order. Use \u0060-\u0060 to sort in descending order. For example, \u0060?sort=name\u0060 sorts the response by team name in ascending order, and \u0060?sort=-memberCount\u0060 sorts by member count from largest to smallest. Combine fields with a comma to break ties, for example \u0060?sort=-memberCount,name\u0060.\n\n### Expanding the teams response\nLaunchDarkly supports expanding several fields in the \u0022List teams\u0022 response. By default, these fields are **not** included in the response.\n\nTo expand the response, append the \u0060expand\u0060 query parameter and add a comma-separated list with any of the following fields:\n\n* \u0060members\u0060 includes the total count of members that belong to the team.\n* \u0060roles\u0060 includes a paginated list of the custom roles that you have assigned to the team.\n* \u0060roleAttributes\u0060 includes a list of the role attributes that you have assigned to the team.\n* \u0060projects\u0060 includes a paginated list of the projects that the team has any write access to.\n* \u0060maintainers\u0060 includes a paginated list of the maintainers that you have assigned to the team.\n\nFor example, \u0060expand=members,maintainers\u0060 includes the \u0060members\u0060 and \u0060maintainers\u0060 fields in the response.\n",
         "operationId": "GetTeams",
         "parameters": [
           {
@@ -22547,6 +22547,16 @@
             "schema": {
               "type": "string",
               "description": "A comma-separated list of filters. Each filter is constructed as \u0060field:value\u0060.",
+              "format": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "A comma-separated list of fields to sort by. Fields are sorted in ascending order by default. Prefix a field with \u0060-\u0060 to sort in descending order. Supported fields: \u0060name\u0060, \u0060memberCount\u0060.",
+            "schema": {
+              "type": "string",
+              "description": "A comma-separated list of fields to sort by. Fields are sorted in ascending order by default. Prefix a field with \u0060-\u0060 to sort in descending order. Supported fields: \u0060name\u0060, \u0060memberCount\u0060.",
               "format": "string"
             }
           },
@@ -24644,7 +24654,7 @@
           "Account usage (beta)"
         ],
         "summary": "Get data export events usage",
-        "description": "Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.",
+        "description": "Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. \u0060groupBy=projectId\u0060 resolves legacy rows through the account\u0027s current environment-to-project mapping and returns \u0060409\u0060 instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.",
         "operationId": "GetDataExportEventsUsage",
         "parameters": [
           {
@@ -24670,10 +24680,10 @@
           {
             "name": "projectKey",
             "in": "query",
-            "description": "A project key to filter results by. Filters to the project\u0027s current environments. Can be used without \u0060environmentKey\u0060 to scope results to whole projects. Can be specified multiple times, one query parameter per project key.",
+            "description": "A project key to filter results by. Without \u0060groupBy=projectId\u0060, filters to the project\u0027s current environments so retained pre-materialization usage remains visible. Can be specified multiple times, one query parameter per project key.",
             "schema": {
               "type": "string",
-              "description": "A project key to filter results by. Filters to the project\u0027s current environments. Can be used without \u0060environmentKey\u0060 to scope results to whole projects. Can be specified multiple times, one query parameter per project key.",
+              "description": "A project key to filter results by. Without \u0060groupBy=projectId\u0060, filters to the project\u0027s current environments so retained pre-materialization usage remains visible. Can be specified multiple times, one query parameter per project key.",
               "format": "string"
             }
           },
@@ -24710,10 +24720,10 @@
           {
             "name": "groupBy",
             "in": "query",
-            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060environmentId\u0060, \u0060eventKind\u0060, \u0060destinationKind\u0060.",
+            "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. \u0060projectId\u0060 requires one or more explicit \u0060projectKey\u0060 filters and is capped at 100 selected projects.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060eventKind\u0060, \u0060destinationKind\u0060.",
             "schema": {
               "type": "string",
-              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.\u003Cbr/\u003EValid values: \u0060environmentId\u0060, \u0060eventKind\u0060, \u0060destinationKind\u0060.",
+              "description": "If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. \u0060projectId\u0060 requires one or more explicit \u0060projectKey\u0060 filters and is capped at 100 selected projects.\u003Cbr/\u003EValid values: \u0060projectId\u0060, \u0060environmentId\u0060, \u0060eventKind\u0060, \u0060destinationKind\u0060.",
               "format": "string"
             }
           },
@@ -24775,6 +24785,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ForbiddenErrorRep"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Project identity is incomplete for the requested range",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataExportProjectIdentityIncompleteErrorRep"
                 }
               }
             }
@@ -25076,10 +25096,10 @@
           {
             "name": "projectKey",
             "in": "query",
-            "description": "A project key to filter results by. Can be specified multiple times, one query parameter per project key.",
+            "description": "A project key to filter results by. Without \u0060environmentKey\u0060, filters to the project\u0027s current environments. Can be specified multiple times, one query parameter per project key.",
             "schema": {
               "type": "string",
-              "description": "A project key to filter results by. Can be specified multiple times, one query parameter per project key.",
+              "description": "A project key to filter results by. Without \u0060environmentKey\u0060, filters to the project\u0027s current environments. Can be specified multiple times, one query parameter per project key.",
               "format": "string"
             }
           },
@@ -25240,10 +25260,10 @@
           {
             "name": "projectKey",
             "in": "query",
-            "description": "A project key to filter results by. Can be specified multiple times, one query parameter per project key.",
+            "description": "A project key to filter results by. Without \u0060environmentKey\u0060, filters by project, including projects that currently have no environments. Can be specified multiple times, one query parameter per project key.",
             "schema": {
               "type": "string",
-              "description": "A project key to filter results by. Can be specified multiple times, one query parameter per project key.",
+              "description": "A project key to filter results by. Without \u0060environmentKey\u0060, filters by project, including projects that currently have no environments. Can be specified multiple times, one query parameter per project key.",
               "format": "string"
             }
           },
@@ -29344,6 +29364,166 @@
           },
           "429": {
             "description": "Rate Limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/usage/data-export-events/projects/ranking": {
+      "get": {
+        "tags": [
+          "Account usage (beta)"
+        ],
+        "summary": "Rank Streaming usage by project",
+        "description": "Rank projects with usage in the requested range by successful Streaming transfers. Legacy rows are attributed through the account\u0027s complete current environment-to-project mapping. If any successful row remains unattributed after resolution, the operation returns \u0060409\u0060 instead of a partial ranking. The result limit does not cap the account-wide project universe or environment mapping. This source-specific operation does not provide Combined or Warehouse ranking.",
+        "operationId": "GetDataExportProjectRanking",
+        "parameters": [
+          {
+            "name": "from",
+            "in": "query",
+            "description": "Inclusive UTC range start in Unix milliseconds.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "description": "Exclusive UTC range end in Unix milliseconds.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "description": "The source scope. Only \u0060streaming\u0060 is supported.",
+            "schema": {
+              "type": "string",
+              "default": "streaming"
+            }
+          },
+          {
+            "name": "dimension",
+            "in": "query",
+            "description": "The ranking dimension. Only \u0060project\u0060 is supported.",
+            "schema": {
+              "type": "string",
+              "default": "project"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "query",
+            "description": "A canonical project key to include. Can be specified multiple times, with at most 100 unique explicit selections; duplicates do not consume the limit. When omitted, all account projects with usage in the requested range are ranked.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "A case-insensitive substring matched against canonical project keys before querying usage. Project names are not searched.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "An opaque cursor returned by a previous response. Cursors are bound to the account and ranking inputs.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum number of ranked projects to return. This bounds response rows and look-ahead, not the account-wide candidate universe.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Bounded project ranking",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataExportProjectRankingRep"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Current account metadata cannot attribute every successful usage row in the requested range to a project",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataExportProjectIdentityIncompleteError"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
             "content": {
               "application/json": {
                 "schema": {
@@ -44077,6 +44257,19 @@
           }
         }
       },
+      "DataExportProjectIdentityIncompleteErrorRep": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "example": "data_export_project_identity_incomplete"
+          },
+          "message": {
+            "type": "string",
+            "example": "Data export project identity is incomplete for the requested range; project-grouped usage is unavailable"
+          }
+        }
+      },
       "DateVersion": {
         "type": "integer"
       },
@@ -44455,7 +44648,7 @@
         "properties": {
           "_id": {
             "type": "string",
-            "description": "The guarded rollout measured rollout Id",
+            "description": "The guarded rollout release phase ID",
             "example": "885ccadf-181b-4a9a-8414-7ad6f7ba2db0"
           },
           "flagKey": {
@@ -54689,6 +54882,206 @@
         "example": {
           "href": "href",
           "type": "type"
+        }
+      },
+      "DataExportProjectIdentityIncompleteError": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Data export project identity is incomplete for the requested range; project ranking is unavailable"
+          },
+          "code": {
+            "$ref": "#/components/schemas/DataExportProjectIdentityIncompleteCode"
+          }
+        },
+        "example": {
+          "code": "data_export_project_identity_incomplete",
+          "message": "Data export project identity is incomplete for the requested range; project ranking is unavailable"
+        }
+      },
+      "DataExportProjectRankingRep": {
+        "required": [
+          "items",
+          "page",
+          "scope"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DataExportProjectRankRep"
+            },
+            "description": "Projects in deterministic rank order."
+          },
+          "page": {
+            "$ref": "#/components/schemas/DataExportProjectRankingPageRep"
+          },
+          "scope": {
+            "$ref": "#/components/schemas/DataExportProjectRankingScopeRep"
+          }
+        },
+        "description": "A bounded Streaming project ranking.",
+        "example": {
+          "scope": {
+            "from": 7,
+            "source": "streaming",
+            "to": 9,
+            "dimension": "project"
+          },
+          "page": {
+            "nextCursor": "nextCursor",
+            "limit": 5,
+            "count": 5,
+            "totalCount": 2
+          },
+          "items": [
+            {
+              "projectKey": "projectKey",
+              "components": {
+                "streaming": 1
+              },
+              "usage": 6,
+              "rank": 0,
+              "projectName": "projectName"
+            },
+            {
+              "projectKey": "projectKey",
+              "components": {
+                "streaming": 1
+              },
+              "usage": 6,
+              "rank": 0,
+              "projectName": "projectName"
+            }
+          ]
+        }
+      },
+      "DataExportProjectRankRep": {
+        "required": [
+          "components",
+          "projectKey",
+          "projectName",
+          "rank",
+          "usage"
+        ],
+        "type": "object",
+        "properties": {
+          "projectKey": {
+            "type": "string",
+            "description": "The canonical project key."
+          },
+          "projectName": {
+            "type": "string",
+            "description": "The current project name."
+          },
+          "rank": {
+            "type": "integer",
+            "description": "The one-based rank within all matching projects."
+          },
+          "usage": {
+            "type": "integer",
+            "description": "Successful Streaming transfers in the requested range.",
+            "format": "int64"
+          },
+          "components": {
+            "$ref": "#/components/schemas/DataExportProjectRankComponentsRep"
+          }
+        },
+        "example": {
+          "projectKey": "projectKey",
+          "components": {
+            "streaming": 1
+          },
+          "usage": 6,
+          "rank": 0,
+          "projectName": "projectName"
+        }
+      },
+      "DataExportProjectRankComponentsRep": {
+        "required": [
+          "streaming"
+        ],
+        "type": "object",
+        "properties": {
+          "streaming": {
+            "type": "integer",
+            "description": "Successful Streaming transfers attributed to this project in the requested range.",
+            "format": "int64"
+          }
+        },
+        "example": {
+          "streaming": 1
+        }
+      },
+      "DataExportProjectRankingPageRep": {
+        "required": [
+          "count",
+          "limit",
+          "totalCount"
+        ],
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "description": "The bounded page size requested."
+          },
+          "count": {
+            "type": "integer",
+            "description": "The number of items on this page."
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "The number of matching projects with usage."
+          },
+          "nextCursor": {
+            "type": "string",
+            "description": "An opaque cursor for the next page."
+          }
+        },
+        "example": {
+          "nextCursor": "nextCursor",
+          "limit": 5,
+          "count": 5,
+          "totalCount": 2
+        }
+      },
+      "DataExportProjectRankingScopeRep": {
+        "required": [
+          "dimension",
+          "from",
+          "source",
+          "to"
+        ],
+        "type": "object",
+        "properties": {
+          "source": {
+            "$ref": "#/components/schemas/StreamingSource"
+          },
+          "dimension": {
+            "$ref": "#/components/schemas/ProjectDimension"
+          },
+          "from": {
+            "type": "integer",
+            "description": "Inclusive UTC range start in Unix milliseconds.",
+            "format": "int64"
+          },
+          "to": {
+            "type": "integer",
+            "description": "Exclusive UTC range end in Unix milliseconds.",
+            "format": "int64"
+          }
+        },
+        "example": {
+          "from": 7,
+          "source": "streaming",
+          "to": 9,
+          "dimension": "project"
         }
       },
       "QuickStats": {
@@ -88123,6 +88516,59 @@
             {
               "value": "gitlab",
               "name": "Gitlab"
+            }
+          ]
+        }
+      },
+      "DataExportProjectIdentityIncompleteCode": {
+        "enum": [
+          "data_export_project_identity_incomplete"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "DataExportProjectIdentityIncompleteCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "data_export_project_identity_incomplete",
+              "name": "DataExportProjectIdentityIncomplete"
+            }
+          ]
+        }
+      },
+      "StreamingSource": {
+        "enum": [
+          "streaming"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The included usage source.",
+        "x-ms-enum": {
+          "name": "StreamingSource",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "streaming",
+              "name": "Streaming"
+            }
+          ]
+        }
+      },
+      "ProjectDimension": {
+        "enum": [
+          "project"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The ranked dimension.",
+        "x-ms-enum": {
+          "name": "ProjectDimension",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "project",
+              "name": "Project"
             }
           ]
         }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.Projects;
 using Soenneker.LaunchDarkly.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DataExportEventsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The projects property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.Projects.ProjectsRequestBuilder Projects
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.DataExportEventsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -34,7 +40,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
         {
         }
         /// <summary>
-        /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+        /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. `groupBy=projectId` resolves legacy rows through the account&apos;s current environment-to-project mapping and returns `409` instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -42,6 +48,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.InvalidRequestErrorRep">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportProjectIdentityIncompleteErrorRep">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusServiceUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,13 +66,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
                 { "400", global::Soenneker.LaunchDarkly.OpenApiClient.Models.InvalidRequestErrorRep.CreateFromDiscriminatorValue },
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportProjectIdentityIncompleteErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusServiceUnavailable.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+        /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. `groupBy=projectId` resolves legacy rows through the account&apos;s current environment-to-project mapping and returns `409` instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.DataExportEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days.
+        /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. `groupBy=projectId` resolves legacy rows through the account&apos;s current environment-to-project mapping and returns `409` instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DataExportEventsRequestBuilderGetQueryParameters 
@@ -158,7 +166,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
             [QueryParameter("granularity")]
             public string Granularity { get; set; }
 #endif
-            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension.&lt;br/&gt;Valid values: `environmentId`, `eventKind`, `destinationKind`.</summary>
+            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. `projectId` requires one or more explicit `projectKey` filters and is capped at 100 selected projects.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `eventKind`, `destinationKind`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("groupBy")]
@@ -168,7 +176,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
             [QueryParameter("groupBy")]
             public string GroupBy { get; set; }
 #endif
-            /// <summary>A project key to filter results by. Filters to the project&apos;s current environments. Can be used without `environmentKey` to scope results to whole projects. Can be specified multiple times, one query parameter per project key.</summary>
+            /// <summary>A project key to filter results by. Without `groupBy=projectId`, filters to the project&apos;s current environments so retained pre-materialization usage remains visible. Can be specified multiple times, one query parameter per project key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("projectKey")]

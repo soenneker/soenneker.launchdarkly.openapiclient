@@ -158,7 +158,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.ExperimentationKeys
             [QueryParameter("groupBy")]
             public string GroupBy { get; set; }
 #endif
-            /// <summary>A project key to filter results by. Can be specified multiple times, one query parameter per project key.</summary>
+            /// <summary>A project key to filter results by. Without `environmentKey`, filters by project, including projects that currently have no environments. Can be specified multiple times, one query parameter per project key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("projectKey")]
