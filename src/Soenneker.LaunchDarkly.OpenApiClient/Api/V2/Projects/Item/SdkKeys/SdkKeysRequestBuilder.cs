@@ -122,7 +122,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.SdkKeys
             /// <summary>The number of SDK keys to skip. Used for pagination.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-            /// <summary>A sort to apply to the list of SDK keys. Supported field: `createdAt`. Prefix the field with `-` to sort in descending order (for example, `-createdAt`).</summary>
+            /// <summary>A sort to apply to the list of SDK keys. Supported fields: `createdAt` and `environmentKey`. Prefix `createdAt` with `-` to sort in descending order (for example, `-createdAt`). `environmentKey` orders keys by environment key ascending, then by creation time ascending within each environment, so each page is environment-contiguous.</summary>
             [QueryParameter("sort")]
             public global::Soenneker.LaunchDarkly.OpenApiClient.Models.GetProjectSdkKeysSortParameter? Sort { get; set; }
         }

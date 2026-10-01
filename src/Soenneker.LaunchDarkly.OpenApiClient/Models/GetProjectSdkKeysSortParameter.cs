@@ -16,5 +16,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         #pragma warning disable CS1591
         CreatedAt1,
         #pragma warning restore CS1591
+        [EnumMember(Value = "environmentKey")]
+        #pragma warning disable CS1591
+        EnvironmentKey,
+        #pragma warning restore CS1591
     }
 }

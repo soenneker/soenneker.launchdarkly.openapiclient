@@ -24828,7 +24828,7 @@
           "Account usage (beta)"
         ],
         "summary": "Get evaluations usage",
-        "description": "Get time-series arrays of the number of times a flag is evaluated, broken down by the variation that resulted from that evaluation. The granularity of the data depends on the age of the data requested. If the requested range is within the past two hours, minutely data is returned. If it is within the last two days, hourly data is returned. Otherwise, daily data is returned.",
+        "description": "Get time-series arrays of the number of times a flag is evaluated, broken down by the variation that resulted from that evaluation. The granularity of the returned data depends on the length of the requested time range: ranges shorter than two hours return minutely data, ranges shorter than two days return hourly data, and ranges of two days or longer return daily data. Minutely data is retained for 70 days; a range shorter than two hours that starts before then is returned at hourly granularity instead, with the start of the range widened to the containing hour. Ranges that predate available data return an empty series list. If a flag has served many distinct variation values in the requested range, the least recently seen values may be aggregated into a single additional series labeled \u0022Other Variations\u0022.",
         "operationId": "GetEvaluationsUsage",
         "parameters": [
           {
@@ -37433,7 +37433,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "A sort to apply to the list of SDK keys. Supported field: \u0060createdAt\u0060. Prefix the field with \u0060-\u0060 to sort in descending order (for example, \u0060-createdAt\u0060).",
+            "description": "A sort to apply to the list of SDK keys. Supported fields: \u0060createdAt\u0060 and \u0060environmentKey\u0060. Prefix \u0060createdAt\u0060 with \u0060-\u0060 to sort in descending order (for example, \u0060-createdAt\u0060). \u0060environmentKey\u0060 orders keys by environment key ascending, then by creation time ascending within each environment, so each page is environment-contiguous.",
             "schema": {
               "$ref": "#/components/schemas/GetProjectSdkKeysSortParameter"
             }
@@ -89661,7 +89661,8 @@
       "GetProjectSdkKeysSortParameter": {
         "enum": [
           "createdAt",
-          "-createdAt"
+          "-createdAt",
+          "environmentKey"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -89676,6 +89677,10 @@
             {
               "value": "-createdAt",
               "name": "CreatedAt1"
+            },
+            {
+              "value": "environmentKey",
+              "name": "EnvironmentKey"
             }
           ]
         }
