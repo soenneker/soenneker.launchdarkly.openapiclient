@@ -42,7 +42,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
         /// <summary>
         /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. `groupBy=projectId` resolves legacy rows through the account&apos;s current environment-to-project mapping and returns `409` instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.InvalidRequestErrorRep">When receiving a 400 status code</exception>
@@ -53,11 +53,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusServiceUnavailable">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.DataExportEventsRequestBuilder.DataExportEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.DataExportEventsRequestBuilder.DataExportEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.DataExportEventsRequestBuilder.DataExportEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents.DataExportEventsRequestBuilder.DataExportEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,7 +70,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusServiceUnavailable.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a time series array showing the number of data export events from your account. The supported granularity varies by aggregation type. The maximum time range is 365 days. `groupBy=projectId` resolves legacy rows through the account&apos;s current environment-to-project mapping and returns `409` instead of a partial series when any successful row remains unattributed. Plain project filtering keeps its current-environment compatibility behavior.
@@ -166,7 +166,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
             [QueryParameter("granularity")]
             public string Granularity { get; set; }
 #endif
-            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. `projectId` requires one or more explicit `projectKey` filters and is capped at 100 selected projects.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `eventKind`, `destinationKind`.</summary>
+            /// <summary>If specified, returns data for each distinct value of the given field. Can be specified multiple times to group data by multiple dimensions, one query parameter per dimension. `projectId` requires one or more explicit `projectKey` filters and is capped at 100 selected projects. `destinationId` returns one series per streaming destination with `destinationName` metadata, plus `destinationViewable` when the destination is in the current configuration. The destination&apos;s own kind is added as `destinationKind` only when you can view the destination. A kind requested with `groupBy=destinationKind` is returned unchanged. A destination ID absent from the current configuration is named `Unknown historical destination`. Destinations you cannot view are reported together in one `Unknown destination` series with `destinationId` `hidden` and `destinationViewable` `false`, one per combination of the other requested dimensions, such as `destinationKind`. Usage without a destination ID is one series with an empty `destinationId` named `Unattributed`.&lt;br/&gt;Valid values: `projectId`, `environmentId`, `eventKind`, `destinationKind`, `destinationId`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("groupBy")]

@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Destinations.Item.Item.Ite
         {
         }
         /// <summary>
-        /// Delete a Data Export destination by ID.
+        /// Delete a Data Export destination by ID. The destination must belong to the environment in the URL. Otherwise, the response is 404.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +62,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Destinations.Item.Item.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a single Data Export destination by ID.
+        /// Get a single Data Export destination by ID. The destination must belong to the environment in the URL. Otherwise, the response is 404.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Destination"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +91,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Destinations.Item.Item.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Destination>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.Destination.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a Data Export destination. Updating a destination uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) or [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).
+        /// Update a Data Export destination. The destination must belong to the environment in the URL. Otherwise, the response is 404. Updating a destination uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) or [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Destination"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +126,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Destinations.Item.Item.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Destination>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.Destination.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a Data Export destination by ID.
+        /// Delete a Data Export destination by ID. The destination must belong to the environment in the URL. Otherwise, the response is 404.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Destinations.Item.Item.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get a single Data Export destination by ID.
+        /// Get a single Data Export destination by ID. The destination must belong to the environment in the URL. Otherwise, the response is 404.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Destinations.Item.Item.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update a Data Export destination. Updating a destination uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) or [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).
+        /// Update a Data Export destination. The destination must belong to the environment in the URL. Otherwise, the response is 404. Updating a destination uses a [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) or [JSON merge patch](https://datatracker.ietf.org/doc/html/rfc7386) representation of the desired changes. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

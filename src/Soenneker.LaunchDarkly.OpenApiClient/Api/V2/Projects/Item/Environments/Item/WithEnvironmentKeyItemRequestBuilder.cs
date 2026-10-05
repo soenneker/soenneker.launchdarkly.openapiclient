@@ -6,7 +6,6 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.AdaptiveTriggers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ApiKey;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextAttributes;
-using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextInstances;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Experiments;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Flags;
@@ -43,11 +42,6 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextAttributes.ContextAttributesRequestBuilder ContextAttributes
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextAttributes.ContextAttributesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The contextInstances property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextInstances.ContextInstancesRequestBuilder ContextInstances
-        {
-            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextInstances.ContextInstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contexts property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.ContextsRequestBuilder Contexts

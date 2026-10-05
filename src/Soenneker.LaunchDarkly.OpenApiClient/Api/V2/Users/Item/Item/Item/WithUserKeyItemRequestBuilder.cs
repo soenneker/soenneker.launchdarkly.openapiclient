@@ -41,7 +41,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item
         {
         }
         /// <summary>
-        /// &gt; ### Use contexts instead&gt;&gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get context instances](https://launchdarkly.com/docs/api/contexts/get-context-instances) instead of this endpoint.Get a user by key. The `user` object contains all attributes sent in `variation` calls for that key.
+        /// &gt; ### Use contexts instead&gt;&gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get contexts](https://launchdarkly.com/docs/api/contexts/get-contexts) instead of this endpoint.Get a user by key. The `user` object contains all attributes sent in `variation` calls for that key.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecord>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; ### Use contexts instead&gt;&gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get context instances](https://launchdarkly.com/docs/api/contexts/get-context-instances) instead of this endpoint.Get a user by key. The `user` object contains all attributes sent in `variation` calls for that key.
+        /// &gt; ### Use contexts instead&gt;&gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Get contexts](https://launchdarkly.com/docs/api/contexts/get-contexts) instead of this endpoint.Get a user by key. The `user` object contains all attributes sent in `variation` calls for that key.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

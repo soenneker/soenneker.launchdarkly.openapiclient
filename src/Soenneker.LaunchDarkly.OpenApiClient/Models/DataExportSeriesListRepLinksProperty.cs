@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     /// <summary>
-    /// The context, including its kind and attributes
+    /// The location and content type of related resources
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ContextInstanceRecordContext : IAdditionalDataHolder, IParsable
+    public partial class DataExportSeriesListRepLinksProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceRecordContext"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty"/> and sets the default values.
         /// </summary>
-        public ContextInstanceRecordContext()
+        public DataExportSeriesListRepLinksProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceRecordContext"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceRecordContext CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceRecordContext();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

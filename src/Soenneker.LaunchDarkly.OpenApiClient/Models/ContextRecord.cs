@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An identifier representing the application where the LaunchDarkly SDK is running</summary>
+        /// <summary>An identifier representing the application where the LaunchDarkly SDK is running. Populated when you get contexts by kind and key. Empty in search results, which return each context&apos;s most recently reported data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationId { get; set; }
@@ -30,7 +30,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string ApplicationId { get; set; }
 #endif
-        /// <summary>The total number of associated contexts. Associated contexts are contexts that have appeared in the same context instance, that is, they were part of the same flag evaluation.</summary>
+        /// <summary>Deprecated. This value is always 1.</summary>
+        [Obsolete("")]
         public int? AssociatedContexts { get; set; }
         /// <summary>The context, including its kind and attributes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
