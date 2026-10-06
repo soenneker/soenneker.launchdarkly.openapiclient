@@ -94,6 +94,10 @@
       "description": "> ### Data Export is an add-on feature\n>\n> Data Export is available as an add-on for customers on a Foundation or Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nData Export provides a real-time export of raw analytics data, including feature flag requests, analytics events, custom events, and more.\n\nData Export destinations are locations that receive exported data. The Data Export destinations API allows you to configure destinations so that your data can be exported.\n\nSeveral of the endpoints in the Data Export destinations API require a Data Export destination ID. The Data Export destination ID is returned as part of the [Create a Data Export destination](https://launchdarkly.com/docs/api/data-export-destinations/post-destination) and [List destinations](https://launchdarkly.com/docs/api/data-export-destinations/get-destinations) responses. It is the `_id` field, or the `_id` field of each element in the `items` array.\n\nTo learn more, read [Data Export](https://launchdarkly.com/docs/integrations/data-export).\n"
     },
     {
+      "name": "Environment releases (beta)",
+      "description": "> ### This feature is in beta\n>\n> To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n>\n> Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nEnvironment releases progressively or guardedly roll out a flag targeting change in one environment. Use the environment releases API to list and retrieve releases, start a release, or stop an active release.\n"
+    },
+    {
       "name": "Environments",
       "description": "Environments allow you to maintain separate rollout rules in different contexts, from local development to QA, staging, and production. With the LaunchDarkly Environments API, you can programmatically list, create, and manage environments. To learn more, read [Environments](https://launchdarkly.com/docs/home/account/environment).\n"
     },
@@ -42367,6 +42371,11 @@
           "defaultApiVersion": {
             "type": "integer",
             "description": "The default API version for this token"
+          },
+          "expiry": {
+            "description": "Timestamp of when the access token should expire, as a Unix epoch time in milliseconds. Omit for a token that does not expire.",
+            "example": "1735689600000",
+            "$ref": "#/components/schemas/UnixMillis"
           }
         }
       },
@@ -45138,7 +45147,7 @@
             }
           },
           "basePermissions": {
-            "description": "Base permissions to use for this role. Defaults to no_access (older roles defaulted to reader). Recommended to set this to no_access in all cases.",
+            "description": "When this field is omitted, reader is stored, and it grants read access across every project in addition to the policy. A value of no_access grants only what the policy allows.",
             "example": "reader",
             "$ref": "#/components/schemas/RoleType"
           },
@@ -45191,7 +45200,7 @@
             "$ref": "#/components/schemas/StatementPostList"
           },
           "basePermissions": {
-            "description": "Base permissions to use for this role. Defaults to no_access (older roles defaulted to reader). Recommended to set this to no_access in all cases.",
+            "description": "When this field is omitted, reader is stored, and it grants read access across every project in addition to the policy. A value of no_access grants only what the policy allows.",
             "example": "reader",
             "enum": [
               "reader",
@@ -45993,7 +46002,7 @@
             "description": "The location and content type of related resources",
             "example": {
               "self": {
-                "href": "/internal/projects/my-project/environments/production/automated-releases/885ccadf-181b-4a9a-8414-7ad6f7ba2db0",
+                "href": "/internal/projects/my-project/flags/my-flag/environments/production/releases/1b2a3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
                 "type": "application/json"
               }
             }
@@ -64050,7 +64059,7 @@
           "markdown": "markdown",
           "maintainerTeamKey": "example-team-key",
           "description": "description",
-          "key": "key",
+          "key": "pdf-extraction",
           "tags": [
             "tags",
             "tags"
@@ -64058,6 +64067,8 @@
         },
         "properties": {
           "key": {
+            "description": "A unique key for the agent skill. The key must match `^[a-z0-9][a-z0-9-]*$`: it can only contain lowercase letters, numbers, or '-', and must start with a lowercase letter or number. The key can be at most 64 characters, and Windows reserved file names (`con`, `prn`, `aux`, `nul`, `com0`-`com9`, and `lpt0`-`lpt9`) aren't allowed.",
+            "example": "pdf-extraction",
             "type": "string"
           },
           "name": {

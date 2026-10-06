@@ -41134,6 +41134,10 @@
           "defaultApiVersion": {
             "type": "integer",
             "description": "The default API version for this token"
+          },
+          "expiry": {
+            "type": "integer",
+            "format": "int64"
           }
         }
       },
@@ -60237,7 +60241,9 @@
         "type": "object",
         "properties": {
           "key": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique key for the agent skill. The key must match \u0060^[a-z0-9][a-z0-9-]*$\u0060: it can only contain lowercase letters, numbers, or \u0027-\u0027, and must start with a lowercase letter or number. The key can be at most 64 characters, and Windows reserved file names (\u0060con\u0060, \u0060prn\u0060, \u0060aux\u0060, \u0060nul\u0060, \u0060com0\u0060-\u0060com9\u0060, and \u0060lpt0\u0060-\u0060lpt9\u0060) aren\u0027t allowed.",
+            "example": "pdf-extraction"
           },
           "name": {
             "type": "string"
@@ -60270,7 +60276,7 @@
           "markdown": "markdown",
           "maintainerTeamKey": "example-team-key",
           "description": "description",
-          "key": "key",
+          "key": "pdf-extraction",
           "tags": [
             "tags",
             "tags"
@@ -81601,7 +81607,7 @@
         "description": "The location and content type of related resources",
         "example": {
           "self": {
-            "href": "/internal/projects/my-project/environments/production/automated-releases/885ccadf-181b-4a9a-8414-7ad6f7ba2db0",
+            "href": "/internal/projects/my-project/flags/my-flag/environments/production/releases/1b2a3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
             "type": "application/json"
           }
         }
@@ -89323,6 +89329,10 @@
     {
       "name": "Data Export destinations",
       "description": "\u003E ### Data Export is an add-on feature\n\u003E\n\u003E Data Export is available as an add-on for customers on a Foundation or Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nData Export provides a real-time export of raw analytics data, including feature flag requests, analytics events, custom events, and more.\n\nData Export destinations are locations that receive exported data. The Data Export destinations API allows you to configure destinations so that your data can be exported.\n\nSeveral of the endpoints in the Data Export destinations API require a Data Export destination ID. The Data Export destination ID is returned as part of the [Create a Data Export destination](https://launchdarkly.com/docs/api/data-export-destinations/post-destination) and [List destinations](https://launchdarkly.com/docs/api/data-export-destinations/get-destinations) responses. It is the \u0060_id\u0060 field, or the \u0060_id\u0060 field of each element in the \u0060items\u0060 array.\n\nTo learn more, read [Data Export](https://launchdarkly.com/docs/integrations/data-export).\n"
+    },
+    {
+      "name": "Environment releases (beta)",
+      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nEnvironment releases progressively or guardedly roll out a flag targeting change in one environment. Use the environment releases API to list and retrieve releases, start a release, or stop an active release.\n"
     },
     {
       "name": "Environments",

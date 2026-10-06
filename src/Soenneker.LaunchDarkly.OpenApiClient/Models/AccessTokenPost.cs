@@ -32,6 +32,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The expiry property</summary>
+        public long? Expiry { get; set; }
         /// <summary>A JSON array of statements represented as JSON objects with three attributes: effect, resources, actions. May be used in place of a role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "customRoleIds", n => { CustomRoleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultApiVersion", n => { DefaultApiVersion = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "expiry", n => { Expiry = n.GetLongValue(); } },
                 { "inlineRole", n => { InlineRole = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole>(); } },
@@ -96,6 +99,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("customRoleIds", CustomRoleIds);
             writer.WriteIntValue("defaultApiVersion", DefaultApiVersion);
             writer.WriteStringValue("description", Description);
+            writer.WriteLongValue("expiry", Expiry);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost>("inlineRole", InlineRole);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole>("role", Role);

@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>A unique key for the agent skill. The key must match `^[a-z0-9][a-z0-9-]*$`: it can only contain lowercase letters, numbers, or &apos;-&apos;, and must start with a lowercase letter or number. The key can be at most 64 characters, and Windows reserved file names (`con`, `prn`, `aux`, `nul`, `com0`-`com9`, and `lpt0`-`lpt9`) aren&apos;t allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
