@@ -14,6 +14,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowUnknownValue property</summary>
+        public bool? AllowUnknownValue { get; set; }
         /// <summary>The endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +24,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Endpoint Endpoint { get; set; }
 #endif
+        /// <summary>The filters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionFiltersItems>? Filters { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionFiltersItems> Filters { get; set; }
+#endif
         /// <summary>The parser property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,6 +39,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser Parser { get; set; }
+#endif
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsSource? Source { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsSource Source { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptions"/> and sets the default values.
@@ -55,8 +73,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowUnknownValue", n => { AllowUnknownValue = n.GetBoolValue(); } },
                 { "endpoint", n => { Endpoint = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Endpoint>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Endpoint.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionFiltersItems>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionFiltersItems.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parser", n => { Parser = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsSource>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +87,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowUnknownValue", AllowUnknownValue);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Endpoint>("endpoint", Endpoint);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionFiltersItems>("filters", Filters);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser>("parser", Parser);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsSource>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
