@@ -62,7 +62,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchModelProperty Model { get; set; }
 #endif
-        /// <summary>The modelConfigKey property</summary>
+        /// <summary>The key that GET /api/v2/projects/{projectKey}/ai-configs/model-configs returns for themodel config. Do not use a custom model config&apos;s ID, which is the provider model ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModelConfigKey { get; set; }

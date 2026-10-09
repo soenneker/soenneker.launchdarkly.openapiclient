@@ -38,6 +38,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>The registered name of the OAuth client the access token was issued to. Only present for OAuth access tokens, and omitted when the client&apos;s name can&apos;t be resolved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientName { get; set; }
+#nullable restore
+#else
+        public string ClientName { get; set; }
+#endif
         /// <summary>The environmentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +148,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "accountId", n => { AccountId = n.GetStringValue(); } },
                 { "authKind", n => { AuthKind = n.GetStringValue(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "clientName", n => { ClientName = n.GetStringValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "environmentName", n => { EnvironmentName = n.GetStringValue(); } },
                 { "memberId", n => { MemberId = n.GetStringValue(); } },
@@ -162,6 +171,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("authKind", AuthKind);
             writer.WriteStringValue("clientId", ClientId);
+            writer.WriteStringValue("clientName", ClientName);
             writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("environmentName", EnvironmentName);
             writer.WriteStringValue("memberId", MemberId);

@@ -42405,6 +42405,10 @@
           "clientId": {
             "type": "string"
           },
+          "clientName": {
+            "type": "string",
+            "description": "The registered name of the OAuth client the access token was issued to. Only present for OAuth access tokens, and omitted when the client\u0027s name can\u0027t be resolved."
+          },
           "tokenName": {
             "type": "string"
           },
@@ -47465,6 +47469,10 @@
           "redshiftIAMTrustPolicy": {
             "type": "string",
             "description": "IAM trust policy JSON for the customer\u0027s Redshift IAM role. Present only for setup endpoint responses."
+          },
+          "clickHouseSetupScript": {
+            "type": "string",
+            "description": "SQL setup script for ClickHouse native Experimentation. On setup endpoint responses it also creates the experimentation user with the submitted password. When the two-step setup flow is enabled, it is rehydrated from the persisted config on other responses with only the grants, never the password."
           },
           "_maintainerId": {
             "type": "string",
@@ -54891,7 +54899,7 @@
                     }
                   },
                   "description": "description",
-                  "modelConfigKey": "modelConfigKey",
+                  "modelConfigKey": "OpenAI.gpt-4.1",
                   "judgingConfigKeys": [
                     "judgingConfigKeys",
                     "judgingConfigKeys"
@@ -54969,7 +54977,7 @@
                     }
                   },
                   "description": "description",
-                  "modelConfigKey": "modelConfigKey",
+                  "modelConfigKey": "OpenAI.gpt-4.1",
                   "judgingConfigKeys": [
                     "judgingConfigKeys",
                     "judgingConfigKeys"
@@ -55185,7 +55193,7 @@
                     }
                   },
                   "description": "description",
-                  "modelConfigKey": "modelConfigKey",
+                  "modelConfigKey": "OpenAI.gpt-4.1",
                   "judgingConfigKeys": [
                     "judgingConfigKeys",
                     "judgingConfigKeys"
@@ -55263,7 +55271,7 @@
                     }
                   },
                   "description": "description",
-                  "modelConfigKey": "modelConfigKey",
+                  "modelConfigKey": "OpenAI.gpt-4.1",
                   "judgingConfigKeys": [
                     "judgingConfigKeys",
                     "judgingConfigKeys"
@@ -55566,7 +55574,7 @@
                 }
               },
               "description": "description",
-              "modelConfigKey": "modelConfigKey",
+              "modelConfigKey": "OpenAI.gpt-4.1",
               "judgingConfigKeys": [
                 "judgingConfigKeys",
                 "judgingConfigKeys"
@@ -55644,7 +55652,7 @@
                 }
               },
               "description": "description",
-              "modelConfigKey": "modelConfigKey",
+              "modelConfigKey": "OpenAI.gpt-4.1",
               "judgingConfigKeys": [
                 "judgingConfigKeys",
                 "judgingConfigKeys"
@@ -55775,7 +55783,7 @@
             },
             "instructions": "instructions",
             "description": "description",
-            "modelConfigKey": "modelConfigKey",
+            "modelConfigKey": "OpenAI.gpt-4.1",
             "tools": [
               {
                 "version": 6,
@@ -55930,7 +55938,9 @@
             "$ref": "#/components/schemas/AiConfigVariationModelProperty"
           },
           "modelConfigKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The key of the model config that this variation uses, not the provider model ID. Absent\nwhen the variation does not use a model config.\n",
+            "example": "OpenAI.gpt-4.1"
           },
           "modelConfigVersion": {
             "type": "integer",
@@ -56004,7 +56014,7 @@
             }
           },
           "description": "description",
-          "modelConfigKey": "modelConfigKey",
+          "modelConfigKey": "OpenAI.gpt-4.1",
           "judgingConfigKeys": [
             "judgingConfigKeys",
             "judgingConfigKeys"
@@ -56103,7 +56113,7 @@
                 }
               },
               "description": "description",
-              "modelConfigKey": "modelConfigKey",
+              "modelConfigKey": "OpenAI.gpt-4.1",
               "judgingConfigKeys": [
                 "judgingConfigKeys",
                 "judgingConfigKeys"
@@ -56181,7 +56191,7 @@
                 }
               },
               "description": "description",
-              "modelConfigKey": "modelConfigKey",
+              "modelConfigKey": "OpenAI.gpt-4.1",
               "judgingConfigKeys": [
                 "judgingConfigKeys",
                 "judgingConfigKeys"
@@ -56275,7 +56285,9 @@
             "type": "string"
           },
           "modelConfigKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The key that GET /api/v2/projects/{projectKey}/ai-configs/model-configs returns for the\nmodel config. Do not use a custom model config\u0027s ID, which is the provider model ID.\n",
+            "example": "OpenAI.gpt-4.1"
           },
           "modelConfigVersion": {
             "minimum": 1,
@@ -56325,7 +56337,7 @@
           },
           "instructions": "instructions",
           "description": "description",
-          "modelConfigKey": "modelConfigKey",
+          "modelConfigKey": "OpenAI.gpt-4.1",
           "tools": [
             {
               "version": 6,
@@ -56395,7 +56407,9 @@
             "$ref": "#/components/schemas/AiConfigVariationPatchModelProperty"
           },
           "modelConfigKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The key that GET /api/v2/projects/{projectKey}/ai-configs/model-configs returns for the\nmodel config. Do not use a custom model config\u0027s ID, which is the provider model ID.\n",
+            "example": "OpenAI.gpt-4.1"
           },
           "modelConfigVersion": {
             "minimum": 1,
@@ -56456,7 +56470,7 @@
           "instructions": "instructions",
           "description": "description",
           "published": true,
-          "modelConfigKey": "modelConfigKey",
+          "modelConfigKey": "OpenAI.gpt-4.1",
           "tools": [
             {
               "version": 6,

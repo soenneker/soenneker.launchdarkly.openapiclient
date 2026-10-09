@@ -30,6 +30,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep CapabilityConfig { get; set; }
 #endif
+        /// <summary>SQL setup script for ClickHouse native Experimentation. On setup endpoint responses it also creates the experimentation user with the submitted password. When the two-step setup flow is enabled, it is rehydrated from the persisted config on other responses with only the grants, never the password.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickHouseSetupScript { get; set; }
+#nullable restore
+#else
+        public string ClickHouseSetupScript { get; set; }
+#endif
         /// <summary>Details on configuration for an integration of this type. Refer to the &lt;code&gt;formVariables&lt;/code&gt; field in the corresponding &lt;code&gt;manifest.json&lt;/code&gt; for a full list of fields for each integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +157,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access.CreateFromDiscriminatorValue); } },
                 { "capabilityConfig", n => { CapabilityConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep.CreateFromDiscriminatorValue); } },
+                { "clickHouseSetupScript", n => { ClickHouseSetupScript = n.GetStringValue(); } },
                 { "configValues", n => { ConfigValues = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty.CreateFromDiscriminatorValue); } },
                 { "_createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -173,6 +182,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>("_access", Access);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep>("capabilityConfig", CapabilityConfig);
+            writer.WriteStringValue("clickHouseSetupScript", ClickHouseSetupScript);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty>("configValues", ConfigValues);
             writer.WriteLongValue("_createdAt", CreatedAt);
             writer.WriteBoolValue("enabled", Enabled);
