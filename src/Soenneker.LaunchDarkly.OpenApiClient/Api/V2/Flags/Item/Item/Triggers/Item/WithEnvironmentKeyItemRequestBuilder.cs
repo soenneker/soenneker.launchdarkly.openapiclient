@@ -84,6 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.I
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.MethodNotAllowedErrorRep">When receiving a 405 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +103,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.I
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
+                { "405", global::Soenneker.LaunchDarkly.OpenApiClient.Models.MethodNotAllowedErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

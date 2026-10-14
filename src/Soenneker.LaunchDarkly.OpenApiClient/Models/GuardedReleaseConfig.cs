@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string RolloutContextKindKey { get; set; }
 #endif
-        /// <summary>List of stages</summary>
+        /// <summary>List of stages. At most 10 stages by default; the server enforces the per-account limit, which is never more than 20.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? Stages { get; set; }

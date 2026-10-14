@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> EnvironmentKeys { get; set; }
 #endif
-        /// <summary>List of flag tag keys this policy applies to</summary>
+        /// <summary>List of flag tag keys this policy applies to. At most 1000 keys. Each key must only contain letters, numbers, &apos;-&apos;, &apos;_&apos;, or &apos;.&apos;, and be at most 64 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? FlagTagKeys { get; set; }
