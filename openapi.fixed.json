@@ -34920,21 +34920,12 @@
     "/api/v2/projects/{projectKey}/views": {
       "get": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "List views",
         "description": "Get a list of all views in the given project.",
         "operationId": "GetViews",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35044,21 +35035,12 @@
       },
       "post": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Create view",
         "description": "Create a new view in the given project.",
         "operationId": "CreateView",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35137,21 +35119,12 @@
     "/api/v2/projects/{projectKey}/views/{viewKey}": {
       "delete": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Delete view",
         "description": "Delete a specific view by its key.",
         "operationId": "DeleteView",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35209,21 +35182,12 @@
       },
       "get": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Get view",
         "description": "Retrieve a specific view by its key.",
         "operationId": "GetView",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35341,21 +35305,12 @@
       },
       "patch": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Update view",
         "description": "Edit an existing view.\n\nThe request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.\n\nHere\u0027s an example:\n  \u0060\u0060\u0060\n    {\n      \u0022description\u0022: \u0022Example updated description\u0022,\n      \u0022tags\u0022: [\u0022new-tag\u0022]\n    }\n  \u0060\u0060\u0060\n",
         "operationId": "UpdateView",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35443,21 +35398,12 @@
     "/api/v2/projects/{projectKey}/views/{viewKey}/link/{resourceType}": {
       "delete": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Unlink resource",
         "description": "Unlink one or multiple resources from a view:\n- Unlink flags using flag keys\n- Unlink segments using segment IDs\n- Unlink AI configs using config keys\n",
         "operationId": "UnlinkResource",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35552,21 +35498,12 @@
       },
       "post": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Link resource",
         "description": "Link one or multiple resources to a view by keys, filters, or both:\n- Link flags using flag keys or filters (maintainerId, maintainerTeamKey, tags, state, query)\n- Link segments using segment IDs or filters (tags, query, unbounded)\n- Link AI configs using config keys\n\nWhen both keys and filters are provided, resources matching either condition are linked (union).\n",
         "operationId": "LinkResource",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35663,21 +35600,12 @@
     "/api/v2/projects/{projectKey}/views/{viewKey}/linked/{resourceType}": {
       "get": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Get linked resources",
         "description": "Get a list of all linked resources for a given view.",
         "operationId": "GetLinkedResources",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -35815,21 +35743,12 @@
     "/api/v2/projects/{projectKey}/view-associations/{resourceType}/{resourceKey}": {
       "get": {
         "tags": [
-          "Views (beta)"
+          "Views"
         ],
         "summary": "Get linked views for a given resource",
         "description": "Get a list of all linked views for a resource. Flags and AI configs are identified by key. Segments are identified by segment ID.",
         "operationId": "GetLinkedViews",
         "parameters": [
-          {
-            "name": "LD-API-Version",
-            "in": "header",
-            "description": "Version of the endpoint.",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/BetaLdApiVersion"
-            }
-          },
           {
             "name": "projectKey",
             "in": "path",
@@ -89491,7 +89410,7 @@
     },
     {
       "name": "Holdouts",
-      "description": "\u003E ### Available for customers using Experimentation\n\u003E\n\u003E Holdouts are available to customers using [Experimentation](https://launchdarkly.com/docs/api/experiments).\n\n\nHoldouts let you exclude a percentage of your audience from your Experimentation program. This enables you to see the overall effect of your experiments on your customer base, and helps determine how effective the experiments you\u0027re running are.\n\nUsing the holdouts API, you can create, delete, and manage holdouts. To learn more, read [Holdouts](https://launchdarkly.com/docs/home/holdouts).\n"
+      "description": "\u003E ### Available for customers using Experimentation\n\u003E\n\u003E Holdouts are available to customers using [Experimentation](https://launchdarkly.com/docs/api/experiments).\n\n\nHoldouts let you exclude a percentage of your audience from your Experimentation program. This enables you to see the overall effect of your experiments on your customer base, and helps determine how effective the experiments you\u0027re running are.\n\nUsing the holdouts API, you can create, update, and end holdouts. To learn more, read [Holdouts](https://launchdarkly.com/docs/home/holdouts).\n"
     },
     {
       "name": "Insights charts (beta)",
@@ -89606,8 +89525,8 @@
       "description": "\u003E ### Contexts are now available\n\u003E\n\u003E After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Contexts](https://launchdarkly.com/docs/api/contexts) instead of these endpoints. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).\n\n\nLaunchDarkly creates a record for each user passed in to \u0060variation\u0060 calls. This record powers the autocomplete functionality on the feature flag dashboard, as well as the Users page. To learn more, read [Contexts](https://launchdarkly.com/docs/home/observability/contexts).\n\nLaunchDarkly also offers an API that lets you tap into this data. You can use the users API to see what user data is available to LaunchDarkly, as well as determine which flag values a user will receive. You can also explicitly set which flag value a user will receive via this API.\n\nUsers are always scoped within a project and environment. In other words, each environment has its own set of user records.\n"
     },
     {
-      "name": "Views (beta)",
-      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\nThe views API allows you to create, retrieve, and edit views, and link other resources to views.\n\nA view is a resource in LaunchDarkly that you can use to logically group other resources within a project, such as flags or segments. For example, views let you restrict access to sets of flags, so that members of your organization can focus on just the flags they work with.\n\nTo learn more, read [Views](https://launchdarkly.com/docs/home/account/views).\n"
+      "name": "Views",
+      "description": "The views API allows you to create, retrieve, and edit views, and link other resources to views.\n\nA view is a resource in LaunchDarkly that you can use to logically group other resources within a project, such as flags or segments. For example, views let you restrict access to sets of flags, so that members of your organization can focus on just the flags they work with.\n\nTo learn more, read [Views](https://launchdarkly.com/docs/home/account/views).\n"
     },
     {
       "name": "Webhooks",
