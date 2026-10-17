@@ -42348,6 +42348,17 @@
             "type": "string",
             "description": "The registered name of the OAuth client the access token was issued to. Only present for OAuth access tokens, and omitted when the client\u0027s name can\u0027t be resolved."
           },
+          "audience": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The resources (RFC 8707) the OAuth access token was issued for. Only present for OAuth access tokens issued for a specific resource."
+          },
+          "expiresAt": {
+            "type": "integer",
+            "format": "int64"
+          },
           "tokenName": {
             "type": "string"
           },

@@ -43733,6 +43733,17 @@
             "type": "string",
             "description": "The registered name of the OAuth client the access token was issued to. Only present for OAuth access tokens, and omitted when the client's name can't be resolved."
           },
+          "audience": {
+            "type": "array",
+            "description": "The resources (RFC 8707) the OAuth access token was issued for. Only present for OAuth access tokens issued for a specific resource.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "expiresAt": {
+            "description": "When the OAuth access token expires. Only present for OAuth access tokens.",
+            "$ref": "#/components/schemas/UnixMillis"
+          },
           "tokenName": {
             "type": "string"
           },

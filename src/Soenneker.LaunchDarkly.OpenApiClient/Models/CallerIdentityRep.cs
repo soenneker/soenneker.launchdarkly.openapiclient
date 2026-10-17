@@ -22,6 +22,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The resources (RFC 8707) the OAuth access token was issued for. Only present for OAuth access tokens issued for a specific resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Audience { get; set; }
+#nullable restore
+#else
+        public List<string> Audience { get; set; }
+#endif
         /// <summary>The authKind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +70,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string EnvironmentName { get; set; }
 #endif
+        /// <summary>The expiresAt property</summary>
+        public long? ExpiresAt { get; set; }
         /// <summary>The memberId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,11 +156,13 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountId", n => { AccountId = n.GetStringValue(); } },
+                { "audience", n => { Audience = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "authKind", n => { AuthKind = n.GetStringValue(); } },
                 { "clientId", n => { ClientId = n.GetStringValue(); } },
                 { "clientName", n => { ClientName = n.GetStringValue(); } },
                 { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "environmentName", n => { EnvironmentName = n.GetStringValue(); } },
+                { "expiresAt", n => { ExpiresAt = n.GetLongValue(); } },
                 { "memberId", n => { MemberId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectName", n => { ProjectName = n.GetStringValue(); } },
@@ -169,11 +181,13 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountId", AccountId);
+            writer.WriteCollectionOfPrimitiveValues<string>("audience", Audience);
             writer.WriteStringValue("authKind", AuthKind);
             writer.WriteStringValue("clientId", ClientId);
             writer.WriteStringValue("clientName", ClientName);
             writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("environmentName", EnvironmentName);
+            writer.WriteLongValue("expiresAt", ExpiresAt);
             writer.WriteStringValue("memberId", MemberId);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectName", ProjectName);
