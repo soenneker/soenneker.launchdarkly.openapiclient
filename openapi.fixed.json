@@ -13879,7 +13879,7 @@
           "Experiments"
         ],
         "summary": "Create experiment",
-        "description": "Create an experiment.\n\nTo run this experiment, you\u0027ll need to [create an iteration](https://launchdarkly.com/docs/api/experiments/create-iteration) and then [update the experiment](https://launchdarkly.com/docs/api/experiments/patch-experiment) with the \u0060startIteration\u0060 instruction.\n\n### Experiment types\n\nUse the \u0060type\u0060 field to specify the experiment type: \u0060experiment\u0060 (default), \u0060mab\u0060 (multi-armed bandit), or \u0060holdout\u0060.\n\nFor multi-armed bandit experiments, set \u0060reallocationFrequencyMillis\u0060 on the iteration to control how often traffic is reallocated across variations.\n\n### Results analysis\n\nUse the \u0060methodology\u0060 field to specify the results analysis approach: \u0060bayesian\u0060 (default) or \u0060frequentist\u0060.\n\nUse the \u0060dataSource\u0060 field to specify the source of metric data: \u0060launchdarkly\u0060 (default), \u0060snowflake\u0060, or \u0060databricks\u0060.\n\nUse the \u0060analysisConfig\u0060 field to customize analysis settings such as the Bayesian threshold, significance threshold, or multiple comparison correction method.\n\nTo learn more, read [Creating experiments](https://launchdarkly.com/docs/home/experimentation/create).\n",
+        "description": "Create an experiment.\n\nTo run this experiment, you\u0027ll need to [create an iteration](https://launchdarkly.com/docs/api/experiments/create-iteration) and then [update the experiment](https://launchdarkly.com/docs/api/experiments/patch-experiment) with the \u0060startIteration\u0060 instruction.\n\n### Experiment types\n\nUse the \u0060type\u0060 field to specify the experiment type: \u0060experiment\u0060 (default), \u0060mab\u0060 (multi-armed bandit), or \u0060holdout\u0060.\n\nFor multi-armed bandit experiments, set \u0060reallocationFrequencyMillis\u0060 on the iteration to control how often traffic is reallocated across variations.\n\n### Results analysis\n\nUse the \u0060methodology\u0060 field to specify the results analysis approach: \u0060frequentist\u0060 (default) or \u0060bayesian\u0060. Multi-armed bandit experiments support only \u0060bayesian\u0060, which is their default.\n\nUse the \u0060dataSource\u0060 field to specify the source of metric data: \u0060launchdarkly\u0060 (default), \u0060snowflake\u0060, or \u0060databricks\u0060.\n\nUse the \u0060analysisConfig\u0060 field to customize analysis settings such as the Bayesian threshold, significance threshold, or multiple comparison correction method.\n\nTo learn more, read [Creating experiments](https://launchdarkly.com/docs/home/experimentation/create).\n",
         "operationId": "CreateExperiment",
         "parameters": [
           {
@@ -86341,8 +86341,8 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The results analysis approach.",
-        "example": "bayesian",
+        "description": "The results analysis approach. Defaults to \u0022frequentist\u0022 when not provided, or \u0022bayesian\u0022 for multi-armed bandit experiments.",
+        "example": "frequentist",
         "x-ms-enum": {
           "name": "ExperimentPostMethodology",
           "modelAsString": false,

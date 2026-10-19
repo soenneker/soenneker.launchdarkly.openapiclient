@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
-    /// <summary>The results analysis approach.</summary>
+    /// <summary>The results analysis approach. Defaults to &quot;frequentist&quot; when not provided, or &quot;bayesian&quot; for multi-armed bandit experiments.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ExperimentPostMethodology
     {

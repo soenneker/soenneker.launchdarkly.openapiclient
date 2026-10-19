@@ -64,7 +64,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string MaintainerId { get; set; }
 #endif
-        /// <summary>The results analysis approach.</summary>
+        /// <summary>The results analysis approach. Defaults to &quot;frequentist&quot; when not provided, or &quot;bayesian&quot; for multi-armed bandit experiments.</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentPostMethodology? Methodology { get; set; }
         /// <summary>The experiment name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
