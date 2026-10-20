@@ -64,7 +64,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The maintainer property</summary>
+        /// <summary>The member or team that maintains this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigMaintainer? Maintainer { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Tags for this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>Number of distinct AgentControl configs that reference this model</summary>
         public int? UsedInCount { get; set; }
-        /// <summary>The version property</summary>
+        /// <summary>The version number of this resource</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfig"/> and sets the default values.

@@ -12,15 +12,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     public partial class QuickStats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activeConfigs property</summary>
+        /// <summary>Number of active AI Configs</summary>
         public int? ActiveConfigs { get; set; }
-        /// <summary>The activeExperiments property</summary>
+        /// <summary>Number of active experiments on AI Configs</summary>
         public int? ActiveExperiments { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The averageSatisfaction7D property</summary>
+        /// <summary>Average satisfaction rating over the last 7 days</summary>
         public float? AverageSatisfaction7D { get; set; }
-        /// <summary>The spendMonthToDate property</summary>
+        /// <summary>Spend so far this month</summary>
         public double? SpendMonthToDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats"/> and sets the default values.

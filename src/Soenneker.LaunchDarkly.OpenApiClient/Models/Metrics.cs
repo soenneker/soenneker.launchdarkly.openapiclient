@@ -14,7 +14,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The durationMs property</summary>
+        /// <summary>Total generation duration, in milliseconds</summary>
         public int? DurationMs { get; set; }
         /// <summary>Number of attempted generations</summary>
         [Obsolete("")]
@@ -25,7 +25,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public int? GenerationSuccessCount { get; set; }
         /// <summary>Cost of input tokens in USD</summary>
         public double? InputCost { get; set; }
-        /// <summary>The inputTokens property</summary>
+        /// <summary>Number of input tokens</summary>
         public int? InputTokens { get; set; }
         /// <summary>Average accuracy judge score (0.0-1.0)</summary>
         public float? JudgeAccuracy { get; set; }
@@ -35,17 +35,17 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public float? JudgeToxicity { get; set; }
         /// <summary>Cost of output tokens in USD</summary>
         public double? OutputCost { get; set; }
-        /// <summary>The outputTokens property</summary>
+        /// <summary>Number of output tokens</summary>
         public int? OutputTokens { get; set; }
         /// <summary>A value between 0 and 1 representing satisfaction rating</summary>
         public float? SatisfactionRating { get; set; }
-        /// <summary>The thumbsDown property</summary>
+        /// <summary>Number of negative feedback ratings</summary>
         public int? ThumbsDown { get; set; }
-        /// <summary>The thumbsUp property</summary>
+        /// <summary>Number of positive feedback ratings</summary>
         public int? ThumbsUp { get; set; }
-        /// <summary>The timeToFirstTokenMs property</summary>
+        /// <summary>Time to the first token, in milliseconds</summary>
         public int? TimeToFirstTokenMs { get; set; }
-        /// <summary>The totalTokens property</summary>
+        /// <summary>Total number of tokens</summary>
         public int? TotalTokens { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Metrics"/> and sets the default values.

@@ -12,7 +12,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     public partial class AgentOptimization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The acceptanceStatements property</summary>
+        /// <summary>Statements a response must satisfy to pass</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationAcceptanceStatement>? AcceptanceStatements { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The aiConfigKey property</summary>
+        /// <summary>The key of the AI Config to optimize</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AiConfigKey { get; set; }
@@ -38,11 +38,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string AiConfigKey { get; set; }
 #endif
-        /// <summary>The autoCommit property</summary>
+        /// <summary>Whether to save the best result as a new variation automatically</summary>
         public bool? AutoCommit { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>When this resource was created, in Unix milliseconds</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The groundTruthResponses property</summary>
+        /// <summary>Expected responses to compare against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? GroundTruthResponses { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> GroundTruthResponses { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The agent optimization ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The judgeModel property</summary>
+        /// <summary>The model used to judge responses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JudgeModel { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string JudgeModel { get; set; }
 #endif
-        /// <summary>The judges property</summary>
+        /// <summary>Judges that score each response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationJudge>? Judges { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationJudge> Judges { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The agent optimization key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -82,7 +82,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>A label for the optimization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
-        /// <summary>The latencyOptimization property</summary>
+        /// <summary>Whether to optimize for lower latency</summary>
         public bool? LatencyOptimization { get; set; }
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,9 +100,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get; set; }
 #endif
-        /// <summary>The maxAttempts property</summary>
+        /// <summary>The maximum number of attempts</summary>
         public int? MaxAttempts { get; set; }
-        /// <summary>The metricKey property</summary>
+        /// <summary>The key of the metric to optimize</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MetricKey { get; set; }
@@ -110,7 +110,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string MetricKey { get; set; }
 #endif
-        /// <summary>The modelChoices property</summary>
+        /// <summary>The models to try</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ModelChoices { get; set; }
@@ -118,11 +118,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> ModelChoices { get; set; }
 #endif
-        /// <summary>The tokenLimit property</summary>
+        /// <summary>The maximum number of tokens to use</summary>
         public int? TokenLimit { get; set; }
-        /// <summary>The tokenOptimization property</summary>
+        /// <summary>Whether to optimize for lower token use</summary>
         public bool? TokenOptimization { get; set; }
-        /// <summary>The userInputOptions property</summary>
+        /// <summary>User inputs to test with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UserInputOptions { get; set; }
@@ -130,7 +130,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> UserInputOptions { get; set; }
 #endif
-        /// <summary>The variableChoices property</summary>
+        /// <summary>Sets of prompt variable values to try</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationVariableChoicesItemProperty>? VariableChoices { get; set; }
@@ -138,7 +138,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationVariableChoicesItemProperty> VariableChoices { get; set; }
 #endif
-        /// <summary>The variationKey property</summary>
+        /// <summary>The key of the variation to start from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VariationKey { get; set; }
@@ -146,7 +146,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string VariationKey { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version number of this resource</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimization"/> and sets the default values.

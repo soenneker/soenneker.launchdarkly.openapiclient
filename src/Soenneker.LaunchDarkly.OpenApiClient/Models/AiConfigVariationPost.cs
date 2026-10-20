@@ -46,7 +46,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeConfiguration JudgeConfiguration { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>A unique key for the variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>The prompt messages for this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Message>? Messages { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>The exact model config version to set this variation to. Requires modelConfigKey to beset, and the version must exist for that model config. When omitted, the variationrecords the model config&apos;s current (latest) version.</summary>
         public int? ModelConfigVersion { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>A human-readable name for the variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

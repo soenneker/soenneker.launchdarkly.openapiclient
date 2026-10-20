@@ -24,7 +24,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults Defaults { get; set; }
 #endif
-        /// <summary>The environments property</summary>
+        /// <summary>Targeting for each environment, keyed by environment key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingEnvironmentsProperty? Environments { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsExperimentInfoRep Experiments { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The AI Config key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The AI Config name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Tags for this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
-        /// <summary>The variations property</summary>
+        /// <summary>The variations of this AI Config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingVariation>? Variations { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingVariation> Variations { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version number of this resource</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargeting"/> and sets the default values.

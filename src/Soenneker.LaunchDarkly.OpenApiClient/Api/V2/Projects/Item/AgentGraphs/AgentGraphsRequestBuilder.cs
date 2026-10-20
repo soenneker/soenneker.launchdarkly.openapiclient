@@ -19,7 +19,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentGraphs
     public partial class AgentGraphsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.agentGraphs.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The agent graph key</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentGraphs.Item.WithGraphKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentGraphs.Item.WithGraphKeyItemRequestBuilder this[string position]
         {

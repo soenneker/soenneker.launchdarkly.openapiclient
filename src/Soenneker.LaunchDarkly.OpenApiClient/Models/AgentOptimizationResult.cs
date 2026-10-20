@@ -24,13 +24,13 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The agentOptimizationId property</summary>
+        /// <summary>The agent optimization ID</summary>
         public Guid? AgentOptimizationId { get; set; }
-        /// <summary>The agentOptimizationVersion property</summary>
+        /// <summary>The version of the agent optimization used</summary>
         public int? AgentOptimizationVersion { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>When this finished, in Unix milliseconds</summary>
         public long? CompletedAt { get; set; }
-        /// <summary>The completionResponse property</summary>
+        /// <summary>The model response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompletionResponse { get; set; }
@@ -38,9 +38,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string CompletionResponse { get; set; }
 #endif
-        /// <summary>The createdAt property</summary>
+        /// <summary>When this resource was created, in Unix milliseconds</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The createdVariationKey property</summary>
+        /// <summary>The key of the variation created from this result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedVariationKey { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string CreatedVariationKey { get; set; }
 #endif
-        /// <summary>The evaluationLatencies property</summary>
+        /// <summary>How long each evaluation took</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultEvaluationLatenciesProperty? EvaluationLatencies { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultEvaluationLatenciesProperty EvaluationLatencies { get; set; }
 #endif
-        /// <summary>The evaluationTokens property</summary>
+        /// <summary>Token usage for judging the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultEvaluationTokensProperty? EvaluationTokens { get; set; }
@@ -64,9 +64,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultEvaluationTokensProperty EvaluationTokens { get; set; }
 #endif
-        /// <summary>The generationLatency property</summary>
+        /// <summary>How long the response took to generate</summary>
         public int? GenerationLatency { get; set; }
-        /// <summary>The generationTokens property</summary>
+        /// <summary>Token usage for generating the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultGenerationTokensProperty? GenerationTokens { get; set; }
@@ -74,9 +74,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultGenerationTokensProperty GenerationTokens { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The result ID</summary>
         public Guid? Id { get; set; }
-        /// <summary>The instructions property</summary>
+        /// <summary>The instructions used for this attempt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Instructions { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Instructions { get; set; }
 #endif
-        /// <summary>The iteration property</summary>
+        /// <summary>The iteration number within the run</summary>
         public int? Iteration { get; set; }
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get; set; }
 #endif
-        /// <summary>The parameters property</summary>
+        /// <summary>The model parameters used for this attempt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultParametersProperty? Parameters { get; set; }
@@ -102,9 +102,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultParametersProperty Parameters { get; set; }
 #endif
-        /// <summary>The runId property</summary>
+        /// <summary>The ID of the run this result belongs to</summary>
         public Guid? RunId { get; set; }
-        /// <summary>The scores property</summary>
+        /// <summary>The scores for the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultScoresProperty? Scores { get; set; }
@@ -114,9 +114,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get; set; }
-        /// <summary>The updatedAt property</summary>
+        /// <summary>When this resource was last updated, in Unix milliseconds</summary>
         public long? UpdatedAt { get; set; }
-        /// <summary>The userInput property</summary>
+        /// <summary>The user input used for this attempt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserInput { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string UserInput { get; set; }
 #endif
-        /// <summary>The variation property</summary>
+        /// <summary>The variation that was tested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultVariationProperty? Variation { get; set; }

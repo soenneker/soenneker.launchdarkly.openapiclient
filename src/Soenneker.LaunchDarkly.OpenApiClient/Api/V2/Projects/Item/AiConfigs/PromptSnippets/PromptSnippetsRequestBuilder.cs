@@ -19,7 +19,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Pr
     public partial class PromptSnippetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.aiConfigs.promptSnippets.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The prompt snippet key</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.PromptSnippets.Item.WithSnippetKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.PromptSnippets.Item.WithSnippetKeyItemRequestBuilder this[string position]
         {

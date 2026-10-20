@@ -46,7 +46,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeConfiguration JudgeConfiguration { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>The prompt messages for this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Message>? Messages { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>The exact model config version to set this variation to. Requires modelConfigKey to beset (either in this patch or already on the variation), and the version must exist forthat model config. When omitted, the variation keeps the version it is currently set to,unless the patch changes modelConfigKey, in which case the variation records the newmodel config&apos;s current (latest) version.</summary>
         public int? ModelConfigVersion { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>A human-readable name for the variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchOutputFormatProperty OutputFormat { get; set; }
 #endif
-        /// <summary>The published property</summary>
+        /// <summary>Whether to publish this version of the variation</summary>
         public bool? Published { get; set; }
         /// <summary>List of agent skills to attach to this variation. Replaces the current attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

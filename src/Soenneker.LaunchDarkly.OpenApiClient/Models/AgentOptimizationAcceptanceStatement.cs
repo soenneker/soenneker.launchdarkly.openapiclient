@@ -14,7 +14,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The statement property</summary>
+        /// <summary>A statement the response must satisfy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Statement { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Statement { get; set; }
 #endif
-        /// <summary>The threshold property</summary>
+        /// <summary>The minimum score needed to pass</summary>
         public double? Threshold { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationAcceptanceStatement"/> and sets the default values.

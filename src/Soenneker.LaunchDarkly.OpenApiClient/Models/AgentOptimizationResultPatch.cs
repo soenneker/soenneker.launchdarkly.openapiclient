@@ -16,7 +16,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completionResponse property</summary>
+        /// <summary>The model response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompletionResponse { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string CompletionResponse { get; set; }
 #endif
-        /// <summary>The createdVariationKey property</summary>
+        /// <summary>The key of the variation created from this result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedVariationKey { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string CreatedVariationKey { get; set; }
 #endif
-        /// <summary>The evaluationLatencies property</summary>
+        /// <summary>How long each evaluation took</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty? EvaluationLatencies { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty EvaluationLatencies { get; set; }
 #endif
-        /// <summary>The evaluationTokens property</summary>
+        /// <summary>Token usage for judging the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty? EvaluationTokens { get; set; }
@@ -48,9 +48,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty EvaluationTokens { get; set; }
 #endif
-        /// <summary>The generationLatency property</summary>
+        /// <summary>How long the response took to generate</summary>
         public int? GenerationLatency { get; set; }
-        /// <summary>The generationTokens property</summary>
+        /// <summary>Token usage for generating the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty? GenerationTokens { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty GenerationTokens { get; set; }
 #endif
-        /// <summary>The scores property</summary>
+        /// <summary>The scores for the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty? Scores { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get; set; }
-        /// <summary>The variation property</summary>
+        /// <summary>The variation that was tested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty? Variation { get; set; }

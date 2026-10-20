@@ -24,7 +24,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the prompt snippet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The prompt snippet key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -48,7 +48,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get; set; }
 #endif
-        /// <summary>The maintainer property</summary>
+        /// <summary>The member or team that maintains this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigMaintainer? Maintainer { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigMaintainer Maintainer { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The prompt snippet name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CoreLink Site { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Tags for this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version number of this resource</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PromptSnippet"/> and sets the default values.

@@ -14,7 +14,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comment property</summary>
+        /// <summary>A comment describing the change</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>The environmentKey property</summary>
+        /// <summary>The environment key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EnvironmentKey { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string EnvironmentKey { get; set; }
 #endif
-        /// <summary>The instructions property</summary>
+        /// <summary>The semantic patch instructions to apply</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingPatchInstructionsItemProperty>? Instructions { get; set; }

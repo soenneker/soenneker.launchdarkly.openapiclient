@@ -36,7 +36,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The maintainerId property</summary>
+        /// <summary>The ID of the member who maintains this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaintainerId { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string MaintainerId { get; set; }
 #endif
-        /// <summary>The maintainerTeamKey property</summary>
+        /// <summary>The key of the team that maintains this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaintainerTeamKey { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Tags for this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

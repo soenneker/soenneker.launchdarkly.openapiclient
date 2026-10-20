@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
+    /// <summary>The AI Config mode</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AiConfigPostMode
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "agent")]
         #pragma warning disable CS1591

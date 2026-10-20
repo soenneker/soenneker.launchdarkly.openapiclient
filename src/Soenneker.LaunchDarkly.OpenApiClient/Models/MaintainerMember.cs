@@ -14,7 +14,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The member email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
-        /// <summary>The firstName property</summary>
+        /// <summary>The member first name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The member ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>The member last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>The member role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Role { get; set; }

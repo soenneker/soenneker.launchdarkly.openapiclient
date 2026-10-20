@@ -14,9 +14,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The agentOptimizationVersion property</summary>
+        /// <summary>The version of the agent optimization used</summary>
         public int? AgentOptimizationVersion { get; set; }
-        /// <summary>The instructions property</summary>
+        /// <summary>The instructions used for this attempt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Instructions { get; set; }
@@ -24,9 +24,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Instructions { get; set; }
 #endif
-        /// <summary>The iteration property</summary>
+        /// <summary>The iteration number within the run</summary>
         public int? Iteration { get; set; }
-        /// <summary>The parameters property</summary>
+        /// <summary>The model parameters used for this attempt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPostParametersProperty? Parameters { get; set; }
@@ -34,9 +34,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPostParametersProperty Parameters { get; set; }
 #endif
-        /// <summary>The runId property</summary>
+        /// <summary>The ID of the run this result belongs to</summary>
         public Guid? RunId { get; set; }
-        /// <summary>The userInput property</summary>
+        /// <summary>The user input used for this attempt</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserInput { get; set; }

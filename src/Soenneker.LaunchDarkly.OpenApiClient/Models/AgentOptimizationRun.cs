@@ -16,15 +16,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The agentOptimizationId property</summary>
+        /// <summary>The agent optimization ID</summary>
         public Guid? AgentOptimizationId { get; set; }
-        /// <summary>The agentOptimizationVersion property</summary>
+        /// <summary>The version of the agent optimization used</summary>
         public int? AgentOptimizationVersion { get; set; }
-        /// <summary>The completedAt property</summary>
+        /// <summary>When this finished, in Unix milliseconds</summary>
         public long? CompletedAt { get; set; }
-        /// <summary>The createdAt property</summary>
+        /// <summary>When this resource was created, in Unix milliseconds</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>The optimizationKey property</summary>
+        /// <summary>The agent optimization key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OptimizationKey { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string OptimizationKey { get; set; }
 #endif
-        /// <summary>The runId property</summary>
+        /// <summary>The run ID</summary>
         public Guid? RunId { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get; set; }

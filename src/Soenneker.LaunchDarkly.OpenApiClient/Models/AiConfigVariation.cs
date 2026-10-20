@@ -16,7 +16,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archivedAt property</summary>
         public long? ArchivedAt { get; set; }
-        /// <summary>The color property</summary>
+        /// <summary>The color used for this variation in the UI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>The comment property</summary>
+        /// <summary>A comment describing this version of the variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The variation ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -66,7 +66,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeConfiguration JudgeConfiguration { get; set; }
 #endif
-        /// <summary>The judgingConfigKeys property</summary>
+        /// <summary>Keys of the judge AI Configs attached to this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? JudgingConfigKeys { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> JudgingConfigKeys { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The variation key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentLink Links { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>The prompt messages for this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Message>? Messages { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>The version of the model config that this variation is pinned to, when it references acustom model config. Absent when the variation does not reference a model config, whenthe variation is not pinned to a specific version, or when custom model config versioningis not enabled for the project.</summary>
         public int? ModelConfigVersion { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The variation name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -134,7 +134,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>The publishedAt property</summary>
         public long? PublishedAt { get; set; }
-        /// <summary>The skills property</summary>
+        /// <summary>The agent skills this variation can use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkill>? Skills { get; set; }
@@ -142,7 +142,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkill> Skills { get; set; }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The state of this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get; set; }
@@ -150,7 +150,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string State { get; set; }
 #endif
-        /// <summary>The tools property</summary>
+        /// <summary>The tools this variation can use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationTool>? Tools { get; set; }
@@ -158,7 +158,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationTool> Tools { get; set; }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version number of this resource</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariation"/> and sets the default values.

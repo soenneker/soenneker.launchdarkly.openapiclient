@@ -14,9 +14,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The offVariation property</summary>
+        /// <summary>Index of the variation served when targeting is off</summary>
         public int? OffVariation { get; set; }
-        /// <summary>The onVariation property</summary>
+        /// <summary>Index of the variation served when targeting is on</summary>
         public int? OnVariation { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults"/> and sets the default values.

@@ -19,7 +19,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Sk
     public partial class SkillsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.aiConfigs.skills.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The agent skill key</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Skills.Item.WithSkillKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Skills.Item.WithSkillKeyItemRequestBuilder this[string position]
         {

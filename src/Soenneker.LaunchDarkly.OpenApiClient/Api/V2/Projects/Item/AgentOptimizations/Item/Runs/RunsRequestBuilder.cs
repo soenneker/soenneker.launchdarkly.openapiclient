@@ -19,7 +19,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimiz
     public partial class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.agentOptimizations.item.runs.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The agent optimization run ID</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimizations.Item.Runs.Item.WithRunItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimizations.Item.Runs.Item.WithRunItemRequestBuilder this[Guid position]
         {

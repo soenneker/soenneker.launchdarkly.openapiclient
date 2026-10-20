@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Metrics Metrics { get; set; }
 #endif
-        /// <summary>The variationKey property</summary>
+        /// <summary>The variation key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VariationKey { get; set; }

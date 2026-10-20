@@ -84,7 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegments>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegments.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new segment.
+        /// Create a new segment. The new segment has no individual targets or rules.The request body only accepts the fields documented below. If you include targeting fields such as `included`, `excluded`, `includedContexts`, `excludedContexts`, or `rules`, LaunchDarkly ignores them and does not return an error. These fields are empty in the response.To add individual targets or rules after you create the segment, use [Update segment](https://launchdarkly.com/docs/api/segments/patch-segment) with a semantic patch. For example, use the `addIncludedTargets` or `addExcludedTargets` instruction to add individual targets, and the `addRule` instruction to add a rule. For big segments, use the `addBigSegmentIncludedTargets` or `addBigSegmentExcludedTargets` instruction.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegment"/></returns>
         /// <param name="body">The request body</param>
@@ -136,7 +136,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create a new segment.
+        /// Create a new segment. The new segment has no individual targets or rules.The request body only accepts the fields documented below. If you include targeting fields such as `included`, `excluded`, `includedContexts`, `excludedContexts`, or `rules`, LaunchDarkly ignores them and does not return an error. These fields are empty in the response.To add individual targets or rules after you create the segment, use [Update segment](https://launchdarkly.com/docs/api/segments/patch-segment) with a semantic patch. For example, use the `addIncludedTargets` or `addExcludedTargets` instruction to add individual targets, and the `addRule` instruction to add a rule. For big segments, use the `addBigSegmentIncludedTargets` or `addBigSegmentExcludedTargets` instruction.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

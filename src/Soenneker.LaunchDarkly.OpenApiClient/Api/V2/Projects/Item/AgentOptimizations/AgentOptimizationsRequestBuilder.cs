@@ -19,7 +19,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimiz
     public partial class AgentOptimizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.agentOptimizations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The agent optimization key</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimizations.Item.WithOptimizationKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimizations.Item.WithOptimizationKeyItemRequestBuilder this[string position]
         {
