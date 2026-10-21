@@ -7134,7 +7134,7 @@
     "/api/v2/flags/{projectKey}/{flagKey}/release": {
       "get": {
         "tags": [
-          "Releases (beta)"
+          "Release pipelines (beta)"
         ],
         "summary": "Get release for flag",
         "description": "Get currently active release for a flag",
@@ -7188,10 +7188,10 @@
       },
       "patch": {
         "tags": [
-          "Releases (beta)"
+          "Release pipelines (beta)"
         ],
         "summary": "Patch release for flag",
-        "description": "This endpoint is only available for releases that are part of a legacy release pipeline. Releases for new release pipelines should use the [Update phase status for release](https://launchdarkly.com/docs/api/releases-beta/update-phase-status) endpoint.\n\nUpdate currently active release for a flag. Updating releases requires the [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) format. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).\n\nYou can only use this endpoint to mark a release phase complete or incomplete. To indicate which phase to update, use the array index in the \u0060path\u0060. For example, to mark the first phase of a release as complete, use the following request body:\n\n\u0060\u0060\u0060\n  [\n    {\n      \u0022op\u0022: \u0022replace\u0022,\n      \u0022path\u0022: \u0022/phase/0/complete\u0022,\n      \u0022value\u0022: true\n    }\n  ]\n\u0060\u0060\u0060\n",
+        "description": "This endpoint is only available for releases that are part of a legacy release pipeline. Releases for new release pipelines should use the [Update phase status for release](https://launchdarkly.com/docs/api/release-pipelines-beta/update-phase-status) endpoint.\n\nUpdate currently active release for a flag. Updating releases requires the [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) format. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).\n\nYou can only use this endpoint to mark a release phase complete or incomplete. To indicate which phase to update, use the array index in the \u0060path\u0060. For example, to mark the first phase of a release as complete, use the following request body:\n\n\u0060\u0060\u0060\n  [\n    {\n      \u0022op\u0022: \u0022replace\u0022,\n      \u0022path\u0022: \u0022/phase/0/complete\u0022,\n      \u0022value\u0022: true\n    }\n  ]\n\u0060\u0060\u0060\n",
         "operationId": "PatchReleaseByFlagKey",
         "parameters": [
           {
@@ -7299,7 +7299,7 @@
       },
       "delete": {
         "tags": [
-          "Releases (beta)"
+          "Release pipelines (beta)"
         ],
         "summary": "Delete a release for flag",
         "description": "Deletes a release from a flag",
@@ -18409,7 +18409,7 @@
     "/api/v2/projects/{projectKey}/flags/{flagKey}/release": {
       "put": {
         "tags": [
-          "Releases (beta)"
+          "Release pipelines (beta)"
         ],
         "summary": "Create a new release for flag",
         "description": "Creates a release by adding a flag to a release pipeline",
@@ -18505,7 +18505,7 @@
     "/api/v2/projects/{projectKey}/flags/{flagKey}/release/phases/{phaseId}": {
       "put": {
         "tags": [
-          "Releases (beta)"
+          "Release pipelines (beta)"
         ],
         "summary": "Update phase status for release",
         "description": "Updates the execution status of a phase of a release",
@@ -44315,6 +44315,7 @@
           },
           "version": {
             "type": "number",
+            "format": "double",
             "example": 1
           },
           "config": {
@@ -48714,6 +48715,7 @@
           "value": {
             "type": "number",
             "description": "The default value applied to missing unit events. Set to 0 when \u003Ccode\u003Edisabled\u003C/code\u003E is false. No other values are currently supported.",
+            "format": "double",
             "example": 0
           }
         }
@@ -50523,7 +50525,7 @@
           },
           "s3BucketName": {
             "type": "string",
-            "description": "The auto-generated S3 staging bucket name."
+            "description": "The S3 staging bucket name used by the destination. This is the customer-supplied bucket name, or the auto-generated name for destinations that did not set one."
           }
         }
       },
@@ -51656,13 +51658,15 @@
       "SeriesTimeSliceRep": {
         "type": "object",
         "additionalProperties": {
-          "type": "integer"
+          "type": "integer",
+          "format": "int64"
         }
       },
       "SeriesTimeSliceRepFloat": {
         "type": "object",
         "additionalProperties": {
-          "type": "number"
+          "type": "number",
+          "format": "double"
         }
       },
       "SimpleHoldoutRep": {
@@ -53323,7 +53327,7 @@
           },
           "s3BucketName": {
             "type": "string",
-            "description": "The auto-generated S3 staging bucket name (ClickHouse and Redshift)"
+            "description": "The S3 staging bucket name (ClickHouse and Redshift). For Redshift this is the name chosen for setup, a previously saved name, or an auto-generated default."
           }
         }
       },
@@ -65232,6 +65236,7 @@
           "value": {
             "type": "number",
             "description": "The default value applied to missing unit events. Set to 0 when \u003Ccode\u003Edisabled\u003C/code\u003E is false. No other values are currently supported.",
+            "format": "double",
             "example": 0
           }
         },
@@ -84319,7 +84324,8 @@
       "DataExportSeriesListRepSeriesItem": {
         "type": "object",
         "additionalProperties": {
-          "type": "integer"
+          "type": "integer",
+          "format": "int64"
         }
       },
       "DependentExperimentRepLinksProperty": {
@@ -85177,7 +85183,8 @@
       "SeriesListRepSeriesItem": {
         "type": "object",
         "additionalProperties": {
-          "type": "integer"
+          "type": "integer",
+          "format": "int64"
         }
       },
       "SeriesListRepFloatLinksProperty": {
@@ -85196,13 +85203,15 @@
       "SeriesListRepFloatSeriesItem": {
         "type": "object",
         "additionalProperties": {
-          "type": "number"
+          "type": "number",
+          "format": "double"
         }
       },
       "SeriesListRepFloatProjectedSeriesItem": {
         "type": "object",
         "additionalProperties": {
-          "type": "number"
+          "type": "number",
+          "format": "double"
         }
       },
       "SeriesMetadataRepAdditionalProperties": {
@@ -89910,15 +89919,11 @@
     },
     {
       "name": "Release pipelines (beta)",
-      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nRelease pipelines standardize and automate the release process for feature flags across a series of phases, where each phase consists of one or more environments and audiences. Each phase can use an immediate or guarded rollout to a designated audience, and can require approvals for selected environments. You can use release pipelines to ensure that you correctly roll out a flag in one environment before moving on to the next. To learn more, read [Release pipelines](https://launchdarkly.com/docs/home/releases/release-pipelines).\n\nUse the release pipelines API to view, create, update, and delete release pipelines. You can also use this API to view the progress of all ongoing releases across all flags in a project for a given release pipeline. \n\n### Creating releases and updating release phases\n\nWhen you add a flag to a release pipeline, you create a new \u0022release\u0022 to automate that flag\u0027s progress through phases in the pipeline.\n\nUse the related [releases API](https://launchdarkly.com/docs/api/releases-beta) to create a new release, or to view or update a release for a given flag. For example, you can use the releases API to add a flag to an existing release pipeline, or to start the next phase of a flag\u0027s ongoing release.\n"
+      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nRelease pipelines standardize and automate the release process for feature flags across a series of phases, where each phase consists of one or more environments and audiences. Each phase can use an immediate or guarded rollout to a designated audience, and can require approvals for selected environments. You can use release pipelines to ensure that you correctly roll out a flag in one environment before moving on to the next. To learn more, read [Release pipelines](https://launchdarkly.com/docs/home/releases/release-pipelines).\n\nUse the release pipelines API to view, create, update, and delete release pipelines. You can also use this API to view the progress of all ongoing releases across all flags in a project for a given release pipeline.\n\n### Creating releases and updating release phases\n\nWhen you add a flag to an existing release pipeline, you create a \u0022release\u0022 to automate that flag\u0027s progress through the pipeline\u0027s phases. Use the release endpoints in this section to add a flag to an existing release pipeline, or to monitor or update an ongoing release for a flag. Updating an ongoing release generally involves the following steps:\n\n1. Obtain the release phases associated with the release. The \u0060phases\u0060 field provides an ordered list of all pipeline phases associated with the flag\u0027s release. \u0060phases\u0060 is returned in the response when you [Create a new release for a flag](https://launchdarkly.com/docs/api/release-pipelines-beta/create-release-for-flag) or [Get the release for a flag](https://launchdarkly.com/docs/api/release-pipelines-beta/get-release-by-flag-key).\n\n2. Determine the \u0060_id\u0060 of the phase you want to start. Release pipeline phases take place in their configured order, so find the first incomplete, unstarted phase in the \u0060phases\u0060 list. For example, in a newly-created release the first phase in the \u0060phases\u0060 list has both the \u0060complete\u0060 and \u0060started\u0060 fields set to \u0060false\u0060.\n\n3. Use the phase \u0060_id\u0060 value with the [Update phase status for release](https://launchdarkly.com/docs/api/release-pipelines-beta/update-phase-status) endpoint to start the release phase. At a minimum, you must provide \u0060{\u0022status\u0022: active}\u0060 in the request object to start a pipeline phase. If the phase requires approvals or guarded rollouts, provide the additional required information in the \u0060audiences\u0060 list.\n"
     },
     {
       "name": "Release policies (beta)",
       "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\n\u003E ### This feature is deprecated\n\u003E\n\u003E The release policies API is deprecated and will be removed. Release policies continue to work during the deprecation period. LaunchDarkly will announce the exact dates for end of support and removal of access separately.\n\nRelease policies let you specify your preferred rollout method for a given set of environments.\n"
-    },
-    {
-      "name": "Releases (beta)",
-      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nRelease pipelines standardize and automate the release process for feature flags across a series of phases, where each phase consists of one or more environments and audiences. When you add a flag to an existing release pipeline, you create a \u0022release\u0022 to automate that flag\u0027s progress through the pipeline. \n\nUse the releases API to add a flag to an existing release pipeline, or to monitor or update an ongoing release for a flag. Updating an ongoing release generally involves the following steps:\n\n1. Obtain the release phases associated with the release. The \u0060phases\u0060 field provides an ordered list of all pipeline phases associated with the flag\u0027s release. \u0060phases\u0060 is returned in the response when you [Create a new release for a flag](https://launchdarkly.com/docs/api/releases-beta/create-release-for-flag) or [Get the release for a flag](https://launchdarkly.com/docs/api/releases-beta/get-release-by-flag-key).\n\n2. Determine the \u0060_id\u0060 of the phase you want to start. Release pipeline phases take place in their configured order, so find the first incomplete, unstarted phase in the \u0060phases\u0060 list. For example, in a newly-created release the first phase in the \u0060phases\u0060 list has both the \u0060complete\u0060 and \u0060started\u0060 fields set to \u0060false\u0060.\n\n3. Use the phase \u0060_id\u0060 value with the [Update phase status for release](https://launchdarkly.com/docs/api/releases-beta/update-phase-status) endpoint to start the release phase. At a minimum, you must provide \u0060{\u0022status\u0022: active}\u0060 in the request object to start a pipeline phase. If the phase requires approvals or guarded rollouts, provide the additional required information in the \u0060audiences\u0060 list.\n\n### Configuring release pipelines\n\nUse the related [release pipelines API](https://launchdarkly.com/docs/api/release-pipelines-beta) to view, create, update, and delete release pipelines, or to view the progress of all ongoing releases across all flags in a project for a given release pipeline. \n"
     },
     {
       "name": "Scheduled changes",
