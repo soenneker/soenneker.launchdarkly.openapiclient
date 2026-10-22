@@ -14,6 +14,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Classifier rules for a judge variation. When this array is non-empty, messages must be empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>? Classifiers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier> Classifiers { get; set; }
+#endif
         /// <summary>Human-readable description of this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +70,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Message> Messages { get; set; }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPostModelProperty? Model { get; set; }
@@ -145,6 +153,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "classifiers", n => { Classifiers = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
@@ -168,6 +177,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>("classifiers", Classifiers);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("instructions", Instructions);

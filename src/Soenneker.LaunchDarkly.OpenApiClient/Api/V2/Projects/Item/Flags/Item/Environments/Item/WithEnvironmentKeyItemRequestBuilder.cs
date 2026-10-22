@@ -6,6 +6,7 @@ using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Envir
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.ApprovalRequestsFlagCopy;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.Followers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.MigrationSafetyIssues;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.Releases;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.ScheduledChanges;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.Workflows;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.MigrationSafetyIssues.MigrationSafetyIssuesRequestBuilder MigrationSafetyIssues
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.MigrationSafetyIssues.MigrationSafetyIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The releases property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.Releases.ReleasesRequestBuilder Releases
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.Releases.ReleasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scheduledChanges property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.ScheduledChanges.ScheduledChangesRequestBuilder ScheduledChanges

@@ -20,7 +20,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public double? CostPerInputToken { get; set; }
         /// <summary>Cost per output token in USD</summary>
         public double? CostPerOutputToken { get; set; }
-        /// <summary>The customParams property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigPostCustomParamsProperty? CustomParams { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Icon { get; set; }
 #endif
-        /// <summary>Identifier for the model, for use with third party providers</summary>
+        /// <summary>Model ID that the provider&apos;s API uses. Cannot be changed after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Unique key for the model</summary>
+        /// <summary>Unique key for the model config in the project, in the format `Provider.model-id`. Config variations reject other formats. Keys of global catalog models are reserved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The ID of the member who maintains this resource</summary>
+        /// <summary>The member ID of the maintainer. Not applied on create. To set the maintainer, update the model config after you create it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaintainerId { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string MaintainerId { get; set; }
 #endif
-        /// <summary>The key of the team that maintains this resource</summary>
+        /// <summary>The key of the team that maintains the model config. Not applied on create. To set the maintainer, update the model config after you create it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaintainerTeamKey { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The params property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigPostParamsProperty? Params { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigPostParamsProperty Params { get; set; }
 #endif
-        /// <summary>Provider for the model</summary>
+        /// <summary>Provider for the model. Use the provider prefix of `key`. Cannot be changed after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Provider { get; set; }
@@ -92,7 +92,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>Tags for this resource</summary>
+        /// <summary>Tags for the model config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

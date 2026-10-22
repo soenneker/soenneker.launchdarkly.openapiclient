@@ -28891,7 +28891,7 @@
           {
             "name": "kind",
             "in": "query",
-            "description": "Fetch tags associated with the specified resource type. Options are \u0060flag\u0060, \u0060project\u0060, \u0060environment\u0060, \u0060segment\u0060, \u0060metric\u0060, \u0060metric-data-source\u0060, \u0060aiconfig\u0060, and \u0060view\u0060. Returns all types by default.",
+            "description": "Fetch tags associated with the specified resource type. Options are \u0060flag\u0060, \u0060project\u0060, \u0060environment\u0060, \u0060segment\u0060, \u0060metric\u0060, \u0060metric-data-source\u0060, \u0060aiconfig\u0060, \u0060agent-skill\u0060, and \u0060view\u0060. Returns all types by default.",
             "schema": {
               "type": "array",
               "items": {
@@ -36572,6 +36572,829 @@
           },
           "404": {
             "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/releases": {
+      "get": {
+        "tags": [
+          "Environment releases (beta)"
+        ],
+        "summary": "List environment releases",
+        "description": "Returns the environment releases for the flag in the environment, newest first.\nEach release includes its phases in phase-index order.\nMetric definitions are not included. To get them, call\n\u0060getEnvironmentRelease\u0060 with \u0060expand=metrics\u0060.\nReturns an empty \u0060items\u0060 array when the flag has no releases in the environment,\nor when no release matches the \u0060filter\u0060.\nReleases that ended more than 90 days ago are not returned.\n\nResults are paginated. By default, the first 25 releases are returned. Use\n\u0060limit\u0060 and \u0060offset\u0060 to page through the rest, and \u0060totalCount\u0060 to learn how\nmany releases match in total. The \u0060_links\u0060 object includes \u0060first\u0060, \u0060prev\u0060,\n\u0060next\u0060, and \u0060last\u0060 links where they apply.\n",
+        "operationId": "ListEnvironmentReleases",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flagKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "A queryfilter expression that narrows the list. Supported fields and operators:\n\u0060kind\u0060 (\u0060equals\u0060) with values \u0060progressive\u0060 or \u0060guarded\u0060.\n",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "byKind": {
+                "summary": "Guarded releases only",
+                "value": "kind equals guarded"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of releases to return. Defaults to 25. Maximum is 100.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "default": 25
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten releases and then returns the next releases in the list, up to the query \u0060limit\u0060.",
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "_snapshot",
+            "in": "query",
+            "description": "Pins the read to a moment in time (nanoseconds since the Unix epoch) so pages walked in sequence reflect one consistent snapshot. Follow the pagination links rather than constructing this value. Out-of-range values are ignored.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Environment releases.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleaseCollection"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Environment releases (beta)"
+        ],
+        "summary": "Start an environment release",
+        "description": "Creates and starts a release on a flag in an environment, either from\ninline configuration or from an environment release plan. A release\nhas one or more phases. Each phase is an audience, targeted by one\nflag rule, and has its own steps: the schedule of allocations at\nwhich that rule serves the target variation. After all of a phase\u0027s\nsteps complete, the phase serves the target variation to 100% of its\ncontexts.\n\n**Inline configuration.** Each entry in \u0060phases\u0060 must specify exactly\none targeting mode:\n\n- **Existing rule**: set \u0060ruleId\u0060. The rule must be enabled. Only a\n  single-phase release can use an existing rule.\n- **New rule**: set \u0060clauses\u0060, with an optional \u0060description\u0060. New\n  rules are appended to the end of the flag\u0027s rule list. To insert\n  them before an existing rule instead, set the top-level\n  \u0060beforeRuleId\u0060, which applies to every phase.\n\nEvery phase\u0027s rule, including an existing rule passed by \u0060ruleId\u0060,\nmust include\n\u0060{\u0022contextKind\u0022: \u0022\u003CrandomizationUnit\u003E\u0022, \u0022attribute\u0022: \u0022kind\u0022, \u0022op\u0022: \u0022in\u0022, \u0022values\u0022: [\u0022\u003CrandomizationUnit\u003E\u0022]}\u0060,\nnot negated and with no other values, so the release only reaches\ncontexts of the \u0060randomizationUnit\u0060 kind, or multi-contexts\ncontaining the \u0060randomizationUnit\u0060 kind. An existing rule needs the\nclause even if its other clauses only match that context kind. A\nphase without it returns \u0060400\u0060.\n\nFor multiple phases, set \u0060phases\u0060 with at least two entries. Each phase\ncreates a rule. The first rule is enabled and starts immediately.\nSubsequent rules stay disabled until the release advances to them:\nautomatically when \u0060advancementMode\u0060 is \u0060automatic\u0060, or by an explicit\nadvance when it is \u0060manual\u0060. \u0060advancementMode\u0060 is required for a\nmulti-phase release.\n\nReleases on the flag\u0027s default rule are not supported. A phase that\nomits both targeting modes is rejected.\n\nThe flag must be on in the environment, or the request returns\n\u0060409\u0060. The release only reaches contexts that match a phase\u0027s rule.\nOther contexts keep getting the flag\u0027s default rule, which may\nalready serve the target variation.\n\nThe release type is inferred from \u0060metrics\u0060: an omitted or empty array\ncreates a progressive release; one or more metrics creates a guarded\nrelease. Metrics must be listed individually; metric groups are not\naccepted.\n\nEvery start runs release health checks, described in\n\u0060ReleaseHealthCheckKind\u0060. A flag that hasn\u0027t recently been\nevaluated for contexts of the \u0060randomizationUnit\u0060 kind fails\n\u0060flag_evaluations_with_context\u0060, and one with no recent evaluations\nat all also fails \u0060flag_evaluations_any\u0060. Guarded releases also\ncheck that each metric receives events. A failing\ncheck returns \u0060400\u0060 with code \u0060health_checks_failed\u0060. To start the\nrelease anyway, list the failing kinds in \u0060bypassHealthChecks\u0060.\n\n**From a release plan.** Set \u0060releasePlanKey\u0060 to start from a plan in\nthis environment instead of configuring the release inline; a request\nthat also sets fields the plan supplies is rejected. The plan\u0027s current\nversion runs as stored, with metric groups expanded into their members.\nHealth checks run against the plan\u0027s randomization unit and metrics.\nReturns \u0060400\u0060 if the plan is missing or incomplete, and \u0060422\u0060 until\nenvironment release plans are available for the account.\n\nRequires the \u0060updateRules\u0060 action on the flag in this environment, plus\n\u0060updateFallthrough\u0060 when \u0060cleanupBehavior\u0060 is\n\u0060remove_rules_and_update_default_rule\u0060. A release started from a plan\nrequires both. The start is recorded in the flag\u0027s audit log as a\ntargeting change that carries \u0060comment\u0060.\n\nIn an environment that requires approvals, this endpoint fails with\n\u0060405\u0060. Tokens granted the \u0060bypassRequiredApproval\u0060 action can still\ncall it to start the release directly.\n\nThis operation is not idempotent. Retrying a request that already\nstarted a release returns \u0060409\u0060 with code \u0060release_already_active\u0060.\nThe earlier request may have succeeded; call \u0060listEnvironmentReleases\u0060\nto confirm the running release is yours.\n",
+        "operationId": "StartEnvironmentRelease",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flagKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartEnvironmentReleaseRequest"
+              },
+              "examples": {
+                "fromReleasePlan": {
+                  "summary": "Release from an environment release plan",
+                  "value": {
+                    "originalVariationId": "11111111-1111-1111-1111-111111111111",
+                    "targetVariationId": "22222222-2222-2222-2222-222222222222",
+                    "releasePlanKey": "production-guarded-rollout",
+                    "comment": "Requested by the deployment automation"
+                  }
+                },
+                "progressiveNewRule": {
+                  "summary": "Progressive release on a new rule",
+                  "value": {
+                    "originalVariationId": "11111111-1111-1111-1111-111111111111",
+                    "targetVariationId": "22222222-2222-2222-2222-222222222222",
+                    "randomizationUnit": "user",
+                    "cleanupBehavior": "remove_rules_and_update_default_rule",
+                    "comment": "Requested by the deployment automation",
+                    "phases": [
+                      {
+                        "description": "All users",
+                        "clauses": [
+                          {
+                            "contextKind": "user",
+                            "attribute": "kind",
+                            "op": "in",
+                            "values": [
+                              "user"
+                            ]
+                          }
+                        ],
+                        "steps": [
+                          {
+                            "allocation": 1000,
+                            "durationMillis": 3600000
+                          },
+                          {
+                            "allocation": 10000,
+                            "durationMillis": 3600000
+                          },
+                          {
+                            "allocation": 50000,
+                            "durationMillis": 3600000
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "guardedExistingRule": {
+                  "summary": "Guarded release on an existing rule",
+                  "value": {
+                    "originalVariationId": "11111111-1111-1111-1111-111111111111",
+                    "targetVariationId": "22222222-2222-2222-2222-222222222222",
+                    "randomizationUnit": "user",
+                    "metrics": [
+                      {
+                        "metricKey": "checkout-error-rate",
+                        "autoRollback": true
+                      },
+                      {
+                        "metricKey": "page-load-p95",
+                        "autoRollback": false
+                      }
+                    ],
+                    "phases": [
+                      {
+                        "ruleId": "33333333-3333-3333-3333-333333333333",
+                        "steps": [
+                          {
+                            "allocation": 1000,
+                            "durationMillis": 3600000
+                          },
+                          {
+                            "allocation": 10000,
+                            "durationMillis": 3600000
+                          },
+                          {
+                            "allocation": 50000,
+                            "durationMillis": 86400000
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "guardedMultiplePhases": {
+                  "summary": "Guarded release with multiple phases",
+                  "value": {
+                    "originalVariationId": "11111111-1111-1111-1111-111111111111",
+                    "targetVariationId": "22222222-2222-2222-2222-222222222222",
+                    "randomizationUnit": "user",
+                    "advancementMode": "automatic",
+                    "cleanupBehavior": "remove_rules_and_update_default_rule",
+                    "metrics": [
+                      {
+                        "metricKey": "checkout-error-rate",
+                        "autoRollback": true
+                      }
+                    ],
+                    "phases": [
+                      {
+                        "description": "Internal users",
+                        "clauses": [
+                          {
+                            "contextKind": "user",
+                            "attribute": "kind",
+                            "op": "in",
+                            "values": [
+                              "user"
+                            ]
+                          },
+                          {
+                            "contextKind": "user",
+                            "attribute": "email",
+                            "op": "endsWith",
+                            "values": [
+                              "@launchdarkly.com"
+                            ]
+                          }
+                        ],
+                        "steps": [
+                          {
+                            "allocation": 50000,
+                            "durationMillis": 86400000
+                          }
+                        ]
+                      },
+                      {
+                        "description": "Beta customers",
+                        "clauses": [
+                          {
+                            "contextKind": "user",
+                            "attribute": "kind",
+                            "op": "in",
+                            "values": [
+                              "user"
+                            ]
+                          },
+                          {
+                            "attribute": "segmentMatch",
+                            "op": "segmentMatch",
+                            "values": [
+                              "beta-customers"
+                            ]
+                          }
+                        ],
+                        "steps": [
+                          {
+                            "allocation": 10000,
+                            "durationMillis": 3600000
+                          },
+                          {
+                            "allocation": 50000,
+                            "durationMillis": 86400000
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Environment release created and started.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentRelease"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request is invalid. When \u0060code\u0060 is \u0060health_checks_failed\u0060,\n\u0060failingChecks\u0060 describes the release health checks that failed.\nFix the failing checks, or list their kinds in\n\u0060bypassHealthChecks\u0060 to start the release anyway.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartEnvironmentReleaseBadRequest"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Approval is required to make this change",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The flag\u0027s current state does not allow the start. \u0060code\u0060 is\n\u0060release_already_active\u0060 when a release is already running on\nthe flag or on the targeted rule; if this is a retry, the first\nrequest may have succeeded, so call \u0060listEnvironmentReleases\u0060 to\nconfirm. Any other conflict returns \u0060optimistic_locking_error\u0060\nwith the cause in \u0060message\u0060.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "releaseAlreadyActive": {
+                    "summary": "A release is already running on the flag or rule",
+                    "value": {
+                      "code": "release_already_active",
+                      "message": "a release is already active on this flag or on the targeted rule"
+                    }
+                  },
+                  "flagOff": {
+                    "summary": "The flag is off in the environment",
+                    "value": {
+                      "code": "optimistic_locking_error",
+                      "message": "flag checkout-redesign is off"
+                    }
+                  },
+                  "otherConflict": {
+                    "summary": "Any other conflict, with the cause in the message",
+                    "value": {
+                      "code": "optimistic_locking_error",
+                      "message": "flag was modified concurrently; retry the request"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "The request set \u0060releasePlanKey\u0060 before environment release plans\nare available for the account. Configure the release inline\ninstead.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "code": "release_plan_start_unavailable",
+                  "message": "starting a release from an environment release plan is coming soon. Configure the release inline instead"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/releases/{releaseId}": {
+      "get": {
+        "tags": [
+          "Environment releases (beta)"
+        ],
+        "summary": "Get an environment release",
+        "description": "Returns an environment release and all its phases in phase-index order.\nThe release ID must belong to the flag and environment in the path.\nReturns \u0060404\u0060 for a release that ended more than 90 days ago.\nPass \u0060expand=metrics\u0060 to attach each metric\u0027s definition to the top-level\n\u0060metrics\u0060 array. Analysis settings come from the version pinned when the\nrelease started (\u0060metricVersionId\u0060); name, description, tags, maintainer,\nand archive state reflect the current metric and may change afterwards.\n",
+        "operationId": "GetEnvironmentRelease",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flagKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "releaseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "Optional fields to expand.",
+            "explode": false,
+            "schema": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/MetricsItem"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Environment release.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentRelease"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/releases/{releaseId}/stop": {
+      "put": {
+        "tags": [
+          "Environment releases (beta)"
+        ],
+        "summary": "Stop an environment release",
+        "description": "Stops a release and resolves its phases according to the \u0060resolution\u0060\nyou specify. To learn how each resolution treats completed and pending\nphases, read the \u0060resolution\u0060 schema.\n\nRequires the \u0060updateRules\u0060 action on the flag in this environment, or\n\u0060updateFallthrough\u0060 for a historical release that ran on the default\nrule. The stop is recorded in the flag\u0027s audit log as a targeting\nchange that names the resolution and carries \u0060comment\u0060.\n\nIn an environment that requires approvals, this endpoint fails with\n\u0060405\u0060. Tokens granted the \u0060bypassRequiredApproval\u0060 action can still\ncall it to stop the release directly.\n\nStopping a release that has already completed or been stopped returns\n\u0060200\u0060 and makes no changes. Returns \u0060404\u0060 for a release that ended more\nthan 90 days ago.\n",
+        "operationId": "StopEnvironmentRelease",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flagKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "releaseId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopEnvironmentReleaseRequest"
+              },
+              "examples": {
+                "rollBack": {
+                  "summary": "Revert every started phase and remove pending phases",
+                  "value": {
+                    "resolution": "roll_back_all_phases_and_remove_pending_phases",
+                    "comment": "Error rate regressed after the 10% step"
+                  }
+                },
+                "rollForward": {
+                  "summary": "Serve the target variation everywhere, including pending phases",
+                  "value": {
+                    "resolution": "roll_forward_all_phases"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Environment release stopped, or already in a terminal status.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentRelease"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Approval is required to make this change",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The flag\u0027s current state does not allow the stop. The response\nreturns \u0060optimistic_locking_error\u0060 with the cause in \u0060message\u0060.\nResolve the cause, then retry.\n",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "examples": {
+                  "conflict": {
+                    "summary": "Another change conflicts with the stop",
+                    "value": {
+                      "code": "optimistic_locking_error",
+                      "message": "flag was modified concurrently; retry the request"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
             "content": {
               "application/json": {
                 "schema": {
@@ -53211,7 +54034,7 @@
             "description": "The ID of the variation. Leave empty when you are creating a flag."
           },
           "value": {
-            "$ref": "#/components/schemas/VariationValue"
+            "$ref": "#/components/schemas/VariationValueProperty"
           },
           "valueHash": {
             "type": "string",
@@ -55003,6 +55826,20 @@
                   "createdAt": 1,
                   "_publishedAt": 2,
                   "_archivedAt": 5,
+                  "classifiers": [
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    },
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    }
+                  ],
                   "name": "name",
                   "messages": [
                     {
@@ -55081,6 +55918,20 @@
                   "createdAt": 1,
                   "_publishedAt": 2,
                   "_archivedAt": 5,
+                  "classifiers": [
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    },
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    }
+                  ],
                   "name": "name",
                   "messages": [
                     {
@@ -55297,6 +56148,20 @@
                   "createdAt": 1,
                   "_publishedAt": 2,
                   "_archivedAt": 5,
+                  "classifiers": [
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    },
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    }
+                  ],
                   "name": "name",
                   "messages": [
                     {
@@ -55375,6 +56240,20 @@
                   "createdAt": 1,
                   "_publishedAt": 2,
                   "_archivedAt": 5,
+                  "classifiers": [
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    },
+                    {
+                      "instructions": "instructions",
+                      "criteria": "",
+                      "type": "bool",
+                      "key": "key"
+                    }
+                  ],
                   "name": "name",
                   "messages": [
                     {
@@ -55684,6 +56563,20 @@
               "createdAt": 1,
               "_publishedAt": 2,
               "_archivedAt": 5,
+              "classifiers": [
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                },
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                }
+              ],
               "name": "name",
               "messages": [
                 {
@@ -55762,6 +56655,20 @@
               "createdAt": 1,
               "_publishedAt": 2,
               "_archivedAt": 5,
+              "classifiers": [
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                },
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                }
+              ],
               "name": "name",
               "messages": [
                 {
@@ -55890,6 +56797,20 @@
               "toolKeys",
               "toolKeys"
             ],
+            "classifiers": [
+              {
+                "instructions": "instructions",
+                "criteria": "",
+                "type": "bool",
+                "key": "key"
+              },
+              {
+                "instructions": "instructions",
+                "criteria": "",
+                "type": "bool",
+                "key": "key"
+              }
+            ],
             "name": "name",
             "messages": [
               {
@@ -55998,6 +56919,13 @@
           "color": {
             "type": "string",
             "description": "The color used for this variation in the UI"
+          },
+          "classifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Classifier"
+            },
+            "description": "Classifier rules for a judge variation. When this array is non-empty, messages must be empty.\n"
           },
           "comment": {
             "type": "string",
@@ -56147,6 +57075,20 @@
           "createdAt": 1,
           "_publishedAt": 2,
           "_archivedAt": 5,
+          "classifiers": [
+            {
+              "instructions": "instructions",
+              "criteria": "",
+              "type": "bool",
+              "key": "key"
+            },
+            {
+              "instructions": "instructions",
+              "criteria": "",
+              "type": "bool",
+              "key": "key"
+            }
+          ],
           "name": "name",
           "messages": [
             {
@@ -56248,6 +57190,20 @@
               "createdAt": 1,
               "_publishedAt": 2,
               "_archivedAt": 5,
+              "classifiers": [
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                },
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                }
+              ],
               "name": "name",
               "messages": [
                 {
@@ -56326,6 +57282,20 @@
               "createdAt": 1,
               "_publishedAt": 2,
               "_archivedAt": 5,
+              "classifiers": [
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                },
+                {
+                  "instructions": "instructions",
+                  "criteria": "",
+                  "type": "bool",
+                  "key": "key"
+                }
+              ],
               "name": "name",
               "messages": [
                 {
@@ -56357,6 +57327,13 @@
         ],
         "type": "object",
         "properties": {
+          "classifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Classifier"
+            },
+            "description": "Classifier rules for a judge variation. When this array is non-empty, messages must be empty.\n"
+          },
           "comment": {
             "type": "string",
             "description": "Human-readable description of this variation"
@@ -56465,6 +57442,20 @@
             "toolKeys",
             "toolKeys"
           ],
+          "classifiers": [
+            {
+              "instructions": "instructions",
+              "criteria": "",
+              "type": "bool",
+              "key": "key"
+            },
+            {
+              "instructions": "instructions",
+              "criteria": "",
+              "type": "bool",
+              "key": "key"
+            }
+          ],
           "name": "name",
           "messages": [
             {
@@ -56488,6 +57479,13 @@
       "AiConfigVariationPatch": {
         "type": "object",
         "properties": {
+          "classifiers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Classifier"
+            },
+            "description": "Replaces classifier rules on a judge variation. An empty array clears them. When this array is\nnon-empty, messages must be empty.\n"
+          },
           "comment": {
             "type": "string",
             "description": "Human-readable description of what this patch changes"
@@ -56601,6 +57599,20 @@
             "toolKeys",
             "toolKeys"
           ],
+          "classifiers": [
+            {
+              "instructions": "instructions",
+              "criteria": "",
+              "type": "bool",
+              "key": "key"
+            },
+            {
+              "instructions": "instructions",
+              "criteria": "",
+              "type": "bool",
+              "key": "key"
+            }
+          ],
           "name": "name",
           "messages": [
             {
@@ -56669,6 +57681,34 @@
           "judgeConfigKey": "judgeConfigKey"
         }
       },
+      "Classifier": {
+        "required": [
+          "instructions",
+          "key",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ClassifierType"
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "criteria": {
+            "$ref": "#/components/schemas/ClassifierCriteria"
+          }
+        },
+        "example": {
+          "instructions": "instructions",
+          "criteria": "",
+          "type": "bool",
+          "key": "key"
+        }
+      },
       "Message": {
         "required": [
           "content",
@@ -56710,27 +57750,32 @@
           },
           "name": {
             "type": "string",
-            "description": "Human-readable name of the model"
+            "description": "Human-readable name of the model",
+            "example": "GPT Image 2"
           },
           "key": {
             "type": "string",
-            "description": "Unique key for the model"
+            "description": "Unique key for the model config in the project, in the format \u0060Provider.model-id\u0060. Use this value as \u0060modelConfigKey\u0060 on a config variation.",
+            "example": "OpenAI.gpt-image-2"
           },
           "id": {
             "type": "string",
-            "description": "Identifier for the model, for use with third party providers"
+            "description": "Model ID that the provider\u0027s API uses. This is different from \u0060key\u0060. Use this value as \u0060modelName\u0060 on a config variation.",
+            "example": "gpt-image-2"
           },
           "icon": {
             "type": "string",
-            "description": "Icon for the model"
+            "description": "Icon for the model",
+            "example": "openai"
           },
           "provider": {
             "type": "string",
-            "description": "Provider for the model"
+            "description": "Provider for the model. Matches the provider prefix of \u0060key\u0060.",
+            "example": "OpenAI"
           },
           "global": {
             "type": "boolean",
-            "description": "Whether the model is global"
+            "description": "Whether the model is in the LaunchDarkly global catalog. Global models are read-only. Model configs that you create are always custom, with \u0060global\u0060 set to \u0060false\u0060."
           },
           "params": {
             "$ref": "#/components/schemas/ModelConfigParamsProperty"
@@ -56743,30 +57788,34 @@
             "items": {
               "type": "string"
             },
-            "description": "Tags for this resource"
+            "description": "Tags for the model config. Tags can be used in custom role policies."
           },
           "version": {
             "type": "integer",
-            "description": "The version number of this resource"
+            "description": "Version of the model config. Starts at 1, and each update that changes the model config adds a new version.",
+            "example": 2
           },
           "costPerInputToken": {
             "type": "number",
             "description": "Cost per input token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.000005
           },
           "costPerOutputToken": {
             "type": "number",
             "description": "Cost per output token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.00004
           },
           "costPerCachedInputToken": {
             "type": "number",
             "description": "Cost per cached input token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.00000125
           },
           "isRestricted": {
             "type": "boolean",
-            "description": "Whether the model is restricted"
+            "description": "Whether the model is on the project\u0027s restricted list. Config variations cannot select a restricted model. To change this, use the add or remove restricted models endpoints."
           },
           "usedInCount": {
             "type": "integer",
@@ -56774,19 +57823,18 @@
           }
         },
         "example": {
-          "costPerOutputToken": 1.4658129805029452,
+          "costPerOutputToken": 0.00004,
           "_maintainer": {
             "kind": "kind"
           },
-          "costPerInputToken": 6.027456183070403,
+          "costPerInputToken": 0.000005,
           "customParams": "{}",
-          "icon": "icon",
+          "icon": "openai",
           "global": true,
           "params": "{}",
-          "version": 0,
+          "version": 2,
           "tags": [
-            "tags",
-            "tags"
+            "image"
           ],
           "_access": {
             "allowed": [
@@ -56878,13 +57926,13 @@
               }
             ]
           },
-          "usedInCount": 5,
-          "provider": "provider",
-          "name": "name",
-          "id": "id",
+          "usedInCount": 0,
+          "provider": "OpenAI",
+          "name": "GPT Image 2",
+          "id": "gpt-image-2",
           "isRestricted": true,
-          "key": "key",
-          "costPerCachedInputToken": 5.962133916683182
+          "key": "OpenAI.gpt-image-2",
+          "costPerCachedInputToken": 0.00000125
         }
       },
       "ModelConfigs": {
@@ -56935,19 +57983,18 @@
           "totalCount": 0,
           "items": [
             {
-              "costPerOutputToken": 1.4658129805029452,
+              "costPerOutputToken": 0.00004,
               "_maintainer": {
                 "kind": "kind"
               },
-              "costPerInputToken": 6.027456183070403,
+              "costPerInputToken": 0.000005,
               "customParams": "{}",
-              "icon": "icon",
+              "icon": "openai",
               "global": true,
               "params": "{}",
-              "version": 0,
+              "version": 2,
               "tags": [
-                "tags",
-                "tags"
+                "image"
               ],
               "_access": {
                 "allowed": [
@@ -57039,28 +58086,27 @@
                   }
                 ]
               },
-              "usedInCount": 5,
-              "provider": "provider",
-              "name": "name",
-              "id": "id",
+              "usedInCount": 0,
+              "provider": "OpenAI",
+              "name": "GPT Image 2",
+              "id": "gpt-image-2",
               "isRestricted": true,
-              "key": "key",
-              "costPerCachedInputToken": 5.962133916683182
+              "key": "OpenAI.gpt-image-2",
+              "costPerCachedInputToken": 0.00000125
             },
             {
-              "costPerOutputToken": 1.4658129805029452,
+              "costPerOutputToken": 0.00004,
               "_maintainer": {
                 "kind": "kind"
               },
-              "costPerInputToken": 6.027456183070403,
+              "costPerInputToken": 0.000005,
               "customParams": "{}",
-              "icon": "icon",
+              "icon": "openai",
               "global": true,
               "params": "{}",
-              "version": 0,
+              "version": 2,
               "tags": [
-                "tags",
-                "tags"
+                "image"
               ],
               "_access": {
                 "allowed": [
@@ -57152,13 +58198,13 @@
                   }
                 ]
               },
-              "usedInCount": 5,
-              "provider": "provider",
-              "name": "name",
-              "id": "id",
+              "usedInCount": 0,
+              "provider": "OpenAI",
+              "name": "GPT Image 2",
+              "id": "gpt-image-2",
               "isRestricted": true,
-              "key": "key",
-              "costPerCachedInputToken": 5.962133916683182
+              "key": "OpenAI.gpt-image-2",
+              "costPerCachedInputToken": 0.00000125
             }
           ]
         }
@@ -57173,33 +58219,38 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "Human readable name of the model"
+            "description": "Human readable name of the model",
+            "example": "GPT Image 2"
           },
           "key": {
             "type": "string",
-            "description": "Unique key for the model"
+            "description": "Unique key for the model config in the project, in the format \u0060Provider.model-id\u0060. Config variations reject other formats. Keys of global catalog models are reserved.",
+            "example": "OpenAI.gpt-image-2"
           },
           "id": {
             "type": "string",
-            "description": "Identifier for the model, for use with third party providers"
+            "description": "Model ID that the provider\u0027s API uses. Cannot be changed after creation.",
+            "example": "gpt-image-2"
           },
           "maintainerId": {
             "type": "string",
-            "description": "The ID of the member who maintains this resource",
+            "description": "The member ID of the maintainer. Not applied on create. To set the maintainer, update the model config after you create it.",
             "example": "507f1f77bcf86cd799439011"
           },
           "maintainerTeamKey": {
             "type": "string",
-            "description": "The key of the team that maintains this resource",
+            "description": "The key of the team that maintains the model config. Not applied on create. To set the maintainer, update the model config after you create it.",
             "example": "example-team-key"
           },
           "icon": {
             "type": "string",
-            "description": "Icon for the model"
+            "description": "Icon for the model",
+            "example": "openai"
           },
           "provider": {
             "type": "string",
-            "description": "Provider for the model"
+            "description": "Provider for the model. Use the provider prefix of \u0060key\u0060. Cannot be changed after creation.",
+            "example": "OpenAI"
           },
           "params": {
             "$ref": "#/components/schemas/ModelConfigPostParamsProperty"
@@ -57212,41 +58263,43 @@
             "items": {
               "type": "string"
             },
-            "description": "Tags for this resource"
+            "description": "Tags for the model config"
           },
           "costPerInputToken": {
             "type": "number",
             "description": "Cost per input token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.000005
           },
           "costPerOutputToken": {
             "type": "number",
             "description": "Cost per output token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.00004
           },
           "costPerCachedInputToken": {
             "type": "number",
             "description": "Cost per cached input token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.00000125
           }
         },
         "example": {
-          "costPerOutputToken": 6.027456183070403,
-          "costPerInputToken": 0.8008281904610115,
+          "costPerOutputToken": 0.00004,
+          "costPerInputToken": 0.000005,
           "customParams": "{}",
           "maintainerTeamKey": "example-team-key",
-          "icon": "icon",
+          "icon": "openai",
           "params": "{}",
           "tags": [
-            "tags",
-            "tags"
+            "image"
           ],
           "maintainerId": "507f1f77bcf86cd799439011",
-          "provider": "provider",
-          "name": "name",
-          "id": "id",
-          "key": "key",
-          "costPerCachedInputToken": 1.4658129805029452
+          "provider": "OpenAI",
+          "name": "GPT Image 2",
+          "id": "gpt-image-2",
+          "key": "OpenAI.gpt-image-2",
+          "costPerCachedInputToken": 0.00000125
         }
       },
       "ModelConfigPatch": {
@@ -57262,22 +58315,26 @@
           },
           "name": {
             "type": "string",
-            "description": "Human-readable name of the model"
+            "description": "Human-readable name of the model",
+            "example": "GPT Image 2"
           },
           "costPerInputToken": {
             "type": "number",
             "description": "Cost per input token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.000005
           },
           "costPerOutputToken": {
             "type": "number",
             "description": "Cost per output token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.00004
           },
           "costPerCachedInputToken": {
             "type": "number",
             "description": "Cost per cached input token in USD",
-            "format": "double"
+            "format": "double",
+            "example": 0.00000125
           },
           "params": {
             "$ref": "#/components/schemas/ModelConfigPatchParamsProperty"
@@ -57290,33 +58347,33 @@
             "items": {
               "type": "string"
             },
-            "description": "Tags for this resource"
+            "description": "Tags for the model config. Replaces the current tags."
           },
           "maintainerId": {
             "type": "string",
-            "description": "The ID of the member who maintains this resource",
+            "description": "The member ID of the new maintainer. Set \u0060maintainerId\u0060 or \u0060maintainerTeamKey\u0060, not both. An empty string removes the maintainer.",
             "example": "507f1f77bcf86cd799439011"
           },
           "maintainerTeamKey": {
             "type": "string",
-            "description": "The key of the team that maintains this resource",
+            "description": "The key of the team to set as the new maintainer. Set \u0060maintainerId\u0060 or \u0060maintainerTeamKey\u0060, not both.",
             "example": "example-team-key"
           }
         },
+        "description": "Fields to update. Omitted fields keep their current values. \u0060params\u0060, \u0060customParams\u0060, and \u0060tags\u0060 replace the current values. Global model configs cannot be updated.",
         "example": {
-          "costPerOutputToken": 6.027456183070403,
+          "costPerOutputToken": 0.00004,
           "maintainerId": "507f1f77bcf86cd799439011",
-          "costPerInputToken": 0.8008281904610115,
+          "costPerInputToken": 0.000005,
           "provider": "provider",
           "customParams": "{}",
-          "name": "name",
+          "name": "GPT Image 2",
           "maintainerTeamKey": "example-team-key",
           "id": "id",
           "params": "{}",
-          "costPerCachedInputToken": 1.4658129805029452,
+          "costPerCachedInputToken": 0.00000125,
           "tags": [
-            "tags",
-            "tags"
+            "image"
           ]
         }
       },
@@ -57331,13 +58388,12 @@
             "items": {
               "type": "string"
             },
-            "description": "Keys of the model configs to update"
+            "description": "Model config keys, not provider model IDs. Get keys from the list AI model configs endpoint."
           }
         },
         "example": {
           "keys": [
-            "keys",
-            "keys"
+            "OpenAI.gpt-image-2"
           ]
         }
       },
@@ -57353,31 +58409,30 @@
             "items": {
               "type": "string"
             },
-            "description": "Keys of the model configs that were updated"
+            "description": "Model config keys that were added to the restricted list"
           },
           "errors": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/RestrictedModelError"
             },
-            "description": "The model configs that could not be updated"
+            "description": "Model config keys that were not added, with the reason for each key"
           }
         },
         "example": {
           "successes": [
-            "successes",
-            "successes"
+            "OpenAI.gpt-image-2"
           ],
           "errors": [
             {
-              "code": 0,
-              "message": "message",
-              "key": "key"
+              "code": 400,
+              "message": "key is already in use",
+              "key": "OpenAI.gpt-image-2"
             },
             {
-              "code": 0,
-              "message": "message",
-              "key": "key"
+              "code": 400,
+              "message": "key is already in use",
+              "key": "OpenAI.gpt-image-2"
             }
           ]
         }
@@ -57392,21 +58447,24 @@
         "properties": {
           "key": {
             "type": "string",
-            "description": "The model config key"
+            "description": "The model config key that was not added",
+            "example": "OpenAI.gpt-image-2"
           },
           "message": {
             "type": "string",
-            "description": "A description of the error"
+            "description": "Why the key was not added. A key that a config variation uses cannot be restricted. Move those variations to a different model first.",
+            "example": "key is already in use"
           },
           "code": {
             "type": "integer",
-            "description": "The error code"
+            "description": "HTTP status code for this key. \u0060400\u0060 means a config variation uses the key. \u0060404\u0060 means the key does not exist in the project.",
+            "example": 400
           }
         },
         "example": {
-          "code": 0,
-          "message": "message",
-          "key": "key"
+          "code": 400,
+          "message": "key is already in use",
+          "key": "OpenAI.gpt-image-2"
         }
       },
       "MaintainerMember": {
@@ -78745,6 +79803,1783 @@
           ]
         }
       },
+      "ReleaseType": {
+        "enum": [
+          "progressive",
+          "guarded"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the release uses metric monitoring.",
+        "x-enumNames": [
+          "ReleaseTypeProgressive",
+          "ReleaseTypeGuarded"
+        ],
+        "x-ms-enum": {
+          "name": "ReleaseType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "progressive",
+              "name": "Progressive"
+            },
+            {
+              "value": "guarded",
+              "name": "Guarded"
+            }
+          ]
+        }
+      },
+      "ReleaseStatus": {
+        "enum": [
+          "pending",
+          "in_progress",
+          "waiting",
+          "completed",
+          "reverted"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "High-level status of an environment release or release phase.\n- \u0060pending\u0060: The release or phase has not started.\n- \u0060in_progress\u0060: The release or phase is progressing without requiring action.\n- \u0060waiting\u0060: The release is partially rolled out, but is paused and waiting for action from the user.\n- \u0060completed\u0060: The release or phase reached the target variation.\n- \u0060reverted\u0060: The release or phase returned to the original variation.\n",
+        "x-enumNames": [
+          "ReleaseStatusPending",
+          "ReleaseStatusInProgress",
+          "ReleaseStatusWaiting",
+          "ReleaseStatusCompleted",
+          "ReleaseStatusReverted"
+        ],
+        "x-ms-enum": {
+          "name": "ReleaseStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "in_progress",
+              "name": "InProgress"
+            },
+            {
+              "value": "waiting",
+              "name": "Waiting"
+            },
+            {
+              "value": "completed",
+              "name": "Completed"
+            },
+            {
+              "value": "reverted",
+              "name": "Reverted"
+            }
+          ]
+        }
+      },
+      "ReleaseStatusReason": {
+        "enum": [
+          "waiting_regression_detected",
+          "waiting_phase_ended",
+          "completed_automatic",
+          "completed_manual",
+          "reverted_regression_detected",
+          "reverted_manual",
+          "reverted_discarded",
+          "reverted_insufficient_data"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Additional detail for a \u0060waiting\u0060, \u0060completed\u0060, or \u0060reverted\u0060 status.\nThe field may be absent for a \u0060waiting\u0060 status when there is no\nspecific reason.\n\u0060waiting_phase_ended\u0060 appears only on the release, never on a phase.\nIt means a phase of a multi-phase release with \u0060advancementMode\u0060\n\u0060manual\u0060 ended and the release must be advanced to the next phase.\n\u0060reverted_discarded\u0060 means the phase ended without a regression or a\nmember rolling it back. A running phase is discarded when the flag\nchanges underneath it, for example when the flag is turned off,\narchived, or deleted. A pending phase is discarded when the release\nends before it starts, either because an earlier phase reverted or\nbecause the release was stopped with a resolution that removes pending\nphases. A release reports \u0060reverted_discarded\u0060 only when the last phase\nthat started was discarded.\n",
+        "x-enumNames": [
+          "ReleaseStatusReasonWaitingRegressionDetected",
+          "ReleaseStatusReasonWaitingPhaseEnded",
+          "ReleaseStatusReasonCompletedAutomatic",
+          "ReleaseStatusReasonCompletedManual",
+          "ReleaseStatusReasonRevertedRegressionDetected",
+          "ReleaseStatusReasonRevertedManual",
+          "ReleaseStatusReasonRevertedDiscarded",
+          "ReleaseStatusReasonRevertedInsufficientData"
+        ],
+        "x-ms-enum": {
+          "name": "ReleaseStatusReason",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "waiting_regression_detected",
+              "name": "WaitingRegressionDetected"
+            },
+            {
+              "value": "waiting_phase_ended",
+              "name": "WaitingPhaseEnded"
+            },
+            {
+              "value": "completed_automatic",
+              "name": "CompletedAutomatic"
+            },
+            {
+              "value": "completed_manual",
+              "name": "CompletedManual"
+            },
+            {
+              "value": "reverted_regression_detected",
+              "name": "RevertedRegressionDetected"
+            },
+            {
+              "value": "reverted_manual",
+              "name": "RevertedManual"
+            },
+            {
+              "value": "reverted_discarded",
+              "name": "RevertedDiscarded"
+            },
+            {
+              "value": "reverted_insufficient_data",
+              "name": "RevertedInsufficientData"
+            }
+          ]
+        }
+      },
+      "CleanupBehavior": {
+        "enum": [
+          "remove_rules_and_update_default_rule",
+          "leave_rules_in_place"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "What happens to the release rules when the final phase completes,\neither on its own or because a stop rolls it forward while it\u0027s\nrunning:\n\n- \u0060remove_rules_and_update_default_rule\u0060: The release rules are\n  removed and the default rule serves the target variation.\n- \u0060leave_rules_in_place\u0060: The release rules stay and serve the\n  target variation.\n\nIn every other case, including a revert, it has no effect: release\nrules left on the flag keep serving the variation the release ended\non, ahead of rules added later without \u0060beforeRuleId\u0060.\n",
+        "x-enumNames": [
+          "CleanupBehaviorRemoveRulesAndUpdateDefaultRule",
+          "CleanupBehaviorLeaveRulesInPlace"
+        ],
+        "x-ms-enum": {
+          "name": "CleanupBehavior",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "remove_rules_and_update_default_rule",
+              "name": "RemoveRulesAndUpdateDefaultRule"
+            },
+            {
+              "value": "leave_rules_in_place",
+              "name": "LeaveRulesInPlace"
+            }
+          ]
+        }
+      },
+      "ReleaseHealthCheckKind": {
+        "enum": [
+          "flag_evaluations_any",
+          "flag_evaluations_with_context",
+          "metric_events_any",
+          "metric_events_with_context"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "A release health check:\n- \u0060flag_evaluations_any\u0060: The flag has recently been evaluated.\n- \u0060flag_evaluations_with_context\u0060: The flag has recently been\n  evaluated for contexts of the \u0060randomizationUnit\u0060 kind.\n- \u0060metric_events_any\u0060: Guarded releases only. The metric has\n  received events.\n- \u0060metric_events_with_context\u0060: Guarded releases only. The metric\n  has received events for contexts of the \u0060randomizationUnit\u0060 kind.\n",
+        "x-enumNames": [
+          "ReleaseHealthCheckKindFlagEvaluationsAny",
+          "ReleaseHealthCheckKindFlagEvaluationsWithContext",
+          "ReleaseHealthCheckKindMetricEventsAny",
+          "ReleaseHealthCheckKindMetricEventsWithContext"
+        ],
+        "x-ms-enum": {
+          "name": "ReleaseHealthCheckKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "flag_evaluations_any",
+              "name": "FlagEvaluationsAny"
+            },
+            {
+              "value": "flag_evaluations_with_context",
+              "name": "FlagEvaluationsWithContext"
+            },
+            {
+              "value": "metric_events_any",
+              "name": "MetricEventsAny"
+            },
+            {
+              "value": "metric_events_with_context",
+              "name": "MetricEventsWithContext"
+            }
+          ]
+        }
+      },
+      "ReleaseHealthCheckFailure": {
+        "required": [
+          "kind",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/ReleaseHealthCheckKind"
+          },
+          "metricKey": {
+            "type": "string",
+            "description": "The metric key associated with a metric event check."
+          },
+          "message": {
+            "type": "string",
+            "description": "A description of the failed health check."
+          }
+        },
+        "example": {
+          "metricKey": "metricKey",
+          "kind": "flag_evaluations_any",
+          "message": "message"
+        }
+      },
+      "StartEnvironmentReleaseBadRequest": {
+        "required": [
+          "code",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "failingChecks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReleaseHealthCheckFailure"
+            },
+            "description": "Present when \u0060code\u0060 is \u0060health_checks_failed\u0060."
+          }
+        },
+        "example": {
+          "failingChecks": [
+            {
+              "metricKey": "metricKey",
+              "kind": "flag_evaluations_any",
+              "message": "message"
+            },
+            {
+              "metricKey": "metricKey",
+              "kind": "flag_evaluations_any",
+              "message": "message"
+            }
+          ],
+          "code": "code",
+          "message": "message"
+        }
+      },
+      "VariationValue": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/VariationValueBranch1"
+          },
+          {
+            "$ref": "#/components/schemas/VariationValueBranch2"
+          },
+          {
+            "$ref": "#/components/schemas/VariationValueBranch3"
+          },
+          {
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/VariationValueBranch5"
+          }
+        ]
+      },
+      "ReleaseStep": {
+        "required": [
+          "allocation",
+          "durationMillis",
+          "stepIndex"
+        ],
+        "type": "object",
+        "properties": {
+          "stepIndex": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Zero-based index of this step.",
+            "readOnly": true
+          },
+          "allocation": {
+            "maximum": 100000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Thousandths of a percent. \u0060100000\u0060 is 100%, and \u006010000\u0060 is 10%.\nGuarded releases cannot exceed \u006050000\u0060, preserving a control\ngroup.\n"
+          },
+          "durationMillis": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int64"
+          },
+          "startedAt": {
+            "type": "integer",
+            "description": "Start of the step in Unix milliseconds.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "endedAt": {
+            "type": "integer",
+            "description": "End of the step in Unix milliseconds.",
+            "format": "int64",
+            "readOnly": true
+          }
+        },
+        "description": "One step in a phase\u0027s rollout schedule.",
+        "example": {
+          "allocation": 14658,
+          "stepIndex": 0,
+          "endedAt": 2,
+          "startedAt": 5,
+          "durationMillis": 1
+        }
+      },
+      "EnvironmentReleasePhase": {
+        "required": [
+          "id",
+          "metricStatuses",
+          "phaseIndex",
+          "ruleId",
+          "status",
+          "steps"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "phaseIndex": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Zero-based index of this phase.",
+            "readOnly": true
+          },
+          "ruleId": {
+            "type": "string",
+            "description": "ID of the flag rule for this phase. New public-API releases always\nhave a rule ID. \u0060null\u0060 is retained only when reading a historical\nrelease that ran on the default rule.\n",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "The description of the flag rule when this release was created.\nOmitted for default-rule phases.\n",
+            "readOnly": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/ReleaseStatus"
+          },
+          "statusReason": {
+            "$ref": "#/components/schemas/ReleaseStatusReason"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReleaseStep"
+            }
+          },
+          "currentStepIndex": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Zero-based index of the step the phase is on. Omitted until the\nfirst step starts. Once the phase completes or reverts, it stays at\nthe last step that started, unlike \u0060currentPhaseIndex\u0060, which\nbecomes \u0060null\u0060 when the release reaches a terminal status.\n",
+            "readOnly": true
+          },
+          "startedAt": {
+            "type": "integer",
+            "description": "Start of the phase in Unix milliseconds.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "endedAt": {
+            "type": "integer",
+            "description": "End of the phase in Unix milliseconds.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "metricStatuses": {
+            "$ref": "#/components/schemas/EnvironmentReleasePhaseMetricStatusesProperty"
+          }
+        },
+        "description": "One ordered phase of an environment release.",
+        "example": {
+          "metricStatuses": {
+            "key": "ok"
+          },
+          "statusReason": null,
+          "endedAt": 3,
+          "phaseIndex": 0,
+          "description": "description",
+          "currentStepIndex": 0,
+          "startedAt": 9,
+          "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "ruleId": "ruleId",
+          "steps": [
+            {
+              "allocation": 14658,
+              "stepIndex": 0,
+              "endedAt": 2,
+              "startedAt": 5,
+              "durationMillis": 1
+            },
+            {
+              "allocation": 14658,
+              "stepIndex": 0,
+              "endedAt": 2,
+              "startedAt": 5,
+              "durationMillis": 1
+            }
+          ],
+          "status": null
+        }
+      },
+      "ReleaseMetric": {
+        "required": [
+          "autoRollback",
+          "metricKey"
+        ],
+        "type": "object",
+        "properties": {
+          "metricKey": {
+            "type": "string"
+          },
+          "metricVersionId": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "autoRollback": {
+            "type": "boolean",
+            "description": "Whether a regression automatically reverts the release."
+          },
+          "definition": {
+            "$ref": "#/components/schemas/ReleaseMetricDefinition"
+          }
+        },
+        "description": "A metric shared by every phase of a guarded release.",
+        "example": {
+          "metricKey": "metricKey",
+          "definition": "",
+          "autoRollback": true,
+          "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+        }
+      },
+      "ReleaseMetricStatus": {
+        "enum": [
+          "ok",
+          "regressed",
+          "regression_dismissed"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-enumNames": [
+          "ReleaseMetricStatusOK",
+          "ReleaseMetricStatusRegressed",
+          "ReleaseMetricStatusRegressionDismissed"
+        ],
+        "x-ms-enum": {
+          "name": "ReleaseMetricStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "ok",
+              "name": "Ok"
+            },
+            {
+              "value": "regressed",
+              "name": "Regressed"
+            },
+            {
+              "value": "regression_dismissed",
+              "name": "RegressionDismissed"
+            }
+          ]
+        }
+      },
+      "EnvironmentRelease": {
+        "required": [
+          "advancementMode",
+          "cleanupBehavior",
+          "createdAt",
+          "currentPhaseIndex",
+          "environmentKey",
+          "flagKey",
+          "id",
+          "kind",
+          "metrics",
+          "originalVariationId",
+          "originalVariationValue",
+          "phases",
+          "projectKey",
+          "randomizationUnit",
+          "status",
+          "targetVariationId",
+          "targetVariationValue"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ReleaseStatus"
+          },
+          "statusReason": {
+            "$ref": "#/components/schemas/ReleaseStatusReason"
+          },
+          "projectKey": {
+            "type": "string"
+          },
+          "environmentKey": {
+            "type": "string"
+          },
+          "flagKey": {
+            "type": "string"
+          },
+          "originalVariationId": {
+            "type": "string",
+            "description": "ID of the variation the release started from.",
+            "format": "uuid"
+          },
+          "originalVariationValue": {
+            "$ref": "#/components/schemas/VariationValue"
+          },
+          "targetVariationId": {
+            "type": "string",
+            "description": "ID of the variation being released.",
+            "format": "uuid"
+          },
+          "targetVariationValue": {
+            "$ref": "#/components/schemas/VariationValue"
+          },
+          "randomizationUnit": {
+            "type": "string",
+            "description": "Key of the context kind the release randomizes on."
+          },
+          "cleanupBehavior": {
+            "$ref": "#/components/schemas/CleanupBehavior"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/ReleaseType"
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReleaseMetric"
+            }
+          },
+          "phases": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePhase"
+            }
+          },
+          "currentPhaseIndex": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Zero-based index of the active phase. Null before the first phase, between phases, and after the release reaches a terminal status.",
+            "nullable": true
+          },
+          "advancementMode": {
+            "$ref": "#/components/schemas/EnvironmentReleaseAdvancementMode"
+          },
+          "createdAt": {
+            "type": "integer",
+            "description": "Creation time in Unix milliseconds.",
+            "format": "int64"
+          },
+          "startedAt": {
+            "type": "integer",
+            "description": "Start of the first phase in Unix milliseconds. Absent until a phase has started.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "endedAt": {
+            "type": "integer",
+            "description": "End of the last started phase in Unix milliseconds. Present only after the release reaches a terminal status of \u0060completed\u0060 or \u0060reverted\u0060.",
+            "format": "int64",
+            "readOnly": true
+          },
+          "_links": {
+            "$ref": "#/components/schemas/EnvironmentReleaseLinksProperty"
+          }
+        },
+        "description": "A flag release in one environment, made up of one or more ordered\nphases. The top-level status is derived from the phases: it reflects\nthe active phase, reports \u0060waiting\u0060 between successfully completed\nphases, and reports the terminal outcome of the release.\n",
+        "example": {
+          "originalVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "_links": {
+            "key": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "kind": "progressive",
+          "startedAt": 7,
+          "originalVariationValue": "VariationValue",
+          "cleanupBehavior": "remove_rules_and_update_default_rule",
+          "environmentKey": "environmentKey",
+          "targetVariationValue": null,
+          "createdAt": 4,
+          "projectKey": "projectKey",
+          "statusReason": "waiting_regression_detected",
+          "advancementMode": "manual",
+          "endedAt": 1,
+          "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "targetVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "metrics": [
+            {
+              "metricKey": "metricKey",
+              "definition": "",
+              "autoRollback": true,
+              "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+            },
+            {
+              "metricKey": "metricKey",
+              "definition": "",
+              "autoRollback": true,
+              "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+            }
+          ],
+          "randomizationUnit": "randomizationUnit",
+          "currentPhaseIndex": 0,
+          "flagKey": "flagKey",
+          "phases": [
+            {
+              "metricStatuses": {
+                "key": "ok"
+              },
+              "statusReason": null,
+              "endedAt": 3,
+              "phaseIndex": 0,
+              "description": "description",
+              "currentStepIndex": 0,
+              "startedAt": 9,
+              "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "ruleId": "ruleId",
+              "steps": [
+                {
+                  "allocation": 14658,
+                  "stepIndex": 0,
+                  "endedAt": 2,
+                  "startedAt": 5,
+                  "durationMillis": 1
+                },
+                {
+                  "allocation": 14658,
+                  "stepIndex": 0,
+                  "endedAt": 2,
+                  "startedAt": 5,
+                  "durationMillis": 1
+                }
+              ],
+              "status": null
+            },
+            {
+              "metricStatuses": {
+                "key": "ok"
+              },
+              "statusReason": null,
+              "endedAt": 3,
+              "phaseIndex": 0,
+              "description": "description",
+              "currentStepIndex": 0,
+              "startedAt": 9,
+              "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "ruleId": "ruleId",
+              "steps": [
+                {
+                  "allocation": 14658,
+                  "stepIndex": 0,
+                  "endedAt": 2,
+                  "startedAt": 5,
+                  "durationMillis": 1
+                },
+                {
+                  "allocation": 14658,
+                  "stepIndex": 0,
+                  "endedAt": 2,
+                  "startedAt": 5,
+                  "durationMillis": 1
+                }
+              ],
+              "status": null
+            }
+          ],
+          "status": "pending"
+        }
+      },
+      "EnvironmentReleaseAdvancementMode": {
+        "enum": [
+          "manual",
+          "automatic"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether a multi-phase release advances to the next phase automatically\nonce the current phase\u0027s steps complete, or waits for an explicit\nadvance. Has no effect on a single-phase release.\n",
+        "x-enumNames": [
+          "EnvironmentReleaseAdvancementModeManual",
+          "EnvironmentReleaseAdvancementModeAutomatic"
+        ],
+        "x-ms-enum": {
+          "name": "EnvironmentReleaseAdvancementMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "automatic",
+              "name": "Automatic"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleaseClause": {
+        "required": [
+          "attribute",
+          "op",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "contextKind": {
+            "type": "string",
+            "description": "Context kind the clause applies to. Omit for \u0060segmentMatch\u0060."
+          },
+          "attribute": {
+            "type": "string"
+          },
+          "op": {
+            "type": "string",
+            "description": "One of \u0060in\u0060, \u0060endsWith\u0060, \u0060startsWith\u0060, \u0060matches\u0060, \u0060contains\u0060,\n\u0060lessThan\u0060, \u0060lessThanOrEqual\u0060, \u0060greaterThan\u0060, \u0060greaterThanOrEqual\u0060,\n\u0060before\u0060, \u0060after\u0060, \u0060segmentMatch\u0060, \u0060semVerEqual\u0060, \u0060semVerLessThan\u0060,\n\u0060semVerGreaterThan\u0060.\n"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseClauseValuesItem"
+            },
+            "description": "JSON primitives only (strings, numbers, booleans); objects, arrays, and null are rejected."
+          },
+          "negate": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "description": "One targeting clause of a rule created for the release."
+      },
+      "EnvironmentReleaseStepInput": {
+        "required": [
+          "allocation",
+          "durationMillis"
+        ],
+        "type": "object",
+        "properties": {
+          "allocation": {
+            "maximum": 100000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Thousandths of a percent. \u0060100000\u0060 is 100%, and \u006010000\u0060 is 10%.\nGuarded releases cannot exceed \u006050000\u0060, preserving a control\ngroup. Each step\u0027s allocation must be greater than the previous\nstep\u0027s.\n\nIn a progressive release, an allocation of N% serves the target\nvariation to N% of the phase\u0027s contexts and the original\nvariation to the rest. In a guarded release, it serves the\ntarget variation to N%, the original variation to another N% as\nthe measured control group, and the original variation to the\nrest without measuring them.\n"
+          },
+          "durationMillis": {
+            "minimum": 1,
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "description": "One step of a phase\u0027s rollout schedule.",
+        "example": {
+          "allocation": 8009,
+          "durationMillis": 1
+        }
+      },
+      "EnvironmentReleaseMetricInput": {
+        "required": [
+          "metricKey"
+        ],
+        "type": "object",
+        "properties": {
+          "metricKey": {
+            "type": "string"
+          },
+          "autoRollback": {
+            "type": "boolean",
+            "description": "Whether a regression on this metric automatically reverts the\nrelease. When \u0060false\u0060, a detected regression pauses the release\ninstead: it reports \u0060waiting\u0060 with reason\n\u0060waiting_regression_detected\u0060 and does not advance until the\nregression is dismissed or the release is stopped.\n",
+            "default": false
+          }
+        },
+        "description": "A metric to monitor across every phase of a guarded release.",
+        "example": {
+          "metricKey": "metricKey",
+          "autoRollback": false
+        }
+      },
+      "EnvironmentReleasePhaseInput": {
+        "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/EnvironmentReleaseExistingRulePhaseInput"
+          },
+          {
+            "$ref": "#/components/schemas/EnvironmentReleaseNewRulePhaseInput"
+          }
+        ],
+        "properties": {
+          "ruleId": {
+            "type": "string",
+            "description": "Existing rule to release on. The rule must already include the\n\u0060kind\u0060 clause for \u0060randomizationUnit\u0060 described in\n\u0060startEnvironmentRelease\u0060.\n"
+          },
+          "steps": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseStepInput"
+            }
+          },
+          "clauses": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseClause"
+            },
+            "description": "Clauses for a new rule. Must include the \u0060kind\u0060 clause for\n\u0060randomizationUnit\u0060 described in \u0060startEnvironmentRelease\u0060. A\nnew rule that exactly duplicates an existing rule on the flag\nreturns \u0060400\u0060 with\n\u0060new rule is exact duplicate of an existing rule at index \u003Cn\u003E\u0060.\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description for a new rule. Must differ from the description of\nevery other rule on the flag, including rules an earlier release\nleft in place, or the request returns \u0060400\u0060 with\n\u0060duplicate rule description not allowed\u0060.\n"
+          }
+        },
+        "description": "One phase of a release. Each phase creates a flag rule unless it sets \u0060ruleId\u0060."
+      },
+      "EnvironmentReleaseExistingRulePhaseInput": {
+        "required": [
+          "ruleId",
+          "steps"
+        ],
+        "type": "object",
+        "properties": {
+          "ruleId": {
+            "type": "string",
+            "description": "Existing rule to release on. The rule must already include the\n\u0060kind\u0060 clause for \u0060randomizationUnit\u0060 described in\n\u0060startEnvironmentRelease\u0060.\n"
+          },
+          "steps": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseStepInput"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "description": "A phase that releases on an existing rule. Allowed only on a single-phase release.",
+        "example": {
+          "ruleId": "ruleId",
+          "steps": [
+            {
+              "allocation": 8009,
+              "durationMillis": 1
+            },
+            {
+              "allocation": 8009,
+              "durationMillis": 1
+            }
+          ]
+        }
+      },
+      "EnvironmentReleaseNewRulePhaseInput": {
+        "required": [
+          "clauses",
+          "steps"
+        ],
+        "type": "object",
+        "properties": {
+          "clauses": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseClause"
+            },
+            "description": "Clauses for a new rule. Must include the \u0060kind\u0060 clause for\n\u0060randomizationUnit\u0060 described in \u0060startEnvironmentRelease\u0060. A\nnew rule that exactly duplicates an existing rule on the flag\nreturns \u0060400\u0060 with\n\u0060new rule is exact duplicate of an existing rule at index \u003Cn\u003E\u0060.\n"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description for a new rule. Must differ from the description of\nevery other rule on the flag, including rules an earlier release\nleft in place, or the request returns \u0060400\u0060 with\n\u0060duplicate rule description not allowed\u0060.\n"
+          },
+          "steps": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseStepInput"
+            }
+          }
+        },
+        "additionalProperties": false,
+        "description": "A phase that creates a new rule."
+      },
+      "StartEnvironmentReleaseRequest": {
+        "required": [
+          "originalVariationId",
+          "targetVariationId"
+        ],
+        "type": "object",
+        "properties": {
+          "beforeRuleId": {
+            "type": "string",
+            "description": "Insert the newly created rule or phase rules before this rule. If\nomitted, append them to the end of the rule list.\n"
+          },
+          "originalVariationId": {
+            "type": "string",
+            "description": "ID of the variation the release starts from. The release\ngradually moves traffic from it to the target variation, and\nmoves traffic back to it if the release reverts.\n",
+            "format": "uuid"
+          },
+          "targetVariationId": {
+            "type": "string",
+            "description": "ID of the variation being released. The release gradually moves\ntraffic to it from the original variation, and moves traffic back\nto the original variation if the release reverts.\n",
+            "format": "uuid"
+          },
+          "releasePlanKey": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Key of an environment release plan in this environment. The plan\nsupplies \u0060randomizationUnit\u0060, \u0060phases\u0060, \u0060metrics\u0060, \u0060advancementMode\u0060,\nand \u0060cleanupBehavior\u0060, so omit them. Omit this field to configure\nthe release inline.\n"
+          },
+          "randomizationUnit": {
+            "minLength": 1,
+            "type": "string",
+            "description": "Key of an existing, non-archived context kind in the project that\nthe release randomizes on, such as \u0060user\u0060. Each phase\u0027s rule must\ninclude the clause \u0060{\u0022contextKind\u0022: \u0022\u003Cunit\u003E\u0022, \u0022attribute\u0022: \u0022kind\u0022,\n\u0022op\u0022: \u0022in\u0022, \u0022values\u0022: [\u0022\u003Cunit\u003E\u0022]}\u0060. Required unless \u0060releasePlanKey\u0060\nis set.\n"
+          },
+          "advancementMode": {
+            "$ref": "#/components/schemas/StartEnvironmentReleaseRequestAdvancementMode"
+          },
+          "phases": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePhaseInput"
+            },
+            "description": "Ordered phases of the release. Required unless \u0060releasePlanKey\u0060 is set."
+          },
+          "metrics": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleaseMetricInput"
+            },
+            "description": "Metrics shared by every phase. Omit or pass an empty array for a\nprogressive release. Metric groups cannot be listed inline; a\nrelease plan\u0027s metric groups expand into their member metrics at\nstart. Omit when \u0060releasePlanKey\u0060 is set.\n"
+          },
+          "bypassHealthChecks": {
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReleaseHealthCheckKind"
+            },
+            "description": "Health check kinds that do not block this request. LaunchDarkly\nstill runs and enforces every health check kind not listed here.\n"
+          },
+          "cleanupBehavior": {
+            "$ref": "#/components/schemas/StartEnvironmentReleaseRequestCleanupBehavior"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Optional comment written to the flag\u0027s audit-log entry."
+          }
+        },
+        "example": {
+          "beforeRuleId": "beforeRuleId",
+          "originalVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "advancementMode": "",
+          "bypassHealthChecks": [
+            "flag_evaluations_any",
+            "flag_evaluations_with_context",
+            "metric_events_any",
+            "metric_events_with_context"
+          ],
+          "comment": "comment",
+          "targetVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "metrics": [
+            {
+              "metricKey": "metricKey",
+              "autoRollback": false
+            },
+            {
+              "metricKey": "metricKey",
+              "autoRollback": false
+            }
+          ],
+          "randomizationUnit": "randomizationUnit",
+          "releasePlanKey": "releasePlanKey",
+          "cleanupBehavior": "",
+          "phases": [
+            {
+              "ruleId": "ruleId",
+              "steps": [
+                {
+                  "allocation": 8009,
+                  "durationMillis": 1
+                },
+                {
+                  "allocation": 8009,
+                  "durationMillis": 1
+                }
+              ]
+            },
+            {
+              "ruleId": "ruleId",
+              "steps": [
+                {
+                  "allocation": 8009,
+                  "durationMillis": 1
+                },
+                {
+                  "allocation": 8009,
+                  "durationMillis": 1
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "EnvironmentReleaseResolution": {
+        "enum": [
+          "roll_forward_all_phases",
+          "roll_forward_current_phase_and_remove_pending_phases",
+          "roll_back_all_phases_and_remove_pending_phases",
+          "roll_back_current_phase_and_remove_pending_phases"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to resolve each phase of the release when you stop it:\n\n- \u0060roll_forward_all_phases\u0060: All phases serve the target variation.\n  Pending phases stay on the flag and are enabled.\n- \u0060roll_forward_current_phase_and_remove_pending_phases\u0060: Current and\n  completed phases serve the target variation. Pending phases are\n  removed.\n- \u0060roll_back_all_phases_and_remove_pending_phases\u0060: Current and\n  completed phases serve the original variation. Pending phases are\n  removed.\n- \u0060roll_back_current_phase_and_remove_pending_phases\u0060: The current\n  phase serves the original variation, and completed phases keep\n  serving the target variation. Pending phases are removed.\n\nFor a single-phase release there are no completed or pending phases,\nso the two roll-forward values are equivalent, as are the two roll-back\nvalues.\n\nThe \u0060current_phase\u0060 values return \u0060400\u0060 if the release is between\nphases. Use an \u0060all_phases\u0060 value instead. A terminal release returns\n\u0060200\u0060 unchanged for every resolution.\n",
+        "x-enumNames": [
+          "EnvironmentReleaseResolutionRollForwardAllPhases",
+          "EnvironmentReleaseResolutionRollForwardCurrentPhaseAndRemovePendingPhases",
+          "EnvironmentReleaseResolutionRollBackAllPhasesAndRemovePendingPhases",
+          "EnvironmentReleaseResolutionRollBackCurrentPhaseAndRemovePendingPhases"
+        ],
+        "x-ms-enum": {
+          "name": "EnvironmentReleaseResolution",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "roll_forward_all_phases",
+              "name": "RollForwardAllPhases"
+            },
+            {
+              "value": "roll_forward_current_phase_and_remove_pending_phases",
+              "name": "RollForwardCurrentPhaseAndRemovePendingPhases"
+            },
+            {
+              "value": "roll_back_all_phases_and_remove_pending_phases",
+              "name": "RollBackAllPhasesAndRemovePendingPhases"
+            },
+            {
+              "value": "roll_back_current_phase_and_remove_pending_phases",
+              "name": "RollBackCurrentPhaseAndRemovePendingPhases"
+            }
+          ]
+        }
+      },
+      "StopEnvironmentReleaseRequest": {
+        "required": [
+          "resolution"
+        ],
+        "type": "object",
+        "properties": {
+          "resolution": {
+            "$ref": "#/components/schemas/EnvironmentReleaseResolution"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Optional comment written to the flag\u0027s audit-log entry."
+          }
+        },
+        "example": {
+          "comment": "comment",
+          "resolution": "roll_forward_all_phases"
+        }
+      },
+      "EnvironmentReleaseCollection": {
+        "required": [
+          "items",
+          "totalCount"
+        ],
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentRelease"
+            },
+            "description": "The releases on this page."
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "The total number of releases that match the request, before \u0060limit\u0060 and \u0060offset\u0060 are applied."
+          },
+          "_links": {
+            "$ref": "#/components/schemas/EnvironmentReleaseCollectionLinksProperty"
+          }
+        },
+        "description": "One page of environment releases for one flag in one environment, newest first.",
+        "example": {
+          "_links": {
+            "key": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "totalCount": 1,
+          "items": [
+            {
+              "originalVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "_links": {
+                "key": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "kind": "progressive",
+              "startedAt": 7,
+              "originalVariationValue": "VariationValue",
+              "cleanupBehavior": "remove_rules_and_update_default_rule",
+              "environmentKey": "environmentKey",
+              "targetVariationValue": null,
+              "createdAt": 4,
+              "projectKey": "projectKey",
+              "statusReason": "waiting_regression_detected",
+              "advancementMode": "manual",
+              "endedAt": 1,
+              "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "targetVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "metrics": [
+                {
+                  "metricKey": "metricKey",
+                  "definition": "",
+                  "autoRollback": true,
+                  "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                },
+                {
+                  "metricKey": "metricKey",
+                  "definition": "",
+                  "autoRollback": true,
+                  "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                }
+              ],
+              "randomizationUnit": "randomizationUnit",
+              "currentPhaseIndex": 0,
+              "flagKey": "flagKey",
+              "phases": [
+                {
+                  "metricStatuses": {
+                    "key": "ok"
+                  },
+                  "statusReason": null,
+                  "endedAt": 3,
+                  "phaseIndex": 0,
+                  "description": "description",
+                  "currentStepIndex": 0,
+                  "startedAt": 9,
+                  "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "ruleId": "ruleId",
+                  "steps": [
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    },
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    }
+                  ],
+                  "status": null
+                },
+                {
+                  "metricStatuses": {
+                    "key": "ok"
+                  },
+                  "statusReason": null,
+                  "endedAt": 3,
+                  "phaseIndex": 0,
+                  "description": "description",
+                  "currentStepIndex": 0,
+                  "startedAt": 9,
+                  "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "ruleId": "ruleId",
+                  "steps": [
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    },
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    }
+                  ],
+                  "status": null
+                }
+              ],
+              "status": "pending"
+            },
+            {
+              "originalVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "_links": {
+                "key": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "kind": "progressive",
+              "startedAt": 7,
+              "originalVariationValue": "VariationValue",
+              "cleanupBehavior": "remove_rules_and_update_default_rule",
+              "environmentKey": "environmentKey",
+              "targetVariationValue": null,
+              "createdAt": 4,
+              "projectKey": "projectKey",
+              "statusReason": "waiting_regression_detected",
+              "advancementMode": "manual",
+              "endedAt": 1,
+              "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "targetVariationId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "metrics": [
+                {
+                  "metricKey": "metricKey",
+                  "definition": "",
+                  "autoRollback": true,
+                  "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                },
+                {
+                  "metricKey": "metricKey",
+                  "definition": "",
+                  "autoRollback": true,
+                  "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                }
+              ],
+              "randomizationUnit": "randomizationUnit",
+              "currentPhaseIndex": 0,
+              "flagKey": "flagKey",
+              "phases": [
+                {
+                  "metricStatuses": {
+                    "key": "ok"
+                  },
+                  "statusReason": null,
+                  "endedAt": 3,
+                  "phaseIndex": 0,
+                  "description": "description",
+                  "currentStepIndex": 0,
+                  "startedAt": 9,
+                  "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "ruleId": "ruleId",
+                  "steps": [
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    },
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    }
+                  ],
+                  "status": null
+                },
+                {
+                  "metricStatuses": {
+                    "key": "ok"
+                  },
+                  "statusReason": null,
+                  "endedAt": 3,
+                  "phaseIndex": 0,
+                  "description": "description",
+                  "currentStepIndex": 0,
+                  "startedAt": 9,
+                  "id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "ruleId": "ruleId",
+                  "steps": [
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    },
+                    {
+                      "allocation": 14658,
+                      "stepIndex": 0,
+                      "endedAt": 2,
+                      "startedAt": 5,
+                      "durationMillis": 1
+                    }
+                  ],
+                  "status": null
+                }
+              ],
+              "status": "pending"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleaseLink": {
+        "required": [
+          "href",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "href": "href",
+          "type": "type"
+        }
+      },
+      "EnvironmentReleasesMetricListingRep": {
+        "required": [
+          "_creationDate",
+          "_id",
+          "_links",
+          "_versionId",
+          "dataSource",
+          "key",
+          "kind",
+          "name",
+          "tags"
+        ],
+        "type": "object",
+        "properties": {
+          "experimentCount": {
+            "type": "integer",
+            "description": "The number of experiments using this metric",
+            "example": 0
+          },
+          "metricGroupCount": {
+            "type": "integer",
+            "description": "The number of metric groups using this metric",
+            "example": 0
+          },
+          "guardedRolloutCount": {
+            "type": "integer",
+            "description": "The number of guarded rollouts using this metric",
+            "example": 0
+          },
+          "releasePolicyCount": {
+            "type": "integer",
+            "description": "The number of release policies using this metric",
+            "example": 0
+          },
+          "activeExperimentCount": {
+            "type": "integer",
+            "description": "The number of active experiments using this metric",
+            "example": 2
+          },
+          "activeGuardedRolloutCount": {
+            "type": "integer",
+            "description": "The number of active guarded rollouts using this metric",
+            "example": 1
+          },
+          "_id": {
+            "type": "string",
+            "description": "The ID of this metric",
+            "example": "5902deadbeef667524a01290"
+          },
+          "_versionId": {
+            "type": "string",
+            "description": "The version ID of the metric",
+            "example": "version-id-123abc"
+          },
+          "_version": {
+            "type": "integer",
+            "description": "Version of the metric",
+            "example": 1
+          },
+          "key": {
+            "type": "string",
+            "description": "A unique key to reference the metric",
+            "example": "metric-key-123abc"
+          },
+          "name": {
+            "type": "string",
+            "description": "A human-friendly name for the metric",
+            "example": "My metric"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepKind"
+          },
+          "_attachedFlagCount": {
+            "type": "integer",
+            "description": "The number of feature flags currently attached to this metric",
+            "example": 0
+          },
+          "_links": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepLinksProperty"
+          },
+          "_site": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "_access": {
+            "$ref": "#/components/schemas/EnvironmentReleasesAccess"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags for the metric",
+            "example": []
+          },
+          "_creationDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lastModified": {
+            "$ref": "#/components/schemas/EnvironmentReleasesModification"
+          },
+          "maintainerId": {
+            "type": "string",
+            "description": "The ID of the member who maintains this metric",
+            "example": "569fdeadbeef1644facecafe"
+          },
+          "_maintainer": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMemberSummary"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the metric"
+          },
+          "category": {
+            "type": "string",
+            "description": "The category of the metric",
+            "example": "Error monitoring"
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "description": "For custom and trace metrics, whether to track numeric changes in value against a baseline (\u003Ccode\u003Etrue\u003C/code\u003E) or to track a conversion when an end user takes an action (\u003Ccode\u003Efalse\u003C/code\u003E).",
+            "example": true
+          },
+          "successCriteria": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepSuccessCriteria"
+          },
+          "unit": {
+            "type": "string",
+            "description": "For numeric custom and trace metrics, the unit of measure"
+          },
+          "eventKey": {
+            "type": "string",
+            "description": "For custom metrics, the event key to use in your code",
+            "example": "Order placed"
+          },
+          "randomizationUnits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Deprecated, use \u003Ccode\u003EanalysisUnits\u003C/code\u003E instead.",
+            "deprecated": true
+          },
+          "analysisUnits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of analysis units allowed for this metric."
+          },
+          "filters": {
+            "$ref": "#/components/schemas/EnvironmentReleasesFilter"
+          },
+          "unitAggregationType": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUnitAggregationType"
+          },
+          "analysisType": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepAnalysisType"
+          },
+          "percentileValue": {
+            "type": "integer",
+            "description": "The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when \u003Ccode\u003EanalysisType\u003C/code\u003E is \u003Ccode\u003Epercentile\u003C/code\u003E.",
+            "example": 95
+          },
+          "eventDefault": {
+            "$ref": "#/components/schemas/MetricEventDefaultRep"
+          },
+          "dataSource": {
+            "$ref": "#/components/schemas/MetricDataSourceRefRep"
+          },
+          "lastSeen": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "Whether the metric version is archived"
+          },
+          "archivedAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "selector": {
+            "type": "string",
+            "description": "For click metrics, the CSS selectors"
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUrlsItem"
+            }
+          },
+          "windowStartOffset": {
+            "type": "integer",
+            "description": "Not yet implemented - The start of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
+            "format": "int64"
+          },
+          "windowEndOffset": {
+            "type": "integer",
+            "description": "Not yet implemented - The end of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
+            "format": "int64"
+          },
+          "winsorLowerPercentile": {
+            "type": "number",
+            "description": "Lower winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, defines a two-sided clamp range. Otherwise lower-only winsorization.",
+            "example": 1
+          },
+          "winsorUpperPercentile": {
+            "type": "number",
+            "description": "Upper winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, must be greater than winsorLowerPercentile.",
+            "example": 99.5
+          },
+          "winsorIncludeImputed": {
+            "type": "boolean",
+            "description": "When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn\u0027t send events.",
+            "example": false
+          },
+          "traceQuery": {
+            "type": "string",
+            "description": "For trace metrics, the trace query to use for the metric.",
+            "example": "service.name = \u0022checkout\u0022"
+          },
+          "traceValueLocation": {
+            "type": "string",
+            "description": "For trace metrics, the location in the trace to use for numeric values.",
+            "example": "duration"
+          },
+          "unitAggregationField": {
+            "type": "string",
+            "description": "For count_distinct metrics, the column to count distinct values of"
+          },
+          "denominator": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricDenominatorRep"
+          }
+        }
+      },
+      "EnvironmentReleasesAccess": {
+        "required": [
+          "allowed",
+          "denied"
+        ],
+        "type": "object",
+        "properties": {
+          "denied": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasesAccessDenied"
+            }
+          },
+          "allowed": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasesAccessAllowedRep"
+            }
+          }
+        }
+      },
+      "EnvironmentReleasesAccessDenied": {
+        "required": [
+          "action",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/AccessDeniedReason"
+          }
+        }
+      },
+      "EnvironmentReleasesAccessAllowedRep": {
+        "required": [
+          "action",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "reason": {
+            "$ref": "#/components/schemas/AccessAllowedReason"
+          }
+        }
+      },
+      "EnvironmentReleasesModification": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2021-08-05T19:46:31.148Z"
+          }
+        }
+      },
+      "EnvironmentReleasesMemberSummary": {
+        "required": [
+          "_id",
+          "_links",
+          "email",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMemberSummaryLinksProperty"
+          },
+          "_id": {
+            "type": "string",
+            "description": "The member\u0027s ID",
+            "example": "569f183514f4432160000007"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "The member\u0027s first name",
+            "example": "Ariel"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "The member\u0027s last name",
+            "example": "Flores"
+          },
+          "role": {
+            "type": "string",
+            "description": "The member\u0027s base role. If the member has no additional roles, this role will be in effect.",
+            "example": "admin"
+          },
+          "email": {
+            "type": "string",
+            "description": "The member\u0027s email address",
+            "example": "ariel@acme.com"
+          }
+        }
+      },
+      "EnvironmentReleasesFilter": {
+        "required": [
+          "negate",
+          "op",
+          "type",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/EnvironmentReleasesFilterType"
+          },
+          "attribute": {
+            "type": "string",
+            "description": "If not a group node, the context attribute name or event property name to filter on",
+            "example": "country"
+          },
+          "op": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasesFilterValuesItem"
+            },
+            "description": "The context attribute / event property values or group member nodes"
+          },
+          "contextKind": {
+            "type": "string",
+            "description": "For context attribute filters, the context kind.",
+            "example": "user"
+          },
+          "negate": {
+            "type": "boolean",
+            "description": "If set, then take the inverse of the operator. \u0027in\u0027 becomes \u0027not in\u0027.",
+            "example": false
+          }
+        }
+      },
+      "EnvironmentReleasesMetricDenominatorRep": {
+        "type": "object",
+        "properties": {
+          "eventName": {
+            "type": "string",
+            "description": "The warehouse event column for the denominator"
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "description": "Whether the denominator aggregates a numeric value"
+          },
+          "unitAggregationType": {
+            "type": "string",
+            "description": "How individual unit values are aggregated for the denominator"
+          },
+          "unitAggregationField": {
+            "type": "string",
+            "description": "The column to count distinct values of; required when unitAggregationType is count_distinct"
+          },
+          "valueColumn": {
+            "type": "string",
+            "description": "For a numeric denominator, the column holding the numeric value"
+          },
+          "dataSource": {
+            "$ref": "#/components/schemas/MetricDataSourceRefRep"
+          },
+          "filters": {
+            "$ref": "#/components/schemas/EnvironmentReleasesFilter"
+          },
+          "windowStartOffset": {
+            "type": "integer",
+            "description": "Start of the measurement window in milliseconds",
+            "format": "int64"
+          },
+          "windowEndOffset": {
+            "type": "integer",
+            "description": "End of the measurement window in milliseconds",
+            "format": "int64"
+          },
+          "winsorLowerPercentile": {
+            "type": "number",
+            "description": "Lower winsorization percentile in the open interval (0, 100)"
+          },
+          "winsorUpperPercentile": {
+            "type": "number",
+            "description": "Upper winsorization percentile in the open interval (0, 100)"
+          },
+          "winsorIncludeImputed": {
+            "type": "boolean",
+            "description": "When true, the percentile bound calculation includes imputed zeros"
+          }
+        }
+      },
       "CreateIpAllowlistEntryRequest": {
         "required": [
           "ipAddress"
@@ -81672,6 +84507,268 @@
           }
         }
       },
+      "ReleaseMetricDefinition": {
+        "required": [
+          "_creationDate",
+          "_id",
+          "_links",
+          "_versionId",
+          "dataSource",
+          "key",
+          "kind",
+          "name",
+          "tags"
+        ],
+        "type": "object",
+        "properties": {
+          "experimentCount": {
+            "type": "integer",
+            "description": "The number of experiments using this metric",
+            "example": 0
+          },
+          "metricGroupCount": {
+            "type": "integer",
+            "description": "The number of metric groups using this metric",
+            "example": 0
+          },
+          "guardedRolloutCount": {
+            "type": "integer",
+            "description": "The number of guarded rollouts using this metric",
+            "example": 0
+          },
+          "releasePolicyCount": {
+            "type": "integer",
+            "description": "The number of release policies using this metric",
+            "example": 0
+          },
+          "activeExperimentCount": {
+            "type": "integer",
+            "description": "The number of active experiments using this metric",
+            "example": 2
+          },
+          "activeGuardedRolloutCount": {
+            "type": "integer",
+            "description": "The number of active guarded rollouts using this metric",
+            "example": 1
+          },
+          "_id": {
+            "type": "string",
+            "description": "The ID of this metric",
+            "example": "5902deadbeef667524a01290"
+          },
+          "_versionId": {
+            "type": "string",
+            "description": "The version ID of the metric",
+            "example": "version-id-123abc"
+          },
+          "_version": {
+            "type": "integer",
+            "description": "Version of the metric",
+            "example": 1
+          },
+          "key": {
+            "type": "string",
+            "description": "A unique key to reference the metric",
+            "example": "metric-key-123abc"
+          },
+          "name": {
+            "type": "string",
+            "description": "A human-friendly name for the metric",
+            "example": "My metric"
+          },
+          "kind": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepKind"
+          },
+          "_attachedFlagCount": {
+            "type": "integer",
+            "description": "The number of feature flags currently attached to this metric",
+            "example": 0
+          },
+          "_links": {
+            "$ref": "#/components/schemas/ReleaseMetricDefinitionLinks"
+          },
+          "_site": {
+            "$ref": "#/components/schemas/Link"
+          },
+          "_access": {
+            "$ref": "#/components/schemas/EnvironmentReleasesAccess"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Tags for the metric",
+            "example": []
+          },
+          "_creationDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lastModified": {
+            "$ref": "#/components/schemas/EnvironmentReleasesModification"
+          },
+          "maintainerId": {
+            "type": "string",
+            "description": "The ID of the member who maintains this metric",
+            "example": "569fdeadbeef1644facecafe"
+          },
+          "_maintainer": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMemberSummary"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the metric"
+          },
+          "category": {
+            "type": "string",
+            "description": "The category of the metric",
+            "example": "Error monitoring"
+          },
+          "isNumeric": {
+            "type": "boolean",
+            "description": "For custom and trace metrics, whether to track numeric changes in value against a baseline (\u003Ccode\u003Etrue\u003C/code\u003E) or to track a conversion when an end user takes an action (\u003Ccode\u003Efalse\u003C/code\u003E).",
+            "example": true
+          },
+          "successCriteria": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepSuccessCriteria"
+          },
+          "unit": {
+            "type": "string",
+            "description": "For numeric custom and trace metrics, the unit of measure"
+          },
+          "eventKey": {
+            "type": "string",
+            "description": "For custom metrics, the event key to use in your code",
+            "example": "Order placed"
+          },
+          "randomizationUnits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Deprecated, use \u003Ccode\u003EanalysisUnits\u003C/code\u003E instead.",
+            "deprecated": true
+          },
+          "analysisUnits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of analysis units allowed for this metric."
+          },
+          "filters": {
+            "$ref": "#/components/schemas/EnvironmentReleasesFilter"
+          },
+          "unitAggregationType": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUnitAggregationType"
+          },
+          "analysisType": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepAnalysisType"
+          },
+          "percentileValue": {
+            "type": "integer",
+            "description": "The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when \u003Ccode\u003EanalysisType\u003C/code\u003E is \u003Ccode\u003Epercentile\u003C/code\u003E.",
+            "example": 95
+          },
+          "eventDefault": {
+            "$ref": "#/components/schemas/MetricEventDefaultRep"
+          },
+          "dataSource": {
+            "$ref": "#/components/schemas/MetricDataSourceRefRep"
+          },
+          "lastSeen": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "archived": {
+            "type": "boolean",
+            "description": "Whether the metric version is archived"
+          },
+          "archivedAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "selector": {
+            "type": "string",
+            "description": "For click metrics, the CSS selectors"
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUrlsItem"
+            }
+          },
+          "windowStartOffset": {
+            "type": "integer",
+            "description": "Not yet implemented - The start of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
+            "format": "int64"
+          },
+          "windowEndOffset": {
+            "type": "integer",
+            "description": "Not yet implemented - The end of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
+            "format": "int64"
+          },
+          "winsorLowerPercentile": {
+            "type": "number",
+            "description": "Lower winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, defines a two-sided clamp range. Otherwise lower-only winsorization.",
+            "example": 1
+          },
+          "winsorUpperPercentile": {
+            "type": "number",
+            "description": "Upper winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, must be greater than winsorLowerPercentile.",
+            "example": 99.5
+          },
+          "winsorIncludeImputed": {
+            "type": "boolean",
+            "description": "When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn\u0027t send events.",
+            "example": false
+          },
+          "traceQuery": {
+            "type": "string",
+            "description": "For trace metrics, the trace query to use for the metric.",
+            "example": "service.name = \u0022checkout\u0022"
+          },
+          "traceValueLocation": {
+            "type": "string",
+            "description": "For trace metrics, the location in the trace to use for numeric values.",
+            "example": "duration"
+          },
+          "unitAggregationField": {
+            "type": "string",
+            "description": "For count_distinct metrics, the column to count distinct values of"
+          },
+          "denominator": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricDenominatorRep"
+          }
+        },
+        "description": "Present only when the caller requests \u0060expand=metrics\u0060 and the pinned\nmetric version still exists. A metric whose pinned version has been\ndeleted keeps its \u0060metricKey\u0060 and \u0060metricVersionId\u0060 but has no definition.\n",
+        "readOnly": true
+      },
+      "StartEnvironmentReleaseRequestAdvancementMode": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/EnvironmentReleaseAdvancementMode"
+          }
+        },
+        "description": "How the release moves between phases. Required when \u0060phases\u0060 has\nmore than one entry; a single-phase release ignores it and may omit it.\nOmit when \u0060releasePlanKey\u0060 is set.\n"
+      },
+      "StartEnvironmentReleaseRequestCleanupBehavior": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CleanupBehavior"
+          }
+        },
+        "description": "What happens to the release rules after the release completes. Omit\nfor \u0060leave_rules_in_place\u0060. Omit when \u0060releasePlanKey\u0060 is set.\n"
+      },
       "SdkKeyForPutSdkKeyViewsAllOf2": {
         "type": "object",
         "properties": {
@@ -83308,43 +86405,52 @@
         }
       },
       "AiConfigVariationModel": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigVariationOutputFormat": {
         "type": "object",
         "description": "JSON Schema defining the structured output format for the variation."
       },
       "AiConfigVariationPostModel": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigVariationPostOutputFormat": {
         "type": "object",
         "description": "JSON Schema defining the structured output format for the variation."
       },
       "AiConfigVariationPatchModel": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigVariationPatchOutputFormat": {
         "type": "object",
         "description": "JSON Schema defining the structured output format for the variation."
       },
       "ModelConfigParams": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigCustomParams": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPostParams": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPostCustomParams": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPatchParams": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPatchCustomParams": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigTargetingEnvironments": {
         "type": "object",
@@ -83510,6 +86616,57 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/ViewsLink"
+        }
+      },
+      "EnvironmentReleasePhaseMetricStatuses": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReleaseMetricStatus"
+        },
+        "description": "Per-phase metric status keyed by metric key. Empty for progressive\nreleases. Metric definitions and monitoring preferences live once\nin the parent release\u0027s \u0060metrics\u0060 array.\n",
+        "readOnly": true
+      },
+      "EnvironmentReleaseLinks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleaseLink"
+        }
+      },
+      "EnvironmentReleaseCollectionLinks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleaseLink"
+        },
+        "description": "Links to this page (\u0060self\u0060), the flag (\u0060parent\u0060), and, where they apply, the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 pages."
+      },
+      "EnvironmentReleasesMetricListingRepLinks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources",
+        "example": {
+          "parent": {
+            "href": "/api/v2/metrics/my-project",
+            "type": "application/json"
+          },
+          "self": {
+            "href": "/api/v2/metrics/my-project/my-metric",
+            "type": "application/json"
+          }
+        }
+      },
+      "EnvironmentReleasesMemberSummaryLinks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources",
+        "example": {
+          "self": {
+            "href": "/api/v2/members/569f183514f4432160000007",
+            "type": "application/json"
+          }
         }
       },
       "SdkKeysEnvironmentSummaryLinks": {
@@ -83740,6 +86897,28 @@
           "$ref": "#/components/schemas/ReleasePolicy"
         }
       },
+      "EnvironmentReleaseAdvancementModeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/EnvironmentReleaseAdvancementMode"
+          }
+        }
+      },
+      "CleanupBehaviorWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CleanupBehavior"
+          }
+        }
+      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
@@ -83774,6 +86953,53 @@
         "properties": {
           "value": {
             "type": "string"
+          }
+        }
+      },
+      "VariationValueBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "VariationValueBranch2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "boolean"
+          }
+        }
+      },
+      "VariationValueBranch3": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number"
+          }
+        }
+      },
+      "VariationValueBranch5": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VariationValueBranch5ValueItem"
+            }
           }
         }
       },
@@ -85436,7 +88662,7 @@
         "description": "The variation value to set for the context. Must match the flag\u0027s variation type.",
         "example": "existing_variation_value_to_use"
       },
-      "VariationValue": {
+      "VariationValueProperty": {
         "type": "object",
         "description": "The value of the variation. For boolean flags, this must be \u003Ccode\u003Etrue\u003C/code\u003E or \u003Ccode\u003Efalse\u003C/code\u003E. For multivariate flags, this may be a string, number, or JSON object."
       },
@@ -85558,43 +88784,56 @@
         }
       },
       "AiConfigVariationModelProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigVariationOutputFormatProperty": {
         "type": "object",
         "description": "JSON Schema defining the structured output format for the variation."
       },
       "AiConfigVariationPostModelProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigVariationPostOutputFormatProperty": {
         "type": "object",
         "description": "JSON Schema defining the structured output format for the variation."
       },
       "AiConfigVariationPatchModelProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigVariationPatchOutputFormatProperty": {
         "type": "object",
         "description": "JSON Schema defining the structured output format for the variation."
       },
+      "ClassifierCriteria": {
+        "type": "object",
+        "description": "Type-specific criteria. An enum classifier uses a map of option keys to descriptions.\nA float classifier uses an ordered list of level labels. A bool classifier uses optional\ntrue and false descriptions.\n"
+      },
       "ModelConfigParamsProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigCustomParamsProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPostParamsProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPostCustomParamsProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPatchParamsProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "ModelConfigPatchCustomParamsProperty": {
-        "type": "object"
+        "type": "object",
+        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
       },
       "AiConfigTargetingEnvironmentsProperty": {
         "type": "object",
@@ -85764,6 +89003,52 @@
           "$ref": "#/components/schemas/ViewsLink"
         }
       },
+      "EnvironmentReleasePhaseMetricStatusesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ReleaseMetricStatus"
+        },
+        "description": "Per-phase metric status keyed by metric key. Empty for progressive\nreleases. Metric definitions and monitoring preferences live once\nin the parent release\u0027s \u0060metrics\u0060 array.\n"
+      },
+      "EnvironmentReleaseLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleaseLink"
+        }
+      },
+      "EnvironmentReleaseClauseValuesItem": {
+        "type": "object"
+      },
+      "EnvironmentReleaseCollectionLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleaseLink"
+        },
+        "description": "Links to this page (\u0060self\u0060), the flag (\u0060parent\u0060), and, where they apply, the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 pages."
+      },
+      "EnvironmentReleasesMetricListingRepLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources"
+      },
+      "EnvironmentReleasesMetricListingRepUrlsItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUrlsItemAdditionalProperties"
+        }
+      },
+      "EnvironmentReleasesMemberSummaryLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources"
+      },
+      "EnvironmentReleasesFilterValuesItem": {
+        "type": "object"
+      },
       "SdkKeysEnvironmentSummaryLinksProperty": {
         "type": "object",
         "additionalProperties": {
@@ -85895,6 +89180,13 @@
         },
         "description": "Environment-specific overrides."
       },
+      "ReleaseMetricDefinitionLinks": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "description": "The location and content type of related resources"
+      },
       "ApprovalRequestResponseLinksAdditionalProperties": {
         "type": "object"
       },
@@ -85956,6 +89248,9 @@
         "type": "object"
       },
       "PostDeploymentEventInputDeploymentMetadataAdditionalProperties": {
+        "type": "object"
+      },
+      "VariationValueBranch5ValueItem": {
         "type": "object"
       },
       "EvaluateContextInstanceRequestAdditionalProperties": {
@@ -86070,6 +89365,9 @@
         "type": "object"
       },
       "AiConfigsMetricListingRepUrlsItemAdditionalProperties": {
+        "type": "object"
+      },
+      "EnvironmentReleasesMetricListingRepUrlsItemAdditionalProperties": {
         "type": "object"
       },
       "DeploymentRepMetadataPropertyAdditionalProperties": {
@@ -88627,6 +91925,33 @@
           ]
         }
       },
+      "ClassifierType": {
+        "enum": [
+          "bool",
+          "float",
+          "enum"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ClassifierType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bool",
+              "name": "BoolValue"
+            },
+            {
+              "value": "float",
+              "name": "FloatValue"
+            },
+            {
+              "value": "enum",
+              "name": "EnumValue"
+            }
+          ]
+        }
+      },
       "AgentGraphType": {
         "enum": [
           "agent-graph"
@@ -89136,6 +92461,131 @@
             {
               "value": "deny",
               "name": "Deny"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasesMetricListingRepKind": {
+        "enum": [
+          "pageview",
+          "click",
+          "custom",
+          "trace"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The kind of event the metric tracks",
+        "example": "custom",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasesMetricListingRepKind",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pageview",
+              "name": "Pageview"
+            },
+            {
+              "value": "click",
+              "name": "Click"
+            },
+            {
+              "value": "custom",
+              "name": "Custom"
+            },
+            {
+              "value": "trace",
+              "name": "Trace"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasesMetricListingRepSuccessCriteria": {
+        "enum": [
+          "HigherThanBaseline",
+          "LowerThanBaseline"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "For custom and trace metrics, the success criteria"
+      },
+      "EnvironmentReleasesMetricListingRepUnitAggregationType": {
+        "enum": [
+          "average",
+          "sum",
+          "count_distinct"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The method by which multiple unit event values are aggregated",
+        "example": "average",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasesMetricListingRepUnitAggregationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "average",
+              "name": "Average"
+            },
+            {
+              "value": "sum",
+              "name": "Sum"
+            },
+            {
+              "value": "count_distinct",
+              "name": "CountDistinct"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasesMetricListingRepAnalysisType": {
+        "enum": [
+          "mean",
+          "percentile"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The method for analyzing metric events",
+        "example": "mean",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasesMetricListingRepAnalysisType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "mean",
+              "name": "Mean"
+            },
+            {
+              "value": "percentile",
+              "name": "Percentile"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasesFilterType": {
+        "enum": [
+          "group",
+          "contextAttribute",
+          "eventProperty"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Filter type. One of [contextAttribute, eventProperty, group]",
+        "example": "contextAttribute",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasesFilterType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "group",
+              "name": "Group"
+            },
+            {
+              "value": "contextAttribute",
+              "name": "ContextAttribute"
+            },
+            {
+              "value": "eventProperty",
+              "name": "EventProperty"
             }
           ]
         }
@@ -89654,6 +93104,26 @@
             {
               "value": "aiConfigs",
               "name": "AiConfigs"
+            }
+          ]
+        }
+      },
+      "MetricsItem": {
+        "enum": [
+          "metrics"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-enumNames": [
+          "GetEnvironmentReleaseParamsExpandMetrics"
+        ],
+        "x-ms-enum": {
+          "name": "MetricsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "metrics",
+              "name": "Metrics"
             }
           ]
         }

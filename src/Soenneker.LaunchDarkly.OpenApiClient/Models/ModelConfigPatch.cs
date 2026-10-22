@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
+    /// <summary>
+    /// Fields to update. Omitted fields keep their current values. `params`, `customParams`, and `tags` replace the current values. Global model configs cannot be updated.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ModelConfigPatch : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -20,7 +21,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public double? CostPerInputToken { get; set; }
         /// <summary>Cost per output token in USD</summary>
         public double? CostPerOutputToken { get; set; }
-        /// <summary>The customParams property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigPatchCustomParamsProperty? CustomParams { get; set; }
@@ -36,7 +37,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The ID of the member who maintains this resource</summary>
+        /// <summary>The member ID of the new maintainer. Set `maintainerId` or `maintainerTeamKey`, not both. An empty string removes the maintainer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaintainerId { get; set; }
@@ -44,7 +45,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string MaintainerId { get; set; }
 #endif
-        /// <summary>The key of the team that maintains this resource</summary>
+        /// <summary>The key of the team to set as the new maintainer. Set `maintainerId` or `maintainerTeamKey`, not both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaintainerTeamKey { get; set; }
@@ -60,7 +61,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The params property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigPatchParamsProperty? Params { get; set; }
@@ -76,7 +77,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>Tags for this resource</summary>
+        /// <summary>Tags for the model config. Replaces the current tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

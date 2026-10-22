@@ -16,6 +16,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archivedAt property</summary>
         public long? ArchivedAt { get; set; }
+        /// <summary>Classifier rules for a judge variation. When this array is non-empty, messages must be empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>? Classifiers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier> Classifiers { get; set; }
+#endif
         /// <summary>The color used for this variation in the UI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +106,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Message> Messages { get; set; }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationModelProperty? Model { get; set; }
@@ -186,6 +194,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_archivedAt", n => { ArchivedAt = n.GetLongValue(); } },
+                { "classifiers", n => { Classifiers = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
@@ -217,6 +226,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("_archivedAt", ArchivedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>("classifiers", Classifiers);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("comment", Comment);
             writer.WriteLongValue("createdAt", CreatedAt);

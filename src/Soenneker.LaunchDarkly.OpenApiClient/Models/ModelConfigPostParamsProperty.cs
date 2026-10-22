@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
+    /// <summary>
+    /// Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ModelConfigPostParamsProperty : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

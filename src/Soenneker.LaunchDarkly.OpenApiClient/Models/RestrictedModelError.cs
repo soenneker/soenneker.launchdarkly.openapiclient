@@ -14,9 +14,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The error code</summary>
+        /// <summary>HTTP status code for this key. `400` means a config variation uses the key. `404` means the key does not exist in the project.</summary>
         public int? Code { get; set; }
-        /// <summary>The model config key</summary>
+        /// <summary>The model config key that was not added</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>A description of the error</summary>
+        /// <summary>Why the key was not added. A key that a config variation uses cannot be restricted. Move those variations to a different model first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }

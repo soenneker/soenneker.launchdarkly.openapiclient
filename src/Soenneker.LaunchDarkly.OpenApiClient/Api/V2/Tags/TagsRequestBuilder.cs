@@ -111,7 +111,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Tags
             [QueryParameter("asOf")]
             public string AsOf { get; set; }
 #endif
-            /// <summary>Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`, `metric`, `metric-data-source`, `aiconfig`, and `view`. Returns all types by default.</summary>
+            /// <summary>Fetch tags associated with the specified resource type. Options are `flag`, `project`, `environment`, `segment`, `metric`, `metric-data-source`, `aiconfig`, `agent-skill`, and `view`. Returns all types by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("kind")]

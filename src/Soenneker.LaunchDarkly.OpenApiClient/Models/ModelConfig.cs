@@ -28,7 +28,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public double? CostPerInputToken { get; set; }
         /// <summary>Cost per output token in USD</summary>
         public double? CostPerOutputToken { get; set; }
-        /// <summary>The customParams property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigCustomParamsProperty? CustomParams { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigCustomParamsProperty CustomParams { get; set; }
 #endif
-        /// <summary>Whether the model is global</summary>
+        /// <summary>Whether the model is in the LaunchDarkly global catalog. Global models are read-only. Model configs that you create are always custom, with `global` set to `false`.</summary>
         public bool? Global { get; set; }
         /// <summary>Icon for the model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Icon { get; set; }
 #endif
-        /// <summary>Identifier for the model, for use with third party providers</summary>
+        /// <summary>Model ID that the provider&apos;s API uses. This is different from `key`. Use this value as `modelName` on a config variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -54,9 +54,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Whether the model is restricted</summary>
+        /// <summary>Whether the model is on the project&apos;s restricted list. Config variations cannot select a restricted model. To change this, use the add or remove restricted models endpoints.</summary>
         public bool? IsRestricted { get; set; }
-        /// <summary>Unique key for the model</summary>
+        /// <summary>Unique key for the model config in the project, in the format `Provider.model-id`. Use this value as `modelConfigKey` on a config variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The params property</summary>
+        /// <summary>Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, `params` and `customParams` hold parameters that the provider&apos;s API accepts, for example `{&quot;temperature&quot;: 0.7, &quot;maxTokens&quot;: 4096}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigParamsProperty? Params { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfigParamsProperty Params { get; set; }
 #endif
-        /// <summary>Provider for the model</summary>
+        /// <summary>Provider for the model. Matches the provider prefix of `key`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Provider { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Provider { get; set; }
 #endif
-        /// <summary>Tags for this resource</summary>
+        /// <summary>Tags for the model config. Tags can be used in custom role policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }
@@ -106,7 +106,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>Number of distinct AgentControl configs that reference this model</summary>
         public int? UsedInCount { get; set; }
-        /// <summary>The version number of this resource</summary>
+        /// <summary>Version of the model config. Starts at 1, and each update that changes the model config adds a new version.</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ModelConfig"/> and sets the default values.
