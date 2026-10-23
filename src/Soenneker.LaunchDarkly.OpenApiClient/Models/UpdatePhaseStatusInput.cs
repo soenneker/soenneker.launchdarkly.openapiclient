@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Extra configuration for audiences required upon phase initialization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput>? Audiences { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput>? Audiences { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput> Audiences { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput> Audiences { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audiences", n => { Audiences = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "audiences", n => { Audiences = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput>("audiences", Audiences);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput>("audiences", Audiences);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

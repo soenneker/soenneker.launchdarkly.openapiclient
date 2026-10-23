@@ -9,7 +9,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReleaseProgression : IAdditionalDataHolder, IParsable
+    public partial class PipelineReleaseProgression : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the currently active release phase</summary>
@@ -45,27 +45,27 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionLinksProperty? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionLinksProperty Links { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression"/> and sets the default values.
         /// </summary>
-        public ReleaseProgression()
+        public PipelineReleaseProgression()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_completedAt", n => { CompletedAt = n.GetLongValue(); } },
                 { "_createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "flagKey", n => { FlagKey = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionLinksProperty.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionLinksProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteLongValue("_completedAt", CompletedAt);
             writer.WriteLongValue("_createdAt", CreatedAt);
             writer.WriteStringValue("flagKey", FlagKey);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionLinksProperty>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionLinksProperty>("_links", Links);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -54,7 +54,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiToolPatchSchemaProperty Schema { get; set; }
 #endif
-        /// <summary>Tags for this resource</summary>
+        /// <summary>Replaces the tags on the tool. Tags can be used in custom role policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }

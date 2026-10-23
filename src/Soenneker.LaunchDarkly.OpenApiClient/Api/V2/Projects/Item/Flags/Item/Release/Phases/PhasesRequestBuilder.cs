@@ -18,6 +18,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.R
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.flags.item.release.phases.item collection</summary>
         /// <param name="position">The phase ID</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.Phases.Item.WithPhaseItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.Phases.Item.WithPhaseItemRequestBuilder this[string position]
         {
             get

@@ -9,7 +9,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReleaseProgressionCollection : IAdditionalDataHolder, IParsable
+    public partial class PipelineReleaseProgressionCollection : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of active releases</summary>
@@ -21,18 +21,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A list of details for each release, across all flags, for this release pipeline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression>? Items { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression> Items { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression> Items { get; set; }
 #endif
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollectionLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollectionLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty Links { get; set; }
 #endif
         /// <summary>A list of details for each phase, across all releases, for this release pipeline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,21 +45,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The total number of releases for this release pipeline</summary>
         public int? TotalCount { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollection"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollection"/> and sets the default values.
         /// </summary>
-        public ReleaseProgressionCollection()
+        public PipelineReleaseProgressionCollection()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollection();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,8 +71,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "activeCount", n => { ActiveCount = n.GetIntValue(); } },
                 { "completedCount", n => { CompletedCount = n.GetIntValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollectionLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollectionLinksProperty.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty.CreateFromDiscriminatorValue); } },
                 { "phases", n => { Phases = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PhaseInfo>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PhaseInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalCount", n => { TotalCount = n.GetIntValue(); } },
             };
@@ -86,8 +86,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("activeCount", ActiveCount);
             writer.WriteIntValue("completedCount", CompletedCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgression>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseProgressionCollectionLinksProperty>("_links", Links);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgression>("items", Items);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty>("_links", Links);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PhaseInfo>("phases", Phases);
             writer.WriteIntValue("totalCount", TotalCount);
             writer.WriteAdditionalData(AdditionalData);

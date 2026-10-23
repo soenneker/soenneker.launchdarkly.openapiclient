@@ -11,26 +11,26 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// The location and content type of related resources
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReleaseLinksProperty : IAdditionalDataHolder, IParsable
+    public partial class PipelineReleaseProgressionCollectionLinksProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty"/> and sets the default values.
         /// </summary>
-        public ReleaseLinksProperty()
+        public PipelineReleaseProgressionCollectionLinksProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseLinksProperty();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseProgressionCollectionLinksProperty();
         }
         /// <summary>
         /// The deserialization information for the current model

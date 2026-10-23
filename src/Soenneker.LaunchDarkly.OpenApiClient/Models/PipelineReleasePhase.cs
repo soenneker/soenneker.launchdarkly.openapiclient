@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A logical grouping of one or more environments that share attributes for rolling out changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience>? Audiences { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience>? Audiences { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience> Audiences { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience> Audiences { get; set; }
 #endif
         /// <summary>Whether this phase is complete</summary>
         public bool? Complete { get; set; }
@@ -97,7 +97,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "_audiences", n => { Audiences = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "_audiences", n => { Audiences = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "complete", n => { Complete = n.GetBoolValue(); } },
                 { "_completedBy", n => { CompletedBy = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CompletedBy>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.CompletedBy.CreateFromDiscriminatorValue); } },
                 { "_completionDate", n => { CompletionDate = n.GetLongValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience>("_audiences", Audiences);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience>("_audiences", Audiences);
             writer.WriteBoolValue("complete", Complete);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CompletedBy>("_completedBy", CompletedBy);
             writer.WriteLongValue("_completionDate", CompletionDate);

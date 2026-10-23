@@ -9,27 +9,43 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class VariationValueBranch5ValueItem : IAdditionalDataHolder, IParsable
+    public partial class CreatePipelineReleaseInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The key of the release pipeline to attach the flag to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReleasePipelineKey { get; set; }
+#nullable restore
+#else
+        public string ReleasePipelineKey { get; set; }
+#endif
+        /// <summary>The variation id to release to across all phases</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReleaseVariationId { get; set; }
+#nullable restore
+#else
+        public string ReleaseVariationId { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5ValueItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput"/> and sets the default values.
         /// </summary>
-        public VariationValueBranch5ValueItem()
+        public CreatePipelineReleaseInput()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5ValueItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5ValueItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5ValueItem();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +55,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "releasePipelineKey", n => { ReleasePipelineKey = n.GetStringValue(); } },
+                { "releaseVariationId", n => { ReleaseVariationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +66,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("releasePipelineKey", ReleasePipelineKey);
+            writer.WriteStringValue("releaseVariationId", ReleaseVariationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

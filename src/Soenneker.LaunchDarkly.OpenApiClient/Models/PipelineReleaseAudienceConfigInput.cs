@@ -9,7 +9,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReleaserAudienceConfigInput : IAdditionalDataHolder, IParsable
+    public partial class PipelineReleaseAudienceConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,27 +41,27 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The releaseGuardianConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfigurationInput? ReleaseGuardianConfiguration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? ReleaseGuardianConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfigurationInput ReleaseGuardianConfiguration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput ReleaseGuardianConfiguration { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput"/> and sets the default values.
         /// </summary>
-        public ReleaserAudienceConfigInput()
+        public PipelineReleaseAudienceConfigInput()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaserAudienceConfigInput();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,7 +74,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "audienceId", n => { AudienceId = n.GetStringValue(); } },
                 { "notifyMemberIds", n => { NotifyMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "notifyTeamKeys", n => { NotifyTeamKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "releaseGuardianConfiguration", n => { ReleaseGuardianConfiguration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfigurationInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfigurationInput.CreateFromDiscriminatorValue); } },
+                { "releaseGuardianConfiguration", n => { ReleaseGuardianConfiguration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("audienceId", AudienceId);
             writer.WriteCollectionOfPrimitiveValues<string>("notifyMemberIds", NotifyMemberIds);
             writer.WriteCollectionOfPrimitiveValues<string>("notifyTeamKeys", NotifyTeamKeys);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfigurationInput>("releaseGuardianConfiguration", ReleaseGuardianConfiguration);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput>("releaseGuardianConfiguration", ReleaseGuardianConfiguration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

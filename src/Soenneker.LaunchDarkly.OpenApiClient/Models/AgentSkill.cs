@@ -24,7 +24,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public long? CreatedAt { get; set; }
-        /// <summary>A description of the agent skill</summary>
+        /// <summary>Human-readable description of what the agent skill does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Markdown { get; set; }
 #endif
-        /// <summary>The agent skill name</summary>
+        /// <summary>Human-readable name of the agent skill.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Tags for this resource</summary>
+        /// <summary>Tags for the agent skill. Tags can be used in custom role policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
-        /// <summary>The version number of this resource</summary>
+        /// <summary>Version of the agent skill. Starts at 1, and each update that changes the name, description, or markdown creates a new version. Pass this value with `key` in a variation&apos;s `skills: [{key, version}]`.</summary>
         public int? Version { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentSkill"/> and sets the default values.

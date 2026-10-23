@@ -202,8 +202,8 @@
       "description": "\n> ### Relay Proxy automatic configuration is an Enterprise feature\n>\n> Relay Proxy automatic configuration is available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nThe Relay Proxy automatic configuration API provides access to all resources related to relay tokens. To learn more, read [Automatic configuration](https://launchdarkly.com/docs/sdk/relay-proxy/automatic-configuration).\n\nSeveral of the endpoints in the Relay Proxy automatic configuration API require a configuration ID. The Relay Proxy configuration ID is returned as part of the [Create a new Relay Proxy config](https://launchdarkly.com/docs/api/relay-proxy-configurations/post-relay-auto-config) and [List Relay Proxy configs](https://launchdarkly.com/docs/api/relay-proxy-configurations/get-relay-proxy-configs) responses. It is the `_id` field, or the `_id` field of each element in the `items` array.\n"
     },
     {
-      "name": "Release pipelines (beta)",
-      "description": "> ### This feature is in beta\n>\n> To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n>\n> Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nRelease pipelines standardize and automate the release process for feature flags across a series of phases, where each phase consists of one or more environments and audiences. Each phase can use an immediate or guarded rollout to a designated audience, and can require approvals for selected environments. You can use release pipelines to ensure that you correctly roll out a flag in one environment before moving on to the next. To learn more, read [Release pipelines](https://launchdarkly.com/docs/home/releases/release-pipelines).\n\nUse the release pipelines API to view, create, update, and delete release pipelines. You can also use this API to view the progress of all ongoing releases across all flags in a project for a given release pipeline.\n\n### Creating releases and updating release phases\n\nWhen you add a flag to an existing release pipeline, you create a \"release\" to automate that flag's progress through the pipeline's phases. Use the release endpoints in this section to add a flag to an existing release pipeline, or to monitor or update an ongoing release for a flag. Updating an ongoing release generally involves the following steps:\n\n1. Obtain the release phases associated with the release. The `phases` field provides an ordered list of all pipeline phases associated with the flag's release. `phases` is returned in the response when you [Create a new release for a flag](https://launchdarkly.com/docs/api/release-pipelines-beta/create-release-for-flag) or [Get the release for a flag](https://launchdarkly.com/docs/api/release-pipelines-beta/get-release-by-flag-key).\n\n2. Determine the `_id` of the phase you want to start. Release pipeline phases take place in their configured order, so find the first incomplete, unstarted phase in the `phases` list. For example, in a newly-created release the first phase in the `phases` list has both the `complete` and `started` fields set to `false`.\n\n3. Use the phase `_id` value with the [Update phase status for release](https://launchdarkly.com/docs/api/release-pipelines-beta/update-phase-status) endpoint to start the release phase. At a minimum, you must provide `{\"status\": active}` in the request object to start a pipeline phase. If the phase requires approvals or guarded rollouts, provide the additional required information in the `audiences` list.\n"
+      "name": "Release pipelines (deprecated)",
+      "description": "> ### Release pipelines are deprecated\n>\n> Release pipelines and the endpoints in this section are deprecated.\n\n> ### This feature is in beta\n>\n> To use this feature, pass in a header including the `LD-API-Version` key with value set to `beta`. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n>\n> Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nRelease pipelines standardize and automate the release process for feature flags across a series of phases, where each phase consists of one or more environments and audiences. Each phase can use an immediate or guarded rollout to a designated audience, and can require approvals for selected environments. You can use release pipelines to ensure that you correctly roll out a flag in one environment before moving on to the next. To learn more, read [Release pipelines](https://launchdarkly.com/docs/home/releases/release-pipelines).\n\nUse the release pipelines API to view, create, update, and delete release pipelines. You can also use this API to view the progress of all ongoing releases across all flags in a project for a given release pipeline.\n\n### Creating releases and updating release phases\n\nWhen you add a flag to an existing release pipeline, you create a \"release\" to automate that flag's progress through the pipeline's phases. Use the release endpoints in this section to add a flag to an existing release pipeline, or to monitor or update an ongoing release for a flag. Updating an ongoing release generally involves the following steps:\n\n1. Obtain the release phases associated with the release. The `phases` field provides an ordered list of all pipeline phases associated with the flag's release. `phases` is returned in the response when you [Create a new release for a flag](https://launchdarkly.com/docs/api/release-pipelines-deprecated/create-release-for-flag) or [Get the release for a flag](https://launchdarkly.com/docs/api/release-pipelines-deprecated/get-release-by-flag-key).\n\n2. Determine the `_id` of the phase you want to start. Release pipeline phases take place in their configured order, so find the first incomplete, unstarted phase in the `phases` list. For example, in a newly-created release the first phase in the `phases` list has both the `complete` and `started` fields set to `false`.\n\n3. Use the phase `_id` value with the [Update phase status for release](https://launchdarkly.com/docs/api/release-pipelines-deprecated/update-phase-status) endpoint to start the release phase. At a minimum, you must provide `{\"status\": active}` in the request object to start a pipeline phase. If the phase requires approvals or guarded rollouts, provide the additional required information in the `audiences` list.\n"
     },
     {
       "name": "Release policies (beta)",
@@ -7380,7 +7380,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Release"
+                  "$ref": "#/components/schemas/PipelineRelease"
                 }
               }
             }
@@ -7397,7 +7397,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Get release for flag",
         "description": "Get currently active release for a flag",
@@ -7425,7 +7425,8 @@
             }
           }
         ],
-        "operationId": "getReleaseByFlagKey"
+        "operationId": "getReleaseByFlagKey",
+        "deprecated": true
       },
       "patch": {
         "responses": {
@@ -7434,7 +7435,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Release"
+                  "$ref": "#/components/schemas/PipelineRelease"
                 }
               }
             }
@@ -7491,10 +7492,10 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Patch release for flag",
-        "description": "This endpoint is only available for releases that are part of a legacy release pipeline. Releases for new release pipelines should use the [Update phase status for release](https://launchdarkly.com/docs/api/release-pipelines-beta/update-phase-status) endpoint.\n\nUpdate currently active release for a flag. Updating releases requires the [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) format. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).\n\nYou can only use this endpoint to mark a release phase complete or incomplete. To indicate which phase to update, use the array index in the `path`. For example, to mark the first phase of a release as complete, use the following request body:\n\n```\n  [\n    {\n      \"op\": \"replace\",\n      \"path\": \"/phase/0/complete\",\n      \"value\": true\n    }\n  ]\n```\n",
+        "description": "This endpoint is only available for releases that are part of a legacy release pipeline. Releases for new release pipelines should use the [Update phase status for release](https://launchdarkly.com/docs/api/release-pipelines-deprecated/update-phase-status) endpoint.\n\nUpdate currently active release for a flag. Updating releases requires the [JSON patch](https://datatracker.ietf.org/doc/html/rfc6902) format. To learn more, read [Updates](https://launchdarkly.com/docs/api#updates).\n\nYou can only use this endpoint to mark a release phase complete or incomplete. To indicate which phase to update, use the array index in the `path`. For example, to mark the first phase of a release as complete, use the following request body:\n\n```\n  [\n    {\n      \"op\": \"replace\",\n      \"path\": \"/phase/0/complete\",\n      \"value\": true\n    }\n  ]\n```\n",
         "parameters": [
           {
             "name": "projectKey",
@@ -7536,7 +7537,8 @@
           },
           "required": true
         },
-        "operationId": "patchReleaseByFlagKey"
+        "operationId": "patchReleaseByFlagKey",
+        "deprecated": true
       },
       "delete": {
         "responses": {
@@ -7565,7 +7567,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Delete a release for flag",
         "description": "Deletes a release from a flag",
@@ -7593,7 +7595,8 @@
             }
           }
         ],
-        "operationId": "deleteReleaseByFlagKey"
+        "operationId": "deleteReleaseByFlagKey",
+        "deprecated": true
       }
     },
     "/api/v2/integration-capabilities/big-segment-store": {
@@ -18658,7 +18661,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Release"
+                  "$ref": "#/components/schemas/PipelineRelease"
                 }
               }
             }
@@ -18705,7 +18708,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Create a new release for flag",
         "description": "Creates a release by adding a flag to a release pipeline",
@@ -18737,13 +18740,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateReleaseInput"
+                "$ref": "#/components/schemas/CreatePipelineReleaseInput"
               }
             }
           },
           "required": true
         },
-        "operationId": "createReleaseForFlag"
+        "operationId": "createReleaseForFlag",
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/flags/{flagKey}/release/phases/{phaseId}": {
@@ -18754,7 +18758,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Release"
+                  "$ref": "#/components/schemas/PipelineRelease"
                 }
               }
             }
@@ -18801,7 +18805,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Update phase status for release",
         "description": "Updates the execution status of a phase of a release",
@@ -18850,7 +18854,8 @@
           },
           "required": true
         },
-        "operationId": "updatePhaseStatus"
+        "operationId": "updatePhaseStatus",
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/layers": {
@@ -19735,7 +19740,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Get all release pipelines",
         "description": "Get all release pipelines for a project.\n\n### Filtering release pipelines\n\nLaunchDarkly supports the following fields for filters:\n\n- `query` is a string that matches against the release pipeline `key`, `name`, and `description`. It is not case sensitive. For example: `?filter=query:examplePipeline`.\n\n- `env` is a string that matches an environment key. For example: `?filter=env:production`.\n",
@@ -19782,7 +19787,8 @@
             }
           }
         ],
-        "operationId": "getAllReleasePipelines"
+        "operationId": "getAllReleasePipelines",
+        "deprecated": true
       },
       "post": {
         "responses": {
@@ -19838,7 +19844,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Create a release pipeline",
         "description": "Creates a new release pipeline.\n\nThe first release pipeline you create is automatically set as the default release pipeline for your project. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/api/projects/patch-project) API to set the `defaultReleasePipelineKey`.\n\nYou can create up to 20 release pipelines per project.\n",
@@ -19865,7 +19871,8 @@
           },
           "required": true
         },
-        "operationId": "postReleasePipeline"
+        "operationId": "postReleasePipeline",
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/release-pipelines/{pipelineKey}": {
@@ -19893,7 +19900,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Get release pipeline by key",
         "description": "Get a release pipeline by key",
@@ -19921,7 +19928,8 @@
             }
           }
         ],
-        "operationId": "getReleasePipelineByKey"
+        "operationId": "getReleasePipelineByKey",
+        "deprecated": true
       },
       "put": {
         "responses": {
@@ -19967,7 +19975,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Update a release pipeline",
         "description": "Updates a release pipeline.",
@@ -20005,7 +20013,8 @@
           },
           "required": true
         },
-        "operationId": "putReleasePipeline"
+        "operationId": "putReleasePipeline",
+        "deprecated": true
       },
       "delete": {
         "responses": {
@@ -20034,7 +20043,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Delete release pipeline",
         "description": "Deletes a release pipeline.\n\nYou cannot delete the default release pipeline.\n\nIf you want to delete a release pipeline that is currently the default, create a second release pipeline and set it as the default. Then delete the first release pipeline. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/api/projects/patch-project) API to set the `defaultReleasePipelineKey`.\n",
@@ -20062,7 +20071,8 @@
             }
           }
         ],
-        "operationId": "deleteReleasePipeline"
+        "operationId": "deleteReleasePipeline",
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/release-pipelines/{pipelineKey}/releases": {
@@ -20073,7 +20083,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ReleaseProgressionCollection"
+                  "$ref": "#/components/schemas/PipelineReleaseProgressionCollection"
                 }
               }
             }
@@ -20090,7 +20100,7 @@
           }
         },
         "tags": [
-          "Release pipelines (beta)"
+          "Release pipelines (deprecated)"
         ],
         "summary": "Get release progressions for release pipeline",
         "description": "Get details on the progression of all releases, across all flags, for a release pipeline",
@@ -20148,7 +20158,8 @@
             }
           }
         ],
-        "operationId": "getAllReleaseProgressionsForReleasePipeline"
+        "operationId": "getAllReleaseProgressionsForReleasePipeline",
+        "deprecated": true
       }
     },
     "/api/v2/public-ip-list": {
@@ -38186,7 +38197,7 @@
                   "metrics"
                 ],
                 "type": "string",
-                "x-enumNames": [
+                "x-enum-varnames": [
                   "GetEnvironmentReleaseParamsExpandMetrics"
                 ]
               },
@@ -43891,7 +43902,7 @@
           "releaseStrategy": {
             "description": "The release strategy",
             "example": "monitoredRelease",
-            "$ref": "#/components/schemas/ReleaseStrategy"
+            "$ref": "#/components/schemas/PipelineReleaseStrategy"
           },
           "requireApproval": {
             "type": "boolean",
@@ -43920,7 +43931,7 @@
           },
           "releaseGuardianConfiguration": {
             "description": "The configuration for the release guardian.",
-            "$ref": "#/components/schemas/ReleaseGuardianConfiguration"
+            "$ref": "#/components/schemas/PipelineReleaseGuardianConfiguration"
           }
         }
       },
@@ -45896,7 +45907,7 @@
           }
         }
       },
-      "CreateReleaseInput": {
+      "CreatePipelineReleaseInput": {
         "type": "object",
         "required": [
           "releasePipelineKey"
@@ -53895,6 +53906,207 @@
       "PhaseStatus": {
         "type": "string"
       },
+      "PipelineRelease": {
+        "type": "object",
+        "required": [
+          "name",
+          "releasePipelineKey",
+          "releasePipelineDescription",
+          "phases",
+          "_version"
+        ],
+        "properties": {
+          "_links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "description": "The location and content type of related resources"
+          },
+          "name": {
+            "type": "string",
+            "description": "The release pipeline name",
+            "example": "Example release pipeline"
+          },
+          "releasePipelineKey": {
+            "type": "string",
+            "description": "The release pipeline key",
+            "example": "example-release-pipeline"
+          },
+          "releasePipelineDescription": {
+            "type": "string",
+            "description": "The release pipeline description",
+            "example": "Our release pipeline for typical testing and deployment"
+          },
+          "phases": {
+            "type": "array",
+            "description": "An ordered list of the release pipeline phases",
+            "items": {
+              "$ref": "#/components/schemas/PipelineReleasePhase"
+            }
+          },
+          "_version": {
+            "type": "integer",
+            "description": "The release version",
+            "example": 1
+          },
+          "_releaseVariationId": {
+            "type": "string",
+            "description": "The chosen release variation ID to use across all phases of a release"
+          },
+          "_canceledAt": {
+            "description": "Timestamp of when the release was canceled",
+            "example": "1684262711507",
+            "$ref": "#/components/schemas/UnixMillis"
+          }
+        }
+      },
+      "PipelineReleaseAudience": {
+        "type": "object",
+        "required": [
+          "_id",
+          "name"
+        ],
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The audience ID",
+            "example": "1234a56b7c89d012345e678g"
+          },
+          "_links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "description": "The location and content type of related resources"
+          },
+          "environment": {
+            "description": "Details about the environment. If the environment is deleted, this field will be omitted.",
+            "$ref": "#/components/schemas/EnvironmentSummary"
+          },
+          "name": {
+            "type": "string",
+            "description": "The release phase name",
+            "example": "Phase 1 - Testing"
+          },
+          "configuration": {
+            "description": "The audience configuration",
+            "$ref": "#/components/schemas/AudienceConfiguration"
+          },
+          "segmentKeys": {
+            "type": "array",
+            "description": "A list of segment keys",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "segment-key-123abc"
+            ]
+          },
+          "status": {
+            "description": "The audience status",
+            "example": "active",
+            "$ref": "#/components/schemas/AudienceStatus"
+          },
+          "_ruleIds": {
+            "type": "array",
+            "description": "The rules IDs added or updated by this audience",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "PipelineReleaseAudienceConfigInput": {
+        "type": "object",
+        "properties": {
+          "audienceId": {
+            "type": "string",
+            "description": "UUID of the audience."
+          },
+          "releaseGuardianConfiguration": {
+            "description": "Optional configuration details for the specified audience. Will default to the release pipeline's audience configuration if omitted.",
+            "$ref": "#/components/schemas/PipelineReleaseGuardianConfigurationInput"
+          },
+          "notifyMemberIds": {
+            "type": "array",
+            "description": "An array of member IDs. These members are notified to review the approval request.",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "1234a56b7c89d012345e678f"
+            ]
+          },
+          "notifyTeamKeys": {
+            "type": "array",
+            "description": "An array of team keys. The members of these teams are notified to review the approval request.",
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "example-reviewer-team"
+            ]
+          }
+        }
+      },
+      "PipelineReleaseGuardianConfiguration": {
+        "type": "object",
+        "required": [
+          "monitoringWindowMilliseconds",
+          "rolloutWeight",
+          "rollbackOnRegression"
+        ],
+        "properties": {
+          "monitoringWindowMilliseconds": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The monitoring window in milliseconds",
+            "example": 60000
+          },
+          "rolloutWeight": {
+            "type": "integer",
+            "description": "The rollout weight percentage",
+            "example": 50
+          },
+          "rollbackOnRegression": {
+            "type": "boolean",
+            "description": "Whether or not to roll back on regression",
+            "example": true
+          },
+          "randomizationUnit": {
+            "type": "string",
+            "description": "The randomization unit for the measured rollout",
+            "example": "user"
+          }
+        }
+      },
+      "PipelineReleaseGuardianConfigurationInput": {
+        "type": "object",
+        "properties": {
+          "monitoringWindowMilliseconds": {
+            "type": "integer",
+            "format": "int64",
+            "description": "The monitoring window in milliseconds",
+            "example": 60000
+          },
+          "rolloutWeight": {
+            "type": "integer",
+            "description": "The rollout weight",
+            "example": 50
+          },
+          "rollbackOnRegression": {
+            "type": "boolean",
+            "description": "Whether or not to rollback on regression",
+            "example": true
+          },
+          "randomizationUnit": {
+            "type": "string",
+            "description": "The randomization unit for the measured rollout",
+            "example": "user"
+          }
+        }
+      },
       "PipelineReleasePhase": {
         "type": "object",
         "required": [
@@ -53938,7 +54150,7 @@
             "type": "array",
             "description": "A logical grouping of one or more environments that share attributes for rolling out changes",
             "items": {
-              "$ref": "#/components/schemas/ReleaseAudience"
+              "$ref": "#/components/schemas/PipelineReleaseAudience"
             }
           },
           "status": {
@@ -53966,6 +54178,100 @@
             "$ref": "#/components/schemas/PhaseConfiguration"
           }
         }
+      },
+      "PipelineReleaseProgression": {
+        "type": "object",
+        "required": [
+          "_createdAt",
+          "flagKey",
+          "_links"
+        ],
+        "properties": {
+          "_createdAt": {
+            "description": "Timestamp of when the release was created",
+            "example": "1684262711507",
+            "$ref": "#/components/schemas/UnixMillis"
+          },
+          "_completedAt": {
+            "description": "Timestamp of when the release was completed",
+            "example": "1684262711509",
+            "$ref": "#/components/schemas/UnixMillis"
+          },
+          "flagKey": {
+            "type": "string",
+            "description": "The flag key",
+            "example": "flag-key-123abc"
+          },
+          "activePhaseId": {
+            "type": "string",
+            "description": "The ID of the currently active release phase",
+            "example": "1234a56b7c89d012345e678f"
+          },
+          "activePhaseStatus": {
+            "description": "The status of the currently active release phase, for example, whether it is ready to start or has started",
+            "example": "active",
+            "$ref": "#/components/schemas/PhaseStatus"
+          },
+          "_links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "description": "The location and content type of related resources"
+          }
+        }
+      },
+      "PipelineReleaseProgressionCollection": {
+        "type": "object",
+        "required": [
+          "activeCount",
+          "completedCount",
+          "items",
+          "phases",
+          "totalCount",
+          "_links"
+        ],
+        "properties": {
+          "activeCount": {
+            "type": "integer",
+            "description": "The number of active releases",
+            "example": 3
+          },
+          "completedCount": {
+            "type": "integer",
+            "description": "The number of completed releases",
+            "example": 1
+          },
+          "items": {
+            "type": "array",
+            "description": "A list of details for each release, across all flags, for this release pipeline",
+            "items": {
+              "$ref": "#/components/schemas/PipelineReleaseProgression"
+            }
+          },
+          "phases": {
+            "type": "array",
+            "description": "A list of details for each phase, across all releases, for this release pipeline",
+            "items": {
+              "$ref": "#/components/schemas/PhaseInfo"
+            }
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "The total number of releases for this release pipeline",
+            "example": 8
+          },
+          "_links": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Link"
+            },
+            "description": "The location and content type of related resources"
+          }
+        }
+      },
+      "PipelineReleaseStrategy": {
+        "type": "string"
       },
       "PostFlagScheduledChangesInput": {
         "type": "object",
@@ -54592,174 +54898,6 @@
           }
         }
       },
-      "Release": {
-        "type": "object",
-        "required": [
-          "name",
-          "releasePipelineKey",
-          "releasePipelineDescription",
-          "phases",
-          "_version"
-        ],
-        "properties": {
-          "_links": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "description": "The location and content type of related resources"
-          },
-          "name": {
-            "type": "string",
-            "description": "The release pipeline name",
-            "example": "Example release pipeline"
-          },
-          "releasePipelineKey": {
-            "type": "string",
-            "description": "The release pipeline key",
-            "example": "example-release-pipeline"
-          },
-          "releasePipelineDescription": {
-            "type": "string",
-            "description": "The release pipeline description",
-            "example": "Our release pipeline for typical testing and deployment"
-          },
-          "phases": {
-            "type": "array",
-            "description": "An ordered list of the release pipeline phases",
-            "items": {
-              "$ref": "#/components/schemas/PipelineReleasePhase"
-            }
-          },
-          "_version": {
-            "type": "integer",
-            "description": "The release version",
-            "example": 1
-          },
-          "_releaseVariationId": {
-            "type": "string",
-            "description": "The chosen release variation ID to use across all phases of a release"
-          },
-          "_canceledAt": {
-            "description": "Timestamp of when the release was canceled",
-            "example": "1684262711507",
-            "$ref": "#/components/schemas/UnixMillis"
-          }
-        }
-      },
-      "ReleaseAudience": {
-        "type": "object",
-        "required": [
-          "_id",
-          "name"
-        ],
-        "properties": {
-          "_id": {
-            "type": "string",
-            "description": "The audience ID",
-            "example": "1234a56b7c89d012345e678g"
-          },
-          "_links": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "description": "The location and content type of related resources"
-          },
-          "environment": {
-            "description": "Details about the environment. If the environment is deleted, this field will be omitted.",
-            "$ref": "#/components/schemas/EnvironmentSummary"
-          },
-          "name": {
-            "type": "string",
-            "description": "The release phase name",
-            "example": "Phase 1 - Testing"
-          },
-          "configuration": {
-            "description": "The audience configuration",
-            "$ref": "#/components/schemas/AudienceConfiguration"
-          },
-          "segmentKeys": {
-            "type": "array",
-            "description": "A list of segment keys",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "segment-key-123abc"
-            ]
-          },
-          "status": {
-            "description": "The audience status",
-            "example": "active",
-            "$ref": "#/components/schemas/AudienceStatus"
-          },
-          "_ruleIds": {
-            "type": "array",
-            "description": "The rules IDs added or updated by this audience",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "ReleaseGuardianConfiguration": {
-        "type": "object",
-        "required": [
-          "monitoringWindowMilliseconds",
-          "rolloutWeight",
-          "rollbackOnRegression"
-        ],
-        "properties": {
-          "monitoringWindowMilliseconds": {
-            "type": "integer",
-            "format": "int64",
-            "description": "The monitoring window in milliseconds",
-            "example": 60000
-          },
-          "rolloutWeight": {
-            "type": "integer",
-            "description": "The rollout weight percentage",
-            "example": 50
-          },
-          "rollbackOnRegression": {
-            "type": "boolean",
-            "description": "Whether or not to roll back on regression",
-            "example": true
-          },
-          "randomizationUnit": {
-            "type": "string",
-            "description": "The randomization unit for the measured rollout",
-            "example": "user"
-          }
-        }
-      },
-      "ReleaseGuardianConfigurationInput": {
-        "type": "object",
-        "properties": {
-          "monitoringWindowMilliseconds": {
-            "type": "integer",
-            "format": "int64",
-            "description": "The monitoring window in milliseconds",
-            "example": 60000
-          },
-          "rolloutWeight": {
-            "type": "integer",
-            "description": "The rollout weight",
-            "example": 50
-          },
-          "rollbackOnRegression": {
-            "type": "boolean",
-            "description": "Whether or not to rollback on regression",
-            "example": true
-          },
-          "randomizationUnit": {
-            "type": "string",
-            "description": "The randomization unit for the measured rollout",
-            "example": "user"
-          }
-        }
-      },
       "ReleasePipeline": {
         "type": "object",
         "required": [
@@ -54845,133 +54983,6 @@
             "type": "integer",
             "description": "Total number of release pipelines",
             "example": 1
-          }
-        }
-      },
-      "ReleaseProgression": {
-        "type": "object",
-        "required": [
-          "_createdAt",
-          "flagKey",
-          "_links"
-        ],
-        "properties": {
-          "_createdAt": {
-            "description": "Timestamp of when the release was created",
-            "example": "1684262711507",
-            "$ref": "#/components/schemas/UnixMillis"
-          },
-          "_completedAt": {
-            "description": "Timestamp of when the release was completed",
-            "example": "1684262711509",
-            "$ref": "#/components/schemas/UnixMillis"
-          },
-          "flagKey": {
-            "type": "string",
-            "description": "The flag key",
-            "example": "flag-key-123abc"
-          },
-          "activePhaseId": {
-            "type": "string",
-            "description": "The ID of the currently active release phase",
-            "example": "1234a56b7c89d012345e678f"
-          },
-          "activePhaseStatus": {
-            "description": "The status of the currently active release phase, for example, whether it is ready to start or has started",
-            "example": "active",
-            "$ref": "#/components/schemas/PhaseStatus"
-          },
-          "_links": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "description": "The location and content type of related resources"
-          }
-        }
-      },
-      "ReleaseProgressionCollection": {
-        "type": "object",
-        "required": [
-          "activeCount",
-          "completedCount",
-          "items",
-          "phases",
-          "totalCount",
-          "_links"
-        ],
-        "properties": {
-          "activeCount": {
-            "type": "integer",
-            "description": "The number of active releases",
-            "example": 3
-          },
-          "completedCount": {
-            "type": "integer",
-            "description": "The number of completed releases",
-            "example": 1
-          },
-          "items": {
-            "type": "array",
-            "description": "A list of details for each release, across all flags, for this release pipeline",
-            "items": {
-              "$ref": "#/components/schemas/ReleaseProgression"
-            }
-          },
-          "phases": {
-            "type": "array",
-            "description": "A list of details for each phase, across all releases, for this release pipeline",
-            "items": {
-              "$ref": "#/components/schemas/PhaseInfo"
-            }
-          },
-          "totalCount": {
-            "type": "integer",
-            "description": "The total number of releases for this release pipeline",
-            "example": 8
-          },
-          "_links": {
-            "type": "object",
-            "additionalProperties": {
-              "$ref": "#/components/schemas/Link"
-            },
-            "description": "The location and content type of related resources"
-          }
-        }
-      },
-      "ReleaseStrategy": {
-        "type": "string"
-      },
-      "ReleaserAudienceConfigInput": {
-        "type": "object",
-        "properties": {
-          "audienceId": {
-            "type": "string",
-            "description": "UUID of the audience."
-          },
-          "releaseGuardianConfiguration": {
-            "description": "Optional configuration details for the specified audience. Will default to the release pipeline's audience configuration if omitted.",
-            "$ref": "#/components/schemas/ReleaseGuardianConfigurationInput"
-          },
-          "notifyMemberIds": {
-            "type": "array",
-            "description": "An array of member IDs. These members are notified to review the approval request.",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "1234a56b7c89d012345e678f"
-            ]
-          },
-          "notifyTeamKeys": {
-            "type": "array",
-            "description": "An array of team keys. The members of these teams are notified to review the approval request.",
-            "items": {
-              "type": "string"
-            },
-            "example": [
-              "example-reviewer-team"
-            ]
           }
         }
       },
@@ -56947,7 +56958,7 @@
             "type": "array",
             "description": "Extra configuration for audiences required upon phase initialization.",
             "items": {
-              "$ref": "#/components/schemas/ReleaserAudienceConfigInput"
+              "$ref": "#/components/schemas/PipelineReleaseAudienceConfigInput"
             }
           }
         }
@@ -59647,7 +59658,7 @@
                   "comment": "comment",
                   "model": "{}",
                   "_id": "_id",
-                  "state": "state",
+                  "state": "published",
                   "outputFormat": {
                     "key": ""
                   },
@@ -59739,7 +59750,7 @@
                   "comment": "comment",
                   "model": "{}",
                   "_id": "_id",
-                  "state": "state",
+                  "state": "published",
                   "outputFormat": {
                     "key": ""
                   },
@@ -59969,7 +59980,7 @@
                   "comment": "comment",
                   "model": "{}",
                   "_id": "_id",
-                  "state": "state",
+                  "state": "published",
                   "outputFormat": {
                     "key": ""
                   },
@@ -60061,7 +60072,7 @@
                   "comment": "comment",
                   "model": "{}",
                   "_id": "_id",
-                  "state": "state",
+                  "state": "published",
                   "outputFormat": {
                     "key": ""
                   },
@@ -60316,7 +60327,7 @@
               "comment": "comment",
               "model": "{}",
               "_id": "_id",
-              "state": "state",
+              "state": "published",
               "outputFormat": {
                 "key": ""
               },
@@ -60408,7 +60419,7 @@
               "comment": "comment",
               "model": "{}",
               "_id": "_id",
-              "state": "state",
+              "state": "published",
               "outputFormat": {
                 "key": ""
               },
@@ -60817,7 +60828,7 @@
           "comment": "comment",
           "model": "{}",
           "_id": "_id",
-          "state": "state",
+          "state": "published",
           "outputFormat": {
             "key": ""
           },
@@ -60897,8 +60908,14 @@
             "type": "integer"
           },
           "state": {
-            "description": "The state of this variation",
-            "type": "string"
+            "description": "The state of the variation.\n- `archived`: The variation is archived. To restore it, update the variation with `state` set to `published`.\n- `published`: The variation is active.\n",
+            "enum": [
+              "archived",
+              "published"
+            ],
+            "example": "published",
+            "type": "string",
+            "x-go-type": "string"
           },
           "_archivedAt": {
             "format": "int64",
@@ -61032,7 +61049,7 @@
               "comment": "comment",
               "model": "{}",
               "_id": "_id",
-              "state": "state",
+              "state": "published",
               "outputFormat": {
                 "key": ""
               },
@@ -61124,7 +61141,7 @@
               "comment": "comment",
               "model": "{}",
               "_id": "_id",
-              "state": "state",
+              "state": "published",
               "outputFormat": {
                 "key": ""
               },
@@ -61380,7 +61397,7 @@
           ],
           "comment": "comment",
           "model": "{}",
-          "state": "state",
+          "state": "archived",
           "outputFormat": {
             "key": ""
           },
@@ -61441,8 +61458,14 @@
             "type": "boolean"
           },
           "state": {
-            "description": "One of 'archived', 'published'",
-            "type": "string"
+            "description": "The state to move the variation to. Omit this field to keep the current state.\n- `archived`: Archive a published variation. You cannot archive a variation that is already archived. You also cannot archive the only variation of an AI Config. An AI Config itself cannot be archived.\n- `published`: Restore an archived variation. You cannot publish a variation that is already published.\n",
+            "enum": [
+              "archived",
+              "published"
+            ],
+            "example": "archived",
+            "type": "string",
+            "x-go-type": "string"
           },
           "tools": {
             "description": "List of tools to use for this variation. The latest version of the tool will be used.",
@@ -63863,7 +63886,7 @@
       "AITool": {
         "example": {
           "schema": "{}",
-          "createdAt": 6,
+          "createdAt": 0,
           "_maintainer": {
             "kind": "kind"
           },
@@ -63972,12 +63995,14 @@
             "type": "type"
           },
           "description": "description",
-          "customParameters": "{}",
-          "version": 0,
+          "customParameters": {
+            "requiresApproval": true,
+            "timeoutMs": 5000
+          },
+          "version": 2,
           "key": "key",
           "tags": [
-            "tags",
-            "tags"
+            "support"
           ]
         },
         "properties": {
@@ -64007,17 +64032,25 @@
           },
           "customParameters": {
             "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
+            "example": {
+              "requiresApproval": true,
+              "timeoutMs": 5000
+            },
             "type": "object"
           },
           "tags": {
-            "description": "Tags for this resource",
+            "description": "Tags for the tool. Tags can be used in custom role policies.",
+            "example": [
+              "support"
+            ],
             "items": {
               "type": "string"
             },
             "type": "array"
           },
           "version": {
-            "description": "The version number of this resource",
+            "description": "Version of the tool. Starts at 1, and each update that changes the description, schema, custom parameters, or tags creates a new version. Pass this value with `key` in a variation's `tools: [{key, version}]`.",
+            "example": 2,
             "type": "integer"
           },
           "createdAt": {
@@ -64057,11 +64090,11 @@
               "type": "type"
             }
           },
-          "totalCount": 1,
+          "totalCount": 6,
           "items": [
             {
               "schema": "{}",
-              "createdAt": 6,
+              "createdAt": 0,
               "_maintainer": {
                 "kind": "kind"
               },
@@ -64170,17 +64203,19 @@
                 "type": "type"
               },
               "description": "description",
-              "customParameters": "{}",
-              "version": 0,
+              "customParameters": {
+                "requiresApproval": true,
+                "timeoutMs": 5000
+              },
+              "version": 2,
               "key": "key",
               "tags": [
-                "tags",
-                "tags"
+                "support"
               ]
             },
             {
               "schema": "{}",
-              "createdAt": 6,
+              "createdAt": 0,
               "_maintainer": {
                 "kind": "kind"
               },
@@ -64289,12 +64324,14 @@
                 "type": "type"
               },
               "description": "description",
-              "customParameters": "{}",
-              "version": 0,
+              "customParameters": {
+                "requiresApproval": true,
+                "timeoutMs": 5000
+              },
+              "version": 2,
               "key": "key",
               "tags": [
-                "tags",
-                "tags"
+                "support"
               ]
             }
           ]
@@ -64327,11 +64364,13 @@
           "maintainerId": "507f1f77bcf86cd799439011",
           "maintainerTeamKey": "example-team-key",
           "description": "description",
-          "customParameters": "{}",
+          "customParameters": {
+            "requiresApproval": true,
+            "timeoutMs": 5000
+          },
           "key": "key",
           "tags": [
-            "tags",
-            "tags"
+            "support"
           ]
         },
         "properties": {
@@ -64359,10 +64398,17 @@
           },
           "customParameters": {
             "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
+            "example": {
+              "requiresApproval": true,
+              "timeoutMs": 5000
+            },
             "type": "object"
           },
           "tags": {
-            "description": "Tags for this resource",
+            "description": "Tags for the tool. Tags can be used in custom role policies.",
+            "example": [
+              "support"
+            ],
             "items": {
               "type": "string"
             },
@@ -64381,10 +64427,12 @@
           "maintainerId": "507f1f77bcf86cd799439011",
           "maintainerTeamKey": "example-team-key",
           "description": "description",
-          "customParameters": "{}",
+          "customParameters": {
+            "requiresApproval": true,
+            "timeoutMs": 5000
+          },
           "tags": [
-            "tags",
-            "tags"
+            "support"
           ]
         },
         "properties": {
@@ -64408,10 +64456,17 @@
           },
           "customParameters": {
             "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
+            "example": {
+              "requiresApproval": true,
+              "timeoutMs": 5000
+            },
             "type": "object"
           },
           "tags": {
-            "description": "Tags for this resource",
+            "description": "Replaces the tags on the tool. Tags can be used in custom role policies.",
+            "example": [
+              "support"
+            ],
             "items": {
               "type": "string"
             },
@@ -64985,7 +65040,7 @@
       },
       "AgentSkill": {
         "example": {
-          "createdAt": 6,
+          "createdAt": 0,
           "_maintainer": {
             "kind": "kind"
           },
@@ -65089,14 +65144,13 @@
               "type": "type"
             }
           },
-          "name": "name",
+          "name": "PDF extraction",
           "markdown": "markdown",
-          "description": "description",
-          "version": 0,
+          "description": "Extracts text and tables from PDF files.",
+          "version": 2,
           "key": "key",
           "tags": [
-            "tags",
-            "tags"
+            "documents"
           ]
         },
         "properties": {
@@ -65114,11 +65168,13 @@
             "$ref": "#/components/schemas/AIConfig__maintainer"
           },
           "name": {
-            "description": "The agent skill name",
+            "description": "Human-readable name of the agent skill.",
+            "example": "PDF extraction",
             "type": "string"
           },
           "description": {
-            "description": "A description of the agent skill",
+            "description": "Human-readable description of what the agent skill does.",
+            "example": "Extracts text and tables from PDF files.",
             "type": "string"
           },
           "markdown": {
@@ -65126,14 +65182,18 @@
             "type": "string"
           },
           "tags": {
-            "description": "Tags for this resource",
+            "description": "Tags for the agent skill. Tags can be used in custom role policies.",
+            "example": [
+              "documents"
+            ],
             "items": {
               "type": "string"
             },
             "type": "array"
           },
           "version": {
-            "description": "The version number of this resource",
+            "description": "Version of the agent skill. Starts at 1, and each update that changes the name, description, or markdown creates a new version. Pass this value with `key` in a variation's `skills: [{key, version}]`.",
+            "example": 2,
             "type": "integer"
           },
           "createdAt": {
@@ -65175,10 +65235,10 @@
               "type": "type"
             }
           },
-          "totalCount": 1,
+          "totalCount": 6,
           "items": [
             {
-              "createdAt": 6,
+              "createdAt": 0,
               "_maintainer": {
                 "kind": "kind"
               },
@@ -65282,18 +65342,17 @@
                   "type": "type"
                 }
               },
-              "name": "name",
+              "name": "PDF extraction",
               "markdown": "markdown",
-              "description": "description",
-              "version": 0,
+              "description": "Extracts text and tables from PDF files.",
+              "version": 2,
               "key": "key",
               "tags": [
-                "tags",
-                "tags"
+                "documents"
               ]
             },
             {
-              "createdAt": 6,
+              "createdAt": 0,
               "_maintainer": {
                 "kind": "kind"
               },
@@ -65397,14 +65456,13 @@
                   "type": "type"
                 }
               },
-              "name": "name",
+              "name": "PDF extraction",
               "markdown": "markdown",
-              "description": "description",
-              "version": 0,
+              "description": "Extracts text and tables from PDF files.",
+              "version": 2,
               "key": "key",
               "tags": [
-                "tags",
-                "tags"
+                "documents"
               ]
             }
           ]
@@ -65434,14 +65492,13 @@
       "AgentSkillPost": {
         "example": {
           "maintainerId": "507f1f77bcf86cd799439011",
-          "name": "name",
+          "name": "PDF extraction",
           "markdown": "markdown",
           "maintainerTeamKey": "example-team-key",
-          "description": "description",
+          "description": "Extracts text and tables from PDF files.",
           "key": "pdf-extraction",
           "tags": [
-            "tags",
-            "tags"
+            "documents"
           ]
         },
         "properties": {
@@ -65451,11 +65508,13 @@
             "type": "string"
           },
           "name": {
-            "description": "A human-readable name for the agent skill",
+            "description": "Human-readable name of the agent skill.",
+            "example": "PDF extraction",
             "type": "string"
           },
           "description": {
-            "description": "A description of the agent skill",
+            "description": "Human-readable description of what the agent skill does.",
+            "example": "Extracts text and tables from PDF files.",
             "type": "string"
           },
           "markdown": {
@@ -65473,7 +65532,10 @@
             "type": "string"
           },
           "tags": {
-            "description": "Tags for this resource",
+            "description": "Tags for the agent skill. Tags can be used in custom role policies.",
+            "example": [
+              "documents"
+            ],
             "items": {
               "type": "string"
             },
@@ -65490,22 +65552,23 @@
       "AgentSkillPatch": {
         "example": {
           "maintainerId": "507f1f77bcf86cd799439011",
-          "name": "name",
+          "name": "PDF extraction",
           "markdown": "markdown",
           "maintainerTeamKey": "example-team-key",
-          "description": "description",
+          "description": "Extracts text and tables from PDF files.",
           "tags": [
-            "tags",
-            "tags"
+            "documents"
           ]
         },
         "properties": {
           "name": {
-            "description": "A human-readable name for the agent skill",
+            "description": "Human-readable name of the agent skill.",
+            "example": "PDF extraction",
             "type": "string"
           },
           "description": {
-            "description": "A description of the agent skill",
+            "description": "Human-readable description of what the agent skill does.",
+            "example": "Extracts text and tables from PDF files.",
             "type": "string"
           },
           "markdown": {
@@ -65523,7 +65586,10 @@
             "type": "string"
           },
           "tags": {
-            "description": "Tags for this resource",
+            "description": "Replaces the tags on the agent skill. Tags can be used in custom role policies. Changing only the tags does not create a new version.",
+            "example": [
+              "documents"
+            ],
             "items": {
               "type": "string"
             },
@@ -83813,7 +83879,7 @@
           "guarded"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "ReleaseTypeProgressive",
           "ReleaseTypeGuarded"
         ]
@@ -83828,7 +83894,7 @@
           "reverted"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "ReleaseStatusPending",
           "ReleaseStatusInProgress",
           "ReleaseStatusWaiting",
@@ -83849,7 +83915,7 @@
           "reverted_insufficient_data"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "ReleaseStatusReasonWaitingRegressionDetected",
           "ReleaseStatusReasonWaitingPhaseEnded",
           "ReleaseStatusReasonCompletedAutomatic",
@@ -83867,7 +83933,7 @@
           "leave_rules_in_place"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "CleanupBehaviorRemoveRulesAndUpdateDefaultRule",
           "CleanupBehaviorLeaveRulesInPlace"
         ]
@@ -83881,7 +83947,7 @@
           "metric_events_with_context"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "ReleaseHealthCheckKindFlagEvaluationsAny",
           "ReleaseHealthCheckKindFlagEvaluationsWithContext",
           "ReleaseHealthCheckKindMetricEventsAny",
@@ -83950,27 +84016,6 @@
           "message"
         ],
         "type": "object"
-      },
-      "VariationValue": {
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "number"
-          },
-          {
-            "additionalProperties": true,
-            "type": "object"
-          },
-          {
-            "items": {},
-            "type": "array"
-          }
-        ]
       },
       "ReleaseStep": {
         "description": "One step in a phase's rollout schedule.",
@@ -84165,7 +84210,7 @@
           "regression_dismissed"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "ReleaseMetricStatusOK",
           "ReleaseMetricStatusRegressed",
           "ReleaseMetricStatusRegressionDismissed"
@@ -84183,10 +84228,10 @@
           },
           "kind": "progressive",
           "startedAt": 7,
-          "originalVariationValue": "VariationValue",
+          "originalVariationValue": "",
           "cleanupBehavior": "remove_rules_and_update_default_rule",
           "environmentKey": "environmentKey",
-          "targetVariationValue": null,
+          "targetVariationValue": "",
           "createdAt": 4,
           "projectKey": "projectKey",
           "statusReason": "waiting_regression_detected",
@@ -84301,7 +84346,7 @@
             "type": "string"
           },
           "originalVariationValue": {
-            "$ref": "#/components/schemas/VariationValue"
+            "description": "The value of the variation. This may be a string, boolean, number, JSON object, or array."
           },
           "targetVariationId": {
             "description": "ID of the variation being released.",
@@ -84309,7 +84354,7 @@
             "type": "string"
           },
           "targetVariationValue": {
-            "$ref": "#/components/schemas/VariationValue"
+            "description": "The value of the variation. This may be a string, boolean, number, JSON object, or array."
           },
           "randomizationUnit": {
             "description": "Key of the context kind the release randomizes on.",
@@ -84395,7 +84440,7 @@
           "automatic"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "EnvironmentReleaseAdvancementModeManual",
           "EnvironmentReleaseAdvancementModeAutomatic"
         ]
@@ -84698,7 +84743,7 @@
           "roll_back_current_phase_and_remove_pending_phases"
         ],
         "type": "string",
-        "x-enumNames": [
+        "x-enum-varnames": [
           "EnvironmentReleaseResolutionRollForwardAllPhases",
           "EnvironmentReleaseResolutionRollForwardCurrentPhaseAndRemovePendingPhases",
           "EnvironmentReleaseResolutionRollBackAllPhasesAndRemovePendingPhases",
@@ -84745,10 +84790,10 @@
               },
               "kind": "progressive",
               "startedAt": 7,
-              "originalVariationValue": "VariationValue",
+              "originalVariationValue": "",
               "cleanupBehavior": "remove_rules_and_update_default_rule",
               "environmentKey": "environmentKey",
-              "targetVariationValue": null,
+              "targetVariationValue": "",
               "createdAt": 4,
               "projectKey": "projectKey",
               "statusReason": "waiting_regression_detected",
@@ -84847,10 +84892,10 @@
               },
               "kind": "progressive",
               "startedAt": 7,
-              "originalVariationValue": "VariationValue",
+              "originalVariationValue": "",
               "cleanupBehavior": "remove_rules_and_update_default_rule",
               "environmentKey": "environmentKey",
-              "targetVariationValue": null,
+              "targetVariationValue": "",
               "createdAt": 4,
               "projectKey": "projectKey",
               "statusReason": "waiting_regression_detected",

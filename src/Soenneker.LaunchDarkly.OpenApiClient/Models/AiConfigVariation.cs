@@ -150,14 +150,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkill> Skills { get; set; }
 #endif
-        /// <summary>The state of this variation</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        /// <summary>The state of the variation.- `archived`: The variation is archived. To restore it, update the variation with `state` set to `published`.- `published`: The variation is active.</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationState? State { get; set; }
         /// <summary>The tools this variation can use</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,7 +207,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "outputFormat", n => { OutputFormat = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationOutputFormatProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationOutputFormatProperty.CreateFromDiscriminatorValue); } },
                 { "_publishedAt", n => { PublishedAt = n.GetLongValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkill>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkill.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationState>(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationTool>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationTool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
@@ -245,7 +239,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationOutputFormatProperty>("outputFormat", OutputFormat);
             writer.WriteLongValue("_publishedAt", PublishedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkill>("skills", Skills);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationState>("state", State);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationTool>("tools", Tools);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

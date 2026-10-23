@@ -8,51 +8,20 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch1"/>, <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch2"/>, <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch3"/>, <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5"/>, <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueMember1"/>
+    /// The value of the variation. For boolean flags, this must be &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;. For multivariate flags, this may be a string, number, or JSON object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class VariationValue : IComposedTypeWrapper, IParsable
+    public partial class VariationValue : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch1? VariationValueBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch1 VariationValueBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch2? VariationValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch2 VariationValueBranch2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch3? VariationValueBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch3 VariationValueBranch3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5? VariationValueBranch5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5 VariationValueBranch5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueMember1? VariationValueMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueMember1 VariationValueMember1 { get; set; }
-#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue"/> and sets the default values.
+        /// </summary>
+        public VariationValue()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,13 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue();
-            result.VariationValueBranch1 = new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch1();
-            result.VariationValueBranch2 = new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch2();
-            result.VariationValueBranch3 = new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch3();
-            result.VariationValueBranch5 = new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch5();
-            result.VariationValueMember1 = new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueMember1();
-            return result;
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,11 +38,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(VariationValueBranch1 != null || VariationValueBranch2 != null || VariationValueBranch3 != null || VariationValueBranch5 != null || VariationValueMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VariationValueBranch1, VariationValueBranch2, VariationValueBranch3, VariationValueBranch5, VariationValueMember1);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,7 +49,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValueBranch1>(null, VariationValueBranch1, VariationValueBranch2, VariationValueBranch3, VariationValueBranch5, VariationValueMember1);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

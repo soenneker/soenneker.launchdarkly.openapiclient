@@ -106,14 +106,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkillPost> Skills { get; set; }
 #endif
-        /// <summary>One of &apos;archived&apos;, &apos;published&apos;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        /// <summary>The state to move the variation to. Omit this field to keep the current state.- `archived`: Archive a published variation. You cannot archive a variation that is already archived. You also cannot archive the only variation of an AI Config. An AI Config itself cannot be archived.- `published`: Restore an archived variation. You cannot publish a variation that is already published.</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchState? State { get; set; }
         /// <summary>List of tool keys to use for this variation. The latest version of the tool will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,7 +162,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "outputFormat", n => { OutputFormat = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchOutputFormatProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchOutputFormatProperty.CreateFromDiscriminatorValue); } },
                 { "published", n => { Published = n.GetBoolValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkillPost>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkillPost.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchState>(); } },
                 { "toolKeys", n => { ToolKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationToolPost>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationToolPost.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -193,7 +187,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchOutputFormatProperty>("outputFormat", OutputFormat);
             writer.WriteBoolValue("published", Published);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationSkillPost>("skills", Skills);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPatchState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("toolKeys", ToolKeys);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationToolPost>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);

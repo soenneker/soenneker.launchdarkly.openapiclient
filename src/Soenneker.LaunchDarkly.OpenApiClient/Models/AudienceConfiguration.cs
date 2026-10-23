@@ -33,10 +33,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The releaseGuardianConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfiguration? ReleaseGuardianConfiguration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfiguration? ReleaseGuardianConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfiguration ReleaseGuardianConfiguration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfiguration ReleaseGuardianConfiguration { get; set; }
 #endif
         /// <summary>The releaseStrategy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "notifyMemberIds", n => { NotifyMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "notifyTeamKeys", n => { NotifyTeamKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "releaseGuardianConfiguration", n => { ReleaseGuardianConfiguration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfiguration>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfiguration.CreateFromDiscriminatorValue); } },
+                { "releaseGuardianConfiguration", n => { ReleaseGuardianConfiguration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfiguration>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfiguration.CreateFromDiscriminatorValue); } },
                 { "releaseStrategy", n => { ReleaseStrategy = n.GetStringValue(); } },
                 { "requireApproval", n => { RequireApproval = n.GetBoolValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("notifyMemberIds", NotifyMemberIds);
             writer.WriteCollectionOfPrimitiveValues<string>("notifyTeamKeys", NotifyTeamKeys);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseGuardianConfiguration>("releaseGuardianConfiguration", ReleaseGuardianConfiguration);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfiguration>("releaseGuardianConfiguration", ReleaseGuardianConfiguration);
             writer.WriteStringValue("releaseStrategy", ReleaseStrategy);
             writer.WriteBoolValue("requireApproval", RequireApproval);
             writer.WriteAdditionalData(AdditionalData);

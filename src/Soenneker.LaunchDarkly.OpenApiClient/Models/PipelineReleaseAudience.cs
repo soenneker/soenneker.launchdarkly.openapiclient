@@ -9,7 +9,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ReleaseAudience : IAdditionalDataHolder, IParsable
+    public partial class PipelineReleaseAudience : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,10 +41,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudienceLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceLinksProperty? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudienceLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceLinksProperty Links { get; set; }
 #endif
         /// <summary>The release phase name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,21 +79,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience"/> and sets the default values.
         /// </summary>
-        public ReleaseAudience()
+        public PipelineReleaseAudience()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudience();
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudience();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,7 +106,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AudienceConfiguration>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AudienceConfiguration.CreateFromDiscriminatorValue); } },
                 { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentSummary>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentSummary.CreateFromDiscriminatorValue); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudienceLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudienceLinksProperty.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceLinksProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "_ruleIds", n => { RuleIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "segmentKeys", n => { SegmentKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -123,7 +123,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AudienceConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentSummary>("environment", Environment);
             writer.WriteStringValue("_id", Id);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseAudienceLinksProperty>("_links", Links);
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceLinksProperty>("_links", Links);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("_ruleIds", RuleIds);
             writer.WriteCollectionOfPrimitiveValues<string>("segmentKeys", SegmentKeys);
