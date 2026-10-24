@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Imports
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey-id}\{segmentKey}\imports
+    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey}\{segmentKey}\imports
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImportsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Im
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}/imports", pathParameters)
+        public ImportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Im
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}/imports", rawUrl)
+        public ImportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/imports", rawUrl)
         {
         }
         /// <summary>

@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey-id}\environments\{environmentKey}
+    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey}\environments\{environmentKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithEnvironmentKeyItemRequestBuilder : BaseRequestBuilder
@@ -61,7 +61,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/environments/{environmentKey}", pathParameters)
+        public WithEnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}", pathParameters)
         {
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/environments/{environmentKey}", rawUrl)
+        public WithEnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}", rawUrl)
         {
         }
     }

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.Item.Flags
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\environments\{environmentKey}\contexts\{contextKind-id}\{contextKey-id}\flags
+    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\environments\{environmentKey}\contexts\{contextKind}\{contextKey}\flags
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlagsRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FlagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind%2Did}/{contextKey%2Did}/flags", pathParameters)
+        public FlagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FlagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind%2Did}/{contextKey%2Did}/flags", rawUrl)
+        public FlagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags", rawUrl)
         {
         }
     }

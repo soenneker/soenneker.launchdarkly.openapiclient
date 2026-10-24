@@ -14,14 +14,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>How the release moves between phases. Required when `phases` hasmore than one entry; a single-phase release ignores it and may omit it.Omit when `releasePlanKey` is set.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Whether a multi-phase release advances to the next phase automaticallyonce the current phase&apos;s steps complete, or waits for an explicitadvance. Has no effect on a single-phase release.</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode? AdvancementMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode AdvancementMode { get; set; }
-#endif
         /// <summary>Insert the newly created rule or phase rules before this rule. Ifomitted, append them to the end of the rule list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,14 +32,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?> BypassHealthChecks { get; set; }
 #endif
-        /// <summary>What happens to the release rules after the release completes. Omitfor `leave_rules_in_place`. Omit when `releasePlanKey` is set.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>What happens to the release rules when the final phase completes,either on its own or because a stop rolls it forward while it&apos;srunning:- `remove_rules_and_update_default_rule`: The release rules are  removed and the default rule serves the target variation.- `leave_rules_in_place`: The release rules stay and serve the  target variation.In every other case, including a revert, it has no effect: releaserules left on the flag keep serving the variation the release endedon, ahead of rules added later without `beforeRuleId`.</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior? CleanupBehavior { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior CleanupBehavior { get; set; }
-#endif
         /// <summary>Optional comment written to the flag&apos;s audit-log entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,10 +103,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advancementMode", n => { AdvancementMode = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode.CreateFromDiscriminatorValue); } },
+                { "advancementMode", n => { AdvancementMode = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode>(); } },
                 { "beforeRuleId", n => { BeforeRuleId = n.GetStringValue(); } },
                 { "bypassHealthChecks", n => { BypassHealthChecks = n.GetCollectionOfEnumValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind>()?.AsList(); } },
-                { "cleanupBehavior", n => { CleanupBehavior = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior.CreateFromDiscriminatorValue); } },
+                { "cleanupBehavior", n => { CleanupBehavior = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior>(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "originalVariationId", n => { OriginalVariationId = n.GetGuidValue(); } },
@@ -135,10 +123,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode>("advancementMode", AdvancementMode);
+            writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode>("advancementMode", AdvancementMode);
             writer.WriteStringValue("beforeRuleId", BeforeRuleId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind>("bypassHealthChecks", BypassHealthChecks);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior>("cleanupBehavior", CleanupBehavior);
+            writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior>("cleanupBehavior", CleanupBehavior);
             writer.WriteStringValue("comment", Comment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput>("metrics", Metrics);
             writer.WriteGuidValue("originalVariationId", OriginalVariationId);

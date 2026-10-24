@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.Phases.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey-id}\release\phases\{phaseId}
+    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey}\release\phases\{phaseId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPhaseItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.R
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPhaseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/release/phases/{phaseId}", pathParameters)
+        public WithPhaseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/release/phases/{phaseId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.R
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPhaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/release/phases/{phaseId}", rawUrl)
+        public WithPhaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/release/phases/{phaseId}", rawUrl)
         {
         }
         /// <summary>

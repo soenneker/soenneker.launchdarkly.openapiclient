@@ -14,10 +14,10 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey-id}
+    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EnvironmentKeyItemRequestBuilder : BaseRequestBuilder
+    public partial class WithEnvironmentKeyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The expiringUserTargets property</summary>
         [Obsolete("")]
@@ -39,19 +39,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}{?limit*,searchAfter*}", pathParameters)
+        public WithEnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}{?limit*,searchAfter*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}{?limit*,searchAfter*}", rawUrl)
+        public WithEnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}{?limit*,searchAfter*}", rawUrl)
         {
         }
         /// <summary>
@@ -68,11 +68,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UsersRep?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UsersRep?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UsersRep> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UsersRep> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -94,11 +94,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -109,18 +109,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// &gt; ### Use contexts instead&gt;&gt; After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Search for contexts](https://launchdarkly.com/docs/api/contexts/search-contexts) instead of this endpoint.List all users in the environment. Includes the total count of users. This is useful for exporting all users in the system for further analysis.Each page displays users up to a set `limit`. The default is 20. To page through, follow the `next` link in the `_links` object. To learn more, read [Representations](https://launchdarkly.com/docs/api#representations).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvironmentKeyItemRequestBuilderGetQueryParameters 
+        public partial class WithEnvironmentKeyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>The number of elements to return per page</summary>
             [QueryParameter("limit")]

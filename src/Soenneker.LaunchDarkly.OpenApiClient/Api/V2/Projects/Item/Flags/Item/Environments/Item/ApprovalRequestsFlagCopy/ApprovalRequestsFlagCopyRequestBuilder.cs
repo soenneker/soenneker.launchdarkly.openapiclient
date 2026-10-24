@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.ApprovalRequestsFlagCopy
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey-id}\environments\{environmentKey}\approval-requests-flag-copy
+    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey}\environments\{environmentKey}\approval-requests-flag-copy
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApprovalRequestsFlagCopyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApprovalRequestsFlagCopyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/environments/{environmentKey}/approval-requests-flag-copy", pathParameters)
+        public ApprovalRequestsFlagCopyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApprovalRequestsFlagCopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/environments/{environmentKey}/approval-requests-flag-copy", rawUrl)
+        public ApprovalRequestsFlagCopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests-flag-copy", rawUrl)
         {
         }
         /// <summary>

@@ -32,10 +32,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Per-phase metric status keyed by metric key. Empty for progressivereleases. Metric definitions and monitoring preferences live oncein the parent release&apos;s `metrics` array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseMetricStatusesProperty? MetricStatuses { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseMetricStatusesProperty? MetricStatuses { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseMetricStatusesProperty MetricStatuses { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseMetricStatusesProperty MetricStatuses { get; private set; }
 #endif
         /// <summary>Zero-based index of this phase.</summary>
         public int? PhaseIndex { get; private set; }
@@ -107,7 +107,6 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseMetricStatusesProperty>("metricStatuses", MetricStatuses);
             writer.WriteStringValue("ruleId", RuleId);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason>("statusReason", StatusReason);

@@ -51,10 +51,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>If this record is returned as part of a list, the value used to sort the list. This is only included when the &lt;code&gt;sort&lt;/code&gt; query parameter is specified. It is a time, in Unix milliseconds, if the sort is by &lt;code&gt;lastSeen&lt;/code&gt;. It is a user key if the sort is by &lt;code&gt;userKey&lt;/code&gt;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordSortValue? SortValue { get; set; }
+        public UntypedNode? SortValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordSortValue SortValue { get; set; }
+        public UntypedNode SortValue { get; set; }
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "lastPing", n => { LastPing = n.GetDateTimeOffsetValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordLinksProperty.CreateFromDiscriminatorValue); } },
                 { "ownerId", n => { OwnerId = n.GetStringValue(); } },
-                { "sortValue", n => { SortValue = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordSortValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordSortValue.CreateFromDiscriminatorValue); } },
+                { "sortValue", n => { SortValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.User>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.User.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +110,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lastPing", LastPing);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordLinksProperty>("_links", Links);
             writer.WriteStringValue("ownerId", OwnerId);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserRecordSortValue>("sortValue", SortValue);
+            writer.WriteObjectValue<UntypedNode>("sortValue", SortValue);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.User>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

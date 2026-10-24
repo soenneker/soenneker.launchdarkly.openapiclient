@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Default value seen from code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepDefault? Default { get; set; }
+        public UntypedNode? Default { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepDefault Default { get; set; }
+        public UntypedNode Default { get; set; }
 #endif
         /// <summary>Timestamp of last time flag was requested</summary>
         public DateTimeOffset? LastRequested { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default", n => { Default = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepDefault>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepDefault.CreateFromDiscriminatorValue); } },
+                { "default", n => { Default = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "lastRequested", n => { LastRequested = n.GetDateTimeOffsetValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepLinksProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepName>(); } },
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepDefault>("default", Default);
+            writer.WriteObjectValue<UntypedNode>("default", Default);
             writer.WriteDateTimeOffsetValue("lastRequested", LastRequested);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepLinksProperty>("_links", Links);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagStatusRepName>("name", Name);

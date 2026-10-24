@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.Item.Workflows
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey-id}\environments\{environmentKey}\workflows
+    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\flags\{featureFlagKey}\environments\{environmentKey}\workflows
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/environments/{environmentKey}/workflows{?dryRun*,limit*,offset*,sort*,status*,templateKey*}", pathParameters)
+        public WorkflowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows{?dryRun*,limit*,offset*,sort*,status*,templateKey*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.E
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey%2Did}/environments/{environmentKey}/workflows{?dryRun*,limit*,offset*,sort*,status*,templateKey*}", rawUrl)
+        public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows{?dryRun*,limit*,offset*,sort*,status*,templateKey*}", rawUrl)
         {
         }
         /// <summary>

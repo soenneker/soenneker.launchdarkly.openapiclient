@@ -33,10 +33,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>An object with the configuration parameters required for the destination type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationConfig? Config { get; set; }
+        public UntypedNode? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationConfig Config { get; set; }
+        public UntypedNode Config { get; set; }
 #endif
         /// <summary>The createdAt property</summary>
         public long? CreatedAt { get; set; }
@@ -105,7 +105,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access.CreateFromDiscriminatorValue); } },
                 { "completedArtifacts", n => { CompletedArtifacts = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RedshiftDataExportCompletedArtifactsRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.RedshiftDataExportCompletedArtifactsRep.CreateFromDiscriminatorValue); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationConfig>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationKind>(); } },
@@ -125,7 +125,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>("_access", Access);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RedshiftDataExportCompletedArtifactsRep>("completedArtifacts", CompletedArtifacts);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationConfig>("config", Config);
+            writer.WriteObjectValue<UntypedNode>("config", Config);
             writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteStringValue("_id", Id);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationKind>("kind", Kind);

@@ -17,14 +17,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.flags.item collection</summary>
         /// <param name="position">The feature flag key</param>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.FeatureFlagKeyItemRequestBuilder"/></returns>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.FeatureFlagKeyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.WithFeatureFlagKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.WithFeatureFlagKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("featureFlagKey%2Did", position);
-                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.FeatureFlagKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("featureFlagKey", position);
+                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.WithFeatureFlagKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

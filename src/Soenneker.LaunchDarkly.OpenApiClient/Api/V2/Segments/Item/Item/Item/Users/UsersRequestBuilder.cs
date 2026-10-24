@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Users
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey-id}\{segmentKey}\users
+    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey}\{segmentKey}\users
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Us
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}/users", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/users", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Us
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}/users", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/users", rawUrl)
         {
         }
         /// <summary>

@@ -27,10 +27,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The default value for the given parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefaultValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefaultValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefault"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "booleanVariationValue", n => { BooleanVariationValue = n.GetBoolValue(); } },
                 { "ruleClause", n => { RuleClause = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefaultValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefaultValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("booleanVariationValue", BooleanVariationValue);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause>("ruleClause", RuleClause);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefaultValue>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

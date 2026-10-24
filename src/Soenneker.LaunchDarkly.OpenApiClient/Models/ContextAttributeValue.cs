@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A value for a context attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextAttributeValueName? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextAttributeValueName Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>A relative estimate of the number of contexts seen recently that have a matching value for a given attribute.</summary>
         public int? Weight { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextAttributeValueName>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextAttributeValueName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "weight", n => { Weight = n.GetIntValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextAttributeValueName>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteIntValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }

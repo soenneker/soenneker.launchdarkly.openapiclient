@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey-id}\{segmentKey}
+    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey}\{segmentKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSegmentKeyItemRequestBuilder : BaseRequestBuilder
@@ -46,7 +46,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}{?dryRun*}", pathParameters)
+        public WithSegmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}{?dryRun*}", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSegmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}{?dryRun*}", rawUrl)
+        public WithSegmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}{?dryRun*}", rawUrl)
         {
         }
         /// <summary>

@@ -22,15 +22,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.environments.item.contexts.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.ContextKindItemRequestBuilder"/></returns>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.ContextKindItemRequestBuilder this[string position]
+        /// <param name="position">The context kind</param>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.WithContextKindItemRequestBuilder"/></returns>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.WithContextKindItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("contextKind%2Did", position);
-                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.ContextKindItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("contextKind", position);
+                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.WithContextKindItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

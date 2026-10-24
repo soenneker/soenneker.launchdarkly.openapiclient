@@ -12,25 +12,25 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey-id}\triggers\{environmentKey}\{id}
+    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey}\triggers\{environmentKey2}\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EnvironmentKeyItemRequestBuilder : BaseRequestBuilder
+    public partial class EnvironmentKey2ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKey2ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/triggers/{environmentKey}/{id}", pathParameters)
+        public EnvironmentKey2ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/triggers/{environmentKey2}/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKey2ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/triggers/{environmentKey}/{id}", rawUrl)
+        public EnvironmentKey2ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/triggers/{environmentKey2}/{id}", rawUrl)
         {
         }
         /// <summary>
@@ -192,11 +192,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.I
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKey2ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKeyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKey2ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKeyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.Item.EnvironmentKey2ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

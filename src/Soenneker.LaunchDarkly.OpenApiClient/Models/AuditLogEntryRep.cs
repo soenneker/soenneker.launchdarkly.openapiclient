@@ -49,20 +49,20 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>If the audit log entry has been updated, this is a JSON representation of the current version of the entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepCurrentVersion? CurrentVersion { get; set; }
+        public UntypedNode? CurrentVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepCurrentVersion CurrentVersion { get; set; }
+        public UntypedNode CurrentVersion { get; set; }
 #endif
         /// <summary>The date property</summary>
         public long? Date { get; set; }
         /// <summary>If the audit log entry has been updated, this is the JSON patch body that was used in the request to update the entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepDelta? Delta { get; set; }
+        public UntypedNode? Delta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepDelta Delta { get; set; }
+        public UntypedNode Delta { get; set; }
 #endif
         /// <summary>Description of the change recorded in the audit log entry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,10 +107,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A JSON representation of the merge information for this audit log entry, if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepMerge? Merge { get; set; }
+        public UntypedNode? Merge { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepMerge Merge { get; set; }
+        public UntypedNode Merge { get; set; }
 #endif
         /// <summary>The name of the resource this audit log entry refers to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,10 +131,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>If the audit log entry has been updated, this is a JSON representation of the previous version of the entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepPreviousVersion? PreviousVersion { get; set; }
+        public UntypedNode? PreviousVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepPreviousVersion PreviousVersion { get; set; }
+        public UntypedNode PreviousVersion { get; set; }
 #endif
         /// <summary>The relatedAIConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -219,10 +219,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A JSON representation of the external trigger for this audit log entry, if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepTriggerBody? TriggerBody { get; set; }
+        public UntypedNode? TriggerBody { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepTriggerBody TriggerBody { get; set; }
+        public UntypedNode TriggerBody { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRep"/> and sets the default values.
@@ -253,18 +253,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_accountId", n => { AccountId = n.GetStringValue(); } },
                 { "app", n => { App = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuthorizedAppDataRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuthorizedAppDataRep.CreateFromDiscriminatorValue); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "currentVersion", n => { CurrentVersion = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepCurrentVersion>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepCurrentVersion.CreateFromDiscriminatorValue); } },
+                { "currentVersion", n => { CurrentVersion = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "date", n => { Date = n.GetLongValue(); } },
-                { "delta", n => { Delta = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepDelta>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepDelta.CreateFromDiscriminatorValue); } },
+                { "delta", n => { Delta = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetStringValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepLinksProperty.CreateFromDiscriminatorValue); } },
                 { "member", n => { Member = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberDataRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberDataRep.CreateFromDiscriminatorValue); } },
-                { "merge", n => { Merge = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepMerge>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepMerge.CreateFromDiscriminatorValue); } },
+                { "merge", n => { Merge = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parent", n => { Parent = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentResourceRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentResourceRep.CreateFromDiscriminatorValue); } },
-                { "previousVersion", n => { PreviousVersion = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepPreviousVersion>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepPreviousVersion.CreateFromDiscriminatorValue); } },
+                { "previousVersion", n => { PreviousVersion = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "relatedAIConfig", n => { RelatedAIConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedAiConfig>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedAiConfig.CreateFromDiscriminatorValue); } },
                 { "relatedExperiment", n => { RelatedExperiment = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedExperiment>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedExperiment.CreateFromDiscriminatorValue); } },
                 { "relatedFlag", n => { RelatedFlag = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedFlag>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedFlag.CreateFromDiscriminatorValue); } },
@@ -275,7 +275,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "titleVerb", n => { TitleVerb = n.GetStringValue(); } },
                 { "token", n => { Token = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TokenSummary>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.TokenSummary.CreateFromDiscriminatorValue); } },
-                { "triggerBody", n => { TriggerBody = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepTriggerBody>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepTriggerBody.CreateFromDiscriminatorValue); } },
+                { "triggerBody", n => { TriggerBody = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -289,18 +289,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("_accountId", AccountId);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuthorizedAppDataRep>("app", App);
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepCurrentVersion>("currentVersion", CurrentVersion);
+            writer.WriteObjectValue<UntypedNode>("currentVersion", CurrentVersion);
             writer.WriteLongValue("date", Date);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepDelta>("delta", Delta);
+            writer.WriteObjectValue<UntypedNode>("delta", Delta);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("_id", Id);
             writer.WriteStringValue("kind", Kind);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepLinksProperty>("_links", Links);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberDataRep>("member", Member);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepMerge>("merge", Merge);
+            writer.WriteObjectValue<UntypedNode>("merge", Merge);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentResourceRep>("parent", Parent);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepPreviousVersion>("previousVersion", PreviousVersion);
+            writer.WriteObjectValue<UntypedNode>("previousVersion", PreviousVersion);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedAiConfig>("relatedAIConfig", RelatedAIConfig);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedExperiment>("relatedExperiment", RelatedExperiment);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RelatedFlag>("relatedFlag", RelatedFlag);
@@ -311,7 +311,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("titleVerb", TitleVerb);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TokenSummary>("token", Token);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEntryRepTriggerBody>("triggerBody", TriggerBody);
+            writer.WriteObjectValue<UntypedNode>("triggerBody", TriggerBody);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Copy
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey-id}\copy
+    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey}\copy
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CopyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Copy
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CopyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/copy", pathParameters)
+        public CopyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/copy", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Copy
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/copy", rawUrl)
+        public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/copy", rawUrl)
         {
         }
         /// <summary>

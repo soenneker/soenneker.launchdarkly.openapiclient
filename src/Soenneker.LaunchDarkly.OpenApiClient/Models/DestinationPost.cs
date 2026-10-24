@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>An object with the configuration parameters required for the destination type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostConfig? Config { get; set; }
+        public UntypedNode? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostConfig Config { get; set; }
+        public UntypedNode Config { get; set; }
 #endif
         /// <summary>The type of Data Export destination</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostKind? Kind { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostConfig>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostKind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "on", n => { On = n.GetBoolValue(); } },
@@ -72,7 +72,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostConfig>("config", Config);
+            writer.WriteObjectValue<UntypedNode>("config", Config);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DestinationPostKind>("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("on", On);

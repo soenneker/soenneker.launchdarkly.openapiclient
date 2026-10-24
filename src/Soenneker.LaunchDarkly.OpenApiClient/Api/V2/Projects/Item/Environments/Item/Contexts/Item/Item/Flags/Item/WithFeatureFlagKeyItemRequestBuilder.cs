@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.Item.Item.Flags.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\environments\{environmentKey}\contexts\{contextKind-id}\{contextKey-id}\flags\{featureFlagKey}
+    /// Builds and executes requests for operations under \api\v2\projects\{projectKey}\environments\{environmentKey}\contexts\{contextKind}\{contextKey}\flags\{featureFlagKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFeatureFlagKeyItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFeatureFlagKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind%2Did}/{contextKey%2Did}/flags/{featureFlagKey}", pathParameters)
+        public WithFeatureFlagKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags/{featureFlagKey}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFeatureFlagKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind%2Did}/{contextKey%2Did}/flags/{featureFlagKey}", rawUrl)
+        public WithFeatureFlagKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags/{featureFlagKey}", rawUrl)
         {
         }
         /// <summary>

@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey-id}\{userKey}
+    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey}\{userKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUserKeyItemRequestBuilder : BaseRequestBuilder
@@ -29,7 +29,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}/{userKey}", pathParameters)
+        public WithUserKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}/{userKey}", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUserKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}/{userKey}", rawUrl)
+        public WithUserKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}/{userKey}", rawUrl)
         {
         }
         /// <summary>

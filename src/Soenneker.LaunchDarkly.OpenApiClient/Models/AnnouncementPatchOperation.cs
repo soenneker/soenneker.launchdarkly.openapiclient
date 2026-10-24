@@ -33,10 +33,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A JSON value used in &quot;add&quot;, &quot;replace&quot;, and &quot;test&quot; operations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnnouncementPatchOperationValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnnouncementPatchOperationValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnnouncementPatchOperation"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "op", n => { Op = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnnouncementPatchOperationValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnnouncementPatchOperationValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("op", Op);
             writer.WriteStringValue("path", Path);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnnouncementPatchOperationValue>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

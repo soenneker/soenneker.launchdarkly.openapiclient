@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Exports
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey-id}\{segmentKey}\exports
+    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey}\{segmentKey}\exports
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExportsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Ex
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}/exports", pathParameters)
+        public ExportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Ex
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}/{segmentKey}/exports", rawUrl)
+        public ExportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports", rawUrl)
         {
         }
         /// <summary>

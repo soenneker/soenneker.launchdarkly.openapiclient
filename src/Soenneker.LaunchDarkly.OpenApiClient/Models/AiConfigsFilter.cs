@@ -45,10 +45,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The context attribute / event property values or group member nodes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterValuesItem>? Values { get; set; }
+        public UntypedNode? Values { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterValuesItem> Values { get; set; }
+        public UntypedNode Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilter"/> and sets the default values.
@@ -80,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "negate", n => { Negate = n.GetBoolValue(); } },
                 { "op", n => { Op = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterType>(); } },
-                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterValuesItem>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("negate", Negate);
             writer.WriteStringValue("op", Op);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterType>("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsFilterValuesItem>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

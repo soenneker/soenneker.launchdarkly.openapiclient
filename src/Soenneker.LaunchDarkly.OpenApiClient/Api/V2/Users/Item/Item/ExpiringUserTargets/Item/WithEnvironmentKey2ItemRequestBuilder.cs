@@ -12,25 +12,25 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey-id}\expiring-user-targets\{environmentKey}
+    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey}\expiring-user-targets\{environmentKey2}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithEnvironmentKeyItemRequestBuilder : BaseRequestBuilder
+    public partial class WithEnvironmentKey2ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKey2ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}/expiring-user-targets/{environmentKey}", pathParameters)
+        public WithEnvironmentKey2ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}/expiring-user-targets/{environmentKey2}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKey2ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}/expiring-user-targets/{environmentKey}", rawUrl)
+        public WithEnvironmentKey2ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}/expiring-user-targets/{environmentKey2}", rawUrl)
         {
         }
         /// <summary>
@@ -143,12 +143,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUs
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKey2ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKeyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKey2ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKeyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.ExpiringUserTargets.Item.WithEnvironmentKey2ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

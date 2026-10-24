@@ -51,10 +51,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The context attribute / event property values or group member nodes. Numeric values must not exceed 14 decimal places.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EventFilterValuesItem>? Values { get; set; }
+        public UntypedNode? Values { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EventFilterValuesItem> Values { get; set; }
+        public UntypedNode Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EventFilter"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "negate", n => { Negate = n.GetBoolValue(); } },
                 { "op", n => { Op = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EventFilterValuesItem>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EventFilterValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("negate", Negate);
             writer.WriteStringValue("op", Op);
             writer.WriteStringValue("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EventFilterValuesItem>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey-id}\{featureFlagKey}
+    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey}\{featureFlagKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFeatureFlagKeyItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFeatureFlagKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/{featureFlagKey}", pathParameters)
+        public WithFeatureFlagKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/{featureFlagKey}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFeatureFlagKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/{featureFlagKey}", rawUrl)
+        public WithFeatureFlagKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/{featureFlagKey}", rawUrl)
         {
         }
     }

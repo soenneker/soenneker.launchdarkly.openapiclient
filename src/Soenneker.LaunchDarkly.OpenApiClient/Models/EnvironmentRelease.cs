@@ -66,10 +66,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The value of the variation. This may be a string, boolean, number, JSON object, or array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseOriginalVariationValue? OriginalVariationValue { get; set; }
+        public UntypedNode? OriginalVariationValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseOriginalVariationValue OriginalVariationValue { get; set; }
+        public UntypedNode OriginalVariationValue { get; set; }
 #endif
         /// <summary>The phases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,10 +106,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The value of the variation. This may be a string, boolean, number, JSON object, or array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseTargetVariationValue? TargetVariationValue { get; set; }
+        public UntypedNode? TargetVariationValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseTargetVariationValue TargetVariationValue { get; set; }
+        public UntypedNode TargetVariationValue { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentRelease"/> and sets the default values.
@@ -148,7 +148,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty.CreateFromDiscriminatorValue); } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "originalVariationId", n => { OriginalVariationId = n.GetGuidValue(); } },
-                { "originalVariationValue", n => { OriginalVariationValue = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseOriginalVariationValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseOriginalVariationValue.CreateFromDiscriminatorValue); } },
+                { "originalVariationValue", n => { OriginalVariationValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "phases", n => { Phases = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "projectKey", n => { ProjectKey = n.GetStringValue(); } },
                 { "randomizationUnit", n => { RandomizationUnit = n.GetStringValue(); } },
@@ -156,7 +156,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatus>(); } },
                 { "statusReason", n => { StatusReason = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason>(); } },
                 { "targetVariationId", n => { TargetVariationId = n.GetGuidValue(); } },
-                { "targetVariationValue", n => { TargetVariationValue = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseTargetVariationValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseTargetVariationValue.CreateFromDiscriminatorValue); } },
+                { "targetVariationValue", n => { TargetVariationValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -177,14 +177,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty>("_links", Links);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric>("metrics", Metrics);
             writer.WriteGuidValue("originalVariationId", OriginalVariationId);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseOriginalVariationValue>("originalVariationValue", OriginalVariationValue);
+            writer.WriteObjectValue<UntypedNode>("originalVariationValue", OriginalVariationValue);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase>("phases", Phases);
             writer.WriteStringValue("projectKey", ProjectKey);
             writer.WriteStringValue("randomizationUnit", RandomizationUnit);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason>("statusReason", StatusReason);
             writer.WriteGuidValue("targetVariationId", TargetVariationId);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseTargetVariationValue>("targetVariationValue", TargetVariationValue);
+            writer.WriteObjectValue<UntypedNode>("targetVariationValue", TargetVariationValue);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

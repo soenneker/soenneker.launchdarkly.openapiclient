@@ -51,10 +51,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClauseValuesItem>? Values { get; set; }
+        public UntypedNode? Values { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClauseValuesItem> Values { get; set; }
+        public UntypedNode Values { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Clause"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "negate", n => { Negate = n.GetBoolValue(); } },
                 { "op", n => { Op = n.GetStringValue(); } },
-                { "values", n => { Values = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClauseValuesItem>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClauseValuesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "values", n => { Values = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("_id", Id);
             writer.WriteBoolValue("negate", Negate);
             writer.WriteStringValue("op", Op);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClauseValuesItem>("values", Values);
+            writer.WriteObjectValue<UntypedNode>("values", Values);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey-id}\triggers
+    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey}\triggers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TriggersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.flags.item.item.triggers.item collection</summary>
         /// <param name="position">The environment key</param>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.WithEnvironmentKeyItemRequestBuilder"/></returns>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.WithEnvironmentKeyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.WithEnvironmentKey2ItemRequestBuilder"/></returns>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.WithEnvironmentKey2ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("environmentKey", position);
-                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.WithEnvironmentKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("environmentKey2", position);
+                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers.Item.WithEnvironmentKey2ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriggersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/triggers", pathParameters)
+        public TriggersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/triggers", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Triggers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TriggersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/triggers", rawUrl)
+        public TriggersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/triggers", rawUrl)
         {
         }
     }

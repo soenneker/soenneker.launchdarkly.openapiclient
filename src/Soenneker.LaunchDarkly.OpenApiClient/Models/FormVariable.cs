@@ -25,10 +25,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The defaultValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariableDefaultValue? DefaultValue { get; set; }
+        public UntypedNode? DefaultValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariableDefaultValue DefaultValue { get; set; }
+        public UntypedNode DefaultValue { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowedValues", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "defaultValue", n => { DefaultValue = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariableDefaultValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariableDefaultValue.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "dynamicOptions", n => { DynamicOptions = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptions>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptions.CreateFromDiscriminatorValue); } },
                 { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
@@ -124,7 +124,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedValues", AllowedValues);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariableDefaultValue>("defaultValue", DefaultValue);
+            writer.WriteObjectValue<UntypedNode>("defaultValue", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptions>("dynamicOptions", DynamicOptions);
             writer.WriteBoolValue("isOptional", IsOptional);

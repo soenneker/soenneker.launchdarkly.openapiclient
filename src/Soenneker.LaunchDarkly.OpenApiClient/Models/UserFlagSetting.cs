@@ -33,18 +33,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Whether the user is explicitly targeted to receive a particular variation. The setting is false if you have turned off a feature flag for a user. It is null if you haven&apos;t assigned that user to a specific variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingSetting? Setting { get; set; }
+        public UntypedNode? Setting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingSetting Setting { get; set; }
+        public UntypedNode Setting { get; set; }
 #endif
         /// <summary>The value of the flag variation that the user receives. If there is no defined default rule, this is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSetting"/> and sets the default values.
@@ -73,8 +73,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             {
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingLinksProperty.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason.CreateFromDiscriminatorValue); } },
-                { "setting", n => { Setting = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingSetting>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingSetting.CreateFromDiscriminatorValue); } },
-                { "_value", n => { Value = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingValue.CreateFromDiscriminatorValue); } },
+                { "setting", n => { Setting = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "_value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,8 +86,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingLinksProperty>("_links", Links);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason>("reason", Reason);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingSetting>("setting", Setting);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserFlagSettingValue>("_value", Value);
+            writer.WriteObjectValue<UntypedNode>("setting", Setting);
+            writer.WriteObjectValue<UntypedNode>("_value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

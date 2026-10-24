@@ -25,10 +25,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The variation value to set for the context. Must match the flag&apos;s variation type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ValuePutSetting? Setting { get; set; }
+        public UntypedNode? Setting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ValuePutSetting Setting { get; set; }
+        public UntypedNode Setting { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ValuePut"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "setting", n => { Setting = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ValuePutSetting>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ValuePutSetting.CreateFromDiscriminatorValue); } },
+                { "setting", n => { Setting = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ValuePutSetting>("setting", Setting);
+            writer.WriteObjectValue<UntypedNode>("setting", Setting);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

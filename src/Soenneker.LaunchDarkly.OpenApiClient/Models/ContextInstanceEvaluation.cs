@@ -49,10 +49,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The value of the flag variation that the context receives. If there is no defined default rule, this is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluation"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationLinksProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationReason>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationReason.CreateFromDiscriminatorValue); } },
-                { "_value", n => { Value = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationValue.CreateFromDiscriminatorValue); } },
+                { "_value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationLinksProperty>("_links", Links);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationReason>("reason", Reason);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationValue>("_value", Value);
+            writer.WriteObjectValue<UntypedNode>("_value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

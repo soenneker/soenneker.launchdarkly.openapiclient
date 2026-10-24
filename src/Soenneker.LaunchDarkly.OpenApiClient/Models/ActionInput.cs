@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>An array of instructions for the stage. Each object in the array uses the semantic patch format for updating a feature flag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInputInstructions? Instructions { get; set; }
+        public UntypedNode? Instructions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInputInstructions Instructions { get; set; }
+        public UntypedNode Instructions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInput"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInputInstructions>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInputInstructions.CreateFromDiscriminatorValue); } },
+                { "instructions", n => { Instructions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInputInstructions>("instructions", Instructions);
+            writer.WriteObjectValue<UntypedNode>("instructions", Instructions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

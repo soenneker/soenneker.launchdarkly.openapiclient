@@ -36,10 +36,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The context, including its kind and attributes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordContext? Context { get; set; }
+        public UntypedNode? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordContext Context { get; set; }
+        public UntypedNode Context { get; set; }
 #endif
         /// <summary>Timestamp of the last time an evaluation occurred for this context</summary>
         public DateTimeOffset? LastSeen { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access.CreateFromDiscriminatorValue); } },
                 { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 { "associatedContexts", n => { AssociatedContexts = n.GetIntValue(); } },
-                { "context", n => { Context = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordContext>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordContext.CreateFromDiscriminatorValue); } },
+                { "context", n => { Context = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "lastSeen", n => { LastSeen = n.GetDateTimeOffsetValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordLinksProperty.CreateFromDiscriminatorValue); } },
             };
@@ -94,7 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>("_access", Access);
             writer.WriteStringValue("applicationId", ApplicationId);
             writer.WriteIntValue("associatedContexts", AssociatedContexts);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordContext>("context", Context);
+            writer.WriteObjectValue<UntypedNode>("context", Context);
             writer.WriteDateTimeOffsetValue("lastSeen", LastSeen);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextRecordLinksProperty>("_links", Links);
             writer.WriteAdditionalData(AdditionalData);

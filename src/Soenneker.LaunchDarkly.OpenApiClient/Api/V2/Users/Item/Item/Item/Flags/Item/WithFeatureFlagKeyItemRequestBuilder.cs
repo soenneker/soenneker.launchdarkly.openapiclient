@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item.Flags.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey-id}\{userKey}\flags\{featureFlagKey}
+    /// Builds and executes requests for operations under \api\v2\users\{projectKey}\{environmentKey}\{userKey}\flags\{featureFlagKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFeatureFlagKeyItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item.Flags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFeatureFlagKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}/{userKey}/flags/{featureFlagKey}", pathParameters)
+        public WithFeatureFlagKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.Item.Flags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFeatureFlagKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey%2Did}/{userKey}/flags/{featureFlagKey}", rawUrl)
+        public WithFeatureFlagKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}", rawUrl)
         {
         }
         /// <summary>

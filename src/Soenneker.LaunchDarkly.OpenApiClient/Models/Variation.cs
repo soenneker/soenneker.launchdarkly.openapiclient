@@ -41,10 +41,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The value of the variation. For boolean flags, this must be &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;. For multivariate flags, this may be a string, number, or JSON object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>A deterministic hash of the canonicalized variation &lt;code&gt;value&lt;/code&gt;. Computed server-side; ignored if supplied in request bodies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "valueHash", n => { ValueHash = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("_id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.VariationValue>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteStringValue("valueHash", ValueHash);
             writer.WriteAdditionalData(AdditionalData);
         }

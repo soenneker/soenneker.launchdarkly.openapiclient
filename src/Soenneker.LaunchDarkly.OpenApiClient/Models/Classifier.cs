@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Type-specific criteria. An enum classifier uses a map of option keys to descriptions.A float classifier uses an ordered list of level labels. A bool classifier uses optionaltrue and false descriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierCriteria? Criteria { get; set; }
+        public UntypedNode? Criteria { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierCriteria Criteria { get; set; }
+        public UntypedNode Criteria { get; set; }
 #endif
         /// <summary>The instructions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "criteria", n => { Criteria = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierCriteria>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierCriteria.CreateFromDiscriminatorValue); } },
+                { "criteria", n => { Criteria = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierType>(); } },
@@ -78,7 +78,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierCriteria>("criteria", Criteria);
+            writer.WriteObjectValue<UntypedNode>("criteria", Criteria);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteStringValue("key", Key);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClassifierType>("type", Type);

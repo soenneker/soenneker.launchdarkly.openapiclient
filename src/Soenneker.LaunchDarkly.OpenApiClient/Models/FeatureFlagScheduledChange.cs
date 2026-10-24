@@ -17,10 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Details on any conflicting scheduled changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagScheduledChangeConflicts? Conflicts { get; set; }
+        public UntypedNode? Conflicts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagScheduledChangeConflicts Conflicts { get; set; }
+        public UntypedNode Conflicts { get; set; }
 #endif
         /// <summary>The creationDate property</summary>
         public long? CreationDate { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conflicts", n => { Conflicts = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagScheduledChangeConflicts>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagScheduledChangeConflicts.CreateFromDiscriminatorValue); } },
+                { "conflicts", n => { Conflicts = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "_creationDate", n => { CreationDate = n.GetLongValue(); } },
                 { "executionDate", n => { ExecutionDate = n.GetLongValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
@@ -111,7 +111,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagScheduledChangeConflicts>("conflicts", Conflicts);
+            writer.WriteObjectValue<UntypedNode>("conflicts", Conflicts);
             writer.WriteLongValue("_creationDate", CreationDate);
             writer.WriteLongValue("executionDate", ExecutionDate);
             writer.WriteStringValue("_id", Id);

@@ -17,15 +17,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.users.item.item collection</summary>
         /// <param name="position">The environment key</param>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder"/></returns>
         [Obsolete("")]
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder this[string position]
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("environmentKey%2Did", position);
-                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.EnvironmentKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("environmentKey", position);
+                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Users.Item.Item.WithEnvironmentKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

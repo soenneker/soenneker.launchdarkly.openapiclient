@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey-id}\expiring-targets
+    /// Builds and executes requests for operations under \api\v2\flags\{projectKey}\{environmentKey}\expiring-targets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExpiringTargetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.flags.item.item.expiringTargets.item collection</summary>
         /// <param name="position">The environment key</param>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets.Item.WithEnvironmentKeyItemRequestBuilder"/></returns>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets.Item.WithEnvironmentKeyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets.Item.WithEnvironmentKey2ItemRequestBuilder"/></returns>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets.Item.WithEnvironmentKey2ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("environmentKey", position);
-                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets.Item.WithEnvironmentKeyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("environmentKey2", position);
+                return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTargets.Item.WithEnvironmentKey2ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTa
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpiringTargetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/expiring-targets", pathParameters)
+        public ExpiringTargetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/expiring-targets", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringTa
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExpiringTargetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey%2Did}/expiring-targets", rawUrl)
+        public ExpiringTargetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/flags/{projectKey}/{environmentKey}/expiring-targets", rawUrl)
         {
         }
     }

@@ -25,10 +25,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The condition of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementCondition? Condition { get; set; }
+        public UntypedNode? Condition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementCondition Condition { get; set; }
+        public UntypedNode Condition { get; set; }
 #endif
         /// <summary>The effect of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The principal of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementPrincipal? Principal { get; set; }
+        public UntypedNode? Principal { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementPrincipal Principal { get; set; }
+        public UntypedNode Principal { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatement"/> and sets the default values.
@@ -72,9 +72,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Action", n => { Action = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "Condition", n => { Condition = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementCondition>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementCondition.CreateFromDiscriminatorValue); } },
+                { "Condition", n => { Condition = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "Effect", n => { Effect = n.GetStringValue(); } },
-                { "Principal", n => { Principal = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementPrincipal>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementPrincipal.CreateFromDiscriminatorValue); } },
+                { "Principal", n => { Principal = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("Action", Action);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementCondition>("Condition", Condition);
+            writer.WriteObjectValue<UntypedNode>("Condition", Condition);
             writer.WriteStringValue("Effect", Effect);
-            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyStatementPrincipal>("Principal", Principal);
+            writer.WriteObjectValue<UntypedNode>("Principal", Principal);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

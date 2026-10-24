@@ -15,10 +15,10 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey-id}
+    /// Builds and executes requests for operations under \api\v2\segments\{projectKey}\{environmentKey}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EnvironmentKeyItemRequestBuilder : BaseRequestBuilder
+    public partial class WithEnvironmentKeyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The expiringTargets property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.ExpiringTargets.ExpiringTargetsRequestBuilder ExpiringTargets
@@ -43,19 +43,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}{?filter*,limit*,offset*,sort*}", pathParameters)
+        public WithEnvironmentKeyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}{?filter*,limit*,offset*,sort*}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey%2Did}{?filter*,limit*,offset*,sort*}", rawUrl)
+        public WithEnvironmentKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/segments/{projectKey}/{environmentKey}{?filter*,limit*,offset*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -68,11 +68,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegments?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegments?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegments> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.UserSegments> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -123,11 +123,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder.EnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder.WithEnvironmentKeyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,17 +160,17 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.EnvironmentKeyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.WithEnvironmentKeyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of all segments in the given project.Segments can be rule-based, list-based, or synced. Big segments include larger list-based segments and synced segments. Some fields in the response only apply to big segments.### Filtering segmentsThe `filter` parameter supports the following operators: `equals`, `anyOf`, and `exists`.You can also combine filters in the following ways:- Use a comma (`,`) as an AND operator- Use a vertical bar (`|`) as an OR operator- Use parentheses (`()`) to group filters#### Supported fields and operatorsYou can only filter certain fields in segments when using the `filter` parameter. Additionally, you can only filter some fields with certain operators.When you search for segments, the `filter` parameter supports the following fields and operators:|&lt;div style=&quot;width:120px&quot;&gt;Field&lt;/div&gt; |Description |Supported operators ||---|---|---|| `excludedKeys` | The segment keys of segments to exclude from the results. | `anyOf` || `external` | Whether the segment is a synced segment. | `exists` || `includedKeys` | The segment keys of segments to include in the results. | `anyOf` || `query` | A &quot;fuzzy&quot; search across segment key, name, and description. Supply a string or list of strings to the operator. | `equals` || `tags` | The segment tags. | `anyOf` || `unbounded` | Whether the segment is a standard segment (`false`) or a big segment (`true`). Standard segments include rule-based segments and smaller list-based segments. Big segments include larger list-based segments and synced segments. | `equals` |Here are a few examples:* The filter `?filter=tags anyOf [&quot;enterprise&quot;, &quot;beta&quot;],query equals &quot;toggle&quot;` matches segments with &quot;toggle&quot; in their key, name, or description that also have &quot;enterprise&quot; or &quot;beta&quot; as a tag.* The filter `?filter=excludedKeys anyOf [&quot;segmentKey1&quot;, &quot;segmentKey2&quot;]` excludes the segments with those keys from the results.* The filter `?filter=unbounded equals true` matches larger list-based segments and synced segments.The documented values for `filter` query parameters are prior to URL encoding. For example, the `[` in `?filter=tags anyOf [&quot;enterprise&quot;, &quot;beta&quot;]` must be encoded to `%5B`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EnvironmentKeyItemRequestBuilderGetQueryParameters 
+        public partial class WithEnvironmentKeyItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Accepts filter by `excludedKeys`, `external`, `includedKeys`, `query`, `tags`, `unbounded`, `view`. To learn more about the filter syntax, read the  &apos;Filtering segments&apos; section above.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
