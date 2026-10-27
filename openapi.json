@@ -60506,7 +60506,8 @@
             "type": "array"
           },
           "isInverted": {
-            "description": "Whether the evaluation metric is inverted, meaning a lower value is better if set as true",
+            "description": "The success direction of a judge. Offline evaluations use it to decide whether a score passes.\n\n- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.\n- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.\n\nThe response includes this field only when `mode` is `judge`. For a built-in judge key, the value is always the built-in direction. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-<timestamp>` suffix such as `ld-ai-judge-accuracy-1760000000000`. A custom judge with no stored direction omits this field.\n",
+            "example": true,
             "type": "boolean"
           },
           "dependencies": {
@@ -60677,7 +60678,8 @@
             "type": "string"
           },
           "isInverted": {
-            "description": "Whether the evaluation metric is inverted, meaning a lower value is better if set as true",
+            "description": "The success direction of a judge. Offline evaluations use it to decide whether a score passes.\n\n- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.\n- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.\n\n**Required for a custom judge.** A custom judge has `mode` set to `judge` and a `key` that is not a built-in judge key. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-<timestamp>` suffix such as `ld-ai-judge-accuracy-1760000000000`. For a built-in judge key, this field is optional, and the API always uses the built-in direction.\n\nDo not send this field when `mode` is `agent` or `completion`.\n\nThis field is not in the schema's `required` list, because only custom judges need it.\n\nThe API returns a `400` error in these cases:\n- `isInverted is required for a custom judge: ...`: You create a custom judge without this field. Send `true` or `false`.\n- `isInverted is only supported for judge mode`: You send this field and `mode` is `agent` or `completion`. Remove the field, or set `mode` to `judge`.\n- `isInverted is not supported`: Custom judges are not available for your account. Remove the field from the request.\n",
+            "example": true,
             "type": "boolean"
           }
         },
@@ -60736,7 +60738,8 @@
             "type": "string"
           },
           "isInverted": {
-            "description": "Whether the evaluation metric is inverted, meaning a lower value is better if set as true",
+            "description": "The success direction of a judge. Offline evaluations use it to decide whether a score passes.\n\n- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.\n- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.\n\nSend this field only when the AI Config's `mode` is `judge`. If you omit it, the current direction does not change. For a built-in judge key, the API always returns the built-in direction. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-<timestamp>` suffix such as `ld-ai-judge-accuracy-1760000000000`.\n\nThe API returns a `400` error in these cases:\n- `isInverted is only supported for judge mode`: You send this field and the AI Config's `mode` is `agent` or `completion`. Remove the field.\n- `isInverted is not supported`: Custom judges are not available for your account. Remove the field from the request.\n",
+            "example": true,
             "type": "boolean"
           }
         },
@@ -63148,6 +63151,18 @@
           "judgeToxicity": 0.6846853,
           "totalTokens": 1,
           "judgeAccuracy": 0.10246457,
+          "judgeScores": [
+            {
+              "score": 7.4577446,
+              "metricKey": "$ld:ai:judge:helpfulness",
+              "count": 1
+            },
+            {
+              "score": 7.4577446,
+              "metricKey": "$ld:ai:judge:helpfulness",
+              "count": 1
+            }
+          ],
           "generationCount": 5,
           "timeToFirstTokenMs": 2,
           "outputTokens": 6,
@@ -63234,8 +63249,44 @@
             "maximum": 1,
             "minimum": 0,
             "type": "number"
+          },
+          "judgeScores": {
+            "description": "Average score and sample count for every judge metric recorded in the time range, keyed by the judge's evaluation metric key. Includes custom judges and the built-in accuracy, relevance, and toxicity judges. Omitted when no judge scores were recorded.",
+            "items": {
+              "$ref": "#/components/schemas/JudgeScore"
+            },
+            "type": "array"
           }
         },
+        "type": "object"
+      },
+      "JudgeScore": {
+        "example": {
+          "score": 7.4577446,
+          "metricKey": "$ld:ai:judge:helpfulness",
+          "count": 1
+        },
+        "properties": {
+          "metricKey": {
+            "description": "The judge's evaluation metric key",
+            "example": "$ld:ai:judge:helpfulness",
+            "type": "string"
+          },
+          "score": {
+            "description": "Average judge score across the recorded samples",
+            "format": "float",
+            "type": "number"
+          },
+          "count": {
+            "description": "Number of judge scores recorded",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "count",
+          "metricKey",
+          "score"
+        ],
         "type": "object"
       },
       "MetricByVariation": {
@@ -63251,6 +63302,18 @@
             "judgeToxicity": 0.6846853,
             "totalTokens": 1,
             "judgeAccuracy": 0.10246457,
+            "judgeScores": [
+              {
+                "score": 7.4577446,
+                "metricKey": "$ld:ai:judge:helpfulness",
+                "count": 1
+              },
+              {
+                "score": 7.4577446,
+                "metricKey": "$ld:ai:judge:helpfulness",
+                "count": 1
+              }
+            ],
             "generationCount": 5,
             "timeToFirstTokenMs": 2,
             "outputTokens": 6,
@@ -84172,6 +84235,7 @@
           "metricKey": "metricKey",
           "definition": "",
           "autoRollback": true,
+          "analysisUnit": "analysisUnit",
           "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
         },
         "properties": {
@@ -84186,6 +84250,11 @@
           "autoRollback": {
             "description": "Whether a regression automatically reverts the release.",
             "type": "boolean"
+          },
+          "analysisUnit": {
+            "description": "Key of the context kind this metric is analyzed on. It is the release's\nrandomization unit unless the metric uses a decoupled unit of analysis.\nOmitted on releases started before analysis units were recorded. Those\nmetrics are analyzed on the randomization unit.\n",
+            "readOnly": true,
+            "type": "string"
           },
           "definition": {
             "allOf": [
@@ -84244,12 +84313,14 @@
               "metricKey": "metricKey",
               "definition": "",
               "autoRollback": true,
+              "analysisUnit": "analysisUnit",
               "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
             },
             {
               "metricKey": "metricKey",
               "definition": "",
               "autoRollback": true,
+              "analysisUnit": "analysisUnit",
               "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
             }
           ],
@@ -84505,7 +84576,8 @@
         "description": "A metric to monitor across every phase of a guarded release.",
         "example": {
           "metricKey": "metricKey",
-          "autoRollback": false
+          "autoRollback": false,
+          "analysisUnit": "analysisUnit"
         },
         "properties": {
           "metricKey": {
@@ -84515,6 +84587,10 @@
             "default": false,
             "description": "Whether a regression on this metric automatically reverts the\nrelease. When `false`, a detected regression pauses the release\ninstead: it reports `waiting` with reason\n`waiting_regression_detected` and does not advance until the\nregression is dismissed or the release is stopped.\n",
             "type": "boolean"
+          },
+          "analysisUnit": {
+            "description": "Key of the context kind to analyze this metric on. Omit it to analyze\non the randomization unit. A value must differ from the randomization\nunit and be one of the metric's units. Percentile metrics, ratio\nmetrics, and metrics in a group cannot set it. The value cannot be\nchanged after the release starts.\n",
+            "type": "string"
           }
         },
         "required": [
@@ -84614,11 +84690,13 @@
           "metrics": [
             {
               "metricKey": "metricKey",
-              "autoRollback": false
+              "autoRollback": false,
+              "analysisUnit": "analysisUnit"
             },
             {
               "metricKey": "metricKey",
-              "autoRollback": false
+              "autoRollback": false,
+              "analysisUnit": "analysisUnit"
             }
           ],
           "randomizationUnit": "randomizationUnit",
@@ -84806,12 +84884,14 @@
                   "metricKey": "metricKey",
                   "definition": "",
                   "autoRollback": true,
+                  "analysisUnit": "analysisUnit",
                   "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
                 },
                 {
                   "metricKey": "metricKey",
                   "definition": "",
                   "autoRollback": true,
+                  "analysisUnit": "analysisUnit",
                   "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
                 }
               ],
@@ -84908,12 +84988,14 @@
                   "metricKey": "metricKey",
                   "definition": "",
                   "autoRollback": true,
+                  "analysisUnit": "analysisUnit",
                   "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
                 },
                 {
                   "metricKey": "metricKey",
                   "definition": "",
                   "autoRollback": true,
+                  "analysisUnit": "analysisUnit",
                   "metricVersionId": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
                 }
               ],

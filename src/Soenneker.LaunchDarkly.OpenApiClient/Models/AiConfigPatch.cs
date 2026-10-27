@@ -38,7 +38,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string EvaluationMetricKey { get; set; }
 #endif
-        /// <summary>Whether the evaluation metric is inverted, meaning a lower value is better if set as true</summary>
+        /// <summary>The success direction of a judge. Offline evaluations use it to decide whether a score passes.- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.Send this field only when the AI Config&apos;s `mode` is `judge`. If you omit it, the current direction does not change. For a built-in judge key, the API always returns the built-in direction. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-&lt;timestamp&gt;` suffix such as `ld-ai-judge-accuracy-1760000000000`.The API returns a `400` error in these cases:- `isInverted is only supported for judge mode`: You send this field and the AI Config&apos;s `mode` is `agent` or `completion`. Remove the field.- `isInverted is not supported`: Custom judges are not available for your account. Remove the field from the request.</summary>
         public bool? IsInverted { get; set; }
         /// <summary>The ID of the member who maintains this resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

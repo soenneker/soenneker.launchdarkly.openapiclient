@@ -15,6 +15,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Key of the context kind this metric is analyzed on. It is the release&apos;srandomization unit unless the metric uses a decoupled unit of analysis.Omitted on releases started before analysis units were recorded. Thosemetrics are analyzed on the randomization unit.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AnalysisUnit { get; private set; }
+#nullable restore
+#else
+        public string AnalysisUnit { get; private set; }
+#endif
         /// <summary>Whether a regression automatically reverts the release.</summary>
         public bool? AutoRollback { get; set; }
         /// <summary>Present only when the caller requests `expand=metrics` and the pinnedmetric version still exists. A metric whose pinned version has beendeleted keeps its `metricKey` and `metricVersionId` but has no definition.</summary>
@@ -60,6 +68,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "analysisUnit", n => { AnalysisUnit = n.GetStringValue(); } },
                 { "autoRollback", n => { AutoRollback = n.GetBoolValue(); } },
                 { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetricDefinition>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetricDefinition.CreateFromDiscriminatorValue); } },
                 { "metricKey", n => { MetricKey = n.GetStringValue(); } },

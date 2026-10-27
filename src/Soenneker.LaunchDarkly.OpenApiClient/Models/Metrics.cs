@@ -31,6 +31,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public float? JudgeAccuracy { get; set; }
         /// <summary>Average relevance judge score (0.0-1.0)</summary>
         public float? JudgeRelevance { get; set; }
+        /// <summary>Average score and sample count for every judge metric recorded in the time range, keyed by the judge&apos;s evaluation metric key. Includes custom judges and the built-in accuracy, relevance, and toxicity judges. Omitted when no judge scores were recorded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore>? JudgeScores { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore> JudgeScores { get; set; }
+#endif
         /// <summary>Average toxicity judge score (0.0-1.0)</summary>
         public float? JudgeToxicity { get; set; }
         /// <summary>Cost of output tokens in USD</summary>
@@ -80,6 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "inputTokens", n => { InputTokens = n.GetIntValue(); } },
                 { "judgeAccuracy", n => { JudgeAccuracy = n.GetFloatValue(); } },
                 { "judgeRelevance", n => { JudgeRelevance = n.GetFloatValue(); } },
+                { "judgeScores", n => { JudgeScores = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "judgeToxicity", n => { JudgeToxicity = n.GetFloatValue(); } },
                 { "outputCost", n => { OutputCost = n.GetDoubleValue(); } },
                 { "outputTokens", n => { OutputTokens = n.GetIntValue(); } },
@@ -105,6 +114,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("inputTokens", InputTokens);
             writer.WriteFloatValue("judgeAccuracy", JudgeAccuracy);
             writer.WriteFloatValue("judgeRelevance", JudgeRelevance);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore>("judgeScores", JudgeScores);
             writer.WriteFloatValue("judgeToxicity", JudgeToxicity);
             writer.WriteDoubleValue("outputCost", OutputCost);
             writer.WriteIntValue("outputTokens", OutputTokens);

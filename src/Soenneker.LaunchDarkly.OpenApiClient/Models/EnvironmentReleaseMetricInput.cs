@@ -15,6 +15,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Key of the context kind to analyze this metric on. Omit it to analyzeon the randomization unit. A value must differ from the randomizationunit and be one of the metric&apos;s units. Percentile metrics, ratiometrics, and metrics in a group cannot set it. The value cannot bechanged after the release starts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AnalysisUnit { get; set; }
+#nullable restore
+#else
+        public string AnalysisUnit { get; set; }
+#endif
         /// <summary>Whether a regression on this metric automatically reverts therelease. When `false`, a detected regression pauses the releaseinstead: it reports `waiting` with reason`waiting_regression_detected` and does not advance until theregression is dismissed or the release is stopped.</summary>
         public bool? AutoRollback { get; set; }
         /// <summary>The metricKey property</summary>
@@ -51,6 +59,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "analysisUnit", n => { AnalysisUnit = n.GetStringValue(); } },
                 { "autoRollback", n => { AutoRollback = n.GetBoolValue(); } },
                 { "metricKey", n => { MetricKey = n.GetStringValue(); } },
             };
@@ -62,6 +71,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("analysisUnit", AnalysisUnit);
             writer.WriteBoolValue("autoRollback", AutoRollback);
             writer.WriteStringValue("metricKey", MetricKey);
             writer.WriteAdditionalData(AdditionalData);
