@@ -17,12 +17,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("commitUrlTemplate") is { } nullNodeCommitUrlTemplate && nullNodeCommitUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitUrlTemplate = null;
-            if (parseNode.GetChildNode("defaultBranch") is { } nullNodeDefaultBranch && nullNodeDefaultBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultBranch = null;
-            if (parseNode.GetChildNode("hunkUrlTemplate") is { } nullNodeHunkUrlTemplate && nullNodeHunkUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HunkUrlTemplate = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("sourceLink") is { } nullNodeSourceLink && nullNodeSourceLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLink = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("commitUrlTemplate") is null) { _explicitNullValueCommitUrlTemplate = default!; _explicitNullProperties?.Remove("commitUrlTemplate"); }
+            else if (parseNode.GetChildNode("commitUrlTemplate") is { } nullNodeCommitUrlTemplate && nullNodeCommitUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommitUrlTemplate = null;
+            if (parseNode.GetChildNode("defaultBranch") is null) { _explicitNullValueDefaultBranch = default!; _explicitNullProperties?.Remove("defaultBranch"); }
+            else if (parseNode.GetChildNode("defaultBranch") is { } nullNodeDefaultBranch && nullNodeDefaultBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultBranch = null;
+            if (parseNode.GetChildNode("hunkUrlTemplate") is null) { _explicitNullValueHunkUrlTemplate = default!; _explicitNullProperties?.Remove("hunkUrlTemplate"); }
+            else if (parseNode.GetChildNode("hunkUrlTemplate") is { } nullNodeHunkUrlTemplate && nullNodeHunkUrlTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HunkUrlTemplate = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("sourceLink") is null) { _explicitNullValueSourceLink = default!; _explicitNullProperties?.Remove("sourceLink"); }
+            else if (parseNode.GetChildNode("sourceLink") is { } nullNodeSourceLink && nullNodeSourceLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLink = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,55 +36,55 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A template for constructing a valid URL to view the commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommitUrlTemplate { get => _explicitNullValueCommitUrlTemplate; set { _explicitNullValueCommitUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitUrlTemplate"); else _explicitNullProperties?.Remove("commitUrlTemplate"); } }
+        public string? CommitUrlTemplate { get => _explicitNullValueCommitUrlTemplate; set { _explicitNullValueCommitUrlTemplate = value; AdditionalData?.Remove("commitUrlTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitUrlTemplate"); else _explicitNullProperties?.Remove("commitUrlTemplate"); } }
         private string? _explicitNullValueCommitUrlTemplate = default!;
 #nullable restore
 #else
-        public string CommitUrlTemplate { get => _explicitNullValueCommitUrlTemplate; set { _explicitNullValueCommitUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitUrlTemplate"); else _explicitNullProperties?.Remove("commitUrlTemplate"); } }
+        public string CommitUrlTemplate { get => _explicitNullValueCommitUrlTemplate; set { _explicitNullValueCommitUrlTemplate = value; AdditionalData?.Remove("commitUrlTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitUrlTemplate"); else _explicitNullProperties?.Remove("commitUrlTemplate"); } }
         private string _explicitNullValueCommitUrlTemplate = default!;
 #endif
         /// <summary>The repository&apos;s default branch. If not specified, the default value is &lt;code&gt;main&lt;/code&gt;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultBranch"); else _explicitNullProperties?.Remove("defaultBranch"); } }
+        public string? DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; AdditionalData?.Remove("defaultBranch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultBranch"); else _explicitNullProperties?.Remove("defaultBranch"); } }
         private string? _explicitNullValueDefaultBranch = default!;
 #nullable restore
 #else
-        public string DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultBranch"); else _explicitNullProperties?.Remove("defaultBranch"); } }
+        public string DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; AdditionalData?.Remove("defaultBranch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultBranch"); else _explicitNullProperties?.Remove("defaultBranch"); } }
         private string _explicitNullValueDefaultBranch = default!;
 #endif
         /// <summary>A template for constructing a valid URL to view the hunk</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HunkUrlTemplate { get => _explicitNullValueHunkUrlTemplate; set { _explicitNullValueHunkUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hunkUrlTemplate"); else _explicitNullProperties?.Remove("hunkUrlTemplate"); } }
+        public string? HunkUrlTemplate { get => _explicitNullValueHunkUrlTemplate; set { _explicitNullValueHunkUrlTemplate = value; AdditionalData?.Remove("hunkUrlTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hunkUrlTemplate"); else _explicitNullProperties?.Remove("hunkUrlTemplate"); } }
         private string? _explicitNullValueHunkUrlTemplate = default!;
 #nullable restore
 #else
-        public string HunkUrlTemplate { get => _explicitNullValueHunkUrlTemplate; set { _explicitNullValueHunkUrlTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hunkUrlTemplate"); else _explicitNullProperties?.Remove("hunkUrlTemplate"); } }
+        public string HunkUrlTemplate { get => _explicitNullValueHunkUrlTemplate; set { _explicitNullValueHunkUrlTemplate = value; AdditionalData?.Remove("hunkUrlTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hunkUrlTemplate"); else _explicitNullProperties?.Remove("hunkUrlTemplate"); } }
         private string _explicitNullValueHunkUrlTemplate = default!;
 #endif
         /// <summary>The repository name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>A URL to access the repository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceLink"); else _explicitNullProperties?.Remove("sourceLink"); } }
+        public string? SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; AdditionalData?.Remove("sourceLink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceLink"); else _explicitNullProperties?.Remove("sourceLink"); } }
         private string? _explicitNullValueSourceLink = default!;
 #nullable restore
 #else
-        public string SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceLink"); else _explicitNullProperties?.Remove("sourceLink"); } }
+        public string SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; AdditionalData?.Remove("sourceLink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceLink"); else _explicitNullProperties?.Remove("sourceLink"); } }
         private string _explicitNullValueSourceLink = default!;
 #endif
         /// <summary>The type of repository. If not specified, the default value is &lt;code&gt;custom&lt;/code&gt;.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RepositoryPostType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RepositoryPostType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RepositoryPostType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RepositoryPost"/> and sets the default values.
@@ -110,7 +116,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "hunkUrlTemplate", n => { HunkUrlTemplate = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sourceLink", n => { SourceLink = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RepositoryPostType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RepositoryPostType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

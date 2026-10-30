@@ -17,32 +17,36 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("monitoringWindowMilliseconds") is { } nullNodeMonitoringWindowMilliseconds && nullNodeMonitoringWindowMilliseconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringWindowMilliseconds = null;
-            if (parseNode.GetChildNode("randomizationUnit") is { } nullNodeRandomizationUnit && nullNodeRandomizationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizationUnit = null;
-            if (parseNode.GetChildNode("rollbackOnRegression") is { } nullNodeRollbackOnRegression && nullNodeRollbackOnRegression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollbackOnRegression = null;
-            if (parseNode.GetChildNode("rolloutWeight") is { } nullNodeRolloutWeight && nullNodeRolloutWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutWeight = null;
+            if (parseNode.GetChildNode("monitoringWindowMilliseconds") is null) { _explicitNullValueMonitoringWindowMilliseconds = default!; _explicitNullProperties?.Remove("monitoringWindowMilliseconds"); }
+            else if (parseNode.GetChildNode("monitoringWindowMilliseconds") is { } nullNodeMonitoringWindowMilliseconds && nullNodeMonitoringWindowMilliseconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitoringWindowMilliseconds = null;
+            if (parseNode.GetChildNode("randomizationUnit") is null) { _explicitNullValueRandomizationUnit = default!; _explicitNullProperties?.Remove("randomizationUnit"); }
+            else if (parseNode.GetChildNode("randomizationUnit") is { } nullNodeRandomizationUnit && nullNodeRandomizationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizationUnit = null;
+            if (parseNode.GetChildNode("rollbackOnRegression") is null) { _explicitNullValueRollbackOnRegression = default!; _explicitNullProperties?.Remove("rollbackOnRegression"); }
+            else if (parseNode.GetChildNode("rollbackOnRegression") is { } nullNodeRollbackOnRegression && nullNodeRollbackOnRegression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollbackOnRegression = null;
+            if (parseNode.GetChildNode("rolloutWeight") is null) { _explicitNullValueRolloutWeight = default!; _explicitNullProperties?.Remove("rolloutWeight"); }
+            else if (parseNode.GetChildNode("rolloutWeight") is { } nullNodeRolloutWeight && nullNodeRolloutWeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutWeight = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The monitoring window in milliseconds</summary>
-        public long? MonitoringWindowMilliseconds { get => _explicitNullValueMonitoringWindowMilliseconds; set { _explicitNullValueMonitoringWindowMilliseconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringWindowMilliseconds"); else _explicitNullProperties?.Remove("monitoringWindowMilliseconds"); } }
+        public long? MonitoringWindowMilliseconds { get => _explicitNullValueMonitoringWindowMilliseconds; set { _explicitNullValueMonitoringWindowMilliseconds = value; AdditionalData?.Remove("monitoringWindowMilliseconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitoringWindowMilliseconds"); else _explicitNullProperties?.Remove("monitoringWindowMilliseconds"); } }
         private long? _explicitNullValueMonitoringWindowMilliseconds = default!;
         /// <summary>The randomization unit for the measured rollout</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        public string? RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; AdditionalData?.Remove("randomizationUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
         private string? _explicitNullValueRandomizationUnit = default!;
 #nullable restore
 #else
-        public string RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        public string RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; AdditionalData?.Remove("randomizationUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
         private string _explicitNullValueRandomizationUnit = default!;
 #endif
         /// <summary>Whether or not to roll back on regression</summary>
-        public bool? RollbackOnRegression { get => _explicitNullValueRollbackOnRegression; set { _explicitNullValueRollbackOnRegression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollbackOnRegression"); else _explicitNullProperties?.Remove("rollbackOnRegression"); } }
+        public bool? RollbackOnRegression { get => _explicitNullValueRollbackOnRegression; set { _explicitNullValueRollbackOnRegression = value; AdditionalData?.Remove("rollbackOnRegression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollbackOnRegression"); else _explicitNullProperties?.Remove("rollbackOnRegression"); } }
         private bool? _explicitNullValueRollbackOnRegression = default!;
         /// <summary>The rollout weight percentage</summary>
-        public int? RolloutWeight { get => _explicitNullValueRolloutWeight; set { _explicitNullValueRolloutWeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutWeight"); else _explicitNullProperties?.Remove("rolloutWeight"); } }
+        public int? RolloutWeight { get => _explicitNullValueRolloutWeight; set { _explicitNullValueRolloutWeight = value; AdditionalData?.Remove("rolloutWeight"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutWeight"); else _explicitNullProperties?.Remove("rolloutWeight"); } }
         private int? _explicitNullValueRolloutWeight = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfiguration"/> and sets the default values.

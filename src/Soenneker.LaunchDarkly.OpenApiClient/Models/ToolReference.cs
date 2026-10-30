@@ -18,12 +18,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aiConfigKey") is { } nullNodeAiConfigKey && nullNodeAiConfigKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigKey = null;
-            if (parseNode.GetChildNode("aiConfigName") is { } nullNodeAiConfigName && nullNodeAiConfigName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigName = null;
-            if (parseNode.GetChildNode("toolVersion") is { } nullNodeToolVersion && nullNodeToolVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolVersion = null;
-            if (parseNode.GetChildNode("variationId") is { } nullNodeVariationId && nullNodeVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationId = null;
-            if (parseNode.GetChildNode("variationKey") is { } nullNodeVariationKey && nullNodeVariationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationKey = null;
-            if (parseNode.GetChildNode("variationName") is { } nullNodeVariationName && nullNodeVariationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationName = null;
+            if (parseNode.GetChildNode("aiConfigKey") is null) { _explicitNullValueAiConfigKey = default!; _explicitNullProperties?.Remove("aiConfigKey"); }
+            else if (parseNode.GetChildNode("aiConfigKey") is { } nullNodeAiConfigKey && nullNodeAiConfigKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigKey = null;
+            if (parseNode.GetChildNode("aiConfigName") is null) { _explicitNullValueAiConfigName = default!; _explicitNullProperties?.Remove("aiConfigName"); }
+            else if (parseNode.GetChildNode("aiConfigName") is { } nullNodeAiConfigName && nullNodeAiConfigName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigName = null;
+            if (parseNode.GetChildNode("toolVersion") is null) { _explicitNullValueToolVersion = default!; _explicitNullProperties?.Remove("toolVersion"); }
+            else if (parseNode.GetChildNode("toolVersion") is { } nullNodeToolVersion && nullNodeToolVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolVersion = null;
+            if (parseNode.GetChildNode("variationId") is null) { _explicitNullValueVariationId = default!; _explicitNullProperties?.Remove("variationId"); }
+            else if (parseNode.GetChildNode("variationId") is { } nullNodeVariationId && nullNodeVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationId = null;
+            if (parseNode.GetChildNode("variationKey") is null) { _explicitNullValueVariationKey = default!; _explicitNullProperties?.Remove("variationKey"); }
+            else if (parseNode.GetChildNode("variationKey") is { } nullNodeVariationKey && nullNodeVariationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationKey = null;
+            if (parseNode.GetChildNode("variationName") is null) { _explicitNullValueVariationName = default!; _explicitNullProperties?.Remove("variationName"); }
+            else if (parseNode.GetChildNode("variationName") is { } nullNodeVariationName && nullNodeVariationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,54 +37,54 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The key of the AgentControl config with a variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AiConfigKey { get => _explicitNullValueAiConfigKey; set { _explicitNullValueAiConfigKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigKey"); else _explicitNullProperties?.Remove("aiConfigKey"); } }
+        public string? AiConfigKey { get => _explicitNullValueAiConfigKey; set { _explicitNullValueAiConfigKey = value; AdditionalData?.Remove("aiConfigKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigKey"); else _explicitNullProperties?.Remove("aiConfigKey"); } }
         private string? _explicitNullValueAiConfigKey = default!;
 #nullable restore
 #else
-        public string AiConfigKey { get => _explicitNullValueAiConfigKey; set { _explicitNullValueAiConfigKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigKey"); else _explicitNullProperties?.Remove("aiConfigKey"); } }
+        public string AiConfigKey { get => _explicitNullValueAiConfigKey; set { _explicitNullValueAiConfigKey = value; AdditionalData?.Remove("aiConfigKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigKey"); else _explicitNullProperties?.Remove("aiConfigKey"); } }
         private string _explicitNullValueAiConfigKey = default!;
 #endif
         /// <summary>The name of the AgentControl config with a variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AiConfigName { get => _explicitNullValueAiConfigName; set { _explicitNullValueAiConfigName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigName"); else _explicitNullProperties?.Remove("aiConfigName"); } }
+        public string? AiConfigName { get => _explicitNullValueAiConfigName; set { _explicitNullValueAiConfigName = value; AdditionalData?.Remove("aiConfigName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigName"); else _explicitNullProperties?.Remove("aiConfigName"); } }
         private string? _explicitNullValueAiConfigName = default!;
 #nullable restore
 #else
-        public string AiConfigName { get => _explicitNullValueAiConfigName; set { _explicitNullValueAiConfigName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigName"); else _explicitNullProperties?.Remove("aiConfigName"); } }
+        public string AiConfigName { get => _explicitNullValueAiConfigName; set { _explicitNullValueAiConfigName = value; AdditionalData?.Remove("aiConfigName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigName"); else _explicitNullProperties?.Remove("aiConfigName"); } }
         private string _explicitNullValueAiConfigName = default!;
 #endif
         /// <summary>The version of the tool being referenced.</summary>
-        public int? ToolVersion { get => _explicitNullValueToolVersion; set { _explicitNullValueToolVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolVersion"); else _explicitNullProperties?.Remove("toolVersion"); } }
+        public int? ToolVersion { get => _explicitNullValueToolVersion; set { _explicitNullValueToolVersion = value; AdditionalData?.Remove("toolVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolVersion"); else _explicitNullProperties?.Remove("toolVersion"); } }
         private int? _explicitNullValueToolVersion = default!;
         /// <summary>The ID of the variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariationId { get => _explicitNullValueVariationId; set { _explicitNullValueVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationId"); else _explicitNullProperties?.Remove("variationId"); } }
+        public string? VariationId { get => _explicitNullValueVariationId; set { _explicitNullValueVariationId = value; AdditionalData?.Remove("variationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationId"); else _explicitNullProperties?.Remove("variationId"); } }
         private string? _explicitNullValueVariationId = default!;
 #nullable restore
 #else
-        public string VariationId { get => _explicitNullValueVariationId; set { _explicitNullValueVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationId"); else _explicitNullProperties?.Remove("variationId"); } }
+        public string VariationId { get => _explicitNullValueVariationId; set { _explicitNullValueVariationId = value; AdditionalData?.Remove("variationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationId"); else _explicitNullProperties?.Remove("variationId"); } }
         private string _explicitNullValueVariationId = default!;
 #endif
         /// <summary>The key of the AgentControl config variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariationKey { get => _explicitNullValueVariationKey; set { _explicitNullValueVariationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationKey"); else _explicitNullProperties?.Remove("variationKey"); } }
+        public string? VariationKey { get => _explicitNullValueVariationKey; set { _explicitNullValueVariationKey = value; AdditionalData?.Remove("variationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationKey"); else _explicitNullProperties?.Remove("variationKey"); } }
         private string? _explicitNullValueVariationKey = default!;
 #nullable restore
 #else
-        public string VariationKey { get => _explicitNullValueVariationKey; set { _explicitNullValueVariationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationKey"); else _explicitNullProperties?.Remove("variationKey"); } }
+        public string VariationKey { get => _explicitNullValueVariationKey; set { _explicitNullValueVariationKey = value; AdditionalData?.Remove("variationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationKey"); else _explicitNullProperties?.Remove("variationKey"); } }
         private string _explicitNullValueVariationKey = default!;
 #endif
         /// <summary>The name of the variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariationName { get => _explicitNullValueVariationName; set { _explicitNullValueVariationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationName"); else _explicitNullProperties?.Remove("variationName"); } }
+        public string? VariationName { get => _explicitNullValueVariationName; set { _explicitNullValueVariationName = value; AdditionalData?.Remove("variationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationName"); else _explicitNullProperties?.Remove("variationName"); } }
         private string? _explicitNullValueVariationName = default!;
 #nullable restore
 #else
-        public string VariationName { get => _explicitNullValueVariationName; set { _explicitNullValueVariationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationName"); else _explicitNullProperties?.Remove("variationName"); } }
+        public string VariationName { get => _explicitNullValueVariationName; set { _explicitNullValueVariationName = value; AdditionalData?.Remove("variationName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationName"); else _explicitNullProperties?.Remove("variationName"); } }
         private string _explicitNullValueVariationName = default!;
 #endif
         /// <summary>

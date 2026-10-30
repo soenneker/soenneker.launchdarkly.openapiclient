@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("projectKey") is { } nullNodeProjectKey && nullNodeProjectKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectKey = null;
-            if (parseNode.GetChildNode("repositoryKey") is { } nullNodeRepositoryKey && nullNodeRepositoryKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryKey = null;
+            if (parseNode.GetChildNode("projectKey") is null) { _explicitNullValueProjectKey = default!; _explicitNullProperties?.Remove("projectKey"); }
+            else if (parseNode.GetChildNode("projectKey") is { } nullNodeProjectKey && nullNodeProjectKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectKey = null;
+            if (parseNode.GetChildNode("repositoryKey") is null) { _explicitNullValueRepositoryKey = default!; _explicitNullProperties?.Remove("repositoryKey"); }
+            else if (parseNode.GetChildNode("repositoryKey") is { } nullNodeRepositoryKey && nullNodeRepositoryKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The project key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        public string? ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; AdditionalData?.Remove("projectKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
         private string? _explicitNullValueProjectKey = default!;
 #nullable restore
 #else
-        public string ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        public string ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; AdditionalData?.Remove("projectKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
         private string _explicitNullValueProjectKey = default!;
 #endif
         /// <summary>The repository key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepositoryKey { get => _explicitNullValueRepositoryKey; set { _explicitNullValueRepositoryKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryKey"); else _explicitNullProperties?.Remove("repositoryKey"); } }
+        public string? RepositoryKey { get => _explicitNullValueRepositoryKey; set { _explicitNullValueRepositoryKey = value; AdditionalData?.Remove("repositoryKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryKey"); else _explicitNullProperties?.Remove("repositoryKey"); } }
         private string? _explicitNullValueRepositoryKey = default!;
 #nullable restore
 #else
-        public string RepositoryKey { get => _explicitNullValueRepositoryKey; set { _explicitNullValueRepositoryKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryKey"); else _explicitNullProperties?.Remove("repositoryKey"); } }
+        public string RepositoryKey { get => _explicitNullValueRepositoryKey; set { _explicitNullValueRepositoryKey = value; AdditionalData?.Remove("repositoryKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repositoryKey"); else _explicitNullProperties?.Remove("repositoryKey"); } }
         private string _explicitNullValueRepositoryKey = default!;
 #endif
         /// <summary>

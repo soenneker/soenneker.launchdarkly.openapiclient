@@ -17,10 +17,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audienceId") is { } nullNodeAudienceId && nullNodeAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceId = null;
-            if (parseNode.GetChildNode("notifyMemberIds") is { } nullNodeNotifyMemberIds && nullNodeNotifyMemberIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyMemberIds = null;
-            if (parseNode.GetChildNode("notifyTeamKeys") is { } nullNodeNotifyTeamKeys && nullNodeNotifyTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyTeamKeys = null;
-            if (parseNode.GetChildNode("releaseGuardianConfiguration") is { } nullNodeReleaseGuardianConfiguration && nullNodeReleaseGuardianConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseGuardianConfiguration = null;
+            if (parseNode.GetChildNode("audienceId") is null) { _explicitNullValueAudienceId = default!; _explicitNullProperties?.Remove("audienceId"); }
+            else if (parseNode.GetChildNode("audienceId") is { } nullNodeAudienceId && nullNodeAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceId = null;
+            if (parseNode.GetChildNode("notifyMemberIds") is null) { _explicitNullValueNotifyMemberIds = default!; _explicitNullProperties?.Remove("notifyMemberIds"); }
+            else if (parseNode.GetChildNode("notifyMemberIds") is { } nullNodeNotifyMemberIds && nullNodeNotifyMemberIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyMemberIds = null;
+            if (parseNode.GetChildNode("notifyTeamKeys") is null) { _explicitNullValueNotifyTeamKeys = default!; _explicitNullProperties?.Remove("notifyTeamKeys"); }
+            else if (parseNode.GetChildNode("notifyTeamKeys") is { } nullNodeNotifyTeamKeys && nullNodeNotifyTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyTeamKeys = null;
+            if (parseNode.GetChildNode("releaseGuardianConfiguration") is null) { _explicitNullValueReleaseGuardianConfiguration = default!; _explicitNullProperties?.Remove("releaseGuardianConfiguration"); }
+            else if (parseNode.GetChildNode("releaseGuardianConfiguration") is { } nullNodeReleaseGuardianConfiguration && nullNodeReleaseGuardianConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseGuardianConfiguration = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>UUID of the audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudienceId { get => _explicitNullValueAudienceId; set { _explicitNullValueAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceId"); else _explicitNullProperties?.Remove("audienceId"); } }
+        public string? AudienceId { get => _explicitNullValueAudienceId; set { _explicitNullValueAudienceId = value; AdditionalData?.Remove("audienceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceId"); else _explicitNullProperties?.Remove("audienceId"); } }
         private string? _explicitNullValueAudienceId = default!;
 #nullable restore
 #else
-        public string AudienceId { get => _explicitNullValueAudienceId; set { _explicitNullValueAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceId"); else _explicitNullProperties?.Remove("audienceId"); } }
+        public string AudienceId { get => _explicitNullValueAudienceId; set { _explicitNullValueAudienceId = value; AdditionalData?.Remove("audienceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceId"); else _explicitNullProperties?.Remove("audienceId"); } }
         private string _explicitNullValueAudienceId = default!;
 #endif
         /// <summary>An array of member IDs. These members are notified to review the approval request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        public List<string>? NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; AdditionalData?.Remove("notifyMemberIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
         private List<string>? _explicitNullValueNotifyMemberIds = default!;
 #nullable restore
 #else
-        public List<string> NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        public List<string> NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; AdditionalData?.Remove("notifyMemberIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
         private List<string> _explicitNullValueNotifyMemberIds = default!;
 #endif
         /// <summary>An array of team keys. The members of these teams are notified to review the approval request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        public List<string>? NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; AdditionalData?.Remove("notifyTeamKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
         private List<string>? _explicitNullValueNotifyTeamKeys = default!;
 #nullable restore
 #else
-        public List<string> NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        public List<string> NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; AdditionalData?.Remove("notifyTeamKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
         private List<string> _explicitNullValueNotifyTeamKeys = default!;
 #endif
         /// <summary>The releaseGuardianConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? ReleaseGuardianConfiguration { get => _explicitNullValueReleaseGuardianConfiguration; set { _explicitNullValueReleaseGuardianConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseGuardianConfiguration"); else _explicitNullProperties?.Remove("releaseGuardianConfiguration"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? ReleaseGuardianConfiguration { get => _explicitNullValueReleaseGuardianConfiguration; set { _explicitNullValueReleaseGuardianConfiguration = value; AdditionalData?.Remove("releaseGuardianConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseGuardianConfiguration"); else _explicitNullProperties?.Remove("releaseGuardianConfiguration"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? _explicitNullValueReleaseGuardianConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput ReleaseGuardianConfiguration { get => _explicitNullValueReleaseGuardianConfiguration; set { _explicitNullValueReleaseGuardianConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseGuardianConfiguration"); else _explicitNullProperties?.Remove("releaseGuardianConfiguration"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput ReleaseGuardianConfiguration { get => _explicitNullValueReleaseGuardianConfiguration; set { _explicitNullValueReleaseGuardianConfiguration = value; AdditionalData?.Remove("releaseGuardianConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseGuardianConfiguration"); else _explicitNullProperties?.Remove("releaseGuardianConfiguration"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput _explicitNullValueReleaseGuardianConfiguration = default!;
 #endif
         /// <summary>

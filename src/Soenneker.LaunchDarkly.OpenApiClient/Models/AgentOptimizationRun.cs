@@ -17,48 +17,56 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activity") is { } nullNodeActivity && nullNodeActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activity = null;
-            if (parseNode.GetChildNode("agentOptimizationId") is { } nullNodeAgentOptimizationId && nullNodeAgentOptimizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOptimizationId = null;
-            if (parseNode.GetChildNode("agentOptimizationVersion") is { } nullNodeAgentOptimizationVersion && nullNodeAgentOptimizationVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOptimizationVersion = null;
-            if (parseNode.GetChildNode("completedAt") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
-            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("optimizationKey") is { } nullNodeOptimizationKey && nullNodeOptimizationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationKey = null;
-            if (parseNode.GetChildNode("runId") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("activity") is null) { _explicitNullValueActivity = default!; _explicitNullProperties?.Remove("activity"); }
+            else if (parseNode.GetChildNode("activity") is { } nullNodeActivity && nullNodeActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activity = null;
+            if (parseNode.GetChildNode("agentOptimizationId") is null) { _explicitNullValueAgentOptimizationId = default!; _explicitNullProperties?.Remove("agentOptimizationId"); }
+            else if (parseNode.GetChildNode("agentOptimizationId") is { } nullNodeAgentOptimizationId && nullNodeAgentOptimizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOptimizationId = null;
+            if (parseNode.GetChildNode("agentOptimizationVersion") is null) { _explicitNullValueAgentOptimizationVersion = default!; _explicitNullProperties?.Remove("agentOptimizationVersion"); }
+            else if (parseNode.GetChildNode("agentOptimizationVersion") is { } nullNodeAgentOptimizationVersion && nullNodeAgentOptimizationVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOptimizationVersion = null;
+            if (parseNode.GetChildNode("completedAt") is null) { _explicitNullValueCompletedAt = default!; _explicitNullProperties?.Remove("completedAt"); }
+            else if (parseNode.GetChildNode("completedAt") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("optimizationKey") is null) { _explicitNullValueOptimizationKey = default!; _explicitNullProperties?.Remove("optimizationKey"); }
+            else if (parseNode.GetChildNode("optimizationKey") is { } nullNodeOptimizationKey && nullNodeOptimizationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationKey = null;
+            if (parseNode.GetChildNode("runId") is null) { _explicitNullValueRunId = default!; _explicitNullProperties?.Remove("runId"); }
+            else if (parseNode.GetChildNode("runId") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>The activity property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get => _explicitNullValueActivity; set { _explicitNullValueActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get => _explicitNullValueActivity; set { _explicitNullValueActivity = value; AdditionalData?.Remove("activity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? _explicitNullValueActivity = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent optimization ID</summary>
-        public Guid? AgentOptimizationId { get => _explicitNullValueAgentOptimizationId; set { _explicitNullValueAgentOptimizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentOptimizationId"); else _explicitNullProperties?.Remove("agentOptimizationId"); } }
+        public Guid? AgentOptimizationId { get => _explicitNullValueAgentOptimizationId; set { _explicitNullValueAgentOptimizationId = value; AdditionalData?.Remove("agentOptimizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentOptimizationId"); else _explicitNullProperties?.Remove("agentOptimizationId"); } }
         private Guid? _explicitNullValueAgentOptimizationId = default!;
         /// <summary>The version of the agent optimization used</summary>
-        public int? AgentOptimizationVersion { get => _explicitNullValueAgentOptimizationVersion; set { _explicitNullValueAgentOptimizationVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentOptimizationVersion"); else _explicitNullProperties?.Remove("agentOptimizationVersion"); } }
+        public int? AgentOptimizationVersion { get => _explicitNullValueAgentOptimizationVersion; set { _explicitNullValueAgentOptimizationVersion = value; AdditionalData?.Remove("agentOptimizationVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentOptimizationVersion"); else _explicitNullProperties?.Remove("agentOptimizationVersion"); } }
         private int? _explicitNullValueAgentOptimizationVersion = default!;
         /// <summary>When this finished, in Unix milliseconds</summary>
-        public long? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completedAt"); else _explicitNullProperties?.Remove("completedAt"); } }
+        public long? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; AdditionalData?.Remove("completedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completedAt"); else _explicitNullProperties?.Remove("completedAt"); } }
         private long? _explicitNullValueCompletedAt = default!;
         /// <summary>When this resource was created, in Unix milliseconds</summary>
-        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private long? _explicitNullValueCreatedAt = default!;
         /// <summary>The agent optimization key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OptimizationKey { get => _explicitNullValueOptimizationKey; set { _explicitNullValueOptimizationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationKey"); else _explicitNullProperties?.Remove("optimizationKey"); } }
+        public string? OptimizationKey { get => _explicitNullValueOptimizationKey; set { _explicitNullValueOptimizationKey = value; AdditionalData?.Remove("optimizationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationKey"); else _explicitNullProperties?.Remove("optimizationKey"); } }
         private string? _explicitNullValueOptimizationKey = default!;
 #nullable restore
 #else
-        public string OptimizationKey { get => _explicitNullValueOptimizationKey; set { _explicitNullValueOptimizationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationKey"); else _explicitNullProperties?.Remove("optimizationKey"); } }
+        public string OptimizationKey { get => _explicitNullValueOptimizationKey; set { _explicitNullValueOptimizationKey = value; AdditionalData?.Remove("optimizationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationKey"); else _explicitNullProperties?.Remove("optimizationKey"); } }
         private string _explicitNullValueOptimizationKey = default!;
 #endif
         /// <summary>The run ID</summary>
-        public Guid? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runId"); else _explicitNullProperties?.Remove("runId"); } }
+        public Guid? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; AdditionalData?.Remove("runId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runId"); else _explicitNullProperties?.Remove("runId"); } }
         private Guid? _explicitNullValueRunId = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationRun"/> and sets the default values.
@@ -85,14 +93,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activity", n => { Activity = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity>(); } },
+                { "activity", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActivity = default; _explicitNullProperties?.Remove("activity"); AdditionalData["activity"] = unknown; } else { Activity = parsed; AdditionalData.Remove("activity"); } } },
                 { "agentOptimizationId", n => { AgentOptimizationId = n.GetGuidValue(); } },
                 { "agentOptimizationVersion", n => { AgentOptimizationVersion = n.GetIntValue(); } },
                 { "completedAt", n => { CompletedAt = n.GetLongValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "optimizationKey", n => { OptimizationKey = n.GetStringValue(); } },
                 { "runId", n => { RunId = n.GetGuidValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>

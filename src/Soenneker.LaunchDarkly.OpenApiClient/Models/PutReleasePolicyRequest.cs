@@ -17,11 +17,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("guardedReleaseConfig") is { } nullNodeGuardedReleaseConfig && nullNodeGuardedReleaseConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardedReleaseConfig = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("progressiveReleaseConfig") is { } nullNodeProgressiveReleaseConfig && nullNodeProgressiveReleaseConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgressiveReleaseConfig = null;
-            if (parseNode.GetChildNode("releaseMethod") is { } nullNodeReleaseMethod && nullNodeReleaseMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseMethod = null;
-            if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
+            if (parseNode.GetChildNode("guardedReleaseConfig") is null) { _explicitNullValueGuardedReleaseConfig = default!; _explicitNullProperties?.Remove("guardedReleaseConfig"); }
+            else if (parseNode.GetChildNode("guardedReleaseConfig") is { } nullNodeGuardedReleaseConfig && nullNodeGuardedReleaseConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GuardedReleaseConfig = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("progressiveReleaseConfig") is null) { _explicitNullValueProgressiveReleaseConfig = default!; _explicitNullProperties?.Remove("progressiveReleaseConfig"); }
+            else if (parseNode.GetChildNode("progressiveReleaseConfig") is { } nullNodeProgressiveReleaseConfig && nullNodeProgressiveReleaseConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgressiveReleaseConfig = null;
+            if (parseNode.GetChildNode("releaseMethod") is null) { _explicitNullValueReleaseMethod = default!; _explicitNullProperties?.Remove("releaseMethod"); }
+            else if (parseNode.GetChildNode("releaseMethod") is { } nullNodeReleaseMethod && nullNodeReleaseMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseMethod = null;
+            if (parseNode.GetChildNode("scope") is null) { _explicitNullValueScope = default!; _explicitNullProperties?.Remove("scope"); }
+            else if (parseNode.GetChildNode("scope") is { } nullNodeScope && nullNodeScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scope = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Configuration for guarded releases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig? GuardedReleaseConfig { get => _explicitNullValueGuardedReleaseConfig; set { _explicitNullValueGuardedReleaseConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardedReleaseConfig"); else _explicitNullProperties?.Remove("guardedReleaseConfig"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig? GuardedReleaseConfig { get => _explicitNullValueGuardedReleaseConfig; set { _explicitNullValueGuardedReleaseConfig = value; AdditionalData?.Remove("guardedReleaseConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardedReleaseConfig"); else _explicitNullProperties?.Remove("guardedReleaseConfig"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig? _explicitNullValueGuardedReleaseConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig GuardedReleaseConfig { get => _explicitNullValueGuardedReleaseConfig; set { _explicitNullValueGuardedReleaseConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardedReleaseConfig"); else _explicitNullProperties?.Remove("guardedReleaseConfig"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig GuardedReleaseConfig { get => _explicitNullValueGuardedReleaseConfig; set { _explicitNullValueGuardedReleaseConfig = value; AdditionalData?.Remove("guardedReleaseConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardedReleaseConfig"); else _explicitNullProperties?.Remove("guardedReleaseConfig"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig _explicitNullValueGuardedReleaseConfig = default!;
 #endif
         /// <summary>The name of the release policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Configuration for progressive releases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig? ProgressiveReleaseConfig { get => _explicitNullValueProgressiveReleaseConfig; set { _explicitNullValueProgressiveReleaseConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progressiveReleaseConfig"); else _explicitNullProperties?.Remove("progressiveReleaseConfig"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig? ProgressiveReleaseConfig { get => _explicitNullValueProgressiveReleaseConfig; set { _explicitNullValueProgressiveReleaseConfig = value; AdditionalData?.Remove("progressiveReleaseConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progressiveReleaseConfig"); else _explicitNullProperties?.Remove("progressiveReleaseConfig"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig? _explicitNullValueProgressiveReleaseConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig ProgressiveReleaseConfig { get => _explicitNullValueProgressiveReleaseConfig; set { _explicitNullValueProgressiveReleaseConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progressiveReleaseConfig"); else _explicitNullProperties?.Remove("progressiveReleaseConfig"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig ProgressiveReleaseConfig { get => _explicitNullValueProgressiveReleaseConfig; set { _explicitNullValueProgressiveReleaseConfig = value; AdditionalData?.Remove("progressiveReleaseConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progressiveReleaseConfig"); else _explicitNullProperties?.Remove("progressiveReleaseConfig"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig _explicitNullValueProgressiveReleaseConfig = default!;
 #endif
         /// <summary>The release method for this policy</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMethod? ReleaseMethod { get => _explicitNullValueReleaseMethod; set { _explicitNullValueReleaseMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseMethod"); else _explicitNullProperties?.Remove("releaseMethod"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMethod? ReleaseMethod { get => _explicitNullValueReleaseMethod; set { _explicitNullValueReleaseMethod = value; AdditionalData?.Remove("releaseMethod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseMethod"); else _explicitNullProperties?.Remove("releaseMethod"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMethod? _explicitNullValueReleaseMethod = default!;
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope? Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope? _explicitNullValueScope = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope Scope { get => _explicitNullValueScope; set { _explicitNullValueScope = value; AdditionalData?.Remove("scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope"); else _explicitNullProperties?.Remove("scope"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope _explicitNullValueScope = default!;
 #endif
         /// <summary>
@@ -97,7 +102,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "guardedReleaseConfig", n => { GuardedReleaseConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.GuardedReleaseConfig.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "progressiveReleaseConfig", n => { ProgressiveReleaseConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ProgressiveReleaseConfig.CreateFromDiscriminatorValue); } },
-                { "releaseMethod", n => { ReleaseMethod = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMethod>(); } },
+                { "releaseMethod", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReleaseMethod = default; _explicitNullProperties?.Remove("releaseMethod"); AdditionalData["releaseMethod"] = unknown; } else { ReleaseMethod = parsed; AdditionalData.Remove("releaseMethod"); } } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope.CreateFromDiscriminatorValue); } },
             };
         }

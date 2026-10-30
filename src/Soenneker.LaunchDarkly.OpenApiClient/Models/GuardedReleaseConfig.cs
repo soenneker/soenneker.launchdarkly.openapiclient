@@ -18,12 +18,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("metricGroupKeys") is { } nullNodeMetricGroupKeys && nullNodeMetricGroupKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricGroupKeys = null;
-            if (parseNode.GetChildNode("metricKeys") is { } nullNodeMetricKeys && nullNodeMetricKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKeys = null;
-            if (parseNode.GetChildNode("minSampleSize") is { } nullNodeMinSampleSize && nullNodeMinSampleSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSampleSize = null;
-            if (parseNode.GetChildNode("rollbackOnRegression") is { } nullNodeRollbackOnRegression && nullNodeRollbackOnRegression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollbackOnRegression = null;
-            if (parseNode.GetChildNode("rolloutContextKindKey") is { } nullNodeRolloutContextKindKey && nullNodeRolloutContextKindKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutContextKindKey = null;
-            if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
+            if (parseNode.GetChildNode("metricGroupKeys") is null) { _explicitNullValueMetricGroupKeys = default!; _explicitNullProperties?.Remove("metricGroupKeys"); }
+            else if (parseNode.GetChildNode("metricGroupKeys") is { } nullNodeMetricGroupKeys && nullNodeMetricGroupKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricGroupKeys = null;
+            if (parseNode.GetChildNode("metricKeys") is null) { _explicitNullValueMetricKeys = default!; _explicitNullProperties?.Remove("metricKeys"); }
+            else if (parseNode.GetChildNode("metricKeys") is { } nullNodeMetricKeys && nullNodeMetricKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKeys = null;
+            if (parseNode.GetChildNode("minSampleSize") is null) { _explicitNullValueMinSampleSize = default!; _explicitNullProperties?.Remove("minSampleSize"); }
+            else if (parseNode.GetChildNode("minSampleSize") is { } nullNodeMinSampleSize && nullNodeMinSampleSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinSampleSize = null;
+            if (parseNode.GetChildNode("rollbackOnRegression") is null) { _explicitNullValueRollbackOnRegression = default!; _explicitNullProperties?.Remove("rollbackOnRegression"); }
+            else if (parseNode.GetChildNode("rollbackOnRegression") is { } nullNodeRollbackOnRegression && nullNodeRollbackOnRegression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RollbackOnRegression = null;
+            if (parseNode.GetChildNode("rolloutContextKindKey") is null) { _explicitNullValueRolloutContextKindKey = default!; _explicitNullProperties?.Remove("rolloutContextKindKey"); }
+            else if (parseNode.GetChildNode("rolloutContextKindKey") is { } nullNodeRolloutContextKindKey && nullNodeRolloutContextKindKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutContextKindKey = null;
+            if (parseNode.GetChildNode("stages") is null) { _explicitNullValueStages = default!; _explicitNullProperties?.Remove("stages"); }
+            else if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,47 +37,47 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>List of metric group keys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MetricGroupKeys { get => _explicitNullValueMetricGroupKeys; set { _explicitNullValueMetricGroupKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricGroupKeys"); else _explicitNullProperties?.Remove("metricGroupKeys"); } }
+        public List<string>? MetricGroupKeys { get => _explicitNullValueMetricGroupKeys; set { _explicitNullValueMetricGroupKeys = value; AdditionalData?.Remove("metricGroupKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricGroupKeys"); else _explicitNullProperties?.Remove("metricGroupKeys"); } }
         private List<string>? _explicitNullValueMetricGroupKeys = default!;
 #nullable restore
 #else
-        public List<string> MetricGroupKeys { get => _explicitNullValueMetricGroupKeys; set { _explicitNullValueMetricGroupKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricGroupKeys"); else _explicitNullProperties?.Remove("metricGroupKeys"); } }
+        public List<string> MetricGroupKeys { get => _explicitNullValueMetricGroupKeys; set { _explicitNullValueMetricGroupKeys = value; AdditionalData?.Remove("metricGroupKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricGroupKeys"); else _explicitNullProperties?.Remove("metricGroupKeys"); } }
         private List<string> _explicitNullValueMetricGroupKeys = default!;
 #endif
         /// <summary>List of metric keys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MetricKeys { get => _explicitNullValueMetricKeys; set { _explicitNullValueMetricKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKeys"); else _explicitNullProperties?.Remove("metricKeys"); } }
+        public List<string>? MetricKeys { get => _explicitNullValueMetricKeys; set { _explicitNullValueMetricKeys = value; AdditionalData?.Remove("metricKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKeys"); else _explicitNullProperties?.Remove("metricKeys"); } }
         private List<string>? _explicitNullValueMetricKeys = default!;
 #nullable restore
 #else
-        public List<string> MetricKeys { get => _explicitNullValueMetricKeys; set { _explicitNullValueMetricKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKeys"); else _explicitNullProperties?.Remove("metricKeys"); } }
+        public List<string> MetricKeys { get => _explicitNullValueMetricKeys; set { _explicitNullValueMetricKeys = value; AdditionalData?.Remove("metricKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKeys"); else _explicitNullProperties?.Remove("metricKeys"); } }
         private List<string> _explicitNullValueMetricKeys = default!;
 #endif
         /// <summary>The minimum number of samples required to make a decision</summary>
-        public int? MinSampleSize { get => _explicitNullValueMinSampleSize; set { _explicitNullValueMinSampleSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minSampleSize"); else _explicitNullProperties?.Remove("minSampleSize"); } }
+        public int? MinSampleSize { get => _explicitNullValueMinSampleSize; set { _explicitNullValueMinSampleSize = value; AdditionalData?.Remove("minSampleSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minSampleSize"); else _explicitNullProperties?.Remove("minSampleSize"); } }
         private int? _explicitNullValueMinSampleSize = default!;
         /// <summary>Whether to roll back on regression</summary>
-        public bool? RollbackOnRegression { get => _explicitNullValueRollbackOnRegression; set { _explicitNullValueRollbackOnRegression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollbackOnRegression"); else _explicitNullProperties?.Remove("rollbackOnRegression"); } }
+        public bool? RollbackOnRegression { get => _explicitNullValueRollbackOnRegression; set { _explicitNullValueRollbackOnRegression = value; AdditionalData?.Remove("rollbackOnRegression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollbackOnRegression"); else _explicitNullProperties?.Remove("rollbackOnRegression"); } }
         private bool? _explicitNullValueRollbackOnRegression = default!;
         /// <summary>Context kind key to use as the randomization unit for the rollout</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
+        public string? RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; AdditionalData?.Remove("rolloutContextKindKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
         private string? _explicitNullValueRolloutContextKindKey = default!;
 #nullable restore
 #else
-        public string RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
+        public string RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; AdditionalData?.Remove("rolloutContextKindKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
         private string _explicitNullValueRolloutContextKindKey = default!;
 #endif
         /// <summary>List of stages. At most 10 stages by default; the server enforces the per-account limit, which is never more than 20.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; AdditionalData?.Remove("stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? _explicitNullValueStages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; AdditionalData?.Remove("stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage> _explicitNullValueStages = default!;
 #endif
         /// <summary>

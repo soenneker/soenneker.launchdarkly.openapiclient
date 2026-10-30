@@ -17,7 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("awsTrustPolicy") is { } nullNodeAwsTrustPolicy && nullNodeAwsTrustPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsTrustPolicy = null;
+            if (parseNode.GetChildNode("awsTrustPolicy") is null) { _explicitNullValueAwsTrustPolicy = default!; _explicitNullProperties?.Remove("awsTrustPolicy"); }
+            else if (parseNode.GetChildNode("awsTrustPolicy") is { } nullNodeAwsTrustPolicy && nullNodeAwsTrustPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AwsTrustPolicy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The awsTrustPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyDetails? AwsTrustPolicy { get => _explicitNullValueAwsTrustPolicy; set { _explicitNullValueAwsTrustPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsTrustPolicy"); else _explicitNullProperties?.Remove("awsTrustPolicy"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyDetails? AwsTrustPolicy { get => _explicitNullValueAwsTrustPolicy; set { _explicitNullValueAwsTrustPolicy = value; AdditionalData?.Remove("awsTrustPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsTrustPolicy"); else _explicitNullProperties?.Remove("awsTrustPolicy"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyDetails? _explicitNullValueAwsTrustPolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyDetails AwsTrustPolicy { get => _explicitNullValueAwsTrustPolicy; set { _explicitNullValueAwsTrustPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsTrustPolicy"); else _explicitNullProperties?.Remove("awsTrustPolicy"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyDetails AwsTrustPolicy { get => _explicitNullValueAwsTrustPolicy; set { _explicitNullValueAwsTrustPolicy = value; AdditionalData?.Remove("awsTrustPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("awsTrustPolicy"); else _explicitNullProperties?.Remove("awsTrustPolicy"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TrustPolicyDetails _explicitNullValueAwsTrustPolicy = default!;
 #endif
         /// <summary>

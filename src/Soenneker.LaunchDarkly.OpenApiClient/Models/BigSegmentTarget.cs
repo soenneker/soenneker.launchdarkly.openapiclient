@@ -17,27 +17,30 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("excluded") is { } nullNodeExcluded && nullNodeExcluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Excluded = null;
-            if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
-            if (parseNode.GetChildNode("userKey") is { } nullNodeUserKey && nullNodeUserKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserKey = null;
+            if (parseNode.GetChildNode("excluded") is null) { _explicitNullValueExcluded = default!; _explicitNullProperties?.Remove("excluded"); }
+            else if (parseNode.GetChildNode("excluded") is { } nullNodeExcluded && nullNodeExcluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Excluded = null;
+            if (parseNode.GetChildNode("included") is null) { _explicitNullValueIncluded = default!; _explicitNullProperties?.Remove("included"); }
+            else if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
+            if (parseNode.GetChildNode("userKey") is null) { _explicitNullValueUserKey = default!; _explicitNullProperties?.Remove("userKey"); }
+            else if (parseNode.GetChildNode("userKey") is { } nullNodeUserKey && nullNodeUserKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the target is excluded.&lt;br /&gt;Segment rules bypass excluded targets, so they will never be included based on rules. Excluded targets may still be included explicitly.</summary>
-        public bool? Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
+        public bool? Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; AdditionalData?.Remove("excluded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
         private bool? _explicitNullValueExcluded = default!;
         /// <summary>Indicates whether the target is included.&lt;br /&gt;Included targets are always segment members, regardless of segment rules.</summary>
-        public bool? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
+        public bool? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; AdditionalData?.Remove("included"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
         private bool? _explicitNullValueIncluded = default!;
         /// <summary>The target key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserKey { get => _explicitNullValueUserKey; set { _explicitNullValueUserKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userKey"); else _explicitNullProperties?.Remove("userKey"); } }
+        public string? UserKey { get => _explicitNullValueUserKey; set { _explicitNullValueUserKey = value; AdditionalData?.Remove("userKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userKey"); else _explicitNullProperties?.Remove("userKey"); } }
         private string? _explicitNullValueUserKey = default!;
 #nullable restore
 #else
-        public string UserKey { get => _explicitNullValueUserKey; set { _explicitNullValueUserKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userKey"); else _explicitNullProperties?.Remove("userKey"); } }
+        public string UserKey { get => _explicitNullValueUserKey; set { _explicitNullValueUserKey = value; AdditionalData?.Remove("userKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userKey"); else _explicitNullProperties?.Remove("userKey"); } }
         private string _explicitNullValueUserKey = default!;
 #endif
         /// <summary>

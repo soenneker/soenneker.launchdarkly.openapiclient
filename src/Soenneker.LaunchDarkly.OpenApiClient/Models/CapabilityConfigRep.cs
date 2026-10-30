@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("approvals") is { } nullNodeApprovals && nullNodeApprovals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approvals = null;
-            if (parseNode.GetChildNode("auditLogEventsHook") is { } nullNodeAuditLogEventsHook && nullNodeAuditLogEventsHook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogEventsHook = null;
+            if (parseNode.GetChildNode("approvals") is null) { _explicitNullValueApprovals = default!; _explicitNullProperties?.Remove("approvals"); }
+            else if (parseNode.GetChildNode("approvals") is { } nullNodeApprovals && nullNodeApprovals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approvals = null;
+            if (parseNode.GetChildNode("auditLogEventsHook") is null) { _explicitNullValueAuditLogEventsHook = default!; _explicitNullProperties?.Remove("auditLogEventsHook"); }
+            else if (parseNode.GetChildNode("auditLogEventsHook") is { } nullNodeAuditLogEventsHook && nullNodeAuditLogEventsHook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogEventsHook = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The approvals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig? Approvals { get => _explicitNullValueApprovals; set { _explicitNullValueApprovals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals"); else _explicitNullProperties?.Remove("approvals"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig? Approvals { get => _explicitNullValueApprovals; set { _explicitNullValueApprovals = value; AdditionalData?.Remove("approvals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals"); else _explicitNullProperties?.Remove("approvals"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig? _explicitNullValueApprovals = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig Approvals { get => _explicitNullValueApprovals; set { _explicitNullValueApprovals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals"); else _explicitNullProperties?.Remove("approvals"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig Approvals { get => _explicitNullValueApprovals; set { _explicitNullValueApprovals = value; AdditionalData?.Remove("approvals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals"); else _explicitNullProperties?.Remove("approvals"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig _explicitNullValueApprovals = default!;
 #endif
         /// <summary>The auditLogEventsHook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep? AuditLogEventsHook { get => _explicitNullValueAuditLogEventsHook; set { _explicitNullValueAuditLogEventsHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLogEventsHook"); else _explicitNullProperties?.Remove("auditLogEventsHook"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep? AuditLogEventsHook { get => _explicitNullValueAuditLogEventsHook; set { _explicitNullValueAuditLogEventsHook = value; AdditionalData?.Remove("auditLogEventsHook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLogEventsHook"); else _explicitNullProperties?.Remove("auditLogEventsHook"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep? _explicitNullValueAuditLogEventsHook = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep AuditLogEventsHook { get => _explicitNullValueAuditLogEventsHook; set { _explicitNullValueAuditLogEventsHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLogEventsHook"); else _explicitNullProperties?.Remove("auditLogEventsHook"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep AuditLogEventsHook { get => _explicitNullValueAuditLogEventsHook; set { _explicitNullValueAuditLogEventsHook = value; AdditionalData?.Remove("auditLogEventsHook"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLogEventsHook"); else _explicitNullProperties?.Remove("auditLogEventsHook"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep _explicitNullValueAuditLogEventsHook = default!;
 #endif
         /// <summary>

@@ -17,12 +17,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("aggregateOf") is { } nullNodeAggregateOf && nullNodeAggregateOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregateOf = null;
-            if (parseNode.GetChildNode("diffVsLastPeriod") is { } nullNodeDiffVsLastPeriod && nullNodeDiffVsLastPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffVsLastPeriod = null;
-            if (parseNode.GetChildNode("indicator") is { } nullNodeIndicator && nullNodeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicator = null;
-            if (parseNode.GetChildNode("indicatorRange") is { } nullNodeIndicatorRange && nullNodeIndicatorRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorRange = null;
-            if (parseNode.GetChildNode("lastPeriod") is { } nullNodeLastPeriod && nullNodeLastPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPeriod = null;
-            if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
+            if (parseNode.GetChildNode("aggregateOf") is null) { _explicitNullValueAggregateOf = default!; _explicitNullProperties?.Remove("aggregateOf"); }
+            else if (parseNode.GetChildNode("aggregateOf") is { } nullNodeAggregateOf && nullNodeAggregateOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AggregateOf = null;
+            if (parseNode.GetChildNode("diffVsLastPeriod") is null) { _explicitNullValueDiffVsLastPeriod = default!; _explicitNullProperties?.Remove("diffVsLastPeriod"); }
+            else if (parseNode.GetChildNode("diffVsLastPeriod") is { } nullNodeDiffVsLastPeriod && nullNodeDiffVsLastPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffVsLastPeriod = null;
+            if (parseNode.GetChildNode("indicator") is null) { _explicitNullValueIndicator = default!; _explicitNullProperties?.Remove("indicator"); }
+            else if (parseNode.GetChildNode("indicator") is { } nullNodeIndicator && nullNodeIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indicator = null;
+            if (parseNode.GetChildNode("indicatorRange") is null) { _explicitNullValueIndicatorRange = default!; _explicitNullProperties?.Remove("indicatorRange"); }
+            else if (parseNode.GetChildNode("indicatorRange") is { } nullNodeIndicatorRange && nullNodeIndicatorRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndicatorRange = null;
+            if (parseNode.GetChildNode("lastPeriod") is null) { _explicitNullValueLastPeriod = default!; _explicitNullProperties?.Remove("lastPeriod"); }
+            else if (parseNode.GetChildNode("lastPeriod") is { } nullNodeLastPeriod && nullNodeLastPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPeriod = null;
+            if (parseNode.GetChildNode("score") is null) { _explicitNullValueScore = default!; _explicitNullProperties?.Remove("score"); }
+            else if (parseNode.GetChildNode("score") is { } nullNodeScore && nullNodeScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Score = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,48 +36,48 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The keys of the metrics that were aggregated to calculate this score</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AggregateOf { get => _explicitNullValueAggregateOf; set { _explicitNullValueAggregateOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateOf"); else _explicitNullProperties?.Remove("aggregateOf"); } }
+        public List<string>? AggregateOf { get => _explicitNullValueAggregateOf; set { _explicitNullValueAggregateOf = value; AdditionalData?.Remove("aggregateOf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateOf"); else _explicitNullProperties?.Remove("aggregateOf"); } }
         private List<string>? _explicitNullValueAggregateOf = default!;
 #nullable restore
 #else
-        public List<string> AggregateOf { get => _explicitNullValueAggregateOf; set { _explicitNullValueAggregateOf = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateOf"); else _explicitNullProperties?.Remove("aggregateOf"); } }
+        public List<string> AggregateOf { get => _explicitNullValueAggregateOf; set { _explicitNullValueAggregateOf = value; AdditionalData?.Remove("aggregateOf"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregateOf"); else _explicitNullProperties?.Remove("aggregateOf"); } }
         private List<string> _explicitNullValueAggregateOf = default!;
 #endif
         /// <summary>The diffVsLastPeriod property</summary>
-        public int? DiffVsLastPeriod { get => _explicitNullValueDiffVsLastPeriod; set { _explicitNullValueDiffVsLastPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diffVsLastPeriod"); else _explicitNullProperties?.Remove("diffVsLastPeriod"); } }
+        public int? DiffVsLastPeriod { get => _explicitNullValueDiffVsLastPeriod; set { _explicitNullValueDiffVsLastPeriod = value; AdditionalData?.Remove("diffVsLastPeriod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diffVsLastPeriod"); else _explicitNullProperties?.Remove("diffVsLastPeriod"); } }
         private int? _explicitNullValueDiffVsLastPeriod = default!;
         /// <summary>The indicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
+        public string? Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; AdditionalData?.Remove("indicator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
         private string? _explicitNullValueIndicator = default!;
 #nullable restore
 #else
-        public string Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
+        public string Indicator { get => _explicitNullValueIndicator; set { _explicitNullValueIndicator = value; AdditionalData?.Remove("indicator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicator"); else _explicitNullProperties?.Remove("indicator"); } }
         private string _explicitNullValueIndicator = default!;
 #endif
         /// <summary>The indicatorRange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricIndicatorRange? IndicatorRange { get => _explicitNullValueIndicatorRange; set { _explicitNullValueIndicatorRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorRange"); else _explicitNullProperties?.Remove("indicatorRange"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricIndicatorRange? IndicatorRange { get => _explicitNullValueIndicatorRange; set { _explicitNullValueIndicatorRange = value; AdditionalData?.Remove("indicatorRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorRange"); else _explicitNullProperties?.Remove("indicatorRange"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricIndicatorRange? _explicitNullValueIndicatorRange = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricIndicatorRange IndicatorRange { get => _explicitNullValueIndicatorRange; set { _explicitNullValueIndicatorRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorRange"); else _explicitNullProperties?.Remove("indicatorRange"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricIndicatorRange IndicatorRange { get => _explicitNullValueIndicatorRange; set { _explicitNullValueIndicatorRange = value; AdditionalData?.Remove("indicatorRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indicatorRange"); else _explicitNullProperties?.Remove("indicatorRange"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricIndicatorRange _explicitNullValueIndicatorRange = default!;
 #endif
         /// <summary>The lastPeriod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? LastPeriod { get => _explicitNullValueLastPeriod; set { _explicitNullValueLastPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastPeriod"); else _explicitNullProperties?.Remove("lastPeriod"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? LastPeriod { get => _explicitNullValueLastPeriod; set { _explicitNullValueLastPeriod = value; AdditionalData?.Remove("lastPeriod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastPeriod"); else _explicitNullProperties?.Remove("lastPeriod"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueLastPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore LastPeriod { get => _explicitNullValueLastPeriod; set { _explicitNullValueLastPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastPeriod"); else _explicitNullProperties?.Remove("lastPeriod"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore LastPeriod { get => _explicitNullValueLastPeriod; set { _explicitNullValueLastPeriod = value; AdditionalData?.Remove("lastPeriod"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastPeriod"); else _explicitNullProperties?.Remove("lastPeriod"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueLastPeriod = default!;
 #endif
         /// <summary>The score for the metric</summary>
-        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
+        public int? Score { get => _explicitNullValueScore; set { _explicitNullValueScore = value; AdditionalData?.Remove("score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score"); else _explicitNullProperties?.Remove("score"); } }
         private int? _explicitNullValueScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore"/> and sets the default values.

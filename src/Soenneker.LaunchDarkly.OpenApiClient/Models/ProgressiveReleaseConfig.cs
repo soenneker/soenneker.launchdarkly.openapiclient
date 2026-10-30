@@ -18,8 +18,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rolloutContextKindKey") is { } nullNodeRolloutContextKindKey && nullNodeRolloutContextKindKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutContextKindKey = null;
-            if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
+            if (parseNode.GetChildNode("rolloutContextKindKey") is null) { _explicitNullValueRolloutContextKindKey = default!; _explicitNullProperties?.Remove("rolloutContextKindKey"); }
+            else if (parseNode.GetChildNode("rolloutContextKindKey") is { } nullNodeRolloutContextKindKey && nullNodeRolloutContextKindKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutContextKindKey = null;
+            if (parseNode.GetChildNode("stages") is null) { _explicitNullValueStages = default!; _explicitNullProperties?.Remove("stages"); }
+            else if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Context kind key to use as the randomization unit for the rollout</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
+        public string? RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; AdditionalData?.Remove("rolloutContextKindKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
         private string? _explicitNullValueRolloutContextKindKey = default!;
 #nullable restore
 #else
-        public string RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
+        public string RolloutContextKindKey { get => _explicitNullValueRolloutContextKindKey; set { _explicitNullValueRolloutContextKindKey = value; AdditionalData?.Remove("rolloutContextKindKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rolloutContextKindKey"); else _explicitNullProperties?.Remove("rolloutContextKindKey"); } }
         private string _explicitNullValueRolloutContextKindKey = default!;
 #endif
         /// <summary>List of stages. At most 10 stages by default; the server enforces the per-account limit, which is never more than 20.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; AdditionalData?.Remove("stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage>? _explicitNullValueStages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; AdditionalData?.Remove("stages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyStage> _explicitNullValueStages = default!;
 #endif
         /// <summary>

@@ -17,51 +17,58 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
-            if (parseNode.GetChildNode("envId") is { } nullNodeEnvId && nullNodeEnvId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvId = null;
-            if (parseNode.GetChildNode("excludedCount") is { } nullNodeExcludedCount && nullNodeExcludedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCount = null;
-            if (parseNode.GetChildNode("includedCount") is { } nullNodeIncludedCount && nullNodeIncludedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedCount = null;
-            if (parseNode.GetChildNode("lastModified") is { } nullNodeLastModified && nullNodeLastModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModified = null;
-            if (parseNode.GetChildNode("segmentId") is { } nullNodeSegmentId && nullNodeSegmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentId = null;
-            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("deleted") is null) { _explicitNullValueDeleted = default!; _explicitNullProperties?.Remove("deleted"); }
+            else if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("envId") is null) { _explicitNullValueEnvId = default!; _explicitNullProperties?.Remove("envId"); }
+            else if (parseNode.GetChildNode("envId") is { } nullNodeEnvId && nullNodeEnvId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvId = null;
+            if (parseNode.GetChildNode("excludedCount") is null) { _explicitNullValueExcludedCount = default!; _explicitNullProperties?.Remove("excludedCount"); }
+            else if (parseNode.GetChildNode("excludedCount") is { } nullNodeExcludedCount && nullNodeExcludedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedCount = null;
+            if (parseNode.GetChildNode("includedCount") is null) { _explicitNullValueIncludedCount = default!; _explicitNullProperties?.Remove("includedCount"); }
+            else if (parseNode.GetChildNode("includedCount") is { } nullNodeIncludedCount && nullNodeIncludedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedCount = null;
+            if (parseNode.GetChildNode("lastModified") is null) { _explicitNullValueLastModified = default!; _explicitNullProperties?.Remove("lastModified"); }
+            else if (parseNode.GetChildNode("lastModified") is { } nullNodeLastModified && nullNodeLastModified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastModified = null;
+            if (parseNode.GetChildNode("segmentId") is null) { _explicitNullValueSegmentId = default!; _explicitNullProperties?.Remove("segmentId"); }
+            else if (parseNode.GetChildNode("segmentId") is { } nullNodeSegmentId && nullNodeSegmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentId = null;
+            if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
+            else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deleted property</summary>
-        public bool? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        public bool? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; AdditionalData?.Remove("deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
         private bool? _explicitNullValueDeleted = default!;
         /// <summary>The envId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        public string? EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; AdditionalData?.Remove("envId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
         private string? _explicitNullValueEnvId = default!;
 #nullable restore
 #else
-        public string EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
+        public string EnvId { get => _explicitNullValueEnvId; set { _explicitNullValueEnvId = value; AdditionalData?.Remove("envId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("envId"); else _explicitNullProperties?.Remove("envId"); } }
         private string _explicitNullValueEnvId = default!;
 #endif
         /// <summary>The excludedCount property</summary>
-        public int? ExcludedCount { get => _explicitNullValueExcludedCount; set { _explicitNullValueExcludedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedCount"); else _explicitNullProperties?.Remove("excludedCount"); } }
+        public int? ExcludedCount { get => _explicitNullValueExcludedCount; set { _explicitNullValueExcludedCount = value; AdditionalData?.Remove("excludedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedCount"); else _explicitNullProperties?.Remove("excludedCount"); } }
         private int? _explicitNullValueExcludedCount = default!;
         /// <summary>The includedCount property</summary>
-        public int? IncludedCount { get => _explicitNullValueIncludedCount; set { _explicitNullValueIncludedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includedCount"); else _explicitNullProperties?.Remove("includedCount"); } }
+        public int? IncludedCount { get => _explicitNullValueIncludedCount; set { _explicitNullValueIncludedCount = value; AdditionalData?.Remove("includedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includedCount"); else _explicitNullProperties?.Remove("includedCount"); } }
         private int? _explicitNullValueIncludedCount = default!;
         /// <summary>The lastModified property</summary>
-        public long? LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
+        public long? LastModified { get => _explicitNullValueLastModified; set { _explicitNullValueLastModified = value; AdditionalData?.Remove("lastModified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastModified"); else _explicitNullProperties?.Remove("lastModified"); } }
         private long? _explicitNullValueLastModified = default!;
         /// <summary>The segmentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SegmentId { get => _explicitNullValueSegmentId; set { _explicitNullValueSegmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentId"); else _explicitNullProperties?.Remove("segmentId"); } }
+        public string? SegmentId { get => _explicitNullValueSegmentId; set { _explicitNullValueSegmentId = value; AdditionalData?.Remove("segmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentId"); else _explicitNullProperties?.Remove("segmentId"); } }
         private string? _explicitNullValueSegmentId = default!;
 #nullable restore
 #else
-        public string SegmentId { get => _explicitNullValueSegmentId; set { _explicitNullValueSegmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentId"); else _explicitNullProperties?.Remove("segmentId"); } }
+        public string SegmentId { get => _explicitNullValueSegmentId; set { _explicitNullValueSegmentId = value; AdditionalData?.Remove("segmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentId"); else _explicitNullProperties?.Remove("segmentId"); } }
         private string _explicitNullValueSegmentId = default!;
 #endif
         /// <summary>The version property</summary>
-        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentMetadata"/> and sets the default values.

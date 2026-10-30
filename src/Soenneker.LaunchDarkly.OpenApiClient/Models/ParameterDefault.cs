@@ -17,34 +17,37 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("booleanVariationValue") is { } nullNodeBooleanVariationValue && nullNodeBooleanVariationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BooleanVariationValue = null;
-            if (parseNode.GetChildNode("ruleClause") is { } nullNodeRuleClause && nullNodeRuleClause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleClause = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("booleanVariationValue") is null) { _explicitNullValueBooleanVariationValue = default!; _explicitNullProperties?.Remove("booleanVariationValue"); }
+            else if (parseNode.GetChildNode("booleanVariationValue") is { } nullNodeBooleanVariationValue && nullNodeBooleanVariationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BooleanVariationValue = null;
+            if (parseNode.GetChildNode("ruleClause") is null) { _explicitNullValueRuleClause = default!; _explicitNullProperties?.Remove("ruleClause"); }
+            else if (parseNode.GetChildNode("ruleClause") is { } nullNodeRuleClause && nullNodeRuleClause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleClause = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Variation value for boolean flags. Not applicable for non-boolean flags.</summary>
-        public bool? BooleanVariationValue { get => _explicitNullValueBooleanVariationValue; set { _explicitNullValueBooleanVariationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanVariationValue"); else _explicitNullProperties?.Remove("booleanVariationValue"); } }
+        public bool? BooleanVariationValue { get => _explicitNullValueBooleanVariationValue; set { _explicitNullValueBooleanVariationValue = value; AdditionalData?.Remove("booleanVariationValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanVariationValue"); else _explicitNullProperties?.Remove("booleanVariationValue"); } }
         private bool? _explicitNullValueBooleanVariationValue = default!;
         /// <summary>The ruleClause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause? RuleClause { get => _explicitNullValueRuleClause; set { _explicitNullValueRuleClause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleClause"); else _explicitNullProperties?.Remove("ruleClause"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause? RuleClause { get => _explicitNullValueRuleClause; set { _explicitNullValueRuleClause = value; AdditionalData?.Remove("ruleClause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleClause"); else _explicitNullProperties?.Remove("ruleClause"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause? _explicitNullValueRuleClause = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause RuleClause { get => _explicitNullValueRuleClause; set { _explicitNullValueRuleClause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleClause"); else _explicitNullProperties?.Remove("ruleClause"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause RuleClause { get => _explicitNullValueRuleClause; set { _explicitNullValueRuleClause = value; AdditionalData?.Remove("ruleClause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleClause"); else _explicitNullProperties?.Remove("ruleClause"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause _explicitNullValueRuleClause = default!;
 #endif
         /// <summary>The default value for the given parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public UntypedNode? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private UntypedNode? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public UntypedNode Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        public UntypedNode Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private UntypedNode _explicitNullValueValue = default!;
 #endif
         /// <summary>

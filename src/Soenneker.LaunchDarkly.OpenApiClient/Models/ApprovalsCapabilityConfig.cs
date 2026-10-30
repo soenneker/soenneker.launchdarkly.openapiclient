@@ -17,7 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additionalFormVariables") is { } nullNodeAdditionalFormVariables && nullNodeAdditionalFormVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalFormVariables = null;
+            if (parseNode.GetChildNode("additionalFormVariables") is null) { _explicitNullValueAdditionalFormVariables = default!; _explicitNullProperties?.Remove("additionalFormVariables"); }
+            else if (parseNode.GetChildNode("additionalFormVariables") is { } nullNodeAdditionalFormVariables && nullNodeAdditionalFormVariables.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalFormVariables = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The additional form variables for the approvals capability</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariable>? AdditionalFormVariables { get => _explicitNullValueAdditionalFormVariables; set { _explicitNullValueAdditionalFormVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalFormVariables"); else _explicitNullProperties?.Remove("additionalFormVariables"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariable>? AdditionalFormVariables { get => _explicitNullValueAdditionalFormVariables; set { _explicitNullValueAdditionalFormVariables = value; AdditionalData?.Remove("additionalFormVariables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalFormVariables"); else _explicitNullProperties?.Remove("additionalFormVariables"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariable>? _explicitNullValueAdditionalFormVariables = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariable> AdditionalFormVariables { get => _explicitNullValueAdditionalFormVariables; set { _explicitNullValueAdditionalFormVariables = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalFormVariables"); else _explicitNullProperties?.Remove("additionalFormVariables"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariable> AdditionalFormVariables { get => _explicitNullValueAdditionalFormVariables; set { _explicitNullValueAdditionalFormVariables = value; AdditionalData?.Remove("additionalFormVariables"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additionalFormVariables"); else _explicitNullProperties?.Remove("additionalFormVariables"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FormVariable> _explicitNullValueAdditionalFormVariables = default!;
 #endif
         /// <summary>

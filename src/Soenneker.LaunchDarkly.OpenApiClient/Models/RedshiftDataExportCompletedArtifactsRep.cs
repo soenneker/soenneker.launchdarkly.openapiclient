@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("s3BucketName") is { } nullNodeS3BucketName && nullNodeS3BucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3BucketName = null;
-            if (parseNode.GetChildNode("sqlSetupScript") is { } nullNodeSqlSetupScript && nullNodeSqlSetupScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SqlSetupScript = null;
+            if (parseNode.GetChildNode("s3BucketName") is null) { _explicitNullValueS3BucketName = default!; _explicitNullProperties?.Remove("s3BucketName"); }
+            else if (parseNode.GetChildNode("s3BucketName") is { } nullNodeS3BucketName && nullNodeS3BucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3BucketName = null;
+            if (parseNode.GetChildNode("sqlSetupScript") is null) { _explicitNullValueSqlSetupScript = default!; _explicitNullProperties?.Remove("sqlSetupScript"); }
+            else if (parseNode.GetChildNode("sqlSetupScript") is { } nullNodeSqlSetupScript && nullNodeSqlSetupScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SqlSetupScript = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The S3 staging bucket name used by the destination. This is the customer-supplied bucket name, or the auto-generated name for destinations that did not set one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
+        public string? S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; AdditionalData?.Remove("s3BucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
         private string? _explicitNullValueS3BucketName = default!;
 #nullable restore
 #else
-        public string S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
+        public string S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; AdditionalData?.Remove("s3BucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
         private string _explicitNullValueS3BucketName = default!;
 #endif
         /// <summary>The SQL setup script originally run against the Redshift cluster, rehydrated from the destination&apos;s persisted custom names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SqlSetupScript { get => _explicitNullValueSqlSetupScript; set { _explicitNullValueSqlSetupScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sqlSetupScript"); else _explicitNullProperties?.Remove("sqlSetupScript"); } }
+        public string? SqlSetupScript { get => _explicitNullValueSqlSetupScript; set { _explicitNullValueSqlSetupScript = value; AdditionalData?.Remove("sqlSetupScript"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sqlSetupScript"); else _explicitNullProperties?.Remove("sqlSetupScript"); } }
         private string? _explicitNullValueSqlSetupScript = default!;
 #nullable restore
 #else
-        public string SqlSetupScript { get => _explicitNullValueSqlSetupScript; set { _explicitNullValueSqlSetupScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sqlSetupScript"); else _explicitNullProperties?.Remove("sqlSetupScript"); } }
+        public string SqlSetupScript { get => _explicitNullValueSqlSetupScript; set { _explicitNullValueSqlSetupScript = value; AdditionalData?.Remove("sqlSetupScript"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sqlSetupScript"); else _explicitNullProperties?.Remove("sqlSetupScript"); } }
         private string _explicitNullValueSqlSetupScript = default!;
 #endif
         /// <summary>

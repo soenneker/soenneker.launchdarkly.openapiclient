@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("jsonBody") is { } nullNodeJsonBody && nullNodeJsonBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonBody = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("jsonBody") is null) { _explicitNullValueJsonBody = default!; _explicitNullProperties?.Remove("jsonBody"); }
+            else if (parseNode.GetChildNode("jsonBody") is { } nullNodeJsonBody && nullNodeJsonBody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JsonBody = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The marshalled JSON request body for the incoming trigger webhook. If this is empty or contains invalid JSON, the timestamp is recorded but this field will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBodyJsonBodyProperty? JsonBody { get => _explicitNullValueJsonBody; set { _explicitNullValueJsonBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonBody"); else _explicitNullProperties?.Remove("jsonBody"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBodyJsonBodyProperty? JsonBody { get => _explicitNullValueJsonBody; set { _explicitNullValueJsonBody = value; AdditionalData?.Remove("jsonBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonBody"); else _explicitNullProperties?.Remove("jsonBody"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBodyJsonBodyProperty? _explicitNullValueJsonBody = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBodyJsonBodyProperty JsonBody { get => _explicitNullValueJsonBody; set { _explicitNullValueJsonBody = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonBody"); else _explicitNullProperties?.Remove("jsonBody"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBodyJsonBodyProperty JsonBody { get => _explicitNullValueJsonBody; set { _explicitNullValueJsonBody = value; AdditionalData?.Remove("jsonBody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jsonBody"); else _explicitNullProperties?.Remove("jsonBody"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBodyJsonBodyProperty _explicitNullValueJsonBody = default!;
 #endif
         /// <summary>The timestamp property</summary>
-        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public long? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private long? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody"/> and sets the default values.

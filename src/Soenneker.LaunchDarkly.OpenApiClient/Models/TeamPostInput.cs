@@ -17,13 +17,20 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customRoleKeys") is { } nullNodeCustomRoleKeys && nullNodeCustomRoleKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRoleKeys = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("memberIDs") is { } nullNodeMemberIDs && nullNodeMemberIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIDs = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("permissionGrants") is { } nullNodePermissionGrants && nullNodePermissionGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionGrants = null;
-            if (parseNode.GetChildNode("roleAttributes") is { } nullNodeRoleAttributes && nullNodeRoleAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleAttributes = null;
+            if (parseNode.GetChildNode("customRoleKeys") is null) { _explicitNullValueCustomRoleKeys = default!; _explicitNullProperties?.Remove("customRoleKeys"); }
+            else if (parseNode.GetChildNode("customRoleKeys") is { } nullNodeCustomRoleKeys && nullNodeCustomRoleKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRoleKeys = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("memberIDs") is null) { _explicitNullValueMemberIDs = default!; _explicitNullProperties?.Remove("memberIDs"); }
+            else if (parseNode.GetChildNode("memberIDs") is { } nullNodeMemberIDs && nullNodeMemberIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIDs = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("permissionGrants") is null) { _explicitNullValuePermissionGrants = default!; _explicitNullProperties?.Remove("permissionGrants"); }
+            else if (parseNode.GetChildNode("permissionGrants") is { } nullNodePermissionGrants && nullNodePermissionGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionGrants = null;
+            if (parseNode.GetChildNode("roleAttributes") is null) { _explicitNullValueRoleAttributes = default!; _explicitNullProperties?.Remove("roleAttributes"); }
+            else if (parseNode.GetChildNode("roleAttributes") is { } nullNodeRoleAttributes && nullNodeRoleAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleAttributes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>List of custom role keys the team will access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomRoleKeys { get => _explicitNullValueCustomRoleKeys; set { _explicitNullValueCustomRoleKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleKeys"); else _explicitNullProperties?.Remove("customRoleKeys"); } }
+        public List<string>? CustomRoleKeys { get => _explicitNullValueCustomRoleKeys; set { _explicitNullValueCustomRoleKeys = value; AdditionalData?.Remove("customRoleKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleKeys"); else _explicitNullProperties?.Remove("customRoleKeys"); } }
         private List<string>? _explicitNullValueCustomRoleKeys = default!;
 #nullable restore
 #else
-        public List<string> CustomRoleKeys { get => _explicitNullValueCustomRoleKeys; set { _explicitNullValueCustomRoleKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleKeys"); else _explicitNullProperties?.Remove("customRoleKeys"); } }
+        public List<string> CustomRoleKeys { get => _explicitNullValueCustomRoleKeys; set { _explicitNullValueCustomRoleKeys = value; AdditionalData?.Remove("customRoleKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleKeys"); else _explicitNullProperties?.Remove("customRoleKeys"); } }
         private List<string> _explicitNullValueCustomRoleKeys = default!;
 #endif
         /// <summary>A description of the team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The team key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>A list of member IDs who belong to the team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
+        public List<string>? MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; AdditionalData?.Remove("memberIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
         private List<string>? _explicitNullValueMemberIDs = default!;
 #nullable restore
 #else
-        public List<string> MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
+        public List<string> MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; AdditionalData?.Remove("memberIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
         private List<string> _explicitNullValueMemberIDs = default!;
 #endif
         /// <summary>A human-friendly name for the team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>A list of permission grants. Permission grants allow access to a specific action, without having to create or update a custom role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PermissionGrantInput>? PermissionGrants { get => _explicitNullValuePermissionGrants; set { _explicitNullValuePermissionGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionGrants"); else _explicitNullProperties?.Remove("permissionGrants"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PermissionGrantInput>? PermissionGrants { get => _explicitNullValuePermissionGrants; set { _explicitNullValuePermissionGrants = value; AdditionalData?.Remove("permissionGrants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionGrants"); else _explicitNullProperties?.Remove("permissionGrants"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PermissionGrantInput>? _explicitNullValuePermissionGrants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PermissionGrantInput> PermissionGrants { get => _explicitNullValuePermissionGrants; set { _explicitNullValuePermissionGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionGrants"); else _explicitNullProperties?.Remove("permissionGrants"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PermissionGrantInput> PermissionGrants { get => _explicitNullValuePermissionGrants; set { _explicitNullValuePermissionGrants = value; AdditionalData?.Remove("permissionGrants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionGrants"); else _explicitNullProperties?.Remove("permissionGrants"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PermissionGrantInput> _explicitNullValuePermissionGrants = default!;
 #endif
         /// <summary>The roleAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamPostInputRoleAttributes? RoleAttributes { get => _explicitNullValueRoleAttributes; set { _explicitNullValueRoleAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roleAttributes"); else _explicitNullProperties?.Remove("roleAttributes"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamPostInputRoleAttributes? RoleAttributes { get => _explicitNullValueRoleAttributes; set { _explicitNullValueRoleAttributes = value; AdditionalData?.Remove("roleAttributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roleAttributes"); else _explicitNullProperties?.Remove("roleAttributes"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamPostInputRoleAttributes? _explicitNullValueRoleAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamPostInputRoleAttributes RoleAttributes { get => _explicitNullValueRoleAttributes; set { _explicitNullValueRoleAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roleAttributes"); else _explicitNullProperties?.Remove("roleAttributes"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamPostInputRoleAttributes RoleAttributes { get => _explicitNullValueRoleAttributes; set { _explicitNullValueRoleAttributes = value; AdditionalData?.Remove("roleAttributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roleAttributes"); else _explicitNullProperties?.Remove("roleAttributes"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamPostInputRoleAttributes _explicitNullValueRoleAttributes = default!;
 #endif
         /// <summary>

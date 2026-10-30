@@ -17,97 +17,107 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activity") is { } nullNodeActivity && nullNodeActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activity = null;
-            if (parseNode.GetChildNode("completionResponse") is { } nullNodeCompletionResponse && nullNodeCompletionResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionResponse = null;
-            if (parseNode.GetChildNode("createdVariationKey") is { } nullNodeCreatedVariationKey && nullNodeCreatedVariationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedVariationKey = null;
-            if (parseNode.GetChildNode("evaluationLatencies") is { } nullNodeEvaluationLatencies && nullNodeEvaluationLatencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationLatencies = null;
-            if (parseNode.GetChildNode("evaluationTokens") is { } nullNodeEvaluationTokens && nullNodeEvaluationTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationTokens = null;
-            if (parseNode.GetChildNode("generationLatency") is { } nullNodeGenerationLatency && nullNodeGenerationLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationLatency = null;
-            if (parseNode.GetChildNode("generationTokens") is { } nullNodeGenerationTokens && nullNodeGenerationTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationTokens = null;
-            if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("variation") is { } nullNodeVariation && nullNodeVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variation = null;
+            if (parseNode.GetChildNode("activity") is null) { _explicitNullValueActivity = default!; _explicitNullProperties?.Remove("activity"); }
+            else if (parseNode.GetChildNode("activity") is { } nullNodeActivity && nullNodeActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activity = null;
+            if (parseNode.GetChildNode("completionResponse") is null) { _explicitNullValueCompletionResponse = default!; _explicitNullProperties?.Remove("completionResponse"); }
+            else if (parseNode.GetChildNode("completionResponse") is { } nullNodeCompletionResponse && nullNodeCompletionResponse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionResponse = null;
+            if (parseNode.GetChildNode("createdVariationKey") is null) { _explicitNullValueCreatedVariationKey = default!; _explicitNullProperties?.Remove("createdVariationKey"); }
+            else if (parseNode.GetChildNode("createdVariationKey") is { } nullNodeCreatedVariationKey && nullNodeCreatedVariationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedVariationKey = null;
+            if (parseNode.GetChildNode("evaluationLatencies") is null) { _explicitNullValueEvaluationLatencies = default!; _explicitNullProperties?.Remove("evaluationLatencies"); }
+            else if (parseNode.GetChildNode("evaluationLatencies") is { } nullNodeEvaluationLatencies && nullNodeEvaluationLatencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationLatencies = null;
+            if (parseNode.GetChildNode("evaluationTokens") is null) { _explicitNullValueEvaluationTokens = default!; _explicitNullProperties?.Remove("evaluationTokens"); }
+            else if (parseNode.GetChildNode("evaluationTokens") is { } nullNodeEvaluationTokens && nullNodeEvaluationTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationTokens = null;
+            if (parseNode.GetChildNode("generationLatency") is null) { _explicitNullValueGenerationLatency = default!; _explicitNullProperties?.Remove("generationLatency"); }
+            else if (parseNode.GetChildNode("generationLatency") is { } nullNodeGenerationLatency && nullNodeGenerationLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationLatency = null;
+            if (parseNode.GetChildNode("generationTokens") is null) { _explicitNullValueGenerationTokens = default!; _explicitNullProperties?.Remove("generationTokens"); }
+            else if (parseNode.GetChildNode("generationTokens") is { } nullNodeGenerationTokens && nullNodeGenerationTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationTokens = null;
+            if (parseNode.GetChildNode("scores") is null) { _explicitNullValueScores = default!; _explicitNullProperties?.Remove("scores"); }
+            else if (parseNode.GetChildNode("scores") is { } nullNodeScores && nullNodeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scores = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("variation") is null) { _explicitNullValueVariation = default!; _explicitNullProperties?.Remove("variation"); }
+            else if (parseNode.GetChildNode("variation") is { } nullNodeVariation && nullNodeVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variation = null;
         }
 
         /// <summary>The activity property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get => _explicitNullValueActivity; set { _explicitNullValueActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get => _explicitNullValueActivity; set { _explicitNullValueActivity = value; AdditionalData?.Remove("activity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? _explicitNullValueActivity = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The model response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompletionResponse { get => _explicitNullValueCompletionResponse; set { _explicitNullValueCompletionResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completionResponse"); else _explicitNullProperties?.Remove("completionResponse"); } }
+        public string? CompletionResponse { get => _explicitNullValueCompletionResponse; set { _explicitNullValueCompletionResponse = value; AdditionalData?.Remove("completionResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completionResponse"); else _explicitNullProperties?.Remove("completionResponse"); } }
         private string? _explicitNullValueCompletionResponse = default!;
 #nullable restore
 #else
-        public string CompletionResponse { get => _explicitNullValueCompletionResponse; set { _explicitNullValueCompletionResponse = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completionResponse"); else _explicitNullProperties?.Remove("completionResponse"); } }
+        public string CompletionResponse { get => _explicitNullValueCompletionResponse; set { _explicitNullValueCompletionResponse = value; AdditionalData?.Remove("completionResponse"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completionResponse"); else _explicitNullProperties?.Remove("completionResponse"); } }
         private string _explicitNullValueCompletionResponse = default!;
 #endif
         /// <summary>The key of the variation created from this result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedVariationKey { get => _explicitNullValueCreatedVariationKey; set { _explicitNullValueCreatedVariationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdVariationKey"); else _explicitNullProperties?.Remove("createdVariationKey"); } }
+        public string? CreatedVariationKey { get => _explicitNullValueCreatedVariationKey; set { _explicitNullValueCreatedVariationKey = value; AdditionalData?.Remove("createdVariationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdVariationKey"); else _explicitNullProperties?.Remove("createdVariationKey"); } }
         private string? _explicitNullValueCreatedVariationKey = default!;
 #nullable restore
 #else
-        public string CreatedVariationKey { get => _explicitNullValueCreatedVariationKey; set { _explicitNullValueCreatedVariationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdVariationKey"); else _explicitNullProperties?.Remove("createdVariationKey"); } }
+        public string CreatedVariationKey { get => _explicitNullValueCreatedVariationKey; set { _explicitNullValueCreatedVariationKey = value; AdditionalData?.Remove("createdVariationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdVariationKey"); else _explicitNullProperties?.Remove("createdVariationKey"); } }
         private string _explicitNullValueCreatedVariationKey = default!;
 #endif
         /// <summary>How long each evaluation took</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty? EvaluationLatencies { get => _explicitNullValueEvaluationLatencies; set { _explicitNullValueEvaluationLatencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationLatencies"); else _explicitNullProperties?.Remove("evaluationLatencies"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty? EvaluationLatencies { get => _explicitNullValueEvaluationLatencies; set { _explicitNullValueEvaluationLatencies = value; AdditionalData?.Remove("evaluationLatencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationLatencies"); else _explicitNullProperties?.Remove("evaluationLatencies"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty? _explicitNullValueEvaluationLatencies = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty EvaluationLatencies { get => _explicitNullValueEvaluationLatencies; set { _explicitNullValueEvaluationLatencies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationLatencies"); else _explicitNullProperties?.Remove("evaluationLatencies"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty EvaluationLatencies { get => _explicitNullValueEvaluationLatencies; set { _explicitNullValueEvaluationLatencies = value; AdditionalData?.Remove("evaluationLatencies"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationLatencies"); else _explicitNullProperties?.Remove("evaluationLatencies"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty _explicitNullValueEvaluationLatencies = default!;
 #endif
         /// <summary>Token usage for judging the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty? EvaluationTokens { get => _explicitNullValueEvaluationTokens; set { _explicitNullValueEvaluationTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationTokens"); else _explicitNullProperties?.Remove("evaluationTokens"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty? EvaluationTokens { get => _explicitNullValueEvaluationTokens; set { _explicitNullValueEvaluationTokens = value; AdditionalData?.Remove("evaluationTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationTokens"); else _explicitNullProperties?.Remove("evaluationTokens"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty? _explicitNullValueEvaluationTokens = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty EvaluationTokens { get => _explicitNullValueEvaluationTokens; set { _explicitNullValueEvaluationTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationTokens"); else _explicitNullProperties?.Remove("evaluationTokens"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty EvaluationTokens { get => _explicitNullValueEvaluationTokens; set { _explicitNullValueEvaluationTokens = value; AdditionalData?.Remove("evaluationTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationTokens"); else _explicitNullProperties?.Remove("evaluationTokens"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationTokensProperty _explicitNullValueEvaluationTokens = default!;
 #endif
         /// <summary>How long the response took to generate</summary>
-        public int? GenerationLatency { get => _explicitNullValueGenerationLatency; set { _explicitNullValueGenerationLatency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationLatency"); else _explicitNullProperties?.Remove("generationLatency"); } }
+        public int? GenerationLatency { get => _explicitNullValueGenerationLatency; set { _explicitNullValueGenerationLatency = value; AdditionalData?.Remove("generationLatency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationLatency"); else _explicitNullProperties?.Remove("generationLatency"); } }
         private int? _explicitNullValueGenerationLatency = default!;
         /// <summary>Token usage for generating the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty? GenerationTokens { get => _explicitNullValueGenerationTokens; set { _explicitNullValueGenerationTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationTokens"); else _explicitNullProperties?.Remove("generationTokens"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty? GenerationTokens { get => _explicitNullValueGenerationTokens; set { _explicitNullValueGenerationTokens = value; AdditionalData?.Remove("generationTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationTokens"); else _explicitNullProperties?.Remove("generationTokens"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty? _explicitNullValueGenerationTokens = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty GenerationTokens { get => _explicitNullValueGenerationTokens; set { _explicitNullValueGenerationTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationTokens"); else _explicitNullProperties?.Remove("generationTokens"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty GenerationTokens { get => _explicitNullValueGenerationTokens; set { _explicitNullValueGenerationTokens = value; AdditionalData?.Remove("generationTokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationTokens"); else _explicitNullProperties?.Remove("generationTokens"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty _explicitNullValueGenerationTokens = default!;
 #endif
         /// <summary>The scores for the response</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty? Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty? _explicitNullValueScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty Scores { get => _explicitNullValueScores; set { _explicitNullValueScores = value; AdditionalData?.Remove("scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scores"); else _explicitNullProperties?.Remove("scores"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty _explicitNullValueScores = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? _explicitNullValueStatus = default!;
         /// <summary>The variation that was tested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty? Variation { get => _explicitNullValueVariation; set { _explicitNullValueVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variation"); else _explicitNullProperties?.Remove("variation"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty? Variation { get => _explicitNullValueVariation; set { _explicitNullValueVariation = value; AdditionalData?.Remove("variation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variation"); else _explicitNullProperties?.Remove("variation"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty? _explicitNullValueVariation = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty Variation { get => _explicitNullValueVariation; set { _explicitNullValueVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variation"); else _explicitNullProperties?.Remove("variation"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty Variation { get => _explicitNullValueVariation; set { _explicitNullValueVariation = value; AdditionalData?.Remove("variation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variation"); else _explicitNullProperties?.Remove("variation"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty _explicitNullValueVariation = default!;
 #endif
         /// <summary>
@@ -135,7 +145,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activity", n => { Activity = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity>(); } },
+                { "activity", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActivity = default; _explicitNullProperties?.Remove("activity"); AdditionalData["activity"] = unknown; } else { Activity = parsed; AdditionalData.Remove("activity"); } } },
                 { "completionResponse", n => { CompletionResponse = n.GetStringValue(); } },
                 { "createdVariationKey", n => { CreatedVariationKey = n.GetStringValue(); } },
                 { "evaluationLatencies", n => { EvaluationLatencies = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchEvaluationLatenciesProperty.CreateFromDiscriminatorValue); } },
@@ -143,7 +153,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "generationLatency", n => { GenerationLatency = n.GetIntValue(); } },
                 { "generationTokens", n => { GenerationTokens = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchGenerationTokensProperty.CreateFromDiscriminatorValue); } },
                 { "scores", n => { Scores = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchScoresProperty.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "variation", n => { Variation = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultPatchVariationProperty.CreateFromDiscriminatorValue); } },
             };
         }

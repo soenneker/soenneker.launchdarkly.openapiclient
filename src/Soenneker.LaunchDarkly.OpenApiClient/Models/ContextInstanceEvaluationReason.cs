@@ -17,12 +17,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("errorKind") is { } nullNodeErrorKind && nullNodeErrorKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorKind = null;
-            if (parseNode.GetChildNode("inExperiment") is { } nullNodeInExperiment && nullNodeInExperiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InExperiment = null;
-            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
-            if (parseNode.GetChildNode("prerequisiteKey") is { } nullNodePrerequisiteKey && nullNodePrerequisiteKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrerequisiteKey = null;
-            if (parseNode.GetChildNode("ruleID") is { } nullNodeRuleID && nullNodeRuleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleID = null;
-            if (parseNode.GetChildNode("ruleIndex") is { } nullNodeRuleIndex && nullNodeRuleIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleIndex = null;
+            if (parseNode.GetChildNode("errorKind") is null) { _explicitNullValueErrorKind = default!; _explicitNullProperties?.Remove("errorKind"); }
+            else if (parseNode.GetChildNode("errorKind") is { } nullNodeErrorKind && nullNodeErrorKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorKind = null;
+            if (parseNode.GetChildNode("inExperiment") is null) { _explicitNullValueInExperiment = default!; _explicitNullProperties?.Remove("inExperiment"); }
+            else if (parseNode.GetChildNode("inExperiment") is { } nullNodeInExperiment && nullNodeInExperiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InExperiment = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("prerequisiteKey") is null) { _explicitNullValuePrerequisiteKey = default!; _explicitNullProperties?.Remove("prerequisiteKey"); }
+            else if (parseNode.GetChildNode("prerequisiteKey") is { } nullNodePrerequisiteKey && nullNodePrerequisiteKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrerequisiteKey = null;
+            if (parseNode.GetChildNode("ruleID") is null) { _explicitNullValueRuleID = default!; _explicitNullProperties?.Remove("ruleID"); }
+            else if (parseNode.GetChildNode("ruleID") is { } nullNodeRuleID && nullNodeRuleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleID = null;
+            if (parseNode.GetChildNode("ruleIndex") is null) { _explicitNullValueRuleIndex = default!; _explicitNullProperties?.Remove("ruleIndex"); }
+            else if (parseNode.GetChildNode("ruleIndex") is { } nullNodeRuleIndex && nullNodeRuleIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleIndex = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,48 +36,48 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The specific error type if the kind is &apos;ERROR&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorKind { get => _explicitNullValueErrorKind; set { _explicitNullValueErrorKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorKind"); else _explicitNullProperties?.Remove("errorKind"); } }
+        public string? ErrorKind { get => _explicitNullValueErrorKind; set { _explicitNullValueErrorKind = value; AdditionalData?.Remove("errorKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorKind"); else _explicitNullProperties?.Remove("errorKind"); } }
         private string? _explicitNullValueErrorKind = default!;
 #nullable restore
 #else
-        public string ErrorKind { get => _explicitNullValueErrorKind; set { _explicitNullValueErrorKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorKind"); else _explicitNullProperties?.Remove("errorKind"); } }
+        public string ErrorKind { get => _explicitNullValueErrorKind; set { _explicitNullValueErrorKind = value; AdditionalData?.Remove("errorKind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorKind"); else _explicitNullProperties?.Remove("errorKind"); } }
         private string _explicitNullValueErrorKind = default!;
 #endif
         /// <summary>Indicates whether the context was evaluated as part of an experiment.</summary>
-        public bool? InExperiment { get => _explicitNullValueInExperiment; set { _explicitNullValueInExperiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inExperiment"); else _explicitNullProperties?.Remove("inExperiment"); } }
+        public bool? InExperiment { get => _explicitNullValueInExperiment; set { _explicitNullValueInExperiment = value; AdditionalData?.Remove("inExperiment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inExperiment"); else _explicitNullProperties?.Remove("inExperiment"); } }
         private bool? _explicitNullValueInExperiment = default!;
         /// <summary>Describes the general reason that LaunchDarkly selected this variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
         private string _explicitNullValueKind = default!;
 #endif
         /// <summary>The key of the flag that failed if the kind is &apos;PREREQUISITE_FAILED&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrerequisiteKey { get => _explicitNullValuePrerequisiteKey; set { _explicitNullValuePrerequisiteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteKey"); else _explicitNullProperties?.Remove("prerequisiteKey"); } }
+        public string? PrerequisiteKey { get => _explicitNullValuePrerequisiteKey; set { _explicitNullValuePrerequisiteKey = value; AdditionalData?.Remove("prerequisiteKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteKey"); else _explicitNullProperties?.Remove("prerequisiteKey"); } }
         private string? _explicitNullValuePrerequisiteKey = default!;
 #nullable restore
 #else
-        public string PrerequisiteKey { get => _explicitNullValuePrerequisiteKey; set { _explicitNullValuePrerequisiteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteKey"); else _explicitNullProperties?.Remove("prerequisiteKey"); } }
+        public string PrerequisiteKey { get => _explicitNullValuePrerequisiteKey; set { _explicitNullValuePrerequisiteKey = value; AdditionalData?.Remove("prerequisiteKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteKey"); else _explicitNullProperties?.Remove("prerequisiteKey"); } }
         private string _explicitNullValuePrerequisiteKey = default!;
 #endif
         /// <summary>The unique identifier of the matching rule if the kind is &apos;RULE_MATCH&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleID { get => _explicitNullValueRuleID; set { _explicitNullValueRuleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleID"); else _explicitNullProperties?.Remove("ruleID"); } }
+        public string? RuleID { get => _explicitNullValueRuleID; set { _explicitNullValueRuleID = value; AdditionalData?.Remove("ruleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleID"); else _explicitNullProperties?.Remove("ruleID"); } }
         private string? _explicitNullValueRuleID = default!;
 #nullable restore
 #else
-        public string RuleID { get => _explicitNullValueRuleID; set { _explicitNullValueRuleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleID"); else _explicitNullProperties?.Remove("ruleID"); } }
+        public string RuleID { get => _explicitNullValueRuleID; set { _explicitNullValueRuleID = value; AdditionalData?.Remove("ruleID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleID"); else _explicitNullProperties?.Remove("ruleID"); } }
         private string _explicitNullValueRuleID = default!;
 #endif
         /// <summary>The positional index of the matching rule if the kind is &apos;RULE_MATCH&apos;. The index is 0-based.</summary>
-        public int? RuleIndex { get => _explicitNullValueRuleIndex; set { _explicitNullValueRuleIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIndex"); else _explicitNullProperties?.Remove("ruleIndex"); } }
+        public int? RuleIndex { get => _explicitNullValueRuleIndex; set { _explicitNullValueRuleIndex = value; AdditionalData?.Remove("ruleIndex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIndex"); else _explicitNullProperties?.Remove("ruleIndex"); } }
         private int? _explicitNullValueRuleIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ContextInstanceEvaluationReason"/> and sets the default values.

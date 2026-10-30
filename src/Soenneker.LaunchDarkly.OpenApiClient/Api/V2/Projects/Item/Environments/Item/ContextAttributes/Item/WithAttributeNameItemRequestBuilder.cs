@@ -78,7 +78,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextAttributes.Item.WithAttributeNameItemRequestBuilder.WithAttributeNameItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://app.launchdarkly.com", "/api/v2/projects/{projectKey}/environments/{environmentKey}/context-attributes/{attributeName}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

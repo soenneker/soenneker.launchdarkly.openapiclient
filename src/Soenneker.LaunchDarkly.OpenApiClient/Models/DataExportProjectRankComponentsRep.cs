@@ -17,13 +17,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("streaming") is { } nullNodeStreaming && nullNodeStreaming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Streaming = null;
+            if (parseNode.GetChildNode("streaming") is null) { _explicitNullValueStreaming = default!; _explicitNullProperties?.Remove("streaming"); }
+            else if (parseNode.GetChildNode("streaming") is { } nullNodeStreaming && nullNodeStreaming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Streaming = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Successful Streaming transfers attributed to this project in the requested range.</summary>
-        public long? Streaming { get => _explicitNullValueStreaming; set { _explicitNullValueStreaming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streaming"); else _explicitNullProperties?.Remove("streaming"); } }
+        public long? Streaming { get => _explicitNullValueStreaming; set { _explicitNullValueStreaming = value; AdditionalData?.Remove("streaming"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("streaming"); else _explicitNullProperties?.Remove("streaming"); } }
         private long? _explicitNullValueStreaming = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportProjectRankComponentsRep"/> and sets the default values.

@@ -17,20 +17,24 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("Condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
-            if (parseNode.GetChildNode("Effect") is { } nullNodeEffect && nullNodeEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Effect = null;
-            if (parseNode.GetChildNode("Principal") is { } nullNodePrincipal && nullNodePrincipal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Principal = null;
+            if (parseNode.GetChildNode("Action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("Action"); }
+            else if (parseNode.GetChildNode("Action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("Condition") is null) { _explicitNullValueCondition = default!; _explicitNullProperties?.Remove("Condition"); }
+            else if (parseNode.GetChildNode("Condition") is { } nullNodeCondition && nullNodeCondition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Condition = null;
+            if (parseNode.GetChildNode("Effect") is null) { _explicitNullValueEffect = default!; _explicitNullProperties?.Remove("Effect"); }
+            else if (parseNode.GetChildNode("Effect") is { } nullNodeEffect && nullNodeEffect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Effect = null;
+            if (parseNode.GetChildNode("Principal") is null) { _explicitNullValuePrincipal = default!; _explicitNullProperties?.Remove("Principal"); }
+            else if (parseNode.GetChildNode("Principal") is { } nullNodePrincipal && nullNodePrincipal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Principal = null;
         }
 
         /// <summary>The action of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Action"); else _explicitNullProperties?.Remove("Action"); } }
+        public List<string>? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("Action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Action"); else _explicitNullProperties?.Remove("Action"); } }
         private List<string>? _explicitNullValueAction = default!;
 #nullable restore
 #else
-        public List<string> Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Action"); else _explicitNullProperties?.Remove("Action"); } }
+        public List<string> Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("Action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Action"); else _explicitNullProperties?.Remove("Action"); } }
         private List<string> _explicitNullValueAction = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,31 +42,31 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The condition of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Condition"); else _explicitNullProperties?.Remove("Condition"); } }
+        public UntypedNode? Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("Condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Condition"); else _explicitNullProperties?.Remove("Condition"); } }
         private UntypedNode? _explicitNullValueCondition = default!;
 #nullable restore
 #else
-        public UntypedNode Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Condition"); else _explicitNullProperties?.Remove("Condition"); } }
+        public UntypedNode Condition { get => _explicitNullValueCondition; set { _explicitNullValueCondition = value; AdditionalData?.Remove("Condition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Condition"); else _explicitNullProperties?.Remove("Condition"); } }
         private UntypedNode _explicitNullValueCondition = default!;
 #endif
         /// <summary>The effect of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Effect { get => _explicitNullValueEffect; set { _explicitNullValueEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Effect"); else _explicitNullProperties?.Remove("Effect"); } }
+        public string? Effect { get => _explicitNullValueEffect; set { _explicitNullValueEffect = value; AdditionalData?.Remove("Effect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Effect"); else _explicitNullProperties?.Remove("Effect"); } }
         private string? _explicitNullValueEffect = default!;
 #nullable restore
 #else
-        public string Effect { get => _explicitNullValueEffect; set { _explicitNullValueEffect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Effect"); else _explicitNullProperties?.Remove("Effect"); } }
+        public string Effect { get => _explicitNullValueEffect; set { _explicitNullValueEffect = value; AdditionalData?.Remove("Effect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Effect"); else _explicitNullProperties?.Remove("Effect"); } }
         private string _explicitNullValueEffect = default!;
 #endif
         /// <summary>The principal of trust policy statement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Principal { get => _explicitNullValuePrincipal; set { _explicitNullValuePrincipal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Principal"); else _explicitNullProperties?.Remove("Principal"); } }
+        public UntypedNode? Principal { get => _explicitNullValuePrincipal; set { _explicitNullValuePrincipal = value; AdditionalData?.Remove("Principal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Principal"); else _explicitNullProperties?.Remove("Principal"); } }
         private UntypedNode? _explicitNullValuePrincipal = default!;
 #nullable restore
 #else
-        public UntypedNode Principal { get => _explicitNullValuePrincipal; set { _explicitNullValuePrincipal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Principal"); else _explicitNullProperties?.Remove("Principal"); } }
+        public UntypedNode Principal { get => _explicitNullValuePrincipal; set { _explicitNullValuePrincipal = value; AdditionalData?.Remove("Principal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Principal"); else _explicitNullProperties?.Remove("Principal"); } }
         private UntypedNode _explicitNullValuePrincipal = default!;
 #endif
         /// <summary>

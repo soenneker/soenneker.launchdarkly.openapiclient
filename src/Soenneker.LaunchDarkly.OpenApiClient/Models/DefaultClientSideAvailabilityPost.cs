@@ -17,17 +17,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("usingEnvironmentId") is { } nullNodeUsingEnvironmentId && nullNodeUsingEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsingEnvironmentId = null;
-            if (parseNode.GetChildNode("usingMobileKey") is { } nullNodeUsingMobileKey && nullNodeUsingMobileKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsingMobileKey = null;
+            if (parseNode.GetChildNode("usingEnvironmentId") is null) { _explicitNullValueUsingEnvironmentId = default!; _explicitNullProperties?.Remove("usingEnvironmentId"); }
+            else if (parseNode.GetChildNode("usingEnvironmentId") is { } nullNodeUsingEnvironmentId && nullNodeUsingEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsingEnvironmentId = null;
+            if (parseNode.GetChildNode("usingMobileKey") is null) { _explicitNullValueUsingMobileKey = default!; _explicitNullProperties?.Remove("usingMobileKey"); }
+            else if (parseNode.GetChildNode("usingMobileKey") is { } nullNodeUsingMobileKey && nullNodeUsingMobileKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsingMobileKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to enable availability for client-side SDKs.</summary>
-        public bool? UsingEnvironmentId { get => _explicitNullValueUsingEnvironmentId; set { _explicitNullValueUsingEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usingEnvironmentId"); else _explicitNullProperties?.Remove("usingEnvironmentId"); } }
+        public bool? UsingEnvironmentId { get => _explicitNullValueUsingEnvironmentId; set { _explicitNullValueUsingEnvironmentId = value; AdditionalData?.Remove("usingEnvironmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usingEnvironmentId"); else _explicitNullProperties?.Remove("usingEnvironmentId"); } }
         private bool? _explicitNullValueUsingEnvironmentId = default!;
         /// <summary>Whether to enable availability for mobile SDKs.</summary>
-        public bool? UsingMobileKey { get => _explicitNullValueUsingMobileKey; set { _explicitNullValueUsingMobileKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usingMobileKey"); else _explicitNullProperties?.Remove("usingMobileKey"); } }
+        public bool? UsingMobileKey { get => _explicitNullValueUsingMobileKey; set { _explicitNullValueUsingMobileKey = value; AdditionalData?.Remove("usingMobileKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usingMobileKey"); else _explicitNullProperties?.Remove("usingMobileKey"); } }
         private bool? _explicitNullValueUsingMobileKey = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailabilityPost"/> and sets the default values.

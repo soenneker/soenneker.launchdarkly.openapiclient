@@ -18,8 +18,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoRollback") is { } nullNodeAutoRollback && nullNodeAutoRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRollback = null;
-            if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
+            if (parseNode.GetChildNode("autoRollback") is null) { _explicitNullValueAutoRollback = default!; _explicitNullProperties?.Remove("autoRollback"); }
+            else if (parseNode.GetChildNode("autoRollback") is { } nullNodeAutoRollback && nullNodeAutoRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRollback = null;
+            if (parseNode.GetChildNode("metricKey") is null) { _explicitNullValueMetricKey = default!; _explicitNullProperties?.Remove("metricKey"); }
+            else if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string AnalysisUnit { get; private set; }
 #endif
         /// <summary>Whether a regression automatically reverts the release.</summary>
-        public bool? AutoRollback { get => _explicitNullValueAutoRollback; set { _explicitNullValueAutoRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRollback"); else _explicitNullProperties?.Remove("autoRollback"); } }
+        public bool? AutoRollback { get => _explicitNullValueAutoRollback; set { _explicitNullValueAutoRollback = value; AdditionalData?.Remove("autoRollback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRollback"); else _explicitNullProperties?.Remove("autoRollback"); } }
         private bool? _explicitNullValueAutoRollback = default!;
         /// <summary>Present only when the caller requests `expand=metrics` and the pinnedmetric version still exists. A metric whose pinned version has beendeleted keeps its `metricKey` and `metricVersionId` but has no definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,11 +48,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The metricKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; AdditionalData?.Remove("metricKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
         private string? _explicitNullValueMetricKey = default!;
 #nullable restore
 #else
-        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; AdditionalData?.Remove("metricKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
         private string _explicitNullValueMetricKey = default!;
 #endif
         /// <summary>The metricVersionId property</summary>

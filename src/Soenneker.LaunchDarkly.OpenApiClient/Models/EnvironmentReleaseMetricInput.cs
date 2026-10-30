@@ -18,9 +18,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("analysisUnit") is { } nullNodeAnalysisUnit && nullNodeAnalysisUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisUnit = null;
-            if (parseNode.GetChildNode("autoRollback") is { } nullNodeAutoRollback && nullNodeAutoRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRollback = null;
-            if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
+            if (parseNode.GetChildNode("analysisUnit") is null) { _explicitNullValueAnalysisUnit = default!; _explicitNullProperties?.Remove("analysisUnit"); }
+            else if (parseNode.GetChildNode("analysisUnit") is { } nullNodeAnalysisUnit && nullNodeAnalysisUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisUnit = null;
+            if (parseNode.GetChildNode("autoRollback") is null) { _explicitNullValueAutoRollback = default!; _explicitNullProperties?.Remove("autoRollback"); }
+            else if (parseNode.GetChildNode("autoRollback") is { } nullNodeAutoRollback && nullNodeAutoRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRollback = null;
+            if (parseNode.GetChildNode("metricKey") is null) { _explicitNullValueMetricKey = default!; _explicitNullProperties?.Remove("metricKey"); }
+            else if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,24 +31,24 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Key of the context kind to analyze this metric on. Omit it to analyzeon the randomization unit. A value must differ from the randomizationunit and be one of the metric&apos;s units. Percentile metrics, ratiometrics, and metrics in a group cannot set it. The value cannot bechanged after the release starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalysisUnit { get => _explicitNullValueAnalysisUnit; set { _explicitNullValueAnalysisUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisUnit"); else _explicitNullProperties?.Remove("analysisUnit"); } }
+        public string? AnalysisUnit { get => _explicitNullValueAnalysisUnit; set { _explicitNullValueAnalysisUnit = value; AdditionalData?.Remove("analysisUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisUnit"); else _explicitNullProperties?.Remove("analysisUnit"); } }
         private string? _explicitNullValueAnalysisUnit = default!;
 #nullable restore
 #else
-        public string AnalysisUnit { get => _explicitNullValueAnalysisUnit; set { _explicitNullValueAnalysisUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisUnit"); else _explicitNullProperties?.Remove("analysisUnit"); } }
+        public string AnalysisUnit { get => _explicitNullValueAnalysisUnit; set { _explicitNullValueAnalysisUnit = value; AdditionalData?.Remove("analysisUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisUnit"); else _explicitNullProperties?.Remove("analysisUnit"); } }
         private string _explicitNullValueAnalysisUnit = default!;
 #endif
         /// <summary>Whether a regression on this metric automatically reverts therelease. When `false`, a detected regression pauses the releaseinstead: it reports `waiting` with reason`waiting_regression_detected` and does not advance until theregression is dismissed or the release is stopped.</summary>
-        public bool? AutoRollback { get => _explicitNullValueAutoRollback; set { _explicitNullValueAutoRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRollback"); else _explicitNullProperties?.Remove("autoRollback"); } }
+        public bool? AutoRollback { get => _explicitNullValueAutoRollback; set { _explicitNullValueAutoRollback = value; AdditionalData?.Remove("autoRollback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRollback"); else _explicitNullProperties?.Remove("autoRollback"); } }
         private bool? _explicitNullValueAutoRollback = default!;
         /// <summary>The metricKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; AdditionalData?.Remove("metricKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
         private string? _explicitNullValueMetricKey = default!;
 #nullable restore
 #else
-        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; AdditionalData?.Remove("metricKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
         private string _explicitNullValueMetricKey = default!;
 #endif
         /// <summary>

@@ -17,83 +17,91 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("_canceledAt") is { } nullNodeCanceledAt && nullNodeCanceledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanceledAt = null;
-            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("phases") is { } nullNodePhases && nullNodePhases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phases = null;
-            if (parseNode.GetChildNode("releasePipelineDescription") is { } nullNodeReleasePipelineDescription && nullNodeReleasePipelineDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleasePipelineDescription = null;
-            if (parseNode.GetChildNode("releasePipelineKey") is { } nullNodeReleasePipelineKey && nullNodeReleasePipelineKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleasePipelineKey = null;
-            if (parseNode.GetChildNode("_releaseVariationId") is { } nullNodeReleaseVariationId && nullNodeReleaseVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseVariationId = null;
-            if (parseNode.GetChildNode("_version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("_canceledAt") is null) { _explicitNullValueCanceledAt = default!; _explicitNullProperties?.Remove("_canceledAt"); }
+            else if (parseNode.GetChildNode("_canceledAt") is { } nullNodeCanceledAt && nullNodeCanceledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanceledAt = null;
+            if (parseNode.GetChildNode("_links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("_links"); }
+            else if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("phases") is null) { _explicitNullValuePhases = default!; _explicitNullProperties?.Remove("phases"); }
+            else if (parseNode.GetChildNode("phases") is { } nullNodePhases && nullNodePhases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phases = null;
+            if (parseNode.GetChildNode("releasePipelineDescription") is null) { _explicitNullValueReleasePipelineDescription = default!; _explicitNullProperties?.Remove("releasePipelineDescription"); }
+            else if (parseNode.GetChildNode("releasePipelineDescription") is { } nullNodeReleasePipelineDescription && nullNodeReleasePipelineDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleasePipelineDescription = null;
+            if (parseNode.GetChildNode("releasePipelineKey") is null) { _explicitNullValueReleasePipelineKey = default!; _explicitNullProperties?.Remove("releasePipelineKey"); }
+            else if (parseNode.GetChildNode("releasePipelineKey") is { } nullNodeReleasePipelineKey && nullNodeReleasePipelineKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleasePipelineKey = null;
+            if (parseNode.GetChildNode("_releaseVariationId") is null) { _explicitNullValueReleaseVariationId = default!; _explicitNullProperties?.Remove("_releaseVariationId"); }
+            else if (parseNode.GetChildNode("_releaseVariationId") is { } nullNodeReleaseVariationId && nullNodeReleaseVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseVariationId = null;
+            if (parseNode.GetChildNode("_version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("_version"); }
+            else if (parseNode.GetChildNode("_version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The canceledAt property</summary>
-        public long? CanceledAt { get => _explicitNullValueCanceledAt; set { _explicitNullValueCanceledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_canceledAt"); else _explicitNullProperties?.Remove("_canceledAt"); } }
+        public long? CanceledAt { get => _explicitNullValueCanceledAt; set { _explicitNullValueCanceledAt = value; AdditionalData?.Remove("_canceledAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_canceledAt"); else _explicitNullProperties?.Remove("_canceledAt"); } }
         private long? _explicitNullValueCanceledAt = default!;
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseLinksProperty? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("_links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseLinksProperty _explicitNullValueLinks = default!;
 #endif
         /// <summary>The release pipeline name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>An ordered list of the release pipeline phases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase>? Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase>? Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; AdditionalData?.Remove("phases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase>? _explicitNullValuePhases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase> Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase> Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; AdditionalData?.Remove("phases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleasePhase> _explicitNullValuePhases = default!;
 #endif
         /// <summary>The release pipeline description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleasePipelineDescription { get => _explicitNullValueReleasePipelineDescription; set { _explicitNullValueReleasePipelineDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineDescription"); else _explicitNullProperties?.Remove("releasePipelineDescription"); } }
+        public string? ReleasePipelineDescription { get => _explicitNullValueReleasePipelineDescription; set { _explicitNullValueReleasePipelineDescription = value; AdditionalData?.Remove("releasePipelineDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineDescription"); else _explicitNullProperties?.Remove("releasePipelineDescription"); } }
         private string? _explicitNullValueReleasePipelineDescription = default!;
 #nullable restore
 #else
-        public string ReleasePipelineDescription { get => _explicitNullValueReleasePipelineDescription; set { _explicitNullValueReleasePipelineDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineDescription"); else _explicitNullProperties?.Remove("releasePipelineDescription"); } }
+        public string ReleasePipelineDescription { get => _explicitNullValueReleasePipelineDescription; set { _explicitNullValueReleasePipelineDescription = value; AdditionalData?.Remove("releasePipelineDescription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineDescription"); else _explicitNullProperties?.Remove("releasePipelineDescription"); } }
         private string _explicitNullValueReleasePipelineDescription = default!;
 #endif
         /// <summary>The release pipeline key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleasePipelineKey { get => _explicitNullValueReleasePipelineKey; set { _explicitNullValueReleasePipelineKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineKey"); else _explicitNullProperties?.Remove("releasePipelineKey"); } }
+        public string? ReleasePipelineKey { get => _explicitNullValueReleasePipelineKey; set { _explicitNullValueReleasePipelineKey = value; AdditionalData?.Remove("releasePipelineKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineKey"); else _explicitNullProperties?.Remove("releasePipelineKey"); } }
         private string? _explicitNullValueReleasePipelineKey = default!;
 #nullable restore
 #else
-        public string ReleasePipelineKey { get => _explicitNullValueReleasePipelineKey; set { _explicitNullValueReleasePipelineKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineKey"); else _explicitNullProperties?.Remove("releasePipelineKey"); } }
+        public string ReleasePipelineKey { get => _explicitNullValueReleasePipelineKey; set { _explicitNullValueReleasePipelineKey = value; AdditionalData?.Remove("releasePipelineKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineKey"); else _explicitNullProperties?.Remove("releasePipelineKey"); } }
         private string _explicitNullValueReleasePipelineKey = default!;
 #endif
         /// <summary>The chosen release variation ID to use across all phases of a release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleaseVariationId { get => _explicitNullValueReleaseVariationId; set { _explicitNullValueReleaseVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_releaseVariationId"); else _explicitNullProperties?.Remove("_releaseVariationId"); } }
+        public string? ReleaseVariationId { get => _explicitNullValueReleaseVariationId; set { _explicitNullValueReleaseVariationId = value; AdditionalData?.Remove("_releaseVariationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_releaseVariationId"); else _explicitNullProperties?.Remove("_releaseVariationId"); } }
         private string? _explicitNullValueReleaseVariationId = default!;
 #nullable restore
 #else
-        public string ReleaseVariationId { get => _explicitNullValueReleaseVariationId; set { _explicitNullValueReleaseVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_releaseVariationId"); else _explicitNullProperties?.Remove("_releaseVariationId"); } }
+        public string ReleaseVariationId { get => _explicitNullValueReleaseVariationId; set { _explicitNullValueReleaseVariationId = value; AdditionalData?.Remove("_releaseVariationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_releaseVariationId"); else _explicitNullProperties?.Remove("_releaseVariationId"); } }
         private string _explicitNullValueReleaseVariationId = default!;
 #endif
         /// <summary>The release version</summary>
-        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_version"); else _explicitNullProperties?.Remove("_version"); } }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_version"); else _explicitNullProperties?.Remove("_version"); } }
         private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineRelease"/> and sets the default values.

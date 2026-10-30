@@ -17,7 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("teamKeys") is { } nullNodeTeamKeys && nullNodeTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamKeys = null;
+            if (parseNode.GetChildNode("teamKeys") is null) { _explicitNullValueTeamKeys = default!; _explicitNullProperties?.Remove("teamKeys"); }
+            else if (parseNode.GetChildNode("teamKeys") is { } nullNodeTeamKeys && nullNodeTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>List of team keys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamKeys { get => _explicitNullValueTeamKeys; set { _explicitNullValueTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamKeys"); else _explicitNullProperties?.Remove("teamKeys"); } }
+        public List<string>? TeamKeys { get => _explicitNullValueTeamKeys; set { _explicitNullValueTeamKeys = value; AdditionalData?.Remove("teamKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamKeys"); else _explicitNullProperties?.Remove("teamKeys"); } }
         private List<string>? _explicitNullValueTeamKeys = default!;
 #nullable restore
 #else
-        public List<string> TeamKeys { get => _explicitNullValueTeamKeys; set { _explicitNullValueTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamKeys"); else _explicitNullProperties?.Remove("teamKeys"); } }
+        public List<string> TeamKeys { get => _explicitNullValueTeamKeys; set { _explicitNullValueTeamKeys = value; AdditionalData?.Remove("teamKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamKeys"); else _explicitNullProperties?.Remove("teamKeys"); } }
         private List<string> _explicitNullValueTeamKeys = default!;
 #endif
         /// <summary>

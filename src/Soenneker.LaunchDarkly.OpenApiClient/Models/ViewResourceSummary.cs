@@ -17,17 +17,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("flagCount") is { } nullNodeFlagCount && nullNodeFlagCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagCount = null;
-            if (parseNode.GetChildNode("segmentCount") is { } nullNodeSegmentCount && nullNodeSegmentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentCount = null;
+            if (parseNode.GetChildNode("flagCount") is null) { _explicitNullValueFlagCount = default!; _explicitNullProperties?.Remove("flagCount"); }
+            else if (parseNode.GetChildNode("flagCount") is { } nullNodeFlagCount && nullNodeFlagCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagCount = null;
+            if (parseNode.GetChildNode("segmentCount") is null) { _explicitNullValueSegmentCount = default!; _explicitNullProperties?.Remove("segmentCount"); }
+            else if (parseNode.GetChildNode("segmentCount") is { } nullNodeSegmentCount && nullNodeSegmentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of flags associated with the view.</summary>
-        public int? FlagCount { get => _explicitNullValueFlagCount; set { _explicitNullValueFlagCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagCount"); else _explicitNullProperties?.Remove("flagCount"); } }
+        public int? FlagCount { get => _explicitNullValueFlagCount; set { _explicitNullValueFlagCount = value; AdditionalData?.Remove("flagCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagCount"); else _explicitNullProperties?.Remove("flagCount"); } }
         private int? _explicitNullValueFlagCount = default!;
         /// <summary>The number of segments associated with the view.</summary>
-        public int? SegmentCount { get => _explicitNullValueSegmentCount; set { _explicitNullValueSegmentCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentCount"); else _explicitNullProperties?.Remove("segmentCount"); } }
+        public int? SegmentCount { get => _explicitNullValueSegmentCount; set { _explicitNullValueSegmentCount = value; AdditionalData?.Remove("segmentCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentCount"); else _explicitNullProperties?.Remove("segmentCount"); } }
         private int? _explicitNullValueSegmentCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewResourceSummary"/> and sets the default values.

@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("headerName") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
-            if (parseNode.GetChildNode("hmacSecretFormVariableKey") is { } nullNodeHmacSecretFormVariableKey && nullNodeHmacSecretFormVariableKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSecretFormVariableKey = null;
+            if (parseNode.GetChildNode("headerName") is null) { _explicitNullValueHeaderName = default!; _explicitNullProperties?.Remove("headerName"); }
+            else if (parseNode.GetChildNode("headerName") is { } nullNodeHeaderName && nullNodeHeaderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeaderName = null;
+            if (parseNode.GetChildNode("hmacSecretFormVariableKey") is null) { _explicitNullValueHmacSecretFormVariableKey = default!; _explicitNullProperties?.Remove("hmacSecretFormVariableKey"); }
+            else if (parseNode.GetChildNode("hmacSecretFormVariableKey") is { } nullNodeHmacSecretFormVariableKey && nullNodeHmacSecretFormVariableKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HmacSecretFormVariableKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The headerName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerName"); else _explicitNullProperties?.Remove("headerName"); } }
+        public string? HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("headerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerName"); else _explicitNullProperties?.Remove("headerName"); } }
         private string? _explicitNullValueHeaderName = default!;
 #nullable restore
 #else
-        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerName"); else _explicitNullProperties?.Remove("headerName"); } }
+        public string HeaderName { get => _explicitNullValueHeaderName; set { _explicitNullValueHeaderName = value; AdditionalData?.Remove("headerName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headerName"); else _explicitNullProperties?.Remove("headerName"); } }
         private string _explicitNullValueHeaderName = default!;
 #endif
         /// <summary>The hmacSecretFormVariableKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HmacSecretFormVariableKey { get => _explicitNullValueHmacSecretFormVariableKey; set { _explicitNullValueHmacSecretFormVariableKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSecretFormVariableKey"); else _explicitNullProperties?.Remove("hmacSecretFormVariableKey"); } }
+        public string? HmacSecretFormVariableKey { get => _explicitNullValueHmacSecretFormVariableKey; set { _explicitNullValueHmacSecretFormVariableKey = value; AdditionalData?.Remove("hmacSecretFormVariableKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSecretFormVariableKey"); else _explicitNullProperties?.Remove("hmacSecretFormVariableKey"); } }
         private string? _explicitNullValueHmacSecretFormVariableKey = default!;
 #nullable restore
 #else
-        public string HmacSecretFormVariableKey { get => _explicitNullValueHmacSecretFormVariableKey; set { _explicitNullValueHmacSecretFormVariableKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSecretFormVariableKey"); else _explicitNullProperties?.Remove("hmacSecretFormVariableKey"); } }
+        public string HmacSecretFormVariableKey { get => _explicitNullValueHmacSecretFormVariableKey; set { _explicitNullValueHmacSecretFormVariableKey = value; AdditionalData?.Remove("hmacSecretFormVariableKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hmacSecretFormVariableKey"); else _explicitNullProperties?.Remove("hmacSecretFormVariableKey"); } }
         private string _explicitNullValueHmacSecretFormVariableKey = default!;
 #endif
         /// <summary>

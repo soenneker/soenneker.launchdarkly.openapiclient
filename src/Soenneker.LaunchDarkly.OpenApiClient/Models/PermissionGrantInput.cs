@@ -17,34 +17,37 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("actionSet") is { } nullNodeActionSet && nullNodeActionSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSet = null;
-            if (parseNode.GetChildNode("memberIDs") is { } nullNodeMemberIDs && nullNodeMemberIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIDs = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("actionSet") is null) { _explicitNullValueActionSet = default!; _explicitNullProperties?.Remove("actionSet"); }
+            else if (parseNode.GetChildNode("actionSet") is { } nullNodeActionSet && nullNodeActionSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSet = null;
+            if (parseNode.GetChildNode("memberIDs") is null) { _explicitNullValueMemberIDs = default!; _explicitNullProperties?.Remove("memberIDs"); }
+            else if (parseNode.GetChildNode("memberIDs") is { } nullNodeMemberIDs && nullNodeMemberIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIDs = null;
         }
 
         /// <summary>A list of actions to allow. Specify either &lt;code&gt;actionSet&lt;/code&gt; or &lt;code&gt;actions&lt;/code&gt;. To learn more, read [Role actions](https://launchdarkly.com/docs/ld-docs/home/account/role-actions).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<string>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<string>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<string> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public List<string> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private List<string> _explicitNullValueActions = default!;
 #endif
         /// <summary>A group of related actions to allow. Specify either &lt;code&gt;actionSet&lt;/code&gt; or &lt;code&gt;actions&lt;/code&gt;. Use &lt;code&gt;maintainTeam&lt;/code&gt; to add team maintainers.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainTeamActionSet? ActionSet { get => _explicitNullValueActionSet; set { _explicitNullValueActionSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionSet"); else _explicitNullProperties?.Remove("actionSet"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainTeamActionSet? ActionSet { get => _explicitNullValueActionSet; set { _explicitNullValueActionSet = value; AdditionalData?.Remove("actionSet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actionSet"); else _explicitNullProperties?.Remove("actionSet"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainTeamActionSet? _explicitNullValueActionSet = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of member IDs who receive the permission grant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
+        public List<string>? MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; AdditionalData?.Remove("memberIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
         private List<string>? _explicitNullValueMemberIDs = default!;
 #nullable restore
 #else
-        public List<string> MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
+        public List<string> MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; AdditionalData?.Remove("memberIDs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
         private List<string> _explicitNullValueMemberIDs = default!;
 #endif
         /// <summary>
@@ -72,7 +75,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionSet", n => { ActionSet = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainTeamActionSet>(); } },
+                { "actionSet", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainTeamActionSet>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActionSet = default; _explicitNullProperties?.Remove("actionSet"); AdditionalData["actionSet"] = unknown; } else { ActionSet = parsed; AdditionalData.Remove("actionSet"); } } },
                 { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "memberIDs", n => { MemberIDs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

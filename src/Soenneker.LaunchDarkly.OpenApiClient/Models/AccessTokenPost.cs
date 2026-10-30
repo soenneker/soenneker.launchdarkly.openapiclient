@@ -17,14 +17,22 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("customRoleIds") is { } nullNodeCustomRoleIds && nullNodeCustomRoleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRoleIds = null;
-            if (parseNode.GetChildNode("defaultApiVersion") is { } nullNodeDefaultApiVersion && nullNodeDefaultApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApiVersion = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("expiry") is { } nullNodeExpiry && nullNodeExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiry = null;
-            if (parseNode.GetChildNode("inlineRole") is { } nullNodeInlineRole && nullNodeInlineRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InlineRole = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
-            if (parseNode.GetChildNode("serviceToken") is { } nullNodeServiceToken && nullNodeServiceToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceToken = null;
+            if (parseNode.GetChildNode("customRoleIds") is null) { _explicitNullValueCustomRoleIds = default!; _explicitNullProperties?.Remove("customRoleIds"); }
+            else if (parseNode.GetChildNode("customRoleIds") is { } nullNodeCustomRoleIds && nullNodeCustomRoleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRoleIds = null;
+            if (parseNode.GetChildNode("defaultApiVersion") is null) { _explicitNullValueDefaultApiVersion = default!; _explicitNullProperties?.Remove("defaultApiVersion"); }
+            else if (parseNode.GetChildNode("defaultApiVersion") is { } nullNodeDefaultApiVersion && nullNodeDefaultApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultApiVersion = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("expiry") is null) { _explicitNullValueExpiry = default!; _explicitNullProperties?.Remove("expiry"); }
+            else if (parseNode.GetChildNode("expiry") is { } nullNodeExpiry && nullNodeExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expiry = null;
+            if (parseNode.GetChildNode("inlineRole") is null) { _explicitNullValueInlineRole = default!; _explicitNullProperties?.Remove("inlineRole"); }
+            else if (parseNode.GetChildNode("inlineRole") is { } nullNodeInlineRole && nullNodeInlineRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InlineRole = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("serviceToken") is null) { _explicitNullValueServiceToken = default!; _explicitNullProperties?.Remove("serviceToken"); }
+            else if (parseNode.GetChildNode("serviceToken") is { } nullNodeServiceToken && nullNodeServiceToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,54 +40,54 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>A list of custom role IDs to use as access limits for the access token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomRoleIds { get => _explicitNullValueCustomRoleIds; set { _explicitNullValueCustomRoleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleIds"); else _explicitNullProperties?.Remove("customRoleIds"); } }
+        public List<string>? CustomRoleIds { get => _explicitNullValueCustomRoleIds; set { _explicitNullValueCustomRoleIds = value; AdditionalData?.Remove("customRoleIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleIds"); else _explicitNullProperties?.Remove("customRoleIds"); } }
         private List<string>? _explicitNullValueCustomRoleIds = default!;
 #nullable restore
 #else
-        public List<string> CustomRoleIds { get => _explicitNullValueCustomRoleIds; set { _explicitNullValueCustomRoleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleIds"); else _explicitNullProperties?.Remove("customRoleIds"); } }
+        public List<string> CustomRoleIds { get => _explicitNullValueCustomRoleIds; set { _explicitNullValueCustomRoleIds = value; AdditionalData?.Remove("customRoleIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoleIds"); else _explicitNullProperties?.Remove("customRoleIds"); } }
         private List<string> _explicitNullValueCustomRoleIds = default!;
 #endif
         /// <summary>The default API version for this token</summary>
-        public int? DefaultApiVersion { get => _explicitNullValueDefaultApiVersion; set { _explicitNullValueDefaultApiVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApiVersion"); else _explicitNullProperties?.Remove("defaultApiVersion"); } }
+        public int? DefaultApiVersion { get => _explicitNullValueDefaultApiVersion; set { _explicitNullValueDefaultApiVersion = value; AdditionalData?.Remove("defaultApiVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultApiVersion"); else _explicitNullProperties?.Remove("defaultApiVersion"); } }
         private int? _explicitNullValueDefaultApiVersion = default!;
         /// <summary>A description for the access token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The expiry property</summary>
-        public long? Expiry { get => _explicitNullValueExpiry; set { _explicitNullValueExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry"); else _explicitNullProperties?.Remove("expiry"); } }
+        public long? Expiry { get => _explicitNullValueExpiry; set { _explicitNullValueExpiry = value; AdditionalData?.Remove("expiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry"); else _explicitNullProperties?.Remove("expiry"); } }
         private long? _explicitNullValueExpiry = default!;
         /// <summary>A JSON array of statements represented as JSON objects with three attributes: effect, resources, actions. May be used in place of a role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost>? InlineRole { get => _explicitNullValueInlineRole; set { _explicitNullValueInlineRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inlineRole"); else _explicitNullProperties?.Remove("inlineRole"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost>? InlineRole { get => _explicitNullValueInlineRole; set { _explicitNullValueInlineRole = value; AdditionalData?.Remove("inlineRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inlineRole"); else _explicitNullProperties?.Remove("inlineRole"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost>? _explicitNullValueInlineRole = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost> InlineRole { get => _explicitNullValueInlineRole; set { _explicitNullValueInlineRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inlineRole"); else _explicitNullProperties?.Remove("inlineRole"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost> InlineRole { get => _explicitNullValueInlineRole; set { _explicitNullValueInlineRole = value; AdditionalData?.Remove("inlineRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inlineRole"); else _explicitNullProperties?.Remove("inlineRole"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost> _explicitNullValueInlineRole = default!;
 #endif
         /// <summary>A human-friendly name for the access token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Base role for the token</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole? _explicitNullValueRole = default!;
         /// <summary>Whether the token is a service token</summary>
-        public bool? ServiceToken { get => _explicitNullValueServiceToken; set { _explicitNullValueServiceToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceToken"); else _explicitNullProperties?.Remove("serviceToken"); } }
+        public bool? ServiceToken { get => _explicitNullValueServiceToken; set { _explicitNullValueServiceToken = value; AdditionalData?.Remove("serviceToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceToken"); else _explicitNullProperties?.Remove("serviceToken"); } }
         private bool? _explicitNullValueServiceToken = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPost"/> and sets the default values.
@@ -112,7 +120,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "expiry", n => { Expiry = n.GetLongValue(); } },
                 { "inlineRole", n => { InlineRole = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatementPost.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole>(); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessTokenPostRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
                 { "serviceToken", n => { ServiceToken = n.GetBoolValue(); } },
             };
         }

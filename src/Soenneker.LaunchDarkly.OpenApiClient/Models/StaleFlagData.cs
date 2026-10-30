@@ -17,9 +17,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cleanupId") is { } nullNodeCleanupId && nullNodeCleanupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CleanupId = null;
-            if (parseNode.GetChildNode("readyForCodeRemoval") is { } nullNodeReadyForCodeRemoval && nullNodeReadyForCodeRemoval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyForCodeRemoval = null;
-            if (parseNode.GetChildNode("readyToArchive") is { } nullNodeReadyToArchive && nullNodeReadyToArchive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyToArchive = null;
+            if (parseNode.GetChildNode("cleanupId") is null) { _explicitNullValueCleanupId = default!; _explicitNullProperties?.Remove("cleanupId"); }
+            else if (parseNode.GetChildNode("cleanupId") is { } nullNodeCleanupId && nullNodeCleanupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CleanupId = null;
+            if (parseNode.GetChildNode("readyForCodeRemoval") is null) { _explicitNullValueReadyForCodeRemoval = default!; _explicitNullProperties?.Remove("readyForCodeRemoval"); }
+            else if (parseNode.GetChildNode("readyForCodeRemoval") is { } nullNodeReadyForCodeRemoval && nullNodeReadyForCodeRemoval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyForCodeRemoval = null;
+            if (parseNode.GetChildNode("readyToArchive") is null) { _explicitNullValueReadyToArchive = default!; _explicitNullProperties?.Remove("readyToArchive"); }
+            else if (parseNode.GetChildNode("readyToArchive") is { } nullNodeReadyToArchive && nullNodeReadyToArchive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyToArchive = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>If a third-party system helps clean up the flag, the ID from that system</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CleanupId { get => _explicitNullValueCleanupId; set { _explicitNullValueCleanupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupId"); else _explicitNullProperties?.Remove("cleanupId"); } }
+        public string? CleanupId { get => _explicitNullValueCleanupId; set { _explicitNullValueCleanupId = value; AdditionalData?.Remove("cleanupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupId"); else _explicitNullProperties?.Remove("cleanupId"); } }
         private string? _explicitNullValueCleanupId = default!;
 #nullable restore
 #else
-        public string CleanupId { get => _explicitNullValueCleanupId; set { _explicitNullValueCleanupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupId"); else _explicitNullProperties?.Remove("cleanupId"); } }
+        public string CleanupId { get => _explicitNullValueCleanupId; set { _explicitNullValueCleanupId = value; AdditionalData?.Remove("cleanupId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupId"); else _explicitNullProperties?.Remove("cleanupId"); } }
         private string _explicitNullValueCleanupId = default!;
 #endif
         /// <summary>Whether the flag is ready for code removal</summary>
-        public bool? ReadyForCodeRemoval { get => _explicitNullValueReadyForCodeRemoval; set { _explicitNullValueReadyForCodeRemoval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyForCodeRemoval"); else _explicitNullProperties?.Remove("readyForCodeRemoval"); } }
+        public bool? ReadyForCodeRemoval { get => _explicitNullValueReadyForCodeRemoval; set { _explicitNullValueReadyForCodeRemoval = value; AdditionalData?.Remove("readyForCodeRemoval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyForCodeRemoval"); else _explicitNullProperties?.Remove("readyForCodeRemoval"); } }
         private bool? _explicitNullValueReadyForCodeRemoval = default!;
         /// <summary>Whether the flag is ready to be archived</summary>
-        public bool? ReadyToArchive { get => _explicitNullValueReadyToArchive; set { _explicitNullValueReadyToArchive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyToArchive"); else _explicitNullProperties?.Remove("readyToArchive"); } }
+        public bool? ReadyToArchive { get => _explicitNullValueReadyToArchive; set { _explicitNullValueReadyToArchive = value; AdditionalData?.Remove("readyToArchive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyToArchive"); else _explicitNullProperties?.Remove("readyToArchive"); } }
         private bool? _explicitNullValueReadyToArchive = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.StaleFlagData"/> and sets the default values.

@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("environmentKeys") is { } nullNodeEnvironmentKeys && nullNodeEnvironmentKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentKeys = null;
-            if (parseNode.GetChildNode("flagTagKeys") is { } nullNodeFlagTagKeys && nullNodeFlagTagKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagTagKeys = null;
+            if (parseNode.GetChildNode("environmentKeys") is null) { _explicitNullValueEnvironmentKeys = default!; _explicitNullProperties?.Remove("environmentKeys"); }
+            else if (parseNode.GetChildNode("environmentKeys") is { } nullNodeEnvironmentKeys && nullNodeEnvironmentKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentKeys = null;
+            if (parseNode.GetChildNode("flagTagKeys") is null) { _explicitNullValueFlagTagKeys = default!; _explicitNullProperties?.Remove("flagTagKeys"); }
+            else if (parseNode.GetChildNode("flagTagKeys") is { } nullNodeFlagTagKeys && nullNodeFlagTagKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagTagKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>List of environment keys this policy applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnvironmentKeys { get => _explicitNullValueEnvironmentKeys; set { _explicitNullValueEnvironmentKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKeys"); else _explicitNullProperties?.Remove("environmentKeys"); } }
+        public List<string>? EnvironmentKeys { get => _explicitNullValueEnvironmentKeys; set { _explicitNullValueEnvironmentKeys = value; AdditionalData?.Remove("environmentKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKeys"); else _explicitNullProperties?.Remove("environmentKeys"); } }
         private List<string>? _explicitNullValueEnvironmentKeys = default!;
 #nullable restore
 #else
-        public List<string> EnvironmentKeys { get => _explicitNullValueEnvironmentKeys; set { _explicitNullValueEnvironmentKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKeys"); else _explicitNullProperties?.Remove("environmentKeys"); } }
+        public List<string> EnvironmentKeys { get => _explicitNullValueEnvironmentKeys; set { _explicitNullValueEnvironmentKeys = value; AdditionalData?.Remove("environmentKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKeys"); else _explicitNullProperties?.Remove("environmentKeys"); } }
         private List<string> _explicitNullValueEnvironmentKeys = default!;
 #endif
         /// <summary>List of flag tag keys this policy applies to. At most 1000 keys. Each key must only contain letters, numbers, &apos;-&apos;, &apos;_&apos;, or &apos;.&apos;, and be at most 64 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FlagTagKeys { get => _explicitNullValueFlagTagKeys; set { _explicitNullValueFlagTagKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagTagKeys"); else _explicitNullProperties?.Remove("flagTagKeys"); } }
+        public List<string>? FlagTagKeys { get => _explicitNullValueFlagTagKeys; set { _explicitNullValueFlagTagKeys = value; AdditionalData?.Remove("flagTagKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagTagKeys"); else _explicitNullProperties?.Remove("flagTagKeys"); } }
         private List<string>? _explicitNullValueFlagTagKeys = default!;
 #nullable restore
 #else
-        public List<string> FlagTagKeys { get => _explicitNullValueFlagTagKeys; set { _explicitNullValueFlagTagKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagTagKeys"); else _explicitNullProperties?.Remove("flagTagKeys"); } }
+        public List<string> FlagTagKeys { get => _explicitNullValueFlagTagKeys; set { _explicitNullValueFlagTagKeys = value; AdditionalData?.Remove("flagTagKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagTagKeys"); else _explicitNullProperties?.Remove("flagTagKeys"); } }
         private List<string> _explicitNullValueFlagTagKeys = default!;
 #endif
         /// <summary>

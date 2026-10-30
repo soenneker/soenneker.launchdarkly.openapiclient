@@ -17,17 +17,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("offVariation") is { } nullNodeOffVariation && nullNodeOffVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffVariation = null;
-            if (parseNode.GetChildNode("onVariation") is { } nullNodeOnVariation && nullNodeOnVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnVariation = null;
+            if (parseNode.GetChildNode("offVariation") is null) { _explicitNullValueOffVariation = default!; _explicitNullProperties?.Remove("offVariation"); }
+            else if (parseNode.GetChildNode("offVariation") is { } nullNodeOffVariation && nullNodeOffVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffVariation = null;
+            if (parseNode.GetChildNode("onVariation") is null) { _explicitNullValueOnVariation = default!; _explicitNullProperties?.Remove("onVariation"); }
+            else if (parseNode.GetChildNode("onVariation") is { } nullNodeOnVariation && nullNodeOnVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnVariation = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Index of the variation served when targeting is off</summary>
-        public int? OffVariation { get => _explicitNullValueOffVariation; set { _explicitNullValueOffVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offVariation"); else _explicitNullProperties?.Remove("offVariation"); } }
+        public int? OffVariation { get => _explicitNullValueOffVariation; set { _explicitNullValueOffVariation = value; AdditionalData?.Remove("offVariation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offVariation"); else _explicitNullProperties?.Remove("offVariation"); } }
         private int? _explicitNullValueOffVariation = default!;
         /// <summary>Index of the variation served when targeting is on</summary>
-        public int? OnVariation { get => _explicitNullValueOnVariation; set { _explicitNullValueOnVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onVariation"); else _explicitNullProperties?.Remove("onVariation"); } }
+        public int? OnVariation { get => _explicitNullValueOnVariation; set { _explicitNullValueOnVariation = value; AdditionalData?.Remove("onVariation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onVariation"); else _explicitNullProperties?.Remove("onVariation"); } }
         private int? _explicitNullValueOnVariation = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults"/> and sets the default values.

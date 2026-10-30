@@ -18,17 +18,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
-            if (parseNode.GetChildNode("durationMillis") is { } nullNodeDurationMillis && nullNodeDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMillis = null;
+            if (parseNode.GetChildNode("allocation") is null) { _explicitNullValueAllocation = default!; _explicitNullProperties?.Remove("allocation"); }
+            else if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
+            if (parseNode.GetChildNode("durationMillis") is null) { _explicitNullValueDurationMillis = default!; _explicitNullProperties?.Remove("durationMillis"); }
+            else if (parseNode.GetChildNode("durationMillis") is { } nullNodeDurationMillis && nullNodeDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMillis = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Thousandths of a percent. `100000` is 100%, and `10000` is 10%.Guarded releases cannot exceed `50000`, preserving a controlgroup.</summary>
-        public int? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        public int? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; AdditionalData?.Remove("allocation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
         private int? _explicitNullValueAllocation = default!;
         /// <summary>The durationMillis property</summary>
-        public long? DurationMillis { get => _explicitNullValueDurationMillis; set { _explicitNullValueDurationMillis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMillis"); else _explicitNullProperties?.Remove("durationMillis"); } }
+        public long? DurationMillis { get => _explicitNullValueDurationMillis; set { _explicitNullValueDurationMillis = value; AdditionalData?.Remove("durationMillis"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMillis"); else _explicitNullProperties?.Remove("durationMillis"); } }
         private long? _explicitNullValueDurationMillis = default!;
         /// <summary>End of the step in Unix milliseconds.</summary>
         public long? EndedAt { get; private set; }

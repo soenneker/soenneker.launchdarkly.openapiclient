@@ -17,12 +17,18 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
-            if (parseNode.GetChildNode("publicKeyPkcs8") is { } nullNodePublicKeyPkcs8 && nullNodePublicKeyPkcs8.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyPkcs8 = null;
-            if (parseNode.GetChildNode("redshiftIAMPermissionsPolicy") is { } nullNodeRedshiftIAMPermissionsPolicy && nullNodeRedshiftIAMPermissionsPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftIAMPermissionsPolicy = null;
-            if (parseNode.GetChildNode("redshiftIAMTrustPolicy") is { } nullNodeRedshiftIAMTrustPolicy && nullNodeRedshiftIAMTrustPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftIAMTrustPolicy = null;
-            if (parseNode.GetChildNode("s3BucketName") is { } nullNodeS3BucketName && nullNodeS3BucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3BucketName = null;
-            if (parseNode.GetChildNode("script") is { } nullNodeScript && nullNodeScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Script = null;
+            if (parseNode.GetChildNode("publicKey") is null) { _explicitNullValuePublicKey = default!; _explicitNullProperties?.Remove("publicKey"); }
+            else if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("publicKeyPkcs8") is null) { _explicitNullValuePublicKeyPkcs8 = default!; _explicitNullProperties?.Remove("publicKeyPkcs8"); }
+            else if (parseNode.GetChildNode("publicKeyPkcs8") is { } nullNodePublicKeyPkcs8 && nullNodePublicKeyPkcs8.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyPkcs8 = null;
+            if (parseNode.GetChildNode("redshiftIAMPermissionsPolicy") is null) { _explicitNullValueRedshiftIAMPermissionsPolicy = default!; _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); }
+            else if (parseNode.GetChildNode("redshiftIAMPermissionsPolicy") is { } nullNodeRedshiftIAMPermissionsPolicy && nullNodeRedshiftIAMPermissionsPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftIAMPermissionsPolicy = null;
+            if (parseNode.GetChildNode("redshiftIAMTrustPolicy") is null) { _explicitNullValueRedshiftIAMTrustPolicy = default!; _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); }
+            else if (parseNode.GetChildNode("redshiftIAMTrustPolicy") is { } nullNodeRedshiftIAMTrustPolicy && nullNodeRedshiftIAMTrustPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftIAMTrustPolicy = null;
+            if (parseNode.GetChildNode("s3BucketName") is null) { _explicitNullValueS3BucketName = default!; _explicitNullProperties?.Remove("s3BucketName"); }
+            else if (parseNode.GetChildNode("s3BucketName") is { } nullNodeS3BucketName && nullNodeS3BucketName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) S3BucketName = null;
+            if (parseNode.GetChildNode("script") is null) { _explicitNullValueScript = default!; _explicitNullProperties?.Remove("script"); }
+            else if (parseNode.GetChildNode("script") is { } nullNodeScript && nullNodeScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Script = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,61 +36,61 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The RSA public key (Snowflake only) to store as the destination public_key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("publicKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
         private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; AdditionalData?.Remove("publicKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
         private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>The PKCS8 RSA public key (Snowflake only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyPkcs8 { get => _explicitNullValuePublicKeyPkcs8; set { _explicitNullValuePublicKeyPkcs8 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPkcs8"); else _explicitNullProperties?.Remove("publicKeyPkcs8"); } }
+        public string? PublicKeyPkcs8 { get => _explicitNullValuePublicKeyPkcs8; set { _explicitNullValuePublicKeyPkcs8 = value; AdditionalData?.Remove("publicKeyPkcs8"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPkcs8"); else _explicitNullProperties?.Remove("publicKeyPkcs8"); } }
         private string? _explicitNullValuePublicKeyPkcs8 = default!;
 #nullable restore
 #else
-        public string PublicKeyPkcs8 { get => _explicitNullValuePublicKeyPkcs8; set { _explicitNullValuePublicKeyPkcs8 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPkcs8"); else _explicitNullProperties?.Remove("publicKeyPkcs8"); } }
+        public string PublicKeyPkcs8 { get => _explicitNullValuePublicKeyPkcs8; set { _explicitNullValuePublicKeyPkcs8 = value; AdditionalData?.Remove("publicKeyPkcs8"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKeyPkcs8"); else _explicitNullProperties?.Remove("publicKeyPkcs8"); } }
         private string _explicitNullValuePublicKeyPkcs8 = default!;
 #endif
         /// <summary>For Redshift, present only when clusterIdentifier, clusterRegion, and clusterAwsAccountId are supplied in the request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedshiftIAMPermissionsPolicy { get => _explicitNullValueRedshiftIAMPermissionsPolicy; set { _explicitNullValueRedshiftIAMPermissionsPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMPermissionsPolicy"); else _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); } }
+        public string? RedshiftIAMPermissionsPolicy { get => _explicitNullValueRedshiftIAMPermissionsPolicy; set { _explicitNullValueRedshiftIAMPermissionsPolicy = value; AdditionalData?.Remove("redshiftIAMPermissionsPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMPermissionsPolicy"); else _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); } }
         private string? _explicitNullValueRedshiftIAMPermissionsPolicy = default!;
 #nullable restore
 #else
-        public string RedshiftIAMPermissionsPolicy { get => _explicitNullValueRedshiftIAMPermissionsPolicy; set { _explicitNullValueRedshiftIAMPermissionsPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMPermissionsPolicy"); else _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); } }
+        public string RedshiftIAMPermissionsPolicy { get => _explicitNullValueRedshiftIAMPermissionsPolicy; set { _explicitNullValueRedshiftIAMPermissionsPolicy = value; AdditionalData?.Remove("redshiftIAMPermissionsPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMPermissionsPolicy"); else _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); } }
         private string _explicitNullValueRedshiftIAMPermissionsPolicy = default!;
 #endif
         /// <summary>For Redshift, present only when clusterIdentifier, clusterRegion, and clusterAwsAccountId are supplied in the request body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedshiftIAMTrustPolicy { get => _explicitNullValueRedshiftIAMTrustPolicy; set { _explicitNullValueRedshiftIAMTrustPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMTrustPolicy"); else _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); } }
+        public string? RedshiftIAMTrustPolicy { get => _explicitNullValueRedshiftIAMTrustPolicy; set { _explicitNullValueRedshiftIAMTrustPolicy = value; AdditionalData?.Remove("redshiftIAMTrustPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMTrustPolicy"); else _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); } }
         private string? _explicitNullValueRedshiftIAMTrustPolicy = default!;
 #nullable restore
 #else
-        public string RedshiftIAMTrustPolicy { get => _explicitNullValueRedshiftIAMTrustPolicy; set { _explicitNullValueRedshiftIAMTrustPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMTrustPolicy"); else _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); } }
+        public string RedshiftIAMTrustPolicy { get => _explicitNullValueRedshiftIAMTrustPolicy; set { _explicitNullValueRedshiftIAMTrustPolicy = value; AdditionalData?.Remove("redshiftIAMTrustPolicy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMTrustPolicy"); else _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); } }
         private string _explicitNullValueRedshiftIAMTrustPolicy = default!;
 #endif
         /// <summary>The S3 staging bucket name (ClickHouse and Redshift). For Redshift this is the name chosen for setup, a previously saved name, or an auto-generated default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
+        public string? S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; AdditionalData?.Remove("s3BucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
         private string? _explicitNullValueS3BucketName = default!;
 #nullable restore
 #else
-        public string S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
+        public string S3BucketName { get => _explicitNullValueS3BucketName; set { _explicitNullValueS3BucketName = value; AdditionalData?.Remove("s3BucketName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("s3BucketName"); else _explicitNullProperties?.Remove("s3BucketName"); } }
         private string _explicitNullValueS3BucketName = default!;
 #endif
         /// <summary>The SQL setup script to run in your data warehouse</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
+        public string? Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; AdditionalData?.Remove("script"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
         private string? _explicitNullValueScript = default!;
 #nullable restore
 #else
-        public string Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
+        public string Script { get => _explicitNullValueScript; set { _explicitNullValueScript = value; AdditionalData?.Remove("script"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("script"); else _explicitNullProperties?.Remove("script"); } }
         private string _explicitNullValueScript = default!;
 #endif
         /// <summary>

@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed") is { } nullNodeAllowed && nullNodeAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowed = null;
-            if (parseNode.GetChildNode("denied") is { } nullNodeDenied && nullNodeDenied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Denied = null;
+            if (parseNode.GetChildNode("allowed") is null) { _explicitNullValueAllowed = default!; _explicitNullProperties?.Remove("allowed"); }
+            else if (parseNode.GetChildNode("allowed") is { } nullNodeAllowed && nullNodeAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowed = null;
+            if (parseNode.GetChildNode("denied") is null) { _explicitNullValueDenied = default!; _explicitNullProperties?.Remove("denied"); }
+            else if (parseNode.GetChildNode("denied") is { } nullNodeDenied && nullNodeDenied.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Denied = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The allowed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessAllowedRep>? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessAllowedRep>? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; AdditionalData?.Remove("allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessAllowedRep>? _explicitNullValueAllowed = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessAllowedRep> Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessAllowedRep> Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; AdditionalData?.Remove("allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessAllowedRep> _explicitNullValueAllowed = default!;
 #endif
         /// <summary>The denied property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessDenied>? Denied { get => _explicitNullValueDenied; set { _explicitNullValueDenied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("denied"); else _explicitNullProperties?.Remove("denied"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessDenied>? Denied { get => _explicitNullValueDenied; set { _explicitNullValueDenied = value; AdditionalData?.Remove("denied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("denied"); else _explicitNullProperties?.Remove("denied"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessDenied>? _explicitNullValueDenied = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessDenied> Denied { get => _explicitNullValueDenied; set { _explicitNullValueDenied = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("denied"); else _explicitNullProperties?.Remove("denied"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessDenied> Denied { get => _explicitNullValueDenied; set { _explicitNullValueDenied = value; AdditionalData?.Remove("denied"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("denied"); else _explicitNullProperties?.Remove("denied"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AccessDenied> _explicitNullValueDenied = default!;
 #endif
         /// <summary>

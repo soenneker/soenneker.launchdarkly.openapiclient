@@ -17,31 +17,35 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("beta") is { } nullNodeBeta && nullNodeBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Beta = null;
-            if (parseNode.GetChildNode("currentVersion") is { } nullNodeCurrentVersion && nullNodeCurrentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersion = null;
-            if (parseNode.GetChildNode("latestVersion") is { } nullNodeLatestVersion && nullNodeLatestVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestVersion = null;
-            if (parseNode.GetChildNode("validVersions") is { } nullNodeValidVersions && nullNodeValidVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidVersions = null;
+            if (parseNode.GetChildNode("beta") is null) { _explicitNullValueBeta = default!; _explicitNullProperties?.Remove("beta"); }
+            else if (parseNode.GetChildNode("beta") is { } nullNodeBeta && nullNodeBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Beta = null;
+            if (parseNode.GetChildNode("currentVersion") is null) { _explicitNullValueCurrentVersion = default!; _explicitNullProperties?.Remove("currentVersion"); }
+            else if (parseNode.GetChildNode("currentVersion") is { } nullNodeCurrentVersion && nullNodeCurrentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersion = null;
+            if (parseNode.GetChildNode("latestVersion") is null) { _explicitNullValueLatestVersion = default!; _explicitNullProperties?.Remove("latestVersion"); }
+            else if (parseNode.GetChildNode("latestVersion") is { } nullNodeLatestVersion && nullNodeLatestVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestVersion = null;
+            if (parseNode.GetChildNode("validVersions") is null) { _explicitNullValueValidVersions = default!; _explicitNullProperties?.Remove("validVersions"); }
+            else if (parseNode.GetChildNode("validVersions") is { } nullNodeValidVersions && nullNodeValidVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidVersions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the version of the API currently is use is a beta version. This is always &lt;code&gt;true&lt;/code&gt; if you add the &lt;code&gt;LD-API-Version: beta&lt;/code&gt; header to your request.</summary>
-        public bool? Beta { get => _explicitNullValueBeta; set { _explicitNullValueBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beta"); else _explicitNullProperties?.Remove("beta"); } }
+        public bool? Beta { get => _explicitNullValueBeta; set { _explicitNullValueBeta = value; AdditionalData?.Remove("beta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beta"); else _explicitNullProperties?.Remove("beta"); } }
         private bool? _explicitNullValueBeta = default!;
         /// <summary>The currentVersion property</summary>
-        public int? CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentVersion"); else _explicitNullProperties?.Remove("currentVersion"); } }
+        public int? CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; AdditionalData?.Remove("currentVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentVersion"); else _explicitNullProperties?.Remove("currentVersion"); } }
         private int? _explicitNullValueCurrentVersion = default!;
         /// <summary>The latestVersion property</summary>
-        public int? LatestVersion { get => _explicitNullValueLatestVersion; set { _explicitNullValueLatestVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestVersion"); else _explicitNullProperties?.Remove("latestVersion"); } }
+        public int? LatestVersion { get => _explicitNullValueLatestVersion; set { _explicitNullValueLatestVersion = value; AdditionalData?.Remove("latestVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestVersion"); else _explicitNullProperties?.Remove("latestVersion"); } }
         private int? _explicitNullValueLatestVersion = default!;
         /// <summary>A list of all valid API versions. To learn more about our versioning, read [Versioning](https://launchdarkly.com/docs/api#versioning).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ValidVersions { get => _explicitNullValueValidVersions; set { _explicitNullValueValidVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validVersions"); else _explicitNullProperties?.Remove("validVersions"); } }
+        public List<int?>? ValidVersions { get => _explicitNullValueValidVersions; set { _explicitNullValueValidVersions = value; AdditionalData?.Remove("validVersions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validVersions"); else _explicitNullProperties?.Remove("validVersions"); } }
         private List<int?>? _explicitNullValueValidVersions = default!;
 #nullable restore
 #else
-        public List<int?> ValidVersions { get => _explicitNullValueValidVersions; set { _explicitNullValueValidVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validVersions"); else _explicitNullProperties?.Remove("validVersions"); } }
+        public List<int?> ValidVersions { get => _explicitNullValueValidVersions; set { _explicitNullValueValidVersions = value; AdditionalData?.Remove("validVersions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validVersions"); else _explicitNullProperties?.Remove("validVersions"); } }
         private List<int?> _explicitNullValueValidVersions = default!;
 #endif
         /// <summary>

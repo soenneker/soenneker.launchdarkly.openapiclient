@@ -54,10 +54,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("ruleId") != null && parseNode.GetChildNode("steps") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("clauses") != null && parseNode.GetChildNode("steps") != null))();
-            if (result.EnvironmentReleaseExistingRulePhaseInput == null && result.EnvironmentReleaseNewRulePhaseInput == null && matchesUnionBranch0 && !matchesUnionBranch1) result.EnvironmentReleaseExistingRulePhaseInput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseExistingRulePhaseInput(), parseNode);
-            if (result.EnvironmentReleaseExistingRulePhaseInput == null && result.EnvironmentReleaseNewRulePhaseInput == null && matchesUnionBranch1 && !matchesUnionBranch0) result.EnvironmentReleaseNewRulePhaseInput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseNewRulePhaseInput(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("ruleId") && shapeMembers1.ContainsKey("steps") && (!shapeMembers1.ContainsKey("ruleId") || (((shapeMembers1["ruleId"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("steps") || (((shapeMembers1["steps"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "ruleId" || key == "steps"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("clauses") && shapeMembers1.ContainsKey("steps") && (!shapeMembers1.ContainsKey("clauses") || (((shapeMembers1["clauses"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("description") || (((shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("steps") || (((shapeMembers1["steps"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "clauses" || key == "description" || key == "steps"))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.EnvironmentReleaseExistingRulePhaseInput == null && result.EnvironmentReleaseNewRulePhaseInput == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.EnvironmentReleaseExistingRulePhaseInput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseExistingRulePhaseInput(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.EnvironmentReleaseNewRulePhaseInput = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseNewRulePhaseInput(), parseNode);
             if (result.EnvironmentReleaseExistingRulePhaseInput == null && result.EnvironmentReleaseNewRulePhaseInput == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(EnvironmentReleaseExistingRulePhaseInput != null)
             {
                 return EnvironmentReleaseExistingRulePhaseInput.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (EnvironmentReleaseExistingRulePhaseInput == null && EnvironmentReleaseNewRulePhaseInput == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (EnvironmentReleaseExistingRulePhaseInput != null && EnvironmentReleaseNewRulePhaseInput == null) { if (EnvironmentReleaseExistingRulePhaseInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentReleaseExistingRulePhaseInput); return; }
-            if (EnvironmentReleaseNewRulePhaseInput != null && EnvironmentReleaseExistingRulePhaseInput == null) { if (EnvironmentReleaseNewRulePhaseInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentReleaseNewRulePhaseInput); return; }
+            int selectedUnionBranches = 0;
+            if (EnvironmentReleaseExistingRulePhaseInput != null) selectedUnionBranches++;
+            if (EnvironmentReleaseNewRulePhaseInput != null) selectedUnionBranches++;
+            if (EnvironmentReleaseExistingRulePhaseInput != null && selectedUnionBranches == 1) { if (EnvironmentReleaseExistingRulePhaseInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentReleaseExistingRulePhaseInput); return; }
+            if (EnvironmentReleaseNewRulePhaseInput != null && selectedUnionBranches == 1) { if (EnvironmentReleaseNewRulePhaseInput is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EnvironmentReleaseNewRulePhaseInput); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(EnvironmentReleaseExistingRulePhaseInput != null)

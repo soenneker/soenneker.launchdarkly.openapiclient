@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apiTokenAllowlistEnabled") is { } nullNodeApiTokenAllowlistEnabled && nullNodeApiTokenAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiTokenAllowlistEnabled = null;
-            if (parseNode.GetChildNode("sessionAllowlistEnabled") is { } nullNodeSessionAllowlistEnabled && nullNodeSessionAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAllowlistEnabled = null;
+            if (parseNode.GetChildNode("apiTokenAllowlistEnabled") is null) { _explicitNullValueApiTokenAllowlistEnabled = default!; _explicitNullProperties?.Remove("apiTokenAllowlistEnabled"); }
+            else if (parseNode.GetChildNode("apiTokenAllowlistEnabled") is { } nullNodeApiTokenAllowlistEnabled && nullNodeApiTokenAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiTokenAllowlistEnabled = null;
+            if (parseNode.GetChildNode("sessionAllowlistEnabled") is null) { _explicitNullValueSessionAllowlistEnabled = default!; _explicitNullProperties?.Remove("sessionAllowlistEnabled"); }
+            else if (parseNode.GetChildNode("sessionAllowlistEnabled") is { } nullNodeSessionAllowlistEnabled && nullNodeSessionAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAllowlistEnabled = null;
         }
 
         /// <summary>Enable or disable API token allowlist</summary>

@@ -17,10 +17,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("booleanDefaults") is { } nullNodeBooleanDefaults && nullNodeBooleanDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BooleanDefaults = null;
-            if (parseNode.GetChildNode("defaultClientSideAvailability") is { } nullNodeDefaultClientSideAvailability && nullNodeDefaultClientSideAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultClientSideAvailability = null;
-            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
-            if (parseNode.GetChildNode("temporary") is { } nullNodeTemporary && nullNodeTemporary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temporary = null;
+            if (parseNode.GetChildNode("booleanDefaults") is null) { _explicitNullValueBooleanDefaults = default!; _explicitNullProperties?.Remove("booleanDefaults"); }
+            else if (parseNode.GetChildNode("booleanDefaults") is { } nullNodeBooleanDefaults && nullNodeBooleanDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BooleanDefaults = null;
+            if (parseNode.GetChildNode("defaultClientSideAvailability") is null) { _explicitNullValueDefaultClientSideAvailability = default!; _explicitNullProperties?.Remove("defaultClientSideAvailability"); }
+            else if (parseNode.GetChildNode("defaultClientSideAvailability") is { } nullNodeDefaultClientSideAvailability && nullNodeDefaultClientSideAvailability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultClientSideAvailability = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("temporary") is null) { _explicitNullValueTemporary = default!; _explicitNullProperties?.Remove("temporary"); }
+            else if (parseNode.GetChildNode("temporary") is { } nullNodeTemporary && nullNodeTemporary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temporary = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,35 +32,35 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The booleanDefaults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanFlagDefaults? BooleanDefaults { get => _explicitNullValueBooleanDefaults; set { _explicitNullValueBooleanDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanDefaults"); else _explicitNullProperties?.Remove("booleanDefaults"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanFlagDefaults? BooleanDefaults { get => _explicitNullValueBooleanDefaults; set { _explicitNullValueBooleanDefaults = value; AdditionalData?.Remove("booleanDefaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanDefaults"); else _explicitNullProperties?.Remove("booleanDefaults"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanFlagDefaults? _explicitNullValueBooleanDefaults = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanFlagDefaults BooleanDefaults { get => _explicitNullValueBooleanDefaults; set { _explicitNullValueBooleanDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanDefaults"); else _explicitNullProperties?.Remove("booleanDefaults"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanFlagDefaults BooleanDefaults { get => _explicitNullValueBooleanDefaults; set { _explicitNullValueBooleanDefaults = value; AdditionalData?.Remove("booleanDefaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanDefaults"); else _explicitNullProperties?.Remove("booleanDefaults"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanFlagDefaults _explicitNullValueBooleanDefaults = default!;
 #endif
         /// <summary>The defaultClientSideAvailability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailability? DefaultClientSideAvailability { get => _explicitNullValueDefaultClientSideAvailability; set { _explicitNullValueDefaultClientSideAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultClientSideAvailability"); else _explicitNullProperties?.Remove("defaultClientSideAvailability"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailability? DefaultClientSideAvailability { get => _explicitNullValueDefaultClientSideAvailability; set { _explicitNullValueDefaultClientSideAvailability = value; AdditionalData?.Remove("defaultClientSideAvailability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultClientSideAvailability"); else _explicitNullProperties?.Remove("defaultClientSideAvailability"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailability? _explicitNullValueDefaultClientSideAvailability = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailability DefaultClientSideAvailability { get => _explicitNullValueDefaultClientSideAvailability; set { _explicitNullValueDefaultClientSideAvailability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultClientSideAvailability"); else _explicitNullProperties?.Remove("defaultClientSideAvailability"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailability DefaultClientSideAvailability { get => _explicitNullValueDefaultClientSideAvailability; set { _explicitNullValueDefaultClientSideAvailability = value; AdditionalData?.Remove("defaultClientSideAvailability"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultClientSideAvailability"); else _explicitNullProperties?.Remove("defaultClientSideAvailability"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.DefaultClientSideAvailability _explicitNullValueDefaultClientSideAvailability = default!;
 #endif
         /// <summary>A list of default tags for each flag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>Whether the flag should be temporary by default</summary>
-        public bool? Temporary { get => _explicitNullValueTemporary; set { _explicitNullValueTemporary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temporary"); else _explicitNullProperties?.Remove("temporary"); } }
+        public bool? Temporary { get => _explicitNullValueTemporary; set { _explicitNullValueTemporary = value; AdditionalData?.Remove("temporary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temporary"); else _explicitNullProperties?.Remove("temporary"); } }
         private bool? _explicitNullValueTemporary = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.UpsertFlagDefaultsPayload"/> and sets the default values.

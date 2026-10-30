@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("judgeConfigKey") is { } nullNodeJudgeConfigKey && nullNodeJudgeConfigKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeConfigKey = null;
-            if (parseNode.GetChildNode("samplingRate") is { } nullNodeSamplingRate && nullNodeSamplingRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRate = null;
+            if (parseNode.GetChildNode("judgeConfigKey") is null) { _explicitNullValueJudgeConfigKey = default!; _explicitNullProperties?.Remove("judgeConfigKey"); }
+            else if (parseNode.GetChildNode("judgeConfigKey") is { } nullNodeJudgeConfigKey && nullNodeJudgeConfigKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeConfigKey = null;
+            if (parseNode.GetChildNode("samplingRate") is null) { _explicitNullValueSamplingRate = default!; _explicitNullProperties?.Remove("samplingRate"); }
+            else if (parseNode.GetChildNode("samplingRate") is { } nullNodeSamplingRate && nullNodeSamplingRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamplingRate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Judge config key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JudgeConfigKey { get => _explicitNullValueJudgeConfigKey; set { _explicitNullValueJudgeConfigKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeConfigKey"); else _explicitNullProperties?.Remove("judgeConfigKey"); } }
+        public string? JudgeConfigKey { get => _explicitNullValueJudgeConfigKey; set { _explicitNullValueJudgeConfigKey = value; AdditionalData?.Remove("judgeConfigKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeConfigKey"); else _explicitNullProperties?.Remove("judgeConfigKey"); } }
         private string? _explicitNullValueJudgeConfigKey = default!;
 #nullable restore
 #else
-        public string JudgeConfigKey { get => _explicitNullValueJudgeConfigKey; set { _explicitNullValueJudgeConfigKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeConfigKey"); else _explicitNullProperties?.Remove("judgeConfigKey"); } }
+        public string JudgeConfigKey { get => _explicitNullValueJudgeConfigKey; set { _explicitNullValueJudgeConfigKey = value; AdditionalData?.Remove("judgeConfigKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeConfigKey"); else _explicitNullProperties?.Remove("judgeConfigKey"); } }
         private string _explicitNullValueJudgeConfigKey = default!;
 #endif
         /// <summary>Sampling rate for this judge attachment (0.0 to 1.0)</summary>
-        public float? SamplingRate { get => _explicitNullValueSamplingRate; set { _explicitNullValueSamplingRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samplingRate"); else _explicitNullProperties?.Remove("samplingRate"); } }
+        public float? SamplingRate { get => _explicitNullValueSamplingRate; set { _explicitNullValueSamplingRate = value; AdditionalData?.Remove("samplingRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samplingRate"); else _explicitNullProperties?.Remove("samplingRate"); } }
         private float? _explicitNullValueSamplingRate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment"/> and sets the default values.

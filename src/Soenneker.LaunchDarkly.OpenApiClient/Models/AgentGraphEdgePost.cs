@@ -18,10 +18,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("handoff") is { } nullNodeHandoff && nullNodeHandoff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handoff = null;
-            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
-            if (parseNode.GetChildNode("sourceConfig") is { } nullNodeSourceConfig && nullNodeSourceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceConfig = null;
-            if (parseNode.GetChildNode("targetConfig") is { } nullNodeTargetConfig && nullNodeTargetConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetConfig = null;
+            if (parseNode.GetChildNode("handoff") is null) { _explicitNullValueHandoff = default!; _explicitNullProperties?.Remove("handoff"); }
+            else if (parseNode.GetChildNode("handoff") is { } nullNodeHandoff && nullNodeHandoff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handoff = null;
+            if (parseNode.GetChildNode("key") is null) { _explicitNullValueKey = default!; _explicitNullProperties?.Remove("key"); }
+            else if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("sourceConfig") is null) { _explicitNullValueSourceConfig = default!; _explicitNullProperties?.Remove("sourceConfig"); }
+            else if (parseNode.GetChildNode("sourceConfig") is { } nullNodeSourceConfig && nullNodeSourceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceConfig = null;
+            if (parseNode.GetChildNode("targetConfig") is null) { _explicitNullValueTargetConfig = default!; _explicitNullProperties?.Remove("targetConfig"); }
+            else if (parseNode.GetChildNode("targetConfig") is { } nullNodeTargetConfig && nullNodeTargetConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetConfig = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The handoff options from the source config to the target config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgePostHandoffProperty? Handoff { get => _explicitNullValueHandoff; set { _explicitNullValueHandoff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff"); else _explicitNullProperties?.Remove("handoff"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgePostHandoffProperty? Handoff { get => _explicitNullValueHandoff; set { _explicitNullValueHandoff = value; AdditionalData?.Remove("handoff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff"); else _explicitNullProperties?.Remove("handoff"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgePostHandoffProperty? _explicitNullValueHandoff = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgePostHandoffProperty Handoff { get => _explicitNullValueHandoff; set { _explicitNullValueHandoff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff"); else _explicitNullProperties?.Remove("handoff"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgePostHandoffProperty Handoff { get => _explicitNullValueHandoff; set { _explicitNullValueHandoff = value; AdditionalData?.Remove("handoff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff"); else _explicitNullProperties?.Remove("handoff"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgePostHandoffProperty _explicitNullValueHandoff = default!;
 #endif
         /// <summary>A unique key for this edge within the graph</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The config key that is the source of this edge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceConfig { get => _explicitNullValueSourceConfig; set { _explicitNullValueSourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceConfig"); else _explicitNullProperties?.Remove("sourceConfig"); } }
+        public string? SourceConfig { get => _explicitNullValueSourceConfig; set { _explicitNullValueSourceConfig = value; AdditionalData?.Remove("sourceConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceConfig"); else _explicitNullProperties?.Remove("sourceConfig"); } }
         private string? _explicitNullValueSourceConfig = default!;
 #nullable restore
 #else
-        public string SourceConfig { get => _explicitNullValueSourceConfig; set { _explicitNullValueSourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceConfig"); else _explicitNullProperties?.Remove("sourceConfig"); } }
+        public string SourceConfig { get => _explicitNullValueSourceConfig; set { _explicitNullValueSourceConfig = value; AdditionalData?.Remove("sourceConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceConfig"); else _explicitNullProperties?.Remove("sourceConfig"); } }
         private string _explicitNullValueSourceConfig = default!;
 #endif
         /// <summary>The config key that is the target of this edge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetConfig { get => _explicitNullValueTargetConfig; set { _explicitNullValueTargetConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetConfig"); else _explicitNullProperties?.Remove("targetConfig"); } }
+        public string? TargetConfig { get => _explicitNullValueTargetConfig; set { _explicitNullValueTargetConfig = value; AdditionalData?.Remove("targetConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetConfig"); else _explicitNullProperties?.Remove("targetConfig"); } }
         private string? _explicitNullValueTargetConfig = default!;
 #nullable restore
 #else
-        public string TargetConfig { get => _explicitNullValueTargetConfig; set { _explicitNullValueTargetConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetConfig"); else _explicitNullProperties?.Remove("targetConfig"); } }
+        public string TargetConfig { get => _explicitNullValueTargetConfig; set { _explicitNullValueTargetConfig = value; AdditionalData?.Remove("targetConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetConfig"); else _explicitNullProperties?.Remove("targetConfig"); } }
         private string _explicitNullValueTargetConfig = default!;
 #endif
         /// <summary>

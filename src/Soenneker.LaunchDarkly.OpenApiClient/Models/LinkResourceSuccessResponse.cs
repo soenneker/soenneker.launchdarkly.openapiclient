@@ -17,10 +17,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failedResources") is { } nullNodeFailedResources && nullNodeFailedResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedResources = null;
-            if (parseNode.GetChildNode("failureCount") is { } nullNodeFailureCount && nullNodeFailureCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCount = null;
-            if (parseNode.GetChildNode("linkedResources") is { } nullNodeLinkedResources && nullNodeLinkedResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedResources = null;
-            if (parseNode.GetChildNode("successCount") is { } nullNodeSuccessCount && nullNodeSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCount = null;
+            if (parseNode.GetChildNode("failedResources") is null) { _explicitNullValueFailedResources = default!; _explicitNullProperties?.Remove("failedResources"); }
+            else if (parseNode.GetChildNode("failedResources") is { } nullNodeFailedResources && nullNodeFailedResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedResources = null;
+            if (parseNode.GetChildNode("failureCount") is null) { _explicitNullValueFailureCount = default!; _explicitNullProperties?.Remove("failureCount"); }
+            else if (parseNode.GetChildNode("failureCount") is { } nullNodeFailureCount && nullNodeFailureCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureCount = null;
+            if (parseNode.GetChildNode("linkedResources") is null) { _explicitNullValueLinkedResources = default!; _explicitNullProperties?.Remove("linkedResources"); }
+            else if (parseNode.GetChildNode("linkedResources") is { } nullNodeLinkedResources && nullNodeLinkedResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedResources = null;
+            if (parseNode.GetChildNode("successCount") is null) { _explicitNullValueSuccessCount = default!; _explicitNullProperties?.Remove("successCount"); }
+            else if (parseNode.GetChildNode("successCount") is { } nullNodeSuccessCount && nullNodeSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Details of resources that failed to link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FailedResourceLink>? FailedResources { get => _explicitNullValueFailedResources; set { _explicitNullValueFailedResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedResources"); else _explicitNullProperties?.Remove("failedResources"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FailedResourceLink>? FailedResources { get => _explicitNullValueFailedResources; set { _explicitNullValueFailedResources = value; AdditionalData?.Remove("failedResources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedResources"); else _explicitNullProperties?.Remove("failedResources"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FailedResourceLink>? _explicitNullValueFailedResources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FailedResourceLink> FailedResources { get => _explicitNullValueFailedResources; set { _explicitNullValueFailedResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedResources"); else _explicitNullProperties?.Remove("failedResources"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FailedResourceLink> FailedResources { get => _explicitNullValueFailedResources; set { _explicitNullValueFailedResources = value; AdditionalData?.Remove("failedResources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failedResources"); else _explicitNullProperties?.Remove("failedResources"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FailedResourceLink> _explicitNullValueFailedResources = default!;
 #endif
         /// <summary>The number of resources that failed to link.</summary>
-        public int? FailureCount { get => _explicitNullValueFailureCount; set { _explicitNullValueFailureCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCount"); else _explicitNullProperties?.Remove("failureCount"); } }
+        public int? FailureCount { get => _explicitNullValueFailureCount; set { _explicitNullValueFailureCount = value; AdditionalData?.Remove("failureCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failureCount"); else _explicitNullProperties?.Remove("failureCount"); } }
         private int? _explicitNullValueFailureCount = default!;
         /// <summary>The linkedResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResources? LinkedResources { get => _explicitNullValueLinkedResources; set { _explicitNullValueLinkedResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedResources"); else _explicitNullProperties?.Remove("linkedResources"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResources? LinkedResources { get => _explicitNullValueLinkedResources; set { _explicitNullValueLinkedResources = value; AdditionalData?.Remove("linkedResources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedResources"); else _explicitNullProperties?.Remove("linkedResources"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResources? _explicitNullValueLinkedResources = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResources LinkedResources { get => _explicitNullValueLinkedResources; set { _explicitNullValueLinkedResources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedResources"); else _explicitNullProperties?.Remove("linkedResources"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResources LinkedResources { get => _explicitNullValueLinkedResources; set { _explicitNullValueLinkedResources = value; AdditionalData?.Remove("linkedResources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedResources"); else _explicitNullProperties?.Remove("linkedResources"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResources _explicitNullValueLinkedResources = default!;
 #endif
         /// <summary>The number of resources successfully linked.</summary>
-        public int? SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successCount"); else _explicitNullProperties?.Remove("successCount"); } }
+        public int? SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; AdditionalData?.Remove("successCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successCount"); else _explicitNullProperties?.Remove("successCount"); } }
         private int? _explicitNullValueSuccessCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.LinkResourceSuccessResponse"/> and sets the default values.

@@ -17,23 +17,25 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
-            if (parseNode.GetChildNode("linkedSegments") is { } nullNodeLinkedSegments && nullNodeLinkedSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedSegments = null;
+            if (parseNode.GetChildNode("count") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count"); }
+            else if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("linkedSegments") is null) { _explicitNullValueLinkedSegments = default!; _explicitNullProperties?.Remove("linkedSegments"); }
+            else if (parseNode.GetChildNode("linkedSegments") is { } nullNodeLinkedSegments && nullNodeLinkedSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedSegments = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
-        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>The linkedSegments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedDirectlyLinkedSegments? LinkedSegments { get => _explicitNullValueLinkedSegments; set { _explicitNullValueLinkedSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedSegments"); else _explicitNullProperties?.Remove("linkedSegments"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedDirectlyLinkedSegments? LinkedSegments { get => _explicitNullValueLinkedSegments; set { _explicitNullValueLinkedSegments = value; AdditionalData?.Remove("linkedSegments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedSegments"); else _explicitNullProperties?.Remove("linkedSegments"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedDirectlyLinkedSegments? _explicitNullValueLinkedSegments = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedDirectlyLinkedSegments LinkedSegments { get => _explicitNullValueLinkedSegments; set { _explicitNullValueLinkedSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedSegments"); else _explicitNullProperties?.Remove("linkedSegments"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedDirectlyLinkedSegments LinkedSegments { get => _explicitNullValueLinkedSegments; set { _explicitNullValueLinkedSegments = value; AdditionalData?.Remove("linkedSegments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedSegments"); else _explicitNullProperties?.Remove("linkedSegments"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedDirectlyLinkedSegments _explicitNullValueLinkedSegments = default!;
 #endif
         /// <summary>

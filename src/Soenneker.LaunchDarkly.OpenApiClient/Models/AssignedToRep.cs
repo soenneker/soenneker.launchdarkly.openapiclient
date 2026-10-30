@@ -17,17 +17,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("membersCount") is { } nullNodeMembersCount && nullNodeMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MembersCount = null;
-            if (parseNode.GetChildNode("teamsCount") is { } nullNodeTeamsCount && nullNodeTeamsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsCount = null;
+            if (parseNode.GetChildNode("membersCount") is null) { _explicitNullValueMembersCount = default!; _explicitNullProperties?.Remove("membersCount"); }
+            else if (parseNode.GetChildNode("membersCount") is { } nullNodeMembersCount && nullNodeMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MembersCount = null;
+            if (parseNode.GetChildNode("teamsCount") is null) { _explicitNullValueTeamsCount = default!; _explicitNullProperties?.Remove("teamsCount"); }
+            else if (parseNode.GetChildNode("teamsCount") is { } nullNodeTeamsCount && nullNodeTeamsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of individual members this role is assigned to</summary>
-        public int? MembersCount { get => _explicitNullValueMembersCount; set { _explicitNullValueMembersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("membersCount"); else _explicitNullProperties?.Remove("membersCount"); } }
+        public int? MembersCount { get => _explicitNullValueMembersCount; set { _explicitNullValueMembersCount = value; AdditionalData?.Remove("membersCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("membersCount"); else _explicitNullProperties?.Remove("membersCount"); } }
         private int? _explicitNullValueMembersCount = default!;
         /// <summary>The number of teams this role is assigned to</summary>
-        public int? TeamsCount { get => _explicitNullValueTeamsCount; set { _explicitNullValueTeamsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamsCount"); else _explicitNullProperties?.Remove("teamsCount"); } }
+        public int? TeamsCount { get => _explicitNullValueTeamsCount; set { _explicitNullValueTeamsCount = value; AdditionalData?.Remove("teamsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamsCount"); else _explicitNullProperties?.Remove("teamsCount"); } }
         private int? _explicitNullValueTeamsCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AssignedToRep"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("viewKeys") is { } nullNodeViewKeys && nullNodeViewKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewKeys = null;
+            if (parseNode.GetChildNode("viewKeys") is null) { _explicitNullValueViewKeys = default!; _explicitNullProperties?.Remove("viewKeys"); }
+            else if (parseNode.GetChildNode("viewKeys") is { } nullNodeViewKeys && nullNodeViewKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The complete target list of view keys to associate with this SDK key. An empty array removes all views from the SDK key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ViewKeys { get => _explicitNullValueViewKeys; set { _explicitNullValueViewKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewKeys"); else _explicitNullProperties?.Remove("viewKeys"); } }
+        public List<string>? ViewKeys { get => _explicitNullValueViewKeys; set { _explicitNullValueViewKeys = value; AdditionalData?.Remove("viewKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewKeys"); else _explicitNullProperties?.Remove("viewKeys"); } }
         private List<string>? _explicitNullValueViewKeys = default!;
 #nullable restore
 #else
-        public List<string> ViewKeys { get => _explicitNullValueViewKeys; set { _explicitNullValueViewKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewKeys"); else _explicitNullProperties?.Remove("viewKeys"); } }
+        public List<string> ViewKeys { get => _explicitNullValueViewKeys; set { _explicitNullValueViewKeys = value; AdditionalData?.Remove("viewKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewKeys"); else _explicitNullProperties?.Remove("viewKeys"); } }
         private List<string> _explicitNullValueViewKeys = default!;
 #endif
         /// <summary>

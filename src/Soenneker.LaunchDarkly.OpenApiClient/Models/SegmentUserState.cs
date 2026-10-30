@@ -17,8 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("excluded") is { } nullNodeExcluded && nullNodeExcluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Excluded = null;
-            if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
+            if (parseNode.GetChildNode("excluded") is null) { _explicitNullValueExcluded = default!; _explicitNullProperties?.Remove("excluded"); }
+            else if (parseNode.GetChildNode("excluded") is { } nullNodeExcluded && nullNodeExcluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Excluded = null;
+            if (parseNode.GetChildNode("included") is null) { _explicitNullValueIncluded = default!; _explicitNullProperties?.Remove("included"); }
+            else if (parseNode.GetChildNode("included") is { } nullNodeIncluded && nullNodeIncluded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Included = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The excluded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList? Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList? Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; AdditionalData?.Remove("excluded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList? _explicitNullValueExcluded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList Excluded { get => _explicitNullValueExcluded; set { _explicitNullValueExcluded = value; AdditionalData?.Remove("excluded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excluded"); else _explicitNullProperties?.Remove("excluded"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList _explicitNullValueExcluded = default!;
 #endif
         /// <summary>The included property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList? Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; AdditionalData?.Remove("included"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList? _explicitNullValueIncluded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList Included { get => _explicitNullValueIncluded; set { _explicitNullValueIncluded = value; AdditionalData?.Remove("included"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("included"); else _explicitNullProperties?.Remove("included"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentUserList _explicitNullValueIncluded = default!;
 #endif
         /// <summary>

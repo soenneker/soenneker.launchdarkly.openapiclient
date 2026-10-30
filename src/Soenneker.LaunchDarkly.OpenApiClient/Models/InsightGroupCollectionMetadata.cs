@@ -17,7 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("countByIndicator") is { } nullNodeCountByIndicator && nullNodeCountByIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountByIndicator = null;
+            if (parseNode.GetChildNode("countByIndicator") is null) { _explicitNullValueCountByIndicator = default!; _explicitNullProperties?.Remove("countByIndicator"); }
+            else if (parseNode.GetChildNode("countByIndicator") is { } nullNodeCountByIndicator && nullNodeCountByIndicator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountByIndicator = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The countByIndicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator? CountByIndicator { get => _explicitNullValueCountByIndicator; set { _explicitNullValueCountByIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countByIndicator"); else _explicitNullProperties?.Remove("countByIndicator"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator? CountByIndicator { get => _explicitNullValueCountByIndicator; set { _explicitNullValueCountByIndicator = value; AdditionalData?.Remove("countByIndicator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countByIndicator"); else _explicitNullProperties?.Remove("countByIndicator"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator? _explicitNullValueCountByIndicator = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator CountByIndicator { get => _explicitNullValueCountByIndicator; set { _explicitNullValueCountByIndicator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countByIndicator"); else _explicitNullProperties?.Remove("countByIndicator"); } }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator CountByIndicator { get => _explicitNullValueCountByIndicator; set { _explicitNullValueCountByIndicator = value; AdditionalData?.Remove("countByIndicator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countByIndicator"); else _explicitNullProperties?.Remove("countByIndicator"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator _explicitNullValueCountByIndicator = default!;
 #endif
         /// <summary>

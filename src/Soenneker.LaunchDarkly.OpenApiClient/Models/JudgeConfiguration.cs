@@ -17,7 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("judges") is { } nullNodeJudges && nullNodeJudges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Judges = null;
+            if (parseNode.GetChildNode("judges") is null) { _explicitNullValueJudges = default!; _explicitNullProperties?.Remove("judges"); }
+            else if (parseNode.GetChildNode("judges") is { } nullNodeJudges && nullNodeJudges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Judges = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>List of judges for this variation. When updating, this replaces all existing judge attachments, and if empty, removes all judge attachments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment>? Judges { get => _explicitNullValueJudges; set { _explicitNullValueJudges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judges"); else _explicitNullProperties?.Remove("judges"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment>? Judges { get => _explicitNullValueJudges; set { _explicitNullValueJudges = value; AdditionalData?.Remove("judges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judges"); else _explicitNullProperties?.Remove("judges"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment>? _explicitNullValueJudges = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment> Judges { get => _explicitNullValueJudges; set { _explicitNullValueJudges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judges"); else _explicitNullProperties?.Remove("judges"); } }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment> Judges { get => _explicitNullValueJudges; set { _explicitNullValueJudges = value; AdditionalData?.Remove("judges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judges"); else _explicitNullProperties?.Remove("judges"); } }
         private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeAttachment> _explicitNullValueJudges = default!;
 #endif
         /// <summary>
