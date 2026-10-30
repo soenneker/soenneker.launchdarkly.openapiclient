@@ -11,48 +11,70 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CustomWorkflowInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("maintainerId") is { } nullNodeMaintainerId && nullNodeMaintainerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintainerId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("stages") is { } nullNodeStages && nullNodeStages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stages = null;
+            if (parseNode.GetChildNode("templateKey") is { } nullNodeTemplateKey && nullNodeTemplateKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TemplateKey = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The workflow description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The maintainerId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaintainerId { get; set; }
+        public string? MaintainerId { get => _explicitNullValueMaintainerId; set { _explicitNullValueMaintainerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerId"); else _explicitNullProperties?.Remove("maintainerId"); } }
+        private string? _explicitNullValueMaintainerId = default!;
 #nullable restore
 #else
-        public string MaintainerId { get; set; }
+        public string MaintainerId { get => _explicitNullValueMaintainerId; set { _explicitNullValueMaintainerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerId"); else _explicitNullProperties?.Remove("maintainerId"); } }
+        private string _explicitNullValueMaintainerId = default!;
 #endif
         /// <summary>The workflow name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>A list of the workflow stages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput>? Stages { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput>? Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput>? _explicitNullValueStages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput> Stages { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput> Stages { get => _explicitNullValueStages; set { _explicitNullValueStages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stages"); else _explicitNullProperties?.Remove("stages"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput> _explicitNullValueStages = default!;
 #endif
         /// <summary>The template key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateKey { get; set; }
+        public string? TemplateKey { get => _explicitNullValueTemplateKey; set { _explicitNullValueTemplateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("templateKey"); else _explicitNullProperties?.Remove("templateKey"); } }
+        private string? _explicitNullValueTemplateKey = default!;
 #nullable restore
 #else
-        public string TemplateKey { get; set; }
+        public string TemplateKey { get => _explicitNullValueTemplateKey; set { _explicitNullValueTemplateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("templateKey"); else _explicitNullProperties?.Remove("templateKey"); } }
+        private string _explicitNullValueTemplateKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CustomWorkflowInput"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.CustomWorkflowInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CustomWorkflowInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CustomWorkflowInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.StageInput>("stages", Stages);
             writer.WriteStringValue("templateKey", TemplateKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

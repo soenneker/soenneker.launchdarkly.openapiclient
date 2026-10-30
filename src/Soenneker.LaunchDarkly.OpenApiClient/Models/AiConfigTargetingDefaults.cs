@@ -11,13 +11,24 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiConfigTargetingDefaults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("offVariation") is { } nullNodeOffVariation && nullNodeOffVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffVariation = null;
+            if (parseNode.GetChildNode("onVariation") is { } nullNodeOnVariation && nullNodeOnVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnVariation = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Index of the variation served when targeting is off</summary>
-        public int? OffVariation { get; set; }
+        public int? OffVariation { get => _explicitNullValueOffVariation; set { _explicitNullValueOffVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offVariation"); else _explicitNullProperties?.Remove("offVariation"); } }
+        private int? _explicitNullValueOffVariation = default!;
         /// <summary>Index of the variation served when targeting is on</summary>
-        public int? OnVariation { get; set; }
+        public int? OnVariation { get => _explicitNullValueOnVariation; set { _explicitNullValueOnVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onVariation"); else _explicitNullProperties?.Remove("onVariation"); } }
+        private int? _explicitNullValueOnVariation = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("offVariation", OffVariation);
             writer.WriteIntValue("onVariation", OnVariation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

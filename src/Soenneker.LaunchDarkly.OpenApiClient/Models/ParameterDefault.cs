@@ -11,26 +11,41 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ParameterDefault : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("booleanVariationValue") is { } nullNodeBooleanVariationValue && nullNodeBooleanVariationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BooleanVariationValue = null;
+            if (parseNode.GetChildNode("ruleClause") is { } nullNodeRuleClause && nullNodeRuleClause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleClause = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Variation value for boolean flags. Not applicable for non-boolean flags.</summary>
-        public bool? BooleanVariationValue { get; set; }
+        public bool? BooleanVariationValue { get => _explicitNullValueBooleanVariationValue; set { _explicitNullValueBooleanVariationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("booleanVariationValue"); else _explicitNullProperties?.Remove("booleanVariationValue"); } }
+        private bool? _explicitNullValueBooleanVariationValue = default!;
         /// <summary>The ruleClause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause? RuleClause { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause? RuleClause { get => _explicitNullValueRuleClause; set { _explicitNullValueRuleClause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleClause"); else _explicitNullProperties?.Remove("ruleClause"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause? _explicitNullValueRuleClause = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause RuleClause { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause RuleClause { get => _explicitNullValueRuleClause; set { _explicitNullValueRuleClause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleClause"); else _explicitNullProperties?.Remove("ruleClause"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause _explicitNullValueRuleClause = default!;
 #endif
         /// <summary>The default value for the given parameter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Value { get; set; }
+        public UntypedNode? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private UntypedNode? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public UntypedNode Value { get; set; }
+        public UntypedNode Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private UntypedNode _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefault"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefault CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefault();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParameterDefault(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("booleanVariationValue", BooleanVariationValue);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RuleClause>("ruleClause", RuleClause);
             writer.WriteObjectValue<UntypedNode>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

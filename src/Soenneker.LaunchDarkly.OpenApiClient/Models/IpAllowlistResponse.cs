@@ -11,31 +11,50 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IpAllowlistResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apiTokenAllowlistEnabled") is { } nullNodeApiTokenAllowlistEnabled && nullNodeApiTokenAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiTokenAllowlistEnabled = null;
+            if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("sessionAllowlistEnabled") is { } nullNodeSessionAllowlistEnabled && nullNodeSessionAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAllowlistEnabled = null;
+            if (parseNode.GetChildNode("totalCount") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The apiTokenAllowlistEnabled property</summary>
-        public bool? ApiTokenAllowlistEnabled { get; set; }
+        public bool? ApiTokenAllowlistEnabled { get => _explicitNullValueApiTokenAllowlistEnabled; set { _explicitNullValueApiTokenAllowlistEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiTokenAllowlistEnabled"); else _explicitNullProperties?.Remove("apiTokenAllowlistEnabled"); } }
+        private bool? _explicitNullValueApiTokenAllowlistEnabled = default!;
         /// <summary>The entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistEntryResponse>? Entries { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistEntryResponse>? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistEntryResponse>? _explicitNullValueEntries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistEntryResponse> Entries { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistEntryResponse> Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistEntryResponse> _explicitNullValueEntries = default!;
 #endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink _explicitNullValueLinks = default!;
 #endif
         /// <summary>The sessionAllowlistEnabled property</summary>
-        public bool? SessionAllowlistEnabled { get; set; }
+        public bool? SessionAllowlistEnabled { get => _explicitNullValueSessionAllowlistEnabled; set { _explicitNullValueSessionAllowlistEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionAllowlistEnabled"); else _explicitNullProperties?.Remove("sessionAllowlistEnabled"); } }
+        private bool? _explicitNullValueSessionAllowlistEnabled = default!;
         /// <summary>The total number of entries matching the query, before pagination.</summary>
-        public int? TotalCount { get; set; }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCount"); else _explicitNullProperties?.Remove("totalCount"); } }
+        private int? _explicitNullValueTotalCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistResponse"/> and sets the default values.
         /// </summary>
@@ -51,7 +70,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +99,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IpAllowlistSelfLink>("_links", Links);
             writer.WriteBoolValue("sessionAllowlistEnabled", SessionAllowlistEnabled);
             writer.WriteIntValue("totalCount", TotalCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

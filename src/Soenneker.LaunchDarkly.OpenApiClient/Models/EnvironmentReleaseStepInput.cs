@@ -12,13 +12,24 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvironmentReleaseStepInput : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
+            if (parseNode.GetChildNode("durationMillis") is { } nullNodeDurationMillis && nullNodeDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMillis = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Thousandths of a percent. `100000` is 100%, and `10000` is 10%.Guarded releases cannot exceed `50000`, preserving a controlgroup. Each step&apos;s allocation must be greater than the previousstep&apos;s.In a progressive release, an allocation of N% serves the targetvariation to N% of the phase&apos;s contexts and the originalvariation to the rest. In a guarded release, it serves thetarget variation to N%, the original variation to another N% asthe measured control group, and the original variation to therest without measuring them.</summary>
-        public int? Allocation { get; set; }
+        public int? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        private int? _explicitNullValueAllocation = default!;
         /// <summary>The durationMillis property</summary>
-        public long? DurationMillis { get; set; }
+        public long? DurationMillis { get => _explicitNullValueDurationMillis; set { _explicitNullValueDurationMillis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMillis"); else _explicitNullProperties?.Remove("durationMillis"); } }
+        private long? _explicitNullValueDurationMillis = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseStepInput"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseStepInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseStepInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseStepInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("allocation", Allocation);
             writer.WriteLongValue("durationMillis", DurationMillis);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,42 +11,63 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateAdaptiveTriggerRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("resourceKey") is { } nullNodeResourceKey && nullNodeResourceKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceKey = null;
+            if (parseNode.GetChildNode("resourceKind") is { } nullNodeResourceKind && nullNodeResourceKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceKind = null;
+            if (parseNode.GetChildNode("task") is { } nullNodeTask && nullNodeTask.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Task = null;
+            if (parseNode.GetChildNode("triggerSource") is { } nullNodeTriggerSource && nullNodeTriggerSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerSource = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The resourceKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceKey { get; set; }
+        public string? ResourceKey { get => _explicitNullValueResourceKey; set { _explicitNullValueResourceKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKey"); else _explicitNullProperties?.Remove("resourceKey"); } }
+        private string? _explicitNullValueResourceKey = default!;
 #nullable restore
 #else
-        public string ResourceKey { get; set; }
+        public string ResourceKey { get => _explicitNullValueResourceKey; set { _explicitNullValueResourceKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKey"); else _explicitNullProperties?.Remove("resourceKey"); } }
+        private string _explicitNullValueResourceKey = default!;
 #endif
         /// <summary>The resourceKind property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerResourceKind? ResourceKind { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerResourceKind? ResourceKind { get => _explicitNullValueResourceKind; set { _explicitNullValueResourceKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKind"); else _explicitNullProperties?.Remove("resourceKind"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerResourceKind? _explicitNullValueResourceKind = default!;
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask? Task { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask? Task { get => _explicitNullValueTask; set { _explicitNullValueTask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task"); else _explicitNullProperties?.Remove("task"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask? _explicitNullValueTask = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask Task { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask Task { get => _explicitNullValueTask; set { _explicitNullValueTask = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task"); else _explicitNullProperties?.Remove("task"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask _explicitNullValueTask = default!;
 #endif
         /// <summary>The triggerSource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource? TriggerSource { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource? TriggerSource { get => _explicitNullValueTriggerSource; set { _explicitNullValueTriggerSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerSource"); else _explicitNullProperties?.Remove("triggerSource"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource? _explicitNullValueTriggerSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource TriggerSource { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource TriggerSource { get => _explicitNullValueTriggerSource; set { _explicitNullValueTriggerSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerSource"); else _explicitNullProperties?.Remove("triggerSource"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource _explicitNullValueTriggerSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateAdaptiveTriggerRequest"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateAdaptiveTriggerRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateAdaptiveTriggerRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateAdaptiveTriggerRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerResourceKind>("resourceKind", ResourceKind);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AdaptiveTriggerTask>("task", Task);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ObservabilityAlertSource>("triggerSource", TriggerSource);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

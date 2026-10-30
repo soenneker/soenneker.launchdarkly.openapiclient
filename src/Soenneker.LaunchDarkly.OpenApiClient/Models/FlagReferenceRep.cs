@@ -11,29 +11,46 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FlagReferenceRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("flagKey") is { } nullNodeFlagKey && nullNodeFlagKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagKey = null;
+            if (parseNode.GetChildNode("projectKey") is { } nullNodeProjectKey && nullNodeProjectKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectKey = null;
+            if (parseNode.GetChildNode("referencesAdded") is { } nullNodeReferencesAdded && nullNodeReferencesAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencesAdded = null;
+            if (parseNode.GetChildNode("referencesRemoved") is { } nullNodeReferencesRemoved && nullNodeReferencesRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReferencesRemoved = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The flag key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FlagKey { get; set; }
+        public string? FlagKey { get => _explicitNullValueFlagKey; set { _explicitNullValueFlagKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagKey"); else _explicitNullProperties?.Remove("flagKey"); } }
+        private string? _explicitNullValueFlagKey = default!;
 #nullable restore
 #else
-        public string FlagKey { get; set; }
+        public string FlagKey { get => _explicitNullValueFlagKey; set { _explicitNullValueFlagKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagKey"); else _explicitNullProperties?.Remove("flagKey"); } }
+        private string _explicitNullValueFlagKey = default!;
 #endif
         /// <summary>The project key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectKey { get; set; }
+        public string? ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        private string? _explicitNullValueProjectKey = default!;
 #nullable restore
 #else
-        public string ProjectKey { get; set; }
+        public string ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        private string _explicitNullValueProjectKey = default!;
 #endif
         /// <summary>The number of references added</summary>
-        public int? ReferencesAdded { get; set; }
+        public int? ReferencesAdded { get => _explicitNullValueReferencesAdded; set { _explicitNullValueReferencesAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referencesAdded"); else _explicitNullProperties?.Remove("referencesAdded"); } }
+        private int? _explicitNullValueReferencesAdded = default!;
         /// <summary>The number of references removed</summary>
-        public int? ReferencesRemoved { get; set; }
+        public int? ReferencesRemoved { get => _explicitNullValueReferencesRemoved; set { _explicitNullValueReferencesRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referencesRemoved"); else _explicitNullProperties?.Remove("referencesRemoved"); } }
+        private int? _explicitNullValueReferencesRemoved = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceRep"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("projectKey", ProjectKey);
             writer.WriteIntValue("referencesAdded", ReferencesAdded);
             writer.WriteIntValue("referencesRemoved", ReferencesRemoved);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,13 +12,24 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReleaseStep : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allocation") is { } nullNodeAllocation && nullNodeAllocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allocation = null;
+            if (parseNode.GetChildNode("durationMillis") is { } nullNodeDurationMillis && nullNodeDurationMillis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMillis = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Thousandths of a percent. `100000` is 100%, and `10000` is 10%.Guarded releases cannot exceed `50000`, preserving a controlgroup.</summary>
-        public int? Allocation { get; set; }
+        public int? Allocation { get => _explicitNullValueAllocation; set { _explicitNullValueAllocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocation"); else _explicitNullProperties?.Remove("allocation"); } }
+        private int? _explicitNullValueAllocation = default!;
         /// <summary>The durationMillis property</summary>
-        public long? DurationMillis { get; set; }
+        public long? DurationMillis { get => _explicitNullValueDurationMillis; set { _explicitNullValueDurationMillis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMillis"); else _explicitNullProperties?.Remove("durationMillis"); } }
+        private long? _explicitNullValueDurationMillis = default!;
         /// <summary>End of the step in Unix milliseconds.</summary>
         public long? EndedAt { get; private set; }
         /// <summary>Start of the step in Unix milliseconds.</summary>
@@ -40,7 +51,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +77,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("allocation", Allocation);
             writer.WriteLongValue("durationMillis", DurationMillis);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

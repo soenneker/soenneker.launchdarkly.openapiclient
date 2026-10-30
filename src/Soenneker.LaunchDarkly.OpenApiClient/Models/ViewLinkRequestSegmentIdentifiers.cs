@@ -11,38 +11,57 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ViewLinkRequestSegmentIdentifiers : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("environmentId") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
+            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("segmentIdentifiers") is { } nullNodeSegmentIdentifiers && nullNodeSegmentIdentifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIdentifiers = null;
+        }
+
         /// <summary>Optional comment for the link/unlink operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>Required when using filter for segment resources. Specifies which environment to query for segments matching the filter.Ignored when only using explicit segmentIdentifiers (since each identifier contains its own environmentId).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentId { get; set; }
+        public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
+        private string? _explicitNullValueEnvironmentId = default!;
 #nullable restore
 #else
-        public string EnvironmentId { get; set; }
+        public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
+        private string _explicitNullValueEnvironmentId = default!;
 #endif
         /// <summary>Optional filter string to determine which resources should be linked. Resources only need to match either the filter or explicitly-listed keys to be linked (union).Uses the same queryfilter syntax as the segments list endpoint.Supported filters for segments: query, tags, keys, excludedKeys, unbounded, external, view, type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filter { get; set; }
+        public string? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private string? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public string Filter { get; set; }
+        public string Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private string _explicitNullValueFilter = default!;
 #endif
         /// <summary>Identifiers of the segments to link/unlink (environmentId and segmentKey)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier>? SegmentIdentifiers { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier>? SegmentIdentifiers { get => _explicitNullValueSegmentIdentifiers; set { _explicitNullValueSegmentIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentIdentifiers"); else _explicitNullProperties?.Remove("segmentIdentifiers"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier>? _explicitNullValueSegmentIdentifiers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier> SegmentIdentifiers { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier> SegmentIdentifiers { get => _explicitNullValueSegmentIdentifiers; set { _explicitNullValueSegmentIdentifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentIdentifiers"); else _explicitNullProperties?.Remove("segmentIdentifiers"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier> _explicitNullValueSegmentIdentifiers = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +71,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifiers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifiers();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifiers(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +97,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteStringValue("filter", Filter);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier>("segmentIdentifiers", SegmentIdentifiers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkRequestSegmentIdentifier>("segmentIdentifiers", SegmentIdentifiers);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

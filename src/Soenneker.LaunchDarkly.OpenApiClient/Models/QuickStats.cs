@@ -11,17 +11,32 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class QuickStats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeConfigs") is { } nullNodeActiveConfigs && nullNodeActiveConfigs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveConfigs = null;
+            if (parseNode.GetChildNode("activeExperiments") is { } nullNodeActiveExperiments && nullNodeActiveExperiments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveExperiments = null;
+            if (parseNode.GetChildNode("averageSatisfaction7D") is { } nullNodeAverageSatisfaction7D && nullNodeAverageSatisfaction7D.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageSatisfaction7D = null;
+            if (parseNode.GetChildNode("spendMonthToDate") is { } nullNodeSpendMonthToDate && nullNodeSpendMonthToDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendMonthToDate = null;
+        }
+
         /// <summary>Number of active AI Configs</summary>
-        public int? ActiveConfigs { get; set; }
+        public int? ActiveConfigs { get => _explicitNullValueActiveConfigs; set { _explicitNullValueActiveConfigs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeConfigs"); else _explicitNullProperties?.Remove("activeConfigs"); } }
+        private int? _explicitNullValueActiveConfigs = default!;
         /// <summary>Number of active experiments on AI Configs</summary>
-        public int? ActiveExperiments { get; set; }
+        public int? ActiveExperiments { get => _explicitNullValueActiveExperiments; set { _explicitNullValueActiveExperiments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeExperiments"); else _explicitNullProperties?.Remove("activeExperiments"); } }
+        private int? _explicitNullValueActiveExperiments = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average satisfaction rating over the last 7 days</summary>
-        public float? AverageSatisfaction7D { get; set; }
+        public float? AverageSatisfaction7D { get => _explicitNullValueAverageSatisfaction7D; set { _explicitNullValueAverageSatisfaction7D = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("averageSatisfaction7D"); else _explicitNullProperties?.Remove("averageSatisfaction7D"); } }
+        private float? _explicitNullValueAverageSatisfaction7D = default!;
         /// <summary>Spend so far this month</summary>
-        public double? SpendMonthToDate { get; set; }
+        public double? SpendMonthToDate { get => _explicitNullValueSpendMonthToDate; set { _explicitNullValueSpendMonthToDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spendMonthToDate"); else _explicitNullProperties?.Remove("spendMonthToDate"); } }
+        private double? _explicitNullValueSpendMonthToDate = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats"/> and sets the default values.
         /// </summary>
@@ -37,7 +52,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,6 +79,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("activeExperiments", ActiveExperiments);
             writer.WriteFloatValue("averageSatisfaction7D", AverageSatisfaction7D);
             writer.WriteDoubleValue("spendMonthToDate", SpendMonthToDate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,24 +11,37 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DynamicOptionsParser : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("optionsItems") is { } nullNodeOptionsItems && nullNodeOptionsItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsItems = null;
+            if (parseNode.GetChildNode("optionsPath") is { } nullNodeOptionsPath && nullNodeOptionsPath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptionsPath = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The optionsItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray? OptionsItems { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray? OptionsItems { get => _explicitNullValueOptionsItems; set { _explicitNullValueOptionsItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsItems"); else _explicitNullProperties?.Remove("optionsItems"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray? _explicitNullValueOptionsItems = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray OptionsItems { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray OptionsItems { get => _explicitNullValueOptionsItems; set { _explicitNullValueOptionsItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsItems"); else _explicitNullProperties?.Remove("optionsItems"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray _explicitNullValueOptionsItems = default!;
 #endif
         /// <summary>The optionsPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OptionsPath { get; set; }
+        public string? OptionsPath { get => _explicitNullValueOptionsPath; set { _explicitNullValueOptionsPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsPath"); else _explicitNullProperties?.Remove("optionsPath"); } }
+        private string? _explicitNullValueOptionsPath = default!;
 #nullable restore
 #else
-        public string OptionsPath { get; set; }
+        public string OptionsPath { get => _explicitNullValueOptionsPath; set { _explicitNullValueOptionsPath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optionsPath"); else _explicitNullProperties?.Remove("optionsPath"); } }
+        private string _explicitNullValueOptionsPath = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DynamicOptionsParser(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.OptionsArray>("optionsItems", OptionsItems);
             writer.WriteStringValue("optionsPath", OptionsPath);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

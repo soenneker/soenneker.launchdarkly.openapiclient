@@ -11,28 +11,45 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TimestampRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("milliseconds") is { } nullNodeMilliseconds && nullNodeMilliseconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Milliseconds = null;
+            if (parseNode.GetChildNode("rfc3339") is { } nullNodeRfc3339 && nullNodeRfc3339.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rfc3339 = null;
+            if (parseNode.GetChildNode("seconds") is { } nullNodeSeconds && nullNodeSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seconds = null;
+            if (parseNode.GetChildNode("simple") is { } nullNodeSimple && nullNodeSimple.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Simple = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The milliseconds property</summary>
-        public long? Milliseconds { get; set; }
+        public long? Milliseconds { get => _explicitNullValueMilliseconds; set { _explicitNullValueMilliseconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("milliseconds"); else _explicitNullProperties?.Remove("milliseconds"); } }
+        private long? _explicitNullValueMilliseconds = default!;
         /// <summary>The rfc3339 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rfc3339 { get; set; }
+        public string? Rfc3339 { get => _explicitNullValueRfc3339; set { _explicitNullValueRfc3339 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfc3339"); else _explicitNullProperties?.Remove("rfc3339"); } }
+        private string? _explicitNullValueRfc3339 = default!;
 #nullable restore
 #else
-        public string Rfc3339 { get; set; }
+        public string Rfc3339 { get => _explicitNullValueRfc3339; set { _explicitNullValueRfc3339 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rfc3339"); else _explicitNullProperties?.Remove("rfc3339"); } }
+        private string _explicitNullValueRfc3339 = default!;
 #endif
         /// <summary>The seconds property</summary>
-        public long? Seconds { get; set; }
+        public long? Seconds { get => _explicitNullValueSeconds; set { _explicitNullValueSeconds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seconds"); else _explicitNullProperties?.Remove("seconds"); } }
+        private long? _explicitNullValueSeconds = default!;
         /// <summary>The simple property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Simple { get; set; }
+        public string? Simple { get => _explicitNullValueSimple; set { _explicitNullValueSimple = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simple"); else _explicitNullProperties?.Remove("simple"); } }
+        private string? _explicitNullValueSimple = default!;
 #nullable restore
 #else
-        public string Simple { get; set; }
+        public string Simple { get => _explicitNullValueSimple; set { _explicitNullValueSimple = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("simple"); else _explicitNullProperties?.Remove("simple"); } }
+        private string _explicitNullValueSimple = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.TimestampRep"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.TimestampRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.TimestampRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.TimestampRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("rfc3339", Rfc3339);
             writer.WriteLongValue("seconds", Seconds);
             writer.WriteStringValue("simple", Simple);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

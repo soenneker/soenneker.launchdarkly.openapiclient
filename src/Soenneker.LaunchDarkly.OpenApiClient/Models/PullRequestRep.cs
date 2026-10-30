@@ -11,108 +11,160 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PullRequestRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("baseCommitKey") is { } nullNodeBaseCommitKey && nullNodeBaseCommitKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseCommitKey = null;
+            if (parseNode.GetChildNode("createTime") is { } nullNodeCreateTime && nullNodeCreateTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreateTime = null;
+            if (parseNode.GetChildNode("deployments") is { } nullNodeDeployments && nullNodeDeployments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deployments = null;
+            if (parseNode.GetChildNode("externalId") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
+            if (parseNode.GetChildNode("filesChanged") is { } nullNodeFilesChanged && nullNodeFilesChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilesChanged = null;
+            if (parseNode.GetChildNode("flagReferences") is { } nullNodeFlagReferences && nullNodeFlagReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagReferences = null;
+            if (parseNode.GetChildNode("headCommitKey") is { } nullNodeHeadCommitKey && nullNodeHeadCommitKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadCommitKey = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("leadTime") is { } nullNodeLeadTime && nullNodeLeadTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadTime = null;
+            if (parseNode.GetChildNode("linesAdded") is { } nullNodeLinesAdded && nullNodeLinesAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinesAdded = null;
+            if (parseNode.GetChildNode("linesDeleted") is { } nullNodeLinesDeleted && nullNodeLinesDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinesDeleted = null;
+            if (parseNode.GetChildNode("mergeCommitKey") is { } nullNodeMergeCommitKey && nullNodeMergeCommitKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeCommitKey = null;
+            if (parseNode.GetChildNode("mergeTime") is { } nullNodeMergeTime && nullNodeMergeTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergeTime = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The pull request author</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Author { get; set; }
+        public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public string Author { get; set; }
+        public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private string _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The pull request base commit key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseCommitKey { get; set; }
+        public string? BaseCommitKey { get => _explicitNullValueBaseCommitKey; set { _explicitNullValueBaseCommitKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseCommitKey"); else _explicitNullProperties?.Remove("baseCommitKey"); } }
+        private string? _explicitNullValueBaseCommitKey = default!;
 #nullable restore
 #else
-        public string BaseCommitKey { get; set; }
+        public string BaseCommitKey { get => _explicitNullValueBaseCommitKey; set { _explicitNullValueBaseCommitKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseCommitKey"); else _explicitNullProperties?.Remove("baseCommitKey"); } }
+        private string _explicitNullValueBaseCommitKey = default!;
 #endif
         /// <summary>The createTime property</summary>
-        public long? CreateTime { get; set; }
+        public long? CreateTime { get => _explicitNullValueCreateTime; set { _explicitNullValueCreateTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createTime"); else _explicitNullProperties?.Remove("createTime"); } }
+        private long? _explicitNullValueCreateTime = default!;
         /// <summary>The deployments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep? Deployments { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep? Deployments { get => _explicitNullValueDeployments; set { _explicitNullValueDeployments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployments"); else _explicitNullProperties?.Remove("deployments"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep? _explicitNullValueDeployments = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep Deployments { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep Deployments { get => _explicitNullValueDeployments; set { _explicitNullValueDeployments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployments"); else _explicitNullProperties?.Remove("deployments"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep _explicitNullValueDeployments = default!;
 #endif
         /// <summary>The pull request number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId { get; set; }
+        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalId"); else _explicitNullProperties?.Remove("externalId"); } }
+        private string? _explicitNullValueExternalId = default!;
 #nullable restore
 #else
-        public string ExternalId { get; set; }
+        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalId"); else _explicitNullProperties?.Remove("externalId"); } }
+        private string _explicitNullValueExternalId = default!;
 #endif
         /// <summary>The number of files changed</summary>
-        public int? FilesChanged { get; set; }
+        public int? FilesChanged { get => _explicitNullValueFilesChanged; set { _explicitNullValueFilesChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filesChanged"); else _explicitNullProperties?.Remove("filesChanged"); } }
+        private int? _explicitNullValueFilesChanged = default!;
         /// <summary>The flagReferences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceCollectionRep? FlagReferences { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceCollectionRep? FlagReferences { get => _explicitNullValueFlagReferences; set { _explicitNullValueFlagReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagReferences"); else _explicitNullProperties?.Remove("flagReferences"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceCollectionRep? _explicitNullValueFlagReferences = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceCollectionRep FlagReferences { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceCollectionRep FlagReferences { get => _explicitNullValueFlagReferences; set { _explicitNullValueFlagReferences = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagReferences"); else _explicitNullProperties?.Remove("flagReferences"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReferenceCollectionRep _explicitNullValueFlagReferences = default!;
 #endif
         /// <summary>The pull request head commit key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeadCommitKey { get; set; }
+        public string? HeadCommitKey { get => _explicitNullValueHeadCommitKey; set { _explicitNullValueHeadCommitKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headCommitKey"); else _explicitNullProperties?.Remove("headCommitKey"); } }
+        private string? _explicitNullValueHeadCommitKey = default!;
 #nullable restore
 #else
-        public string HeadCommitKey { get; set; }
+        public string HeadCommitKey { get => _explicitNullValueHeadCommitKey; set { _explicitNullValueHeadCommitKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headCommitKey"); else _explicitNullProperties?.Remove("headCommitKey"); } }
+        private string _explicitNullValueHeadCommitKey = default!;
 #endif
         /// <summary>The pull request internal ID</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The leadTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep? LeadTime { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep? LeadTime { get => _explicitNullValueLeadTime; set { _explicitNullValueLeadTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadTime"); else _explicitNullProperties?.Remove("leadTime"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep? _explicitNullValueLeadTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep LeadTime { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep LeadTime { get => _explicitNullValueLeadTime; set { _explicitNullValueLeadTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadTime"); else _explicitNullProperties?.Remove("leadTime"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep _explicitNullValueLeadTime = default!;
 #endif
         /// <summary>The number of lines added</summary>
-        public int? LinesAdded { get; set; }
+        public int? LinesAdded { get => _explicitNullValueLinesAdded; set { _explicitNullValueLinesAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linesAdded"); else _explicitNullProperties?.Remove("linesAdded"); } }
+        private int? _explicitNullValueLinesAdded = default!;
         /// <summary>The number of lines deleted</summary>
-        public int? LinesDeleted { get; set; }
+        public int? LinesDeleted { get => _explicitNullValueLinesDeleted; set { _explicitNullValueLinesDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linesDeleted"); else _explicitNullProperties?.Remove("linesDeleted"); } }
+        private int? _explicitNullValueLinesDeleted = default!;
         /// <summary>The pull request merge commit key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MergeCommitKey { get; set; }
+        public string? MergeCommitKey { get => _explicitNullValueMergeCommitKey; set { _explicitNullValueMergeCommitKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergeCommitKey"); else _explicitNullProperties?.Remove("mergeCommitKey"); } }
+        private string? _explicitNullValueMergeCommitKey = default!;
 #nullable restore
 #else
-        public string MergeCommitKey { get; set; }
+        public string MergeCommitKey { get => _explicitNullValueMergeCommitKey; set { _explicitNullValueMergeCommitKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergeCommitKey"); else _explicitNullProperties?.Remove("mergeCommitKey"); } }
+        private string _explicitNullValueMergeCommitKey = default!;
 #endif
         /// <summary>The mergeTime property</summary>
-        public long? MergeTime { get; set; }
+        public long? MergeTime { get => _explicitNullValueMergeTime; set { _explicitNullValueMergeTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergeTime"); else _explicitNullProperties?.Remove("mergeTime"); } }
+        private long? _explicitNullValueMergeTime = default!;
         /// <summary>The pull request status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The pull request title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The pull request URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestRep"/> and sets the default values.
@@ -129,7 +181,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,6 +234,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

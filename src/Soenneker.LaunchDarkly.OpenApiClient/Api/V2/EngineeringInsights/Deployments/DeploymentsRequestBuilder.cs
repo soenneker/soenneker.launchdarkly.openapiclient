@@ -74,6 +74,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.EngineeringInsights.Deploy
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.DeploymentCollectionRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

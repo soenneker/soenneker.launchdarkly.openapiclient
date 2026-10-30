@@ -11,44 +11,67 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BooleanDefaults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("falseDescription") is { } nullNodeFalseDescription && nullNodeFalseDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FalseDescription = null;
+            if (parseNode.GetChildNode("falseDisplayName") is { } nullNodeFalseDisplayName && nullNodeFalseDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FalseDisplayName = null;
+            if (parseNode.GetChildNode("offVariation") is { } nullNodeOffVariation && nullNodeOffVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OffVariation = null;
+            if (parseNode.GetChildNode("onVariation") is { } nullNodeOnVariation && nullNodeOnVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnVariation = null;
+            if (parseNode.GetChildNode("trueDescription") is { } nullNodeTrueDescription && nullNodeTrueDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrueDescription = null;
+            if (parseNode.GetChildNode("trueDisplayName") is { } nullNodeTrueDisplayName && nullNodeTrueDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrueDisplayName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description for the false variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FalseDescription { get; set; }
+        public string? FalseDescription { get => _explicitNullValueFalseDescription; set { _explicitNullValueFalseDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("falseDescription"); else _explicitNullProperties?.Remove("falseDescription"); } }
+        private string? _explicitNullValueFalseDescription = default!;
 #nullable restore
 #else
-        public string FalseDescription { get; set; }
+        public string FalseDescription { get => _explicitNullValueFalseDescription; set { _explicitNullValueFalseDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("falseDescription"); else _explicitNullProperties?.Remove("falseDescription"); } }
+        private string _explicitNullValueFalseDescription = default!;
 #endif
         /// <summary>The display name for the false variation, displayed in the LaunchDarkly user interface</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FalseDisplayName { get; set; }
+        public string? FalseDisplayName { get => _explicitNullValueFalseDisplayName; set { _explicitNullValueFalseDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("falseDisplayName"); else _explicitNullProperties?.Remove("falseDisplayName"); } }
+        private string? _explicitNullValueFalseDisplayName = default!;
 #nullable restore
 #else
-        public string FalseDisplayName { get; set; }
+        public string FalseDisplayName { get => _explicitNullValueFalseDisplayName; set { _explicitNullValueFalseDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("falseDisplayName"); else _explicitNullProperties?.Remove("falseDisplayName"); } }
+        private string _explicitNullValueFalseDisplayName = default!;
 #endif
         /// <summary>The variation index of the flag variation to use for the default targeting behavior when a flag&apos;s targeting is off</summary>
-        public int? OffVariation { get; set; }
+        public int? OffVariation { get => _explicitNullValueOffVariation; set { _explicitNullValueOffVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offVariation"); else _explicitNullProperties?.Remove("offVariation"); } }
+        private int? _explicitNullValueOffVariation = default!;
         /// <summary>The variation index of the flag variation to use for the default targeting behavior when a flag&apos;s targeting is on and the target did not match any rules</summary>
-        public int? OnVariation { get; set; }
+        public int? OnVariation { get => _explicitNullValueOnVariation; set { _explicitNullValueOnVariation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onVariation"); else _explicitNullProperties?.Remove("onVariation"); } }
+        private int? _explicitNullValueOnVariation = default!;
         /// <summary>The description for the true variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrueDescription { get; set; }
+        public string? TrueDescription { get => _explicitNullValueTrueDescription; set { _explicitNullValueTrueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trueDescription"); else _explicitNullProperties?.Remove("trueDescription"); } }
+        private string? _explicitNullValueTrueDescription = default!;
 #nullable restore
 #else
-        public string TrueDescription { get; set; }
+        public string TrueDescription { get => _explicitNullValueTrueDescription; set { _explicitNullValueTrueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trueDescription"); else _explicitNullProperties?.Remove("trueDescription"); } }
+        private string _explicitNullValueTrueDescription = default!;
 #endif
         /// <summary>The display name for the true variation, displayed in the LaunchDarkly user interface</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrueDisplayName { get; set; }
+        public string? TrueDisplayName { get => _explicitNullValueTrueDisplayName; set { _explicitNullValueTrueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trueDisplayName"); else _explicitNullProperties?.Remove("trueDisplayName"); } }
+        private string? _explicitNullValueTrueDisplayName = default!;
 #nullable restore
 #else
-        public string TrueDisplayName { get; set; }
+        public string TrueDisplayName { get => _explicitNullValueTrueDisplayName; set { _explicitNullValueTrueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trueDisplayName"); else _explicitNullProperties?.Remove("trueDisplayName"); } }
+        private string _explicitNullValueTrueDisplayName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanDefaults"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanDefaults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanDefaults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.BooleanDefaults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("onVariation", OnVariation);
             writer.WriteStringValue("trueDescription", TrueDescription);
             writer.WriteStringValue("trueDisplayName", TrueDisplayName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

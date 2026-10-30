@@ -12,104 +12,158 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvironmentRelease : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advancementMode") is { } nullNodeAdvancementMode && nullNodeAdvancementMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancementMode = null;
+            if (parseNode.GetChildNode("cleanupBehavior") is { } nullNodeCleanupBehavior && nullNodeCleanupBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CleanupBehavior = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("currentPhaseIndex") is { } nullNodeCurrentPhaseIndex && nullNodeCurrentPhaseIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentPhaseIndex = null;
+            if (parseNode.GetChildNode("environmentKey") is { } nullNodeEnvironmentKey && nullNodeEnvironmentKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentKey = null;
+            if (parseNode.GetChildNode("flagKey") is { } nullNodeFlagKey && nullNodeFlagKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagKey = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("metrics") is { } nullNodeMetrics && nullNodeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metrics = null;
+            if (parseNode.GetChildNode("originalVariationId") is { } nullNodeOriginalVariationId && nullNodeOriginalVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalVariationId = null;
+            if (parseNode.GetChildNode("originalVariationValue") is { } nullNodeOriginalVariationValue && nullNodeOriginalVariationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalVariationValue = null;
+            if (parseNode.GetChildNode("phases") is { } nullNodePhases && nullNodePhases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phases = null;
+            if (parseNode.GetChildNode("projectKey") is { } nullNodeProjectKey && nullNodeProjectKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectKey = null;
+            if (parseNode.GetChildNode("randomizationUnit") is { } nullNodeRandomizationUnit && nullNodeRandomizationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizationUnit = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("statusReason") is { } nullNodeStatusReason && nullNodeStatusReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReason = null;
+            if (parseNode.GetChildNode("targetVariationId") is { } nullNodeTargetVariationId && nullNodeTargetVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetVariationId = null;
+            if (parseNode.GetChildNode("targetVariationValue") is { } nullNodeTargetVariationValue && nullNodeTargetVariationValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetVariationValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether a multi-phase release advances to the next phase automaticallyonce the current phase&apos;s steps complete, or waits for an explicitadvance. Has no effect on a single-phase release.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseAdvancementMode? AdvancementMode { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseAdvancementMode? AdvancementMode { get => _explicitNullValueAdvancementMode; set { _explicitNullValueAdvancementMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancementMode"); else _explicitNullProperties?.Remove("advancementMode"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseAdvancementMode? _explicitNullValueAdvancementMode = default!;
         /// <summary>What happens to the release rules when the final phase completes,either on its own or because a stop rolls it forward while it&apos;srunning:- `remove_rules_and_update_default_rule`: The release rules are  removed and the default rule serves the target variation.- `leave_rules_in_place`: The release rules stay and serve the  target variation.In every other case, including a revert, it has no effect: releaserules left on the flag keep serving the variation the release endedon, ahead of rules added later without `beforeRuleId`.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CleanupBehavior? CleanupBehavior { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CleanupBehavior? CleanupBehavior { get => _explicitNullValueCleanupBehavior; set { _explicitNullValueCleanupBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupBehavior"); else _explicitNullProperties?.Remove("cleanupBehavior"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.CleanupBehavior? _explicitNullValueCleanupBehavior = default!;
         /// <summary>Creation time in Unix milliseconds.</summary>
-        public long? CreatedAt { get; set; }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>Zero-based index of the active phase. Null before the first phase, between phases, and after the release reaches a terminal status.</summary>
-        public int? CurrentPhaseIndex { get; set; }
+        public int? CurrentPhaseIndex { get => _explicitNullValueCurrentPhaseIndex; set { _explicitNullValueCurrentPhaseIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentPhaseIndex"); else _explicitNullProperties?.Remove("currentPhaseIndex"); } }
+        private int? _explicitNullValueCurrentPhaseIndex = default!;
         /// <summary>End of the last started phase in Unix milliseconds. Present only after the release reaches a terminal status of `completed` or `reverted`.</summary>
         public long? EndedAt { get; private set; }
         /// <summary>The environmentKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentKey { get; set; }
+        public string? EnvironmentKey { get => _explicitNullValueEnvironmentKey; set { _explicitNullValueEnvironmentKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKey"); else _explicitNullProperties?.Remove("environmentKey"); } }
+        private string? _explicitNullValueEnvironmentKey = default!;
 #nullable restore
 #else
-        public string EnvironmentKey { get; set; }
+        public string EnvironmentKey { get => _explicitNullValueEnvironmentKey; set { _explicitNullValueEnvironmentKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKey"); else _explicitNullProperties?.Remove("environmentKey"); } }
+        private string _explicitNullValueEnvironmentKey = default!;
 #endif
         /// <summary>The flagKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FlagKey { get; set; }
+        public string? FlagKey { get => _explicitNullValueFlagKey; set { _explicitNullValueFlagKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagKey"); else _explicitNullProperties?.Remove("flagKey"); } }
+        private string? _explicitNullValueFlagKey = default!;
 #nullable restore
 #else
-        public string FlagKey { get; set; }
+        public string FlagKey { get => _explicitNullValueFlagKey; set { _explicitNullValueFlagKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagKey"); else _explicitNullProperties?.Remove("flagKey"); } }
+        private string _explicitNullValueFlagKey = default!;
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>Whether the release uses metric monitoring.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseType? Kind { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseType? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseType? _explicitNullValueKind = default!;
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseLinksProperty _explicitNullValueLinks = default!;
 #endif
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric>? Metrics { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric>? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric>? _explicitNullValueMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric> Metrics { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric> Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric> _explicitNullValueMetrics = default!;
 #endif
         /// <summary>ID of the variation the release started from.</summary>
-        public Guid? OriginalVariationId { get; set; }
+        public Guid? OriginalVariationId { get => _explicitNullValueOriginalVariationId; set { _explicitNullValueOriginalVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalVariationId"); else _explicitNullProperties?.Remove("originalVariationId"); } }
+        private Guid? _explicitNullValueOriginalVariationId = default!;
         /// <summary>The value of the variation. This may be a string, boolean, number, JSON object, or array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? OriginalVariationValue { get; set; }
+        public UntypedNode? OriginalVariationValue { get => _explicitNullValueOriginalVariationValue; set { _explicitNullValueOriginalVariationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalVariationValue"); else _explicitNullProperties?.Remove("originalVariationValue"); } }
+        private UntypedNode? _explicitNullValueOriginalVariationValue = default!;
 #nullable restore
 #else
-        public UntypedNode OriginalVariationValue { get; set; }
+        public UntypedNode OriginalVariationValue { get => _explicitNullValueOriginalVariationValue; set { _explicitNullValueOriginalVariationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalVariationValue"); else _explicitNullProperties?.Remove("originalVariationValue"); } }
+        private UntypedNode _explicitNullValueOriginalVariationValue = default!;
 #endif
         /// <summary>The phases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase>? Phases { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase>? Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase>? _explicitNullValuePhases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase> Phases { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase> Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhase> _explicitNullValuePhases = default!;
 #endif
         /// <summary>The projectKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectKey { get; set; }
+        public string? ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        private string? _explicitNullValueProjectKey = default!;
 #nullable restore
 #else
-        public string ProjectKey { get; set; }
+        public string ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        private string _explicitNullValueProjectKey = default!;
 #endif
         /// <summary>Key of the context kind the release randomizes on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RandomizationUnit { get; set; }
+        public string? RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        private string? _explicitNullValueRandomizationUnit = default!;
 #nullable restore
 #else
-        public string RandomizationUnit { get; set; }
+        public string RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        private string _explicitNullValueRandomizationUnit = default!;
 #endif
         /// <summary>Start of the first phase in Unix milliseconds. Absent until a phase has started.</summary>
         public long? StartedAt { get; private set; }
         /// <summary>High-level status of an environment release or release phase.- `pending`: The release or phase has not started.- `in_progress`: The release or phase is progressing without requiring action.- `waiting`: The release is partially rolled out, but is paused and waiting for action from the user.- `completed`: The release or phase reached the target variation.- `reverted`: The release or phase returned to the original variation.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatus? Status { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatus? _explicitNullValueStatus = default!;
         /// <summary>Additional detail for a `waiting`, `completed`, or `reverted` status.The field may be absent for a `waiting` status when there is nospecific reason.`waiting_phase_ended` appears only on the release, never on a phase.It means a phase of a multi-phase release with `advancementMode``manual` ended and the release must be advanced to the next phase.`reverted_discarded` means the phase ended without a regression or amember rolling it back. A running phase is discarded when the flagchanges underneath it, for example when the flag is turned off,archived, or deleted. A pending phase is discarded when the releaseends before it starts, either because an earlier phase reverted orbecause the release was stopped with a resolution that removes pendingphases. A release reports `reverted_discarded` only when the last phasethat started was discarded.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason? StatusReason { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason? StatusReason { get => _explicitNullValueStatusReason; set { _explicitNullValueStatusReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusReason"); else _explicitNullProperties?.Remove("statusReason"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason? _explicitNullValueStatusReason = default!;
         /// <summary>ID of the variation being released.</summary>
-        public Guid? TargetVariationId { get; set; }
+        public Guid? TargetVariationId { get => _explicitNullValueTargetVariationId; set { _explicitNullValueTargetVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetVariationId"); else _explicitNullProperties?.Remove("targetVariationId"); } }
+        private Guid? _explicitNullValueTargetVariationId = default!;
         /// <summary>The value of the variation. This may be a string, boolean, number, JSON object, or array.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TargetVariationValue { get; set; }
+        public UntypedNode? TargetVariationValue { get => _explicitNullValueTargetVariationValue; set { _explicitNullValueTargetVariationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetVariationValue"); else _explicitNullProperties?.Remove("targetVariationValue"); } }
+        private UntypedNode? _explicitNullValueTargetVariationValue = default!;
 #nullable restore
 #else
-        public UntypedNode TargetVariationValue { get; set; }
+        public UntypedNode TargetVariationValue { get => _explicitNullValueTargetVariationValue; set { _explicitNullValueTargetVariationValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetVariationValue"); else _explicitNullProperties?.Remove("targetVariationValue"); } }
+        private UntypedNode _explicitNullValueTargetVariationValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentRelease"/> and sets the default values.
@@ -126,7 +180,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentRelease CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentRelease();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentRelease(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -185,6 +239,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseStatusReason>("statusReason", StatusReason);
             writer.WriteGuidValue("targetVariationId", TargetVariationId);
             writer.WriteObjectValue<UntypedNode>("targetVariationValue", TargetVariationValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

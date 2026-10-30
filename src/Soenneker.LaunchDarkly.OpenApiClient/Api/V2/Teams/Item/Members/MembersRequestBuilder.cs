@@ -46,11 +46,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Teams.Item.Members
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamImportsRep?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamImportsRep?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamImportsRep> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamImportsRep> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -61,6 +61,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Teams.Item.Members
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "405", global::Soenneker.LaunchDarkly.OpenApiClient.Models.MethodNotAllowedErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamImportsRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.TeamImportsRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,11 +74,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Teams.Item.Members
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

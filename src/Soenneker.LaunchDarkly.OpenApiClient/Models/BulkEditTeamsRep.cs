@@ -11,32 +11,48 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class BulkEditTeamsRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("memberIDs") is { } nullNodeMemberIDs && nullNodeMemberIDs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberIDs = null;
+            if (parseNode.GetChildNode("teamKeys") is { } nullNodeTeamKeys && nullNodeTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamKeys = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of team keys and errors for the teams whose updates failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty>? Errors { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty> Errors { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty> _explicitNullValueErrors = default!;
 #endif
         /// <summary>A list of member IDs of the members who were added to the teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MemberIDs { get; set; }
+        public List<string>? MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
+        private List<string>? _explicitNullValueMemberIDs = default!;
 #nullable restore
 #else
-        public List<string> MemberIDs { get; set; }
+        public List<string> MemberIDs { get => _explicitNullValueMemberIDs; set { _explicitNullValueMemberIDs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("memberIDs"); else _explicitNullProperties?.Remove("memberIDs"); } }
+        private List<string> _explicitNullValueMemberIDs = default!;
 #endif
         /// <summary>A list of team keys of the teams that were successfully updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamKeys { get; set; }
+        public List<string>? TeamKeys { get => _explicitNullValueTeamKeys; set { _explicitNullValueTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamKeys"); else _explicitNullProperties?.Remove("teamKeys"); } }
+        private List<string>? _explicitNullValueTeamKeys = default!;
 #nullable restore
 #else
-        public List<string> TeamKeys { get; set; }
+        public List<string> TeamKeys { get => _explicitNullValueTeamKeys; set { _explicitNullValueTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamKeys"); else _explicitNullProperties?.Remove("teamKeys"); } }
+        private List<string> _explicitNullValueTeamKeys = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRep"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.BulkEditTeamsRepErrorsItemProperty>("errors", Errors);
             writer.WriteCollectionOfPrimitiveValues<string>("memberIDs", MemberIDs);
             writer.WriteCollectionOfPrimitiveValues<string>("teamKeys", TeamKeys);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

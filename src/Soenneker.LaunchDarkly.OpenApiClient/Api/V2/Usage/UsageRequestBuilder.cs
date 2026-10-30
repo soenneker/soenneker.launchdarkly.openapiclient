@@ -73,6 +73,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.ExperimentationKeys.ExperimentationKeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mau property</summary>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau.MauRequestBuilder Mau
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau.MauRequestBuilder(PathParameters, RequestAdapter);

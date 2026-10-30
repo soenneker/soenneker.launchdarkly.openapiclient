@@ -11,24 +11,37 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePipelineReleaseInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("releasePipelineKey") is { } nullNodeReleasePipelineKey && nullNodeReleasePipelineKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleasePipelineKey = null;
+            if (parseNode.GetChildNode("releaseVariationId") is { } nullNodeReleaseVariationId && nullNodeReleaseVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseVariationId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The key of the release pipeline to attach the flag to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleasePipelineKey { get; set; }
+        public string? ReleasePipelineKey { get => _explicitNullValueReleasePipelineKey; set { _explicitNullValueReleasePipelineKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineKey"); else _explicitNullProperties?.Remove("releasePipelineKey"); } }
+        private string? _explicitNullValueReleasePipelineKey = default!;
 #nullable restore
 #else
-        public string ReleasePipelineKey { get; set; }
+        public string ReleasePipelineKey { get => _explicitNullValueReleasePipelineKey; set { _explicitNullValueReleasePipelineKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePipelineKey"); else _explicitNullProperties?.Remove("releasePipelineKey"); } }
+        private string _explicitNullValueReleasePipelineKey = default!;
 #endif
         /// <summary>The variation id to release to across all phases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleaseVariationId { get; set; }
+        public string? ReleaseVariationId { get => _explicitNullValueReleaseVariationId; set { _explicitNullValueReleaseVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseVariationId"); else _explicitNullProperties?.Remove("releaseVariationId"); } }
+        private string? _explicitNullValueReleaseVariationId = default!;
 #nullable restore
 #else
-        public string ReleaseVariationId { get; set; }
+        public string ReleaseVariationId { get => _explicitNullValueReleaseVariationId; set { _explicitNullValueReleaseVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseVariationId"); else _explicitNullProperties?.Remove("releaseVariationId"); } }
+        private string _explicitNullValueReleaseVariationId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreatePipelineReleaseInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("releasePipelineKey", ReleasePipelineKey);
             writer.WriteStringValue("releaseVariationId", ReleaseVariationId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

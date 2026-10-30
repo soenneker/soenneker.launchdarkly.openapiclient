@@ -11,70 +11,104 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConditionInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("executeNow") is { } nullNodeExecuteNow && nullNodeExecuteNow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecuteNow = null;
+            if (parseNode.GetChildNode("executionDate") is { } nullNodeExecutionDate && nullNodeExecutionDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionDate = null;
+            if (parseNode.GetChildNode("integrationConfig") is { } nullNodeIntegrationConfig && nullNodeIntegrationConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationConfig = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("notifyMemberIds") is { } nullNodeNotifyMemberIds && nullNodeNotifyMemberIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyMemberIds = null;
+            if (parseNode.GetChildNode("notifyTeamKeys") is { } nullNodeNotifyTeamKeys && nullNodeNotifyTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyTeamKeys = null;
+            if (parseNode.GetChildNode("scheduleKind") is { } nullNodeScheduleKind && nullNodeScheduleKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleKind = null;
+            if (parseNode.GetChildNode("waitDuration") is { } nullNodeWaitDuration && nullNodeWaitDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitDuration = null;
+            if (parseNode.GetChildNode("waitDurationUnit") is { } nullNodeWaitDurationUnit && nullNodeWaitDurationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitDurationUnit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A description of the approval required for this stage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Whether the workflow stage should be executed immediately</summary>
-        public bool? ExecuteNow { get; set; }
+        public bool? ExecuteNow { get => _explicitNullValueExecuteNow; set { _explicitNullValueExecuteNow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executeNow"); else _explicitNullProperties?.Remove("executeNow"); } }
+        private bool? _explicitNullValueExecuteNow = default!;
         /// <summary>The executionDate property</summary>
-        public long? ExecutionDate { get; set; }
+        public long? ExecutionDate { get => _explicitNullValueExecutionDate; set { _explicitNullValueExecutionDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("executionDate"); else _explicitNullProperties?.Remove("executionDate"); } }
+        private long? _explicitNullValueExecutionDate = default!;
         /// <summary>The integrationConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInputIntegrationConfig? IntegrationConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInputIntegrationConfig? IntegrationConfig { get => _explicitNullValueIntegrationConfig; set { _explicitNullValueIntegrationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfig"); else _explicitNullProperties?.Remove("integrationConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInputIntegrationConfig? _explicitNullValueIntegrationConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInputIntegrationConfig IntegrationConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInputIntegrationConfig IntegrationConfig { get => _explicitNullValueIntegrationConfig; set { _explicitNullValueIntegrationConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationConfig"); else _explicitNullProperties?.Remove("integrationConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInputIntegrationConfig _explicitNullValueIntegrationConfig = default!;
 #endif
         /// <summary>The kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string _explicitNullValueKind = default!;
 #endif
         /// <summary>A list of member IDs for the members to request approval from for this stage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyMemberIds { get; set; }
+        public List<string>? NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        private List<string>? _explicitNullValueNotifyMemberIds = default!;
 #nullable restore
 #else
-        public List<string> NotifyMemberIds { get; set; }
+        public List<string> NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        private List<string> _explicitNullValueNotifyMemberIds = default!;
 #endif
         /// <summary>A list of team keys for the teams to request approval from for this stage</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyTeamKeys { get; set; }
+        public List<string>? NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        private List<string>? _explicitNullValueNotifyTeamKeys = default!;
 #nullable restore
 #else
-        public List<string> NotifyTeamKeys { get; set; }
+        public List<string> NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        private List<string> _explicitNullValueNotifyTeamKeys = default!;
 #endif
         /// <summary>The scheduleKind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleKind { get; set; }
+        public string? ScheduleKind { get => _explicitNullValueScheduleKind; set { _explicitNullValueScheduleKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleKind"); else _explicitNullProperties?.Remove("scheduleKind"); } }
+        private string? _explicitNullValueScheduleKind = default!;
 #nullable restore
 #else
-        public string ScheduleKind { get; set; }
+        public string ScheduleKind { get => _explicitNullValueScheduleKind; set { _explicitNullValueScheduleKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduleKind"); else _explicitNullProperties?.Remove("scheduleKind"); } }
+        private string _explicitNullValueScheduleKind = default!;
 #endif
         /// <summary>For workflow stages whose scheduled execution is relative, how far in the future the stage should start.</summary>
-        public int? WaitDuration { get; set; }
+        public int? WaitDuration { get => _explicitNullValueWaitDuration; set { _explicitNullValueWaitDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitDuration"); else _explicitNullProperties?.Remove("waitDuration"); } }
+        private int? _explicitNullValueWaitDuration = default!;
         /// <summary>The waitDurationUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WaitDurationUnit { get; set; }
+        public string? WaitDurationUnit { get => _explicitNullValueWaitDurationUnit; set { _explicitNullValueWaitDurationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitDurationUnit"); else _explicitNullProperties?.Remove("waitDurationUnit"); } }
+        private string? _explicitNullValueWaitDurationUnit = default!;
 #nullable restore
 #else
-        public string WaitDurationUnit { get; set; }
+        public string WaitDurationUnit { get => _explicitNullValueWaitDurationUnit; set { _explicitNullValueWaitDurationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitDurationUnit"); else _explicitNullProperties?.Remove("waitDurationUnit"); } }
+        private string _explicitNullValueWaitDurationUnit = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInput"/> and sets the default values.
@@ -91,7 +125,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,6 +164,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("scheduleKind", ScheduleKind);
             writer.WriteIntValue("waitDuration", WaitDuration);
             writer.WriteStringValue("waitDurationUnit", WaitDurationUnit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

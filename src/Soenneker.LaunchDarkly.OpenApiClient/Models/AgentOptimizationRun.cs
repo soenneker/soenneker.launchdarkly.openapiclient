@@ -11,31 +11,55 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AgentOptimizationRun : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activity") is { } nullNodeActivity && nullNodeActivity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Activity = null;
+            if (parseNode.GetChildNode("agentOptimizationId") is { } nullNodeAgentOptimizationId && nullNodeAgentOptimizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOptimizationId = null;
+            if (parseNode.GetChildNode("agentOptimizationVersion") is { } nullNodeAgentOptimizationVersion && nullNodeAgentOptimizationVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentOptimizationVersion = null;
+            if (parseNode.GetChildNode("completedAt") is { } nullNodeCompletedAt && nullNodeCompletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletedAt = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("optimizationKey") is { } nullNodeOptimizationKey && nullNodeOptimizationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OptimizationKey = null;
+            if (parseNode.GetChildNode("runId") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>The activity property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? Activity { get => _explicitNullValueActivity; set { _explicitNullValueActivity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity? _explicitNullValueActivity = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The agent optimization ID</summary>
-        public Guid? AgentOptimizationId { get; set; }
+        public Guid? AgentOptimizationId { get => _explicitNullValueAgentOptimizationId; set { _explicitNullValueAgentOptimizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentOptimizationId"); else _explicitNullProperties?.Remove("agentOptimizationId"); } }
+        private Guid? _explicitNullValueAgentOptimizationId = default!;
         /// <summary>The version of the agent optimization used</summary>
-        public int? AgentOptimizationVersion { get; set; }
+        public int? AgentOptimizationVersion { get => _explicitNullValueAgentOptimizationVersion; set { _explicitNullValueAgentOptimizationVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agentOptimizationVersion"); else _explicitNullProperties?.Remove("agentOptimizationVersion"); } }
+        private int? _explicitNullValueAgentOptimizationVersion = default!;
         /// <summary>When this finished, in Unix milliseconds</summary>
-        public long? CompletedAt { get; set; }
+        public long? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completedAt"); else _explicitNullProperties?.Remove("completedAt"); } }
+        private long? _explicitNullValueCompletedAt = default!;
         /// <summary>When this resource was created, in Unix milliseconds</summary>
-        public long? CreatedAt { get; set; }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>The agent optimization key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OptimizationKey { get; set; }
+        public string? OptimizationKey { get => _explicitNullValueOptimizationKey; set { _explicitNullValueOptimizationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationKey"); else _explicitNullProperties?.Remove("optimizationKey"); } }
+        private string? _explicitNullValueOptimizationKey = default!;
 #nullable restore
 #else
-        public string OptimizationKey { get; set; }
+        public string OptimizationKey { get => _explicitNullValueOptimizationKey; set { _explicitNullValueOptimizationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimizationKey"); else _explicitNullProperties?.Remove("optimizationKey"); } }
+        private string _explicitNullValueOptimizationKey = default!;
 #endif
         /// <summary>The run ID</summary>
-        public Guid? RunId { get; set; }
+        public Guid? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runId"); else _explicitNullProperties?.Remove("runId"); } }
+        private Guid? _explicitNullValueRunId = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationRun"/> and sets the default values.
         /// </summary>
@@ -51,7 +75,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationRun CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationRun();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationRun(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +110,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("optimizationKey", OptimizationKey);
             writer.WriteGuidValue("runId", RunId);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

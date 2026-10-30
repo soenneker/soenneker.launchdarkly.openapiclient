@@ -11,96 +11,136 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InsightGroupScores : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creationRatio") is { } nullNodeCreationRatio && nullNodeCreationRatio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationRatio = null;
+            if (parseNode.GetChildNode("deploymentFailureRate") is { } nullNodeDeploymentFailureRate && nullNodeDeploymentFailureRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentFailureRate = null;
+            if (parseNode.GetChildNode("deploymentFrequency") is { } nullNodeDeploymentFrequency && nullNodeDeploymentFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentFrequency = null;
+            if (parseNode.GetChildNode("efficiency") is { } nullNodeEfficiency && nullNodeEfficiency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Efficiency = null;
+            if (parseNode.GetChildNode("experimentationCoverage") is { } nullNodeExperimentationCoverage && nullNodeExperimentationCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExperimentationCoverage = null;
+            if (parseNode.GetChildNode("flagHealth") is { } nullNodeFlagHealth && nullNodeFlagHealth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagHealth = null;
+            if (parseNode.GetChildNode("impactSize") is { } nullNodeImpactSize && nullNodeImpactSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImpactSize = null;
+            if (parseNode.GetChildNode("leadTime") is { } nullNodeLeadTime && nullNodeLeadTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LeadTime = null;
+            if (parseNode.GetChildNode("overall") is { } nullNodeOverall && nullNodeOverall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overall = null;
+            if (parseNode.GetChildNode("risk") is { } nullNodeRisk && nullNodeRisk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Risk = null;
+            if (parseNode.GetChildNode("velocity") is { } nullNodeVelocity && nullNodeVelocity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Velocity = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creationRatio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? CreationRatio { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? CreationRatio { get => _explicitNullValueCreationRatio; set { _explicitNullValueCreationRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationRatio"); else _explicitNullProperties?.Remove("creationRatio"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueCreationRatio = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore CreationRatio { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore CreationRatio { get => _explicitNullValueCreationRatio; set { _explicitNullValueCreationRatio = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationRatio"); else _explicitNullProperties?.Remove("creationRatio"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueCreationRatio = default!;
 #endif
         /// <summary>The deploymentFailureRate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? DeploymentFailureRate { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? DeploymentFailureRate { get => _explicitNullValueDeploymentFailureRate; set { _explicitNullValueDeploymentFailureRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentFailureRate"); else _explicitNullProperties?.Remove("deploymentFailureRate"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueDeploymentFailureRate = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore DeploymentFailureRate { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore DeploymentFailureRate { get => _explicitNullValueDeploymentFailureRate; set { _explicitNullValueDeploymentFailureRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentFailureRate"); else _explicitNullProperties?.Remove("deploymentFailureRate"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueDeploymentFailureRate = default!;
 #endif
         /// <summary>The deploymentFrequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? DeploymentFrequency { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? DeploymentFrequency { get => _explicitNullValueDeploymentFrequency; set { _explicitNullValueDeploymentFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentFrequency"); else _explicitNullProperties?.Remove("deploymentFrequency"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueDeploymentFrequency = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore DeploymentFrequency { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore DeploymentFrequency { get => _explicitNullValueDeploymentFrequency; set { _explicitNullValueDeploymentFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deploymentFrequency"); else _explicitNullProperties?.Remove("deploymentFrequency"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueDeploymentFrequency = default!;
 #endif
         /// <summary>The efficiency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Efficiency { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Efficiency { get => _explicitNullValueEfficiency; set { _explicitNullValueEfficiency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("efficiency"); else _explicitNullProperties?.Remove("efficiency"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueEfficiency = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Efficiency { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Efficiency { get => _explicitNullValueEfficiency; set { _explicitNullValueEfficiency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("efficiency"); else _explicitNullProperties?.Remove("efficiency"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueEfficiency = default!;
 #endif
         /// <summary>The experimentationCoverage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? ExperimentationCoverage { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? ExperimentationCoverage { get => _explicitNullValueExperimentationCoverage; set { _explicitNullValueExperimentationCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentationCoverage"); else _explicitNullProperties?.Remove("experimentationCoverage"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueExperimentationCoverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore ExperimentationCoverage { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore ExperimentationCoverage { get => _explicitNullValueExperimentationCoverage; set { _explicitNullValueExperimentationCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experimentationCoverage"); else _explicitNullProperties?.Remove("experimentationCoverage"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueExperimentationCoverage = default!;
 #endif
         /// <summary>The flagHealth property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? FlagHealth { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? FlagHealth { get => _explicitNullValueFlagHealth; set { _explicitNullValueFlagHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagHealth"); else _explicitNullProperties?.Remove("flagHealth"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueFlagHealth = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore FlagHealth { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore FlagHealth { get => _explicitNullValueFlagHealth; set { _explicitNullValueFlagHealth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagHealth"); else _explicitNullProperties?.Remove("flagHealth"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueFlagHealth = default!;
 #endif
         /// <summary>The impactSize property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? ImpactSize { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? ImpactSize { get => _explicitNullValueImpactSize; set { _explicitNullValueImpactSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impactSize"); else _explicitNullProperties?.Remove("impactSize"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueImpactSize = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore ImpactSize { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore ImpactSize { get => _explicitNullValueImpactSize; set { _explicitNullValueImpactSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impactSize"); else _explicitNullProperties?.Remove("impactSize"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueImpactSize = default!;
 #endif
         /// <summary>The leadTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? LeadTime { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? LeadTime { get => _explicitNullValueLeadTime; set { _explicitNullValueLeadTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadTime"); else _explicitNullProperties?.Remove("leadTime"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueLeadTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore LeadTime { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore LeadTime { get => _explicitNullValueLeadTime; set { _explicitNullValueLeadTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("leadTime"); else _explicitNullProperties?.Remove("leadTime"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueLeadTime = default!;
 #endif
         /// <summary>The overall property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Overall { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Overall { get => _explicitNullValueOverall; set { _explicitNullValueOverall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall"); else _explicitNullProperties?.Remove("overall"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueOverall = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Overall { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Overall { get => _explicitNullValueOverall; set { _explicitNullValueOverall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overall"); else _explicitNullProperties?.Remove("overall"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueOverall = default!;
 #endif
         /// <summary>The risk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Risk { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Risk { get => _explicitNullValueRisk; set { _explicitNullValueRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk"); else _explicitNullProperties?.Remove("risk"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueRisk = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Risk { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Risk { get => _explicitNullValueRisk; set { _explicitNullValueRisk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk"); else _explicitNullProperties?.Remove("risk"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueRisk = default!;
 #endif
         /// <summary>The velocity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Velocity { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? Velocity { get => _explicitNullValueVelocity; set { _explicitNullValueVelocity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("velocity"); else _explicitNullProperties?.Remove("velocity"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore? _explicitNullValueVelocity = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Velocity { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore Velocity { get => _explicitNullValueVelocity; set { _explicitNullValueVelocity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("velocity"); else _explicitNullProperties?.Remove("velocity"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore _explicitNullValueVelocity = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupScores"/> and sets the default values.
@@ -117,7 +157,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupScores();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupScores(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,6 +198,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore>("overall", Overall);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore>("risk", Risk);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore>("velocity", Velocity);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

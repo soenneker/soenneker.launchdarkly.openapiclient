@@ -11,22 +11,38 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VersionsRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("beta") is { } nullNodeBeta && nullNodeBeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Beta = null;
+            if (parseNode.GetChildNode("currentVersion") is { } nullNodeCurrentVersion && nullNodeCurrentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentVersion = null;
+            if (parseNode.GetChildNode("latestVersion") is { } nullNodeLatestVersion && nullNodeLatestVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestVersion = null;
+            if (parseNode.GetChildNode("validVersions") is { } nullNodeValidVersions && nullNodeValidVersions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidVersions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the version of the API currently is use is a beta version. This is always &lt;code&gt;true&lt;/code&gt; if you add the &lt;code&gt;LD-API-Version: beta&lt;/code&gt; header to your request.</summary>
-        public bool? Beta { get; set; }
+        public bool? Beta { get => _explicitNullValueBeta; set { _explicitNullValueBeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beta"); else _explicitNullProperties?.Remove("beta"); } }
+        private bool? _explicitNullValueBeta = default!;
         /// <summary>The currentVersion property</summary>
-        public int? CurrentVersion { get; set; }
+        public int? CurrentVersion { get => _explicitNullValueCurrentVersion; set { _explicitNullValueCurrentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentVersion"); else _explicitNullProperties?.Remove("currentVersion"); } }
+        private int? _explicitNullValueCurrentVersion = default!;
         /// <summary>The latestVersion property</summary>
-        public int? LatestVersion { get; set; }
+        public int? LatestVersion { get => _explicitNullValueLatestVersion; set { _explicitNullValueLatestVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestVersion"); else _explicitNullProperties?.Remove("latestVersion"); } }
+        private int? _explicitNullValueLatestVersion = default!;
         /// <summary>A list of all valid API versions. To learn more about our versioning, read [Versioning](https://launchdarkly.com/docs/api#versioning).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ValidVersions { get; set; }
+        public List<int?>? ValidVersions { get => _explicitNullValueValidVersions; set { _explicitNullValueValidVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validVersions"); else _explicitNullProperties?.Remove("validVersions"); } }
+        private List<int?>? _explicitNullValueValidVersions = default!;
 #nullable restore
 #else
-        public List<int?> ValidVersions { get; set; }
+        public List<int?> ValidVersions { get => _explicitNullValueValidVersions; set { _explicitNullValueValidVersions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validVersions"); else _explicitNullProperties?.Remove("validVersions"); } }
+        private List<int?> _explicitNullValueValidVersions = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.VersionsRep"/> and sets the default values.
@@ -43,7 +59,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.VersionsRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VersionsRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.VersionsRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("currentVersion", CurrentVersion);
             writer.WriteIntValue("latestVersion", LatestVersion);
             writer.WriteCollectionOfPrimitiveValues<int?>("validVersions", ValidVersions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

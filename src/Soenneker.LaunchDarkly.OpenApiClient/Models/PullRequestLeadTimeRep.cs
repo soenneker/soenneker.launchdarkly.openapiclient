@@ -11,25 +11,48 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PullRequestLeadTimeRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avgDeployDurationMs") is { } nullNodeAvgDeployDurationMs && nullNodeAvgDeployDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgDeployDurationMs = null;
+            if (parseNode.GetChildNode("avgTotalLeadTimeMs") is { } nullNodeAvgTotalLeadTimeMs && nullNodeAvgTotalLeadTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgTotalLeadTimeMs = null;
+            if (parseNode.GetChildNode("avgWaitDurationMs") is { } nullNodeAvgWaitDurationMs && nullNodeAvgWaitDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvgWaitDurationMs = null;
+            if (parseNode.GetChildNode("codingDurationMs") is { } nullNodeCodingDurationMs && nullNodeCodingDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodingDurationMs = null;
+            if (parseNode.GetChildNode("maxDeployDurationMs") is { } nullNodeMaxDeployDurationMs && nullNodeMaxDeployDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxDeployDurationMs = null;
+            if (parseNode.GetChildNode("maxTotalLeadTimeMs") is { } nullNodeMaxTotalLeadTimeMs && nullNodeMaxTotalLeadTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTotalLeadTimeMs = null;
+            if (parseNode.GetChildNode("maxWaitDurationMs") is { } nullNodeMaxWaitDurationMs && nullNodeMaxWaitDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxWaitDurationMs = null;
+            if (parseNode.GetChildNode("reviewDurationMs") is { } nullNodeReviewDurationMs && nullNodeReviewDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewDurationMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average deploy duration in milliseconds</summary>
-        public long? AvgDeployDurationMs { get; set; }
+        public long? AvgDeployDurationMs { get => _explicitNullValueAvgDeployDurationMs; set { _explicitNullValueAvgDeployDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avgDeployDurationMs"); else _explicitNullProperties?.Remove("avgDeployDurationMs"); } }
+        private long? _explicitNullValueAvgDeployDurationMs = default!;
         /// <summary>The average total lead time in milliseconds</summary>
-        public long? AvgTotalLeadTimeMs { get; set; }
+        public long? AvgTotalLeadTimeMs { get => _explicitNullValueAvgTotalLeadTimeMs; set { _explicitNullValueAvgTotalLeadTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avgTotalLeadTimeMs"); else _explicitNullProperties?.Remove("avgTotalLeadTimeMs"); } }
+        private long? _explicitNullValueAvgTotalLeadTimeMs = default!;
         /// <summary>The average wait duration between merge time and deploy start time in milliseconds</summary>
-        public long? AvgWaitDurationMs { get; set; }
+        public long? AvgWaitDurationMs { get => _explicitNullValueAvgWaitDurationMs; set { _explicitNullValueAvgWaitDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avgWaitDurationMs"); else _explicitNullProperties?.Remove("avgWaitDurationMs"); } }
+        private long? _explicitNullValueAvgWaitDurationMs = default!;
         /// <summary>The coding duration in milliseconds</summary>
-        public long? CodingDurationMs { get; set; }
+        public long? CodingDurationMs { get => _explicitNullValueCodingDurationMs; set { _explicitNullValueCodingDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codingDurationMs"); else _explicitNullProperties?.Remove("codingDurationMs"); } }
+        private long? _explicitNullValueCodingDurationMs = default!;
         /// <summary>The max deploy duration in milliseconds</summary>
-        public long? MaxDeployDurationMs { get; set; }
+        public long? MaxDeployDurationMs { get => _explicitNullValueMaxDeployDurationMs; set { _explicitNullValueMaxDeployDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxDeployDurationMs"); else _explicitNullProperties?.Remove("maxDeployDurationMs"); } }
+        private long? _explicitNullValueMaxDeployDurationMs = default!;
         /// <summary>The max total lead time in milliseconds</summary>
-        public long? MaxTotalLeadTimeMs { get; set; }
+        public long? MaxTotalLeadTimeMs { get => _explicitNullValueMaxTotalLeadTimeMs; set { _explicitNullValueMaxTotalLeadTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxTotalLeadTimeMs"); else _explicitNullProperties?.Remove("maxTotalLeadTimeMs"); } }
+        private long? _explicitNullValueMaxTotalLeadTimeMs = default!;
         /// <summary>The max wait duration between merge time and deploy start time in milliseconds</summary>
-        public long? MaxWaitDurationMs { get; set; }
+        public long? MaxWaitDurationMs { get => _explicitNullValueMaxWaitDurationMs; set { _explicitNullValueMaxWaitDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxWaitDurationMs"); else _explicitNullProperties?.Remove("maxWaitDurationMs"); } }
+        private long? _explicitNullValueMaxWaitDurationMs = default!;
         /// <summary>The review duration in milliseconds</summary>
-        public long? ReviewDurationMs { get; set; }
+        public long? ReviewDurationMs { get => _explicitNullValueReviewDurationMs; set { _explicitNullValueReviewDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewDurationMs"); else _explicitNullProperties?.Remove("reviewDurationMs"); } }
+        private long? _explicitNullValueReviewDurationMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep"/> and sets the default values.
         /// </summary>
@@ -45,7 +68,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PullRequestLeadTimeRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +103,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteLongValue("maxTotalLeadTimeMs", MaxTotalLeadTimeMs);
             writer.WriteLongValue("maxWaitDurationMs", MaxWaitDurationMs);
             writer.WriteLongValue("reviewDurationMs", ReviewDurationMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

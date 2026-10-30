@@ -11,24 +11,37 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ReleasePolicyScope : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("environmentKeys") is { } nullNodeEnvironmentKeys && nullNodeEnvironmentKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentKeys = null;
+            if (parseNode.GetChildNode("flagTagKeys") is { } nullNodeFlagTagKeys && nullNodeFlagTagKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagTagKeys = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>List of environment keys this policy applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnvironmentKeys { get; set; }
+        public List<string>? EnvironmentKeys { get => _explicitNullValueEnvironmentKeys; set { _explicitNullValueEnvironmentKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKeys"); else _explicitNullProperties?.Remove("environmentKeys"); } }
+        private List<string>? _explicitNullValueEnvironmentKeys = default!;
 #nullable restore
 #else
-        public List<string> EnvironmentKeys { get; set; }
+        public List<string> EnvironmentKeys { get => _explicitNullValueEnvironmentKeys; set { _explicitNullValueEnvironmentKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKeys"); else _explicitNullProperties?.Remove("environmentKeys"); } }
+        private List<string> _explicitNullValueEnvironmentKeys = default!;
 #endif
         /// <summary>List of flag tag keys this policy applies to. At most 1000 keys. Each key must only contain letters, numbers, &apos;-&apos;, &apos;_&apos;, or &apos;.&apos;, and be at most 64 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FlagTagKeys { get; set; }
+        public List<string>? FlagTagKeys { get => _explicitNullValueFlagTagKeys; set { _explicitNullValueFlagTagKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagTagKeys"); else _explicitNullProperties?.Remove("flagTagKeys"); } }
+        private List<string>? _explicitNullValueFlagTagKeys = default!;
 #nullable restore
 #else
-        public List<string> FlagTagKeys { get; set; }
+        public List<string> FlagTagKeys { get => _explicitNullValueFlagTagKeys; set { _explicitNullValueFlagTagKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagTagKeys"); else _explicitNullProperties?.Remove("flagTagKeys"); } }
+        private List<string> _explicitNullValueFlagTagKeys = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicyScope(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("environmentKeys", EnvironmentKeys);
             writer.WriteCollectionOfPrimitiveValues<string>("flagTagKeys", FlagTagKeys);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

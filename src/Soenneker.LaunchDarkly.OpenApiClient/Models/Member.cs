@@ -11,153 +11,224 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Member : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
+            if (parseNode.GetChildNode("customRoles") is { } nullNodeCustomRoles && nullNodeCustomRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomRoles = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("excludedDashboards") is { } nullNodeExcludedDashboards && nullNodeExcludedDashboards.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedDashboards = null;
+            if (parseNode.GetChildNode("firstName") is { } nullNodeFirstName && nullNodeFirstName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstName = null;
+            if (parseNode.GetChildNode("hasPassword") is { } nullNodeHasPassword && nullNodeHasPassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPassword = null;
+            if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("_integrationMetadata") is { } nullNodeIntegrationMetadata && nullNodeIntegrationMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationMetadata = null;
+            if (parseNode.GetChildNode("lastName") is { } nullNodeLastName && nullNodeLastName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastName = null;
+            if (parseNode.GetChildNode("_lastSeen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
+            if (parseNode.GetChildNode("_lastSeenMetadata") is { } nullNodeLastSeenMetadata && nullNodeLastSeenMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeenMetadata = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("mfa") is { } nullNodeMfa && nullNodeMfa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mfa = null;
+            if (parseNode.GetChildNode("mfaEnforced") is { } nullNodeMfaEnforced && nullNodeMfaEnforced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaEnforced = null;
+            if (parseNode.GetChildNode("mfaGracePeriodExpiresAt") is { } nullNodeMfaGracePeriodExpiresAt && nullNodeMfaGracePeriodExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MfaGracePeriodExpiresAt = null;
+            if (parseNode.GetChildNode("oauthProviders") is { } nullNodeOauthProviders && nullNodeOauthProviders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OauthProviders = null;
+            if (parseNode.GetChildNode("_pendingEmail") is { } nullNodePendingEmail && nullNodePendingEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingEmail = null;
+            if (parseNode.GetChildNode("_pendingInvite") is { } nullNodePendingInvite && nullNodePendingInvite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingInvite = null;
+            if (parseNode.GetChildNode("permissionGrants") is { } nullNodePermissionGrants && nullNodePermissionGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermissionGrants = null;
+            if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("roleAttributes") is { } nullNodeRoleAttributes && nullNodeRoleAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleAttributes = null;
+            if (parseNode.GetChildNode("teams") is { } nullNodeTeams && nullNodeTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Teams = null;
+            if (parseNode.GetChildNode("_verified") is { } nullNodeVerified && nullNodeVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Verified = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creationDate property</summary>
-        public long? CreationDate { get; set; }
+        public long? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creationDate"); else _explicitNullProperties?.Remove("creationDate"); } }
+        private long? _explicitNullValueCreationDate = default!;
         /// <summary>The set of additional roles, besides the base role, assigned to the member</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CustomRoles { get; set; }
+        public List<string>? CustomRoles { get => _explicitNullValueCustomRoles; set { _explicitNullValueCustomRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoles"); else _explicitNullProperties?.Remove("customRoles"); } }
+        private List<string>? _explicitNullValueCustomRoles = default!;
 #nullable restore
 #else
-        public List<string> CustomRoles { get; set; }
+        public List<string> CustomRoles { get => _explicitNullValueCustomRoles; set { _explicitNullValueCustomRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customRoles"); else _explicitNullProperties?.Remove("customRoles"); } }
+        private List<string> _explicitNullValueCustomRoles = default!;
 #endif
         /// <summary>The member&apos;s email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Default dashboards that the member has chosen to ignore</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedDashboards { get; set; }
+        public List<string>? ExcludedDashboards { get => _explicitNullValueExcludedDashboards; set { _explicitNullValueExcludedDashboards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedDashboards"); else _explicitNullProperties?.Remove("excludedDashboards"); } }
+        private List<string>? _explicitNullValueExcludedDashboards = default!;
 #nullable restore
 #else
-        public List<string> ExcludedDashboards { get; set; }
+        public List<string> ExcludedDashboards { get => _explicitNullValueExcludedDashboards; set { _explicitNullValueExcludedDashboards = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedDashboards"); else _explicitNullProperties?.Remove("excludedDashboards"); } }
+        private List<string> _explicitNullValueExcludedDashboards = default!;
 #endif
         /// <summary>The member&apos;s first name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public string? FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private string? _explicitNullValueFirstName = default!;
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public string FirstName { get => _explicitNullValueFirstName; set { _explicitNullValueFirstName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstName"); else _explicitNullProperties?.Remove("firstName"); } }
+        private string _explicitNullValueFirstName = default!;
 #endif
         /// <summary>Whether the member has a password set (basic auth). False for OAuth-only or SCIM-provisioned members without a password.</summary>
-        public bool? HasPassword { get; set; }
+        public bool? HasPassword { get => _explicitNullValueHasPassword; set { _explicitNullValueHasPassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPassword"); else _explicitNullProperties?.Remove("hasPassword"); } }
+        private bool? _explicitNullValueHasPassword = default!;
         /// <summary>The member&apos;s ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The integrationMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata? IntegrationMetadata { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata? IntegrationMetadata { get => _explicitNullValueIntegrationMetadata; set { _explicitNullValueIntegrationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_integrationMetadata"); else _explicitNullProperties?.Remove("_integrationMetadata"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata? _explicitNullValueIntegrationMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata IntegrationMetadata { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata IntegrationMetadata { get => _explicitNullValueIntegrationMetadata; set { _explicitNullValueIntegrationMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_integrationMetadata"); else _explicitNullProperties?.Remove("_integrationMetadata"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationMetadata _explicitNullValueIntegrationMetadata = default!;
 #endif
         /// <summary>The member&apos;s last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public string? LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private string? _explicitNullValueLastName = default!;
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public string LastName { get => _explicitNullValueLastName; set { _explicitNullValueLastName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastName"); else _explicitNullProperties?.Remove("lastName"); } }
+        private string _explicitNullValueLastName = default!;
 #endif
         /// <summary>The lastSeen property</summary>
-        public long? LastSeen { get; set; }
+        public long? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_lastSeen"); else _explicitNullProperties?.Remove("_lastSeen"); } }
+        private long? _explicitNullValueLastSeen = default!;
         /// <summary>The lastSeenMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.LastSeenMetadata? LastSeenMetadata { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.LastSeenMetadata? LastSeenMetadata { get => _explicitNullValueLastSeenMetadata; set { _explicitNullValueLastSeenMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_lastSeenMetadata"); else _explicitNullProperties?.Remove("_lastSeenMetadata"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.LastSeenMetadata? _explicitNullValueLastSeenMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.LastSeenMetadata LastSeenMetadata { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.LastSeenMetadata LastSeenMetadata { get => _explicitNullValueLastSeenMetadata; set { _explicitNullValueLastSeenMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_lastSeenMetadata"); else _explicitNullProperties?.Remove("_lastSeenMetadata"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.LastSeenMetadata _explicitNullValueLastSeenMetadata = default!;
 #endif
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberLinksProperty? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberLinksProperty _explicitNullValueLinks = default!;
 #endif
         /// <summary>Whether multi-factor authentication is enabled for this member</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mfa { get; set; }
+        public string? Mfa { get => _explicitNullValueMfa; set { _explicitNullValueMfa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa"); else _explicitNullProperties?.Remove("mfa"); } }
+        private string? _explicitNullValueMfa = default!;
 #nullable restore
 #else
-        public string Mfa { get; set; }
+        public string Mfa { get => _explicitNullValueMfa; set { _explicitNullValueMfa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfa"); else _explicitNullProperties?.Remove("mfa"); } }
+        private string _explicitNullValueMfa = default!;
 #endif
         /// <summary>The mfaEnforced property</summary>
-        public bool? MfaEnforced { get; set; }
+        public bool? MfaEnforced { get => _explicitNullValueMfaEnforced; set { _explicitNullValueMfaEnforced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfaEnforced"); else _explicitNullProperties?.Remove("mfaEnforced"); } }
+        private bool? _explicitNullValueMfaEnforced = default!;
         /// <summary>The mfaGracePeriodExpiresAt property</summary>
-        public long? MfaGracePeriodExpiresAt { get; set; }
+        public long? MfaGracePeriodExpiresAt { get => _explicitNullValueMfaGracePeriodExpiresAt; set { _explicitNullValueMfaGracePeriodExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mfaGracePeriodExpiresAt"); else _explicitNullProperties?.Remove("mfaGracePeriodExpiresAt"); } }
+        private long? _explicitNullValueMfaGracePeriodExpiresAt = default!;
         /// <summary>A list of OAuth providers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OauthProviders { get; set; }
+        public List<string>? OauthProviders { get => _explicitNullValueOauthProviders; set { _explicitNullValueOauthProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauthProviders"); else _explicitNullProperties?.Remove("oauthProviders"); } }
+        private List<string>? _explicitNullValueOauthProviders = default!;
 #nullable restore
 #else
-        public List<string> OauthProviders { get; set; }
+        public List<string> OauthProviders { get => _explicitNullValueOauthProviders; set { _explicitNullValueOauthProviders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauthProviders"); else _explicitNullProperties?.Remove("oauthProviders"); } }
+        private List<string> _explicitNullValueOauthProviders = default!;
 #endif
         /// <summary>The member&apos;s email address before it has been verified, for accounts where email verification is required</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PendingEmail { get; set; }
+        public string? PendingEmail { get => _explicitNullValuePendingEmail; set { _explicitNullValuePendingEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_pendingEmail"); else _explicitNullProperties?.Remove("_pendingEmail"); } }
+        private string? _explicitNullValuePendingEmail = default!;
 #nullable restore
 #else
-        public string PendingEmail { get; set; }
+        public string PendingEmail { get => _explicitNullValuePendingEmail; set { _explicitNullValuePendingEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_pendingEmail"); else _explicitNullProperties?.Remove("_pendingEmail"); } }
+        private string _explicitNullValuePendingEmail = default!;
 #endif
         /// <summary>Whether the member has a pending invitation</summary>
-        public bool? PendingInvite { get; set; }
+        public bool? PendingInvite { get => _explicitNullValuePendingInvite; set { _explicitNullValuePendingInvite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_pendingInvite"); else _explicitNullProperties?.Remove("_pendingInvite"); } }
+        private bool? _explicitNullValuePendingInvite = default!;
         /// <summary>A list of permission grants. Permission grants allow a member to have access to a specific action, without having to create or update a custom role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberPermissionGrantSummaryRep>? PermissionGrants { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberPermissionGrantSummaryRep>? PermissionGrants { get => _explicitNullValuePermissionGrants; set { _explicitNullValuePermissionGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionGrants"); else _explicitNullProperties?.Remove("permissionGrants"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberPermissionGrantSummaryRep>? _explicitNullValuePermissionGrants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberPermissionGrantSummaryRep> PermissionGrants { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberPermissionGrantSummaryRep> PermissionGrants { get => _explicitNullValuePermissionGrants; set { _explicitNullValuePermissionGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissionGrants"); else _explicitNullProperties?.Remove("permissionGrants"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberPermissionGrantSummaryRep> _explicitNullValuePermissionGrants = default!;
 #endif
         /// <summary>The member&apos;s base role. If the member has no additional roles, this role will be in effect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role { get; set; }
+        public string? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private string? _explicitNullValueRole = default!;
 #nullable restore
 #else
-        public string Role { get; set; }
+        public string Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private string _explicitNullValueRole = default!;
 #endif
         /// <summary>The roleAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberRoleAttributes? RoleAttributes { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberRoleAttributes? RoleAttributes { get => _explicitNullValueRoleAttributes; set { _explicitNullValueRoleAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roleAttributes"); else _explicitNullProperties?.Remove("roleAttributes"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberRoleAttributes? _explicitNullValueRoleAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberRoleAttributes RoleAttributes { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberRoleAttributes RoleAttributes { get => _explicitNullValueRoleAttributes; set { _explicitNullValueRoleAttributes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roleAttributes"); else _explicitNullProperties?.Remove("roleAttributes"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberRoleAttributes _explicitNullValueRoleAttributes = default!;
 #endif
         /// <summary>Details on the teams this member is assigned to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep>? Teams { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep>? Teams { get => _explicitNullValueTeams; set { _explicitNullValueTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams"); else _explicitNullProperties?.Remove("teams"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep>? _explicitNullValueTeams = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep> Teams { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep> Teams { get => _explicitNullValueTeams; set { _explicitNullValueTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams"); else _explicitNullProperties?.Remove("teams"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep> _explicitNullValueTeams = default!;
 #endif
         /// <summary>Whether the member&apos;s email address has been verified</summary>
-        public bool? Verified { get; set; }
+        public bool? Verified { get => _explicitNullValueVerified; set { _explicitNullValueVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_verified"); else _explicitNullProperties?.Remove("_verified"); } }
+        private bool? _explicitNullValueVerified = default!;
         /// <summary>Version of the current configuration</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Member"/> and sets the default values.
         /// </summary>
@@ -173,7 +244,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.Member CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.Member();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.Member(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -240,6 +311,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberTeamSummaryRep>("teams", Teams);
             writer.WriteBoolValue("_verified", Verified);
             writer.WriteIntValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

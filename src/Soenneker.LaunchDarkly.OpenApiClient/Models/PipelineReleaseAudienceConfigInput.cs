@@ -11,40 +11,59 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PipelineReleaseAudienceConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audienceId") is { } nullNodeAudienceId && nullNodeAudienceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceId = null;
+            if (parseNode.GetChildNode("notifyMemberIds") is { } nullNodeNotifyMemberIds && nullNodeNotifyMemberIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyMemberIds = null;
+            if (parseNode.GetChildNode("notifyTeamKeys") is { } nullNodeNotifyTeamKeys && nullNodeNotifyTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyTeamKeys = null;
+            if (parseNode.GetChildNode("releaseGuardianConfiguration") is { } nullNodeReleaseGuardianConfiguration && nullNodeReleaseGuardianConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseGuardianConfiguration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUID of the audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudienceId { get; set; }
+        public string? AudienceId { get => _explicitNullValueAudienceId; set { _explicitNullValueAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceId"); else _explicitNullProperties?.Remove("audienceId"); } }
+        private string? _explicitNullValueAudienceId = default!;
 #nullable restore
 #else
-        public string AudienceId { get; set; }
+        public string AudienceId { get => _explicitNullValueAudienceId; set { _explicitNullValueAudienceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audienceId"); else _explicitNullProperties?.Remove("audienceId"); } }
+        private string _explicitNullValueAudienceId = default!;
 #endif
         /// <summary>An array of member IDs. These members are notified to review the approval request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyMemberIds { get; set; }
+        public List<string>? NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        private List<string>? _explicitNullValueNotifyMemberIds = default!;
 #nullable restore
 #else
-        public List<string> NotifyMemberIds { get; set; }
+        public List<string> NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        private List<string> _explicitNullValueNotifyMemberIds = default!;
 #endif
         /// <summary>An array of team keys. The members of these teams are notified to review the approval request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyTeamKeys { get; set; }
+        public List<string>? NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        private List<string>? _explicitNullValueNotifyTeamKeys = default!;
 #nullable restore
 #else
-        public List<string> NotifyTeamKeys { get; set; }
+        public List<string> NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        private List<string> _explicitNullValueNotifyTeamKeys = default!;
 #endif
         /// <summary>The releaseGuardianConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? ReleaseGuardianConfiguration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? ReleaseGuardianConfiguration { get => _explicitNullValueReleaseGuardianConfiguration; set { _explicitNullValueReleaseGuardianConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseGuardianConfiguration"); else _explicitNullProperties?.Remove("releaseGuardianConfiguration"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput? _explicitNullValueReleaseGuardianConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput ReleaseGuardianConfiguration { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput ReleaseGuardianConfiguration { get => _explicitNullValueReleaseGuardianConfiguration; set { _explicitNullValueReleaseGuardianConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseGuardianConfiguration"); else _explicitNullProperties?.Remove("releaseGuardianConfiguration"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput _explicitNullValueReleaseGuardianConfiguration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseAudienceConfigInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("notifyMemberIds", NotifyMemberIds);
             writer.WriteCollectionOfPrimitiveValues<string>("notifyTeamKeys", NotifyTeamKeys);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineReleaseGuardianConfigurationInput>("releaseGuardianConfiguration", ReleaseGuardianConfiguration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

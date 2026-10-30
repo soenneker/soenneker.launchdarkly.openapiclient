@@ -11,69 +11,106 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EnvironmentReleasesMetricDenominatorRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataSource") is { } nullNodeDataSource && nullNodeDataSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSource = null;
+            if (parseNode.GetChildNode("eventName") is { } nullNodeEventName && nullNodeEventName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventName = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("isNumeric") is { } nullNodeIsNumeric && nullNodeIsNumeric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsNumeric = null;
+            if (parseNode.GetChildNode("unitAggregationField") is { } nullNodeUnitAggregationField && nullNodeUnitAggregationField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitAggregationField = null;
+            if (parseNode.GetChildNode("unitAggregationType") is { } nullNodeUnitAggregationType && nullNodeUnitAggregationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitAggregationType = null;
+            if (parseNode.GetChildNode("valueColumn") is { } nullNodeValueColumn && nullNodeValueColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueColumn = null;
+            if (parseNode.GetChildNode("windowEndOffset") is { } nullNodeWindowEndOffset && nullNodeWindowEndOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowEndOffset = null;
+            if (parseNode.GetChildNode("windowStartOffset") is { } nullNodeWindowStartOffset && nullNodeWindowStartOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WindowStartOffset = null;
+            if (parseNode.GetChildNode("winsorIncludeImputed") is { } nullNodeWinsorIncludeImputed && nullNodeWinsorIncludeImputed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinsorIncludeImputed = null;
+            if (parseNode.GetChildNode("winsorLowerPercentile") is { } nullNodeWinsorLowerPercentile && nullNodeWinsorLowerPercentile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinsorLowerPercentile = null;
+            if (parseNode.GetChildNode("winsorUpperPercentile") is { } nullNodeWinsorUpperPercentile && nullNodeWinsorUpperPercentile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WinsorUpperPercentile = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dataSource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricDataSourceRefRep? DataSource { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricDataSourceRefRep? DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataSource"); else _explicitNullProperties?.Remove("dataSource"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricDataSourceRefRep? _explicitNullValueDataSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricDataSourceRefRep DataSource { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricDataSourceRefRep DataSource { get => _explicitNullValueDataSource; set { _explicitNullValueDataSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataSource"); else _explicitNullProperties?.Remove("dataSource"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricDataSourceRefRep _explicitNullValueDataSource = default!;
 #endif
         /// <summary>The warehouse event column for the denominator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventName { get; set; }
+        public string? EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        private string? _explicitNullValueEventName = default!;
 #nullable restore
 #else
-        public string EventName { get; set; }
+        public string EventName { get => _explicitNullValueEventName; set { _explicitNullValueEventName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventName"); else _explicitNullProperties?.Remove("eventName"); } }
+        private string _explicitNullValueEventName = default!;
 #endif
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesFilter? Filters { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesFilter? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesFilter? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesFilter Filters { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesFilter Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesFilter _explicitNullValueFilters = default!;
 #endif
         /// <summary>Whether the denominator aggregates a numeric value</summary>
-        public bool? IsNumeric { get; set; }
+        public bool? IsNumeric { get => _explicitNullValueIsNumeric; set { _explicitNullValueIsNumeric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isNumeric"); else _explicitNullProperties?.Remove("isNumeric"); } }
+        private bool? _explicitNullValueIsNumeric = default!;
         /// <summary>The column to count distinct values of; required when unitAggregationType is count_distinct</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitAggregationField { get; set; }
+        public string? UnitAggregationField { get => _explicitNullValueUnitAggregationField; set { _explicitNullValueUnitAggregationField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitAggregationField"); else _explicitNullProperties?.Remove("unitAggregationField"); } }
+        private string? _explicitNullValueUnitAggregationField = default!;
 #nullable restore
 #else
-        public string UnitAggregationField { get; set; }
+        public string UnitAggregationField { get => _explicitNullValueUnitAggregationField; set { _explicitNullValueUnitAggregationField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitAggregationField"); else _explicitNullProperties?.Remove("unitAggregationField"); } }
+        private string _explicitNullValueUnitAggregationField = default!;
 #endif
         /// <summary>How individual unit values are aggregated for the denominator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnitAggregationType { get; set; }
+        public string? UnitAggregationType { get => _explicitNullValueUnitAggregationType; set { _explicitNullValueUnitAggregationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitAggregationType"); else _explicitNullProperties?.Remove("unitAggregationType"); } }
+        private string? _explicitNullValueUnitAggregationType = default!;
 #nullable restore
 #else
-        public string UnitAggregationType { get; set; }
+        public string UnitAggregationType { get => _explicitNullValueUnitAggregationType; set { _explicitNullValueUnitAggregationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unitAggregationType"); else _explicitNullProperties?.Remove("unitAggregationType"); } }
+        private string _explicitNullValueUnitAggregationType = default!;
 #endif
         /// <summary>For a numeric denominator, the column holding the numeric value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueColumn { get; set; }
+        public string? ValueColumn { get => _explicitNullValueValueColumn; set { _explicitNullValueValueColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueColumn"); else _explicitNullProperties?.Remove("valueColumn"); } }
+        private string? _explicitNullValueValueColumn = default!;
 #nullable restore
 #else
-        public string ValueColumn { get; set; }
+        public string ValueColumn { get => _explicitNullValueValueColumn; set { _explicitNullValueValueColumn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueColumn"); else _explicitNullProperties?.Remove("valueColumn"); } }
+        private string _explicitNullValueValueColumn = default!;
 #endif
         /// <summary>End of the measurement window in milliseconds</summary>
-        public long? WindowEndOffset { get; set; }
+        public long? WindowEndOffset { get => _explicitNullValueWindowEndOffset; set { _explicitNullValueWindowEndOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windowEndOffset"); else _explicitNullProperties?.Remove("windowEndOffset"); } }
+        private long? _explicitNullValueWindowEndOffset = default!;
         /// <summary>Start of the measurement window in milliseconds</summary>
-        public long? WindowStartOffset { get; set; }
+        public long? WindowStartOffset { get => _explicitNullValueWindowStartOffset; set { _explicitNullValueWindowStartOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("windowStartOffset"); else _explicitNullProperties?.Remove("windowStartOffset"); } }
+        private long? _explicitNullValueWindowStartOffset = default!;
         /// <summary>When true, the percentile bound calculation includes imputed zeros</summary>
-        public bool? WinsorIncludeImputed { get; set; }
+        public bool? WinsorIncludeImputed { get => _explicitNullValueWinsorIncludeImputed; set { _explicitNullValueWinsorIncludeImputed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winsorIncludeImputed"); else _explicitNullProperties?.Remove("winsorIncludeImputed"); } }
+        private bool? _explicitNullValueWinsorIncludeImputed = default!;
         /// <summary>Lower winsorization percentile in the open interval (0, 100)</summary>
-        public double? WinsorLowerPercentile { get; set; }
+        public double? WinsorLowerPercentile { get => _explicitNullValueWinsorLowerPercentile; set { _explicitNullValueWinsorLowerPercentile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winsorLowerPercentile"); else _explicitNullProperties?.Remove("winsorLowerPercentile"); } }
+        private double? _explicitNullValueWinsorLowerPercentile = default!;
         /// <summary>Upper winsorization percentile in the open interval (0, 100)</summary>
-        public double? WinsorUpperPercentile { get; set; }
+        public double? WinsorUpperPercentile { get => _explicitNullValueWinsorUpperPercentile; set { _explicitNullValueWinsorUpperPercentile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("winsorUpperPercentile"); else _explicitNullProperties?.Remove("winsorUpperPercentile"); } }
+        private double? _explicitNullValueWinsorUpperPercentile = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesMetricDenominatorRep"/> and sets the default values.
         /// </summary>
@@ -89,7 +126,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesMetricDenominatorRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesMetricDenominatorRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasesMetricDenominatorRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +169,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("winsorIncludeImputed", WinsorIncludeImputed);
             writer.WriteDoubleValue("winsorLowerPercentile", WinsorLowerPercentile);
             writer.WriteDoubleValue("winsorUpperPercentile", WinsorUpperPercentile);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,64 +11,92 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateCopyFlagConfigApprovalRequestRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("excludedActions") is { } nullNodeExcludedActions && nullNodeExcludedActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludedActions = null;
+            if (parseNode.GetChildNode("includedActions") is { } nullNodeIncludedActions && nullNodeIncludedActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludedActions = null;
+            if (parseNode.GetChildNode("notifyMemberIds") is { } nullNodeNotifyMemberIds && nullNodeNotifyMemberIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyMemberIds = null;
+            if (parseNode.GetChildNode("notifyTeamKeys") is { } nullNodeNotifyTeamKeys && nullNodeNotifyTeamKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotifyTeamKeys = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional comment describing the approval request</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>A brief description of your changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Optional list of the flag changes NOT to copy from the source environment to the target environment. You may include either &lt;code&gt;includedActions&lt;/code&gt; or &lt;code&gt;excludedActions&lt;/code&gt;, but not both. If neither are included, then all flag changes will be copied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestExcludedActionsItem?>? ExcludedActions { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestExcludedActionsItem?>? ExcludedActions { get => _explicitNullValueExcludedActions; set { _explicitNullValueExcludedActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedActions"); else _explicitNullProperties?.Remove("excludedActions"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestExcludedActionsItem?>? _explicitNullValueExcludedActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestExcludedActionsItem?> ExcludedActions { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestExcludedActionsItem?> ExcludedActions { get => _explicitNullValueExcludedActions; set { _explicitNullValueExcludedActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excludedActions"); else _explicitNullProperties?.Remove("excludedActions"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestExcludedActionsItem?> _explicitNullValueExcludedActions = default!;
 #endif
         /// <summary>Optional list of the flag changes to copy from the source environment to the target environment. You may include either &lt;code&gt;includedActions&lt;/code&gt; or &lt;code&gt;excludedActions&lt;/code&gt;, but not both. If neither are included, then all flag changes will be copied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestIncludedActionsItem?>? IncludedActions { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestIncludedActionsItem?>? IncludedActions { get => _explicitNullValueIncludedActions; set { _explicitNullValueIncludedActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includedActions"); else _explicitNullProperties?.Remove("includedActions"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestIncludedActionsItem?>? _explicitNullValueIncludedActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestIncludedActionsItem?> IncludedActions { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestIncludedActionsItem?> IncludedActions { get => _explicitNullValueIncludedActions; set { _explicitNullValueIncludedActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("includedActions"); else _explicitNullProperties?.Remove("includedActions"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequestIncludedActionsItem?> _explicitNullValueIncludedActions = default!;
 #endif
         /// <summary>An array of member IDs. These members are notified to review the approval request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyMemberIds { get; set; }
+        public List<string>? NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        private List<string>? _explicitNullValueNotifyMemberIds = default!;
 #nullable restore
 #else
-        public List<string> NotifyMemberIds { get; set; }
+        public List<string> NotifyMemberIds { get => _explicitNullValueNotifyMemberIds; set { _explicitNullValueNotifyMemberIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyMemberIds"); else _explicitNullProperties?.Remove("notifyMemberIds"); } }
+        private List<string> _explicitNullValueNotifyMemberIds = default!;
 #endif
         /// <summary>An array of team keys. The members of these teams are notified to review the approval request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotifyTeamKeys { get; set; }
+        public List<string>? NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        private List<string>? _explicitNullValueNotifyTeamKeys = default!;
 #nullable restore
 #else
-        public List<string> NotifyTeamKeys { get; set; }
+        public List<string> NotifyTeamKeys { get => _explicitNullValueNotifyTeamKeys; set { _explicitNullValueNotifyTeamKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notifyTeamKeys"); else _explicitNullProperties?.Remove("notifyTeamKeys"); } }
+        private List<string> _explicitNullValueNotifyTeamKeys = default!;
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag? Source { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag? _explicitNullValueSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag Source { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag _explicitNullValueSource = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequest"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CreateCopyFlagConfigApprovalRequestRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("notifyMemberIds", NotifyMemberIds);
             writer.WriteCollectionOfPrimitiveValues<string>("notifyTeamKeys", NotifyTeamKeys);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SourceFlag>("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,42 +11,63 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DataExportSeriesListRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dataThrough") is { } nullNodeDataThrough && nullNodeDataThrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataThrough = null;
+            if (parseNode.GetChildNode("delayed") is { } nullNodeDelayed && nullNodeDelayed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delayed = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("series") is { } nullNodeSeries && nullNodeSeries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Series = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end of the latest hour written by this source&apos;s usage pipeline, as an RFC 3339 UTC timestamp. It is measured across all accounts, not only yours, and usage after this time is not counted yet. Omitted when the watermark is unavailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataThrough { get; set; }
+        public string? DataThrough { get => _explicitNullValueDataThrough; set { _explicitNullValueDataThrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataThrough"); else _explicitNullProperties?.Remove("dataThrough"); } }
+        private string? _explicitNullValueDataThrough = default!;
 #nullable restore
 #else
-        public string DataThrough { get; set; }
+        public string DataThrough { get => _explicitNullValueDataThrough; set { _explicitNullValueDataThrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataThrough"); else _explicitNullProperties?.Remove("dataThrough"); } }
+        private string _explicitNullValueDataThrough = default!;
 #endif
         /// <summary>Whether this source&apos;s usage pipeline is late: it wrote every hour of the 24 hours ending at &lt;code&gt;dataThrough&lt;/code&gt;, and more than three hours have passed since &lt;code&gt;dataThrough&lt;/code&gt;. Always &lt;code&gt;false&lt;/code&gt; for a source with gaps in those 24 hours, where gaps usually mean no usage rather than a stalled pipeline. Omitted when &lt;code&gt;dataThrough&lt;/code&gt; is omitted.</summary>
-        public bool? Delayed { get; set; }
+        public bool? Delayed { get => _explicitNullValueDelayed; set { _explicitNullValueDelayed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delayed"); else _explicitNullProperties?.Remove("delayed"); } }
+        private bool? _explicitNullValueDelayed = default!;
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty _explicitNullValueLinks = default!;
 #endif
         /// <summary>Metadata about each series</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem>? Metadata { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem>? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem>? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem> Metadata { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem> Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem> _explicitNullValueMetadata = default!;
 #endif
         /// <summary>An array of data points with timestamps. Each element of the array is an object with a &apos;time&apos; field, whose value is the timestamp, and one or more key fields. If there are multiple key fields, they are labeled &apos;0&apos;, &apos;1&apos;, and so on, and are explained in the &lt;code&gt;metadata&lt;/code&gt;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem>? Series { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem>? Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem>? _explicitNullValueSeries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem> Series { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem> Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem> _explicitNullValueSeries = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep"/> and sets the default values.
@@ -63,7 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +113,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepLinksProperty>("_links", Links);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepMetadataItem>("metadata", Metadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRepSeriesItem>("series", Series);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

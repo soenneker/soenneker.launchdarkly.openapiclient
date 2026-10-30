@@ -11,26 +11,41 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RandomizationUnitInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("randomizationUnit") is { } nullNodeRandomizationUnit && nullNodeRandomizationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizationUnit = null;
+            if (parseNode.GetChildNode("standardRandomizationUnit") is { } nullNodeStandardRandomizationUnit && nullNodeStandardRandomizationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StandardRandomizationUnit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, any experiment iterations created within this project will default to using this randomization unit. A project can only have one default randomization unit.</summary>
-        public bool? Default { get; set; }
+        public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private bool? _explicitNullValueDefault = default!;
         /// <summary>The unit of randomization. Must match the key of an existing context kind in this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RandomizationUnit { get; set; }
+        public string? RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        private string? _explicitNullValueRandomizationUnit = default!;
 #nullable restore
 #else
-        public string RandomizationUnit { get; set; }
+        public string RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        private string _explicitNullValueRandomizationUnit = default!;
 #endif
         /// <summary>(deprecated) This field is deprecated and will be removed. Use randomizationUnit instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StandardRandomizationUnit { get; set; }
+        public string? StandardRandomizationUnit { get => _explicitNullValueStandardRandomizationUnit; set { _explicitNullValueStandardRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standardRandomizationUnit"); else _explicitNullProperties?.Remove("standardRandomizationUnit"); } }
+        private string? _explicitNullValueStandardRandomizationUnit = default!;
 #nullable restore
 #else
-        public string StandardRandomizationUnit { get; set; }
+        public string StandardRandomizationUnit { get => _explicitNullValueStandardRandomizationUnit; set { _explicitNullValueStandardRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("standardRandomizationUnit"); else _explicitNullProperties?.Remove("standardRandomizationUnit"); } }
+        private string _explicitNullValueStandardRandomizationUnit = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.RandomizationUnitInput"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.RandomizationUnitInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.RandomizationUnitInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.RandomizationUnitInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("randomizationUnit", RandomizationUnit);
             writer.WriteStringValue("standardRandomizationUnit", StandardRandomizationUnit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

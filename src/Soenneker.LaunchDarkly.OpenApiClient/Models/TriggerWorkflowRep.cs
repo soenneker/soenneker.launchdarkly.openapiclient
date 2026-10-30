@@ -11,87 +11,132 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TriggerWorkflowRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("_creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("instructions") is { } nullNodeInstructions && nullNodeInstructions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instructions = null;
+            if (parseNode.GetChildNode("_integrationKey") is { } nullNodeIntegrationKey && nullNodeIntegrationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationKey = null;
+            if (parseNode.GetChildNode("_lastFailedAt") is { } nullNodeLastFailedAt && nullNodeLastFailedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastFailedAt = null;
+            if (parseNode.GetChildNode("_lastTriggeredAt") is { } nullNodeLastTriggeredAt && nullNodeLastTriggeredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastTriggeredAt = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("_maintainer") is { } nullNodeMaintainer && nullNodeMaintainer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Maintainer = null;
+            if (parseNode.GetChildNode("_maintainerId") is { } nullNodeMaintainerId && nullNodeMaintainerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintainerId = null;
+            if (parseNode.GetChildNode("_recentTriggerBodies") is { } nullNodeRecentTriggerBodies && nullNodeRecentTriggerBodies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecentTriggerBodies = null;
+            if (parseNode.GetChildNode("_status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("_triggerCount") is { } nullNodeTriggerCount && nullNodeTriggerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerCount = null;
+            if (parseNode.GetChildNode("triggerURL") is { } nullNodeTriggerURL && nullNodeTriggerURL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerURL = null;
+            if (parseNode.GetChildNode("_version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creationDate property</summary>
-        public long? CreationDate { get; set; }
+        public long? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_creationDate"); else _explicitNullProperties?.Remove("_creationDate"); } }
+        private long? _explicitNullValueCreationDate = default!;
         /// <summary>Whether the flag trigger is currently enabled</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The instructions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepInstructionsItem>? Instructions { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepInstructionsItem>? Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepInstructionsItem>? _explicitNullValueInstructions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepInstructionsItem> Instructions { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepInstructionsItem> Instructions { get => _explicitNullValueInstructions; set { _explicitNullValueInstructions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instructions"); else _explicitNullProperties?.Remove("instructions"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepInstructionsItem> _explicitNullValueInstructions = default!;
 #endif
         /// <summary>The unique identifier of the integration for your trigger</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationKey { get; set; }
+        public string? IntegrationKey { get => _explicitNullValueIntegrationKey; set { _explicitNullValueIntegrationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_integrationKey"); else _explicitNullProperties?.Remove("_integrationKey"); } }
+        private string? _explicitNullValueIntegrationKey = default!;
 #nullable restore
 #else
-        public string IntegrationKey { get; set; }
+        public string IntegrationKey { get => _explicitNullValueIntegrationKey; set { _explicitNullValueIntegrationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_integrationKey"); else _explicitNullProperties?.Remove("_integrationKey"); } }
+        private string _explicitNullValueIntegrationKey = default!;
 #endif
         /// <summary>The lastFailedAt property</summary>
-        public long? LastFailedAt { get; set; }
+        public long? LastFailedAt { get => _explicitNullValueLastFailedAt; set { _explicitNullValueLastFailedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_lastFailedAt"); else _explicitNullProperties?.Remove("_lastFailedAt"); } }
+        private long? _explicitNullValueLastFailedAt = default!;
         /// <summary>The lastTriggeredAt property</summary>
-        public long? LastTriggeredAt { get; set; }
+        public long? LastTriggeredAt { get => _explicitNullValueLastTriggeredAt; set { _explicitNullValueLastTriggeredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_lastTriggeredAt"); else _explicitNullProperties?.Remove("_lastTriggeredAt"); } }
+        private long? _explicitNullValueLastTriggeredAt = default!;
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepLinksProperty? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepLinksProperty _explicitNullValueLinks = default!;
 #endif
         /// <summary>The maintainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary? Maintainer { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary? Maintainer { get => _explicitNullValueMaintainer; set { _explicitNullValueMaintainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_maintainer"); else _explicitNullProperties?.Remove("_maintainer"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary? _explicitNullValueMaintainer = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary Maintainer { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary Maintainer { get => _explicitNullValueMaintainer; set { _explicitNullValueMaintainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_maintainer"); else _explicitNullProperties?.Remove("_maintainer"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MemberSummary _explicitNullValueMaintainer = default!;
 #endif
         /// <summary>The ID of the flag trigger maintainer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaintainerId { get; set; }
+        public string? MaintainerId { get => _explicitNullValueMaintainerId; set { _explicitNullValueMaintainerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_maintainerId"); else _explicitNullProperties?.Remove("_maintainerId"); } }
+        private string? _explicitNullValueMaintainerId = default!;
 #nullable restore
 #else
-        public string MaintainerId { get; set; }
+        public string MaintainerId { get => _explicitNullValueMaintainerId; set { _explicitNullValueMaintainerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_maintainerId"); else _explicitNullProperties?.Remove("_maintainerId"); } }
+        private string _explicitNullValueMaintainerId = default!;
 #endif
         /// <summary>Details on recent flag trigger requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody>? RecentTriggerBodies { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody>? RecentTriggerBodies { get => _explicitNullValueRecentTriggerBodies; set { _explicitNullValueRecentTriggerBodies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_recentTriggerBodies"); else _explicitNullProperties?.Remove("_recentTriggerBodies"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody>? _explicitNullValueRecentTriggerBodies = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody> RecentTriggerBodies { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody> RecentTriggerBodies { get => _explicitNullValueRecentTriggerBodies; set { _explicitNullValueRecentTriggerBodies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_recentTriggerBodies"); else _explicitNullProperties?.Remove("_recentTriggerBodies"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.RecentTriggerBody> _explicitNullValueRecentTriggerBodies = default!;
 #endif
         /// <summary>The trigger state: active, inactive, or failed</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepStatus? Status { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_status"); else _explicitNullProperties?.Remove("_status"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRepStatus? _explicitNullValueStatus = default!;
         /// <summary>Number of times the trigger has been executed</summary>
-        public int? TriggerCount { get; set; }
+        public int? TriggerCount { get => _explicitNullValueTriggerCount; set { _explicitNullValueTriggerCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_triggerCount"); else _explicitNullProperties?.Remove("_triggerCount"); } }
+        private int? _explicitNullValueTriggerCount = default!;
         /// <summary>The unguessable URL for this flag trigger</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TriggerURL { get; set; }
+        public string? TriggerURL { get => _explicitNullValueTriggerURL; set { _explicitNullValueTriggerURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerURL"); else _explicitNullProperties?.Remove("triggerURL"); } }
+        private string? _explicitNullValueTriggerURL = default!;
 #nullable restore
 #else
-        public string TriggerURL { get; set; }
+        public string TriggerURL { get => _explicitNullValueTriggerURL; set { _explicitNullValueTriggerURL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerURL"); else _explicitNullProperties?.Remove("triggerURL"); } }
+        private string _explicitNullValueTriggerURL = default!;
 #endif
         /// <summary>The flag trigger version</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_version"); else _explicitNullProperties?.Remove("_version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRep"/> and sets the default values.
         /// </summary>
@@ -107,7 +152,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.TriggerWorkflowRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,6 +201,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("_triggerCount", TriggerCount);
             writer.WriteStringValue("triggerURL", TriggerURL);
             writer.WriteIntValue("_version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

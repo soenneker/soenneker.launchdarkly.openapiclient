@@ -11,68 +11,105 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ApprovalRequestSettingsPatch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoApplyApprovedChanges") is { } nullNodeAutoApplyApprovedChanges && nullNodeAutoApplyApprovedChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoApplyApprovedChanges = null;
+            if (parseNode.GetChildNode("bypassApprovalsForPendingChanges") is { } nullNodeBypassApprovalsForPendingChanges && nullNodeBypassApprovalsForPendingChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassApprovalsForPendingChanges = null;
+            if (parseNode.GetChildNode("canApplyDeclinedChanges") is { } nullNodeCanApplyDeclinedChanges && nullNodeCanApplyDeclinedChanges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanApplyDeclinedChanges = null;
+            if (parseNode.GetChildNode("canReviewOwnRequest") is { } nullNodeCanReviewOwnRequest && nullNodeCanReviewOwnRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanReviewOwnRequest = null;
+            if (parseNode.GetChildNode("environmentKey") is { } nullNodeEnvironmentKey && nullNodeEnvironmentKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentKey = null;
+            if (parseNode.GetChildNode("minNumApprovals") is { } nullNodeMinNumApprovals && nullNodeMinNumApprovals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinNumApprovals = null;
+            if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+            if (parseNode.GetChildNode("requiredApprovalTags") is { } nullNodeRequiredApprovalTags && nullNodeRequiredApprovalTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiredApprovalTags = null;
+            if (parseNode.GetChildNode("resourceKind") is { } nullNodeResourceKind && nullNodeResourceKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceKind = null;
+            if (parseNode.GetChildNode("serviceConfig") is { } nullNodeServiceConfig && nullNodeServiceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceConfig = null;
+            if (parseNode.GetChildNode("serviceKind") is { } nullNodeServiceKind && nullNodeServiceKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceKind = null;
+            if (parseNode.GetChildNode("serviceKindConfigurationId") is { } nullNodeServiceKindConfigurationId && nullNodeServiceKindConfigurationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceKindConfigurationId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Automatically apply changes that have been approved by all reviewers. This field is only applicable for approval services other than LaunchDarkly.</summary>
-        public bool? AutoApplyApprovedChanges { get; set; }
+        public bool? AutoApplyApprovedChanges { get => _explicitNullValueAutoApplyApprovedChanges; set { _explicitNullValueAutoApplyApprovedChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoApplyApprovedChanges"); else _explicitNullProperties?.Remove("autoApplyApprovedChanges"); } }
+        private bool? _explicitNullValueAutoApplyApprovedChanges = default!;
         /// <summary>Whether to skip approvals for pending changes</summary>
-        public bool? BypassApprovalsForPendingChanges { get; set; }
+        public bool? BypassApprovalsForPendingChanges { get => _explicitNullValueBypassApprovalsForPendingChanges; set { _explicitNullValueBypassApprovalsForPendingChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassApprovalsForPendingChanges"); else _explicitNullProperties?.Remove("bypassApprovalsForPendingChanges"); } }
+        private bool? _explicitNullValueBypassApprovalsForPendingChanges = default!;
         /// <summary>Allow applying the change as long as at least one person has approved</summary>
-        public bool? CanApplyDeclinedChanges { get; set; }
+        public bool? CanApplyDeclinedChanges { get => _explicitNullValueCanApplyDeclinedChanges; set { _explicitNullValueCanApplyDeclinedChanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canApplyDeclinedChanges"); else _explicitNullProperties?.Remove("canApplyDeclinedChanges"); } }
+        private bool? _explicitNullValueCanApplyDeclinedChanges = default!;
         /// <summary>Allow someone who makes an approval request to apply their own change</summary>
-        public bool? CanReviewOwnRequest { get; set; }
+        public bool? CanReviewOwnRequest { get => _explicitNullValueCanReviewOwnRequest; set { _explicitNullValueCanReviewOwnRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canReviewOwnRequest"); else _explicitNullProperties?.Remove("canReviewOwnRequest"); } }
+        private bool? _explicitNullValueCanReviewOwnRequest = default!;
         /// <summary>The environmentKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentKey { get; set; }
+        public string? EnvironmentKey { get => _explicitNullValueEnvironmentKey; set { _explicitNullValueEnvironmentKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKey"); else _explicitNullProperties?.Remove("environmentKey"); } }
+        private string? _explicitNullValueEnvironmentKey = default!;
 #nullable restore
 #else
-        public string EnvironmentKey { get; set; }
+        public string EnvironmentKey { get => _explicitNullValueEnvironmentKey; set { _explicitNullValueEnvironmentKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKey"); else _explicitNullProperties?.Remove("environmentKey"); } }
+        private string _explicitNullValueEnvironmentKey = default!;
 #endif
         /// <summary>Sets the amount of approvals required before a member can apply a change. The minimum is one and the maximum is five.</summary>
-        public int? MinNumApprovals { get; set; }
+        public int? MinNumApprovals { get => _explicitNullValueMinNumApprovals; set { _explicitNullValueMinNumApprovals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minNumApprovals"); else _explicitNullProperties?.Remove("minNumApprovals"); } }
+        private int? _explicitNullValueMinNumApprovals = default!;
         /// <summary>If approvals are required for this environment</summary>
-        public bool? Required { get; set; }
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
         /// <summary>Require approval only on flags with the provided tags. Otherwise all flags will require approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequiredApprovalTags { get; set; }
+        public List<string>? RequiredApprovalTags { get => _explicitNullValueRequiredApprovalTags; set { _explicitNullValueRequiredApprovalTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredApprovalTags"); else _explicitNullProperties?.Remove("requiredApprovalTags"); } }
+        private List<string>? _explicitNullValueRequiredApprovalTags = default!;
 #nullable restore
 #else
-        public List<string> RequiredApprovalTags { get; set; }
+        public List<string> RequiredApprovalTags { get => _explicitNullValueRequiredApprovalTags; set { _explicitNullValueRequiredApprovalTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requiredApprovalTags"); else _explicitNullProperties?.Remove("requiredApprovalTags"); } }
+        private List<string> _explicitNullValueRequiredApprovalTags = default!;
 #endif
         /// <summary>The resourceKind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceKind { get; set; }
+        public string? ResourceKind { get => _explicitNullValueResourceKind; set { _explicitNullValueResourceKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKind"); else _explicitNullProperties?.Remove("resourceKind"); } }
+        private string? _explicitNullValueResourceKind = default!;
 #nullable restore
 #else
-        public string ResourceKind { get; set; }
+        public string ResourceKind { get => _explicitNullValueResourceKind; set { _explicitNullValueResourceKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKind"); else _explicitNullProperties?.Remove("resourceKind"); } }
+        private string _explicitNullValueResourceKind = default!;
 #endif
         /// <summary>Arbitrary service-specific configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty? ServiceConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty? ServiceConfig { get => _explicitNullValueServiceConfig; set { _explicitNullValueServiceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceConfig"); else _explicitNullProperties?.Remove("serviceConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty? _explicitNullValueServiceConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty ServiceConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty ServiceConfig { get => _explicitNullValueServiceConfig; set { _explicitNullValueServiceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceConfig"); else _explicitNullProperties?.Remove("serviceConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty _explicitNullValueServiceConfig = default!;
 #endif
         /// <summary>Which service to use for managing approvals</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceKind { get; set; }
+        public string? ServiceKind { get => _explicitNullValueServiceKind; set { _explicitNullValueServiceKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceKind"); else _explicitNullProperties?.Remove("serviceKind"); } }
+        private string? _explicitNullValueServiceKind = default!;
 #nullable restore
 #else
-        public string ServiceKind { get; set; }
+        public string ServiceKind { get => _explicitNullValueServiceKind; set { _explicitNullValueServiceKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceKind"); else _explicitNullProperties?.Remove("serviceKind"); } }
+        private string _explicitNullValueServiceKind = default!;
 #endif
         /// <summary>Optional integration configuration ID of a custom approval integration. This is an Enterprise-only feature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceKindConfigurationId { get; set; }
+        public string? ServiceKindConfigurationId { get => _explicitNullValueServiceKindConfigurationId; set { _explicitNullValueServiceKindConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceKindConfigurationId"); else _explicitNullProperties?.Remove("serviceKindConfigurationId"); } }
+        private string? _explicitNullValueServiceKindConfigurationId = default!;
 #nullable restore
 #else
-        public string ServiceKindConfigurationId { get; set; }
+        public string ServiceKindConfigurationId { get => _explicitNullValueServiceKindConfigurationId; set { _explicitNullValueServiceKindConfigurationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceKindConfigurationId"); else _explicitNullProperties?.Remove("serviceKindConfigurationId"); } }
+        private string _explicitNullValueServiceKindConfigurationId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatch"/> and sets the default values.
@@ -89,7 +126,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatch();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatch(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +169,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalRequestSettingsPatchServiceConfigProperty>("serviceConfig", ServiceConfig);
             writer.WriteStringValue("serviceKind", ServiceKind);
             writer.WriteStringValue("serviceKindConfigurationId", ServiceKindConfigurationId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

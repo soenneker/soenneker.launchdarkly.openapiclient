@@ -11,53 +11,79 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ViewLinkedResource : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("environmentId") is { } nullNodeEnvironmentId && nullNodeEnvironmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentId = null;
+            if (parseNode.GetChildNode("environmentKey") is { } nullNodeEnvironmentKey && nullNodeEnvironmentKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentKey = null;
+            if (parseNode.GetChildNode("linkedAt") is { } nullNodeLinkedAt && nullNodeLinkedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedAt = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("resourceDetails") is { } nullNodeResourceDetails && nullNodeResourceDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceDetails = null;
+            if (parseNode.GetChildNode("resourceKey") is { } nullNodeResourceKey && nullNodeResourceKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceKey = null;
+            if (parseNode.GetChildNode("resourceType") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Environment ID of the resource (only present for segments)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentId { get; set; }
+        public string? EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
+        private string? _explicitNullValueEnvironmentId = default!;
 #nullable restore
 #else
-        public string EnvironmentId { get; set; }
+        public string EnvironmentId { get => _explicitNullValueEnvironmentId; set { _explicitNullValueEnvironmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentId"); else _explicitNullProperties?.Remove("environmentId"); } }
+        private string _explicitNullValueEnvironmentId = default!;
 #endif
         /// <summary>Environment Key of the resource (only present for segments)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnvironmentKey { get; set; }
+        public string? EnvironmentKey { get => _explicitNullValueEnvironmentKey; set { _explicitNullValueEnvironmentKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKey"); else _explicitNullProperties?.Remove("environmentKey"); } }
+        private string? _explicitNullValueEnvironmentKey = default!;
 #nullable restore
 #else
-        public string EnvironmentKey { get; set; }
+        public string EnvironmentKey { get => _explicitNullValueEnvironmentKey; set { _explicitNullValueEnvironmentKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentKey"); else _explicitNullProperties?.Remove("environmentKey"); } }
+        private string _explicitNullValueEnvironmentKey = default!;
 #endif
         /// <summary>The linkedAt property</summary>
-        public long? LinkedAt { get; set; }
+        public long? LinkedAt { get => _explicitNullValueLinkedAt; set { _explicitNullValueLinkedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linkedAt"); else _explicitNullProperties?.Remove("linkedAt"); } }
+        private long? _explicitNullValueLinkedAt = default!;
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>The resourceDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails? ResourceDetails { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails? ResourceDetails { get => _explicitNullValueResourceDetails; set { _explicitNullValueResourceDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceDetails"); else _explicitNullProperties?.Remove("resourceDetails"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails? _explicitNullValueResourceDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails ResourceDetails { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails ResourceDetails { get => _explicitNullValueResourceDetails; set { _explicitNullValueResourceDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceDetails"); else _explicitNullProperties?.Remove("resourceDetails"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails _explicitNullValueResourceDetails = default!;
 #endif
         /// <summary>Key of the resource (flag or segment)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceKey { get; set; }
+        public string? ResourceKey { get => _explicitNullValueResourceKey; set { _explicitNullValueResourceKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKey"); else _explicitNullProperties?.Remove("resourceKey"); } }
+        private string? _explicitNullValueResourceKey = default!;
 #nullable restore
 #else
-        public string ResourceKey { get; set; }
+        public string ResourceKey { get => _explicitNullValueResourceKey; set { _explicitNullValueResourceKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceKey"); else _explicitNullProperties?.Remove("resourceKey"); } }
+        private string _explicitNullValueResourceKey = default!;
 #endif
         /// <summary>The resourceType property</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceResourceType? ResourceType { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceResourceType? ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceType"); else _explicitNullProperties?.Remove("resourceType"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceResourceType? _explicitNullValueResourceType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResource"/> and sets the default values.
         /// </summary>
@@ -73,7 +99,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResource();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResource(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails>("resourceDetails", ResourceDetails);
             writer.WriteStringValue("resourceKey", ResourceKey);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceResourceType>("resourceType", ResourceType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,48 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MutableFieldsByStatusRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("not_started") is { } nullNodeNotStarted && nullNodeNotStarted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotStarted = null;
+            if (parseNode.GetChildNode("running") is { } nullNodeRunning && nullNodeRunning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Running = null;
+            if (parseNode.GetChildNode("stopped") is { } nullNodeStopped && nullNodeStopped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stopped = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The not_started property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty? NotStarted { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty? NotStarted { get => _explicitNullValueNotStarted; set { _explicitNullValueNotStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_started"); else _explicitNullProperties?.Remove("not_started"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty? _explicitNullValueNotStarted = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty NotStarted { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty NotStarted { get => _explicitNullValueNotStarted; set { _explicitNullValueNotStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_started"); else _explicitNullProperties?.Remove("not_started"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty _explicitNullValueNotStarted = default!;
 #endif
         /// <summary>The running property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty? Running { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty? Running { get => _explicitNullValueRunning; set { _explicitNullValueRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running"); else _explicitNullProperties?.Remove("running"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty? _explicitNullValueRunning = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty Running { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty Running { get => _explicitNullValueRunning; set { _explicitNullValueRunning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("running"); else _explicitNullProperties?.Remove("running"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty _explicitNullValueRunning = default!;
 #endif
         /// <summary>The stopped property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty? Stopped { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty? Stopped { get => _explicitNullValueStopped; set { _explicitNullValueStopped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped"); else _explicitNullProperties?.Remove("stopped"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty? _explicitNullValueStopped = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty Stopped { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty Stopped { get => _explicitNullValueStopped; set { _explicitNullValueStopped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped"); else _explicitNullProperties?.Remove("stopped"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty _explicitNullValueStopped = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRep"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepNotStartedProperty>("not_started", NotStarted);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepRunningProperty>("running", Running);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MutableFieldsByStatusRepStoppedProperty>("stopped", Stopped);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

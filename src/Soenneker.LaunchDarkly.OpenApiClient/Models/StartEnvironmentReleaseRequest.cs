@@ -11,73 +11,109 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StartEnvironmentReleaseRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("advancementMode") is { } nullNodeAdvancementMode && nullNodeAdvancementMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdvancementMode = null;
+            if (parseNode.GetChildNode("beforeRuleId") is { } nullNodeBeforeRuleId && nullNodeBeforeRuleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BeforeRuleId = null;
+            if (parseNode.GetChildNode("bypassHealthChecks") is { } nullNodeBypassHealthChecks && nullNodeBypassHealthChecks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BypassHealthChecks = null;
+            if (parseNode.GetChildNode("cleanupBehavior") is { } nullNodeCleanupBehavior && nullNodeCleanupBehavior.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CleanupBehavior = null;
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("metrics") is { } nullNodeMetrics && nullNodeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metrics = null;
+            if (parseNode.GetChildNode("originalVariationId") is { } nullNodeOriginalVariationId && nullNodeOriginalVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalVariationId = null;
+            if (parseNode.GetChildNode("phases") is { } nullNodePhases && nullNodePhases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phases = null;
+            if (parseNode.GetChildNode("randomizationUnit") is { } nullNodeRandomizationUnit && nullNodeRandomizationUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomizationUnit = null;
+            if (parseNode.GetChildNode("releasePlanKey") is { } nullNodeReleasePlanKey && nullNodeReleasePlanKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleasePlanKey = null;
+            if (parseNode.GetChildNode("targetVariationId") is { } nullNodeTargetVariationId && nullNodeTargetVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetVariationId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether a multi-phase release advances to the next phase automaticallyonce the current phase&apos;s steps complete, or waits for an explicitadvance. Has no effect on a single-phase release.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode? AdvancementMode { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode? AdvancementMode { get => _explicitNullValueAdvancementMode; set { _explicitNullValueAdvancementMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("advancementMode"); else _explicitNullProperties?.Remove("advancementMode"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestAdvancementMode? _explicitNullValueAdvancementMode = default!;
         /// <summary>Insert the newly created rule or phase rules before this rule. Ifomitted, append them to the end of the rule list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BeforeRuleId { get; set; }
+        public string? BeforeRuleId { get => _explicitNullValueBeforeRuleId; set { _explicitNullValueBeforeRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beforeRuleId"); else _explicitNullProperties?.Remove("beforeRuleId"); } }
+        private string? _explicitNullValueBeforeRuleId = default!;
 #nullable restore
 #else
-        public string BeforeRuleId { get; set; }
+        public string BeforeRuleId { get => _explicitNullValueBeforeRuleId; set { _explicitNullValueBeforeRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beforeRuleId"); else _explicitNullProperties?.Remove("beforeRuleId"); } }
+        private string _explicitNullValueBeforeRuleId = default!;
 #endif
         /// <summary>Health check kinds that do not block this request. LaunchDarklystill runs and enforces every health check kind not listed here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?>? BypassHealthChecks { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?>? BypassHealthChecks { get => _explicitNullValueBypassHealthChecks; set { _explicitNullValueBypassHealthChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassHealthChecks"); else _explicitNullProperties?.Remove("bypassHealthChecks"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?>? _explicitNullValueBypassHealthChecks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?> BypassHealthChecks { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?> BypassHealthChecks { get => _explicitNullValueBypassHealthChecks; set { _explicitNullValueBypassHealthChecks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bypassHealthChecks"); else _explicitNullProperties?.Remove("bypassHealthChecks"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseHealthCheckKind?> _explicitNullValueBypassHealthChecks = default!;
 #endif
         /// <summary>What happens to the release rules when the final phase completes,either on its own or because a stop rolls it forward while it&apos;srunning:- `remove_rules_and_update_default_rule`: The release rules are  removed and the default rule serves the target variation.- `leave_rules_in_place`: The release rules stay and serve the  target variation.In every other case, including a revert, it has no effect: releaserules left on the flag keep serving the variation the release endedon, ahead of rules added later without `beforeRuleId`.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior? CleanupBehavior { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior? CleanupBehavior { get => _explicitNullValueCleanupBehavior; set { _explicitNullValueCleanupBehavior = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupBehavior"); else _explicitNullProperties?.Remove("cleanupBehavior"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequestCleanupBehavior? _explicitNullValueCleanupBehavior = default!;
         /// <summary>Optional comment written to the flag&apos;s audit-log entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>Metrics shared by every phase. Omit or pass an empty array for aprogressive release. Metric groups cannot be listed inline; arelease plan&apos;s metric groups expand into their member metrics atstart. Omit when `releasePlanKey` is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput>? Metrics { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput>? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput>? _explicitNullValueMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput> Metrics { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput> Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput> _explicitNullValueMetrics = default!;
 #endif
         /// <summary>ID of the variation the release starts from. The releasegradually moves traffic from it to the target variation, andmoves traffic back to it if the release reverts.</summary>
-        public Guid? OriginalVariationId { get; set; }
+        public Guid? OriginalVariationId { get => _explicitNullValueOriginalVariationId; set { _explicitNullValueOriginalVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("originalVariationId"); else _explicitNullProperties?.Remove("originalVariationId"); } }
+        private Guid? _explicitNullValueOriginalVariationId = default!;
         /// <summary>Ordered phases of the release. Required unless `releasePlanKey` is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseInput>? Phases { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseInput>? Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseInput>? _explicitNullValuePhases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseInput> Phases { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseInput> Phases { get => _explicitNullValuePhases; set { _explicitNullValuePhases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phases"); else _explicitNullProperties?.Remove("phases"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePhaseInput> _explicitNullValuePhases = default!;
 #endif
         /// <summary>Key of an existing, non-archived context kind in the project thatthe release randomizes on, such as `user`. Each phase&apos;s rule mustinclude the clause `{&quot;contextKind&quot;: &quot;&lt;unit&gt;&quot;, &quot;attribute&quot;: &quot;kind&quot;,&quot;op&quot;: &quot;in&quot;, &quot;values&quot;: [&quot;&lt;unit&gt;&quot;]}`. Required unless `releasePlanKey`is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RandomizationUnit { get; set; }
+        public string? RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        private string? _explicitNullValueRandomizationUnit = default!;
 #nullable restore
 #else
-        public string RandomizationUnit { get; set; }
+        public string RandomizationUnit { get => _explicitNullValueRandomizationUnit; set { _explicitNullValueRandomizationUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("randomizationUnit"); else _explicitNullProperties?.Remove("randomizationUnit"); } }
+        private string _explicitNullValueRandomizationUnit = default!;
 #endif
         /// <summary>Key of an environment release plan in this environment. The plansupplies `randomizationUnit`, `phases`, `metrics`, `advancementMode`,and `cleanupBehavior`, so omit them. Omit this field to configurethe release inline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleasePlanKey { get; set; }
+        public string? ReleasePlanKey { get => _explicitNullValueReleasePlanKey; set { _explicitNullValueReleasePlanKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePlanKey"); else _explicitNullProperties?.Remove("releasePlanKey"); } }
+        private string? _explicitNullValueReleasePlanKey = default!;
 #nullable restore
 #else
-        public string ReleasePlanKey { get; set; }
+        public string ReleasePlanKey { get => _explicitNullValueReleasePlanKey; set { _explicitNullValueReleasePlanKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releasePlanKey"); else _explicitNullProperties?.Remove("releasePlanKey"); } }
+        private string _explicitNullValueReleasePlanKey = default!;
 #endif
         /// <summary>ID of the variation being released. The release gradually movestraffic to it from the original variation, and moves traffic backto the original variation if the release reverts.</summary>
-        public Guid? TargetVariationId { get; set; }
+        public Guid? TargetVariationId { get => _explicitNullValueTargetVariationId; set { _explicitNullValueTargetVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetVariationId"); else _explicitNullProperties?.Remove("targetVariationId"); } }
+        private Guid? _explicitNullValueTargetVariationId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequest"/> and sets the default values.
         /// </summary>
@@ -93,7 +129,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.StartEnvironmentReleaseRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,6 +170,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("randomizationUnit", RandomizationUnit);
             writer.WriteStringValue("releasePlanKey", ReleasePlanKey);
             writer.WriteGuidValue("targetVariationId", TargetVariationId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

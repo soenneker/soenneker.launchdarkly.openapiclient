@@ -55,6 +55,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.CallerIdentity
             {
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CallerIdentityRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.CallerIdentityRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -45,6 +45,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.ExpiringUserTargets.ExpiringUserTargetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The release property</summary>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Release.ReleaseRequestBuilder Release
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item.Release.ReleaseRequestBuilder(PathParameters, RequestAdapter);
@@ -107,6 +108,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusConflictErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -136,6 +139,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlag>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -171,6 +176,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Flags.Item.Item
                 { "405", global::Soenneker.LaunchDarkly.OpenApiClient.Models.MethodNotAllowedErrorRep.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusConflictErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlag>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

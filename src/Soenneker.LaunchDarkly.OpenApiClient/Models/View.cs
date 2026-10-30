@@ -11,72 +11,124 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class View : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("_access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("accountId") is { } nullNodeAccountId && nullNodeAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountId = null;
+            if (parseNode.GetChildNode("_affectsSdkPayload") is { } nullNodeAffectsSdkPayload && nullNodeAffectsSdkPayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectsSdkPayload = null;
+            if (parseNode.GetChildNode("aiConfigsExpanded") is { } nullNodeAiConfigsExpanded && nullNodeAiConfigsExpanded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigsExpanded = null;
+            if (parseNode.GetChildNode("aiConfigsSummary") is { } nullNodeAiConfigsSummary && nullNodeAiConfigsSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigsSummary = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("deleted") is { } nullNodeDeleted && nullNodeDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deleted = null;
+            if (parseNode.GetChildNode("deletedAt") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("flagsExpanded") is { } nullNodeFlagsExpanded && nullNodeFlagsExpanded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagsExpanded = null;
+            if (parseNode.GetChildNode("flagsSummary") is { } nullNodeFlagsSummary && nullNodeFlagsSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagsSummary = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("maintainer") is { } nullNodeMaintainer && nullNodeMaintainer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Maintainer = null;
+            if (parseNode.GetChildNode("metricsExpanded") is { } nullNodeMetricsExpanded && nullNodeMetricsExpanded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsExpanded = null;
+            if (parseNode.GetChildNode("metricsSummary") is { } nullNodeMetricsSummary && nullNodeMetricsSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsSummary = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("projectKey") is { } nullNodeProjectKey && nullNodeProjectKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectKey = null;
+            if (parseNode.GetChildNode("resourcesExpanded") is { } nullNodeResourcesExpanded && nullNodeResourcesExpanded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourcesExpanded = null;
+            if (parseNode.GetChildNode("resourceSummary") is { } nullNodeResourceSummary && nullNodeResourceSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceSummary = null;
+            if (parseNode.GetChildNode("segmentsExpanded") is { } nullNodeSegmentsExpanded && nullNodeSegmentsExpanded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentsExpanded = null;
+            if (parseNode.GetChildNode("segmentsSummary") is { } nullNodeSegmentsSummary && nullNodeSegmentsSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentsSummary = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsAccessRep? Access { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsAccessRep? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_access"); else _explicitNullProperties?.Remove("_access"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsAccessRep? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsAccessRep Access { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsAccessRep Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_access"); else _explicitNullProperties?.Remove("_access"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsAccessRep _explicitNullValueAccess = default!;
 #endif
         /// <summary>ID of the account that owns this view</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
+        private string? _explicitNullValueAccountId = default!;
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get => _explicitNullValueAccountId; set { _explicitNullValueAccountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountId"); else _explicitNullProperties?.Remove("accountId"); } }
+        private string _explicitNullValueAccountId = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this view is used to filter SDK payloads</summary>
-        public bool? AffectsSdkPayload { get; set; }
+        public bool? AffectsSdkPayload { get => _explicitNullValueAffectsSdkPayload; set { _explicitNullValueAffectsSdkPayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_affectsSdkPayload"); else _explicitNullProperties?.Remove("_affectsSdkPayload"); } }
+        private bool? _explicitNullValueAffectsSdkPayload = default!;
         /// <summary>The aiConfigsExpanded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedAiConfigs? AiConfigsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedAiConfigs? AiConfigsExpanded { get => _explicitNullValueAiConfigsExpanded; set { _explicitNullValueAiConfigsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigsExpanded"); else _explicitNullProperties?.Remove("aiConfigsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedAiConfigs? _explicitNullValueAiConfigsExpanded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedAiConfigs AiConfigsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedAiConfigs AiConfigsExpanded { get => _explicitNullValueAiConfigsExpanded; set { _explicitNullValueAiConfigsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigsExpanded"); else _explicitNullProperties?.Remove("aiConfigsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedAiConfigs _explicitNullValueAiConfigsExpanded = default!;
 #endif
         /// <summary>The aiConfigsSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsSummary? AiConfigsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsSummary? AiConfigsSummary { get => _explicitNullValueAiConfigsSummary; set { _explicitNullValueAiConfigsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigsSummary"); else _explicitNullProperties?.Remove("aiConfigsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsSummary? _explicitNullValueAiConfigsSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsSummary AiConfigsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsSummary AiConfigsSummary { get => _explicitNullValueAiConfigsSummary; set { _explicitNullValueAiConfigsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigsSummary"); else _explicitNullProperties?.Remove("aiConfigsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsSummary _explicitNullValueAiConfigsSummary = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public long? CreatedAt { get; set; }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>Whether this view is deleted</summary>
-        public bool? Deleted { get; set; }
+        public bool? Deleted { get => _explicitNullValueDeleted; set { _explicitNullValueDeleted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted"); else _explicitNullProperties?.Remove("deleted"); } }
+        private bool? _explicitNullValueDeleted = default!;
         /// <summary>The deletedAt property</summary>
-        public long? DeletedAt { get; set; }
+        public long? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletedAt"); else _explicitNullProperties?.Remove("deletedAt"); } }
+        private long? _explicitNullValueDeletedAt = default!;
         /// <summary>Optional detailed description of the view</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Details on linked flags for a view - requires passing the &apos;allFlags&apos; expand field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedFlags? FlagsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedFlags? FlagsExpanded { get => _explicitNullValueFlagsExpanded; set { _explicitNullValueFlagsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExpanded"); else _explicitNullProperties?.Remove("flagsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedFlags? _explicitNullValueFlagsExpanded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedFlags FlagsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedFlags FlagsExpanded { get => _explicitNullValueFlagsExpanded; set { _explicitNullValueFlagsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsExpanded"); else _explicitNullProperties?.Remove("flagsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedFlags _explicitNullValueFlagsExpanded = default!;
 #endif
         /// <summary>The flagsSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagsSummary? FlagsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagsSummary? FlagsSummary { get => _explicitNullValueFlagsSummary; set { _explicitNullValueFlagsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsSummary"); else _explicitNullProperties?.Remove("flagsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagsSummary? _explicitNullValueFlagsSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagsSummary FlagsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagsSummary FlagsSummary { get => _explicitNullValueFlagsSummary; set { _explicitNullValueFlagsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagsSummary"); else _explicitNullProperties?.Remove("flagsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagsSummary _explicitNullValueFlagsSummary = default!;
 #endif
         /// <summary>Deprecated compatibility field. Mirrors `_affectsSdkPayload` during rollout.</summary>
         [Obsolete("")]
@@ -84,119 +136,149 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>Unique ID of this view</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Unique key for the view within the account/project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ParentAndSelfLinks _explicitNullValueLinks = default!;
 #endif
         /// <summary>The maintainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer? Maintainer { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer? Maintainer { get => _explicitNullValueMaintainer; set { _explicitNullValueMaintainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainer"); else _explicitNullProperties?.Remove("maintainer"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer? _explicitNullValueMaintainer = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer Maintainer { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer Maintainer { get => _explicitNullValueMaintainer; set { _explicitNullValueMaintainer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainer"); else _explicitNullProperties?.Remove("maintainer"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer _explicitNullValueMaintainer = default!;
 #endif
         /// <summary>The metricsExpanded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedMetrics? MetricsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedMetrics? MetricsExpanded { get => _explicitNullValueMetricsExpanded; set { _explicitNullValueMetricsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsExpanded"); else _explicitNullProperties?.Remove("metricsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedMetrics? _explicitNullValueMetricsExpanded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedMetrics MetricsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedMetrics MetricsExpanded { get => _explicitNullValueMetricsExpanded; set { _explicitNullValueMetricsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsExpanded"); else _explicitNullProperties?.Remove("metricsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedMetrics _explicitNullValueMetricsExpanded = default!;
 #endif
         /// <summary>The metricsSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricsSummary? MetricsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricsSummary? MetricsSummary { get => _explicitNullValueMetricsSummary; set { _explicitNullValueMetricsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsSummary"); else _explicitNullProperties?.Remove("metricsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricsSummary? _explicitNullValueMetricsSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricsSummary MetricsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricsSummary MetricsSummary { get => _explicitNullValueMetricsSummary; set { _explicitNullValueMetricsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsSummary"); else _explicitNullProperties?.Remove("metricsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricsSummary _explicitNullValueMetricsSummary = default!;
 #endif
         /// <summary>Human-readable name for the view</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>ID of the project this view belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>Key of the project this view belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectKey { get; set; }
+        public string? ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        private string? _explicitNullValueProjectKey = default!;
 #nullable restore
 #else
-        public string ProjectKey { get; set; }
+        public string ProjectKey { get => _explicitNullValueProjectKey; set { _explicitNullValueProjectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectKey"); else _explicitNullProperties?.Remove("projectKey"); } }
+        private string _explicitNullValueProjectKey = default!;
 #endif
         /// <summary>Details on linked resources for a view - requires passing the &apos;allResources&apos; expand field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedResources? ResourcesExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedResources? ResourcesExpanded { get => _explicitNullValueResourcesExpanded; set { _explicitNullValueResourcesExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourcesExpanded"); else _explicitNullProperties?.Remove("resourcesExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedResources? _explicitNullValueResourcesExpanded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedResources ResourcesExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedResources ResourcesExpanded { get => _explicitNullValueResourcesExpanded; set { _explicitNullValueResourcesExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourcesExpanded"); else _explicitNullProperties?.Remove("resourcesExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedResources _explicitNullValueResourcesExpanded = default!;
 #endif
         /// <summary>The resourceSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ResourceSummary? ResourceSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ResourceSummary? ResourceSummary { get => _explicitNullValueResourceSummary; set { _explicitNullValueResourceSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceSummary"); else _explicitNullProperties?.Remove("resourceSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ResourceSummary? _explicitNullValueResourceSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ResourceSummary ResourceSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ResourceSummary ResourceSummary { get => _explicitNullValueResourceSummary; set { _explicitNullValueResourceSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceSummary"); else _explicitNullProperties?.Remove("resourceSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ResourceSummary _explicitNullValueResourceSummary = default!;
 #endif
         /// <summary>Details on linked segments for a view - requires passing the &apos;allSegments&apos; expand field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedSegments? SegmentsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedSegments? SegmentsExpanded { get => _explicitNullValueSegmentsExpanded; set { _explicitNullValueSegmentsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentsExpanded"); else _explicitNullProperties?.Remove("segmentsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedSegments? _explicitNullValueSegmentsExpanded = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedSegments SegmentsExpanded { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedSegments SegmentsExpanded { get => _explicitNullValueSegmentsExpanded; set { _explicitNullValueSegmentsExpanded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentsExpanded"); else _explicitNullProperties?.Remove("segmentsExpanded"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedLinkedSegments _explicitNullValueSegmentsExpanded = default!;
 #endif
         /// <summary>The segmentsSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentsSummary? SegmentsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentsSummary? SegmentsSummary { get => _explicitNullValueSegmentsSummary; set { _explicitNullValueSegmentsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentsSummary"); else _explicitNullProperties?.Remove("segmentsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentsSummary? _explicitNullValueSegmentsSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentsSummary SegmentsSummary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentsSummary SegmentsSummary { get => _explicitNullValueSegmentsSummary; set { _explicitNullValueSegmentsSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentsSummary"); else _explicitNullProperties?.Remove("segmentsSummary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.SegmentsSummary _explicitNullValueSegmentsSummary = default!;
 #endif
         /// <summary>Tags associated with this view</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>The updatedAt property</summary>
-        public long? UpdatedAt { get; set; }
+        public long? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        private long? _explicitNullValueUpdatedAt = default!;
         /// <summary>Version number for tracking changes</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.View"/> and sets the default values.
         /// </summary>
@@ -213,7 +295,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.View CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.View();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.View(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -287,6 +369,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteLongValue("updatedAt", UpdatedAt);
             writer.WriteIntValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

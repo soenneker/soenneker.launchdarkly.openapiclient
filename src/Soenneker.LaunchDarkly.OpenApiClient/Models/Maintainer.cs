@@ -11,40 +11,59 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Maintainer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("maintainerMember") is { } nullNodeMaintainerMember && nullNodeMaintainerMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintainerMember = null;
+            if (parseNode.GetChildNode("maintainerTeam") is { } nullNodeMaintainerTeam && nullNodeMaintainerTeam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintainerTeam = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string _explicitNullValueKind = default!;
 #endif
         /// <summary>The maintainerMember property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember? MaintainerMember { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember? MaintainerMember { get => _explicitNullValueMaintainerMember; set { _explicitNullValueMaintainerMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerMember"); else _explicitNullProperties?.Remove("maintainerMember"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember? _explicitNullValueMaintainerMember = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember MaintainerMember { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember MaintainerMember { get => _explicitNullValueMaintainerMember; set { _explicitNullValueMaintainerMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerMember"); else _explicitNullProperties?.Remove("maintainerMember"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember _explicitNullValueMaintainerMember = default!;
 #endif
         /// <summary>The maintainerTeam property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam? MaintainerTeam { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam? MaintainerTeam { get => _explicitNullValueMaintainerTeam; set { _explicitNullValueMaintainerTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerTeam"); else _explicitNullProperties?.Remove("maintainerTeam"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam? _explicitNullValueMaintainerTeam = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam MaintainerTeam { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam MaintainerTeam { get => _explicitNullValueMaintainerTeam; set { _explicitNullValueMaintainerTeam = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerTeam"); else _explicitNullProperties?.Remove("maintainerTeam"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam _explicitNullValueMaintainerTeam = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.Maintainer(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("kind", Kind);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerMember>("maintainerMember", MaintainerMember);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewsMaintainerTeam>("maintainerTeam", MaintainerTeam);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

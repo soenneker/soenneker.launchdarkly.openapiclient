@@ -12,7 +12,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReleaseMetric : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoRollback") is { } nullNodeAutoRollback && nullNodeAutoRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRollback = null;
+            if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Key of the context kind this metric is analyzed on. It is the release&apos;srandomization unit unless the metric uses a decoupled unit of analysis.Omitted on releases started before analysis units were recorded. Thosemetrics are analyzed on the randomization unit.</summary>
@@ -24,7 +33,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string AnalysisUnit { get; private set; }
 #endif
         /// <summary>Whether a regression automatically reverts the release.</summary>
-        public bool? AutoRollback { get; set; }
+        public bool? AutoRollback { get => _explicitNullValueAutoRollback; set { _explicitNullValueAutoRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRollback"); else _explicitNullProperties?.Remove("autoRollback"); } }
+        private bool? _explicitNullValueAutoRollback = default!;
         /// <summary>Present only when the caller requests `expand=metrics` and the pinnedmetric version still exists. A metric whose pinned version has beendeleted keeps its `metricKey` and `metricVersionId` but has no definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,10 +46,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The metricKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricKey { get; set; }
+        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        private string? _explicitNullValueMetricKey = default!;
 #nullable restore
 #else
-        public string MetricKey { get; set; }
+        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        private string _explicitNullValueMetricKey = default!;
 #endif
         /// <summary>The metricVersionId property</summary>
         public Guid? MetricVersionId { get; private set; }
@@ -58,7 +70,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleaseMetric(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +96,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autoRollback", AutoRollback);
             writer.WriteStringValue("metricKey", MetricKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

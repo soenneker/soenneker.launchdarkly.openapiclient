@@ -12,40 +12,59 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentGraphEdge : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("handoff") is { } nullNodeHandoff && nullNodeHandoff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handoff = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("sourceConfig") is { } nullNodeSourceConfig && nullNodeSourceConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceConfig = null;
+            if (parseNode.GetChildNode("targetConfig") is { } nullNodeTargetConfig && nullNodeTargetConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetConfig = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The handoff options from the source config to the target config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgeHandoffProperty? Handoff { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgeHandoffProperty? Handoff { get => _explicitNullValueHandoff; set { _explicitNullValueHandoff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff"); else _explicitNullProperties?.Remove("handoff"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgeHandoffProperty? _explicitNullValueHandoff = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgeHandoffProperty Handoff { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgeHandoffProperty Handoff { get => _explicitNullValueHandoff; set { _explicitNullValueHandoff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff"); else _explicitNullProperties?.Remove("handoff"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdgeHandoffProperty _explicitNullValueHandoff = default!;
 #endif
         /// <summary>A unique key for this edge within the graph</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The config key that is the source of this edge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceConfig { get; set; }
+        public string? SourceConfig { get => _explicitNullValueSourceConfig; set { _explicitNullValueSourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceConfig"); else _explicitNullProperties?.Remove("sourceConfig"); } }
+        private string? _explicitNullValueSourceConfig = default!;
 #nullable restore
 #else
-        public string SourceConfig { get; set; }
+        public string SourceConfig { get => _explicitNullValueSourceConfig; set { _explicitNullValueSourceConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceConfig"); else _explicitNullProperties?.Remove("sourceConfig"); } }
+        private string _explicitNullValueSourceConfig = default!;
 #endif
         /// <summary>The config key that is the target of this edge</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetConfig { get; set; }
+        public string? TargetConfig { get => _explicitNullValueTargetConfig; set { _explicitNullValueTargetConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetConfig"); else _explicitNullProperties?.Remove("targetConfig"); } }
+        private string? _explicitNullValueTargetConfig = default!;
 #nullable restore
 #else
-        public string TargetConfig { get; set; }
+        public string TargetConfig { get => _explicitNullValueTargetConfig; set { _explicitNullValueTargetConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetConfig"); else _explicitNullProperties?.Remove("targetConfig"); } }
+        private string _explicitNullValueTargetConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdge"/> and sets the default values.
@@ -62,7 +81,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdge CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdge();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentGraphEdge(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +108,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("sourceConfig", SourceConfig);
             writer.WriteStringValue("targetConfig", TargetConfig);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

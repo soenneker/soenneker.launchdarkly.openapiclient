@@ -11,23 +11,44 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InsightGroupsCountByIndicator : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("excellent") is { } nullNodeExcellent && nullNodeExcellent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Excellent = null;
+            if (parseNode.GetChildNode("fair") is { } nullNodeFair && nullNodeFair.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fair = null;
+            if (parseNode.GetChildNode("good") is { } nullNodeGood && nullNodeGood.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Good = null;
+            if (parseNode.GetChildNode("needsAttention") is { } nullNodeNeedsAttention && nullNodeNeedsAttention.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeedsAttention = null;
+            if (parseNode.GetChildNode("notCalculated") is { } nullNodeNotCalculated && nullNodeNotCalculated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotCalculated = null;
+            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("unknown") is { } nullNodeUnknown && nullNodeUnknown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unknown = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of insight groups with an excellent indicator</summary>
-        public int? Excellent { get; set; }
+        public int? Excellent { get => _explicitNullValueExcellent; set { _explicitNullValueExcellent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("excellent"); else _explicitNullProperties?.Remove("excellent"); } }
+        private int? _explicitNullValueExcellent = default!;
         /// <summary>The number of insight groups with a fair indicator</summary>
-        public int? Fair { get; set; }
+        public int? Fair { get => _explicitNullValueFair; set { _explicitNullValueFair = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fair"); else _explicitNullProperties?.Remove("fair"); } }
+        private int? _explicitNullValueFair = default!;
         /// <summary>The number of insight groups with a good indicator</summary>
-        public int? Good { get; set; }
+        public int? Good { get => _explicitNullValueGood; set { _explicitNullValueGood = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("good"); else _explicitNullProperties?.Remove("good"); } }
+        private int? _explicitNullValueGood = default!;
         /// <summary>The number of insight groups with a needs attention indicator</summary>
-        public int? NeedsAttention { get; set; }
+        public int? NeedsAttention { get => _explicitNullValueNeedsAttention; set { _explicitNullValueNeedsAttention = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("needsAttention"); else _explicitNullProperties?.Remove("needsAttention"); } }
+        private int? _explicitNullValueNeedsAttention = default!;
         /// <summary>The number of insight groups with a not calculated indicator</summary>
-        public int? NotCalculated { get; set; }
+        public int? NotCalculated { get => _explicitNullValueNotCalculated; set { _explicitNullValueNotCalculated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notCalculated"); else _explicitNullProperties?.Remove("notCalculated"); } }
+        private int? _explicitNullValueNotCalculated = default!;
         /// <summary>The total number of insight groups</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>The number of insight groups with an unknown indicator</summary>
-        public int? Unknown { get; set; }
+        public int? Unknown { get => _explicitNullValueUnknown; set { _explicitNullValueUnknown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unknown"); else _explicitNullProperties?.Remove("unknown"); } }
+        private int? _explicitNullValueUnknown = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator"/> and sets the default values.
         /// </summary>
@@ -43,7 +64,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightGroupsCountByIndicator(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("notCalculated", NotCalculated);
             writer.WriteIntValue("total", Total);
             writer.WriteIntValue("unknown", Unknown);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

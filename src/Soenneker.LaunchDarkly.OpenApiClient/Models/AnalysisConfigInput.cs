@@ -11,38 +11,60 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AnalysisConfigInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bayesianThreshold") is { } nullNodeBayesianThreshold && nullNodeBayesianThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BayesianThreshold = null;
+            if (parseNode.GetChildNode("multipleComparisonCorrectionMethod") is { } nullNodeMultipleComparisonCorrectionMethod && nullNodeMultipleComparisonCorrectionMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultipleComparisonCorrectionMethod = null;
+            if (parseNode.GetChildNode("multipleComparisonCorrectionScope") is { } nullNodeMultipleComparisonCorrectionScope && nullNodeMultipleComparisonCorrectionScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultipleComparisonCorrectionScope = null;
+            if (parseNode.GetChildNode("sequentialTestingEnabled") is { } nullNodeSequentialTestingEnabled && nullNodeSequentialTestingEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequentialTestingEnabled = null;
+            if (parseNode.GetChildNode("significanceThreshold") is { } nullNodeSignificanceThreshold && nullNodeSignificanceThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignificanceThreshold = null;
+            if (parseNode.GetChildNode("testDirection") is { } nullNodeTestDirection && nullNodeTestDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TestDirection = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The threshold for the Probability to Beat Baseline (PBBL) and Probability to Be Best (PBB) comparisons for the Bayesian results analysis approach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BayesianThreshold { get; set; }
+        public string? BayesianThreshold { get => _explicitNullValueBayesianThreshold; set { _explicitNullValueBayesianThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bayesianThreshold"); else _explicitNullProperties?.Remove("bayesianThreshold"); } }
+        private string? _explicitNullValueBayesianThreshold = default!;
 #nullable restore
 #else
-        public string BayesianThreshold { get; set; }
+        public string BayesianThreshold { get => _explicitNullValueBayesianThreshold; set { _explicitNullValueBayesianThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bayesianThreshold"); else _explicitNullProperties?.Remove("bayesianThreshold"); } }
+        private string _explicitNullValueBayesianThreshold = default!;
 #endif
         /// <summary>The method to use for multiple comparison correction.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInputMultipleComparisonCorrectionMethod? MultipleComparisonCorrectionMethod { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInputMultipleComparisonCorrectionMethod? MultipleComparisonCorrectionMethod { get => _explicitNullValueMultipleComparisonCorrectionMethod; set { _explicitNullValueMultipleComparisonCorrectionMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multipleComparisonCorrectionMethod"); else _explicitNullProperties?.Remove("multipleComparisonCorrectionMethod"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInputMultipleComparisonCorrectionMethod? _explicitNullValueMultipleComparisonCorrectionMethod = default!;
         /// <summary>The scope of the multiple comparison correction.</summary>
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInputMultipleComparisonCorrectionScope? MultipleComparisonCorrectionScope { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInputMultipleComparisonCorrectionScope? MultipleComparisonCorrectionScope { get => _explicitNullValueMultipleComparisonCorrectionScope; set { _explicitNullValueMultipleComparisonCorrectionScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multipleComparisonCorrectionScope"); else _explicitNullProperties?.Remove("multipleComparisonCorrectionScope"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInputMultipleComparisonCorrectionScope? _explicitNullValueMultipleComparisonCorrectionScope = default!;
         /// <summary>Whether sequential testing is enabled for Frequentist analysis</summary>
-        public bool? SequentialTestingEnabled { get; set; }
+        public bool? SequentialTestingEnabled { get => _explicitNullValueSequentialTestingEnabled; set { _explicitNullValueSequentialTestingEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequentialTestingEnabled"); else _explicitNullProperties?.Remove("sequentialTestingEnabled"); } }
+        private bool? _explicitNullValueSequentialTestingEnabled = default!;
         /// <summary>The significance threshold for the frequentist results analysis approach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignificanceThreshold { get; set; }
+        public string? SignificanceThreshold { get => _explicitNullValueSignificanceThreshold; set { _explicitNullValueSignificanceThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significanceThreshold"); else _explicitNullProperties?.Remove("significanceThreshold"); } }
+        private string? _explicitNullValueSignificanceThreshold = default!;
 #nullable restore
 #else
-        public string SignificanceThreshold { get; set; }
+        public string SignificanceThreshold { get => _explicitNullValueSignificanceThreshold; set { _explicitNullValueSignificanceThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("significanceThreshold"); else _explicitNullProperties?.Remove("significanceThreshold"); } }
+        private string _explicitNullValueSignificanceThreshold = default!;
 #endif
         /// <summary>The test sided direction for the frequentist results analysis approach.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TestDirection { get; set; }
+        public string? TestDirection { get => _explicitNullValueTestDirection; set { _explicitNullValueTestDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testDirection"); else _explicitNullProperties?.Remove("testDirection"); } }
+        private string? _explicitNullValueTestDirection = default!;
 #nullable restore
 #else
-        public string TestDirection { get; set; }
+        public string TestDirection { get => _explicitNullValueTestDirection; set { _explicitNullValueTestDirection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testDirection"); else _explicitNullProperties?.Remove("testDirection"); } }
+        private string _explicitNullValueTestDirection = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInput"/> and sets the default values.
@@ -59,7 +81,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +112,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("sequentialTestingEnabled", SequentialTestingEnabled);
             writer.WriteStringValue("significanceThreshold", SignificanceThreshold);
             writer.WriteStringValue("testDirection", TestDirection);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

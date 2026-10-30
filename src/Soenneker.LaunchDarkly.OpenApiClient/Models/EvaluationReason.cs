@@ -11,45 +11,68 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EvaluationReason : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorKind") is { } nullNodeErrorKind && nullNodeErrorKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorKind = null;
+            if (parseNode.GetChildNode("inExperiment") is { } nullNodeInExperiment && nullNodeInExperiment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InExperiment = null;
+            if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("prerequisiteKey") is { } nullNodePrerequisiteKey && nullNodePrerequisiteKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrerequisiteKey = null;
+            if (parseNode.GetChildNode("ruleID") is { } nullNodeRuleID && nullNodeRuleID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleID = null;
+            if (parseNode.GetChildNode("ruleIndex") is { } nullNodeRuleIndex && nullNodeRuleIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleIndex = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The specific error type if the kind is &apos;ERROR&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorKind { get; set; }
+        public string? ErrorKind { get => _explicitNullValueErrorKind; set { _explicitNullValueErrorKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorKind"); else _explicitNullProperties?.Remove("errorKind"); } }
+        private string? _explicitNullValueErrorKind = default!;
 #nullable restore
 #else
-        public string ErrorKind { get; set; }
+        public string ErrorKind { get => _explicitNullValueErrorKind; set { _explicitNullValueErrorKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorKind"); else _explicitNullProperties?.Remove("errorKind"); } }
+        private string _explicitNullValueErrorKind = default!;
 #endif
         /// <summary>Indicates whether the evaluation occurred as part of an experiment.</summary>
-        public bool? InExperiment { get; set; }
+        public bool? InExperiment { get => _explicitNullValueInExperiment; set { _explicitNullValueInExperiment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inExperiment"); else _explicitNullProperties?.Remove("inExperiment"); } }
+        private bool? _explicitNullValueInExperiment = default!;
         /// <summary>Describes the general reason that LaunchDarkly selected this variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Kind { get; set; }
+        public string? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string? _explicitNullValueKind = default!;
 #nullable restore
 #else
-        public string Kind { get; set; }
+        public string Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private string _explicitNullValueKind = default!;
 #endif
         /// <summary>The key of the flag that failed if the kind is &apos;PREREQUISITE_FAILED&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrerequisiteKey { get; set; }
+        public string? PrerequisiteKey { get => _explicitNullValuePrerequisiteKey; set { _explicitNullValuePrerequisiteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteKey"); else _explicitNullProperties?.Remove("prerequisiteKey"); } }
+        private string? _explicitNullValuePrerequisiteKey = default!;
 #nullable restore
 #else
-        public string PrerequisiteKey { get; set; }
+        public string PrerequisiteKey { get => _explicitNullValuePrerequisiteKey; set { _explicitNullValuePrerequisiteKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prerequisiteKey"); else _explicitNullProperties?.Remove("prerequisiteKey"); } }
+        private string _explicitNullValuePrerequisiteKey = default!;
 #endif
         /// <summary>The unique identifier of the matching rule if the kind is &apos;RULE_MATCH&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleID { get; set; }
+        public string? RuleID { get => _explicitNullValueRuleID; set { _explicitNullValueRuleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleID"); else _explicitNullProperties?.Remove("ruleID"); } }
+        private string? _explicitNullValueRuleID = default!;
 #nullable restore
 #else
-        public string RuleID { get; set; }
+        public string RuleID { get => _explicitNullValueRuleID; set { _explicitNullValueRuleID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleID"); else _explicitNullProperties?.Remove("ruleID"); } }
+        private string _explicitNullValueRuleID = default!;
 #endif
         /// <summary>The positional index of the matching rule if the kind is &apos;RULE_MATCH&apos;. The index is 0-based.</summary>
-        public int? RuleIndex { get; set; }
+        public int? RuleIndex { get => _explicitNullValueRuleIndex; set { _explicitNullValueRuleIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ruleIndex"); else _explicitNullProperties?.Remove("ruleIndex"); } }
+        private int? _explicitNullValueRuleIndex = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason"/> and sets the default values.
         /// </summary>
@@ -65,7 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EvaluationReason(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("prerequisiteKey", PrerequisiteKey);
             writer.WriteStringValue("ruleID", RuleID);
             writer.WriteIntValue("ruleIndex", RuleIndex);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

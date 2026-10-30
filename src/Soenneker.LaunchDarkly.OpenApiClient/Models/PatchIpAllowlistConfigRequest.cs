@@ -11,11 +11,22 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PatchIpAllowlistConfigRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("apiTokenAllowlistEnabled") is { } nullNodeApiTokenAllowlistEnabled && nullNodeApiTokenAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiTokenAllowlistEnabled = null;
+            if (parseNode.GetChildNode("sessionAllowlistEnabled") is { } nullNodeSessionAllowlistEnabled && nullNodeSessionAllowlistEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionAllowlistEnabled = null;
+        }
+
         /// <summary>Enable or disable API token allowlist</summary>
-        public bool? ApiTokenAllowlistEnabled { get; set; }
+        public bool? ApiTokenAllowlistEnabled { get => _explicitNullValueApiTokenAllowlistEnabled; set { _explicitNullValueApiTokenAllowlistEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apiTokenAllowlistEnabled"); else _explicitNullProperties?.Remove("apiTokenAllowlistEnabled"); } }
+        private bool? _explicitNullValueApiTokenAllowlistEnabled = default!;
         /// <summary>Enable or disable session allowlist</summary>
-        public bool? SessionAllowlistEnabled { get; set; }
+        public bool? SessionAllowlistEnabled { get => _explicitNullValueSessionAllowlistEnabled; set { _explicitNullValueSessionAllowlistEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionAllowlistEnabled"); else _explicitNullProperties?.Remove("sessionAllowlistEnabled"); } }
+        private bool? _explicitNullValueSessionAllowlistEnabled = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchIpAllowlistConfigRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchIpAllowlistConfigRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.PatchIpAllowlistConfigRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +57,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("apiTokenAllowlistEnabled", ApiTokenAllowlistEnabled);
-            writer.WriteBoolValue("sessionAllowlistEnabled", SessionAllowlistEnabled);
+            writer.WriteBoolValue("sessionAllowlistEnabled", SessionAllowlistEnabled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

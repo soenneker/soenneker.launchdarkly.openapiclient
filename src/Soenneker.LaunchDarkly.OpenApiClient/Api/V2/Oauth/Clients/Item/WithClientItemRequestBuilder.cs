@@ -58,6 +58,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Oauth.Clients.Item
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,6 +89,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Oauth.Clients.Item
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Client>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.Client.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -118,6 +122,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Oauth.Clients.Item
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Client>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.Client.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -11,124 +11,177 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IntegrationConfigurationsRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("_access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("capabilityConfig") is { } nullNodeCapabilityConfig && nullNodeCapabilityConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapabilityConfig = null;
+            if (parseNode.GetChildNode("clickHouseSetupScript") is { } nullNodeClickHouseSetupScript && nullNodeClickHouseSetupScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickHouseSetupScript = null;
+            if (parseNode.GetChildNode("configValues") is { } nullNodeConfigValues && nullNodeConfigValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigValues = null;
+            if (parseNode.GetChildNode("_createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("_integrationKey") is { } nullNodeIntegrationKey && nullNodeIntegrationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationKey = null;
+            if (parseNode.GetChildNode("_links") is { } nullNodeLinks && nullNodeLinks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Links = null;
+            if (parseNode.GetChildNode("_maintainerId") is { } nullNodeMaintainerId && nullNodeMaintainerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaintainerId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("redshiftIAMPermissionsPolicy") is { } nullNodeRedshiftIAMPermissionsPolicy && nullNodeRedshiftIAMPermissionsPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftIAMPermissionsPolicy = null;
+            if (parseNode.GetChildNode("redshiftIAMTrustPolicy") is { } nullNodeRedshiftIAMTrustPolicy && nullNodeRedshiftIAMTrustPolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftIAMTrustPolicy = null;
+            if (parseNode.GetChildNode("redshiftSetupScripts") is { } nullNodeRedshiftSetupScripts && nullNodeRedshiftSetupScripts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedshiftSetupScripts = null;
+            if (parseNode.GetChildNode("snowflakeSetupScript") is { } nullNodeSnowflakeSetupScript && nullNodeSnowflakeSetupScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnowflakeSetupScript = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+        }
+
         /// <summary>The access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access? Access { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_access"); else _explicitNullProperties?.Remove("_access"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access? _explicitNullValueAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access Access { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_access"); else _explicitNullProperties?.Remove("_access"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access _explicitNullValueAccess = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The capabilityConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep? CapabilityConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep? CapabilityConfig { get => _explicitNullValueCapabilityConfig; set { _explicitNullValueCapabilityConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilityConfig"); else _explicitNullProperties?.Remove("capabilityConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep? _explicitNullValueCapabilityConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep CapabilityConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep CapabilityConfig { get => _explicitNullValueCapabilityConfig; set { _explicitNullValueCapabilityConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("capabilityConfig"); else _explicitNullProperties?.Remove("capabilityConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep _explicitNullValueCapabilityConfig = default!;
 #endif
         /// <summary>SQL setup script for ClickHouse native Experimentation. On setup endpoint responses it also creates the experimentation user with the submitted password. When the two-step setup flow is enabled, it is rehydrated from the persisted config on other responses with only the grants, never the password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClickHouseSetupScript { get; set; }
+        public string? ClickHouseSetupScript { get => _explicitNullValueClickHouseSetupScript; set { _explicitNullValueClickHouseSetupScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickHouseSetupScript"); else _explicitNullProperties?.Remove("clickHouseSetupScript"); } }
+        private string? _explicitNullValueClickHouseSetupScript = default!;
 #nullable restore
 #else
-        public string ClickHouseSetupScript { get; set; }
+        public string ClickHouseSetupScript { get => _explicitNullValueClickHouseSetupScript; set { _explicitNullValueClickHouseSetupScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clickHouseSetupScript"); else _explicitNullProperties?.Remove("clickHouseSetupScript"); } }
+        private string _explicitNullValueClickHouseSetupScript = default!;
 #endif
         /// <summary>Details on configuration for an integration of this type. Refer to the &lt;code&gt;formVariables&lt;/code&gt; field in the corresponding &lt;code&gt;manifest.json&lt;/code&gt; for a full list of fields for each integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty? ConfigValues { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty? ConfigValues { get => _explicitNullValueConfigValues; set { _explicitNullValueConfigValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configValues"); else _explicitNullProperties?.Remove("configValues"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty? _explicitNullValueConfigValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty ConfigValues { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty ConfigValues { get => _explicitNullValueConfigValues; set { _explicitNullValueConfigValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configValues"); else _explicitNullProperties?.Remove("configValues"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepConfigValuesProperty _explicitNullValueConfigValues = default!;
 #endif
         /// <summary>The createdAt property</summary>
-        public long? CreatedAt { get; set; }
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_createdAt"); else _explicitNullProperties?.Remove("_createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>Whether the integration is currently active</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The unique identifier for this integration configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_id"); else _explicitNullProperties?.Remove("_id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The type of integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegrationKey { get; set; }
+        public string? IntegrationKey { get => _explicitNullValueIntegrationKey; set { _explicitNullValueIntegrationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_integrationKey"); else _explicitNullProperties?.Remove("_integrationKey"); } }
+        private string? _explicitNullValueIntegrationKey = default!;
 #nullable restore
 #else
-        public string IntegrationKey { get; set; }
+        public string IntegrationKey { get => _explicitNullValueIntegrationKey; set { _explicitNullValueIntegrationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_integrationKey"); else _explicitNullProperties?.Remove("_integrationKey"); } }
+        private string _explicitNullValueIntegrationKey = default!;
 #endif
         /// <summary>The location and content type of related resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepLinksProperty? Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepLinksProperty? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepLinksProperty? _explicitNullValueLinks = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepLinksProperty Links { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepLinksProperty Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_links"); else _explicitNullProperties?.Remove("_links"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRepLinksProperty _explicitNullValueLinks = default!;
 #endif
         /// <summary>The ID of the member who maintains this integration configuration. Defaults to the member who created it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaintainerId { get; set; }
+        public string? MaintainerId { get => _explicitNullValueMaintainerId; set { _explicitNullValueMaintainerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_maintainerId"); else _explicitNullProperties?.Remove("_maintainerId"); } }
+        private string? _explicitNullValueMaintainerId = default!;
 #nullable restore
 #else
-        public string MaintainerId { get; set; }
+        public string MaintainerId { get => _explicitNullValueMaintainerId; set { _explicitNullValueMaintainerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_maintainerId"); else _explicitNullProperties?.Remove("_maintainerId"); } }
+        private string _explicitNullValueMaintainerId = default!;
 #endif
         /// <summary>A human-friendly name for the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>IAM permissions policy JSON for the customer&apos;s Redshift IAM role. Present only for setup endpoint responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedshiftIAMPermissionsPolicy { get; set; }
+        public string? RedshiftIAMPermissionsPolicy { get => _explicitNullValueRedshiftIAMPermissionsPolicy; set { _explicitNullValueRedshiftIAMPermissionsPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMPermissionsPolicy"); else _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); } }
+        private string? _explicitNullValueRedshiftIAMPermissionsPolicy = default!;
 #nullable restore
 #else
-        public string RedshiftIAMPermissionsPolicy { get; set; }
+        public string RedshiftIAMPermissionsPolicy { get => _explicitNullValueRedshiftIAMPermissionsPolicy; set { _explicitNullValueRedshiftIAMPermissionsPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMPermissionsPolicy"); else _explicitNullProperties?.Remove("redshiftIAMPermissionsPolicy"); } }
+        private string _explicitNullValueRedshiftIAMPermissionsPolicy = default!;
 #endif
         /// <summary>IAM trust policy JSON for the customer&apos;s Redshift IAM role. Present only for setup endpoint responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedshiftIAMTrustPolicy { get; set; }
+        public string? RedshiftIAMTrustPolicy { get => _explicitNullValueRedshiftIAMTrustPolicy; set { _explicitNullValueRedshiftIAMTrustPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMTrustPolicy"); else _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); } }
+        private string? _explicitNullValueRedshiftIAMTrustPolicy = default!;
 #nullable restore
 #else
-        public string RedshiftIAMTrustPolicy { get; set; }
+        public string RedshiftIAMTrustPolicy { get => _explicitNullValueRedshiftIAMTrustPolicy; set { _explicitNullValueRedshiftIAMTrustPolicy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftIAMTrustPolicy"); else _explicitNullProperties?.Remove("redshiftIAMTrustPolicy"); } }
+        private string _explicitNullValueRedshiftIAMTrustPolicy = default!;
 #endif
         /// <summary>SQL setup scripts (4 parts) for Redshift native Experimentation setup. Present on setup endpoint responses and, rehydrated from the persisted config, on active (finalized) Redshift native Experimentation configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RedshiftSetupScripts { get; set; }
+        public List<string>? RedshiftSetupScripts { get => _explicitNullValueRedshiftSetupScripts; set { _explicitNullValueRedshiftSetupScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftSetupScripts"); else _explicitNullProperties?.Remove("redshiftSetupScripts"); } }
+        private List<string>? _explicitNullValueRedshiftSetupScripts = default!;
 #nullable restore
 #else
-        public List<string> RedshiftSetupScripts { get; set; }
+        public List<string> RedshiftSetupScripts { get => _explicitNullValueRedshiftSetupScripts; set { _explicitNullValueRedshiftSetupScripts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redshiftSetupScripts"); else _explicitNullProperties?.Remove("redshiftSetupScripts"); } }
+        private List<string> _explicitNullValueRedshiftSetupScripts = default!;
 #endif
         /// <summary>Consolidated SQL script for Snowflake Warehouse Native Experimentation setup. Present only for setup endpoint responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnowflakeSetupScript { get; set; }
+        public string? SnowflakeSetupScript { get => _explicitNullValueSnowflakeSetupScript; set { _explicitNullValueSnowflakeSetupScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snowflakeSetupScript"); else _explicitNullProperties?.Remove("snowflakeSetupScript"); } }
+        private string? _explicitNullValueSnowflakeSetupScript = default!;
 #nullable restore
 #else
-        public string SnowflakeSetupScript { get; set; }
+        public string SnowflakeSetupScript { get => _explicitNullValueSnowflakeSetupScript; set { _explicitNullValueSnowflakeSetupScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snowflakeSetupScript"); else _explicitNullProperties?.Remove("snowflakeSetupScript"); } }
+        private string _explicitNullValueSnowflakeSetupScript = default!;
 #endif
         /// <summary>An array of tags for this integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<string>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<string> _explicitNullValueTags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRep"/> and sets the default values.
@@ -145,7 +198,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.IntegrationConfigurationsRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -196,6 +249,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("redshiftSetupScripts", RedshiftSetupScripts);
             writer.WriteStringValue("snowflakeSetupScript", SnowflakeSetupScript);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

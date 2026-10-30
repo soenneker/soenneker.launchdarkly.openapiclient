@@ -11,21 +11,35 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StaleFlagData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cleanupId") is { } nullNodeCleanupId && nullNodeCleanupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CleanupId = null;
+            if (parseNode.GetChildNode("readyForCodeRemoval") is { } nullNodeReadyForCodeRemoval && nullNodeReadyForCodeRemoval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyForCodeRemoval = null;
+            if (parseNode.GetChildNode("readyToArchive") is { } nullNodeReadyToArchive && nullNodeReadyToArchive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyToArchive = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If a third-party system helps clean up the flag, the ID from that system</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CleanupId { get; set; }
+        public string? CleanupId { get => _explicitNullValueCleanupId; set { _explicitNullValueCleanupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupId"); else _explicitNullProperties?.Remove("cleanupId"); } }
+        private string? _explicitNullValueCleanupId = default!;
 #nullable restore
 #else
-        public string CleanupId { get; set; }
+        public string CleanupId { get => _explicitNullValueCleanupId; set { _explicitNullValueCleanupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cleanupId"); else _explicitNullProperties?.Remove("cleanupId"); } }
+        private string _explicitNullValueCleanupId = default!;
 #endif
         /// <summary>Whether the flag is ready for code removal</summary>
-        public bool? ReadyForCodeRemoval { get; set; }
+        public bool? ReadyForCodeRemoval { get => _explicitNullValueReadyForCodeRemoval; set { _explicitNullValueReadyForCodeRemoval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyForCodeRemoval"); else _explicitNullProperties?.Remove("readyForCodeRemoval"); } }
+        private bool? _explicitNullValueReadyForCodeRemoval = default!;
         /// <summary>Whether the flag is ready to be archived</summary>
-        public bool? ReadyToArchive { get; set; }
+        public bool? ReadyToArchive { get => _explicitNullValueReadyToArchive; set { _explicitNullValueReadyToArchive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("readyToArchive"); else _explicitNullProperties?.Remove("readyToArchive"); } }
+        private bool? _explicitNullValueReadyToArchive = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.StaleFlagData"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.StaleFlagData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.StaleFlagData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.StaleFlagData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("cleanupId", CleanupId);
             writer.WriteBoolValue("readyForCodeRemoval", ReadyForCodeRemoval);
             writer.WriteBoolValue("readyToArchive", ReadyToArchive);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

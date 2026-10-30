@@ -19,7 +19,6 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.R
     public partial class ReleaseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The phases property</summary>
-        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.Phases.PhasesRequestBuilder Phases
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.Phases.PhasesRequestBuilder(PathParameters, RequestAdapter);
@@ -69,6 +68,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.R
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.LaunchDarkly.OpenApiClient.Models.NotFoundErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineRelease>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.PipelineRelease.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

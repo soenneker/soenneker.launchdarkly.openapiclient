@@ -69,6 +69,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.DataExportEvents
                 { "409", global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportProjectIdentityIncompleteErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
                 { "503", global::Soenneker.LaunchDarkly.OpenApiClient.Models.StatusServiceUnavailable.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.DataExportSeriesListRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

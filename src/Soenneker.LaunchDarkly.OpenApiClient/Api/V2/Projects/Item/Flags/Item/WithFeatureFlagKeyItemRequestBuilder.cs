@@ -22,6 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The release property</summary>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.ReleaseRequestBuilder Release
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.Item.Release.ReleaseRequestBuilder(PathParameters, RequestAdapter);

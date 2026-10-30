@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "0FF3519A34E3D49257FE4EE53B0908BBB45A44611FE03AF9D8C339605BC3BB23EDC6C27EBCF3E5093A138A58ADD9A292018234A46BCAD63D1387C256E3780ED1",
+  "descriptionHash": "06FA36006FBD32F6B3F5F0F2FB3DD6A3A805B6716D54295B3F341E8C1E64B8E510F3BF31C870826AEDC9A44AE4F16DE8BC5F41B2D695468A940572B93FCDAC26",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "LaunchDarklyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.LaunchDarkly.OpenApiClient",

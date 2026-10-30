@@ -11,48 +11,70 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ViewLinkedResourceDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aiConfig") is { } nullNodeAiConfig && nullNodeAiConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfig = null;
+            if (parseNode.GetChildNode("flag") is { } nullNodeFlag && nullNodeFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flag = null;
+            if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("segment") is { } nullNodeSegment && nullNodeSegment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segment = null;
+            if (parseNode.GetChildNode("view") is { } nullNodeView && nullNodeView.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) View = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>AI Config representation for Views API - contains only fields actually used by the Views service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig? AiConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig? AiConfig { get => _explicitNullValueAiConfig; set { _explicitNullValueAiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfig"); else _explicitNullProperties?.Remove("aiConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig? _explicitNullValueAiConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig AiConfig { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig AiConfig { get => _explicitNullValueAiConfig; set { _explicitNullValueAiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfig"); else _explicitNullProperties?.Remove("aiConfig"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig _explicitNullValueAiConfig = default!;
 #endif
         /// <summary>Flag representation for Views API - contains only fields actually used by the Views service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag? Flag { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag? Flag { get => _explicitNullValueFlag; set { _explicitNullValueFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag"); else _explicitNullProperties?.Remove("flag"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag? _explicitNullValueFlag = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag Flag { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag Flag { get => _explicitNullValueFlag; set { _explicitNullValueFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag"); else _explicitNullProperties?.Remove("flag"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag _explicitNullValueFlag = default!;
 #endif
         /// <summary>Metric representation for Views API - contains only fields actually used by the Views service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric? Metric { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric? _explicitNullValueMetric = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric Metric { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric _explicitNullValueMetric = default!;
 #endif
         /// <summary>Segment representation for Views API - contains only fields actually used by the Views service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment? Segment { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment? Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment? _explicitNullValueSegment = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment Segment { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment Segment { get => _explicitNullValueSegment; set { _explicitNullValueSegment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment"); else _explicitNullProperties?.Remove("segment"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment _explicitNullValueSegment = default!;
 #endif
         /// <summary>The view property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.View? View { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.View? View { get => _explicitNullValueView; set { _explicitNullValueView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.View? _explicitNullValueView = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.View View { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.View View { get => _explicitNullValueView; set { _explicitNullValueView = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view"); else _explicitNullProperties?.Remove("view"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.View _explicitNullValueView = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ViewLinkedResourceDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedMetric>("metric", Metric);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedSegment>("segment", Segment);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.View>("view", View);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

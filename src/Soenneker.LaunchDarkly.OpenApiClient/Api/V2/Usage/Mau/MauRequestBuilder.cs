@@ -26,7 +26,6 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau.Bycategory.BycategoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sdks property</summary>
-        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau.Sdks.SdksRequestBuilder Sdks
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau.Sdks.SdksRequestBuilder(PathParameters, RequestAdapter);
@@ -74,6 +73,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Usage.Mau
                 { "401", global::Soenneker.LaunchDarkly.OpenApiClient.Models.UnauthorizedErrorRep.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.LaunchDarkly.OpenApiClient.Models.ForbiddenErrorRep.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.LaunchDarkly.OpenApiClient.Models.RateLimitedErrorRep.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -9107,7 +9107,7 @@
           "Integrations (beta)"
         ],
         "summary": "Get all configurations for the integration",
-        "description": "Get all integration configurations with the specified integration key. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).).",
+        "description": "Get all integration configurations with the specified integration key. This endpoint does not include persistent store integrations or flag import configurations. To manage those, use the [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configuration](https://launchdarkly.com/docs/api/flag-import-configurations-beta) endpoints.",
         "operationId": "GetAllIntegrationConfigurations",
         "parameters": [
           {
@@ -9198,7 +9198,7 @@
           "Integrations (beta)"
         ],
         "summary": "Create integration configuration",
-        "description": "Create a new integration configuration. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)",
+        "description": "Create a new integration configuration. This endpoint does not include persistent store integrations or flag import configurations. To manage those, use the [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configuration](https://launchdarkly.com/docs/api/flag-import-configurations-beta) endpoints.",
         "operationId": "CreateIntegrationConfiguration",
         "parameters": [
           {
@@ -9302,7 +9302,7 @@
           "Integrations (beta)"
         ],
         "summary": "Get an integration configuration",
-        "description": "Get integration configuration with the specified ID. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)",
+        "description": "Get integration configuration with the specified ID. This endpoint does not include persistent store integrations or flag import configurations. To manage those, use the [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configuration](https://launchdarkly.com/docs/api/flag-import-configurations-beta) endpoints.",
         "operationId": "GetIntegrationConfiguration",
         "parameters": [
           {
@@ -9483,7 +9483,7 @@
           "Integrations (beta)"
         ],
         "summary": "Delete integration configuration",
-        "description": "Delete an integration configuration by ID. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)",
+        "description": "Delete an integration configuration by ID. This endpoint does not include persistent store integrations or flag import configurations. To manage those, use the [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configuration](https://launchdarkly.com/docs/api/flag-import-configurations-beta) endpoints.",
         "operationId": "DeleteIntegrationConfiguration",
         "parameters": [
           {
@@ -58370,6 +58370,30 @@
                       "id": "id"
                     }
                   ],
+                  "shadows": [
+                    {
+                      "variationId": "variationId",
+                      "endCondition": {
+                        "kind": "kind",
+                        "value": 4
+                      },
+                      "samplingRate": 0.20271230230023218,
+                      "id": "id",
+                      "ownerId": "ownerId",
+                      "ownerKind": "ownerKind"
+                    },
+                    {
+                      "variationId": "variationId",
+                      "endCondition": {
+                        "kind": "kind",
+                        "value": 4
+                      },
+                      "samplingRate": 0.20271230230023218,
+                      "id": "id",
+                      "ownerId": "ownerId",
+                      "ownerKind": "ownerKind"
+                    }
+                  ],
                   "trackEvents": true
                 },
                 {
@@ -58395,10 +58419,34 @@
                       "id": "id"
                     }
                   ],
+                  "shadows": [
+                    {
+                      "variationId": "variationId",
+                      "endCondition": {
+                        "kind": "kind",
+                        "value": 4
+                      },
+                      "samplingRate": 0.20271230230023218,
+                      "id": "id",
+                      "ownerId": "ownerId",
+                      "ownerKind": "ownerKind"
+                    },
+                    {
+                      "variationId": "variationId",
+                      "endCondition": {
+                        "kind": "kind",
+                        "value": 4
+                      },
+                      "samplingRate": 0.20271230230023218,
+                      "id": "id",
+                      "ownerId": "ownerId",
+                      "ownerKind": "ownerKind"
+                    }
+                  ],
                   "trackEvents": true
                 }
               ],
-              "lastModified": 2,
+              "lastModified": 7,
               "trackEvents": true,
               "fallthrough": {
                 "rollout": {
@@ -58423,9 +58471,33 @@
                   "contextKind": "contextKind",
                   "bucketBy": "bucketBy"
                 },
+                "shadows": [
+                  {
+                    "variationId": "variationId",
+                    "endCondition": {
+                      "kind": "kind",
+                      "value": 4
+                    },
+                    "samplingRate": 0.20271230230023218,
+                    "id": "id",
+                    "ownerId": "ownerId",
+                    "ownerKind": "ownerKind"
+                  },
+                  {
+                    "variationId": "variationId",
+                    "endCondition": {
+                      "kind": "kind",
+                      "value": 4
+                    },
+                    "samplingRate": 0.20271230230023218,
+                    "id": "id",
+                    "ownerId": "ownerId",
+                    "ownerKind": "ownerKind"
+                  }
+                ],
                 "variation": 5
               },
-              "offVariation": 4,
+              "offVariation": 1,
               "targets": [
                 {
                   "values": [
@@ -58444,7 +58516,7 @@
                   "variation": 5
                 }
               ],
-              "_version": 7,
+              "_version": 1,
               "enabled": true
             }
           },
@@ -58474,15 +58546,15 @@
                 ],
                 "_environmentSettings": {
                   "key": {
-                    "startDate": 6,
-                    "stopDate": 8,
+                    "startDate": 9,
+                    "stopDate": 6,
                     "enabledPeriods": [
                       {
-                        "startDate": 9,
+                        "startDate": 3,
                         "stopDate": 6
                       },
                       {
-                        "startDate": 9,
+                        "startDate": 3,
                         "stopDate": 6
                       }
                     ]
@@ -58500,7 +58572,7 @@
                     }
                   },
                   "activeExperimentCount": 2,
-                  "windowEndOffset": 1,
+                  "windowEndOffset": 5,
                   "randomizationUnits": [
                     "user"
                   ],
@@ -58602,8 +58674,8 @@
                   "kind": "custom",
                   "_attachedFlagCount": 0,
                   "metricGroupCount": 0,
-                  "_creationDate": 1,
-                  "windowStartOffset": 7,
+                  "_creationDate": 6,
+                  "windowStartOffset": 4,
                   "tags": [],
                   "winsorIncludeImputed": false,
                   "denominator": {
@@ -58628,15 +58700,15 @@
                       "key": "key",
                       "environmentKey": "environmentKey"
                     },
-                    "windowStartOffset": 4,
-                    "windowEndOffset": 5,
-                    "winsorLowerPercentile": 9.965781217890562,
-                    "winsorUpperPercentile": 9.369310271410669,
+                    "windowStartOffset": 9,
+                    "windowEndOffset": 9,
+                    "winsorLowerPercentile": 6.683562403749608,
+                    "winsorUpperPercentile": 8.762042012749001,
                     "winsorIncludeImputed": true
                   },
                   "maintainerId": "569fdeadbeef1644facecafe",
                   "unit": "unit",
-                  "lastSeen": 1,
+                  "lastSeen": 7,
                   "isNumeric": true,
                   "experimentCount": 0,
                   "name": "My metric",
@@ -58696,7 +58768,7 @@
                     "disabled": true,
                     "value": 0
                   },
-                  "archivedAt": 6,
+                  "archivedAt": 1,
                   "successCriteria": "HigherThanBaseline",
                   "releasePolicyCount": 0,
                   "_versionId": "version-id-123abc",
@@ -58715,15 +58787,15 @@
                 ],
                 "_environmentSettings": {
                   "key": {
-                    "startDate": 6,
-                    "stopDate": 8,
+                    "startDate": 9,
+                    "stopDate": 6,
                     "enabledPeriods": [
                       {
-                        "startDate": 9,
+                        "startDate": 3,
                         "stopDate": 6
                       },
                       {
-                        "startDate": 9,
+                        "startDate": 3,
                         "stopDate": 6
                       }
                     ]
@@ -58741,7 +58813,7 @@
                     }
                   },
                   "activeExperimentCount": 2,
-                  "windowEndOffset": 1,
+                  "windowEndOffset": 5,
                   "randomizationUnits": [
                     "user"
                   ],
@@ -58843,8 +58915,8 @@
                   "kind": "custom",
                   "_attachedFlagCount": 0,
                   "metricGroupCount": 0,
-                  "_creationDate": 1,
-                  "windowStartOffset": 7,
+                  "_creationDate": 6,
+                  "windowStartOffset": 4,
                   "tags": [],
                   "winsorIncludeImputed": false,
                   "denominator": {
@@ -58869,15 +58941,15 @@
                       "key": "key",
                       "environmentKey": "environmentKey"
                     },
-                    "windowStartOffset": 4,
-                    "windowEndOffset": 5,
-                    "winsorLowerPercentile": 9.965781217890562,
-                    "winsorUpperPercentile": 9.369310271410669,
+                    "windowStartOffset": 9,
+                    "windowEndOffset": 9,
+                    "winsorLowerPercentile": 6.683562403749608,
+                    "winsorUpperPercentile": 8.762042012749001,
                     "winsorIncludeImputed": true
                   },
                   "maintainerId": "569fdeadbeef1644facecafe",
                   "unit": "unit",
-                  "lastSeen": 1,
+                  "lastSeen": 7,
                   "isNumeric": true,
                   "experimentCount": 0,
                   "name": "My metric",
@@ -58937,7 +59009,7 @@
                     "disabled": true,
                     "value": 0
                   },
-                  "archivedAt": 6,
+                  "archivedAt": 1,
                   "successCriteria": "HigherThanBaseline",
                   "releasePolicyCount": 0,
                   "_versionId": "version-id-123abc",
@@ -58950,7 +59022,7 @@
             ]
           },
           "name": "name",
-          "_version": 3,
+          "_version": 1,
           "key": "key",
           "tags": [
             "tags",
@@ -59417,6 +59489,30 @@
                   "id": "id"
                 }
               ],
+              "shadows": [
+                {
+                  "variationId": "variationId",
+                  "endCondition": {
+                    "kind": "kind",
+                    "value": 4
+                  },
+                  "samplingRate": 0.20271230230023218,
+                  "id": "id",
+                  "ownerId": "ownerId",
+                  "ownerKind": "ownerKind"
+                },
+                {
+                  "variationId": "variationId",
+                  "endCondition": {
+                    "kind": "kind",
+                    "value": 4
+                  },
+                  "samplingRate": 0.20271230230023218,
+                  "id": "id",
+                  "ownerId": "ownerId",
+                  "ownerKind": "ownerKind"
+                }
+              ],
               "trackEvents": true
             },
             {
@@ -59442,10 +59538,34 @@
                   "id": "id"
                 }
               ],
+              "shadows": [
+                {
+                  "variationId": "variationId",
+                  "endCondition": {
+                    "kind": "kind",
+                    "value": 4
+                  },
+                  "samplingRate": 0.20271230230023218,
+                  "id": "id",
+                  "ownerId": "ownerId",
+                  "ownerKind": "ownerKind"
+                },
+                {
+                  "variationId": "variationId",
+                  "endCondition": {
+                    "kind": "kind",
+                    "value": 4
+                  },
+                  "samplingRate": 0.20271230230023218,
+                  "id": "id",
+                  "ownerId": "ownerId",
+                  "ownerKind": "ownerKind"
+                }
+              ],
               "trackEvents": true
             }
           ],
-          "lastModified": 2,
+          "lastModified": 7,
           "trackEvents": true,
           "fallthrough": {
             "rollout": {
@@ -59470,9 +59590,33 @@
               "contextKind": "contextKind",
               "bucketBy": "bucketBy"
             },
+            "shadows": [
+              {
+                "variationId": "variationId",
+                "endCondition": {
+                  "kind": "kind",
+                  "value": 4
+                },
+                "samplingRate": 0.20271230230023218,
+                "id": "id",
+                "ownerId": "ownerId",
+                "ownerKind": "ownerKind"
+              },
+              {
+                "variationId": "variationId",
+                "endCondition": {
+                  "kind": "kind",
+                  "value": 4
+                },
+                "samplingRate": 0.20271230230023218,
+                "id": "id",
+                "ownerId": "ownerId",
+                "ownerKind": "ownerKind"
+              }
+            ],
             "variation": 5
           },
-          "offVariation": 4,
+          "offVariation": 1,
           "targets": [
             {
               "values": [
@@ -59491,7 +59635,7 @@
               "variation": 5
             }
           ],
-          "_version": 7,
+          "_version": 1,
           "enabled": true
         }
       },
@@ -59529,6 +59673,30 @@
             "contextKind": "contextKind",
             "bucketBy": "bucketBy"
           },
+          "shadows": [
+            {
+              "variationId": "variationId",
+              "endCondition": {
+                "kind": "kind",
+                "value": 4
+              },
+              "samplingRate": 0.20271230230023218,
+              "id": "id",
+              "ownerId": "ownerId",
+              "ownerKind": "ownerKind"
+            },
+            {
+              "variationId": "variationId",
+              "endCondition": {
+                "kind": "kind",
+                "value": 4
+              },
+              "samplingRate": 0.20271230230023218,
+              "id": "id",
+              "ownerId": "ownerId",
+              "ownerKind": "ownerKind"
+            }
+          ],
           "variation": 5
         }
       },
@@ -59678,6 +59846,30 @@
               ],
               "attribute": "attribute",
               "id": "id"
+            }
+          ],
+          "shadows": [
+            {
+              "variationId": "variationId",
+              "endCondition": {
+                "kind": "kind",
+                "value": 4
+              },
+              "samplingRate": 0.20271230230023218,
+              "id": "id",
+              "ownerId": "ownerId",
+              "ownerKind": "ownerKind"
+            },
+            {
+              "variationId": "variationId",
+              "endCondition": {
+                "kind": "kind",
+                "value": 4
+              },
+              "samplingRate": 0.20271230230023218,
+              "id": "id",
+              "ownerId": "ownerId",
+              "ownerKind": "ownerKind"
             }
           ],
           "trackEvents": true
@@ -64813,15 +65005,15 @@
               ],
               "_environmentSettings": {
                 "key": {
-                  "startDate": 6,
-                  "stopDate": 8,
+                  "startDate": 9,
+                  "stopDate": 6,
                   "enabledPeriods": [
                     {
-                      "startDate": 9,
+                      "startDate": 3,
                       "stopDate": 6
                     },
                     {
-                      "startDate": 9,
+                      "startDate": 3,
                       "stopDate": 6
                     }
                   ]
@@ -64839,7 +65031,7 @@
                   }
                 },
                 "activeExperimentCount": 2,
-                "windowEndOffset": 1,
+                "windowEndOffset": 5,
                 "randomizationUnits": [
                   "user"
                 ],
@@ -64941,8 +65133,8 @@
                 "kind": "custom",
                 "_attachedFlagCount": 0,
                 "metricGroupCount": 0,
-                "_creationDate": 1,
-                "windowStartOffset": 7,
+                "_creationDate": 6,
+                "windowStartOffset": 4,
                 "tags": [],
                 "winsorIncludeImputed": false,
                 "denominator": {
@@ -64967,15 +65159,15 @@
                     "key": "key",
                     "environmentKey": "environmentKey"
                   },
-                  "windowStartOffset": 4,
-                  "windowEndOffset": 5,
-                  "winsorLowerPercentile": 9.965781217890562,
-                  "winsorUpperPercentile": 9.369310271410669,
+                  "windowStartOffset": 9,
+                  "windowEndOffset": 9,
+                  "winsorLowerPercentile": 6.683562403749608,
+                  "winsorUpperPercentile": 8.762042012749001,
                   "winsorIncludeImputed": true
                 },
                 "maintainerId": "569fdeadbeef1644facecafe",
                 "unit": "unit",
-                "lastSeen": 1,
+                "lastSeen": 7,
                 "isNumeric": true,
                 "experimentCount": 0,
                 "name": "My metric",
@@ -65035,7 +65227,7 @@
                   "disabled": true,
                   "value": 0
                 },
-                "archivedAt": 6,
+                "archivedAt": 1,
                 "successCriteria": "HigherThanBaseline",
                 "releasePolicyCount": 0,
                 "_versionId": "version-id-123abc",
@@ -65054,15 +65246,15 @@
               ],
               "_environmentSettings": {
                 "key": {
-                  "startDate": 6,
-                  "stopDate": 8,
+                  "startDate": 9,
+                  "stopDate": 6,
                   "enabledPeriods": [
                     {
-                      "startDate": 9,
+                      "startDate": 3,
                       "stopDate": 6
                     },
                     {
-                      "startDate": 9,
+                      "startDate": 3,
                       "stopDate": 6
                     }
                   ]
@@ -65080,7 +65272,7 @@
                   }
                 },
                 "activeExperimentCount": 2,
-                "windowEndOffset": 1,
+                "windowEndOffset": 5,
                 "randomizationUnits": [
                   "user"
                 ],
@@ -65182,8 +65374,8 @@
                 "kind": "custom",
                 "_attachedFlagCount": 0,
                 "metricGroupCount": 0,
-                "_creationDate": 1,
-                "windowStartOffset": 7,
+                "_creationDate": 6,
+                "windowStartOffset": 4,
                 "tags": [],
                 "winsorIncludeImputed": false,
                 "denominator": {
@@ -65208,15 +65400,15 @@
                     "key": "key",
                     "environmentKey": "environmentKey"
                   },
-                  "windowStartOffset": 4,
-                  "windowEndOffset": 5,
-                  "winsorLowerPercentile": 9.965781217890562,
-                  "winsorUpperPercentile": 9.369310271410669,
+                  "windowStartOffset": 9,
+                  "windowEndOffset": 9,
+                  "winsorLowerPercentile": 6.683562403749608,
+                  "winsorUpperPercentile": 8.762042012749001,
                   "winsorIncludeImputed": true
                 },
                 "maintainerId": "569fdeadbeef1644facecafe",
                 "unit": "unit",
-                "lastSeen": 1,
+                "lastSeen": 7,
                 "isNumeric": true,
                 "experimentCount": 0,
                 "name": "My metric",
@@ -65276,7 +65468,7 @@
                   "disabled": true,
                   "value": 0
                 },
-                "archivedAt": 6,
+                "archivedAt": 1,
                 "successCriteria": "HigherThanBaseline",
                 "releasePolicyCount": 0,
                 "_versionId": "version-id-123abc",
@@ -65323,15 +65515,15 @@
           ],
           "_environmentSettings": {
             "key": {
-              "startDate": 6,
-              "stopDate": 8,
+              "startDate": 9,
+              "stopDate": 6,
               "enabledPeriods": [
                 {
-                  "startDate": 9,
+                  "startDate": 3,
                   "stopDate": 6
                 },
                 {
-                  "startDate": 9,
+                  "startDate": 3,
                   "stopDate": 6
                 }
               ]
@@ -65349,7 +65541,7 @@
               }
             },
             "activeExperimentCount": 2,
-            "windowEndOffset": 1,
+            "windowEndOffset": 5,
             "randomizationUnits": [
               "user"
             ],
@@ -65451,8 +65643,8 @@
             "kind": "custom",
             "_attachedFlagCount": 0,
             "metricGroupCount": 0,
-            "_creationDate": 1,
-            "windowStartOffset": 7,
+            "_creationDate": 6,
+            "windowStartOffset": 4,
             "tags": [],
             "winsorIncludeImputed": false,
             "denominator": {
@@ -65477,15 +65669,15 @@
                 "key": "key",
                 "environmentKey": "environmentKey"
               },
-              "windowStartOffset": 4,
-              "windowEndOffset": 5,
-              "winsorLowerPercentile": 9.965781217890562,
-              "winsorUpperPercentile": 9.369310271410669,
+              "windowStartOffset": 9,
+              "windowEndOffset": 9,
+              "winsorLowerPercentile": 6.683562403749608,
+              "winsorUpperPercentile": 8.762042012749001,
               "winsorIncludeImputed": true
             },
             "maintainerId": "569fdeadbeef1644facecafe",
             "unit": "unit",
-            "lastSeen": 1,
+            "lastSeen": 7,
             "isNumeric": true,
             "experimentCount": 0,
             "name": "My metric",
@@ -65545,7 +65737,7 @@
               "disabled": true,
               "value": 0
             },
-            "archivedAt": 6,
+            "archivedAt": 1,
             "successCriteria": "HigherThanBaseline",
             "releasePolicyCount": 0,
             "_versionId": "version-id-123abc",
@@ -65809,7 +66001,7 @@
             }
           },
           "activeExperimentCount": 2,
-          "windowEndOffset": 1,
+          "windowEndOffset": 5,
           "randomizationUnits": [
             "user"
           ],
@@ -65911,8 +66103,8 @@
           "kind": "custom",
           "_attachedFlagCount": 0,
           "metricGroupCount": 0,
-          "_creationDate": 1,
-          "windowStartOffset": 7,
+          "_creationDate": 6,
+          "windowStartOffset": 4,
           "tags": [],
           "winsorIncludeImputed": false,
           "denominator": {
@@ -65937,15 +66129,15 @@
               "key": "key",
               "environmentKey": "environmentKey"
             },
-            "windowStartOffset": 4,
-            "windowEndOffset": 5,
-            "winsorLowerPercentile": 9.965781217890562,
-            "winsorUpperPercentile": 9.369310271410669,
+            "windowStartOffset": 9,
+            "windowEndOffset": 9,
+            "winsorLowerPercentile": 6.683562403749608,
+            "winsorUpperPercentile": 8.762042012749001,
             "winsorIncludeImputed": true
           },
           "maintainerId": "569fdeadbeef1644facecafe",
           "unit": "unit",
-          "lastSeen": 1,
+          "lastSeen": 7,
           "isNumeric": true,
           "experimentCount": 0,
           "name": "My metric",
@@ -66005,7 +66197,7 @@
             "disabled": true,
             "value": 0
           },
-          "archivedAt": 6,
+          "archivedAt": 1,
           "successCriteria": "HigherThanBaseline",
           "releasePolicyCount": 0,
           "_versionId": "version-id-123abc",
@@ -66264,10 +66456,10 @@
             "key": "key",
             "environmentKey": "environmentKey"
           },
-          "windowStartOffset": 4,
-          "windowEndOffset": 5,
-          "winsorLowerPercentile": 9.965781217890562,
-          "winsorUpperPercentile": 9.369310271410669,
+          "windowStartOffset": 9,
+          "windowEndOffset": 9,
+          "winsorLowerPercentile": 6.683562403749608,
+          "winsorUpperPercentile": 8.762042012749001,
           "winsorIncludeImputed": true
         }
       },
@@ -66290,15 +66482,15 @@
           }
         },
         "example": {
-          "startDate": 6,
-          "stopDate": 8,
+          "startDate": 9,
+          "stopDate": 6,
           "enabledPeriods": [
             {
-              "startDate": 9,
+              "startDate": 3,
               "stopDate": 6
             },
             {
-              "startDate": 9,
+              "startDate": 3,
               "stopDate": 6
             }
           ]
@@ -66317,7 +66509,7 @@
           }
         },
         "example": {
-          "startDate": 9,
+          "startDate": 3,
           "stopDate": 6
         }
       },

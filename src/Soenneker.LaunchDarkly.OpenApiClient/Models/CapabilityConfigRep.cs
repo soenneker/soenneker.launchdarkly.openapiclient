@@ -11,24 +11,37 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CapabilityConfigRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approvals") is { } nullNodeApprovals && nullNodeApprovals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approvals = null;
+            if (parseNode.GetChildNode("auditLogEventsHook") is { } nullNodeAuditLogEventsHook && nullNodeAuditLogEventsHook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuditLogEventsHook = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The approvals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig? Approvals { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig? Approvals { get => _explicitNullValueApprovals; set { _explicitNullValueApprovals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals"); else _explicitNullProperties?.Remove("approvals"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig? _explicitNullValueApprovals = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig Approvals { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig Approvals { get => _explicitNullValueApprovals; set { _explicitNullValueApprovals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvals"); else _explicitNullProperties?.Remove("approvals"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig _explicitNullValueApprovals = default!;
 #endif
         /// <summary>The auditLogEventsHook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep? AuditLogEventsHook { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep? AuditLogEventsHook { get => _explicitNullValueAuditLogEventsHook; set { _explicitNullValueAuditLogEventsHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLogEventsHook"); else _explicitNullProperties?.Remove("auditLogEventsHook"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep? _explicitNullValueAuditLogEventsHook = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep AuditLogEventsHook { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep AuditLogEventsHook { get => _explicitNullValueAuditLogEventsHook; set { _explicitNullValueAuditLogEventsHook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auditLogEventsHook"); else _explicitNullProperties?.Remove("auditLogEventsHook"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep _explicitNullValueAuditLogEventsHook = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.CapabilityConfigRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ApprovalsCapabilityConfig>("approvals", Approvals);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AuditLogEventsHookCapabilityConfigRep>("auditLogEventsHook", AuditLogEventsHook);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,50 +11,92 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Metrics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("durationMs") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("generationCount") is { } nullNodeGenerationCount && nullNodeGenerationCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationCount = null;
+            if (parseNode.GetChildNode("generationErrorCount") is { } nullNodeGenerationErrorCount && nullNodeGenerationErrorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationErrorCount = null;
+            if (parseNode.GetChildNode("generationSuccessCount") is { } nullNodeGenerationSuccessCount && nullNodeGenerationSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GenerationSuccessCount = null;
+            if (parseNode.GetChildNode("inputCost") is { } nullNodeInputCost && nullNodeInputCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputCost = null;
+            if (parseNode.GetChildNode("inputTokens") is { } nullNodeInputTokens && nullNodeInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputTokens = null;
+            if (parseNode.GetChildNode("judgeAccuracy") is { } nullNodeJudgeAccuracy && nullNodeJudgeAccuracy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeAccuracy = null;
+            if (parseNode.GetChildNode("judgeRelevance") is { } nullNodeJudgeRelevance && nullNodeJudgeRelevance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeRelevance = null;
+            if (parseNode.GetChildNode("judgeScores") is { } nullNodeJudgeScores && nullNodeJudgeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeScores = null;
+            if (parseNode.GetChildNode("judgeToxicity") is { } nullNodeJudgeToxicity && nullNodeJudgeToxicity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeToxicity = null;
+            if (parseNode.GetChildNode("outputCost") is { } nullNodeOutputCost && nullNodeOutputCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputCost = null;
+            if (parseNode.GetChildNode("outputTokens") is { } nullNodeOutputTokens && nullNodeOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputTokens = null;
+            if (parseNode.GetChildNode("satisfactionRating") is { } nullNodeSatisfactionRating && nullNodeSatisfactionRating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SatisfactionRating = null;
+            if (parseNode.GetChildNode("thumbsDown") is { } nullNodeThumbsDown && nullNodeThumbsDown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbsDown = null;
+            if (parseNode.GetChildNode("thumbsUp") is { } nullNodeThumbsUp && nullNodeThumbsUp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ThumbsUp = null;
+            if (parseNode.GetChildNode("timeToFirstTokenMs") is { } nullNodeTimeToFirstTokenMs && nullNodeTimeToFirstTokenMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToFirstTokenMs = null;
+            if (parseNode.GetChildNode("totalTokens") is { } nullNodeTotalTokens && nullNodeTotalTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total generation duration, in milliseconds</summary>
-        public int? DurationMs { get; set; }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationMs"); else _explicitNullProperties?.Remove("durationMs"); } }
+        private int? _explicitNullValueDurationMs = default!;
         /// <summary>Number of attempted generations</summary>
         [Obsolete("")]
-        public int? GenerationCount { get; set; }
+        public int? GenerationCount { get => _explicitNullValueGenerationCount; set { _explicitNullValueGenerationCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationCount"); else _explicitNullProperties?.Remove("generationCount"); } }
+        private int? _explicitNullValueGenerationCount = default!;
         /// <summary>Number of generations with errors</summary>
-        public int? GenerationErrorCount { get; set; }
+        public int? GenerationErrorCount { get => _explicitNullValueGenerationErrorCount; set { _explicitNullValueGenerationErrorCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationErrorCount"); else _explicitNullProperties?.Remove("generationErrorCount"); } }
+        private int? _explicitNullValueGenerationErrorCount = default!;
         /// <summary>Number of successful generations</summary>
-        public int? GenerationSuccessCount { get; set; }
+        public int? GenerationSuccessCount { get => _explicitNullValueGenerationSuccessCount; set { _explicitNullValueGenerationSuccessCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generationSuccessCount"); else _explicitNullProperties?.Remove("generationSuccessCount"); } }
+        private int? _explicitNullValueGenerationSuccessCount = default!;
         /// <summary>Cost of input tokens in USD</summary>
-        public double? InputCost { get; set; }
+        public double? InputCost { get => _explicitNullValueInputCost; set { _explicitNullValueInputCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputCost"); else _explicitNullProperties?.Remove("inputCost"); } }
+        private double? _explicitNullValueInputCost = default!;
         /// <summary>Number of input tokens</summary>
-        public int? InputTokens { get; set; }
+        public int? InputTokens { get => _explicitNullValueInputTokens; set { _explicitNullValueInputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputTokens"); else _explicitNullProperties?.Remove("inputTokens"); } }
+        private int? _explicitNullValueInputTokens = default!;
         /// <summary>Average accuracy judge score (0.0-1.0)</summary>
-        public float? JudgeAccuracy { get; set; }
+        public float? JudgeAccuracy { get => _explicitNullValueJudgeAccuracy; set { _explicitNullValueJudgeAccuracy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeAccuracy"); else _explicitNullProperties?.Remove("judgeAccuracy"); } }
+        private float? _explicitNullValueJudgeAccuracy = default!;
         /// <summary>Average relevance judge score (0.0-1.0)</summary>
-        public float? JudgeRelevance { get; set; }
+        public float? JudgeRelevance { get => _explicitNullValueJudgeRelevance; set { _explicitNullValueJudgeRelevance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeRelevance"); else _explicitNullProperties?.Remove("judgeRelevance"); } }
+        private float? _explicitNullValueJudgeRelevance = default!;
         /// <summary>Average score and sample count for every judge metric recorded in the time range, keyed by the judge&apos;s evaluation metric key. Includes custom judges and the built-in accuracy, relevance, and toxicity judges. Omitted when no judge scores were recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore>? JudgeScores { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore>? JudgeScores { get => _explicitNullValueJudgeScores; set { _explicitNullValueJudgeScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeScores"); else _explicitNullProperties?.Remove("judgeScores"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore>? _explicitNullValueJudgeScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore> JudgeScores { get; set; }
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore> JudgeScores { get => _explicitNullValueJudgeScores; set { _explicitNullValueJudgeScores = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeScores"); else _explicitNullProperties?.Remove("judgeScores"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeScore> _explicitNullValueJudgeScores = default!;
 #endif
         /// <summary>Average toxicity judge score (0.0-1.0)</summary>
-        public float? JudgeToxicity { get; set; }
+        public float? JudgeToxicity { get => _explicitNullValueJudgeToxicity; set { _explicitNullValueJudgeToxicity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeToxicity"); else _explicitNullProperties?.Remove("judgeToxicity"); } }
+        private float? _explicitNullValueJudgeToxicity = default!;
         /// <summary>Cost of output tokens in USD</summary>
-        public double? OutputCost { get; set; }
+        public double? OutputCost { get => _explicitNullValueOutputCost; set { _explicitNullValueOutputCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputCost"); else _explicitNullProperties?.Remove("outputCost"); } }
+        private double? _explicitNullValueOutputCost = default!;
         /// <summary>Number of output tokens</summary>
-        public int? OutputTokens { get; set; }
+        public int? OutputTokens { get => _explicitNullValueOutputTokens; set { _explicitNullValueOutputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputTokens"); else _explicitNullProperties?.Remove("outputTokens"); } }
+        private int? _explicitNullValueOutputTokens = default!;
         /// <summary>A value between 0 and 1 representing satisfaction rating</summary>
-        public float? SatisfactionRating { get; set; }
+        public float? SatisfactionRating { get => _explicitNullValueSatisfactionRating; set { _explicitNullValueSatisfactionRating = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("satisfactionRating"); else _explicitNullProperties?.Remove("satisfactionRating"); } }
+        private float? _explicitNullValueSatisfactionRating = default!;
         /// <summary>Number of negative feedback ratings</summary>
-        public int? ThumbsDown { get; set; }
+        public int? ThumbsDown { get => _explicitNullValueThumbsDown; set { _explicitNullValueThumbsDown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbsDown"); else _explicitNullProperties?.Remove("thumbsDown"); } }
+        private int? _explicitNullValueThumbsDown = default!;
         /// <summary>Number of positive feedback ratings</summary>
-        public int? ThumbsUp { get; set; }
+        public int? ThumbsUp { get => _explicitNullValueThumbsUp; set { _explicitNullValueThumbsUp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thumbsUp"); else _explicitNullProperties?.Remove("thumbsUp"); } }
+        private int? _explicitNullValueThumbsUp = default!;
         /// <summary>Time to the first token, in milliseconds</summary>
-        public int? TimeToFirstTokenMs { get; set; }
+        public int? TimeToFirstTokenMs { get => _explicitNullValueTimeToFirstTokenMs; set { _explicitNullValueTimeToFirstTokenMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeToFirstTokenMs"); else _explicitNullProperties?.Remove("timeToFirstTokenMs"); } }
+        private int? _explicitNullValueTimeToFirstTokenMs = default!;
         /// <summary>Total number of tokens</summary>
-        public int? TotalTokens { get; set; }
+        public int? TotalTokens { get => _explicitNullValueTotalTokens; set { _explicitNullValueTotalTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTokens"); else _explicitNullProperties?.Remove("totalTokens"); } }
+        private int? _explicitNullValueTotalTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Metrics"/> and sets the default values.
         /// </summary>
@@ -70,7 +112,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.Metrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.Metrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.Metrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,6 +165,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteIntValue("thumbsUp", ThumbsUp);
             writer.WriteIntValue("timeToFirstTokenMs", TimeToFirstTokenMs);
             writer.WriteIntValue("totalTokens", TotalTokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

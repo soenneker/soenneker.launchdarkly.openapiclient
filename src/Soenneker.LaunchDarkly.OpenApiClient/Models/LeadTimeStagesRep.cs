@@ -11,19 +11,36 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LeadTimeStagesRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("codingDurationMs") is { } nullNodeCodingDurationMs && nullNodeCodingDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodingDurationMs = null;
+            if (parseNode.GetChildNode("deployDurationMs") is { } nullNodeDeployDurationMs && nullNodeDeployDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployDurationMs = null;
+            if (parseNode.GetChildNode("reviewDurationMs") is { } nullNodeReviewDurationMs && nullNodeReviewDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReviewDurationMs = null;
+            if (parseNode.GetChildNode("totalLeadTimeMs") is { } nullNodeTotalLeadTimeMs && nullNodeTotalLeadTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalLeadTimeMs = null;
+            if (parseNode.GetChildNode("waitDurationMs") is { } nullNodeWaitDurationMs && nullNodeWaitDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitDurationMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The coding duration in milliseconds</summary>
-        public long? CodingDurationMs { get; set; }
+        public long? CodingDurationMs { get => _explicitNullValueCodingDurationMs; set { _explicitNullValueCodingDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codingDurationMs"); else _explicitNullProperties?.Remove("codingDurationMs"); } }
+        private long? _explicitNullValueCodingDurationMs = default!;
         /// <summary>The deploy duration in milliseconds</summary>
-        public long? DeployDurationMs { get; set; }
+        public long? DeployDurationMs { get => _explicitNullValueDeployDurationMs; set { _explicitNullValueDeployDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployDurationMs"); else _explicitNullProperties?.Remove("deployDurationMs"); } }
+        private long? _explicitNullValueDeployDurationMs = default!;
         /// <summary>The review duration in milliseconds</summary>
-        public long? ReviewDurationMs { get; set; }
+        public long? ReviewDurationMs { get => _explicitNullValueReviewDurationMs; set { _explicitNullValueReviewDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reviewDurationMs"); else _explicitNullProperties?.Remove("reviewDurationMs"); } }
+        private long? _explicitNullValueReviewDurationMs = default!;
         /// <summary>The total lead time in milliseconds</summary>
-        public long? TotalLeadTimeMs { get; set; }
+        public long? TotalLeadTimeMs { get => _explicitNullValueTotalLeadTimeMs; set { _explicitNullValueTotalLeadTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalLeadTimeMs"); else _explicitNullProperties?.Remove("totalLeadTimeMs"); } }
+        private long? _explicitNullValueTotalLeadTimeMs = default!;
         /// <summary>The wait duration between merge time and deploy start time in milliseconds</summary>
-        public long? WaitDurationMs { get; set; }
+        public long? WaitDurationMs { get => _explicitNullValueWaitDurationMs; set { _explicitNullValueWaitDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("waitDurationMs"); else _explicitNullProperties?.Remove("waitDurationMs"); } }
+        private long? _explicitNullValueWaitDurationMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.LeadTimeStagesRep"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.LeadTimeStagesRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.LeadTimeStagesRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.LeadTimeStagesRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteLongValue("reviewDurationMs", ReviewDurationMs);
             writer.WriteLongValue("totalLeadTimeMs", TotalLeadTimeMs);
             writer.WriteLongValue("waitDurationMs", WaitDurationMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

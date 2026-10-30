@@ -12,26 +12,41 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvironmentReleaseMetricInput : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analysisUnit") is { } nullNodeAnalysisUnit && nullNodeAnalysisUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisUnit = null;
+            if (parseNode.GetChildNode("autoRollback") is { } nullNodeAutoRollback && nullNodeAutoRollback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoRollback = null;
+            if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Key of the context kind to analyze this metric on. Omit it to analyzeon the randomization unit. A value must differ from the randomizationunit and be one of the metric&apos;s units. Percentile metrics, ratiometrics, and metrics in a group cannot set it. The value cannot bechanged after the release starts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalysisUnit { get; set; }
+        public string? AnalysisUnit { get => _explicitNullValueAnalysisUnit; set { _explicitNullValueAnalysisUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisUnit"); else _explicitNullProperties?.Remove("analysisUnit"); } }
+        private string? _explicitNullValueAnalysisUnit = default!;
 #nullable restore
 #else
-        public string AnalysisUnit { get; set; }
+        public string AnalysisUnit { get => _explicitNullValueAnalysisUnit; set { _explicitNullValueAnalysisUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisUnit"); else _explicitNullProperties?.Remove("analysisUnit"); } }
+        private string _explicitNullValueAnalysisUnit = default!;
 #endif
         /// <summary>Whether a regression on this metric automatically reverts therelease. When `false`, a detected regression pauses the releaseinstead: it reports `waiting` with reason`waiting_regression_detected` and does not advance until theregression is dismissed or the release is stopped.</summary>
-        public bool? AutoRollback { get; set; }
+        public bool? AutoRollback { get => _explicitNullValueAutoRollback; set { _explicitNullValueAutoRollback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoRollback"); else _explicitNullProperties?.Remove("autoRollback"); } }
+        private bool? _explicitNullValueAutoRollback = default!;
         /// <summary>The metricKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricKey { get; set; }
+        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        private string? _explicitNullValueMetricKey = default!;
 #nullable restore
 #else
-        public string MetricKey { get; set; }
+        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        private string _explicitNullValueMetricKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput"/> and sets the default values.
@@ -49,7 +64,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleaseMetricInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +89,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("analysisUnit", AnalysisUnit);
             writer.WriteBoolValue("autoRollback", AutoRollback);
             writer.WriteStringValue("metricKey", MetricKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

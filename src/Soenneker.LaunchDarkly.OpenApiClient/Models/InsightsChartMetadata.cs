@@ -11,48 +11,70 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class InsightsChartMetadata : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("metrics") is { } nullNodeMetrics && nullNodeMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metrics = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("xAxis") is { } nullNodeXAxis && nullNodeXAxis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XAxis = null;
+            if (parseNode.GetChildNode("yAxis") is { } nullNodeYAxis && nullNodeYAxis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YAxis = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataMetrics? Metrics { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataMetrics? Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataMetrics? _explicitNullValueMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataMetrics Metrics { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataMetrics Metrics { get => _explicitNullValueMetrics; set { _explicitNullValueMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metrics"); else _explicitNullProperties?.Remove("metrics"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataMetrics _explicitNullValueMetrics = default!;
 #endif
         /// <summary>Name of the chart</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary? Summary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary Summary { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>The xAxis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis? XAxis { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis? XAxis { get => _explicitNullValueXAxis; set { _explicitNullValueXAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xAxis"); else _explicitNullProperties?.Remove("xAxis"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis? _explicitNullValueXAxis = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis XAxis { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis XAxis { get => _explicitNullValueXAxis; set { _explicitNullValueXAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xAxis"); else _explicitNullProperties?.Remove("xAxis"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis _explicitNullValueXAxis = default!;
 #endif
         /// <summary>The yAxis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis? YAxis { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis? YAxis { get => _explicitNullValueYAxis; set { _explicitNullValueYAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yAxis"); else _explicitNullProperties?.Remove("yAxis"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis? _explicitNullValueYAxis = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis YAxis { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis YAxis { get => _explicitNullValueYAxis; set { _explicitNullValueYAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yAxis"); else _explicitNullProperties?.Remove("yAxis"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis _explicitNullValueYAxis = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadata"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartMetadataSummary>("summary", Summary);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis>("xAxis", XAxis);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsChartSeriesMetadataAxis>("yAxis", YAxis);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

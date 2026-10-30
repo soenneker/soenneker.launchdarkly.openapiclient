@@ -11,40 +11,59 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AiConfigsLegacyExperimentRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
+            if (parseNode.GetChildNode("_environmentSettings") is { } nullNodeEnvironmentSettings && nullNodeEnvironmentSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentSettings = null;
+            if (parseNode.GetChildNode("_metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("metricKey") is { } nullNodeMetricKey && nullNodeMetricKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricKey = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Environments { get; set; }
+        public List<string>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<string>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public List<string> Environments { get; set; }
+        public List<string> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<string> _explicitNullValueEnvironments = default!;
 #endif
         /// <summary>The environmentSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty? EnvironmentSettings { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty? EnvironmentSettings { get => _explicitNullValueEnvironmentSettings; set { _explicitNullValueEnvironmentSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_environmentSettings"); else _explicitNullProperties?.Remove("_environmentSettings"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty? _explicitNullValueEnvironmentSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty EnvironmentSettings { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty EnvironmentSettings { get => _explicitNullValueEnvironmentSettings; set { _explicitNullValueEnvironmentSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_environmentSettings"); else _explicitNullProperties?.Remove("_environmentSettings"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty _explicitNullValueEnvironmentSettings = default!;
 #endif
         /// <summary>The metric property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep? Metric { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_metric"); else _explicitNullProperties?.Remove("_metric"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep? _explicitNullValueMetric = default!;
 #nullable restore
 #else
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep Metric { get; set; }
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_metric"); else _explicitNullProperties?.Remove("_metric"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep _explicitNullValueMetric = default!;
 #endif
         /// <summary>The metricKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricKey { get; set; }
+        public string? MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        private string? _explicitNullValueMetricKey = default!;
 #nullable restore
 #else
-        public string MetricKey { get; set; }
+        public string MetricKey { get => _explicitNullValueMetricKey; set { _explicitNullValueMetricKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricKey"); else _explicitNullProperties?.Remove("metricKey"); } }
+        private string _explicitNullValueMetricKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRep"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsLegacyExperimentRepEnvironmentSettingsProperty>("_environmentSettings", EnvironmentSettings);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricListingRep>("_metric", Metric);
             writer.WriteStringValue("metricKey", MetricKey);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

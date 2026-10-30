@@ -12,50 +12,74 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ToolReference : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aiConfigKey") is { } nullNodeAiConfigKey && nullNodeAiConfigKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigKey = null;
+            if (parseNode.GetChildNode("aiConfigName") is { } nullNodeAiConfigName && nullNodeAiConfigName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AiConfigName = null;
+            if (parseNode.GetChildNode("toolVersion") is { } nullNodeToolVersion && nullNodeToolVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolVersion = null;
+            if (parseNode.GetChildNode("variationId") is { } nullNodeVariationId && nullNodeVariationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationId = null;
+            if (parseNode.GetChildNode("variationKey") is { } nullNodeVariationKey && nullNodeVariationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationKey = null;
+            if (parseNode.GetChildNode("variationName") is { } nullNodeVariationName && nullNodeVariationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VariationName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The key of the AgentControl config with a variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AiConfigKey { get; set; }
+        public string? AiConfigKey { get => _explicitNullValueAiConfigKey; set { _explicitNullValueAiConfigKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigKey"); else _explicitNullProperties?.Remove("aiConfigKey"); } }
+        private string? _explicitNullValueAiConfigKey = default!;
 #nullable restore
 #else
-        public string AiConfigKey { get; set; }
+        public string AiConfigKey { get => _explicitNullValueAiConfigKey; set { _explicitNullValueAiConfigKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigKey"); else _explicitNullProperties?.Remove("aiConfigKey"); } }
+        private string _explicitNullValueAiConfigKey = default!;
 #endif
         /// <summary>The name of the AgentControl config with a variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AiConfigName { get; set; }
+        public string? AiConfigName { get => _explicitNullValueAiConfigName; set { _explicitNullValueAiConfigName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigName"); else _explicitNullProperties?.Remove("aiConfigName"); } }
+        private string? _explicitNullValueAiConfigName = default!;
 #nullable restore
 #else
-        public string AiConfigName { get; set; }
+        public string AiConfigName { get => _explicitNullValueAiConfigName; set { _explicitNullValueAiConfigName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfigName"); else _explicitNullProperties?.Remove("aiConfigName"); } }
+        private string _explicitNullValueAiConfigName = default!;
 #endif
         /// <summary>The version of the tool being referenced.</summary>
-        public int? ToolVersion { get; set; }
+        public int? ToolVersion { get => _explicitNullValueToolVersion; set { _explicitNullValueToolVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toolVersion"); else _explicitNullProperties?.Remove("toolVersion"); } }
+        private int? _explicitNullValueToolVersion = default!;
         /// <summary>The ID of the variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariationId { get; set; }
+        public string? VariationId { get => _explicitNullValueVariationId; set { _explicitNullValueVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationId"); else _explicitNullProperties?.Remove("variationId"); } }
+        private string? _explicitNullValueVariationId = default!;
 #nullable restore
 #else
-        public string VariationId { get; set; }
+        public string VariationId { get => _explicitNullValueVariationId; set { _explicitNullValueVariationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationId"); else _explicitNullProperties?.Remove("variationId"); } }
+        private string _explicitNullValueVariationId = default!;
 #endif
         /// <summary>The key of the AgentControl config variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariationKey { get; set; }
+        public string? VariationKey { get => _explicitNullValueVariationKey; set { _explicitNullValueVariationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationKey"); else _explicitNullProperties?.Remove("variationKey"); } }
+        private string? _explicitNullValueVariationKey = default!;
 #nullable restore
 #else
-        public string VariationKey { get; set; }
+        public string VariationKey { get => _explicitNullValueVariationKey; set { _explicitNullValueVariationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationKey"); else _explicitNullProperties?.Remove("variationKey"); } }
+        private string _explicitNullValueVariationKey = default!;
 #endif
         /// <summary>The name of the variation that references this tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VariationName { get; set; }
+        public string? VariationName { get => _explicitNullValueVariationName; set { _explicitNullValueVariationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationName"); else _explicitNullProperties?.Remove("variationName"); } }
+        private string? _explicitNullValueVariationName = default!;
 #nullable restore
 #else
-        public string VariationName { get; set; }
+        public string VariationName { get => _explicitNullValueVariationName; set { _explicitNullValueVariationName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variationName"); else _explicitNullProperties?.Remove("variationName"); } }
+        private string _explicitNullValueVariationName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReference"/> and sets the default values.
@@ -72,7 +96,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,6 +127,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("variationId", VariationId);
             writer.WriteStringValue("variationKey", VariationKey);
             writer.WriteStringValue("variationName", VariationName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

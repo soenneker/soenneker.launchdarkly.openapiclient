@@ -11,35 +11,53 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MigrationSafetyIssueRep : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("affectedRuleIds") is { } nullNodeAffectedRuleIds && nullNodeAffectedRuleIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffectedRuleIds = null;
+            if (parseNode.GetChildNode("causingRuleId") is { } nullNodeCausingRuleId && nullNodeCausingRuleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CausingRuleId = null;
+            if (parseNode.GetChildNode("issue") is { } nullNodeIssue && nullNodeIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issue = null;
+            if (parseNode.GetChildNode("oldSystemAffected") is { } nullNodeOldSystemAffected && nullNodeOldSystemAffected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OldSystemAffected = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A list of the IDs of the rules which are affected by this issue. &lt;code&gt;fallthrough&lt;/code&gt; is a sentinel value for the default rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AffectedRuleIds { get; set; }
+        public List<string>? AffectedRuleIds { get => _explicitNullValueAffectedRuleIds; set { _explicitNullValueAffectedRuleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affectedRuleIds"); else _explicitNullProperties?.Remove("affectedRuleIds"); } }
+        private List<string>? _explicitNullValueAffectedRuleIds = default!;
 #nullable restore
 #else
-        public List<string> AffectedRuleIds { get; set; }
+        public List<string> AffectedRuleIds { get => _explicitNullValueAffectedRuleIds; set { _explicitNullValueAffectedRuleIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affectedRuleIds"); else _explicitNullProperties?.Remove("affectedRuleIds"); } }
+        private List<string> _explicitNullValueAffectedRuleIds = default!;
 #endif
         /// <summary>The ID of the rule which caused this issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CausingRuleId { get; set; }
+        public string? CausingRuleId { get => _explicitNullValueCausingRuleId; set { _explicitNullValueCausingRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causingRuleId"); else _explicitNullProperties?.Remove("causingRuleId"); } }
+        private string? _explicitNullValueCausingRuleId = default!;
 #nullable restore
 #else
-        public string CausingRuleId { get; set; }
+        public string CausingRuleId { get => _explicitNullValueCausingRuleId; set { _explicitNullValueCausingRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("causingRuleId"); else _explicitNullProperties?.Remove("causingRuleId"); } }
+        private string _explicitNullValueCausingRuleId = default!;
 #endif
         /// <summary>A description of the issue that &lt;code&gt;causingRuleId&lt;/code&gt; has caused for &lt;code&gt;affectedRuleIds&lt;/code&gt;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issue { get; set; }
+        public string? Issue { get => _explicitNullValueIssue; set { _explicitNullValueIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue"); else _explicitNullProperties?.Remove("issue"); } }
+        private string? _explicitNullValueIssue = default!;
 #nullable restore
 #else
-        public string Issue { get; set; }
+        public string Issue { get => _explicitNullValueIssue; set { _explicitNullValueIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue"); else _explicitNullProperties?.Remove("issue"); } }
+        private string _explicitNullValueIssue = default!;
 #endif
         /// <summary>Whether the changes caused by &lt;code&gt;causingRuleId&lt;/code&gt; bring inconsistency to the old system</summary>
-        public bool? OldSystemAffected { get; set; }
+        public bool? OldSystemAffected { get => _explicitNullValueOldSystemAffected; set { _explicitNullValueOldSystemAffected = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oldSystemAffected"); else _explicitNullProperties?.Remove("oldSystemAffected"); } }
+        private bool? _explicitNullValueOldSystemAffected = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.MigrationSafetyIssueRep"/> and sets the default values.
         /// </summary>
@@ -55,7 +73,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public static global::Soenneker.LaunchDarkly.OpenApiClient.Models.MigrationSafetyIssueRep CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.LaunchDarkly.OpenApiClient.Models.MigrationSafetyIssueRep();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.LaunchDarkly.OpenApiClient.Models.MigrationSafetyIssueRep(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("causingRuleId", CausingRuleId);
             writer.WriteStringValue("issue", Issue);
             writer.WriteBoolValue("oldSystemAffected", OldSystemAffected);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
