@@ -84,7 +84,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.CodeRefs.Repositories.Item
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://app.launchdarkly.com", "/api/v2/code-refs/repositories/{repo}/branch-delete-tasks", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromScalarCollection(RequestAdapter, "application/json", body);

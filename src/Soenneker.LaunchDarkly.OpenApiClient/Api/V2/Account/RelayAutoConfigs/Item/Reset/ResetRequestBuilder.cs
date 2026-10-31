@@ -78,7 +78,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Account.RelayAutoConfigs.I
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Account.RelayAutoConfigs.Item.Reset.ResetRequestBuilder.ResetRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://app.launchdarkly.com", "/api/v2/account/relay-auto-configs/{id}/reset", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

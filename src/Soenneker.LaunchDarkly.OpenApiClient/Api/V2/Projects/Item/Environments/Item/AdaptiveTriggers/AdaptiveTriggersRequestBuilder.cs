@@ -130,7 +130,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.AdaptiveTriggers.AdaptiveTriggersRequestBuilder.AdaptiveTriggersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers?resourceKey={resourceKey}&resourceKind={resourceKind}{&limit*,offset*}", RequestAdapter.BaseUrl, "https://app.launchdarkly.com", "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers?resourceKey={resourceKey}&resourceKind={resourceKind}{&limit*,offset*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -151,7 +151,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://app.launchdarkly.com", "/api/v2/projects/{projectKey}/environments/{environmentKey}/adaptive-triggers", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
