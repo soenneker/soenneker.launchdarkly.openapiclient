@@ -179,6 +179,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Relay auto config response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RelayAutoConfigRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -1379,6 +1390,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Approval request response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApprovalRequestResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3618,6 +3640,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Generate warehouse destination key pair response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateWarehouseDestinationKeyPairPostRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3712,6 +3745,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Generate trust policy response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateTrustPolicyPostRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3806,6 +3850,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Generate warehouse destination key pair response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateWarehouseDestinationKeyPairPostRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -3920,6 +3975,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Completed destination",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Destination"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4023,6 +4089,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Generate warehouse destination setup script response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WarehouseDestinationSetupScriptRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4134,6 +4211,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Destination response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Destination"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -4624,6 +4712,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Flag link response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlagLinkRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -5398,6 +5497,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Global flag response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeatureFlag"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -5923,6 +6033,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Global flag response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeatureFlag"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -6625,6 +6746,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Flag trigger response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TriggerWorkflowRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -7394,6 +7526,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Big segment store response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BigSegmentStoreIntegration"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -8006,6 +8149,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Integration delivery configuration response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationDeliveryConfiguration"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9292,6 +9446,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Integration Configuration response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IntegrationConfigurationsRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -9739,6 +9904,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Integration response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Integration"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -10198,6 +10374,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Member collection response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Members"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -10662,6 +10849,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Member response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Member"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -10871,6 +11069,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Metric response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -11269,6 +11478,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "OAuth 2.0 client response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -11717,6 +11937,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Project response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProjectRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -12400,6 +12631,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Environment response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Environment"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -13680,6 +13922,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Experiment response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Experiment"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -14455,6 +14708,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Holdout response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HoldoutRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -15791,6 +16055,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Approval request response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlagConfigApprovalRequestResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -15905,6 +16180,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Approval request response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlagConfigApprovalRequestResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -16984,6 +17270,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Scheduled changes response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeatureFlagScheduledChange"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -17650,6 +17947,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Workflow response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomWorkflowOutput"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -18351,6 +18659,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Layer response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LayerRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -18699,6 +19018,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Metric group response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetricGroupRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -19182,6 +19512,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Release pipeline response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReleasePipeline"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "deprecated": true
@@ -19664,6 +20005,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Custom role response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CustomRole"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -20106,6 +20458,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Segment response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSegment"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -21820,6 +22183,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Teams response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Team"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       },
@@ -22401,6 +22775,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Team member imports response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamImportsRep"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -22657,6 +23042,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Workflow template response JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkflowTemplateOutput"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -22890,6 +23286,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Access token response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Token"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -28782,6 +29189,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "AI Config created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiConfig"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -29121,6 +29539,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "AI Config variation created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiConfigVariation"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -30606,6 +31035,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "AI tool created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiTool"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -31234,6 +31674,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Prompt snippet created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PromptSnippet"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -31845,6 +32296,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Agent skill created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentSkill"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -32464,6 +32926,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Agent graph created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentGraph"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -32915,6 +33388,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Agent optimization created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentOptimization"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -33340,6 +33824,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Agent optimization result created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentOptimizationResult"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -33967,6 +34462,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created announcement",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnnouncementResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -35448,6 +35954,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Release policy created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReleasePolicy"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -36365,6 +36882,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Environment release created and started.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentRelease"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -36932,6 +37460,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "IP allowlist entry created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IpAllowlistEntryResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -37464,6 +38003,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "SDK key created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdkKey"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -38145,6 +38695,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Adaptive Trigger created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AdaptiveTrigger"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -40093,6 +40654,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightGroup"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         }
       }
@@ -66514,23 +67086,14 @@
         }
       },
       "AiConfigMaintainer": {
-        "required": [
-          "kind"
-        ],
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/MaintainerMember"
+            "$ref": "#/components/schemas/AiConfigMaintainerOneOf1"
           },
           {
-            "$ref": "#/components/schemas/AiConfigsMaintainerTeam"
+            "$ref": "#/components/schemas/AiConfigMaintainerOneOf2"
           }
         ],
-        "properties": {
-          "kind": {
-            "type": "string"
-          }
-        },
         "description": "The member or team that maintains this resource",
         "example": {
           "kind": "kind"
@@ -66554,20 +67117,14 @@
         "description": "The variation value"
       },
       "AgentGraphMaintainer": {
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/MaintainerMember"
+            "$ref": "#/components/schemas/AgentGraphMaintainerOneOf1"
           },
           {
-            "$ref": "#/components/schemas/AiConfigsMaintainerTeam"
+            "$ref": "#/components/schemas/AgentGraphMaintainerOneOf2"
           }
         ],
-        "properties": {
-          "kind": {
-            "type": "string"
-          }
-        },
         "description": "The member or team that maintains this agent graph",
         "example": {
           "kind": "kind"
@@ -93177,6 +93734,114 @@
             }
           ]
         }
+      },
+      "AiConfigMaintainerOneOf1": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The member ID"
+          },
+          "email": {
+            "type": "string",
+            "description": "The member email address"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "The member first name"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "The member last name"
+          },
+          "role": {
+            "type": "string",
+            "description": "The member role"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "email",
+          "role",
+          "kind"
+        ]
+      },
+      "AiConfigMaintainerOneOf2": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The team key"
+          },
+          "name": {
+            "type": "string",
+            "description": "The team name"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "name",
+          "kind"
+        ]
+      },
+      "AgentGraphMaintainerOneOf1": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The member ID"
+          },
+          "email": {
+            "type": "string",
+            "description": "The member email address"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "The member first name"
+          },
+          "lastName": {
+            "type": "string",
+            "description": "The member last name"
+          },
+          "role": {
+            "type": "string",
+            "description": "The member role"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "_id",
+          "email",
+          "role"
+        ]
+      },
+      "AgentGraphMaintainerOneOf2": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The team key"
+          },
+          "name": {
+            "type": "string",
+            "description": "The team name"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "name"
+        ]
       }
     },
     "requestBodies": {
