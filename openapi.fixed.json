@@ -18,10 +18,6 @@
     {
       "url": "https://app.launchdarkly.com",
       "description": " Default"
-    },
-    {
-      "url": "https://app.launchdarkly.us",
-      "description": " Federal"
     }
   ],
   "paths": {
@@ -39792,7 +39788,7 @@
             "schema": {
               "type": "boolean",
               "description": "Filter events to those associated with an experiment (\u0060true\u0060) or without an experiment (\u0060false\u0060)",
-              "format": "boolean"
+              "x-client-original-format": "boolean"
             }
           },
           {
@@ -40432,7 +40428,7 @@
             "schema": {
               "type": "boolean",
               "description": "Filter events to those associated with an experiment (\u0060true\u0060) or without an experiment (\u0060false\u0060)",
-              "format": "boolean"
+              "x-client-original-format": "boolean"
             }
           },
           {
@@ -41797,9 +41793,6 @@
           }
         }
       },
-      "ActionIdentifier": {
-        "type": "string"
-      },
       "ActionInput": {
         "type": "object",
         "properties": {
@@ -41827,15 +41820,6 @@
               "$ref": "#/components/schemas/ActionOutputInstructionsItem"
             }
           }
-        }
-      },
-      "ActionSpecifier": {
-        "type": "string"
-      },
-      "AllVariationsSummary": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/VariationSummary"
         }
       },
       "AnalysisConfigInput": {
@@ -42196,9 +42180,6 @@
           }
         }
       },
-      "ApprovalRequestServiceKind": {
-        "type": "string"
-      },
       "ApprovalSettings": {
         "required": [
           "required",
@@ -42387,15 +42368,6 @@
           "configuration": {
             "$ref": "#/components/schemas/AudienceConfiguration"
           }
-        }
-      },
-      "AudienceStatus": {
-        "type": "string"
-      },
-      "Audiences": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Audience"
         }
       },
       "AuditLogEntryListingRep": {
@@ -43346,9 +43318,6 @@
           }
         }
       },
-      "ConditionKind": {
-        "type": "string"
-      },
       "ConditionOutput": {
         "required": [
           "_id",
@@ -43552,10 +43521,6 @@
             "description": "A collection of context attribute value data grouped by kind."
           }
         }
-      },
-      "ContextInstance": {
-        "type": "object",
-        "additionalProperties": {}
       },
       "ContextInstanceEvaluation": {
         "required": [
@@ -43766,9 +43731,6 @@
             "$ref": "#/components/schemas/ContextInstanceSegmentMembershipsLinksProperty"
           }
         }
-      },
-      "ContextKindCreatedFrom": {
-        "type": "string"
       },
       "ContextKindEnvironmentObservation": {
         "required": [
@@ -44232,12 +44194,6 @@
           }
         }
       },
-      "CustomProperties": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/CustomProperty"
-        }
-      },
       "CustomRole": {
         "required": [
           "_id",
@@ -44581,9 +44537,6 @@
           }
         }
       },
-      "DateVersion": {
-        "type": "integer"
-      },
       "DefaultClientSideAvailability": {
         "required": [
           "usingMobileKey",
@@ -44694,12 +44647,6 @@
             "type": "boolean",
             "description": "When true, includes imputed zeros in the percentile bound calculation"
           }
-        }
-      },
-      "DependentExperimentListRep": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/DependentExperimentRep"
         }
       },
       "DependentExperimentRep": {
@@ -45087,9 +45034,6 @@
             "description": "An array of Data Export destinations"
           }
         }
-      },
-      "DurationUnit": {
-        "type": "string"
       },
       "DynamicOptionFiltersItems": {
         "type": "object",
@@ -46408,12 +46352,6 @@
           }
         }
       },
-      "ExtinctionListPost": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Extinction"
-        }
-      },
       "FeatureFlag": {
         "required": [
           "name",
@@ -46922,12 +46860,6 @@
             "example": 0
           }
         }
-      },
-      "FeatureWorkflowId": {
-        "type": "string"
-      },
-      "FieldAction": {
-        "type": "string"
       },
       "FileRep": {
         "type": "object",
@@ -47694,12 +47626,6 @@
           }
         }
       },
-      "FlagsInput": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FlagInput"
-        }
-      },
       "FollowFlagMember": {
         "required": [
           "_links",
@@ -47790,10 +47716,6 @@
             "$ref": "#/components/schemas/DynamicOptions"
           }
         }
-      },
-      "FormVariableConfig": {
-        "type": "object",
-        "additionalProperties": {}
       },
       "GenerateTrustPolicyPostRep": {
         "type": "object",
@@ -48131,16 +48053,6 @@
             "description": "The email address of the member who initiated the export",
             "example": "ariel@acme.com"
           }
-        }
-      },
-      "Instruction": {
-        "type": "object",
-        "additionalProperties": {}
-      },
-      "Instructions": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/InstructionsItem"
         }
       },
       "Integration": {
@@ -48814,12 +48726,6 @@
           "covariateInfo": {
             "$ref": "#/components/schemas/CovariateInfoRep"
           }
-        }
-      },
-      "JsonPatch": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/PatchOperation"
         }
       },
       "LastSeenMetadata": {
@@ -50557,15 +50463,6 @@
           }
         }
       },
-      "MetricsInput": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MetricInput"
-        }
-      },
-      "MigrationFlagStageCount": {
-        "type": "integer"
-      },
       "MigrationSafetyIssueRep": {
         "type": "object",
         "properties": {
@@ -50747,12 +50644,6 @@
           }
         }
       },
-      "NewMemberFormListPost": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/NewMemberForm"
-        }
-      },
       "NotFoundErrorRep": {
         "required": [
           "code",
@@ -50771,15 +50662,6 @@
             "example": "Invalid resource identifier"
           }
         }
-      },
-      "OAuthProviderKind": {
-        "type": "string"
-      },
-      "ObjectId": {
-        "type": "string"
-      },
-      "OperatorType": {
-        "type": "string"
       },
       "OptionsArray": {
         "type": "object",
@@ -50923,9 +50805,6 @@
           }
         }
       },
-      "PhaseConfiguration": {
-        "type": "object"
-      },
       "PhaseInfo": {
         "required": [
           "_id",
@@ -50950,9 +50829,6 @@
             "example": 2
           }
         }
-      },
-      "PhaseStatus": {
-        "type": "string"
       },
       "PipelineRelease": {
         "required": [
@@ -51278,9 +51154,6 @@
             "$ref": "#/components/schemas/PipelineReleaseProgressionCollectionLinksProperty"
           }
         }
-      },
-      "PipelineReleaseStrategy": {
-        "type": "string"
       },
       "PostFlagScheduledChangesInput": {
         "required": [
@@ -52015,9 +51888,6 @@
           }
         }
       },
-      "ResourceCategory": {
-        "type": "string"
-      },
       "ResourceIdResponse": {
         "type": "object",
         "properties": {
@@ -52065,9 +51935,6 @@
             "example": "project-key-123abc"
           }
         }
-      },
-      "ResourceKind": {
-        "type": "string"
       },
       "ReviewOutput": {
         "required": [
@@ -52132,24 +51999,6 @@
             "example": "12ab3c45de678910abc12345"
           }
         }
-      },
-      "RoleAttributeMap": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "RoleAttributeValues": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "RoleType": {
-        "type": "string"
       },
       "Rollout": {
         "required": [
@@ -52245,9 +52094,6 @@
             "description": "Whether the operator should be negated"
           }
         }
-      },
-      "ScheduleKind": {
-        "type": "string"
       },
       "SdkListRep": {
         "required": [
@@ -52428,9 +52274,6 @@
           }
         }
       },
-      "SegmentId": {
-        "type": "string"
-      },
       "SegmentMetadata": {
         "type": "object",
         "properties": {
@@ -52579,24 +52422,6 @@
               }
             ]
           }
-        }
-      },
-      "SeriesMetadataRep": {
-        "type": "object",
-        "additionalProperties": {}
-      },
-      "SeriesTimeSliceRep": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "integer",
-          "format": "int64"
-        }
-      },
-      "SeriesTimeSliceRepFloat": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "number",
-          "format": "double"
         }
       },
       "SimpleHoldoutRep": {
@@ -52827,12 +52652,6 @@
           "effect": {
             "$ref": "#/components/schemas/StatementPostEffect"
           }
-        }
-      },
-      "StatementPostList": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/StatementPost"
         }
       },
       "StatisticCollectionRep": {
@@ -53519,12 +53338,6 @@
           }
         }
       },
-      "TreatmentsInput": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/TreatmentInput"
-        }
-      },
       "TriggerWorkflowCollectionRep": {
         "type": "object",
         "properties": {
@@ -53668,10 +53481,6 @@
           }
         }
       },
-      "UnixMillis": {
-        "type": "integer",
-        "format": "int64"
-      },
       "UpdatePhaseStatusInput": {
         "type": "object",
         "properties": {
@@ -53800,16 +53609,6 @@
           "_links": {
             "$ref": "#/components/schemas/UpsertResponseRepLinksProperty"
           }
-        }
-      },
-      "UrlMatcher": {
-        "type": "object",
-        "additionalProperties": {}
-      },
-      "UrlMatchers": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/UrlMatchersItem"
         }
       },
       "UrlPost": {
@@ -58789,53 +58588,6 @@
           "key": "OpenAI.gpt-image-2"
         }
       },
-      "MaintainerMember": {
-        "required": [
-          "_id",
-          "email",
-          "role"
-        ],
-        "type": "object",
-        "properties": {
-          "_id": {
-            "type": "string",
-            "description": "The member ID"
-          },
-          "email": {
-            "type": "string",
-            "description": "The member email address"
-          },
-          "firstName": {
-            "type": "string",
-            "description": "The member first name"
-          },
-          "lastName": {
-            "type": "string",
-            "description": "The member last name"
-          },
-          "role": {
-            "type": "string",
-            "description": "The member role"
-          }
-        }
-      },
-      "AiConfigsMaintainerTeam": {
-        "required": [
-          "key",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "key": {
-            "type": "string",
-            "description": "The team key"
-          },
-          "name": {
-            "type": "string",
-            "description": "The team name"
-          }
-        }
-      },
       "AiConfigTargeting": {
         "required": [
           "_version",
@@ -59833,12 +59585,6 @@
           "variationKey": "variationKey"
         }
       },
-      "MetricsByVariation": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MetricByVariation"
-        }
-      },
       "ParentAndSelfLinks": {
         "required": [
           "parent",
@@ -60554,18 +60300,6 @@
           "_id": "_id",
           "value": null
         }
-      },
-      "AiConfigTargetingVariationBoolean": {
-        "type": "boolean"
-      },
-      "AiConfigTargetingVariationJson": {
-        "type": "object"
-      },
-      "AiConfigTargetingVariationNumber": {
-        "type": "number"
-      },
-      "AiConfigTargetingVariationString": {
-        "type": "string"
       },
       "AiTool": {
         "required": [
@@ -65230,9 +64964,6 @@
           "resourceType": "resourceType"
         }
       },
-      "AccessRep": {
-        "$ref": "#/components/schemas/AiConfigsAccess"
-      },
       "AiConfigsAccess": {
         "required": [
           "allowed",
@@ -67407,12 +67138,6 @@
           }
         }
       },
-      "AnnouncementJsonPatch": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AnnouncementPatchOperation"
-        }
-      },
       "AnnouncementPatchOperation": {
         "required": [
           "op",
@@ -67550,27 +67275,6 @@
               "action": "action"
             }
           ]
-        }
-      },
-      "AnnouncementAccess": {
-        "required": [
-          "allowed",
-          "denied"
-        ],
-        "type": "object",
-        "properties": {
-          "denied": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AnnouncementAccessDenied"
-            }
-          },
-          "allowed": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AnnouncementAccessAllowedRep"
-            }
-          }
         }
       },
       "AnnouncementAccessDenied": {
@@ -68076,8 +67780,9 @@
           "minNumApprovals": {
             "type": "integer",
             "description": "Sets the amount of approvals required before a member can apply a change. The minimum is one and the maximum is five.\n",
-            "format": "int",
-            "example": 1
+            "format": "int64",
+            "example": 1,
+            "x-client-original-format": "int"
           },
           "canReviewOwnRequest": {
             "type": "boolean",
@@ -68138,12 +67843,6 @@
           }
         }
       },
-      "ApprovalRequestSettings": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ApprovalRequestSettingWithEnvs"
-        }
-      },
       "ApprovalRequestSettingsPatch": {
         "required": [
           "environmentKey",
@@ -68179,8 +67878,9 @@
           "minNumApprovals": {
             "type": "integer",
             "description": "Sets the amount of approvals required before a member can apply a change. The minimum is one and the maximum is five.\n",
-            "format": "int",
-            "example": 1
+            "format": "int64",
+            "example": 1,
+            "x-client-original-format": "int"
           },
           "required": {
             "type": "boolean",
@@ -77413,27 +77113,6 @@
           "key": "team-key-123abc"
         }
       },
-      "ViewsAccess": {
-        "required": [
-          "allowed",
-          "denied"
-        ],
-        "type": "object",
-        "properties": {
-          "denied": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewsAccessDenied"
-            }
-          },
-          "allowed": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewsAccessAllowedRep"
-            }
-          }
-        }
-      },
       "ViewsAccessDenied": {
         "required": [
           "action",
@@ -80189,27 +79868,6 @@
           ]
         }
       },
-      "ReleasePoliciesAccess": {
-        "required": [
-          "allowed",
-          "denied"
-        ],
-        "type": "object",
-        "properties": {
-          "denied": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReleasePoliciesAccessDenied"
-            }
-          },
-          "allowed": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReleasePoliciesAccessAllowedRep"
-            }
-          }
-        }
-      },
       "ReleasePoliciesAccessDenied": {
         "required": [
           "action",
@@ -81732,248 +81390,6 @@
           "type": "type"
         }
       },
-      "EnvironmentReleasesMetricListingRep": {
-        "required": [
-          "_creationDate",
-          "_id",
-          "_links",
-          "_versionId",
-          "dataSource",
-          "key",
-          "kind",
-          "name",
-          "tags"
-        ],
-        "type": "object",
-        "properties": {
-          "experimentCount": {
-            "type": "integer",
-            "description": "The number of experiments using this metric",
-            "example": 0
-          },
-          "metricGroupCount": {
-            "type": "integer",
-            "description": "The number of metric groups using this metric",
-            "example": 0
-          },
-          "guardedRolloutCount": {
-            "type": "integer",
-            "description": "The number of guarded rollouts using this metric",
-            "example": 0
-          },
-          "releasePolicyCount": {
-            "type": "integer",
-            "description": "The number of release policies using this metric",
-            "example": 0
-          },
-          "activeExperimentCount": {
-            "type": "integer",
-            "description": "The number of active experiments using this metric",
-            "example": 2
-          },
-          "activeGuardedRolloutCount": {
-            "type": "integer",
-            "description": "The number of active guarded rollouts using this metric",
-            "example": 1
-          },
-          "_id": {
-            "type": "string",
-            "description": "The ID of this metric",
-            "example": "5902deadbeef667524a01290"
-          },
-          "_versionId": {
-            "type": "string",
-            "description": "The version ID of the metric",
-            "example": "version-id-123abc"
-          },
-          "_version": {
-            "type": "integer",
-            "description": "Version of the metric",
-            "example": 1
-          },
-          "key": {
-            "type": "string",
-            "description": "A unique key to reference the metric",
-            "example": "metric-key-123abc"
-          },
-          "name": {
-            "type": "string",
-            "description": "A human-friendly name for the metric",
-            "example": "My metric"
-          },
-          "kind": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepKind"
-          },
-          "_attachedFlagCount": {
-            "type": "integer",
-            "description": "The number of feature flags currently attached to this metric",
-            "example": 0
-          },
-          "_links": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepLinksProperty"
-          },
-          "_site": {
-            "$ref": "#/components/schemas/Link"
-          },
-          "_access": {
-            "$ref": "#/components/schemas/EnvironmentReleasesAccess"
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Tags for the metric",
-            "example": []
-          },
-          "_creationDate": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "lastModified": {
-            "$ref": "#/components/schemas/EnvironmentReleasesModification"
-          },
-          "maintainerId": {
-            "type": "string",
-            "description": "The ID of the member who maintains this metric",
-            "example": "569fdeadbeef1644facecafe"
-          },
-          "_maintainer": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMemberSummary"
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the metric"
-          },
-          "category": {
-            "type": "string",
-            "description": "The category of the metric",
-            "example": "Error monitoring"
-          },
-          "isNumeric": {
-            "type": "boolean",
-            "description": "For custom and trace metrics, whether to track numeric changes in value against a baseline (\u003Ccode\u003Etrue\u003C/code\u003E) or to track a conversion when an end user takes an action (\u003Ccode\u003Efalse\u003C/code\u003E).",
-            "example": true
-          },
-          "successCriteria": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepSuccessCriteria"
-          },
-          "unit": {
-            "type": "string",
-            "description": "For numeric custom and trace metrics, the unit of measure"
-          },
-          "eventKey": {
-            "type": "string",
-            "description": "For custom metrics, the event key to use in your code",
-            "example": "Order placed"
-          },
-          "randomizationUnits": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Deprecated, use \u003Ccode\u003EanalysisUnits\u003C/code\u003E instead.",
-            "example": [
-              "user"
-            ],
-            "deprecated": true
-          },
-          "analysisUnits": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "An array of analysis units allowed for this metric.",
-            "example": [
-              "user"
-            ]
-          },
-          "filters": {
-            "$ref": "#/components/schemas/EnvironmentReleasesFilter"
-          },
-          "unitAggregationType": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUnitAggregationType"
-          },
-          "analysisType": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepAnalysisType"
-          },
-          "percentileValue": {
-            "type": "integer",
-            "description": "The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when \u003Ccode\u003EanalysisType\u003C/code\u003E is \u003Ccode\u003Epercentile\u003C/code\u003E.",
-            "example": 95
-          },
-          "eventDefault": {
-            "$ref": "#/components/schemas/MetricEventDefaultRep"
-          },
-          "dataSource": {
-            "$ref": "#/components/schemas/MetricDataSourceRefRep"
-          },
-          "lastSeen": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "archived": {
-            "type": "boolean",
-            "description": "Whether the metric version is archived"
-          },
-          "archivedAt": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "selector": {
-            "type": "string",
-            "description": "For click metrics, the CSS selectors"
-          },
-          "urls": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUrlsItem"
-            }
-          },
-          "windowStartOffset": {
-            "type": "integer",
-            "description": "Not yet implemented - The start of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
-            "format": "int64"
-          },
-          "windowEndOffset": {
-            "type": "integer",
-            "description": "Not yet implemented - The end of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
-            "format": "int64"
-          },
-          "winsorLowerPercentile": {
-            "type": "number",
-            "description": "Lower winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, defines a two-sided clamp range. Otherwise lower-only winsorization.",
-            "example": 1
-          },
-          "winsorUpperPercentile": {
-            "type": "number",
-            "description": "Upper winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, must be greater than winsorLowerPercentile.",
-            "example": 99.5
-          },
-          "winsorIncludeImputed": {
-            "type": "boolean",
-            "description": "When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn\u0027t send events.",
-            "example": false
-          },
-          "traceQuery": {
-            "type": "string",
-            "description": "For trace metrics, the trace query to use for the metric.",
-            "example": "service.name = \u0022checkout\u0022"
-          },
-          "traceValueLocation": {
-            "type": "string",
-            "description": "For trace metrics, the location in the trace to use for numeric values.",
-            "example": "duration"
-          },
-          "unitAggregationField": {
-            "type": "string",
-            "description": "For count_distinct metrics, the column to count distinct values of"
-          },
-          "denominator": {
-            "$ref": "#/components/schemas/EnvironmentReleasesMetricDenominatorRep"
-          }
-        }
-      },
       "EnvironmentReleasesAccess": {
         "required": [
           "allowed",
@@ -83180,9 +82596,6 @@
           "key": "environment-key-123abc"
         }
       },
-      "AdaptiveTriggerSource": {
-        "$ref": "#/components/schemas/ObservabilityAlertSource"
-      },
       "ObservabilityAlertSource": {
         "required": [
           "alertId",
@@ -83616,9 +83029,6 @@
           }
         }
       },
-      "DeploymentKind": {
-        "type": "string"
-      },
       "DeploymentRep": {
         "required": [
           "id",
@@ -83731,9 +83141,6 @@
           }
         }
       },
-      "DeploymentStatus": {
-        "type": "string"
-      },
       "EvaluationsSummary": {
         "type": "object",
         "properties": {
@@ -83745,9 +83152,6 @@
             "description": "A list of variation evaluations"
           }
         }
-      },
-      "EventType": {
-        "type": "string"
       },
       "FailureReasonRep": {
         "required": [
@@ -84046,9 +83450,6 @@
             "example": 5
           }
         }
-      },
-      "ImpactReason": {
-        "type": "string"
       },
       "InsightGroup": {
         "required": [
@@ -84366,10 +83767,6 @@
           }
         }
       },
-      "InsightsChartMetadataCustomValues": {
-        "type": "object",
-        "additionalProperties": {}
-      },
       "InsightsChartMetric": {
         "required": [
           "indicator",
@@ -84407,12 +83804,6 @@
             },
             "description": "Metric indicator tiers"
           }
-        }
-      },
-      "InsightsChartMetrics": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/InsightsChartMetric"
         }
       },
       "InsightsChartSeries": {
@@ -84551,9 +83942,6 @@
             "$ref": "#/components/schemas/InsightsMetricScore"
           }
         }
-      },
-      "InsightsMetricScoreIndicator": {
-        "type": "string"
       },
       "InsightsMetricTierDefinition": {
         "required": [
@@ -84701,9 +84089,6 @@
             }
           }
         }
-      },
-      "IterationStatus": {
-        "type": "string"
       },
       "LeadTimeStagesRep": {
         "required": [
@@ -85089,20 +84474,6 @@
           }
         }
       },
-      "ApprovalRequestSettingWithEnvsAllOf1": {
-        "type": "object",
-        "properties": {
-          "environments": {
-            "$ref": "#/components/schemas/ApprovalRequestSettingWithEnvsAllOf1EnvironmentsProperty"
-          },
-          "_default": {
-            "$ref": "#/components/schemas/ApprovalRequestSetting"
-          },
-          "_strict": {
-            "$ref": "#/components/schemas/ApprovalRequestSetting"
-          }
-        }
-      },
       "ReleaseMetricDefinition": {
         "required": [
           "_creationDate",
@@ -85399,2044 +84770,6 @@
           ]
         }
       },
-      "SdkKeyForPutSdkKeyViewsAllOf2": {
-        "type": "object",
-        "properties": {
-          "viewSummaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewSummary"
-            },
-            "description": "Summaries of views associated with the SDK key."
-          }
-        }
-      },
-      "SdkKeyListItemAllOf2": {
-        "type": "object",
-        "properties": {
-          "environmentSummary": {
-            "$ref": "#/components/schemas/SdkKeysEnvironmentSummary"
-          },
-          "viewSummaries": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ViewSummary"
-            },
-            "description": "Summaries of views associated with the SDK key."
-          }
-        }
-      },
-      "ApplicationCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ApplicationFlagCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ApplicationRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ApplicationVersionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ApplicationVersionsCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ApprovalRequestResponseLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "ApprovalSettingsServiceConfig": {
-        "type": "object",
-        "additionalProperties": {}
-      },
-      "AuditLogEntryListingRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "AuditLogEntryListingRepCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "AuditLogEntryRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "AuthorizedAppDataRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "BranchCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "BranchRepLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "BulkEditMembersRepErrorsItem": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "BulkEditTeamsRepErrorsItem": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "ClientLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/oauth/clients",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/oauth/clients/50666563-9144-4125-b822-33f308227e45",
-            "type": "application/json"
-          }
-        }
-      },
-      "ClientCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/oauth/clients",
-            "type": "application/json"
-          }
-        }
-      },
-      "ContextInstanceEvaluationLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/{projectKey}/environments/{environmentKey}/flags/evaluate",
-            "type": "application/json"
-          },
-          "site": {
-            "href": "/my-project/my-environment/features/sort.order/targeting",
-            "type": "text/html"
-          }
-        }
-      },
-      "ContextInstanceEvaluationsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/{projectKey}/environments/{environmentKey}/flags/evaluate",
-            "type": "application/json"
-          }
-        }
-      },
-      "ContextInstanceSegmentMembershipLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ContextInstanceSegmentMembershipsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ContextKindRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ContextKindsCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ContextRecordLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project/environments/my-environment",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/environments/my-env/contexts/organization:launch-darkly:user:henry?filter=applicationid\u002Bequals\u002B%22GoSDK%2F1.2%22",
-            "type": "application/json"
-          },
-          "site": {
-            "href": "/my-project/my-environment/context/organization:launch-darkly:user:henry",
-            "type": "text/html"
-          }
-        }
-      },
-      "ContextsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "next": {
-            "href": "/app.launchdarkly.com/api/v2/projects/my-project/environments/my-environment/contexts?filter=kind:{\u0022equals\u0022: [\u0022organization\u0022]}\u0026limit=2\u0026continuationToken=QAGFKH1313KUGI2351",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-proj/environments/my-env/contexts?filter=kind:{\u0022equals\u0022: [\u0022organization\u0022]}\u0026limit=2\u0026continuationToken=QAGFKH1313KUGI2351",
-            "type": "application/json"
-          }
-        }
-      },
-      "CustomRoleLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "CustomRolesLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "CustomWorkflowOutputLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "CustomWorkflowsListingOutputLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "DataExportSeriesListRepLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "DependentExperimentRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project/environments/my-environment",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/environments/my-environment/experiments/example-experiment",
-            "type": "application/json"
-          }
-        }
-      },
-      "DependentFlagLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "DependentFlagEnvironmentLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "DependentFlagsByEnvironmentLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "DependentMetricGroupRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/metric-groups/my-metric-group",
-            "type": "application/json"
-          }
-        }
-      },
-      "DependentMetricGroupRepWithMetricsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/metric-groups/my-metric-group",
-            "type": "application/json"
-          }
-        }
-      },
-      "DependentMetricOrMetricGroupRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "DependentReleasePhaseRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/internal/projects/my-project/flags/my-flag/environments/production/releases/1b2a3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
-            "type": "application/json"
-          }
-        }
-      },
-      "DestinationLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/destinations",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/destinations/my-project/my-environment/610addeadbeefaa86ec9a7d4",
-            "type": "application/json"
-          }
-        }
-      },
-      "DestinationsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/destinations",
-            "type": "application/json"
-          }
-        }
-      },
-      "EnvironmentLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/my-project/environments/my-environment",
-            "type": "application/json"
-          }
-        }
-      },
-      "EnvironmentResourceApprovalSettings": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ApprovalSettings"
-        },
-        "description": "Details about the approval settings for other resources in this environment, organized by resource kind (for example, \u0022aiconfig\u0022 and \u0022segment\u0022)"
-      },
-      "EnvironmentSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/my-project/environments/my-environment",
-            "type": "application/json"
-          }
-        }
-      },
-      "EnvironmentsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExpandableApprovalRequestResponseLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "ExpandableApprovalRequestsResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExpandedFlagRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/flags/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/flags/my-project/my-flag",
-            "type": "application/json"
-          }
-        }
-      },
-      "ExperimentLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project/environments/my-environment",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/environments/my-environment/experiments/my-experiment",
-            "type": "application/json"
-          }
-        }
-      },
-      "ExperimentCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExpiringTargetGetResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExpiringTargetPatchResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExpiringUserTargetGetResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExpiringUserTargetPatchResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExportLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources, including the location of the exported file"
-      },
-      "ExtinctionCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ExtinctionCollectionRepItems": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/Extinction"
-          }
-        },
-        "description": "An array of extinction events"
-      },
-      "FeatureFlagLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/flags/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/flags/my-project/my-flag",
-            "type": "application/json"
-          }
-        }
-      },
-      "FeatureFlagEnvironments": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FeatureFlagConfig"
-        },
-        "description": "Details on the environments for this flag. Only returned if the request is filtered by environment, using the \u003Ccode\u003EfilterEnv\u003C/code\u003E query parameter.",
-        "example": {
-          "my-environment": {
-            "_environmentName": "My Environment",
-            "_site": {
-              "href": "/default/my-environment/features/client-side-flag",
-              "type": "text/html"
-            },
-            "_summary": {
-              "prerequisites": 0,
-              "variations": {
-                "0": {
-                  "contextTargets": 1,
-                  "isFallthrough": true,
-                  "nullRules": 0,
-                  "rules": 0,
-                  "targets": 1
-                },
-                "1": {
-                  "isOff": true,
-                  "nullRules": 0,
-                  "rules": 0,
-                  "targets": 0
-                }
-              }
-            },
-            "archived": false,
-            "contextTargets": [
-              {
-                "contextKind": "device",
-                "values": [
-                  "device-key-123abc"
-                ],
-                "variation": 0
-              }
-            ],
-            "fallthrough": {
-              "variation": 0
-            },
-            "lastModified": 1627071171347,
-            "offVariation": 1,
-            "on": false,
-            "prerequisites": [],
-            "rules": [],
-            "salt": "61eddeadbeef4da1facecafe3a60a397",
-            "sel": "810edeadbeef4844facecafe438f2999492",
-            "targets": [
-              {
-                "contextKind": "user",
-                "values": [
-                  "user-key-123abc"
-                ],
-                "variation": 0
-              }
-            ],
-            "trackEvents": false,
-            "trackEventsFallthrough": false,
-            "version": 1
-          }
-        }
-      },
-      "FeatureFlagScheduledChangeLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FeatureFlagScheduledChangesLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FeatureFlagStatusAcrossEnvironmentsEnvironments": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FeatureFlagStatus"
-        },
-        "description": "Flag status for environment.",
-        "example": {
-          "production": {
-            "lastRequested": "2020-02-05T18:17:01.514Z",
-            "name": "inactive"
-          }
-        }
-      },
-      "FeatureFlagStatusAcrossEnvironmentsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "example": {
-          "parent": {
-            "href": "/api/v2/flag-status",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/flag-status/my-project/my-flag",
-            "type": "application/json"
-          }
-        }
-      },
-      "FeatureFlagStatusesLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "example": {
-          "self": {
-            "href": "/api/v2/flag-statuses/my-project/my-environment",
-            "type": "application/json"
-          }
-        }
-      },
-      "FeatureFlagsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/flags/default",
-            "type": "application/json"
-          }
-        }
-      },
-      "FlagConfigApprovalRequestResponseLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "FlagConfigApprovalRequestsResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FlagFollowersByProjEnvGetRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/my-project/flags/my-flay/environments/my-environment/followers",
-            "type": "application/json"
-          }
-        }
-      },
-      "FlagFollowersGetRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/my-project/flags/my-flay/environments/my-environment/followers",
-            "type": "application/json"
-          }
-        }
-      },
-      "FlagLinkCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FlagLinkMemberLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "FlagLinkRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FlagLinkRepMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "The metadata required by this integration in order to create a flag link, if this is a flag link for an existing integration. Defined in the integration\u0027s \u003Ccode\u003Emanifest.json\u003C/code\u003E file under \u003Ccode\u003EflagLink\u003C/code\u003E."
-      },
-      "FlagListingRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "FlagRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/flags/my-project/my-flag",
-            "type": "application/json"
-          }
-        }
-      },
-      "FlagStatusRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "example": {
-          "parent": {
-            "href": "/api/v2/flags/my-project/my-flag",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/flag-statuses/my-project/my-flag",
-            "type": "application/json"
-          }
-        }
-      },
-      "FollowFlagMemberLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/members/569f183514f4432160000007",
-            "type": "application/json"
-          }
-        }
-      },
-      "HoldoutsCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/my-project/environments/my-environment/holdouts?limit=20",
-            "type": "application/json"
-          }
-        }
-      },
-      "ImportLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "IntegrationLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "IntegrationConfig": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "Details on configuration for an integration of this type. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E for a full list of fields for each integration."
-      },
-      "IntegrationConfigurationCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "IntegrationConfigurationPostConfigValues": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The unique set of fields required to configure the integration. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E at https://github.com/launchdarkly/integration-framework/tree/main/integrations for a full list of fields for the integration you wish to configure.",
-        "example": {
-          "optional": "an optional property",
-          "required": "the required property",
-          "url": "https://example.com"
-        }
-      },
-      "IntegrationConfigurationsRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "IntegrationConfigurationsRepConfigValues": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "Details on configuration for an integration of this type. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E for a full list of fields for each integration."
-      },
-      "IntegrationsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "IterationRepFlags": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/FlagRep"
-        },
-        "description": "Details on the flag used in this experiment"
-      },
-      "LayerCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/my-project/layers",
-            "type": "application/json"
-          }
-        }
-      },
-      "LayerRepEnvironments": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/LayerConfigurationRep"
-        },
-        "description": "The layer configurations for each requested environment"
-      },
-      "LegacyExperimentRepEnvironmentSettings": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ExperimentEnvironmentSettingRep"
-        }
-      },
-      "MaintainerTeamLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/teams",
-            "type": "application/json"
-          },
-          "roles": {
-            "href": "/api/v2/teams/example-team/roles",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/teams/example-team",
-            "type": "application/json"
-          }
-        }
-      },
-      "MemberLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "MemberDataRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "MemberSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/members/569f183514f4432160000007",
-            "type": "application/json"
-          }
-        }
-      },
-      "MemberTeamSummaryRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "MembersLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "MetricCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/metrics/my-project?limit=20",
-            "type": "application/json"
-          }
-        }
-      },
-      "MetricGroupCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/metric-groups",
-            "type": "application/json"
-          }
-        }
-      },
-      "MetricGroupRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/projects/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project/metric-groups/my-metric-group",
-            "type": "application/json"
-          }
-        }
-      },
-      "MetricInGroupRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "MetricListingRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/metrics/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "MetricRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/metrics/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "MetricV2RepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "MultiEnvironmentDependentFlagsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "MutableFieldsByStatusRepNotStarted": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "MutableFieldsByStatusRepRunning": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "MutableFieldsByStatusRepStopped": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "ParentResourceRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "PipelineReleaseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "PipelineReleaseAudienceLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "PipelineReleaseProgressionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "PipelineReleaseProgressionCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "ProjectLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "environments": {
-            "href": "/api/v2/projects/my-project/environments",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project",
-            "type": "application/json"
-          }
-        }
-      },
-      "ProjectRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "environments": {
-            "href": "/api/v2/projects/my-project/environments",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/my-project",
-            "type": "application/json"
-          }
-        }
-      },
-      "ProjectSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "environments": {
-            "href": "/api/v2/projects/example-project/environments",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/projects/example-project",
-            "type": "application/json"
-          }
-        }
-      },
-      "ProjectsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "A link to this resource.",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects",
-            "type": "application/json"
-          }
-        }
-      },
-      "RandomizationSettingsRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "RecentTriggerBodyJsonBody": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The marshalled JSON request body for the incoming trigger webhook. If this is empty or contains invalid JSON, the timestamp is recorded but this field will be empty."
-      },
-      "RepositoryCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "RepositoryRepLinks": {
-        "type": "object",
-        "additionalProperties": {}
-      },
-      "RootResponseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "SdkListRepLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "SdkVersionListRepLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "SeriesListRepLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "SeriesListRepFloatLinks": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The location and content type of related resources"
-      },
-      "StatisticCollectionRepFlags": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "array",
-          "items": {
-            "$ref": "#/components/schemas/StatisticRep"
-          }
-        },
-        "description": "A map of flag keys to a list of code reference statistics for each code repository in which the flag key appears"
-      },
-      "StatisticCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "StatisticRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "SubjectDataRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "TargetResourceRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "TeamLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/teams",
-            "type": "application/json"
-          },
-          "roles": {
-            "href": "/api/v2/teams/example-team/roles",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/teams/example-team",
-            "type": "application/json"
-          }
-        }
-      },
-      "TeamCustomRolesLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/teams/example-team/roles?limit=25",
-            "type": "application/json"
-          }
-        }
-      },
-      "TeamMaintainersLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/teams/example-team/maintainers?limit=20",
-            "type": "application/json"
-          }
-        }
-      },
-      "TeamsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/teams?expand=maintainers%2Cmembers%2Croles%2Cprojects\u0026limit=20",
-            "type": "application/json"
-          }
-        }
-      },
-      "TokenLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/tokens",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/tokens/61095542756dba551110ae21",
-            "type": "application/json"
-          }
-        }
-      },
-      "TokenSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "TokensLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "TriggerWorkflowCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "TriggerWorkflowRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "UpsertResponseRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "UserCustom": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "Any other custom attributes for this user. Custom attributes contain any other user data that you would like to use to conditionally target your users."
-      },
-      "UserFlagSettingLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources.",
-        "example": {
-          "sort.order": {
-            "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags/sort.order",
-            "type": "application/json"
-          }
-        }
-      },
-      "UserFlagSettingsItems": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/UserFlagSetting"
-        },
-        "description": "An array of flag settings for the user",
-        "example": {
-          "alternate.page": {
-            "_links": {
-              "self": {
-                "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags/alternate.page",
-                "type": "application/json"
-              }
-            },
-            "_value": false,
-            "setting": null
-          },
-          "sort.order": {
-            "_links": {
-              "self": {
-                "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags/sort.order",
-                "type": "application/json"
-              }
-            },
-            "_value": true,
-            "setting": null
-          }
-        }
-      },
-      "UserFlagSettingsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags",
-            "type": "application/json"
-          }
-        }
-      },
-      "UserRecordLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/users/my-project/my-environment",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/users/my-project/my-environment/my-user",
-            "type": "application/json"
-          },
-          "settings": {
-            "href": "/api/v2/users/my-project/my-environment/my-user/flags",
-            "type": "text/html"
-          },
-          "site": {
-            "href": "/my-project/my-environment/users/my-user",
-            "type": "text/html"
-          }
-        }
-      },
-      "UserSegmentLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "UserSegmentsLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "UsersLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "next": {
-            "href": "/api/v2/user-search/my-project/my-environment?after=1647993600000\u0026limit=20\u0026searchAfter=my-user\u0026sort=userKey",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/user-search/my-project/my-environment?after=1647993600000\u0026limit=20\u0026sort=userKey",
-            "type": "application/json"
-          }
-        }
-      },
-      "UsersRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "next": {
-            "href": "/api/v2/users/my-project/my-environment?after=1647993600000\u0026limit=20\u0026searchAfter=my-user",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/users/my-project/my-environment?after=1647993600000\u0026limit=20",
-            "type": "application/json"
-          }
-        }
-      },
-      "WebhookLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "WebhooksLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "WorkflowTemplateOutputLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "FlagDefaultsRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FlagLinkPostMetadata": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        },
-        "description": "The metadata required by this integration in order to create a flag link, if this is a flag link for an existing integration. Defined in the integration\u0027s \u003Ccode\u003Emanifest.json\u003C/code\u003E file under \u003Ccode\u003EflagLink\u003C/code\u003E."
-      },
-      "SubscriptionPostConfig": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The unique set of fields required to configure an audit log subscription integration of this type. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E at https://github.com/launchdarkly/integration-framework/tree/main/integrations for a full list of fields for the integration you wish to configure.",
-        "example": {
-          "optional": "an optional property",
-          "required": "the required property",
-          "url": "https://example.com"
-        }
-      },
-      "UpsertPayloadRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "TagsCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/TagsLink"
-        }
-      },
-      "AiConfigVariationModel": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "AiConfigVariationOutputFormat": {
-        "type": "object",
-        "description": "JSON Schema defining the structured output format for the variation."
-      },
-      "AiConfigVariationPostModel": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "AiConfigVariationPostOutputFormat": {
-        "type": "object",
-        "description": "JSON Schema defining the structured output format for the variation."
-      },
-      "AiConfigVariationPatchModel": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "AiConfigVariationPatchOutputFormat": {
-        "type": "object",
-        "description": "JSON Schema defining the structured output format for the variation."
-      },
-      "ModelConfigParams": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "ModelConfigCustomParams": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "ModelConfigPostParams": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "ModelConfigPostCustomParams": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "ModelConfigPatchParams": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "ModelConfigPatchCustomParams": {
-        "type": "object",
-        "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
-      },
-      "AiConfigTargetingEnvironments": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/AiConfigTargetingEnvironment"
-        },
-        "description": "Targeting for each environment, keyed by environment key"
-      },
-      "AiConfigTargetingPatchInstructionsItem": {
-        "type": "object"
-      },
-      "AiToolSchema": {
-        "type": "object",
-        "description": "JSON Schema defining the tool\u0027s parameters for LLM consumption"
-      },
-      "AiToolCustomParameters": {
-        "type": "object",
-        "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
-        "example": {
-          "requiresApproval": true,
-          "timeoutMs": 5000
-        }
-      },
-      "AiToolPostSchema": {
-        "type": "object",
-        "description": "JSON Schema defining the tool\u0027s parameters for LLM consumption"
-      },
-      "AiToolPostCustomParameters": {
-        "type": "object",
-        "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
-        "example": {
-          "requiresApproval": true,
-          "timeoutMs": 5000
-        }
-      },
-      "AiToolPatchSchema": {
-        "type": "object",
-        "description": "JSON Schema defining the tool\u0027s parameters for LLM consumption"
-      },
-      "AiToolPatchCustomParameters": {
-        "type": "object",
-        "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
-        "example": {
-          "requiresApproval": true,
-          "timeoutMs": 5000
-        }
-      },
-      "VariationToolCustomParameters": {
-        "type": "object",
-        "description": "Custom metadata and configuration for application-level use"
-      },
-      "AgentGraphEdgePostHandoff": {
-        "type": "object",
-        "description": "The handoff options from the source config to the target config"
-      },
-      "AgentGraphEdgeHandoff": {
-        "type": "object",
-        "description": "The handoff options from the source config to the target config"
-      },
-      "AgentOptimizationVariableChoicesItem": {
-        "type": "object"
-      },
-      "AgentOptimizationPatchVariableChoicesItem": {
-        "type": "object"
-      },
-      "AgentOptimizationPostVariableChoicesItem": {
-        "type": "object"
-      },
-      "AgentOptimizationResultParameters": {
-        "type": "object",
-        "description": "The model parameters used for this attempt"
-      },
-      "AgentOptimizationResultVariation": {
-        "type": "object",
-        "description": "The variation that was tested"
-      },
-      "AgentOptimizationResultScores": {
-        "type": "object",
-        "description": "The scores for the response"
-      },
-      "AgentOptimizationResultGenerationTokens": {
-        "type": "object",
-        "description": "Token usage for generating the response"
-      },
-      "AgentOptimizationResultEvaluationTokens": {
-        "type": "object",
-        "description": "Token usage for judging the response"
-      },
-      "AgentOptimizationResultEvaluationLatencies": {
-        "type": "object",
-        "description": "How long each evaluation took"
-      },
-      "AgentOptimizationResultPostParameters": {
-        "type": "object",
-        "description": "The model parameters used for this attempt"
-      },
-      "AgentOptimizationResultPatchVariation": {
-        "type": "object",
-        "description": "The variation that was tested"
-      },
-      "AgentOptimizationResultPatchScores": {
-        "type": "object",
-        "description": "The scores for the response"
-      },
-      "AgentOptimizationResultPatchGenerationTokens": {
-        "type": "object",
-        "description": "Token usage for generating the response"
-      },
-      "AgentOptimizationResultPatchEvaluationTokens": {
-        "type": "object",
-        "description": "Token usage for judging the response"
-      },
-      "AgentOptimizationResultPatchEvaluationLatencies": {
-        "type": "object",
-        "description": "How long each evaluation took"
-      },
-      "AiConfigsLegacyExperimentRepEnvironmentSettings": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/AiConfigsExperimentEnvironmentSettingRep"
-        }
-      },
-      "AiConfigsMetricListingRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/AiConfigsLink"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/metrics/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "AiConfigsMemberSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/AiConfigsLink"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/members/569f183514f4432160000007",
-            "type": "application/json"
-          }
-        }
-      },
-      "ApprovalRequestSettingServiceConfig": {
-        "type": "object",
-        "description": "Arbitrary service-specific configuration"
-      },
-      "ApprovalRequestSettingsPatchServiceConfig": {
-        "type": "object",
-        "description": "Arbitrary service-specific configuration"
-      },
-      "ViewsMemberSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ViewsLink"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/members/569f183514f4432160000007",
-            "type": "application/json"
-          }
-        }
-      },
-      "ViewsMemberTeamSummaryRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ViewsLink"
-        }
-      },
-      "EnvironmentReleasePhaseMetricStatuses": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ReleaseMetricStatus"
-        },
-        "description": "Per-phase metric status keyed by metric key. Empty for progressive\nreleases. Metric definitions and monitoring preferences live once\nin the parent release\u0027s \u0060metrics\u0060 array.\n",
-        "readOnly": true
-      },
-      "EnvironmentReleaseLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/EnvironmentReleaseLink"
-        }
-      },
-      "EnvironmentReleaseCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/EnvironmentReleaseLink"
-        },
-        "description": "Links to this page (\u0060self\u0060), the flag (\u0060parent\u0060), and, where they apply, the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 pages."
-      },
-      "EnvironmentReleasesMetricListingRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/metrics/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
-      "EnvironmentReleasesMemberSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/members/569f183514f4432160000007",
-            "type": "application/json"
-          }
-        }
-      },
-      "SdkKeysEnvironmentSummaryLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "self": {
-            "href": "/api/v2/projects/my-project/environments/my-environment",
-            "type": "application/json"
-          }
-        }
-      },
-      "DeploymentCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "next": {
-            "href": "/api/v2/engineering-insights/deployments?after=a4290006-1fd1-4ca5-acf7-9f31fac61cf5",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/engineering-insights/deployments",
-            "type": "application/json"
-          }
-        }
-      },
-      "DeploymentRepMetadata": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "The metadata associated with the deployment",
-        "example": {
-          "buildNumber": "1234"
-        }
-      },
-      "FlagEventCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "next": {
-            "href": "/api/v2/engineering-insights/flag-events?after=a4290006-1fd1-4ca5-acf7-9f31fac61cf5",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/engineering-insights/flag-events",
-            "type": "application/json"
-          }
-        }
-      },
-      "FlagEventExperimentLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "FlagEventExperimentIterationLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "InsightGroupCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "InsightScoresLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "InsightsChartSeriesDataPointValues": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "Additional values for the data point"
-      },
-      "InsightsRepositoryCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "InsightsRepositoryProjectCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources"
-      },
-      "PostDeploymentEventInputEventMetadata": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "A JSON object containing metadata about the event",
-        "example": {
-          "buildSystemVersion": "v1.2.3"
-        }
-      },
-      "PostDeploymentEventInputDeploymentMetadata": {
-        "type": "object",
-        "additionalProperties": {},
-        "description": "A JSON object containing metadata about the deployment",
-        "example": {
-          "buildNumber": "1234"
-        }
-      },
-      "ProjectSummaryCollectionLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        }
-      },
-      "PullRequestCollectionRepLinks": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "next": {
-            "href": "/api/v2/engineering-insights/pull-requests?after=a4290006-1fd1-4ca5-acf7-9f31fac61cf5",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/engineering-insights/pull-requests",
-            "type": "application/json"
-          }
-        }
-      },
-      "ApprovalRequestSettingWithEnvsAllOf1Environments": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ApprovalRequestSetting"
-        },
-        "description": "Environment-specific overrides."
-      },
-      "DeleteBranchesRequest": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        }
-      },
-      "PostMigrationSafetyIssues200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/MigrationSafetyIssueRep"
-        }
-      },
       "CreateBigSegmentImportFormDataRequest": {
         "type": "object",
         "properties": {
@@ -87464,41 +84797,6 @@
             "format": "binary"
           }
         }
-      },
-      "GetSdkAllVersions200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SdkVersionDetailsRep"
-        }
-      },
-      "GetSdkVersionsDetails200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SdkVersionDetailsRep"
-        }
-      },
-      "ListModelConfigs200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ModelConfig"
-        }
-      },
-      "PostReleasePoliciesOrderRequest": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Ordered list of release policy keys"
-      },
-      "PostReleasePoliciesOrder200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ReleasePolicy"
-        }
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "PatchApplicationRequest": {
         "type": "array",
@@ -88648,10 +85946,6 @@
         },
         "description": "The location and content type of related resources"
       },
-      "InstructionsItem": {
-        "type": "object",
-        "additionalProperties": {}
-      },
       "IntegrationLinksProperty": {
         "type": "object",
         "additionalProperties": {
@@ -89321,10 +86615,6 @@
         },
         "description": "The location and content type of related resources"
       },
-      "UrlMatchersItem": {
-        "type": "object",
-        "additionalProperties": {}
-      },
       "UserCustomProperty": {
         "type": "object",
         "additionalProperties": {},
@@ -89818,23 +87108,6 @@
         },
         "description": "Links to this page (\u0060self\u0060), the flag (\u0060parent\u0060), and, where they apply, the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 pages."
       },
-      "EnvironmentReleasesMetricListingRepLinksProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/Link"
-        },
-        "description": "The location and content type of related resources",
-        "example": {
-          "parent": {
-            "href": "/api/v2/metrics/my-project",
-            "type": "application/json"
-          },
-          "self": {
-            "href": "/api/v2/metrics/my-project/my-metric",
-            "type": "application/json"
-          }
-        }
-      },
       "EnvironmentReleasesMetricListingRepUrlsItem": {
         "type": "object",
         "additionalProperties": {}
@@ -90002,13 +87275,6 @@
             "type": "application/json"
           }
         }
-      },
-      "ApprovalRequestSettingWithEnvsAllOf1EnvironmentsProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/ApprovalRequestSetting"
-        },
-        "description": "Environment-specific overrides."
       },
       "ReleaseMetricDefinitionLinks": {
         "type": "object",
@@ -94113,5 +91379,2749 @@
       "name": "Other",
       "description": "Other requests available in the LaunchDarkly API. \n"
     }
-  ]
+  ],
+  "x-client-original-servers": [
+    {
+      "url": "https://app.launchdarkly.com",
+      "description": " Default"
+    },
+    {
+      "url": "https://app.launchdarkly.us",
+      "description": " Federal"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "ActionIdentifier": {
+      "type": "string"
+    },
+    "ActionSpecifier": {
+      "type": "string"
+    },
+    "AllVariationsSummary": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/VariationSummary"
+      }
+    },
+    "ApprovalRequestServiceKind": {
+      "type": "string"
+    },
+    "AudienceStatus": {
+      "type": "string"
+    },
+    "Audiences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Audience"
+      }
+    },
+    "ConditionKind": {
+      "type": "string"
+    },
+    "ContextInstance": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "ContextKindCreatedFrom": {
+      "type": "string"
+    },
+    "CustomProperties": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/CustomProperty"
+      }
+    },
+    "DateVersion": {
+      "type": "integer"
+    },
+    "DependentExperimentListRep": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/DependentExperimentRep"
+      }
+    },
+    "DurationUnit": {
+      "type": "string"
+    },
+    "ExtinctionListPost": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Extinction"
+      }
+    },
+    "FeatureWorkflowId": {
+      "type": "string"
+    },
+    "FieldAction": {
+      "type": "string"
+    },
+    "FlagsInput": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FlagInput"
+      }
+    },
+    "FormVariableConfig": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "Instruction": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "Instructions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/InstructionsItem"
+      }
+    },
+    "JsonPatch": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/PatchOperation"
+      }
+    },
+    "MetricsInput": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MetricInput"
+      }
+    },
+    "MigrationFlagStageCount": {
+      "type": "integer"
+    },
+    "NewMemberFormListPost": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/NewMemberForm"
+      }
+    },
+    "OAuthProviderKind": {
+      "type": "string"
+    },
+    "ObjectId": {
+      "type": "string"
+    },
+    "OperatorType": {
+      "type": "string"
+    },
+    "PhaseConfiguration": {
+      "type": "object"
+    },
+    "PhaseStatus": {
+      "type": "string"
+    },
+    "PipelineReleaseStrategy": {
+      "type": "string"
+    },
+    "ResourceCategory": {
+      "type": "string"
+    },
+    "ResourceKind": {
+      "type": "string"
+    },
+    "RoleAttributeMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "RoleAttributeValues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "RoleType": {
+      "type": "string"
+    },
+    "ScheduleKind": {
+      "type": "string"
+    },
+    "SegmentId": {
+      "type": "string"
+    },
+    "SeriesMetadataRep": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "SeriesTimeSliceRep": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "format": "int64"
+      }
+    },
+    "SeriesTimeSliceRepFloat": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "format": "double"
+      }
+    },
+    "StatementPostList": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/StatementPost"
+      }
+    },
+    "TreatmentsInput": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/TreatmentInput"
+      }
+    },
+    "UnixMillis": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "UrlMatcher": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "UrlMatchers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/UrlMatchersItem"
+      }
+    },
+    "MaintainerMember": {
+      "required": [
+        "_id",
+        "email",
+        "role"
+      ],
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "description": "The member ID"
+        },
+        "email": {
+          "type": "string",
+          "description": "The member email address"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "The member first name"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "The member last name"
+        },
+        "role": {
+          "type": "string",
+          "description": "The member role"
+        }
+      }
+    },
+    "AiConfigsMaintainerTeam": {
+      "required": [
+        "key",
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The team key"
+        },
+        "name": {
+          "type": "string",
+          "description": "The team name"
+        }
+      }
+    },
+    "MetricsByVariation": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MetricByVariation"
+      }
+    },
+    "AiConfigTargetingVariationBoolean": {
+      "type": "boolean"
+    },
+    "AiConfigTargetingVariationJson": {
+      "type": "object"
+    },
+    "AiConfigTargetingVariationNumber": {
+      "type": "number"
+    },
+    "AiConfigTargetingVariationString": {
+      "type": "string"
+    },
+    "AccessRep": {
+      "$ref": "#/components/schemas/AiConfigsAccess"
+    },
+    "AnnouncementJsonPatch": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/AnnouncementPatchOperation"
+      }
+    },
+    "AnnouncementAccess": {
+      "required": [
+        "allowed",
+        "denied"
+      ],
+      "type": "object",
+      "properties": {
+        "denied": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/AnnouncementAccessDenied"
+          }
+        },
+        "allowed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/AnnouncementAccessAllowedRep"
+          }
+        }
+      }
+    },
+    "ApprovalRequestSettings": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ApprovalRequestSettingWithEnvs"
+      }
+    },
+    "ViewsAccess": {
+      "required": [
+        "allowed",
+        "denied"
+      ],
+      "type": "object",
+      "properties": {
+        "denied": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ViewsAccessDenied"
+          }
+        },
+        "allowed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ViewsAccessAllowedRep"
+          }
+        }
+      }
+    },
+    "ReleasePoliciesAccess": {
+      "required": [
+        "allowed",
+        "denied"
+      ],
+      "type": "object",
+      "properties": {
+        "denied": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ReleasePoliciesAccessDenied"
+          }
+        },
+        "allowed": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ReleasePoliciesAccessAllowedRep"
+          }
+        }
+      }
+    },
+    "EnvironmentReleasesMetricListingRep": {
+      "required": [
+        "_creationDate",
+        "_id",
+        "_links",
+        "_versionId",
+        "dataSource",
+        "key",
+        "kind",
+        "name",
+        "tags"
+      ],
+      "type": "object",
+      "properties": {
+        "experimentCount": {
+          "type": "integer",
+          "description": "The number of experiments using this metric",
+          "example": 0
+        },
+        "metricGroupCount": {
+          "type": "integer",
+          "description": "The number of metric groups using this metric",
+          "example": 0
+        },
+        "guardedRolloutCount": {
+          "type": "integer",
+          "description": "The number of guarded rollouts using this metric",
+          "example": 0
+        },
+        "releasePolicyCount": {
+          "type": "integer",
+          "description": "The number of release policies using this metric",
+          "example": 0
+        },
+        "activeExperimentCount": {
+          "type": "integer",
+          "description": "The number of active experiments using this metric",
+          "example": 2
+        },
+        "activeGuardedRolloutCount": {
+          "type": "integer",
+          "description": "The number of active guarded rollouts using this metric",
+          "example": 1
+        },
+        "_id": {
+          "type": "string",
+          "description": "The ID of this metric",
+          "example": "5902deadbeef667524a01290"
+        },
+        "_versionId": {
+          "type": "string",
+          "description": "The version ID of the metric",
+          "example": "version-id-123abc"
+        },
+        "_version": {
+          "type": "integer",
+          "description": "Version of the metric",
+          "example": 1
+        },
+        "key": {
+          "type": "string",
+          "description": "A unique key to reference the metric",
+          "example": "metric-key-123abc"
+        },
+        "name": {
+          "type": "string",
+          "description": "A human-friendly name for the metric",
+          "example": "My metric"
+        },
+        "kind": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepKind"
+        },
+        "_attachedFlagCount": {
+          "type": "integer",
+          "description": "The number of feature flags currently attached to this metric",
+          "example": 0
+        },
+        "_links": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepLinksProperty"
+        },
+        "_site": {
+          "$ref": "#/components/schemas/Link"
+        },
+        "_access": {
+          "$ref": "#/components/schemas/EnvironmentReleasesAccess"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Tags for the metric",
+          "example": []
+        },
+        "_creationDate": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "lastModified": {
+          "$ref": "#/components/schemas/EnvironmentReleasesModification"
+        },
+        "maintainerId": {
+          "type": "string",
+          "description": "The ID of the member who maintains this metric",
+          "example": "569fdeadbeef1644facecafe"
+        },
+        "_maintainer": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMemberSummary"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the metric"
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of the metric",
+          "example": "Error monitoring"
+        },
+        "isNumeric": {
+          "type": "boolean",
+          "description": "For custom and trace metrics, whether to track numeric changes in value against a baseline (\u003Ccode\u003Etrue\u003C/code\u003E) or to track a conversion when an end user takes an action (\u003Ccode\u003Efalse\u003C/code\u003E).",
+          "example": true
+        },
+        "successCriteria": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepSuccessCriteria"
+        },
+        "unit": {
+          "type": "string",
+          "description": "For numeric custom and trace metrics, the unit of measure"
+        },
+        "eventKey": {
+          "type": "string",
+          "description": "For custom metrics, the event key to use in your code",
+          "example": "Order placed"
+        },
+        "randomizationUnits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Deprecated, use \u003Ccode\u003EanalysisUnits\u003C/code\u003E instead.",
+          "example": [
+            "user"
+          ],
+          "deprecated": true
+        },
+        "analysisUnits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "An array of analysis units allowed for this metric.",
+          "example": [
+            "user"
+          ]
+        },
+        "filters": {
+          "$ref": "#/components/schemas/EnvironmentReleasesFilter"
+        },
+        "unitAggregationType": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUnitAggregationType"
+        },
+        "analysisType": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepAnalysisType"
+        },
+        "percentileValue": {
+          "type": "integer",
+          "description": "The percentile for the analysis method. An integer denoting the target percentile between 0 and 100. Required when \u003Ccode\u003EanalysisType\u003C/code\u003E is \u003Ccode\u003Epercentile\u003C/code\u003E.",
+          "example": 95
+        },
+        "eventDefault": {
+          "$ref": "#/components/schemas/MetricEventDefaultRep"
+        },
+        "dataSource": {
+          "$ref": "#/components/schemas/MetricDataSourceRefRep"
+        },
+        "lastSeen": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "archived": {
+          "type": "boolean",
+          "description": "Whether the metric version is archived"
+        },
+        "archivedAt": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "selector": {
+          "type": "string",
+          "description": "For click metrics, the CSS selectors"
+        },
+        "urls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/EnvironmentReleasesMetricListingRepUrlsItem"
+          }
+        },
+        "windowStartOffset": {
+          "type": "integer",
+          "description": "Not yet implemented - The start of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
+          "format": "int64"
+        },
+        "windowEndOffset": {
+          "type": "integer",
+          "description": "Not yet implemented - The end of the measurement window, in milliseconds relative to the unit\u0027s first exposure to a flag variation",
+          "format": "int64"
+        },
+        "winsorLowerPercentile": {
+          "type": "number",
+          "description": "Lower winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, defines a two-sided clamp range. Otherwise lower-only winsorization.",
+          "example": 1
+        },
+        "winsorUpperPercentile": {
+          "type": "number",
+          "description": "Upper winsorization percentile, expressed as a percent in the open interval (0, 100). When both bounds are set, must be greater than winsorLowerPercentile.",
+          "example": 99.5
+        },
+        "winsorIncludeImputed": {
+          "type": "boolean",
+          "description": "When true, the percentile bound calculation includes imputed zeros. Only meaningful when at least one bound is set and the metric includes units that didn\u0027t send events.",
+          "example": false
+        },
+        "traceQuery": {
+          "type": "string",
+          "description": "For trace metrics, the trace query to use for the metric.",
+          "example": "service.name = \u0022checkout\u0022"
+        },
+        "traceValueLocation": {
+          "type": "string",
+          "description": "For trace metrics, the location in the trace to use for numeric values.",
+          "example": "duration"
+        },
+        "unitAggregationField": {
+          "type": "string",
+          "description": "For count_distinct metrics, the column to count distinct values of"
+        },
+        "denominator": {
+          "$ref": "#/components/schemas/EnvironmentReleasesMetricDenominatorRep"
+        }
+      }
+    },
+    "AdaptiveTriggerSource": {
+      "$ref": "#/components/schemas/ObservabilityAlertSource"
+    },
+    "DeploymentKind": {
+      "type": "string"
+    },
+    "DeploymentStatus": {
+      "type": "string"
+    },
+    "EventType": {
+      "type": "string"
+    },
+    "ImpactReason": {
+      "type": "string"
+    },
+    "InsightsChartMetadataCustomValues": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "InsightsChartMetrics": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/InsightsChartMetric"
+      }
+    },
+    "InsightsMetricScoreIndicator": {
+      "type": "string"
+    },
+    "IterationStatus": {
+      "type": "string"
+    },
+    "ApprovalRequestSettingWithEnvsAllOf1": {
+      "type": "object",
+      "properties": {
+        "environments": {
+          "$ref": "#/components/schemas/ApprovalRequestSettingWithEnvsAllOf1EnvironmentsProperty"
+        },
+        "_default": {
+          "$ref": "#/components/schemas/ApprovalRequestSetting"
+        },
+        "_strict": {
+          "$ref": "#/components/schemas/ApprovalRequestSetting"
+        }
+      }
+    },
+    "SdkKeyForPutSdkKeyViewsAllOf2": {
+      "type": "object",
+      "properties": {
+        "viewSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ViewSummary"
+          },
+          "description": "Summaries of views associated with the SDK key."
+        }
+      }
+    },
+    "SdkKeyListItemAllOf2": {
+      "type": "object",
+      "properties": {
+        "environmentSummary": {
+          "$ref": "#/components/schemas/SdkKeysEnvironmentSummary"
+        },
+        "viewSummaries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ViewSummary"
+          },
+          "description": "Summaries of views associated with the SDK key."
+        }
+      }
+    },
+    "ApplicationCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ApplicationFlagCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ApplicationRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ApplicationVersionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ApplicationVersionsCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ApprovalRequestResponseLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "ApprovalSettingsServiceConfig": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "AuditLogEntryListingRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "AuditLogEntryListingRepCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "AuditLogEntryRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "AuthorizedAppDataRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "BranchCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "BranchRepLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "BulkEditMembersRepErrorsItem": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "BulkEditTeamsRepErrorsItem": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "ClientLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/oauth/clients",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/oauth/clients/50666563-9144-4125-b822-33f308227e45",
+          "type": "application/json"
+        }
+      }
+    },
+    "ClientCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/oauth/clients",
+          "type": "application/json"
+        }
+      }
+    },
+    "ContextInstanceEvaluationLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/{projectKey}/environments/{environmentKey}/flags/evaluate",
+          "type": "application/json"
+        },
+        "site": {
+          "href": "/my-project/my-environment/features/sort.order/targeting",
+          "type": "text/html"
+        }
+      }
+    },
+    "ContextInstanceEvaluationsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/{projectKey}/environments/{environmentKey}/flags/evaluate",
+          "type": "application/json"
+        }
+      }
+    },
+    "ContextInstanceSegmentMembershipLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ContextInstanceSegmentMembershipsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ContextKindRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ContextKindsCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ContextRecordLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project/environments/my-environment",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/environments/my-env/contexts/organization:launch-darkly:user:henry?filter=applicationid\u002Bequals\u002B%22GoSDK%2F1.2%22",
+          "type": "application/json"
+        },
+        "site": {
+          "href": "/my-project/my-environment/context/organization:launch-darkly:user:henry",
+          "type": "text/html"
+        }
+      }
+    },
+    "ContextsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "next": {
+          "href": "/app.launchdarkly.com/api/v2/projects/my-project/environments/my-environment/contexts?filter=kind:{\u0022equals\u0022: [\u0022organization\u0022]}\u0026limit=2\u0026continuationToken=QAGFKH1313KUGI2351",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-proj/environments/my-env/contexts?filter=kind:{\u0022equals\u0022: [\u0022organization\u0022]}\u0026limit=2\u0026continuationToken=QAGFKH1313KUGI2351",
+          "type": "application/json"
+        }
+      }
+    },
+    "CustomRoleLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "CustomRolesLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "CustomWorkflowOutputLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "CustomWorkflowsListingOutputLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "DataExportSeriesListRepLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "DependentExperimentRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project/environments/my-environment",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/environments/my-environment/experiments/example-experiment",
+          "type": "application/json"
+        }
+      }
+    },
+    "DependentFlagLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "DependentFlagEnvironmentLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "DependentFlagsByEnvironmentLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "DependentMetricGroupRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/metric-groups/my-metric-group",
+          "type": "application/json"
+        }
+      }
+    },
+    "DependentMetricGroupRepWithMetricsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/metric-groups/my-metric-group",
+          "type": "application/json"
+        }
+      }
+    },
+    "DependentMetricOrMetricGroupRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "DependentReleasePhaseRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/internal/projects/my-project/flags/my-flag/environments/production/releases/1b2a3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+          "type": "application/json"
+        }
+      }
+    },
+    "DestinationLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/destinations",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/destinations/my-project/my-environment/610addeadbeefaa86ec9a7d4",
+          "type": "application/json"
+        }
+      }
+    },
+    "DestinationsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/destinations",
+          "type": "application/json"
+        }
+      }
+    },
+    "EnvironmentLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/my-project/environments/my-environment",
+          "type": "application/json"
+        }
+      }
+    },
+    "EnvironmentResourceApprovalSettings": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ApprovalSettings"
+      },
+      "description": "Details about the approval settings for other resources in this environment, organized by resource kind (for example, \u0022aiconfig\u0022 and \u0022segment\u0022)"
+    },
+    "EnvironmentSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/my-project/environments/my-environment",
+          "type": "application/json"
+        }
+      }
+    },
+    "EnvironmentsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExpandableApprovalRequestResponseLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "ExpandableApprovalRequestsResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExpandedFlagRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/flags/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/flags/my-project/my-flag",
+          "type": "application/json"
+        }
+      }
+    },
+    "ExperimentLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project/environments/my-environment",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/environments/my-environment/experiments/my-experiment",
+          "type": "application/json"
+        }
+      }
+    },
+    "ExperimentCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExpiringTargetGetResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExpiringTargetPatchResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExpiringUserTargetGetResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExpiringUserTargetPatchResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExportLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources, including the location of the exported file"
+    },
+    "ExtinctionCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ExtinctionCollectionRepItems": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Extinction"
+        }
+      },
+      "description": "An array of extinction events"
+    },
+    "FeatureFlagLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/flags/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/flags/my-project/my-flag",
+          "type": "application/json"
+        }
+      }
+    },
+    "FeatureFlagEnvironments": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FeatureFlagConfig"
+      },
+      "description": "Details on the environments for this flag. Only returned if the request is filtered by environment, using the \u003Ccode\u003EfilterEnv\u003C/code\u003E query parameter.",
+      "example": {
+        "my-environment": {
+          "_environmentName": "My Environment",
+          "_site": {
+            "href": "/default/my-environment/features/client-side-flag",
+            "type": "text/html"
+          },
+          "_summary": {
+            "prerequisites": 0,
+            "variations": {
+              "0": {
+                "contextTargets": 1,
+                "isFallthrough": true,
+                "nullRules": 0,
+                "rules": 0,
+                "targets": 1
+              },
+              "1": {
+                "isOff": true,
+                "nullRules": 0,
+                "rules": 0,
+                "targets": 0
+              }
+            }
+          },
+          "archived": false,
+          "contextTargets": [
+            {
+              "contextKind": "device",
+              "values": [
+                "device-key-123abc"
+              ],
+              "variation": 0
+            }
+          ],
+          "fallthrough": {
+            "variation": 0
+          },
+          "lastModified": 1627071171347,
+          "offVariation": 1,
+          "on": false,
+          "prerequisites": [],
+          "rules": [],
+          "salt": "61eddeadbeef4da1facecafe3a60a397",
+          "sel": "810edeadbeef4844facecafe438f2999492",
+          "targets": [
+            {
+              "contextKind": "user",
+              "values": [
+                "user-key-123abc"
+              ],
+              "variation": 0
+            }
+          ],
+          "trackEvents": false,
+          "trackEventsFallthrough": false,
+          "version": 1
+        }
+      }
+    },
+    "FeatureFlagScheduledChangeLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FeatureFlagScheduledChangesLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FeatureFlagStatusAcrossEnvironmentsEnvironments": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FeatureFlagStatus"
+      },
+      "description": "Flag status for environment.",
+      "example": {
+        "production": {
+          "lastRequested": "2020-02-05T18:17:01.514Z",
+          "name": "inactive"
+        }
+      }
+    },
+    "FeatureFlagStatusAcrossEnvironmentsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "example": {
+        "parent": {
+          "href": "/api/v2/flag-status",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/flag-status/my-project/my-flag",
+          "type": "application/json"
+        }
+      }
+    },
+    "FeatureFlagStatusesLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "example": {
+        "self": {
+          "href": "/api/v2/flag-statuses/my-project/my-environment",
+          "type": "application/json"
+        }
+      }
+    },
+    "FeatureFlagsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/flags/default",
+          "type": "application/json"
+        }
+      }
+    },
+    "FlagConfigApprovalRequestResponseLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "FlagConfigApprovalRequestsResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FlagFollowersByProjEnvGetRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/my-project/flags/my-flay/environments/my-environment/followers",
+          "type": "application/json"
+        }
+      }
+    },
+    "FlagFollowersGetRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/my-project/flags/my-flay/environments/my-environment/followers",
+          "type": "application/json"
+        }
+      }
+    },
+    "FlagLinkCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FlagLinkMemberLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "FlagLinkRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FlagLinkRepMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The metadata required by this integration in order to create a flag link, if this is a flag link for an existing integration. Defined in the integration\u0027s \u003Ccode\u003Emanifest.json\u003C/code\u003E file under \u003Ccode\u003EflagLink\u003C/code\u003E."
+    },
+    "FlagListingRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "FlagRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/flags/my-project/my-flag",
+          "type": "application/json"
+        }
+      }
+    },
+    "FlagStatusRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "example": {
+        "parent": {
+          "href": "/api/v2/flags/my-project/my-flag",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/flag-statuses/my-project/my-flag",
+          "type": "application/json"
+        }
+      }
+    },
+    "FollowFlagMemberLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/members/569f183514f4432160000007",
+          "type": "application/json"
+        }
+      }
+    },
+    "HoldoutsCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/my-project/environments/my-environment/holdouts?limit=20",
+          "type": "application/json"
+        }
+      }
+    },
+    "ImportLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "IntegrationLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "IntegrationConfig": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Details on configuration for an integration of this type. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E for a full list of fields for each integration."
+    },
+    "IntegrationConfigurationCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "IntegrationConfigurationPostConfigValues": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The unique set of fields required to configure the integration. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E at https://github.com/launchdarkly/integration-framework/tree/main/integrations for a full list of fields for the integration you wish to configure.",
+      "example": {
+        "optional": "an optional property",
+        "required": "the required property",
+        "url": "https://example.com"
+      }
+    },
+    "IntegrationConfigurationsRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "IntegrationConfigurationsRepConfigValues": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Details on configuration for an integration of this type. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E for a full list of fields for each integration."
+    },
+    "IntegrationsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "IterationRepFlags": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/FlagRep"
+      },
+      "description": "Details on the flag used in this experiment"
+    },
+    "LayerCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/my-project/layers",
+          "type": "application/json"
+        }
+      }
+    },
+    "LayerRepEnvironments": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/LayerConfigurationRep"
+      },
+      "description": "The layer configurations for each requested environment"
+    },
+    "LegacyExperimentRepEnvironmentSettings": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ExperimentEnvironmentSettingRep"
+      }
+    },
+    "MaintainerTeamLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/teams",
+          "type": "application/json"
+        },
+        "roles": {
+          "href": "/api/v2/teams/example-team/roles",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/teams/example-team",
+          "type": "application/json"
+        }
+      }
+    },
+    "MemberLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "MemberDataRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "MemberSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/members/569f183514f4432160000007",
+          "type": "application/json"
+        }
+      }
+    },
+    "MemberTeamSummaryRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "MembersLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "MetricCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/metrics/my-project?limit=20",
+          "type": "application/json"
+        }
+      }
+    },
+    "MetricGroupCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/metric-groups",
+          "type": "application/json"
+        }
+      }
+    },
+    "MetricGroupRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/projects/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project/metric-groups/my-metric-group",
+          "type": "application/json"
+        }
+      }
+    },
+    "MetricInGroupRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "MetricListingRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/metrics/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "MetricRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/metrics/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "MetricV2RepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "MultiEnvironmentDependentFlagsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "MutableFieldsByStatusRepNotStarted": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "MutableFieldsByStatusRepRunning": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "MutableFieldsByStatusRepStopped": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "ParentResourceRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "PipelineReleaseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "PipelineReleaseAudienceLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "PipelineReleaseProgressionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "PipelineReleaseProgressionCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "ProjectLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "environments": {
+          "href": "/api/v2/projects/my-project/environments",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project",
+          "type": "application/json"
+        }
+      }
+    },
+    "ProjectRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "environments": {
+          "href": "/api/v2/projects/my-project/environments",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/my-project",
+          "type": "application/json"
+        }
+      }
+    },
+    "ProjectSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "environments": {
+          "href": "/api/v2/projects/example-project/environments",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/projects/example-project",
+          "type": "application/json"
+        }
+      }
+    },
+    "ProjectsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "A link to this resource.",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects",
+          "type": "application/json"
+        }
+      }
+    },
+    "RandomizationSettingsRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "RecentTriggerBodyJsonBody": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The marshalled JSON request body for the incoming trigger webhook. If this is empty or contains invalid JSON, the timestamp is recorded but this field will be empty."
+    },
+    "RepositoryCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "RepositoryRepLinks": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "RootResponseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "SdkListRepLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "SdkVersionListRepLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "SeriesListRepLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "SeriesListRepFloatLinks": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The location and content type of related resources"
+    },
+    "StatisticCollectionRepFlags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/StatisticRep"
+        }
+      },
+      "description": "A map of flag keys to a list of code reference statistics for each code repository in which the flag key appears"
+    },
+    "StatisticCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "StatisticRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "SubjectDataRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "TargetResourceRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "TeamLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/teams",
+          "type": "application/json"
+        },
+        "roles": {
+          "href": "/api/v2/teams/example-team/roles",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/teams/example-team",
+          "type": "application/json"
+        }
+      }
+    },
+    "TeamCustomRolesLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/teams/example-team/roles?limit=25",
+          "type": "application/json"
+        }
+      }
+    },
+    "TeamMaintainersLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/teams/example-team/maintainers?limit=20",
+          "type": "application/json"
+        }
+      }
+    },
+    "TeamsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/teams?expand=maintainers%2Cmembers%2Croles%2Cprojects\u0026limit=20",
+          "type": "application/json"
+        }
+      }
+    },
+    "TokenLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/tokens",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/tokens/61095542756dba551110ae21",
+          "type": "application/json"
+        }
+      }
+    },
+    "TokenSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "TokensLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "TriggerWorkflowCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "TriggerWorkflowRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "UpsertResponseRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "UserCustom": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Any other custom attributes for this user. Custom attributes contain any other user data that you would like to use to conditionally target your users."
+    },
+    "UserFlagSettingLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources.",
+      "example": {
+        "sort.order": {
+          "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags/sort.order",
+          "type": "application/json"
+        }
+      }
+    },
+    "UserFlagSettingsItems": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/UserFlagSetting"
+      },
+      "description": "An array of flag settings for the user",
+      "example": {
+        "alternate.page": {
+          "_links": {
+            "self": {
+              "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags/alternate.page",
+              "type": "application/json"
+            }
+          },
+          "_value": false,
+          "setting": null
+        },
+        "sort.order": {
+          "_links": {
+            "self": {
+              "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags/sort.order",
+              "type": "application/json"
+            }
+          },
+          "_value": true,
+          "setting": null
+        }
+      }
+    },
+    "UserFlagSettingsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/users/lacuna/production/Abbie_Braun/flags",
+          "type": "application/json"
+        }
+      }
+    },
+    "UserRecordLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/users/my-project/my-environment",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/users/my-project/my-environment/my-user",
+          "type": "application/json"
+        },
+        "settings": {
+          "href": "/api/v2/users/my-project/my-environment/my-user/flags",
+          "type": "text/html"
+        },
+        "site": {
+          "href": "/my-project/my-environment/users/my-user",
+          "type": "text/html"
+        }
+      }
+    },
+    "UserSegmentLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "UserSegmentsLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "UsersLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "next": {
+          "href": "/api/v2/user-search/my-project/my-environment?after=1647993600000\u0026limit=20\u0026searchAfter=my-user\u0026sort=userKey",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/user-search/my-project/my-environment?after=1647993600000\u0026limit=20\u0026sort=userKey",
+          "type": "application/json"
+        }
+      }
+    },
+    "UsersRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "next": {
+          "href": "/api/v2/users/my-project/my-environment?after=1647993600000\u0026limit=20\u0026searchAfter=my-user",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/users/my-project/my-environment?after=1647993600000\u0026limit=20",
+          "type": "application/json"
+        }
+      }
+    },
+    "WebhookLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "WebhooksLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "WorkflowTemplateOutputLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "FlagDefaultsRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FlagLinkPostMetadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "The metadata required by this integration in order to create a flag link, if this is a flag link for an existing integration. Defined in the integration\u0027s \u003Ccode\u003Emanifest.json\u003C/code\u003E file under \u003Ccode\u003EflagLink\u003C/code\u003E."
+    },
+    "SubscriptionPostConfig": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The unique set of fields required to configure an audit log subscription integration of this type. Refer to the \u003Ccode\u003EformVariables\u003C/code\u003E field in the corresponding \u003Ccode\u003Emanifest.json\u003C/code\u003E at https://github.com/launchdarkly/integration-framework/tree/main/integrations for a full list of fields for the integration you wish to configure.",
+      "example": {
+        "optional": "an optional property",
+        "required": "the required property",
+        "url": "https://example.com"
+      }
+    },
+    "UpsertPayloadRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "TagsCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/TagsLink"
+      }
+    },
+    "AiConfigVariationModel": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "AiConfigVariationOutputFormat": {
+      "type": "object",
+      "description": "JSON Schema defining the structured output format for the variation."
+    },
+    "AiConfigVariationPostModel": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "AiConfigVariationPostOutputFormat": {
+      "type": "object",
+      "description": "JSON Schema defining the structured output format for the variation."
+    },
+    "AiConfigVariationPatchModel": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "AiConfigVariationPatchOutputFormat": {
+      "type": "object",
+      "description": "JSON Schema defining the structured output format for the variation."
+    },
+    "ModelConfigParams": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "ModelConfigCustomParams": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "ModelConfigPostParams": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "ModelConfigPostCustomParams": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "ModelConfigPatchParams": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "ModelConfigPatchCustomParams": {
+      "type": "object",
+      "description": "Freeform JSON object. LaunchDarkly does not validate the keys. In a model config, \u0060params\u0060 and \u0060customParams\u0060 hold parameters that the provider\u0027s API accepts, for example \u0060{\u0022temperature\u0022: 0.7, \u0022maxTokens\u0022: 4096}\u0060."
+    },
+    "AiConfigTargetingEnvironments": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/AiConfigTargetingEnvironment"
+      },
+      "description": "Targeting for each environment, keyed by environment key"
+    },
+    "AiConfigTargetingPatchInstructionsItem": {
+      "type": "object"
+    },
+    "AiToolSchema": {
+      "type": "object",
+      "description": "JSON Schema defining the tool\u0027s parameters for LLM consumption"
+    },
+    "AiToolCustomParameters": {
+      "type": "object",
+      "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
+      "example": {
+        "requiresApproval": true,
+        "timeoutMs": 5000
+      }
+    },
+    "AiToolPostSchema": {
+      "type": "object",
+      "description": "JSON Schema defining the tool\u0027s parameters for LLM consumption"
+    },
+    "AiToolPostCustomParameters": {
+      "type": "object",
+      "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
+      "example": {
+        "requiresApproval": true,
+        "timeoutMs": 5000
+      }
+    },
+    "AiToolPatchSchema": {
+      "type": "object",
+      "description": "JSON Schema defining the tool\u0027s parameters for LLM consumption"
+    },
+    "AiToolPatchCustomParameters": {
+      "type": "object",
+      "description": "Custom metadata and configuration for application-level use (not sent to LLM)",
+      "example": {
+        "requiresApproval": true,
+        "timeoutMs": 5000
+      }
+    },
+    "VariationToolCustomParameters": {
+      "type": "object",
+      "description": "Custom metadata and configuration for application-level use"
+    },
+    "AgentGraphEdgePostHandoff": {
+      "type": "object",
+      "description": "The handoff options from the source config to the target config"
+    },
+    "AgentGraphEdgeHandoff": {
+      "type": "object",
+      "description": "The handoff options from the source config to the target config"
+    },
+    "AgentOptimizationVariableChoicesItem": {
+      "type": "object"
+    },
+    "AgentOptimizationPatchVariableChoicesItem": {
+      "type": "object"
+    },
+    "AgentOptimizationPostVariableChoicesItem": {
+      "type": "object"
+    },
+    "AgentOptimizationResultParameters": {
+      "type": "object",
+      "description": "The model parameters used for this attempt"
+    },
+    "AgentOptimizationResultVariation": {
+      "type": "object",
+      "description": "The variation that was tested"
+    },
+    "AgentOptimizationResultScores": {
+      "type": "object",
+      "description": "The scores for the response"
+    },
+    "AgentOptimizationResultGenerationTokens": {
+      "type": "object",
+      "description": "Token usage for generating the response"
+    },
+    "AgentOptimizationResultEvaluationTokens": {
+      "type": "object",
+      "description": "Token usage for judging the response"
+    },
+    "AgentOptimizationResultEvaluationLatencies": {
+      "type": "object",
+      "description": "How long each evaluation took"
+    },
+    "AgentOptimizationResultPostParameters": {
+      "type": "object",
+      "description": "The model parameters used for this attempt"
+    },
+    "AgentOptimizationResultPatchVariation": {
+      "type": "object",
+      "description": "The variation that was tested"
+    },
+    "AgentOptimizationResultPatchScores": {
+      "type": "object",
+      "description": "The scores for the response"
+    },
+    "AgentOptimizationResultPatchGenerationTokens": {
+      "type": "object",
+      "description": "Token usage for generating the response"
+    },
+    "AgentOptimizationResultPatchEvaluationTokens": {
+      "type": "object",
+      "description": "Token usage for judging the response"
+    },
+    "AgentOptimizationResultPatchEvaluationLatencies": {
+      "type": "object",
+      "description": "How long each evaluation took"
+    },
+    "AiConfigsLegacyExperimentRepEnvironmentSettings": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/AiConfigsExperimentEnvironmentSettingRep"
+      }
+    },
+    "AiConfigsMetricListingRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/AiConfigsLink"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/metrics/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "AiConfigsMemberSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/AiConfigsLink"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/members/569f183514f4432160000007",
+          "type": "application/json"
+        }
+      }
+    },
+    "ApprovalRequestSettingServiceConfig": {
+      "type": "object",
+      "description": "Arbitrary service-specific configuration"
+    },
+    "ApprovalRequestSettingsPatchServiceConfig": {
+      "type": "object",
+      "description": "Arbitrary service-specific configuration"
+    },
+    "ViewsMemberSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ViewsLink"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/members/569f183514f4432160000007",
+          "type": "application/json"
+        }
+      }
+    },
+    "ViewsMemberTeamSummaryRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ViewsLink"
+      }
+    },
+    "EnvironmentReleasePhaseMetricStatuses": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ReleaseMetricStatus"
+      },
+      "description": "Per-phase metric status keyed by metric key. Empty for progressive\nreleases. Metric definitions and monitoring preferences live once\nin the parent release\u0027s \u0060metrics\u0060 array.\n",
+      "readOnly": true
+    },
+    "EnvironmentReleaseLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/EnvironmentReleaseLink"
+      }
+    },
+    "EnvironmentReleaseCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/EnvironmentReleaseLink"
+      },
+      "description": "Links to this page (\u0060self\u0060), the flag (\u0060parent\u0060), and, where they apply, the \u0060first\u0060, \u0060prev\u0060, \u0060next\u0060, and \u0060last\u0060 pages."
+    },
+    "EnvironmentReleasesMetricListingRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/metrics/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "EnvironmentReleasesMemberSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/members/569f183514f4432160000007",
+          "type": "application/json"
+        }
+      }
+    },
+    "SdkKeysEnvironmentSummaryLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "self": {
+          "href": "/api/v2/projects/my-project/environments/my-environment",
+          "type": "application/json"
+        }
+      }
+    },
+    "DeploymentCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "next": {
+          "href": "/api/v2/engineering-insights/deployments?after=a4290006-1fd1-4ca5-acf7-9f31fac61cf5",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/engineering-insights/deployments",
+          "type": "application/json"
+        }
+      }
+    },
+    "DeploymentRepMetadata": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "The metadata associated with the deployment",
+      "example": {
+        "buildNumber": "1234"
+      }
+    },
+    "FlagEventCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "next": {
+          "href": "/api/v2/engineering-insights/flag-events?after=a4290006-1fd1-4ca5-acf7-9f31fac61cf5",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/engineering-insights/flag-events",
+          "type": "application/json"
+        }
+      }
+    },
+    "FlagEventExperimentLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "FlagEventExperimentIterationLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "InsightGroupCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "InsightScoresLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "InsightsChartSeriesDataPointValues": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "Additional values for the data point"
+    },
+    "InsightsRepositoryCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "InsightsRepositoryProjectCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "PostDeploymentEventInputEventMetadata": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "A JSON object containing metadata about the event",
+      "example": {
+        "buildSystemVersion": "v1.2.3"
+      }
+    },
+    "PostDeploymentEventInputDeploymentMetadata": {
+      "type": "object",
+      "additionalProperties": {},
+      "description": "A JSON object containing metadata about the deployment",
+      "example": {
+        "buildNumber": "1234"
+      }
+    },
+    "ProjectSummaryCollectionLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      }
+    },
+    "PullRequestCollectionRepLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "next": {
+          "href": "/api/v2/engineering-insights/pull-requests?after=a4290006-1fd1-4ca5-acf7-9f31fac61cf5",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/engineering-insights/pull-requests",
+          "type": "application/json"
+        }
+      }
+    },
+    "ApprovalRequestSettingWithEnvsAllOf1Environments": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ApprovalRequestSetting"
+      },
+      "description": "Environment-specific overrides."
+    },
+    "DeleteBranchesRequest": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "PostMigrationSafetyIssues200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/MigrationSafetyIssueRep"
+      }
+    },
+    "GetSdkAllVersions200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SdkVersionDetailsRep"
+      }
+    },
+    "GetSdkVersionsDetails200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/SdkVersionDetailsRep"
+      }
+    },
+    "ListModelConfigs200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ModelConfig"
+      }
+    },
+    "PostReleasePoliciesOrderRequest": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ordered list of release policy keys"
+    },
+    "PostReleasePoliciesOrder200Response": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/ReleasePolicy"
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    },
+    "InstructionsItem": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "UrlMatchersItem": {
+      "type": "object",
+      "additionalProperties": {}
+    },
+    "EnvironmentReleasesMetricListingRepLinksProperty": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/Link"
+      },
+      "description": "The location and content type of related resources",
+      "example": {
+        "parent": {
+          "href": "/api/v2/metrics/my-project",
+          "type": "application/json"
+        },
+        "self": {
+          "href": "/api/v2/metrics/my-project/my-metric",
+          "type": "application/json"
+        }
+      }
+    },
+    "ApprovalRequestSettingWithEnvsAllOf1EnvironmentsProperty": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/ApprovalRequestSetting"
+      },
+      "description": "Environment-specific overrides."
+    }
+  }
 }

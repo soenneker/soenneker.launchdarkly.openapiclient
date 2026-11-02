@@ -68,8 +68,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         private string _explicitNullValueEnvironmentKey = default!;
 #endif
         /// <summary>Sets the amount of approvals required before a member can apply a change. The minimum is one and the maximum is five.</summary>
-        public int? MinNumApprovals { get => _explicitNullValueMinNumApprovals; set { _explicitNullValueMinNumApprovals = value; AdditionalData?.Remove("minNumApprovals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minNumApprovals"); else _explicitNullProperties?.Remove("minNumApprovals"); } }
-        private int? _explicitNullValueMinNumApprovals = default!;
+        public long? MinNumApprovals { get => _explicitNullValueMinNumApprovals; set { _explicitNullValueMinNumApprovals = value; AdditionalData?.Remove("minNumApprovals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minNumApprovals"); else _explicitNullProperties?.Remove("minNumApprovals"); } }
+        private long? _explicitNullValueMinNumApprovals = default!;
         /// <summary>If approvals are required for this environment</summary>
         public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; AdditionalData?.Remove("required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
         private bool? _explicitNullValueRequired = default!;
@@ -153,7 +153,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "canApplyDeclinedChanges", n => { CanApplyDeclinedChanges = n.GetBoolValue(); } },
                 { "canReviewOwnRequest", n => { CanReviewOwnRequest = n.GetBoolValue(); } },
                 { "environmentKey", n => { EnvironmentKey = n.GetStringValue(); } },
-                { "minNumApprovals", n => { MinNumApprovals = n.GetIntValue(); } },
+                { "minNumApprovals", n => { MinNumApprovals = n.GetLongValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
                 { "requiredApprovalTags", n => { RequiredApprovalTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "resourceKind", n => { ResourceKind = n.GetStringValue(); } },
@@ -174,7 +174,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteBoolValue("canApplyDeclinedChanges", CanApplyDeclinedChanges);
             writer.WriteBoolValue("canReviewOwnRequest", CanReviewOwnRequest);
             writer.WriteStringValue("environmentKey", EnvironmentKey);
-            writer.WriteIntValue("minNumApprovals", MinNumApprovals);
+            writer.WriteLongValue("minNumApprovals", MinNumApprovals);
             writer.WriteBoolValue("required", Required);
             writer.WriteCollectionOfPrimitiveValues<string>("requiredApprovalTags", RequiredApprovalTags);
             writer.WriteStringValue("resourceKind", ResourceKind);
