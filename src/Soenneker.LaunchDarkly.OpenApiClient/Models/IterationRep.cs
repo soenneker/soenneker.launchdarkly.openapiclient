@@ -17,6 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("assignmentDataSource") is null) { _explicitNullValueAssignmentDataSource = default!; _explicitNullProperties?.Remove("assignmentDataSource"); }
+            else if (parseNode.GetChildNode("assignmentDataSource") is { } nullNodeAssignmentDataSource && nullNodeAssignmentDataSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignmentDataSource = null;
             if (parseNode.GetChildNode("attributes") is null) { _explicitNullValueAttributes = default!; _explicitNullProperties?.Remove("attributes"); }
             else if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
             if (parseNode.GetChildNode("canReshuffleTraffic") is null) { _explicitNullValueCanReshuffleTraffic = default!; _explicitNullProperties?.Remove("canReshuffleTraffic"); }
@@ -65,6 +67,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The assignmentDataSource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep? AssignmentDataSource { get => _explicitNullValueAssignmentDataSource; set { _explicitNullValueAssignmentDataSource = value; AdditionalData?.Remove("assignmentDataSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignmentDataSource"); else _explicitNullProperties?.Remove("assignmentDataSource"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep? _explicitNullValueAssignmentDataSource = default!;
+#nullable restore
+#else
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep AssignmentDataSource { get => _explicitNullValueAssignmentDataSource; set { _explicitNullValueAssignmentDataSource = value; AdditionalData?.Remove("assignmentDataSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignmentDataSource"); else _explicitNullProperties?.Remove("assignmentDataSource"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep _explicitNullValueAssignmentDataSource = default!;
+#endif
         /// <summary>The available attribute filters for this iteration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -262,6 +274,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assignmentDataSource", n => { AssignmentDataSource = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep.CreateFromDiscriminatorValue); } },
                 { "attributes", n => { Attributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "canReshuffleTraffic", n => { CanReshuffleTraffic = n.GetBoolValue(); } },
                 { "covariateInfo", n => { CovariateInfo = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CovariateInfoRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.CovariateInfoRep.CreateFromDiscriminatorValue); } },
@@ -293,6 +306,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationAssignmentDataSourceRep>("assignmentDataSource", AssignmentDataSource);
             writer.WriteCollectionOfPrimitiveValues<string>("attributes", Attributes);
             writer.WriteBoolValue("canReshuffleTraffic", CanReshuffleTraffic);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.CovariateInfoRep>("covariateInfo", CovariateInfo);

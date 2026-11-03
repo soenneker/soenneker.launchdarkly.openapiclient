@@ -19,6 +19,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("allocationPercent") is null) { _explicitNullValueAllocationPercent = default!; _explicitNullProperties?.Remove("allocationPercent"); }
             else if (parseNode.GetChildNode("allocationPercent") is { } nullNodeAllocationPercent && nullNodeAllocationPercent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllocationPercent = null;
+            if (parseNode.GetChildNode("assignmentVariantId") is null) { _explicitNullValueAssignmentVariantId = default!; _explicitNullProperties?.Remove("assignmentVariantId"); }
+            else if (parseNode.GetChildNode("assignmentVariantId") is { } nullNodeAssignmentVariantId && nullNodeAssignmentVariantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignmentVariantId = null;
             if (parseNode.GetChildNode("baseline") is null) { _explicitNullValueBaseline = default!; _explicitNullProperties?.Remove("baseline"); }
             else if (parseNode.GetChildNode("baseline") is { } nullNodeBaseline && nullNodeBaseline.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Baseline = null;
             if (parseNode.GetChildNode("_id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("_id"); }
@@ -40,6 +42,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #else
         public string AllocationPercent { get => _explicitNullValueAllocationPercent; set { _explicitNullValueAllocationPercent = value; AdditionalData?.Remove("allocationPercent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allocationPercent"); else _explicitNullProperties?.Remove("allocationPercent"); } }
         private string _explicitNullValueAllocationPercent = default!;
+#endif
+        /// <summary>The variant identifier in the warehouse-native assignment source that maps to this treatment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssignmentVariantId { get => _explicitNullValueAssignmentVariantId; set { _explicitNullValueAssignmentVariantId = value; AdditionalData?.Remove("assignmentVariantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignmentVariantId"); else _explicitNullProperties?.Remove("assignmentVariantId"); } }
+        private string? _explicitNullValueAssignmentVariantId = default!;
+#nullable restore
+#else
+        public string AssignmentVariantId { get => _explicitNullValueAssignmentVariantId; set { _explicitNullValueAssignmentVariantId = value; AdditionalData?.Remove("assignmentVariantId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignmentVariantId"); else _explicitNullProperties?.Remove("assignmentVariantId"); } }
+        private string _explicitNullValueAssignmentVariantId = default!;
 #endif
         /// <summary>Whether this treatment is the baseline to compare other treatments against</summary>
         public bool? Baseline { get => _explicitNullValueBaseline; set { _explicitNullValueBaseline = value; AdditionalData?.Remove("baseline"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseline"); else _explicitNullProperties?.Remove("baseline"); } }
@@ -100,6 +112,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allocationPercent", n => { AllocationPercent = n.GetStringValue(); } },
+                { "assignmentVariantId", n => { AssignmentVariantId = n.GetStringValue(); } },
                 { "baseline", n => { Baseline = n.GetBoolValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -114,6 +127,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("allocationPercent", AllocationPercent);
+            writer.WriteStringValue("assignmentVariantId", AssignmentVariantId);
             writer.WriteBoolValue("baseline", Baseline);
             writer.WriteStringValue("_id", Id);
             writer.WriteStringValue("name", Name);

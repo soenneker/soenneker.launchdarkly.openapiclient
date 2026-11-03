@@ -23,6 +23,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             else if (parseNode.GetChildNode("analysisConfig") is { } nullNodeAnalysisConfig && nullNodeAnalysisConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisConfig = null;
             if (parseNode.GetChildNode("archivedDate") is null) { _explicitNullValueArchivedDate = default!; _explicitNullProperties?.Remove("archivedDate"); }
             else if (parseNode.GetChildNode("archivedDate") is { } nullNodeArchivedDate && nullNodeArchivedDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArchivedDate = null;
+            if (parseNode.GetChildNode("assignmentSourceType") is null) { _explicitNullValueAssignmentSourceType = default!; _explicitNullProperties?.Remove("assignmentSourceType"); }
+            else if (parseNode.GetChildNode("assignmentSourceType") is { } nullNodeAssignmentSourceType && nullNodeAssignmentSourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignmentSourceType = null;
             if (parseNode.GetChildNode("_creationDate") is null) { _explicitNullValueCreationDate = default!; _explicitNullProperties?.Remove("_creationDate"); }
             else if (parseNode.GetChildNode("_creationDate") is { } nullNodeCreationDate && nullNodeCreationDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationDate = null;
             if (parseNode.GetChildNode("currentIteration") is null) { _explicitNullValueCurrentIteration = default!; _explicitNullProperties?.Remove("currentIteration"); }
@@ -84,6 +86,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The archivedDate property</summary>
         public long? ArchivedDate { get => _explicitNullValueArchivedDate; set { _explicitNullValueArchivedDate = value; AdditionalData?.Remove("archivedDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("archivedDate"); else _explicitNullProperties?.Remove("archivedDate"); } }
         private long? _explicitNullValueArchivedDate = default!;
+        /// <summary>The source of assignment data for this experiment. Defaults to &quot;launchdarkly&quot; when not provided.</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentAssignmentSourceType? AssignmentSourceType { get => _explicitNullValueAssignmentSourceType; set { _explicitNullValueAssignmentSourceType = value; AdditionalData?.Remove("assignmentSourceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignmentSourceType"); else _explicitNullProperties?.Remove("assignmentSourceType"); } }
+        private global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentAssignmentSourceType? _explicitNullValueAssignmentSourceType = default!;
         /// <summary>The creationDate property</summary>
         public long? CreationDate { get => _explicitNullValueCreationDate; set { _explicitNullValueCreationDate = value; AdditionalData?.Remove("_creationDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_creationDate"); else _explicitNullProperties?.Remove("_creationDate"); } }
         private long? _explicitNullValueCreationDate = default!;
@@ -261,6 +266,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access.CreateFromDiscriminatorValue); } },
                 { "analysisConfig", n => { AnalysisConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigRep.CreateFromDiscriminatorValue); } },
                 { "archivedDate", n => { ArchivedDate = n.GetLongValue(); } },
+                { "assignmentSourceType", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentAssignmentSourceType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAssignmentSourceType = default; _explicitNullProperties?.Remove("assignmentSourceType"); AdditionalData["assignmentSourceType"] = unknown; } else { AssignmentSourceType = parsed; AdditionalData.Remove("assignmentSourceType"); } } },
                 { "_creationDate", n => { CreationDate = n.GetLongValue(); } },
                 { "currentIteration", n => { CurrentIteration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationRep.CreateFromDiscriminatorValue); } },
                 { "dataSource", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentDataSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataSource = default; _explicitNullProperties?.Remove("dataSource"); AdditionalData["dataSource"] = unknown; } else { DataSource = parsed; AdditionalData.Remove("dataSource"); } } },
@@ -290,6 +296,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>("_access", Access);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigRep>("analysisConfig", AnalysisConfig);
             writer.WriteLongValue("archivedDate", ArchivedDate);
+            writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentAssignmentSourceType>("assignmentSourceType", AssignmentSourceType);
             writer.WriteLongValue("_creationDate", CreationDate);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.IterationRep>("currentIteration", CurrentIteration);
             writer.WriteEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentDataSource>("dataSource", DataSource);
