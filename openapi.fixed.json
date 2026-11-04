@@ -37212,6 +37212,611 @@
         }
       }
     },
+    "/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/scheduled-changes": {
+      "get": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "List scheduled changes for a segment",
+        "description": "Get every scheduled change for a segment that has not been applied yet, plus any that failed to apply, soonest first. Use the \u0060status\u0060 of each change to tell them apart.\n\nThe caller must be allowed to view the segment\u0027s project.\n",
+        "operationId": "GetSegmentScheduledChanges",
+        "parameters": [
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "segmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Scheduled changes for the segment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentScheduledChanges"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid resource identifier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "Create a scheduled change for a segment",
+        "description": "Schedule semantic patch instructions to be applied to a segment at a future time.\n\nEach instruction uses the same format as an instruction in a semantic patch request to update a segment. Send between 1 and 100 instructions. LaunchDarkly rejects the request with a 400 if an instruction has an unknown \u0060kind\u0060 or is malformed.\n\nThe caller must be allowed to update scheduled changes on the segment, and must also be allowed to make each instruction\u0027s change directly. If the segment requires approvals for an instruction, the caller must also be allowed to bypass them. Otherwise, request the change through an approval request instead. To learn more about semantic patches, read [Updates](/reference#updates-using-semantic-patch).\n",
+        "operationId": "PostSegmentScheduledChange",
+        "parameters": [
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "segmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostSegmentScheduledChangeInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Scheduled change created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentScheduledChange"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid resource identifier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Scheduled change created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentScheduledChange"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
+          }
+        }
+      }
+    },
+    "/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/scheduled-changes/{id}": {
+      "delete": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "Delete a scheduled change for a segment",
+        "description": "Delete a scheduled change before its execution date, so that its instructions are never applied to the segment.\n\nDeleting a change with a \u0060failed\u0060 status removes it from the segment\u0027s scheduled changes. Its instructions were not applied.\n\nThe caller must be allowed to update scheduled changes on the segment.\n\nIf an approval request scheduled the change, deleting the change also terminates that request, so it cannot be applied again. Declining the request is only an option while it is still awaiting review. Once it is applied, its instructions belong to a scheduled change, and this endpoint is how to stop them.\n\nReturns 409 if the scheduled change is already being applied or has already run.\n",
+        "operationId": "DeleteSegmentScheduledChange",
+        "parameters": [
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "segmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the scheduled change",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Scheduled change deleted"
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid resource identifier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "Get a scheduled change for a segment",
+        "description": "Get one scheduled change that has not been applied yet, or that failed to apply. Returns 404 if the ID is not a scheduled change for the segment in the path.\n\nThe caller must be allowed to view the segment\u0027s project.\n",
+        "operationId": "GetSegmentScheduledChange",
+        "parameters": [
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "segmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the scheduled change",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The scheduled change",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentScheduledChange"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid resource identifier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Segments"
+        ],
+        "summary": "Update a scheduled change for a segment",
+        "description": "Edit the execution date and/or the comment of a scheduled change that has not been applied yet. A field you leave out is unchanged, and an empty comment clears the comment.\n\nThe caller must be allowed to update scheduled changes on the segment, and must also be allowed to make the change\u0027s instructions directly. If the segment requires approvals, the caller must also be allowed to bypass them.\n\nReturns 409 if the scheduled change is already being applied or was changed by someone else in the meantime.\n",
+        "operationId": "PatchSegmentScheduledChange",
+        "parameters": [
+          {
+            "name": "projectKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "segmentKey",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the scheduled change",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatchSegmentScheduledChangeInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The updated scheduled change",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentScheduledChange"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Invalid resource identifier",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v2/account/ip-allowlist": {
       "get": {
         "tags": [
@@ -48347,6 +48952,9 @@
           },
           "_access": {
             "$ref": "#/components/schemas/Access"
+          },
+          "_status": {
+            "$ref": "#/components/schemas/IntegrationDeliveryConfigurationStatus"
           }
         }
       },
@@ -48455,6 +49063,40 @@
           "responseBody": {
             "type": "string",
             "description": "JSON response to the validation request"
+          }
+        }
+      },
+      "IntegrationDeliveryConfigurationStatus": {
+        "required": [
+          "available",
+          "potentiallyStale"
+        ],
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "boolean",
+            "description": "Whether the latest sync succeeded",
+            "example": false
+          },
+          "potentiallyStale": {
+            "type": "boolean",
+            "description": "Whether the feature store may be missing flag data from a failed or in-progress sync",
+            "example": true
+          },
+          "lastSync": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "lastError": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StoreIntegrationError"
+            },
+            "description": "Recent failed sync responses. Successful (200) and in-progress (202) responses are omitted. Included only when fetching a single configuration by ID."
           }
         }
       },
@@ -58796,6 +59438,7 @@
                       "ownerKind": "ownerKind"
                     }
                   ],
+                  "_id": "_id",
                   "trackEvents": true
                 },
                 {
@@ -58845,6 +59488,7 @@
                       "ownerKind": "ownerKind"
                     }
                   ],
+                  "_id": "_id",
                   "trackEvents": true
                 }
               ],
@@ -59909,6 +60553,7 @@
                   "ownerKind": "ownerKind"
                 }
               ],
+              "_id": "_id",
               "trackEvents": true
             },
             {
@@ -59958,6 +60603,7 @@
                   "ownerKind": "ownerKind"
                 }
               ],
+              "_id": "_id",
               "trackEvents": true
             }
           ],
@@ -60204,11 +60850,16 @@
       },
       "AiConfigTargetingEnvironmentRule": {
         "required": [
+          "_id",
           "clauses",
           "trackEvents"
         ],
         "type": "object",
         "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The rule ID. Pass it as ruleId in targeting instructions that change this rule."
+          },
           "clauses": {
             "type": "array",
             "items": {
@@ -60268,6 +60919,7 @@
               "ownerKind": "ownerKind"
             }
           ],
+          "_id": "_id",
           "trackEvents": true
         }
       },
@@ -81661,6 +82313,234 @@
           }
         }
       },
+      "PostSegmentScheduledChangeInput": {
+        "required": [
+          "executionDate",
+          "instructions"
+        ],
+        "type": "object",
+        "properties": {
+          "executionDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "comment": {
+            "type": "string",
+            "description": "Optional comment describing the scheduled change"
+          },
+          "instructions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PostSegmentScheduledChangeInputInstructionsItem"
+            },
+            "description": "The segment semantic patch instructions to apply on the execution date"
+          }
+        },
+        "example": {
+          "instructions": [
+            null,
+            null
+          ],
+          "executionDate": 0,
+          "comment": "comment"
+        }
+      },
+      "PatchSegmentScheduledChangeInput": {
+        "minProperties": 1,
+        "type": "object",
+        "properties": {
+          "executionDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "comment": {
+            "type": "string",
+            "description": "The new comment describing the scheduled change. Leave out to keep the current comment, or send an empty string to clear it."
+          }
+        },
+        "example": {
+          "executionDate": 0,
+          "comment": "comment"
+        }
+      },
+      "SegmentScheduledChangesLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "href": "href",
+          "type": "type"
+        }
+      },
+      "SegmentScheduledChangeStatus": {
+        "enum": [
+          "pending",
+          "inFlight",
+          "failed"
+        ],
+        "type": "string",
+        "description": "Where the scheduled change is in its lifecycle. \u0060pending\u0060 means the execution date is still in the future; \u0060inFlight\u0060 means the change is being applied; \u0060failed\u0060 means the change could not be applied on its execution date. More values may be added, so treat an unrecognized value as a change that has not been applied yet.\n",
+        "x-ms-enum": {
+          "name": "SegmentScheduledChangeStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "inFlight",
+              "name": "InFlight"
+            },
+            {
+              "value": "failed",
+              "name": "Failed"
+            }
+          ]
+        }
+      },
+      "SegmentScheduledChange": {
+        "required": [
+          "_creationDate",
+          "_id",
+          "_links",
+          "executionDate",
+          "instructions",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/SegmentScheduledChangeLinksProperty"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SegmentScheduledChangeStatus"
+          },
+          "_id": {
+            "type": "string",
+            "description": "The ID of this scheduled change"
+          },
+          "_creationDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "_maintainerId": {
+            "type": "string",
+            "description": "The ID of the member who scheduled the change"
+          },
+          "_maintainerServiceTokenId": {
+            "type": "string",
+            "description": "The ID of the service token that scheduled the change"
+          },
+          "executionDate": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "comment": {
+            "type": "string",
+            "description": "The comment describing the scheduled change"
+          },
+          "instructions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SegmentScheduledChangeInstructionsItem"
+            },
+            "description": "The segment semantic patch instructions to apply on the execution date"
+          }
+        },
+        "example": {
+          "instructions": [
+            null,
+            null
+          ],
+          "_maintainerId": "_maintainerId",
+          "_links": {
+            "key": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "_maintainerServiceTokenId": "_maintainerServiceTokenId",
+          "executionDate": 6,
+          "comment": "comment",
+          "_id": "_id",
+          "_creationDate": 0,
+          "status": "pending"
+        }
+      },
+      "SegmentScheduledChanges": {
+        "required": [
+          "_links",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/SegmentScheduledChangesLinksProperty"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SegmentScheduledChange"
+            },
+            "description": "The segment\u0027s scheduled changes that have not been applied yet, plus any that failed to apply, soonest first"
+          }
+        },
+        "example": {
+          "_links": {
+            "key": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "items": [
+            {
+              "instructions": [
+                null,
+                null
+              ],
+              "_maintainerId": "_maintainerId",
+              "_links": {
+                "key": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "_maintainerServiceTokenId": "_maintainerServiceTokenId",
+              "executionDate": 6,
+              "comment": "comment",
+              "_id": "_id",
+              "_creationDate": 0,
+              "status": "pending"
+            },
+            {
+              "instructions": [
+                null,
+                null
+              ],
+              "_maintainerId": "_maintainerId",
+              "_links": {
+                "key": {
+                  "href": "href",
+                  "type": "type"
+                }
+              },
+              "_maintainerServiceTokenId": "_maintainerServiceTokenId",
+              "executionDate": 6,
+              "comment": "comment",
+              "_id": "_id",
+              "_creationDate": 0,
+              "status": "pending"
+            }
+          ]
+        }
+      },
       "CreateIpAllowlistEntryRequest": {
         "required": [
           "ipAddress"
@@ -87203,6 +88083,30 @@
           }
         }
       },
+      "PostSegmentScheduledChangeInputInstructionsItem": {
+        "type": "object",
+        "description": "A segment semantic patch instruction, such as \u003Ccode\u003E{\u0022kind\u0022: \u0022addIncludedTargets\u0022, \u0022contextKind\u0022: \u0022user\u0022, \u0022values\u0022: [\u0022user-key\u0022]}\u003C/code\u003E. The \u003Ccode\u003Ekind\u003C/code\u003E and the other fields follow the instructions for updating a segment with a semantic patch.",
+        "x-go-type": "json.RawMessage"
+      },
+      "SegmentScheduledChangeLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/SegmentScheduledChangesLink"
+        },
+        "description": "The location and content type of related resources"
+      },
+      "SegmentScheduledChangeInstructionsItem": {
+        "type": "object",
+        "description": "A segment semantic patch instruction, such as \u003Ccode\u003E{\u0022kind\u0022: \u0022addIncludedTargets\u0022, \u0022contextKind\u0022: \u0022user\u0022, \u0022values\u0022: [\u0022user-key\u0022]}\u003C/code\u003E. The \u003Ccode\u003Ekind\u003C/code\u003E and the other fields follow the instructions for updating a segment with a semantic patch.",
+        "x-go-type": "json.RawMessage"
+      },
+      "SegmentScheduledChangesLinksProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/SegmentScheduledChangesLink"
+        },
+        "description": "The location and content type of related resources"
+      },
       "SdkKeysEnvironmentSummaryLinksProperty": {
         "type": "object",
         "additionalProperties": {
@@ -91458,7 +92362,7 @@
     },
     {
       "name": "Segments",
-      "description": "\n\u003E ### Synced segments and larger list-based segments are an Enterprise feature\n\u003E\n\u003E This section documents endpoints for rule-based, list-based, and synced segments.\n\u003E\n\u003E A \u0022big segment\u0022 is a segment that is either a synced segment, or a list-based segment with more than 15,000 entries that includes only one targeted context kind. LaunchDarkly uses different implementations for different types of segments so that all of your segments have good performance.\n\u003E\n\u003E In the segments API, a big segment is indicated by the \u0060unbounded\u0060 field being set to \u0060true\u0060.\n\u003E\n\u003E These segments are available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nSegments are groups of contexts that you can use to manage flag targeting behavior in bulk. LaunchDarkly supports:\n\n* rule-based segments, which let you target groups of contexts individually or by attribute,\n* list-based segments, which let you target individual contexts or uploaded lists of contexts, and\n* synced segments, which let you target groups of contexts backed by an external data store.\n\nTo learn more, read [Segments](https://launchdarkly.com/docs/home/flags/segments).\n\nThe segments API allows you to list, create, modify, and delete segments programmatically.\n\nYou can find other APIs for working with big segments under [Persistent store integrations (beta)](https://launchdarkly.com/docs/api/persistent-store-integrations-beta).\n"
+      "description": "\n\u003E ### Synced segments and larger list-based segments are an Enterprise feature\n\u003E\n\u003E This section documents endpoints for rule-based, list-based, and synced segments.\n\u003E\n\u003E A \u0022big segment\u0022 is a segment that is either a synced segment, or a list-based segment with more than 15,000 entries that includes only one targeted context kind. LaunchDarkly uses different implementations for different types of segments so that all of your segments have good performance.\n\u003E\n\u003E In the segments API, a big segment is indicated by the \u0060unbounded\u0060 field being set to \u0060true\u0060.\n\u003E\n\u003E These segments are available to customers on an Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nSegments are groups of contexts that you can use to manage flag targeting behavior in bulk. LaunchDarkly supports:\n\n* rule-based segments, which let you target groups of contexts individually or by attribute,\n* list-based segments, which let you target individual contexts or uploaded lists of contexts, and\n* synced segments, which let you target groups of contexts backed by an external data store.\n\nTo learn more, read [Segments](https://launchdarkly.com/docs/home/flags/segments).\n\nThe segments API allows you to list, create, modify, and delete segments programmatically.\n\nYou can also schedule segment changes that take effect at a later time. Scheduled changes use the same semantic patch instructions as updating a segment. You can list, edit, and delete scheduled changes for each segment. Use the \u0060scheduled-changes\u0060 endpoints to manage them.\n\nYou can find other APIs for working with big segments under [Persistent store integrations (beta)](https://launchdarkly.com/docs/api/persistent-store-integrations-beta).\n"
     },
     {
       "name": "Tags",
@@ -92093,6 +92997,11 @@
           "$ref": "#/components/schemas/EnvironmentReleasesMetricDenominatorRep"
         }
       }
+    },
+    "SegmentInstruction": {
+      "type": "object",
+      "description": "A segment semantic patch instruction, such as \u003Ccode\u003E{\u0022kind\u0022: \u0022addIncludedTargets\u0022, \u0022contextKind\u0022: \u0022user\u0022, \u0022values\u0022: [\u0022user-key\u0022]}\u003C/code\u003E. The \u003Ccode\u003Ekind\u003C/code\u003E and the other fields follow the instructions for updating a segment with a semantic patch.",
+      "x-go-type": "json.RawMessage"
     },
     "AdaptiveTriggerSource": {
       "$ref": "#/components/schemas/ObservabilityAlertSource"
@@ -94016,6 +94925,20 @@
           "type": "application/json"
         }
       }
+    },
+    "SegmentScheduledChangeLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SegmentScheduledChangesLink"
+      },
+      "description": "The location and content type of related resources"
+    },
+    "SegmentScheduledChangesLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/SegmentScheduledChangesLink"
+      },
+      "description": "The location and content type of related resources"
     },
     "SdkKeysEnvironmentSummaryLinks": {
       "type": "object",

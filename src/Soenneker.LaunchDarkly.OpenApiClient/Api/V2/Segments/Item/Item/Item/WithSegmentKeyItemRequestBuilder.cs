@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Contexts;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Exports;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Imports;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.ScheduledChanges;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Users;
 using Soenneker.LaunchDarkly.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -35,6 +36,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Imports.ImportsRequestBuilder Imports
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Imports.ImportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scheduledChanges property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.ScheduledChanges.ScheduledChangesRequestBuilder ScheduledChanges
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.ScheduledChanges.ScheduledChangesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Segments.Item.Item.Item.Users.UsersRequestBuilder Users
