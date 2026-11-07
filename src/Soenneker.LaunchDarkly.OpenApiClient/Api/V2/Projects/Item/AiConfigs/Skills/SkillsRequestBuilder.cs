@@ -35,7 +35,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Sk
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SkillsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/skills{?filter*,limit*,offset*}", pathParameters)
+        public SkillsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/skills{?filter*,limit*,offset*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Sk
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SkillsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/skills{?filter*,limit*,offset*}", rawUrl)
+        public SkillsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/skills{?filter*,limit*,offset*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -184,6 +184,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Sk
             /// <summary>Where to start in the list. Use this with pagination. For example, an offset of 10 skips the first ten items and then returns the next items in the list, up to the query `limit`.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>A sort to apply to the list of agent skills. Use `usedIn` to sort by the number of AgentControl configs that use each skill, fewest first, or `-usedIn` for most first. Without a sort, skills are ordered by creation date, newest first.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sort")]
+            public string? Sort { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort")]
+            public string Sort { get; set; }
+#endif
         }
     }
 }

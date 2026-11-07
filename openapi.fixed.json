@@ -32148,6 +32148,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "A sort to apply to the list of agent skills. Use \u0060usedIn\u0060 to sort by the number of AgentControl configs that use each skill, fewest first, or \u0060-usedIn\u0060 for most first. Without a sort, skills are ordered by creation date, newest first.",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
