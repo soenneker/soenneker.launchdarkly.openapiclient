@@ -41,7 +41,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Auditlog
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditlogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/auditlog{?after*,before*,limit*,member*,q*,spec*,token*}", pathParameters)
+        public AuditlogRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/auditlog{?after*,before*,limit*,member*,q*,rollup*,spec*,token*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Auditlog
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditlogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/auditlog{?after*,before*,limit*,member*,q*,spec*,token*}", rawUrl)
+        public AuditlogRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/auditlog{?after*,before*,limit*,member*,q*,rollup*,spec*,token*}", rawUrl)
         {
         }
         /// <summary>
@@ -257,6 +257,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Auditlog
             [QueryParameter("q")]
             public string Q { get; set; }
 #endif
+            /// <summary>Set to 1 to return rolled-up audit log entries, which group related changes into one entry. By default, entries aren&apos;t rolled up.</summary>
+            [QueryParameter("rollup")]
+            public long? Rollup { get; set; }
             /// <summary>An access token ID that lets you filter audit log listings by the token that made the change. Repeat the parameter to filter by multiple tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

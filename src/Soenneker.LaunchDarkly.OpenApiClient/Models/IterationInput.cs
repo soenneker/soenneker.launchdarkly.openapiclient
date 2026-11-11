@@ -55,7 +55,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AssignmentDataSourceInput AssignmentDataSource { get => _explicitNullValueAssignmentDataSource; set { _explicitNullValueAssignmentDataSource = value; AdditionalData?.Remove("assignmentDataSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignmentDataSource"); else _explicitNullProperties?.Remove("assignmentDataSource"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AssignmentDataSourceInput _explicitNullValueAssignmentDataSource = default!;
 #endif
-        /// <summary>The attributes that this iteration&apos;s results can be sliced by</summary>
+        /// <summary>The attributes that this iteration&apos;s results can be sliced by, whose values come from flag evaluation events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }

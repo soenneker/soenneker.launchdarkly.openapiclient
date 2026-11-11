@@ -2040,6 +2040,16 @@
               "type": "string",
               "description": "An access token ID that lets you filter audit log listings by the token that made the change. Repeat the parameter to filter by multiple tokens."
             }
+          },
+          {
+            "name": "rollup",
+            "in": "query",
+            "description": "Set to 1 to return rolled-up audit log entries, which group related changes into one entry. By default, entries aren\u0027t rolled up.",
+            "schema": {
+              "type": "integer",
+              "description": "Set to 1 to return rolled-up audit log entries, which group related changes into one entry. By default, entries aren\u0027t rolled up.",
+              "format": "int64"
+            }
           }
         ],
         "requestBody": {
@@ -49322,7 +49332,7 @@
             "items": {
               "type": "string"
             },
-            "description": "The attributes that this iteration\u0027s results can be sliced by",
+            "description": "The attributes that this iteration\u0027s results can be sliced by, whose values come from flag evaluation events",
             "example": [
               "country",
               "device",
@@ -59422,30 +59432,6 @@
                       "id": "id"
                     }
                   ],
-                  "shadows": [
-                    {
-                      "variationId": "variationId",
-                      "endCondition": {
-                        "kind": "kind",
-                        "value": 4
-                      },
-                      "samplingRate": 0.20271230230023218,
-                      "id": "id",
-                      "ownerId": "ownerId",
-                      "ownerKind": "ownerKind"
-                    },
-                    {
-                      "variationId": "variationId",
-                      "endCondition": {
-                        "kind": "kind",
-                        "value": 4
-                      },
-                      "samplingRate": 0.20271230230023218,
-                      "id": "id",
-                      "ownerId": "ownerId",
-                      "ownerKind": "ownerKind"
-                    }
-                  ],
                   "_id": "_id",
                   "trackEvents": true
                 },
@@ -59470,30 +59456,6 @@
                       ],
                       "attribute": "attribute",
                       "id": "id"
-                    }
-                  ],
-                  "shadows": [
-                    {
-                      "variationId": "variationId",
-                      "endCondition": {
-                        "kind": "kind",
-                        "value": 4
-                      },
-                      "samplingRate": 0.20271230230023218,
-                      "id": "id",
-                      "ownerId": "ownerId",
-                      "ownerKind": "ownerKind"
-                    },
-                    {
-                      "variationId": "variationId",
-                      "endCondition": {
-                        "kind": "kind",
-                        "value": 4
-                      },
-                      "samplingRate": 0.20271230230023218,
-                      "id": "id",
-                      "ownerId": "ownerId",
-                      "ownerKind": "ownerKind"
                     }
                   ],
                   "_id": "_id",
@@ -59525,30 +59487,6 @@
                   "contextKind": "contextKind",
                   "bucketBy": "bucketBy"
                 },
-                "shadows": [
-                  {
-                    "variationId": "variationId",
-                    "endCondition": {
-                      "kind": "kind",
-                      "value": 4
-                    },
-                    "samplingRate": 0.20271230230023218,
-                    "id": "id",
-                    "ownerId": "ownerId",
-                    "ownerKind": "ownerKind"
-                  },
-                  {
-                    "variationId": "variationId",
-                    "endCondition": {
-                      "kind": "kind",
-                      "value": 4
-                    },
-                    "samplingRate": 0.20271230230023218,
-                    "id": "id",
-                    "ownerId": "ownerId",
-                    "ownerKind": "ownerKind"
-                  }
-                ],
                 "variation": 5
               },
               "offVariation": 1,
@@ -60537,30 +60475,6 @@
                   "id": "id"
                 }
               ],
-              "shadows": [
-                {
-                  "variationId": "variationId",
-                  "endCondition": {
-                    "kind": "kind",
-                    "value": 4
-                  },
-                  "samplingRate": 0.20271230230023218,
-                  "id": "id",
-                  "ownerId": "ownerId",
-                  "ownerKind": "ownerKind"
-                },
-                {
-                  "variationId": "variationId",
-                  "endCondition": {
-                    "kind": "kind",
-                    "value": 4
-                  },
-                  "samplingRate": 0.20271230230023218,
-                  "id": "id",
-                  "ownerId": "ownerId",
-                  "ownerKind": "ownerKind"
-                }
-              ],
               "_id": "_id",
               "trackEvents": true
             },
@@ -60585,30 +60499,6 @@
                   ],
                   "attribute": "attribute",
                   "id": "id"
-                }
-              ],
-              "shadows": [
-                {
-                  "variationId": "variationId",
-                  "endCondition": {
-                    "kind": "kind",
-                    "value": 4
-                  },
-                  "samplingRate": 0.20271230230023218,
-                  "id": "id",
-                  "ownerId": "ownerId",
-                  "ownerKind": "ownerKind"
-                },
-                {
-                  "variationId": "variationId",
-                  "endCondition": {
-                    "kind": "kind",
-                    "value": 4
-                  },
-                  "samplingRate": 0.20271230230023218,
-                  "id": "id",
-                  "ownerId": "ownerId",
-                  "ownerKind": "ownerKind"
                 }
               ],
               "_id": "_id",
@@ -60640,30 +60530,6 @@
               "contextKind": "contextKind",
               "bucketBy": "bucketBy"
             },
-            "shadows": [
-              {
-                "variationId": "variationId",
-                "endCondition": {
-                  "kind": "kind",
-                  "value": 4
-                },
-                "samplingRate": 0.20271230230023218,
-                "id": "id",
-                "ownerId": "ownerId",
-                "ownerKind": "ownerKind"
-              },
-              {
-                "variationId": "variationId",
-                "endCondition": {
-                  "kind": "kind",
-                  "value": 4
-                },
-                "samplingRate": 0.20271230230023218,
-                "id": "id",
-                "ownerId": "ownerId",
-                "ownerKind": "ownerKind"
-              }
-            ],
             "variation": 5
           },
           "offVariation": 1,
@@ -60723,30 +60589,6 @@
             "contextKind": "contextKind",
             "bucketBy": "bucketBy"
           },
-          "shadows": [
-            {
-              "variationId": "variationId",
-              "endCondition": {
-                "kind": "kind",
-                "value": 4
-              },
-              "samplingRate": 0.20271230230023218,
-              "id": "id",
-              "ownerId": "ownerId",
-              "ownerKind": "ownerKind"
-            },
-            {
-              "variationId": "variationId",
-              "endCondition": {
-                "kind": "kind",
-                "value": 4
-              },
-              "samplingRate": 0.20271230230023218,
-              "id": "id",
-              "ownerId": "ownerId",
-              "ownerKind": "ownerKind"
-            }
-          ],
           "variation": 5
         }
       },
@@ -60901,30 +60743,6 @@
               ],
               "attribute": "attribute",
               "id": "id"
-            }
-          ],
-          "shadows": [
-            {
-              "variationId": "variationId",
-              "endCondition": {
-                "kind": "kind",
-                "value": 4
-              },
-              "samplingRate": 0.20271230230023218,
-              "id": "id",
-              "ownerId": "ownerId",
-              "ownerKind": "ownerKind"
-            },
-            {
-              "variationId": "variationId",
-              "endCondition": {
-                "kind": "kind",
-                "value": 4
-              },
-              "samplingRate": 0.20271230230023218,
-              "id": "id",
-              "ownerId": "ownerId",
-              "ownerKind": "ownerKind"
             }
           ],
           "_id": "_id",
@@ -68929,9 +68747,6 @@
               },
               "key": "key",
               "updatedAt": 1,
-              "payloadSummary": {
-                "sdkKeyCount": 6
-              },
               "resourcesExpanded": {
                 "totalCount": 7,
                 "items": {
@@ -69048,112 +68863,6 @@
                       }
                     ]
                   },
-                  "aiConfigs": {
-                    "totalCount": 3,
-                    "items": [
-                      {
-                        "createdAt": 2,
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "name": "name",
-                        "description": "description",
-                        "version": 1,
-                        "key": "key",
-                        "flagKey": "flagKey",
-                        "tags": [
-                          "tags",
-                          "tags"
-                        ],
-                        "updatedAt": 6
-                      },
-                      {
-                        "createdAt": 2,
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "name": "name",
-                        "description": "description",
-                        "version": 1,
-                        "key": "key",
-                        "flagKey": "flagKey",
-                        "tags": [
-                          "tags",
-                          "tags"
-                        ],
-                        "updatedAt": 6
-                      }
-                    ]
-                  },
-                  "metrics": {
-                    "totalCount": 3,
-                    "items": [
-                      {
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "kind": "kind",
-                        "description": "description",
-                        "creationDate": 9,
-                        "isActive": true,
-                        "lastSeen": 3,
-                        "eventKey": "eventKey",
-                        "_versionId": "_versionId",
-                        "isNumeric": true,
-                        "name": "name",
-                        "lastModified": 6,
-                        "_id": "_id",
-                        "category": "category",
-                        "key": "key"
-                      },
-                      {
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "kind": "kind",
-                        "description": "description",
-                        "creationDate": 9,
-                        "isActive": true,
-                        "lastSeen": 3,
-                        "eventKey": "eventKey",
-                        "_versionId": "_versionId",
-                        "isNumeric": true,
-                        "name": "name",
-                        "lastModified": 6,
-                        "_id": "_id",
-                        "category": "category",
-                        "key": "key"
-                      }
-                    ]
-                  },
                   "segments": {
                     "totalCount": 6,
                     "items": [
@@ -69217,19 +68926,14 @@
               },
               "resourceSummary": {
                 "flagCount": 4,
-                "metricCount": 1,
                 "totalCount": 1,
-                "segmentCount": 7,
-                "aiConfigCount": 1
+                "segmentCount": 7
               },
               "version": 0,
               "tags": [
                 "tags",
                 "tags"
               ],
-              "applicationSummary": {
-                "applicationKey": "applicationKey"
-              },
               "accountId": "accountId",
               "deletedAt": 5,
               "deleted": false,
@@ -69703,9 +69407,6 @@
               },
               "key": "key",
               "updatedAt": 1,
-              "payloadSummary": {
-                "sdkKeyCount": 6
-              },
               "resourcesExpanded": {
                 "totalCount": 7,
                 "items": {
@@ -69822,112 +69523,6 @@
                       }
                     ]
                   },
-                  "aiConfigs": {
-                    "totalCount": 3,
-                    "items": [
-                      {
-                        "createdAt": 2,
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "name": "name",
-                        "description": "description",
-                        "version": 1,
-                        "key": "key",
-                        "flagKey": "flagKey",
-                        "tags": [
-                          "tags",
-                          "tags"
-                        ],
-                        "updatedAt": 6
-                      },
-                      {
-                        "createdAt": 2,
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "name": "name",
-                        "description": "description",
-                        "version": 1,
-                        "key": "key",
-                        "flagKey": "flagKey",
-                        "tags": [
-                          "tags",
-                          "tags"
-                        ],
-                        "updatedAt": 6
-                      }
-                    ]
-                  },
-                  "metrics": {
-                    "totalCount": 3,
-                    "items": [
-                      {
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "kind": "kind",
-                        "description": "description",
-                        "creationDate": 9,
-                        "isActive": true,
-                        "lastSeen": 3,
-                        "eventKey": "eventKey",
-                        "_versionId": "_versionId",
-                        "isNumeric": true,
-                        "name": "name",
-                        "lastModified": 6,
-                        "_id": "_id",
-                        "category": "category",
-                        "key": "key"
-                      },
-                      {
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "kind": "kind",
-                        "description": "description",
-                        "creationDate": 9,
-                        "isActive": true,
-                        "lastSeen": 3,
-                        "eventKey": "eventKey",
-                        "_versionId": "_versionId",
-                        "isNumeric": true,
-                        "name": "name",
-                        "lastModified": 6,
-                        "_id": "_id",
-                        "category": "category",
-                        "key": "key"
-                      }
-                    ]
-                  },
                   "segments": {
                     "totalCount": 6,
                     "items": [
@@ -69991,19 +69586,14 @@
               },
               "resourceSummary": {
                 "flagCount": 4,
-                "metricCount": 1,
                 "totalCount": 1,
-                "segmentCount": 7,
-                "aiConfigCount": 1
+                "segmentCount": 7
               },
               "version": 0,
               "tags": [
                 "tags",
                 "tags"
               ],
-              "applicationSummary": {
-                "applicationKey": "applicationKey"
-              },
               "accountId": "accountId",
               "deletedAt": 5,
               "deleted": false,
@@ -70604,9 +70194,6 @@
           },
           "key": "key",
           "updatedAt": 1,
-          "payloadSummary": {
-            "sdkKeyCount": 6
-          },
           "resourcesExpanded": {
             "totalCount": 7,
             "items": {
@@ -70723,112 +70310,6 @@
                   }
                 ]
               },
-              "aiConfigs": {
-                "totalCount": 3,
-                "items": [
-                  {
-                    "createdAt": 2,
-                    "_links": {
-                      "parent": {
-                        "href": "href",
-                        "type": "type"
-                      },
-                      "self": {
-                        "href": "href",
-                        "type": "type"
-                      }
-                    },
-                    "name": "name",
-                    "description": "description",
-                    "version": 1,
-                    "key": "key",
-                    "flagKey": "flagKey",
-                    "tags": [
-                      "tags",
-                      "tags"
-                    ],
-                    "updatedAt": 6
-                  },
-                  {
-                    "createdAt": 2,
-                    "_links": {
-                      "parent": {
-                        "href": "href",
-                        "type": "type"
-                      },
-                      "self": {
-                        "href": "href",
-                        "type": "type"
-                      }
-                    },
-                    "name": "name",
-                    "description": "description",
-                    "version": 1,
-                    "key": "key",
-                    "flagKey": "flagKey",
-                    "tags": [
-                      "tags",
-                      "tags"
-                    ],
-                    "updatedAt": 6
-                  }
-                ]
-              },
-              "metrics": {
-                "totalCount": 3,
-                "items": [
-                  {
-                    "_links": {
-                      "parent": {
-                        "href": "href",
-                        "type": "type"
-                      },
-                      "self": {
-                        "href": "href",
-                        "type": "type"
-                      }
-                    },
-                    "kind": "kind",
-                    "description": "description",
-                    "creationDate": 9,
-                    "isActive": true,
-                    "lastSeen": 3,
-                    "eventKey": "eventKey",
-                    "_versionId": "_versionId",
-                    "isNumeric": true,
-                    "name": "name",
-                    "lastModified": 6,
-                    "_id": "_id",
-                    "category": "category",
-                    "key": "key"
-                  },
-                  {
-                    "_links": {
-                      "parent": {
-                        "href": "href",
-                        "type": "type"
-                      },
-                      "self": {
-                        "href": "href",
-                        "type": "type"
-                      }
-                    },
-                    "kind": "kind",
-                    "description": "description",
-                    "creationDate": 9,
-                    "isActive": true,
-                    "lastSeen": 3,
-                    "eventKey": "eventKey",
-                    "_versionId": "_versionId",
-                    "isNumeric": true,
-                    "name": "name",
-                    "lastModified": 6,
-                    "_id": "_id",
-                    "category": "category",
-                    "key": "key"
-                  }
-                ]
-              },
               "segments": {
                 "totalCount": 6,
                 "items": [
@@ -70892,19 +70373,14 @@
           },
           "resourceSummary": {
             "flagCount": 4,
-            "metricCount": 1,
             "totalCount": 1,
-            "segmentCount": 7,
-            "aiConfigCount": 1
+            "segmentCount": 7
           },
           "version": 0,
           "tags": [
             "tags",
             "tags"
           ],
-          "applicationSummary": {
-            "applicationKey": "applicationKey"
-          },
           "accountId": "accountId",
           "deletedAt": 5,
           "deleted": false,
@@ -71617,9 +71093,6 @@
                   },
                   "key": "key",
                   "updatedAt": 1,
-                  "payloadSummary": {
-                    "sdkKeyCount": 6
-                  },
                   "resourcesExpanded": {
                     "totalCount": 7,
                     "items": {
@@ -71736,112 +71209,6 @@
                           }
                         ]
                       },
-                      "aiConfigs": {
-                        "totalCount": 3,
-                        "items": [
-                          {
-                            "createdAt": 2,
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "name": "name",
-                            "description": "description",
-                            "version": 1,
-                            "key": "key",
-                            "flagKey": "flagKey",
-                            "tags": [
-                              "tags",
-                              "tags"
-                            ],
-                            "updatedAt": 6
-                          },
-                          {
-                            "createdAt": 2,
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "name": "name",
-                            "description": "description",
-                            "version": 1,
-                            "key": "key",
-                            "flagKey": "flagKey",
-                            "tags": [
-                              "tags",
-                              "tags"
-                            ],
-                            "updatedAt": 6
-                          }
-                        ]
-                      },
-                      "metrics": {
-                        "totalCount": 3,
-                        "items": [
-                          {
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "kind": "kind",
-                            "description": "description",
-                            "creationDate": 9,
-                            "isActive": true,
-                            "lastSeen": 3,
-                            "eventKey": "eventKey",
-                            "_versionId": "_versionId",
-                            "isNumeric": true,
-                            "name": "name",
-                            "lastModified": 6,
-                            "_id": "_id",
-                            "category": "category",
-                            "key": "key"
-                          },
-                          {
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "kind": "kind",
-                            "description": "description",
-                            "creationDate": 9,
-                            "isActive": true,
-                            "lastSeen": 3,
-                            "eventKey": "eventKey",
-                            "_versionId": "_versionId",
-                            "isNumeric": true,
-                            "name": "name",
-                            "lastModified": 6,
-                            "_id": "_id",
-                            "category": "category",
-                            "key": "key"
-                          }
-                        ]
-                      },
                       "segments": {
                         "totalCount": 6,
                         "items": [
@@ -71905,19 +71272,14 @@
                   },
                   "resourceSummary": {
                     "flagCount": 4,
-                    "metricCount": 1,
                     "totalCount": 1,
-                    "segmentCount": 7,
-                    "aiConfigCount": 1
+                    "segmentCount": 7
                   },
                   "version": 0,
                   "tags": [
                     "tags",
                     "tags"
                   ],
-                  "applicationSummary": {
-                    "applicationKey": "applicationKey"
-                  },
                   "accountId": "accountId",
                   "deletedAt": 5,
                   "deleted": false,
@@ -72539,9 +71901,6 @@
                   },
                   "key": "key",
                   "updatedAt": 1,
-                  "payloadSummary": {
-                    "sdkKeyCount": 6
-                  },
                   "resourcesExpanded": {
                     "totalCount": 7,
                     "items": {
@@ -72658,112 +72017,6 @@
                           }
                         ]
                       },
-                      "aiConfigs": {
-                        "totalCount": 3,
-                        "items": [
-                          {
-                            "createdAt": 2,
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "name": "name",
-                            "description": "description",
-                            "version": 1,
-                            "key": "key",
-                            "flagKey": "flagKey",
-                            "tags": [
-                              "tags",
-                              "tags"
-                            ],
-                            "updatedAt": 6
-                          },
-                          {
-                            "createdAt": 2,
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "name": "name",
-                            "description": "description",
-                            "version": 1,
-                            "key": "key",
-                            "flagKey": "flagKey",
-                            "tags": [
-                              "tags",
-                              "tags"
-                            ],
-                            "updatedAt": 6
-                          }
-                        ]
-                      },
-                      "metrics": {
-                        "totalCount": 3,
-                        "items": [
-                          {
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "kind": "kind",
-                            "description": "description",
-                            "creationDate": 9,
-                            "isActive": true,
-                            "lastSeen": 3,
-                            "eventKey": "eventKey",
-                            "_versionId": "_versionId",
-                            "isNumeric": true,
-                            "name": "name",
-                            "lastModified": 6,
-                            "_id": "_id",
-                            "category": "category",
-                            "key": "key"
-                          },
-                          {
-                            "_links": {
-                              "parent": {
-                                "href": "href",
-                                "type": "type"
-                              },
-                              "self": {
-                                "href": "href",
-                                "type": "type"
-                              }
-                            },
-                            "kind": "kind",
-                            "description": "description",
-                            "creationDate": 9,
-                            "isActive": true,
-                            "lastSeen": 3,
-                            "eventKey": "eventKey",
-                            "_versionId": "_versionId",
-                            "isNumeric": true,
-                            "name": "name",
-                            "lastModified": 6,
-                            "_id": "_id",
-                            "category": "category",
-                            "key": "key"
-                          }
-                        ]
-                      },
                       "segments": {
                         "totalCount": 6,
                         "items": [
@@ -72827,19 +72080,14 @@
                   },
                   "resourceSummary": {
                     "flagCount": 4,
-                    "metricCount": 1,
                     "totalCount": 1,
-                    "segmentCount": 7,
-                    "aiConfigCount": 1
+                    "segmentCount": 7
                   },
                   "version": 0,
                   "tags": [
                     "tags",
                     "tags"
                   ],
-                  "applicationSummary": {
-                    "applicationKey": "applicationKey"
-                  },
                   "accountId": "accountId",
                   "deletedAt": 5,
                   "deleted": false,
@@ -73499,9 +72747,6 @@
               },
               "key": "key",
               "updatedAt": 1,
-              "payloadSummary": {
-                "sdkKeyCount": 6
-              },
               "resourcesExpanded": {
                 "totalCount": 7,
                 "items": {
@@ -73618,112 +72863,6 @@
                       }
                     ]
                   },
-                  "aiConfigs": {
-                    "totalCount": 3,
-                    "items": [
-                      {
-                        "createdAt": 2,
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "name": "name",
-                        "description": "description",
-                        "version": 1,
-                        "key": "key",
-                        "flagKey": "flagKey",
-                        "tags": [
-                          "tags",
-                          "tags"
-                        ],
-                        "updatedAt": 6
-                      },
-                      {
-                        "createdAt": 2,
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "name": "name",
-                        "description": "description",
-                        "version": 1,
-                        "key": "key",
-                        "flagKey": "flagKey",
-                        "tags": [
-                          "tags",
-                          "tags"
-                        ],
-                        "updatedAt": 6
-                      }
-                    ]
-                  },
-                  "metrics": {
-                    "totalCount": 3,
-                    "items": [
-                      {
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "kind": "kind",
-                        "description": "description",
-                        "creationDate": 9,
-                        "isActive": true,
-                        "lastSeen": 3,
-                        "eventKey": "eventKey",
-                        "_versionId": "_versionId",
-                        "isNumeric": true,
-                        "name": "name",
-                        "lastModified": 6,
-                        "_id": "_id",
-                        "category": "category",
-                        "key": "key"
-                      },
-                      {
-                        "_links": {
-                          "parent": {
-                            "href": "href",
-                            "type": "type"
-                          },
-                          "self": {
-                            "href": "href",
-                            "type": "type"
-                          }
-                        },
-                        "kind": "kind",
-                        "description": "description",
-                        "creationDate": 9,
-                        "isActive": true,
-                        "lastSeen": 3,
-                        "eventKey": "eventKey",
-                        "_versionId": "_versionId",
-                        "isNumeric": true,
-                        "name": "name",
-                        "lastModified": 6,
-                        "_id": "_id",
-                        "category": "category",
-                        "key": "key"
-                      }
-                    ]
-                  },
                   "segments": {
                     "totalCount": 6,
                     "items": [
@@ -73787,19 +72926,14 @@
               },
               "resourceSummary": {
                 "flagCount": 4,
-                "metricCount": 1,
                 "totalCount": 1,
-                "segmentCount": 7,
-                "aiConfigCount": 1
+                "segmentCount": 7
               },
               "version": 0,
               "tags": [
                 "tags",
                 "tags"
               ],
-              "applicationSummary": {
-                "applicationKey": "applicationKey"
-              },
               "accountId": "accountId",
               "deletedAt": 5,
               "deleted": false,
@@ -74518,9 +73652,6 @@
                     },
                     "key": "key",
                     "updatedAt": 1,
-                    "payloadSummary": {
-                      "sdkKeyCount": 6
-                    },
                     "resourcesExpanded": {
                       "totalCount": 7,
                       "items": {
@@ -74637,112 +73768,6 @@
                             }
                           ]
                         },
-                        "aiConfigs": {
-                          "totalCount": 3,
-                          "items": [
-                            {
-                              "createdAt": 2,
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "name": "name",
-                              "description": "description",
-                              "version": 1,
-                              "key": "key",
-                              "flagKey": "flagKey",
-                              "tags": [
-                                "tags",
-                                "tags"
-                              ],
-                              "updatedAt": 6
-                            },
-                            {
-                              "createdAt": 2,
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "name": "name",
-                              "description": "description",
-                              "version": 1,
-                              "key": "key",
-                              "flagKey": "flagKey",
-                              "tags": [
-                                "tags",
-                                "tags"
-                              ],
-                              "updatedAt": 6
-                            }
-                          ]
-                        },
-                        "metrics": {
-                          "totalCount": 3,
-                          "items": [
-                            {
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "kind": "kind",
-                              "description": "description",
-                              "creationDate": 9,
-                              "isActive": true,
-                              "lastSeen": 3,
-                              "eventKey": "eventKey",
-                              "_versionId": "_versionId",
-                              "isNumeric": true,
-                              "name": "name",
-                              "lastModified": 6,
-                              "_id": "_id",
-                              "category": "category",
-                              "key": "key"
-                            },
-                            {
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "kind": "kind",
-                              "description": "description",
-                              "creationDate": 9,
-                              "isActive": true,
-                              "lastSeen": 3,
-                              "eventKey": "eventKey",
-                              "_versionId": "_versionId",
-                              "isNumeric": true,
-                              "name": "name",
-                              "lastModified": 6,
-                              "_id": "_id",
-                              "category": "category",
-                              "key": "key"
-                            }
-                          ]
-                        },
                         "segments": {
                           "totalCount": 6,
                           "items": [
@@ -74806,19 +73831,14 @@
                     },
                     "resourceSummary": {
                       "flagCount": 4,
-                      "metricCount": 1,
                       "totalCount": 1,
-                      "segmentCount": 7,
-                      "aiConfigCount": 1
+                      "segmentCount": 7
                     },
                     "version": 0,
                     "tags": [
                       "tags",
                       "tags"
                     ],
-                    "applicationSummary": {
-                      "applicationKey": "applicationKey"
-                    },
                     "accountId": "accountId",
                     "deletedAt": 5,
                     "deleted": false,
@@ -75440,9 +74460,6 @@
                     },
                     "key": "key",
                     "updatedAt": 1,
-                    "payloadSummary": {
-                      "sdkKeyCount": 6
-                    },
                     "resourcesExpanded": {
                       "totalCount": 7,
                       "items": {
@@ -75559,112 +74576,6 @@
                             }
                           ]
                         },
-                        "aiConfigs": {
-                          "totalCount": 3,
-                          "items": [
-                            {
-                              "createdAt": 2,
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "name": "name",
-                              "description": "description",
-                              "version": 1,
-                              "key": "key",
-                              "flagKey": "flagKey",
-                              "tags": [
-                                "tags",
-                                "tags"
-                              ],
-                              "updatedAt": 6
-                            },
-                            {
-                              "createdAt": 2,
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "name": "name",
-                              "description": "description",
-                              "version": 1,
-                              "key": "key",
-                              "flagKey": "flagKey",
-                              "tags": [
-                                "tags",
-                                "tags"
-                              ],
-                              "updatedAt": 6
-                            }
-                          ]
-                        },
-                        "metrics": {
-                          "totalCount": 3,
-                          "items": [
-                            {
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "kind": "kind",
-                              "description": "description",
-                              "creationDate": 9,
-                              "isActive": true,
-                              "lastSeen": 3,
-                              "eventKey": "eventKey",
-                              "_versionId": "_versionId",
-                              "isNumeric": true,
-                              "name": "name",
-                              "lastModified": 6,
-                              "_id": "_id",
-                              "category": "category",
-                              "key": "key"
-                            },
-                            {
-                              "_links": {
-                                "parent": {
-                                  "href": "href",
-                                  "type": "type"
-                                },
-                                "self": {
-                                  "href": "href",
-                                  "type": "type"
-                                }
-                              },
-                              "kind": "kind",
-                              "description": "description",
-                              "creationDate": 9,
-                              "isActive": true,
-                              "lastSeen": 3,
-                              "eventKey": "eventKey",
-                              "_versionId": "_versionId",
-                              "isNumeric": true,
-                              "name": "name",
-                              "lastModified": 6,
-                              "_id": "_id",
-                              "category": "category",
-                              "key": "key"
-                            }
-                          ]
-                        },
                         "segments": {
                           "totalCount": 6,
                           "items": [
@@ -75728,19 +74639,14 @@
                     },
                     "resourceSummary": {
                       "flagCount": 4,
-                      "metricCount": 1,
                       "totalCount": 1,
-                      "segmentCount": 7,
-                      "aiConfigCount": 1
+                      "segmentCount": 7
                     },
                     "version": 0,
                     "tags": [
                       "tags",
                       "tags"
                     ],
-                    "applicationSummary": {
-                      "applicationKey": "applicationKey"
-                    },
                     "accountId": "accountId",
                     "deletedAt": 5,
                     "deleted": false,
@@ -76320,10 +75226,8 @@
         },
         "example": {
           "flagCount": 4,
-          "metricCount": 1,
           "totalCount": 1,
-          "segmentCount": 7,
-          "aiConfigCount": 1
+          "segmentCount": 7
         }
       },
       "SegmentsSummary": {
@@ -76966,112 +75870,6 @@
                     "tags",
                     "tags"
                   ]
-                }
-              ]
-            },
-            "aiConfigs": {
-              "totalCount": 3,
-              "items": [
-                {
-                  "createdAt": 2,
-                  "_links": {
-                    "parent": {
-                      "href": "href",
-                      "type": "type"
-                    },
-                    "self": {
-                      "href": "href",
-                      "type": "type"
-                    }
-                  },
-                  "name": "name",
-                  "description": "description",
-                  "version": 1,
-                  "key": "key",
-                  "flagKey": "flagKey",
-                  "tags": [
-                    "tags",
-                    "tags"
-                  ],
-                  "updatedAt": 6
-                },
-                {
-                  "createdAt": 2,
-                  "_links": {
-                    "parent": {
-                      "href": "href",
-                      "type": "type"
-                    },
-                    "self": {
-                      "href": "href",
-                      "type": "type"
-                    }
-                  },
-                  "name": "name",
-                  "description": "description",
-                  "version": 1,
-                  "key": "key",
-                  "flagKey": "flagKey",
-                  "tags": [
-                    "tags",
-                    "tags"
-                  ],
-                  "updatedAt": 6
-                }
-              ]
-            },
-            "metrics": {
-              "totalCount": 3,
-              "items": [
-                {
-                  "_links": {
-                    "parent": {
-                      "href": "href",
-                      "type": "type"
-                    },
-                    "self": {
-                      "href": "href",
-                      "type": "type"
-                    }
-                  },
-                  "kind": "kind",
-                  "description": "description",
-                  "creationDate": 9,
-                  "isActive": true,
-                  "lastSeen": 3,
-                  "eventKey": "eventKey",
-                  "_versionId": "_versionId",
-                  "isNumeric": true,
-                  "name": "name",
-                  "lastModified": 6,
-                  "_id": "_id",
-                  "category": "category",
-                  "key": "key"
-                },
-                {
-                  "_links": {
-                    "parent": {
-                      "href": "href",
-                      "type": "type"
-                    },
-                    "self": {
-                      "href": "href",
-                      "type": "type"
-                    }
-                  },
-                  "kind": "kind",
-                  "description": "description",
-                  "creationDate": 9,
-                  "isActive": true,
-                  "lastSeen": 3,
-                  "eventKey": "eventKey",
-                  "_versionId": "_versionId",
-                  "isNumeric": true,
-                  "name": "name",
-                  "lastModified": 6,
-                  "_id": "_id",
-                  "category": "category",
-                  "key": "key"
                 }
               ]
             },
@@ -78289,9 +77087,6 @@
             },
             "key": "key",
             "updatedAt": 1,
-            "payloadSummary": {
-              "sdkKeyCount": 6
-            },
             "resourcesExpanded": {
               "totalCount": 7,
               "items": {
@@ -78408,112 +77203,6 @@
                     }
                   ]
                 },
-                "aiConfigs": {
-                  "totalCount": 3,
-                  "items": [
-                    {
-                      "createdAt": 2,
-                      "_links": {
-                        "parent": {
-                          "href": "href",
-                          "type": "type"
-                        },
-                        "self": {
-                          "href": "href",
-                          "type": "type"
-                        }
-                      },
-                      "name": "name",
-                      "description": "description",
-                      "version": 1,
-                      "key": "key",
-                      "flagKey": "flagKey",
-                      "tags": [
-                        "tags",
-                        "tags"
-                      ],
-                      "updatedAt": 6
-                    },
-                    {
-                      "createdAt": 2,
-                      "_links": {
-                        "parent": {
-                          "href": "href",
-                          "type": "type"
-                        },
-                        "self": {
-                          "href": "href",
-                          "type": "type"
-                        }
-                      },
-                      "name": "name",
-                      "description": "description",
-                      "version": 1,
-                      "key": "key",
-                      "flagKey": "flagKey",
-                      "tags": [
-                        "tags",
-                        "tags"
-                      ],
-                      "updatedAt": 6
-                    }
-                  ]
-                },
-                "metrics": {
-                  "totalCount": 3,
-                  "items": [
-                    {
-                      "_links": {
-                        "parent": {
-                          "href": "href",
-                          "type": "type"
-                        },
-                        "self": {
-                          "href": "href",
-                          "type": "type"
-                        }
-                      },
-                      "kind": "kind",
-                      "description": "description",
-                      "creationDate": 9,
-                      "isActive": true,
-                      "lastSeen": 3,
-                      "eventKey": "eventKey",
-                      "_versionId": "_versionId",
-                      "isNumeric": true,
-                      "name": "name",
-                      "lastModified": 6,
-                      "_id": "_id",
-                      "category": "category",
-                      "key": "key"
-                    },
-                    {
-                      "_links": {
-                        "parent": {
-                          "href": "href",
-                          "type": "type"
-                        },
-                        "self": {
-                          "href": "href",
-                          "type": "type"
-                        }
-                      },
-                      "kind": "kind",
-                      "description": "description",
-                      "creationDate": 9,
-                      "isActive": true,
-                      "lastSeen": 3,
-                      "eventKey": "eventKey",
-                      "_versionId": "_versionId",
-                      "isNumeric": true,
-                      "name": "name",
-                      "lastModified": 6,
-                      "_id": "_id",
-                      "category": "category",
-                      "key": "key"
-                    }
-                  ]
-                },
                 "segments": {
                   "totalCount": 6,
                   "items": [
@@ -78577,19 +77266,14 @@
             },
             "resourceSummary": {
               "flagCount": 4,
-              "metricCount": 1,
               "totalCount": 1,
-              "segmentCount": 7,
-              "aiConfigCount": 1
+              "segmentCount": 7
             },
             "version": 0,
             "tags": [
               "tags",
               "tags"
             ],
-            "applicationSummary": {
-              "applicationKey": "applicationKey"
-            },
             "accountId": "accountId",
             "deletedAt": 5,
             "deleted": false,
@@ -79429,112 +78113,6 @@
               }
             ]
           },
-          "aiConfigs": {
-            "totalCount": 3,
-            "items": [
-              {
-                "createdAt": 2,
-                "_links": {
-                  "parent": {
-                    "href": "href",
-                    "type": "type"
-                  },
-                  "self": {
-                    "href": "href",
-                    "type": "type"
-                  }
-                },
-                "name": "name",
-                "description": "description",
-                "version": 1,
-                "key": "key",
-                "flagKey": "flagKey",
-                "tags": [
-                  "tags",
-                  "tags"
-                ],
-                "updatedAt": 6
-              },
-              {
-                "createdAt": 2,
-                "_links": {
-                  "parent": {
-                    "href": "href",
-                    "type": "type"
-                  },
-                  "self": {
-                    "href": "href",
-                    "type": "type"
-                  }
-                },
-                "name": "name",
-                "description": "description",
-                "version": 1,
-                "key": "key",
-                "flagKey": "flagKey",
-                "tags": [
-                  "tags",
-                  "tags"
-                ],
-                "updatedAt": 6
-              }
-            ]
-          },
-          "metrics": {
-            "totalCount": 3,
-            "items": [
-              {
-                "_links": {
-                  "parent": {
-                    "href": "href",
-                    "type": "type"
-                  },
-                  "self": {
-                    "href": "href",
-                    "type": "type"
-                  }
-                },
-                "kind": "kind",
-                "description": "description",
-                "creationDate": 9,
-                "isActive": true,
-                "lastSeen": 3,
-                "eventKey": "eventKey",
-                "_versionId": "_versionId",
-                "isNumeric": true,
-                "name": "name",
-                "lastModified": 6,
-                "_id": "_id",
-                "category": "category",
-                "key": "key"
-              },
-              {
-                "_links": {
-                  "parent": {
-                    "href": "href",
-                    "type": "type"
-                  },
-                  "self": {
-                    "href": "href",
-                    "type": "type"
-                  }
-                },
-                "kind": "kind",
-                "description": "description",
-                "creationDate": 9,
-                "isActive": true,
-                "lastSeen": 3,
-                "eventKey": "eventKey",
-                "_versionId": "_versionId",
-                "isNumeric": true,
-                "name": "name",
-                "lastModified": 6,
-                "_id": "_id",
-                "category": "category",
-                "key": "key"
-              }
-            ]
-          },
           "segments": {
             "totalCount": 6,
             "items": [
@@ -79638,10 +78216,6 @@
             "flagTagKeys": [
               "frontend",
               "backend"
-            ],
-            "viewKeys": [
-              "feature-a",
-              "team-a"
             ]
           },
           "progressiveReleaseConfig": {
@@ -79720,10 +78294,6 @@
             "flagTagKeys": [
               "frontend",
               "backend"
-            ],
-            "viewKeys": [
-              "feature-a",
-              "team-a"
             ]
           },
           "progressiveReleaseConfig": {
@@ -79912,10 +78482,6 @@
             "flagTagKeys": [
               "frontend",
               "backend"
-            ],
-            "viewKeys": [
-              "feature-a",
-              "team-a"
             ]
           },
           "progressiveReleaseConfig": {
@@ -79997,10 +78563,6 @@
           "flagTagKeys": [
             "frontend",
             "backend"
-          ],
-          "viewKeys": [
-            "feature-a",
-            "team-a"
           ]
         }
       },
@@ -80253,10 +78815,6 @@
                 "flagTagKeys": [
                   "frontend",
                   "backend"
-                ],
-                "viewKeys": [
-                  "feature-a",
-                  "team-a"
                 ]
               },
               "progressiveReleaseConfig": {
@@ -80400,10 +78958,6 @@
                 "flagTagKeys": [
                   "frontend",
                   "backend"
-                ],
-                "viewKeys": [
-                  "feature-a",
-                  "team-a"
                 ]
               },
               "progressiveReleaseConfig": {
