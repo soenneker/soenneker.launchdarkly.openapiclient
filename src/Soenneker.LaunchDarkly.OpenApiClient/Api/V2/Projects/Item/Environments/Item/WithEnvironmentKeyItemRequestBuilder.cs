@@ -7,11 +7,13 @@ using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Ite
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ApiKey;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ContextAttributes;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.DefaultReleasePlan;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Experiments;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Flags;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Followers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Holdouts;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.MobileKey;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ReleasePlans;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.SdkKeys;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Segments;
 using Soenneker.LaunchDarkly.OpenApiClient.Models;
@@ -48,6 +50,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Contexts.ContextsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The defaultReleasePlan property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.DefaultReleasePlan.DefaultReleasePlanRequestBuilder DefaultReleasePlan
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.DefaultReleasePlan.DefaultReleasePlanRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The experiments property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.Experiments.ExperimentsRequestBuilder Experiments
         {
@@ -72,6 +79,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.MobileKey.MobileKeyRequestBuilder MobileKey
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.MobileKey.MobileKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The releasePlans property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ReleasePlans.ReleasePlansRequestBuilder ReleasePlans
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.ReleasePlans.ReleasePlansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sdkKeys property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments.Item.SdkKeys.SdkKeysRequestBuilder SdkKeys

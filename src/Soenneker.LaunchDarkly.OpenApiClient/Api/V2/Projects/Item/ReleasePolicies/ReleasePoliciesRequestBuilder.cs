@@ -20,6 +20,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
     public partial class ReleasePoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The order property</summary>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Order.OrderRequestBuilder Order
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Order.OrderRequestBuilder(PathParameters, RequestAdapter);
@@ -27,6 +28,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.releasePolicies.item collection</summary>
         /// <param name="position">The human-readable key of the release policy</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Item.WithPolicyKeyItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Item.WithPolicyKeyItemRequestBuilder this[string position]
         {
             get
@@ -53,7 +55,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         {
         }
         /// <summary>
-        /// Get a list of release policies for the specified project with optional filtering.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Get a list of release policies for the specified project with optional filtering.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePoliciesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,6 +65,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePoliciesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder.ReleasePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,7 +89,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePoliciesResponse>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePoliciesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new release policy for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Create a new release policy for the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -98,6 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy?> PostAsync(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PostReleasePolicyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -123,10 +127,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of release policies for the specified project with optional filtering.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Get a list of release policies for the specified project with optional filtering.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder.ReleasePoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -142,11 +147,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return requestInfo;
         }
         /// <summary>
-        /// Create a new release policy for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Create a new release policy for the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PostReleasePolicyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -168,12 +174,13 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of release policies for the specified project with optional filtering.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Get a list of release policies for the specified project with optional filtering.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReleasePoliciesRequestBuilderGetQueryParameters 

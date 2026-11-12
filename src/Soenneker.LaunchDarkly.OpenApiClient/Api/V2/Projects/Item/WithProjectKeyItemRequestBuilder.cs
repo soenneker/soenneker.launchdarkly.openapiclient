@@ -101,6 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePipelines.ReleasePipelinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The releasePolicies property</summary>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder ReleasePolicies
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder(PathParameters, RequestAdapter);

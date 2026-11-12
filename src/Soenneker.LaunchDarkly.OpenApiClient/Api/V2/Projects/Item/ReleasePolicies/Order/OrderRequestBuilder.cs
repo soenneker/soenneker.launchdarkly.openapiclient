@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         {
         }
         /// <summary>
-        /// Update the order of existing release policies for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Update the order of existing release policies for the specified project.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy&gt;</returns>
         /// <param name="body">Ordered list of release policy keys</param>
@@ -45,6 +45,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy>?> PostAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,11 +71,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Update the order of existing release policies for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Update the order of existing release policies for the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Ordered list of release policy keys</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -96,6 +98,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Order.OrderRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Order.OrderRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Order.OrderRequestBuilder(rawUrl, RequestAdapter);

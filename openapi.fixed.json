@@ -35763,7 +35763,7 @@
           "Release policies (beta)"
         ],
         "summary": "List release policies",
-        "description": "Get a list of release policies for the specified project with optional filtering.",
+        "description": "\u003E **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return \u0060403\u0060. Use the Environment release plans (beta) API instead.\nGet a list of release policies for the specified project with optional filtering.",
         "operationId": "GetReleasePolicies",
         "parameters": [
           {
@@ -35857,14 +35857,15 @@
               }
             }
           }
-        }
+        },
+        "deprecated": true
       },
       "post": {
         "tags": [
           "Release policies (beta)"
         ],
         "summary": "Create a release policy",
-        "description": "Create a new release policy for the specified project.",
+        "description": "\u003E **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return \u0060403\u0060. Use the Environment release plans (beta) API instead.\nCreate a new release policy for the specified project.",
         "operationId": "PostReleasePolicy",
         "parameters": [
           {
@@ -35980,7 +35981,8 @@
             },
             "x-client-success-response-status": "201"
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/release-policies/order": {
@@ -35989,7 +35991,7 @@
           "Release policies (beta)"
         ],
         "summary": "Update the order of existing release policies",
-        "description": "Update the order of existing release policies for the specified project.",
+        "description": "\u003E **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return \u0060403\u0060. Use the Environment release plans (beta) API instead.\nUpdate the order of existing release policies for the specified project.",
         "operationId": "PostReleasePoliciesOrder",
         "parameters": [
           {
@@ -36084,7 +36086,8 @@
               }
             }
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/release-policies/{policyKey}": {
@@ -36093,7 +36096,7 @@
           "Release policies (beta)"
         ],
         "summary": "Delete a release policy",
-        "description": "Delete an existing release policy for the specified project.",
+        "description": "\u003E **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return \u0060403\u0060. Use the Environment release plans (beta) API instead.\nDelete an existing release policy for the specified project.",
         "operationId": "DeleteReleasePolicy",
         "parameters": [
           {
@@ -36180,14 +36183,15 @@
               }
             }
           }
-        }
+        },
+        "deprecated": true
       },
       "get": {
         "tags": [
           "Release policies (beta)"
         ],
         "summary": "Get a release policy by key",
-        "description": "Retrieve a single release policy by its key for the specified project.",
+        "description": "\u003E **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return \u0060403\u0060. Use the Environment release plans (beta) API instead.\nRetrieve a single release policy by its key for the specified project.",
         "operationId": "GetReleasePolicy",
         "parameters": [
           {
@@ -36281,14 +36285,15 @@
               }
             }
           }
-        }
+        },
+        "deprecated": true
       },
       "put": {
         "tags": [
           "Release policies (beta)"
         ],
         "summary": "Update a release policy",
-        "description": "Update an existing release policy for the specified project.",
+        "description": "\u003E **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return \u0060403\u0060. Use the Environment release plans (beta) API instead.\nUpdate an existing release policy for the specified project.",
         "operationId": "PutReleasePolicy",
         "parameters": [
           {
@@ -36393,7 +36398,8 @@
               }
             }
           }
-        }
+        },
+        "deprecated": true
       }
     },
     "/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/releases": {
@@ -37209,6 +37215,943 @@
           },
           "429": {
             "description": "Rate limited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/release-plans": {
+      "get": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "List release plans",
+        "description": "Get the environment\u0027s release plans, ordered by creation time.",
+        "operationId": "GetEnvironmentReleasePlans",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "A queryfilter expression that narrows the list by text match. Supported field and operators: \u0060query\u0060 (\u0060equals\u0060, \u0060contains\u0060). When present, only release plans whose name or key contains the text, case-insensitively, are returned, and totalCount counts the matches. Surrounding whitespace is ignored, and the text is at most 256 bytes. Omitting the filter lists every release plan in the environment.",
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "byText": {
+                "summary": "Plans whose name or key contains the text",
+                "value": "query contains \u0022checkout\u0022"
+              }
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The number of release plans to return. Defaults to 20. Maximum is 100.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The number of release plans to skip. Used for pagination.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Release plan collection response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlans"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Create a release plan",
+        "description": "Create a new release plan for the specified environment.",
+        "operationId": "PostEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          }
+        ],
+        "requestBody": {
+          "description": "Release plan to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostEnvironmentReleasePlanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Release plan created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "Release plan created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlan"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/release-plans/{releasePlanKey}": {
+      "delete": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Delete a release plan",
+        "description": "Delete a release plan by its key. The plan no longer appears in reads, and its key becomes available for reuse by a new plan. Returns 409 while a flag release plan still uses the release plan; remove it from those flag release plans first.",
+        "operationId": "DeleteEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          },
+          {
+            "name": "releasePlanKey",
+            "in": "path",
+            "description": "The release plan key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "checkout-flow-rollout"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Release plan deleted successfully"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Get a release plan",
+        "description": "Get a single release plan by its key.",
+        "operationId": "GetEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          },
+          {
+            "name": "releasePlanKey",
+            "in": "path",
+            "description": "The release plan key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "checkout-flow-rollout"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Release plan response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Update a release plan",
+        "description": "Replace a release plan\u0027s configuration. This is a full replace, not a merge: the plan\u0027s phases, steps, clauses, and metrics become exactly what the request specifies, and anything omitted is removed. The plan\u0027s key and environment are immutable, and its version increments by 1 on every successful update. The request\u0027s version is an optional optimistic lock: when present it must match the plan\u0027s current version, and on mismatch the request is rejected with 409 and no changes are applied, meaning the plan was edited since it was read; get the plan again and retry with its current version. When omitted the update applies unconditionally to the plan currently holding the key. A release already started from the plan is not affected.",
+        "operationId": "PutEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          },
+          {
+            "name": "releasePlanKey",
+            "in": "path",
+            "description": "The release plan key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "checkout-flow-rollout"
+          }
+        ],
+        "requestBody": {
+          "description": "The release plan\u0027s replacement configuration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutEnvironmentReleasePlanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Release plan updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v2/projects/{projectKey}/environments/{environmentKey}/default-release-plan": {
+      "delete": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Clear the default release plan",
+        "description": "Clear the environment\u0027s default release plan, incrementing the formerly-default plan\u0027s version by 1; the environment then has none. Idempotent: returns \u0060204\u0060 whether or not a default was set.",
+        "operationId": "DeleteDefaultEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The environment no longer has a default release plan"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Get the default release plan",
+        "description": "Get the environment\u0027s default release plan \u2014 the plan consumers preselect when starting a release. Returns \u0060204 No Content\u0060 when the environment has no default.",
+        "operationId": "GetDefaultEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Default release plan response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlan"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "The environment has no default release plan"
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Environment release plans (beta)"
+        ],
+        "summary": "Set the default release plan",
+        "description": "Set the plan with the given key as the environment\u0027s default, atomically replacing whatever was default before. Each plan whose default flag changes has its version incremented by 1. Idempotent: setting the current default again changes nothing. Rejects a key that is not an active plan in the environment, or a plan that has no randomization unit.",
+        "operationId": "PutDefaultEnvironmentReleasePlan",
+        "parameters": [
+          {
+            "name": "LD-API-Version",
+            "in": "header",
+            "description": "Version of the endpoint.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BetaLdApiVersion"
+            }
+          },
+          {
+            "name": "projectKey",
+            "in": "path",
+            "description": "The project key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "default"
+          },
+          {
+            "name": "environmentKey",
+            "in": "path",
+            "description": "The environment key",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "production"
+          }
+        ],
+        "requestBody": {
+          "description": "The plan to set as the environment\u0027s default",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PutDefaultEnvironmentReleasePlanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The now-default release plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnvironmentReleasePlan"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid access token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -54937,6 +55880,11 @@
             "description": "The secret for this webhook",
             "example": "frobozz"
           },
+          "hasBearerToken": {
+            "type": "boolean",
+            "description": "Whether this webhook sends a bearer token. The token itself is never returned.",
+            "example": true
+          },
           "statements": {
             "type": "array",
             "items": {
@@ -56074,6 +57022,11 @@
             "type": "string",
             "description": "If sign is true, and the secret attribute is omitted, LaunchDarkly automatically generates a secret for you.",
             "example": "frobozz"
+          },
+          "bearerToken": {
+            "type": "string",
+            "description": "An optional token. If set, LaunchDarkly sends it in an Authorization: Bearer header with each request. It is write-only and is never returned.",
+            "example": "example-token"
           },
           "statements": {
             "type": "array",
@@ -80875,6 +81828,1206 @@
           }
         }
       },
+      "PostEnvironmentReleasePlanRequest": {
+        "required": [
+          "key",
+          "name",
+          "progressiveRelease"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "Human-readable name for this release plan",
+            "example": "Checkout flow rollout"
+          },
+          "key": {
+            "maxLength": 256,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9][._\\-a-zA-Z0-9]*$",
+            "type": "string",
+            "description": "Unique key identifying this release plan within the project. Immutable once created. Unique only among active (non-deleted) plans \u2014 a soft-deleted plan\u0027s key can be reused by a new plan.",
+            "example": "checkout-flow-rollout"
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of this release plan\u0027s purpose",
+            "example": "Standard rollout for checkout changes"
+          },
+          "releaseMethod": {
+            "$ref": "#/components/schemas/ProgressiveReleaseReleaseMethod"
+          },
+          "progressiveRelease": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveRelease"
+          }
+        },
+        "example": {
+          "releaseMethod": "progressive_release",
+          "progressiveRelease": {
+            "advancementMode": "manual",
+            "metrics": {
+              "key": {
+                "autoRollback": false,
+                "isGroup": true
+              }
+            },
+            "randomizationUnit": "user",
+            "cleanupBehavior": "remove_rules_and_update_default_rule",
+            "phases": [
+              {
+                "clauses": [
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  },
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  }
+                ],
+                "description": "description",
+                "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "steps": [
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              },
+              {
+                "clauses": [
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  },
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  }
+                ],
+                "description": "description",
+                "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "steps": [
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              }
+            ]
+          },
+          "name": "Checkout flow rollout",
+          "description": "Standard rollout for checkout changes",
+          "key": "checkout-flow-rollout"
+        }
+      },
+      "PutEnvironmentReleasePlanRequest": {
+        "required": [
+          "name",
+          "progressiveRelease"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "Human-readable name for this release plan",
+            "example": "Checkout flow rollout"
+          },
+          "version": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Optional. The plan version this request was based on, from a previous read. Plans start at version 1. When present it must match the plan\u0027s current version \u2014 on mismatch the request is rejected with 409 and no changes are applied, so a stale copy can\u0027t silently overwrite a concurrent edit. When omitted, the plan\u0027s version is not checked.",
+            "format": "int64",
+            "example": 3
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of this release plan\u0027s purpose",
+            "example": "Standard rollout for checkout changes"
+          },
+          "releaseMethod": {
+            "$ref": "#/components/schemas/ProgressiveReleaseReleaseMethod"
+          },
+          "progressiveRelease": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveRelease"
+          }
+        },
+        "example": {
+          "releaseMethod": "progressive_release",
+          "progressiveRelease": {
+            "advancementMode": "manual",
+            "metrics": {
+              "key": {
+                "autoRollback": false,
+                "isGroup": true
+              }
+            },
+            "randomizationUnit": "user",
+            "cleanupBehavior": "remove_rules_and_update_default_rule",
+            "phases": [
+              {
+                "clauses": [
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  },
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  }
+                ],
+                "description": "description",
+                "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "steps": [
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              },
+              {
+                "clauses": [
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  },
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  }
+                ],
+                "description": "description",
+                "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "steps": [
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              }
+            ]
+          },
+          "name": "Checkout flow rollout",
+          "description": "Standard rollout for checkout changes",
+          "version": 3
+        }
+      },
+      "EnvironmentReleasePlanProgressiveRelease": {
+        "required": [
+          "phases",
+          "randomizationUnit"
+        ],
+        "type": "object",
+        "properties": {
+          "randomizationUnit": {
+            "type": "string",
+            "description": "Context kind used to bucket contexts for allocation",
+            "example": "user"
+          },
+          "advancementMode": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseAdvancementMode"
+          },
+          "cleanupBehavior": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseCleanupBehavior"
+          },
+          "phases": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePlanPhase"
+            },
+            "description": "Ordered list of phases this release plan configures"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseMetricsProperty"
+          }
+        },
+        "example": {
+          "advancementMode": "manual",
+          "metrics": {
+            "key": {
+              "autoRollback": false,
+              "isGroup": true
+            }
+          },
+          "randomizationUnit": "user",
+          "cleanupBehavior": "remove_rules_and_update_default_rule",
+          "phases": [
+            {
+              "clauses": [
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                },
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                }
+              ],
+              "description": "description",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "steps": [
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                },
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                }
+              ]
+            },
+            {
+              "clauses": [
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                },
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                }
+              ],
+              "description": "description",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "steps": [
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                },
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanProgressiveReleaseRep": {
+        "required": [
+          "phases"
+        ],
+        "type": "object",
+        "properties": {
+          "randomizationUnit": {
+            "type": "string",
+            "description": "Context kind used to bucket contexts for allocation. Required when you create or update a plan.",
+            "example": "user"
+          },
+          "advancementMode": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseRepAdvancementMode"
+          },
+          "cleanupBehavior": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseRepCleanupBehavior"
+          },
+          "phases": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePlanPhase"
+            },
+            "description": "Ordered list of phases this release plan configures"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseRepMetricsProperty"
+          }
+        },
+        "example": {
+          "advancementMode": "manual",
+          "metrics": {
+            "key": {
+              "autoRollback": false,
+              "isGroup": true
+            }
+          },
+          "randomizationUnit": "user",
+          "cleanupBehavior": "remove_rules_and_update_default_rule",
+          "phases": [
+            {
+              "clauses": [
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                },
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                }
+              ],
+              "description": "description",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "steps": [
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                },
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                }
+              ]
+            },
+            {
+              "clauses": [
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                },
+                {
+                  "op": "endsWith",
+                  "negate": false,
+                  "values": [
+                    "",
+                    ""
+                  ],
+                  "contextKind": "user",
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                  "attribute": "email"
+                }
+              ],
+              "description": "description",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "steps": [
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                },
+                {
+                  "allocation": 50000,
+                  "durationMillis": 3600000,
+                  "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanPhase": {
+        "required": [
+          "steps"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The phase\u0027s server-generated identifier",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of this phase"
+          },
+          "steps": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePlanStep"
+            },
+            "description": "Ordered allocation increments within this phase"
+          },
+          "clauses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePlanClause"
+            },
+            "description": "Targeting clauses scoping this phase\u0027s audience. Each phase\u0027s clauses must include the randomization unit clause {\u0022contextKind\u0022: \u0022\u003CrandomizationUnit\u003E\u0022, \u0022attribute\u0022: \u0022kind\u0022, \u0022op\u0022: \u0022in\u0022, \u0022values\u0022: [\u0022\u003CrandomizationUnit\u003E\u0022]}, so the release only reaches contexts with that context kind. To release to every context of the randomization unit, provide exactly that clause."
+          }
+        },
+        "example": {
+          "clauses": [
+            {
+              "op": "endsWith",
+              "negate": false,
+              "values": [
+                "",
+                ""
+              ],
+              "contextKind": "user",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "attribute": "email"
+            },
+            {
+              "op": "endsWith",
+              "negate": false,
+              "values": [
+                "",
+                ""
+              ],
+              "contextKind": "user",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "attribute": "email"
+            }
+          ],
+          "description": "description",
+          "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "steps": [
+            {
+              "allocation": 50000,
+              "durationMillis": 3600000,
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+            },
+            {
+              "allocation": 50000,
+              "durationMillis": 3600000,
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanStep": {
+        "required": [
+          "allocation",
+          "durationMillis"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The step\u0027s server-generated identifier",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "allocation": {
+            "maximum": 100000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Traffic allocation in per-100k units (100000 = 100%)",
+            "format": "int64",
+            "example": 50000
+          },
+          "durationMillis": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "How long this step holds before the next one starts",
+            "format": "int64",
+            "example": 3600000
+          }
+        },
+        "example": {
+          "allocation": 50000,
+          "durationMillis": 3600000,
+          "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+        }
+      },
+      "EnvironmentReleasePlanClause": {
+        "required": [
+          "attribute",
+          "op",
+          "values"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The clause\u0027s server-generated identifier",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "contextKind": {
+            "type": "string",
+            "description": "Context kind this clause applies to",
+            "default": "user"
+          },
+          "attribute": {
+            "type": "string",
+            "description": "Context attribute to match on (may be empty for segmentMatch)",
+            "example": "email"
+          },
+          "op": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanClauseOp"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "maxLength": 1024
+            },
+            "description": "Values to match against (strings, numbers, or booleans). Each string value can be at most 1,024 bytes when UTF-8 encoded, so a value with multibyte characters can be rejected even if it has fewer than 1,024 characters."
+          },
+          "negate": {
+            "type": "boolean",
+            "description": "Whether to negate the clause",
+            "default": false
+          }
+        },
+        "example": {
+          "op": "endsWith",
+          "negate": false,
+          "values": [
+            "",
+            ""
+          ],
+          "contextKind": "user",
+          "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "attribute": "email"
+        }
+      },
+      "EnvironmentReleasePlanMetric": {
+        "required": [
+          "isGroup"
+        ],
+        "type": "object",
+        "properties": {
+          "isGroup": {
+            "type": "boolean",
+            "description": "true if this key identifies a metric group, false if it identifies a single metric"
+          },
+          "autoRollback": {
+            "type": "boolean",
+            "description": "Whether to automatically roll back the release if this metric/group regresses",
+            "default": false
+          }
+        },
+        "example": {
+          "autoRollback": false,
+          "isGroup": true
+        }
+      },
+      "EnvironmentReleasePlan": {
+        "required": [
+          "_id",
+          "environmentKey",
+          "key",
+          "name",
+          "progressiveRelease",
+          "releaseMethod",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "description": "The release plan\u0027s unique identifier",
+            "format": "uuid"
+          },
+          "key": {
+            "maxLength": 256,
+            "minLength": 1,
+            "pattern": "^[a-zA-Z0-9][._\\-a-zA-Z0-9]*$",
+            "type": "string",
+            "description": "Unique key identifying this release plan within the project"
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "Human-readable name for this release plan"
+          },
+          "description": {
+            "type": "string",
+            "description": "Human-readable description of this release plan\u0027s purpose"
+          },
+          "environmentKey": {
+            "type": "string",
+            "description": "The environment this release plan is scoped to"
+          },
+          "releaseMethod": {
+            "$ref": "#/components/schemas/ProgressiveReleaseReleaseMethod"
+          },
+          "version": {
+            "type": "integer",
+            "description": "The release plan\u0027s version, starting at 1 and incremented on every update",
+            "format": "int64"
+          },
+          "createdAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "updatedAt": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "default": {
+            "type": "boolean",
+            "description": "Whether this plan is the default for its environment. At most one active plan per environment is the default. Managed via the environment\u0027s default-release-plan sub-resource, not this request body.",
+            "readOnly": true
+          },
+          "progressiveRelease": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlanProgressiveReleaseRep"
+          }
+        },
+        "example": {
+          "releaseMethod": "progressive_release",
+          "createdAt": 6,
+          "default": true,
+          "progressiveRelease": {
+            "advancementMode": "manual",
+            "metrics": {
+              "key": {
+                "autoRollback": false,
+                "isGroup": true
+              }
+            },
+            "randomizationUnit": "user",
+            "cleanupBehavior": "remove_rules_and_update_default_rule",
+            "phases": [
+              {
+                "clauses": [
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  },
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  }
+                ],
+                "description": "description",
+                "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "steps": [
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              },
+              {
+                "clauses": [
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  },
+                  {
+                    "op": "endsWith",
+                    "negate": false,
+                    "values": [
+                      "",
+                      ""
+                    ],
+                    "contextKind": "user",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "attribute": "email"
+                  }
+                ],
+                "description": "description",
+                "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                "steps": [
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  },
+                  {
+                    "allocation": 50000,
+                    "durationMillis": 3600000,
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                  }
+                ]
+              }
+            ]
+          },
+          "name": "name",
+          "description": "description",
+          "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+          "version": 0,
+          "key": "key",
+          "environmentKey": "environmentKey",
+          "updatedAt": 1
+        }
+      },
+      "PutDefaultEnvironmentReleasePlanRequest": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "maxLength": 256,
+            "minLength": 1,
+            "type": "string",
+            "description": "Key of the release plan to set as the environment\u0027s default",
+            "example": "checkout-flow-rollout"
+          }
+        },
+        "example": {
+          "key": "checkout-flow-rollout"
+        }
+      },
+      "EnvironmentReleasePlans": {
+        "required": [
+          "items",
+          "totalCount"
+        ],
+        "type": "object",
+        "properties": {
+          "_links": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlansPaginatedLinks"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnvironmentReleasePlan"
+            },
+            "description": "One page of the listed release plans, ordered by creation time"
+          },
+          "totalCount": {
+            "type": "integer",
+            "description": "The total number of release plans in the listed scope, before pagination"
+          }
+        },
+        "example": {
+          "_links": {
+            "next": {
+              "href": "href",
+              "type": "type"
+            },
+            "last": {
+              "href": "href",
+              "type": "type"
+            },
+            "prev": {
+              "href": "href",
+              "type": "type"
+            },
+            "self": {
+              "href": "href",
+              "type": "type"
+            },
+            "first": {
+              "href": "href",
+              "type": "type"
+            }
+          },
+          "totalCount": 5,
+          "items": [
+            {
+              "releaseMethod": "progressive_release",
+              "createdAt": 6,
+              "default": true,
+              "progressiveRelease": {
+                "advancementMode": "manual",
+                "metrics": {
+                  "key": {
+                    "autoRollback": false,
+                    "isGroup": true
+                  }
+                },
+                "randomizationUnit": "user",
+                "cleanupBehavior": "remove_rules_and_update_default_rule",
+                "phases": [
+                  {
+                    "clauses": [
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      },
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      }
+                    ],
+                    "description": "description",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "steps": [
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      },
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      }
+                    ]
+                  },
+                  {
+                    "clauses": [
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      },
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      }
+                    ],
+                    "description": "description",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "steps": [
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      },
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "name",
+              "description": "description",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "version": 0,
+              "key": "key",
+              "environmentKey": "environmentKey",
+              "updatedAt": 1
+            },
+            {
+              "releaseMethod": "progressive_release",
+              "createdAt": 6,
+              "default": true,
+              "progressiveRelease": {
+                "advancementMode": "manual",
+                "metrics": {
+                  "key": {
+                    "autoRollback": false,
+                    "isGroup": true
+                  }
+                },
+                "randomizationUnit": "user",
+                "cleanupBehavior": "remove_rules_and_update_default_rule",
+                "phases": [
+                  {
+                    "clauses": [
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      },
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      }
+                    ],
+                    "description": "description",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "steps": [
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      },
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      }
+                    ]
+                  },
+                  {
+                    "clauses": [
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      },
+                      {
+                        "op": "endsWith",
+                        "negate": false,
+                        "values": [
+                          "",
+                          ""
+                        ],
+                        "contextKind": "user",
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                        "attribute": "email"
+                      }
+                    ],
+                    "description": "description",
+                    "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+                    "steps": [
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      },
+                      {
+                        "allocation": 50000,
+                        "durationMillis": 3600000,
+                        "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "name": "name",
+              "description": "description",
+              "_id": "046b6c7f-0b8a-43b9-b35d-6489e6daee91",
+              "version": 0,
+              "key": "key",
+              "environmentKey": "environmentKey",
+              "updatedAt": 1
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlansPaginatedLinks": {
+        "required": [
+          "self"
+        ],
+        "type": "object",
+        "properties": {
+          "first": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlansLink"
+          },
+          "last": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlansLink"
+          },
+          "next": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlansLink"
+          },
+          "prev": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlansLink"
+          },
+          "self": {
+            "$ref": "#/components/schemas/EnvironmentReleasePlansLink"
+          }
+        },
+        "example": {
+          "next": {
+            "href": "href",
+            "type": "type"
+          },
+          "last": {
+            "href": "href",
+            "type": "type"
+          },
+          "prev": {
+            "href": "href",
+            "type": "type"
+          },
+          "self": {
+            "href": "href",
+            "type": "type"
+          },
+          "first": {
+            "href": "href",
+            "type": "type"
+          }
+        }
+      },
+      "EnvironmentReleasePlansLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "href": "href",
+          "type": "type"
+        }
+      },
       "PostSegmentScheduledChangeInput": {
         "required": [
           "executionDate",
@@ -80948,6 +83101,11 @@
         ],
         "type": "string",
         "description": "Where the scheduled change is in its lifecycle. \u0060pending\u0060 means the execution date is still in the future; \u0060inFlight\u0060 means the change is being applied; \u0060failed\u0060 means the change could not be applied on its execution date. More values may be added, so treat an unrecognized value as a change that has not been applied yet.\n",
+        "x-enum-varnames": [
+          "SegmentScheduledChangeStatusPending",
+          "SegmentScheduledChangeStatusInFlight",
+          "SegmentScheduledChangeStatusFailed"
+        ],
         "x-ms-enum": {
           "name": "SegmentScheduledChangeStatus",
           "modelAsString": false,
@@ -86645,6 +88803,20 @@
           }
         }
       },
+      "EnvironmentReleasePlanProgressiveReleaseMetricsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleasePlanMetric"
+        },
+        "description": "Metrics/metric groups to monitor during rollout, keyed by metric/group key"
+      },
+      "EnvironmentReleasePlanProgressiveReleaseRepMetricsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/EnvironmentReleasePlanMetric"
+        },
+        "description": "Metrics/metric groups to monitor during rollout, keyed by metric/group key"
+      },
       "PostSegmentScheduledChangeInputInstructionsItem": {
         "type": "object",
         "description": "A segment semantic patch instruction, such as \u003Ccode\u003E{\u0022kind\u0022: \u0022addIncludedTargets\u0022, \u0022contextKind\u0022: \u0022user\u0022, \u0022values\u0022: [\u0022user-key\u0022]}\u003C/code\u003E. The \u003Ccode\u003Ekind\u003C/code\u003E and the other fields follow the instructions for updating a segment with a semantic patch.",
@@ -90022,6 +92194,199 @@
           ]
         }
       },
+      "ProgressiveReleaseReleaseMethod": {
+        "enum": [
+          "progressive_release"
+        ],
+        "type": "string",
+        "description": "Discriminates which nested config object is required",
+        "x-ms-enum": {
+          "name": "ProgressiveReleaseReleaseMethod",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "progressive_release",
+              "name": "ProgressiveRelease"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanProgressiveReleaseAdvancementMode": {
+        "enum": [
+          "manual",
+          "automatic"
+        ],
+        "type": "string",
+        "description": "Whether a release started from this plan advances to the next phase automatically once the current phase\u0027s steps complete, or waits for a user/API action",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasePlanProgressiveReleaseAdvancementMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "automatic",
+              "name": "Automatic"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanProgressiveReleaseCleanupBehavior": {
+        "enum": [
+          "remove_rules_and_update_default_rule",
+          "leave_rules_in_place"
+        ],
+        "type": "string",
+        "description": "What happens to the flag\u0027s rules once a release started from this plan completes. Defaults to \u0060remove_rules_and_update_default_rule\u0060, which removes the release\u0027s targeting rules and updates the flag\u0027s default rule to serve the target variation; \u0060leave_rules_in_place\u0060 leaves the targeting rules untouched.",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasePlanProgressiveReleaseCleanupBehavior",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "remove_rules_and_update_default_rule",
+              "name": "RemoveRulesAndUpdateDefaultRule"
+            },
+            {
+              "value": "leave_rules_in_place",
+              "name": "LeaveRulesInPlace"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanProgressiveReleaseRepAdvancementMode": {
+        "enum": [
+          "manual",
+          "automatic"
+        ],
+        "type": "string",
+        "description": "Whether a release started from this plan advances to the next phase automatically once the current phase\u0027s steps complete, or waits for a user/API action",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasePlanProgressiveReleaseRepAdvancementMode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "manual",
+              "name": "Manual"
+            },
+            {
+              "value": "automatic",
+              "name": "Automatic"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanProgressiveReleaseRepCleanupBehavior": {
+        "enum": [
+          "remove_rules_and_update_default_rule",
+          "leave_rules_in_place"
+        ],
+        "type": "string",
+        "description": "What happens to the flag\u0027s rules once a release started from this plan completes. \u0060remove_rules_and_update_default_rule\u0060 removes the release\u0027s targeting rules and updates the flag\u0027s default rule to serve the target variation; \u0060leave_rules_in_place\u0060 leaves the targeting rules untouched.",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasePlanProgressiveReleaseRepCleanupBehavior",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "remove_rules_and_update_default_rule",
+              "name": "RemoveRulesAndUpdateDefaultRule"
+            },
+            {
+              "value": "leave_rules_in_place",
+              "name": "LeaveRulesInPlace"
+            }
+          ]
+        }
+      },
+      "EnvironmentReleasePlanClauseOp": {
+        "enum": [
+          "in",
+          "endsWith",
+          "startsWith",
+          "matches",
+          "contains",
+          "lessThan",
+          "lessThanOrEqual",
+          "greaterThan",
+          "greaterThanOrEqual",
+          "before",
+          "after",
+          "semVerEqual",
+          "semVerLessThan",
+          "semVerGreaterThan",
+          "segmentMatch"
+        ],
+        "type": "string",
+        "description": "Clause operator",
+        "example": "endsWith",
+        "x-ms-enum": {
+          "name": "EnvironmentReleasePlanClauseOp",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "in",
+              "name": "InValue"
+            },
+            {
+              "value": "endsWith",
+              "name": "EndsWith"
+            },
+            {
+              "value": "startsWith",
+              "name": "StartsWith"
+            },
+            {
+              "value": "matches",
+              "name": "Matches"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "lessThan",
+              "name": "LessThan"
+            },
+            {
+              "value": "lessThanOrEqual",
+              "name": "LessThanOrEqual"
+            },
+            {
+              "value": "greaterThan",
+              "name": "GreaterThan"
+            },
+            {
+              "value": "greaterThanOrEqual",
+              "name": "GreaterThanOrEqual"
+            },
+            {
+              "value": "before",
+              "name": "Before"
+            },
+            {
+              "value": "after",
+              "name": "After"
+            },
+            {
+              "value": "semVerEqual",
+              "name": "SemVerEqual"
+            },
+            {
+              "value": "semVerLessThan",
+              "name": "SemVerLessThan"
+            },
+            {
+              "value": "semVerGreaterThan",
+              "name": "SemVerGreaterThan"
+            },
+            {
+              "value": "segmentMatch",
+              "name": "SegmentMatch"
+            }
+          ]
+        }
+      },
       "SdkKeyPostKind": {
         "enum": [
           "sdk",
@@ -90797,6 +93162,10 @@
     {
       "name": "Data Export destinations",
       "description": "\u003E ### Data Export is an add-on feature\n\u003E\n\u003E Data Export is available as an add-on for customers on a Foundation or Enterprise plan. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To upgrade your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nData Export provides a real-time export of raw analytics data, including feature flag requests, analytics events, custom events, and more.\n\nData Export destinations are locations that receive exported data. The Data Export destinations API allows you to configure destinations so that your data can be exported.\n\nSeveral of the endpoints in the Data Export destinations API require a Data Export destination ID. The Data Export destination ID is returned as part of the [Create a Data Export destination](https://launchdarkly.com/docs/api/data-export-destinations/post-destination) and [List destinations](https://launchdarkly.com/docs/api/data-export-destinations/get-destinations) responses. It is the \u0060_id\u0060 field, or the \u0060_id\u0060 field of each element in the \u0060items\u0060 array.\n\nTo learn more, read [Data Export](https://launchdarkly.com/docs/integrations/data-export).\n"
+    },
+    {
+      "name": "Environment release plans (beta)",
+      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nAn environment release plan is a reusable release configuration for one environment. Each plan has an ordered list of phases that [progressively](https://launchdarkly.com/docs/home/releases/progressive-rollouts) roll out a new flag variation to an audience, and can [guard](https://launchdarkly.com/docs/home/releases/guarded-rollouts) one or more metrics to monitor for regressions. When you start a release in that environment, you can select one of its plans instead of configuring the release from scratch. An environment can also have a default release plan, which is preselected when you start a release.\n\nUse the environment release plans API to create, list, view, update, and delete the release plans in an environment, and to read, set, or clear an environment\u0027s default release plan. Environment release plans replace release policies.\n"
     },
     {
       "name": "Environment releases (beta)",
@@ -93487,6 +95856,20 @@
           "type": "application/json"
         }
       }
+    },
+    "EnvironmentReleasePlanProgressiveReleaseMetrics": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/EnvironmentReleasePlanMetric"
+      },
+      "description": "Metrics/metric groups to monitor during rollout, keyed by metric/group key"
+    },
+    "EnvironmentReleasePlanProgressiveReleaseRepMetrics": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/components/schemas/EnvironmentReleasePlanMetric"
+      },
+      "description": "Metrics/metric groups to monitor during rollout, keyed by metric/group key"
     },
     "SegmentScheduledChangeLinks": {
       "type": "object",

@@ -17,6 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("bearerToken") is null) { _explicitNullValueBearerToken = default!; _explicitNullProperties?.Remove("bearerToken"); }
+            else if (parseNode.GetChildNode("bearerToken") is { } nullNodeBearerToken && nullNodeBearerToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BearerToken = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("on") is null) { _explicitNullValueOn = default!; _explicitNullProperties?.Remove("on"); }
@@ -35,6 +37,16 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An optional token. If set, LaunchDarkly sends it in an Authorization: Bearer header with each request. It is write-only and is never returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BearerToken { get => _explicitNullValueBearerToken; set { _explicitNullValueBearerToken = value; AdditionalData?.Remove("bearerToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bearerToken"); else _explicitNullProperties?.Remove("bearerToken"); } }
+        private string? _explicitNullValueBearerToken = default!;
+#nullable restore
+#else
+        public string BearerToken { get => _explicitNullValueBearerToken; set { _explicitNullValueBearerToken = value; AdditionalData?.Remove("bearerToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bearerToken"); else _explicitNullProperties?.Remove("bearerToken"); } }
+        private string _explicitNullValueBearerToken = default!;
+#endif
         /// <summary>A human-readable name for your webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +128,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bearerToken", n => { BearerToken = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "on", n => { On = n.GetBoolValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
@@ -132,6 +145,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("bearerToken", BearerToken);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("on", On);
             writer.WriteStringValue("secret", Secret);

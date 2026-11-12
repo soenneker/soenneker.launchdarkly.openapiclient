@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         {
         }
         /// <summary>
-        /// Delete an existing release policy for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Delete an existing release policy for the specified project.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -43,6 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -66,7 +67,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a single release policy by its key for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Retrieve a single release policy by its key for the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,6 +77,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,7 +101,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing release policy for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Update an existing release policy for the specified project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -110,6 +112,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.Error">When receiving a 500 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy?> PutAsync(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PutReleasePolicyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -134,10 +137,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.ReleasePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing release policy for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Delete an existing release policy for the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -153,10 +157,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a single release policy by its key for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Retrieve a single release policy by its key for the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -172,11 +177,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing release policy for the specified project.
+        /// &gt; **Deprecated**: The release policies API is being shut off in favor of environment release plans. After shut-off, requests return `403`. Use the Environment release plans (beta) API instead.Update an existing release policy for the specified project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPutRequestInformation(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PutReleasePolicyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -198,6 +204,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolic
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Item.WithPolicyKeyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Item.WithPolicyKeyItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.Item.WithPolicyKeyItemRequestBuilder(rawUrl, RequestAdapter);

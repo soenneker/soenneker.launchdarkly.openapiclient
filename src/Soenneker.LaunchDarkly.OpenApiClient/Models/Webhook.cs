@@ -19,6 +19,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("_access") is null) { _explicitNullValueAccess = default!; _explicitNullProperties?.Remove("_access"); }
             else if (parseNode.GetChildNode("_access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
+            if (parseNode.GetChildNode("hasBearerToken") is null) { _explicitNullValueHasBearerToken = default!; _explicitNullProperties?.Remove("hasBearerToken"); }
+            else if (parseNode.GetChildNode("hasBearerToken") is { } nullNodeHasBearerToken && nullNodeHasBearerToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasBearerToken = null;
             if (parseNode.GetChildNode("_id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("_id"); }
             else if (parseNode.GetChildNode("_id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("_links") is null) { _explicitNullValueLinks = default!; _explicitNullProperties?.Remove("_links"); }
@@ -49,6 +51,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether this webhook sends a bearer token. The token itself is never returned.</summary>
+        public bool? HasBearerToken { get => _explicitNullValueHasBearerToken; set { _explicitNullValueHasBearerToken = value; AdditionalData?.Remove("hasBearerToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasBearerToken"); else _explicitNullProperties?.Remove("hasBearerToken"); } }
+        private bool? _explicitNullValueHasBearerToken = default!;
         /// <summary>The ID of this webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +153,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access.CreateFromDiscriminatorValue); } },
+                { "hasBearerToken", n => { HasBearerToken = n.GetBoolValue(); } },
                 { "_id", n => { Id = n.GetStringValue(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.WebhookLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.WebhookLinksProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -166,6 +172,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Access>("_access", Access);
+            writer.WriteBoolValue("hasBearerToken", HasBearerToken);
             writer.WriteStringValue("_id", Id);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.WebhookLinksProperty>("_links", Links);
             writer.WriteStringValue("name", Name);
