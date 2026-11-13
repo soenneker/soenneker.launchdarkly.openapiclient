@@ -47,7 +47,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimiz
         {
         }
         /// <summary>
-        /// Get a list of all agent optimizations in the given project.
+        /// Get a list of all agent optimizations in the given project.### Filtering optimizationsThe `filter` parameter supports the following fields and operators:- `query` with the `equals` operator: case-insensitive substring match on the optimization key, label, or AgentControl config key.- `aiConfigKey` with the `equals` operator: exact match on the key of the AgentControl config being optimized.Separate multiple fields with a comma, for example `filter=aiConfigKey equals &quot;my-agent&quot;,query equals &quot;tone&quot;`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizations"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimiz
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimization>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all agent optimizations in the given project.
+        /// Get a list of all agent optimizations in the given project.### Filtering optimizationsThe `filter` parameter supports the following fields and operators:- `query` with the `equals` operator: case-insensitive substring match on the optimization key, label, or AgentControl config key.- `aiConfigKey` with the `equals` operator: exact match on the key of the AgentControl config being optimized.Separate multiple fields with a comma, for example `filter=aiConfigKey equals &quot;my-agent&quot;,query equals &quot;tone&quot;`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimiz
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AgentOptimizations.AgentOptimizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all agent optimizations in the given project.
+        /// Get a list of all agent optimizations in the given project.### Filtering optimizationsThe `filter` parameter supports the following fields and operators:- `query` with the `equals` operator: case-insensitive substring match on the optimization key, label, or AgentControl config key.- `aiConfigKey` with the `equals` operator: exact match on the key of the AgentControl config being optimized.Separate multiple fields with a comma, for example `filter=aiConfigKey equals &quot;my-agent&quot;,query equals &quot;tone&quot;`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AgentOptimizationsRequestBuilderGetQueryParameters 

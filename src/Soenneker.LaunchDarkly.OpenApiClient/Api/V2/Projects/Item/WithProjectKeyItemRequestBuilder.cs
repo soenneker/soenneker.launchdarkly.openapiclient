@@ -16,7 +16,6 @@ using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Layers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.MetricGroups;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePipelines;
-using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.SdkKeys;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ViewAssociations;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Views;
@@ -99,12 +98,6 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePipelines.ReleasePipelinesRequestBuilder ReleasePipelines
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePipelines.ReleasePipelinesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The releasePolicies property</summary>
-        [Obsolete("")]
-        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder ReleasePolicies
-        {
-            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ReleasePolicies.ReleasePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sdkKeys property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.SdkKeys.SdkKeysRequestBuilder SdkKeys
