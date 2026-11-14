@@ -12,6 +12,7 @@ using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Environments;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.ExperimentationSettings;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Experiments;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagDefaults;
+using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagReleasePlans;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Layers;
 using Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.MetricGroups;
@@ -77,6 +78,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagDefaults.FlagDefaultsRequestBuilder FlagDefaults
         {
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagDefaults.FlagDefaultsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flagReleasePlans property</summary>
+        public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagReleasePlans.FlagReleasePlansRequestBuilder FlagReleasePlans
+        {
+            get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.FlagReleasePlans.FlagReleasePlansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The flags property</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.Flags.FlagsRequestBuilder Flags
