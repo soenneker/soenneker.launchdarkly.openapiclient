@@ -60244,6 +60244,28 @@
               ],
               "rules": [
                 {
+                  "rollout": {
+                    "experimentAllocation": {
+                      "defaultVariation": 2,
+                      "canReshuffle": true,
+                      "type": "type"
+                    },
+                    "seed": 7,
+                    "variations": [
+                      {
+                        "weight": 3,
+                        "_untracked": true,
+                        "variation": 9
+                      },
+                      {
+                        "weight": 3,
+                        "_untracked": true,
+                        "variation": 9
+                      }
+                    ],
+                    "contextKind": "contextKind",
+                    "bucketBy": "bucketBy"
+                  },
                   "clauses": [
                     {
                       "op": "op",
@@ -60252,6 +60274,7 @@
                         "",
                         ""
                       ],
+                      "contextKind": "contextKind",
                       "attribute": "attribute",
                       "id": "id"
                     },
@@ -60262,14 +60285,38 @@
                         "",
                         ""
                       ],
+                      "contextKind": "contextKind",
                       "attribute": "attribute",
                       "id": "id"
                     }
                   ],
                   "_id": "_id",
-                  "trackEvents": true
+                  "trackEvents": true,
+                  "variation": 1
                 },
                 {
+                  "rollout": {
+                    "experimentAllocation": {
+                      "defaultVariation": 2,
+                      "canReshuffle": true,
+                      "type": "type"
+                    },
+                    "seed": 7,
+                    "variations": [
+                      {
+                        "weight": 3,
+                        "_untracked": true,
+                        "variation": 9
+                      },
+                      {
+                        "weight": 3,
+                        "_untracked": true,
+                        "variation": 9
+                      }
+                    ],
+                    "contextKind": "contextKind",
+                    "bucketBy": "bucketBy"
+                  },
                   "clauses": [
                     {
                       "op": "op",
@@ -60278,6 +60325,7 @@
                         "",
                         ""
                       ],
+                      "contextKind": "contextKind",
                       "attribute": "attribute",
                       "id": "id"
                     },
@@ -60288,12 +60336,14 @@
                         "",
                         ""
                       ],
+                      "contextKind": "contextKind",
                       "attribute": "attribute",
                       "id": "id"
                     }
                   ],
                   "_id": "_id",
-                  "trackEvents": true
+                  "trackEvents": true,
+                  "variation": 1
                 }
               ],
               "lastModified": 7,
@@ -60361,7 +60411,7 @@
             }
           ],
           "experiments": {
-            "baselineIdx": 1,
+            "baselineIdx": 6,
             "items": [
               {
                 "metricKey": "my-metric",
@@ -60372,16 +60422,16 @@
                 ],
                 "_environmentSettings": {
                   "key": {
-                    "startDate": 9,
-                    "stopDate": 6,
+                    "startDate": 6,
+                    "stopDate": 3,
                     "enabledPeriods": [
                       {
-                        "startDate": 3,
-                        "stopDate": 6
+                        "startDate": 6,
+                        "stopDate": 1
                       },
                       {
-                        "startDate": 3,
-                        "stopDate": 6
+                        "startDate": 6,
+                        "stopDate": 1
                       }
                     ]
                   }
@@ -60398,7 +60448,7 @@
                     }
                   },
                   "activeExperimentCount": 2,
-                  "windowEndOffset": 5,
+                  "windowEndOffset": 9,
                   "randomizationUnits": [
                     "user"
                   ],
@@ -60500,8 +60550,8 @@
                   "kind": "custom",
                   "_attachedFlagCount": 0,
                   "metricGroupCount": 0,
-                  "_creationDate": 6,
-                  "windowStartOffset": 4,
+                  "_creationDate": 7,
+                  "windowStartOffset": 5,
                   "tags": [],
                   "winsorIncludeImputed": false,
                   "denominator": {
@@ -60527,14 +60577,14 @@
                       "environmentKey": "environmentKey"
                     },
                     "windowStartOffset": 9,
-                    "windowEndOffset": 9,
-                    "winsorLowerPercentile": 6.683562403749608,
-                    "winsorUpperPercentile": 8.762042012749001,
+                    "windowEndOffset": 6,
+                    "winsorLowerPercentile": 8.762042012749001,
+                    "winsorUpperPercentile": 9.018348186070783,
                     "winsorIncludeImputed": true
                   },
                   "maintainerId": "569fdeadbeef1644facecafe",
                   "unit": "unit",
-                  "lastSeen": 7,
+                  "lastSeen": 1,
                   "isNumeric": true,
                   "experimentCount": 0,
                   "name": "My metric",
@@ -60594,7 +60644,7 @@
                     "disabled": true,
                     "value": 0
                   },
-                  "archivedAt": 1,
+                  "archivedAt": 4,
                   "successCriteria": "HigherThanBaseline",
                   "releasePolicyCount": 0,
                   "_versionId": "version-id-123abc",
@@ -60613,16 +60663,16 @@
                 ],
                 "_environmentSettings": {
                   "key": {
-                    "startDate": 9,
-                    "stopDate": 6,
+                    "startDate": 6,
+                    "stopDate": 3,
                     "enabledPeriods": [
                       {
-                        "startDate": 3,
-                        "stopDate": 6
+                        "startDate": 6,
+                        "stopDate": 1
                       },
                       {
-                        "startDate": 3,
-                        "stopDate": 6
+                        "startDate": 6,
+                        "stopDate": 1
                       }
                     ]
                   }
@@ -60639,7 +60689,7 @@
                     }
                   },
                   "activeExperimentCount": 2,
-                  "windowEndOffset": 5,
+                  "windowEndOffset": 9,
                   "randomizationUnits": [
                     "user"
                   ],
@@ -60741,8 +60791,8 @@
                   "kind": "custom",
                   "_attachedFlagCount": 0,
                   "metricGroupCount": 0,
-                  "_creationDate": 6,
-                  "windowStartOffset": 4,
+                  "_creationDate": 7,
+                  "windowStartOffset": 5,
                   "tags": [],
                   "winsorIncludeImputed": false,
                   "denominator": {
@@ -60768,14 +60818,14 @@
                       "environmentKey": "environmentKey"
                     },
                     "windowStartOffset": 9,
-                    "windowEndOffset": 9,
-                    "winsorLowerPercentile": 6.683562403749608,
-                    "winsorUpperPercentile": 8.762042012749001,
+                    "windowEndOffset": 6,
+                    "winsorLowerPercentile": 8.762042012749001,
+                    "winsorUpperPercentile": 9.018348186070783,
                     "winsorIncludeImputed": true
                   },
                   "maintainerId": "569fdeadbeef1644facecafe",
                   "unit": "unit",
-                  "lastSeen": 7,
+                  "lastSeen": 1,
                   "isNumeric": true,
                   "experimentCount": 0,
                   "name": "My metric",
@@ -60835,7 +60885,7 @@
                     "disabled": true,
                     "value": 0
                   },
-                  "archivedAt": 1,
+                  "archivedAt": 4,
                   "successCriteria": "HigherThanBaseline",
                   "releasePolicyCount": 0,
                   "_versionId": "version-id-123abc",
@@ -60848,7 +60898,7 @@
             ]
           },
           "name": "name",
-          "_version": 1,
+          "_version": 2,
           "key": "key",
           "tags": [
             "tags",
@@ -61287,6 +61337,28 @@
           ],
           "rules": [
             {
+              "rollout": {
+                "experimentAllocation": {
+                  "defaultVariation": 2,
+                  "canReshuffle": true,
+                  "type": "type"
+                },
+                "seed": 7,
+                "variations": [
+                  {
+                    "weight": 3,
+                    "_untracked": true,
+                    "variation": 9
+                  },
+                  {
+                    "weight": 3,
+                    "_untracked": true,
+                    "variation": 9
+                  }
+                ],
+                "contextKind": "contextKind",
+                "bucketBy": "bucketBy"
+              },
               "clauses": [
                 {
                   "op": "op",
@@ -61295,6 +61367,7 @@
                     "",
                     ""
                   ],
+                  "contextKind": "contextKind",
                   "attribute": "attribute",
                   "id": "id"
                 },
@@ -61305,14 +61378,38 @@
                     "",
                     ""
                   ],
+                  "contextKind": "contextKind",
                   "attribute": "attribute",
                   "id": "id"
                 }
               ],
               "_id": "_id",
-              "trackEvents": true
+              "trackEvents": true,
+              "variation": 1
             },
             {
+              "rollout": {
+                "experimentAllocation": {
+                  "defaultVariation": 2,
+                  "canReshuffle": true,
+                  "type": "type"
+                },
+                "seed": 7,
+                "variations": [
+                  {
+                    "weight": 3,
+                    "_untracked": true,
+                    "variation": 9
+                  },
+                  {
+                    "weight": 3,
+                    "_untracked": true,
+                    "variation": 9
+                  }
+                ],
+                "contextKind": "contextKind",
+                "bucketBy": "bucketBy"
+              },
               "clauses": [
                 {
                   "op": "op",
@@ -61321,6 +61418,7 @@
                     "",
                     ""
                   ],
+                  "contextKind": "contextKind",
                   "attribute": "attribute",
                   "id": "id"
                 },
@@ -61331,12 +61429,14 @@
                     "",
                     ""
                   ],
+                  "contextKind": "contextKind",
                   "attribute": "attribute",
                   "id": "id"
                 }
               ],
               "_id": "_id",
-              "trackEvents": true
+              "trackEvents": true,
+              "variation": 1
             }
           ],
           "lastModified": 7,
@@ -61551,12 +61651,41 @@
             },
             "description": "The clauses a context must match"
           },
+          "variation": {
+            "type": "integer",
+            "description": "Index of the variation served by this rule"
+          },
+          "rollout": {
+            "$ref": "#/components/schemas/AiConfigTargetingEnvironmentFallthroughRollout"
+          },
           "trackEvents": {
             "type": "boolean",
             "description": "Whether to send detailed events for evaluations that match this rule"
           }
         },
         "example": {
+          "rollout": {
+            "experimentAllocation": {
+              "defaultVariation": 2,
+              "canReshuffle": true,
+              "type": "type"
+            },
+            "seed": 7,
+            "variations": [
+              {
+                "weight": 3,
+                "_untracked": true,
+                "variation": 9
+              },
+              {
+                "weight": 3,
+                "_untracked": true,
+                "variation": 9
+              }
+            ],
+            "contextKind": "contextKind",
+            "bucketBy": "bucketBy"
+          },
           "clauses": [
             {
               "op": "op",
@@ -61565,6 +61694,7 @@
                 "",
                 ""
               ],
+              "contextKind": "contextKind",
               "attribute": "attribute",
               "id": "id"
             },
@@ -61575,12 +61705,14 @@
                 "",
                 ""
               ],
+              "contextKind": "contextKind",
               "attribute": "attribute",
               "id": "id"
             }
           ],
           "_id": "_id",
-          "trackEvents": true
+          "trackEvents": true,
+          "variation": 1
         }
       },
       "AiConfigTargetingEnvironmentRuleClause": {
@@ -61596,6 +61728,10 @@
           "attribute": {
             "type": "string",
             "description": "The context attribute to match"
+          },
+          "contextKind": {
+            "type": "string",
+            "description": "The context kind of the attribute to match. Omitted for clauses on the kind attribute, which match the context kind itself."
           },
           "id": {
             "type": "string",
@@ -61622,6 +61758,7 @@
             "",
             ""
           ],
+          "contextKind": "contextKind",
           "attribute": "attribute",
           "id": "id"
         }
@@ -66687,7 +66824,7 @@
           }
         },
         "example": {
-          "baselineIdx": 1,
+          "baselineIdx": 6,
           "items": [
             {
               "metricKey": "my-metric",
@@ -66698,16 +66835,16 @@
               ],
               "_environmentSettings": {
                 "key": {
-                  "startDate": 9,
-                  "stopDate": 6,
+                  "startDate": 6,
+                  "stopDate": 3,
                   "enabledPeriods": [
                     {
-                      "startDate": 3,
-                      "stopDate": 6
+                      "startDate": 6,
+                      "stopDate": 1
                     },
                     {
-                      "startDate": 3,
-                      "stopDate": 6
+                      "startDate": 6,
+                      "stopDate": 1
                     }
                   ]
                 }
@@ -66724,7 +66861,7 @@
                   }
                 },
                 "activeExperimentCount": 2,
-                "windowEndOffset": 5,
+                "windowEndOffset": 9,
                 "randomizationUnits": [
                   "user"
                 ],
@@ -66826,8 +66963,8 @@
                 "kind": "custom",
                 "_attachedFlagCount": 0,
                 "metricGroupCount": 0,
-                "_creationDate": 6,
-                "windowStartOffset": 4,
+                "_creationDate": 7,
+                "windowStartOffset": 5,
                 "tags": [],
                 "winsorIncludeImputed": false,
                 "denominator": {
@@ -66853,14 +66990,14 @@
                     "environmentKey": "environmentKey"
                   },
                   "windowStartOffset": 9,
-                  "windowEndOffset": 9,
-                  "winsorLowerPercentile": 6.683562403749608,
-                  "winsorUpperPercentile": 8.762042012749001,
+                  "windowEndOffset": 6,
+                  "winsorLowerPercentile": 8.762042012749001,
+                  "winsorUpperPercentile": 9.018348186070783,
                   "winsorIncludeImputed": true
                 },
                 "maintainerId": "569fdeadbeef1644facecafe",
                 "unit": "unit",
-                "lastSeen": 7,
+                "lastSeen": 1,
                 "isNumeric": true,
                 "experimentCount": 0,
                 "name": "My metric",
@@ -66920,7 +67057,7 @@
                   "disabled": true,
                   "value": 0
                 },
-                "archivedAt": 1,
+                "archivedAt": 4,
                 "successCriteria": "HigherThanBaseline",
                 "releasePolicyCount": 0,
                 "_versionId": "version-id-123abc",
@@ -66939,16 +67076,16 @@
               ],
               "_environmentSettings": {
                 "key": {
-                  "startDate": 9,
-                  "stopDate": 6,
+                  "startDate": 6,
+                  "stopDate": 3,
                   "enabledPeriods": [
                     {
-                      "startDate": 3,
-                      "stopDate": 6
+                      "startDate": 6,
+                      "stopDate": 1
                     },
                     {
-                      "startDate": 3,
-                      "stopDate": 6
+                      "startDate": 6,
+                      "stopDate": 1
                     }
                   ]
                 }
@@ -66965,7 +67102,7 @@
                   }
                 },
                 "activeExperimentCount": 2,
-                "windowEndOffset": 5,
+                "windowEndOffset": 9,
                 "randomizationUnits": [
                   "user"
                 ],
@@ -67067,8 +67204,8 @@
                 "kind": "custom",
                 "_attachedFlagCount": 0,
                 "metricGroupCount": 0,
-                "_creationDate": 6,
-                "windowStartOffset": 4,
+                "_creationDate": 7,
+                "windowStartOffset": 5,
                 "tags": [],
                 "winsorIncludeImputed": false,
                 "denominator": {
@@ -67094,14 +67231,14 @@
                     "environmentKey": "environmentKey"
                   },
                   "windowStartOffset": 9,
-                  "windowEndOffset": 9,
-                  "winsorLowerPercentile": 6.683562403749608,
-                  "winsorUpperPercentile": 8.762042012749001,
+                  "windowEndOffset": 6,
+                  "winsorLowerPercentile": 8.762042012749001,
+                  "winsorUpperPercentile": 9.018348186070783,
                   "winsorIncludeImputed": true
                 },
                 "maintainerId": "569fdeadbeef1644facecafe",
                 "unit": "unit",
-                "lastSeen": 7,
+                "lastSeen": 1,
                 "isNumeric": true,
                 "experimentCount": 0,
                 "name": "My metric",
@@ -67161,7 +67298,7 @@
                   "disabled": true,
                   "value": 0
                 },
-                "archivedAt": 1,
+                "archivedAt": 4,
                 "successCriteria": "HigherThanBaseline",
                 "releasePolicyCount": 0,
                 "_versionId": "version-id-123abc",
@@ -67208,16 +67345,16 @@
           ],
           "_environmentSettings": {
             "key": {
-              "startDate": 9,
-              "stopDate": 6,
+              "startDate": 6,
+              "stopDate": 3,
               "enabledPeriods": [
                 {
-                  "startDate": 3,
-                  "stopDate": 6
+                  "startDate": 6,
+                  "stopDate": 1
                 },
                 {
-                  "startDate": 3,
-                  "stopDate": 6
+                  "startDate": 6,
+                  "stopDate": 1
                 }
               ]
             }
@@ -67234,7 +67371,7 @@
               }
             },
             "activeExperimentCount": 2,
-            "windowEndOffset": 5,
+            "windowEndOffset": 9,
             "randomizationUnits": [
               "user"
             ],
@@ -67336,8 +67473,8 @@
             "kind": "custom",
             "_attachedFlagCount": 0,
             "metricGroupCount": 0,
-            "_creationDate": 6,
-            "windowStartOffset": 4,
+            "_creationDate": 7,
+            "windowStartOffset": 5,
             "tags": [],
             "winsorIncludeImputed": false,
             "denominator": {
@@ -67363,14 +67500,14 @@
                 "environmentKey": "environmentKey"
               },
               "windowStartOffset": 9,
-              "windowEndOffset": 9,
-              "winsorLowerPercentile": 6.683562403749608,
-              "winsorUpperPercentile": 8.762042012749001,
+              "windowEndOffset": 6,
+              "winsorLowerPercentile": 8.762042012749001,
+              "winsorUpperPercentile": 9.018348186070783,
               "winsorIncludeImputed": true
             },
             "maintainerId": "569fdeadbeef1644facecafe",
             "unit": "unit",
-            "lastSeen": 7,
+            "lastSeen": 1,
             "isNumeric": true,
             "experimentCount": 0,
             "name": "My metric",
@@ -67430,7 +67567,7 @@
               "disabled": true,
               "value": 0
             },
-            "archivedAt": 1,
+            "archivedAt": 4,
             "successCriteria": "HigherThanBaseline",
             "releasePolicyCount": 0,
             "_versionId": "version-id-123abc",
@@ -67694,7 +67831,7 @@
             }
           },
           "activeExperimentCount": 2,
-          "windowEndOffset": 5,
+          "windowEndOffset": 9,
           "randomizationUnits": [
             "user"
           ],
@@ -67796,8 +67933,8 @@
           "kind": "custom",
           "_attachedFlagCount": 0,
           "metricGroupCount": 0,
-          "_creationDate": 6,
-          "windowStartOffset": 4,
+          "_creationDate": 7,
+          "windowStartOffset": 5,
           "tags": [],
           "winsorIncludeImputed": false,
           "denominator": {
@@ -67823,14 +67960,14 @@
               "environmentKey": "environmentKey"
             },
             "windowStartOffset": 9,
-            "windowEndOffset": 9,
-            "winsorLowerPercentile": 6.683562403749608,
-            "winsorUpperPercentile": 8.762042012749001,
+            "windowEndOffset": 6,
+            "winsorLowerPercentile": 8.762042012749001,
+            "winsorUpperPercentile": 9.018348186070783,
             "winsorIncludeImputed": true
           },
           "maintainerId": "569fdeadbeef1644facecafe",
           "unit": "unit",
-          "lastSeen": 7,
+          "lastSeen": 1,
           "isNumeric": true,
           "experimentCount": 0,
           "name": "My metric",
@@ -67890,7 +68027,7 @@
             "disabled": true,
             "value": 0
           },
-          "archivedAt": 1,
+          "archivedAt": 4,
           "successCriteria": "HigherThanBaseline",
           "releasePolicyCount": 0,
           "_versionId": "version-id-123abc",
@@ -68150,9 +68287,9 @@
             "environmentKey": "environmentKey"
           },
           "windowStartOffset": 9,
-          "windowEndOffset": 9,
-          "winsorLowerPercentile": 6.683562403749608,
-          "winsorUpperPercentile": 8.762042012749001,
+          "windowEndOffset": 6,
+          "winsorLowerPercentile": 8.762042012749001,
+          "winsorUpperPercentile": 9.018348186070783,
           "winsorIncludeImputed": true
         }
       },
@@ -68175,16 +68312,16 @@
           }
         },
         "example": {
-          "startDate": 9,
-          "stopDate": 6,
+          "startDate": 6,
+          "stopDate": 3,
           "enabledPeriods": [
             {
-              "startDate": 3,
-              "stopDate": 6
+              "startDate": 6,
+              "stopDate": 1
             },
             {
-              "startDate": 3,
-              "stopDate": 6
+              "startDate": 6,
+              "stopDate": 1
             }
           ]
         }
@@ -68202,8 +68339,8 @@
           }
         },
         "example": {
-          "startDate": 3,
-          "stopDate": 6
+          "startDate": 6,
+          "stopDate": 1
         }
       },
       "AiConfigMaintainer": {
@@ -92566,7 +92703,7 @@
     },
     {
       "name": "Experiments",
-      "description": "\u003E ### Available for subscription customers\n\u003E\n\u003E Experimentation is available to all customers on a Developer, Foundation, Enterprise, or Guardian plan. If you\u0027re on an older Pro or Enterprise plan, Experimentation is available as an add-on. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To change your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nExperimentation lets you validate the impact of features you roll out to your app or infrastructure. You can measure things like page views, clicks, load time, infrastructure costs, and more. By connecting metrics you create to flags in your LaunchDarkly environment, you can measure the changes in your customers\u0027 behavior based on what flags they evaluate. You can run experiments with any type of flag, including boolean, string, number, and JSON flags. To learn more, read [Experimentation](https://launchdarkly.com/docs/home/experimentation).\n\nYou can manage experiments by using the dedicated experiment endpoints described below.\n\nSeveral of the endpoints require a treatment ID or a flag rule ID. Treatment IDs are returned as part of the expanded [Get experiment](https://launchdarkly.com/docs/api/experiments/get-experiment#expanding-the-experiment-response) response. Winning treatment IDs are also returned as part of the [Get experiment](https://launchdarkly.com/docs/api/experiments/get-experiment) response. They are the \u0060winningTreatmentId\u0060 in the \u0060currentIteration\u0060, the \u0060winningTreatmentId\u0060 in the \u0060draftIteration\u0060, and the \u0060winningTreatmentId\u0060 in each element of the \u0060previousIterations\u0060 array. In the flags object, the rule ID is the ID of the variation or rollout of the flag. Each flag variation ID is returned as part of the [Get feature flag](https://launchdarkly.com/docs/api/feature-flags/get-feature-flag) response. It is the \u0060_id\u0060 field in each element of the \u0060variations\u0060 array.\n"
+      "description": "\u003E ### Available for subscription customers\n\u003E\n\u003E Experimentation is available to all customers on a Developer, Foundation, or Enterprise plan. If you\u0027re on an older Pro or Enterprise plan, Experimentation is available as an add-on. To learn more, [read about our pricing](https://launchdarkly.com/pricing/). To change your plan, [contact Sales](https://launchdarkly.com/contact-sales/).\n\nExperimentation lets you validate the impact of features you roll out to your app or infrastructure. You can measure things like page views, clicks, load time, infrastructure costs, and more. By connecting metrics you create to flags in your LaunchDarkly environment, you can measure the changes in your customers\u0027 behavior based on what flags they evaluate. You can run experiments with any type of flag, including boolean, string, number, and JSON flags. To learn more, read [Experimentation](https://launchdarkly.com/docs/home/experimentation).\n\nYou can manage experiments by using the dedicated experiment endpoints described below.\n\nSeveral of the endpoints require a treatment ID or a flag rule ID. Treatment IDs are returned as part of the expanded [Get experiment](https://launchdarkly.com/docs/api/experiments/get-experiment#expanding-the-experiment-response) response. Winning treatment IDs are also returned as part of the [Get experiment](https://launchdarkly.com/docs/api/experiments/get-experiment) response. They are the \u0060winningTreatmentId\u0060 in the \u0060currentIteration\u0060, the \u0060winningTreatmentId\u0060 in the \u0060draftIteration\u0060, and the \u0060winningTreatmentId\u0060 in each element of the \u0060previousIterations\u0060 array. In the flags object, the rule ID is the ID of the variation or rollout of the flag. Each flag variation ID is returned as part of the [Get feature flag](https://launchdarkly.com/docs/api/feature-flags/get-feature-flag) response. It is the \u0060_id\u0060 field in each element of the \u0060variations\u0060 array.\n"
     },
     {
       "name": "Feature flags",
@@ -92638,7 +92775,7 @@
     },
     {
       "name": "IP Allowlist (beta)",
-      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nThe IP allowlist feature lets you configure specific IP addresses that can access your LaunchDarkly app using a browser, \nthe LaunchDarkly REST API, or both. This gives you control over the locations from which \nyour members can access their LaunchDarkly account.\n\nThe IP allowlist supports both individual IP addresses and classless inter-domain routing (CIDR) ranges. The \nallowlist only supports IPv4 values.\n\nUse of the IP allowlist is an Enterprise and Guardian feature.\n\nTo learn more, read [IP allowlist](https://launchdarkly.com/docs/home/account/ip-allowlist).\n"
+      "description": "\u003E ### This feature is in beta\n\u003E\n\u003E To use this feature, pass in a header including the \u0060LD-API-Version\u0060 key with value set to \u0060beta\u0060. Use this header with each call. To learn more, read [Beta resources](https://launchdarkly.com/docs/api#beta-resources).\n\u003E\n\u003E Resources that are in beta are still undergoing testing and development. They may change without notice, including becoming backwards incompatible.\n\nThe IP allowlist feature lets you configure specific IP addresses that can access your LaunchDarkly app using a browser, \nthe LaunchDarkly REST API, or both. This gives you control over the locations from which \nyour members can access their LaunchDarkly account.\n\nThe IP allowlist supports both individual IP addresses and classless inter-domain routing (CIDR) ranges. The \nallowlist only supports IPv4 values.\n\nUse of the IP allowlist is an Enterprise feature.\n\nTo learn more, read [IP allowlist](https://launchdarkly.com/docs/home/account/ip-allowlist).\n"
     },
     {
       "name": "Layers",
