@@ -143,7 +143,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeConfiguration JudgeConfiguration { get => _explicitNullValueJudgeConfiguration; set { _explicitNullValueJudgeConfiguration = value; AdditionalData?.Remove("judgeConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgeConfiguration"); else _explicitNullProperties?.Remove("judgeConfiguration"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.JudgeConfiguration _explicitNullValueJudgeConfiguration = default!;
 #endif
-        /// <summary>Keys of the judge AI Configs attached to this variation</summary>
+        /// <summary>Keys of the judge agent configs attached to this variation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? JudgingConfigKeys { get => _explicitNullValueJudgingConfigKeys; set { _explicitNullValueJudgingConfigKeys = value; AdditionalData?.Remove("judgingConfigKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judgingConfigKeys"); else _explicitNullProperties?.Remove("judgingConfigKeys"); } }

@@ -58,7 +58,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
         {
         }
         /// <summary>
-        /// Delete an existing AI Config.
+        /// Delete an existing agent config.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,7 +88,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a specific AI Config by its key.
+        /// Retrieve a specific agent config by its key.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -119,7 +119,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edit an existing AI Config.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.Here&apos;s an example:  ```    {      &quot;description&quot;: &quot;Example updated description&quot;,      &quot;tags&quot;: [&quot;new-tag&quot;]    }  ```
+        /// Edit an existing agent config.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.Here&apos;s an example:  ```    {      &quot;description&quot;: &quot;Example updated description&quot;,      &quot;tags&quot;: [&quot;new-tag&quot;]    }  ```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing AI Config.
+        /// Delete an existing agent config.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -171,7 +171,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a specific AI Config by its key.
+        /// Retrieve a specific agent config by its key.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +190,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return requestInfo;
         }
         /// <summary>
-        /// Edit an existing AI Config.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.Here&apos;s an example:  ```    {      &quot;description&quot;: &quot;Example updated description&quot;,      &quot;tags&quot;: [&quot;new-tag&quot;]    }  ```
+        /// Edit an existing agent config.The request body must be a JSON object of the fields to update. The values you include replace the existing values for the fields.Here&apos;s an example:  ```    {      &quot;description&quot;: &quot;Example updated description&quot;,      &quot;tags&quot;: [&quot;new-tag&quot;]    }  ```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

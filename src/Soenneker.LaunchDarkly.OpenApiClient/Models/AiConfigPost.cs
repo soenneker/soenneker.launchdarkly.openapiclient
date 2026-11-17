@@ -53,7 +53,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPost DefaultVariation { get => _explicitNullValueDefaultVariation; set { _explicitNullValueDefaultVariation = value; AdditionalData?.Remove("defaultVariation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultVariation"); else _explicitNullProperties?.Remove("defaultVariation"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPost _explicitNullValueDefaultVariation = default!;
 #endif
-        /// <summary>A description of the AI Config</summary>
+        /// <summary>A description of the agent config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The success direction of a judge. Offline evaluations use it to decide whether a score passes.- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.**Required for a custom judge.** A custom judge has `mode` set to `judge` and a `key` that is not a built-in judge key. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-&lt;timestamp&gt;` suffix such as `ld-ai-judge-accuracy-1760000000000`. For a built-in judge key, this field is optional, and the API always uses the built-in direction.Do not send this field when `mode` is `agent` or `completion`.This field is not in the schema&apos;s `required` list, because only custom judges need it.The API returns a `400` error in these cases:- `isInverted is required for a custom judge: ...`: You create a custom judge without this field. Send `true` or `false`.- `isInverted is only supported for judge mode`: You send this field and `mode` is `agent` or `completion`. Remove the field, or set `mode` to `judge`.- `isInverted is not supported`: Custom judges are not available for your account. Remove the field from the request.</summary>
         public bool? IsInverted { get => _explicitNullValueIsInverted; set { _explicitNullValueIsInverted = value; AdditionalData?.Remove("isInverted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isInverted"); else _explicitNullProperties?.Remove("isInverted"); } }
         private bool? _explicitNullValueIsInverted = default!;
-        /// <summary>A unique key for the AI Config</summary>
+        /// <summary>A unique key for the agent config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
@@ -106,10 +106,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string MaintainerTeamKey { get => _explicitNullValueMaintainerTeamKey; set { _explicitNullValueMaintainerTeamKey = value; AdditionalData?.Remove("maintainerTeamKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerTeamKey"); else _explicitNullProperties?.Remove("maintainerTeamKey"); } }
         private string _explicitNullValueMaintainerTeamKey = default!;
 #endif
-        /// <summary>The AI Config mode</summary>
+        /// <summary>The agent config mode</summary>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigPostMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigPostMode? _explicitNullValueMode = default!;
-        /// <summary>A human-readable name for the AI Config</summary>
+        /// <summary>A human-readable name for the agent config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -129,7 +129,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public List<string> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<string> _explicitNullValueTags = default!;
 #endif
-        /// <summary>Keys of the views to add the AI Config to</summary>
+        /// <summary>Keys of the views to add the agent config to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ViewKeys { get => _explicitNullValueViewKeys; set { _explicitNullValueViewKeys = value; AdditionalData?.Remove("viewKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewKeys"); else _explicitNullProperties?.Remove("viewKeys"); } }

@@ -47,7 +47,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string DefaultVariationKey { get => _explicitNullValueDefaultVariationKey; set { _explicitNullValueDefaultVariationKey = value; AdditionalData?.Remove("defaultVariationKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultVariationKey"); else _explicitNullProperties?.Remove("defaultVariationKey"); } }
         private string _explicitNullValueDefaultVariationKey = default!;
 #endif
-        /// <summary>A description of the AI Config</summary>
+        /// <summary>A description of the agent config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
@@ -67,7 +67,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string EvaluationMetricKey { get => _explicitNullValueEvaluationMetricKey; set { _explicitNullValueEvaluationMetricKey = value; AdditionalData?.Remove("evaluationMetricKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluationMetricKey"); else _explicitNullProperties?.Remove("evaluationMetricKey"); } }
         private string _explicitNullValueEvaluationMetricKey = default!;
 #endif
-        /// <summary>The success direction of a judge. Offline evaluations use it to decide whether a score passes.- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.Send this field only when the AI Config&apos;s `mode` is `judge`. If you omit it, the current direction does not change. For a built-in judge key, the API always returns the built-in direction. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-&lt;timestamp&gt;` suffix such as `ld-ai-judge-accuracy-1760000000000`.The API returns a `400` error in these cases:- `isInverted is only supported for judge mode`: You send this field and the AI Config&apos;s `mode` is `agent` or `completion`. Remove the field.- `isInverted is not supported`: Custom judges are not available for your account. Remove the field from the request.</summary>
+        /// <summary>The success direction of a judge. Offline evaluations use it to decide whether a score passes.- `true`: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.- `false`: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.Send this field only when the agent config&apos;s `mode` is `judge`. If you omit it, the current direction does not change. For a built-in judge key, the API always returns the built-in direction. Built-in judge keys are `ld-ai-judge-accuracy`, `ld-ai-judge-relevance`, and `ld-ai-judge-toxicity`, with or without a `-&lt;timestamp&gt;` suffix such as `ld-ai-judge-accuracy-1760000000000`.The API returns a `400` error in these cases:- `isInverted is only supported for judge mode`: You send this field and the agent config&apos;s `mode` is `agent` or `completion`. Remove the field.- `isInverted is not supported`: Custom judges are not available for your account. Remove the field from the request.</summary>
         public bool? IsInverted { get => _explicitNullValueIsInverted; set { _explicitNullValueIsInverted = value; AdditionalData?.Remove("isInverted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isInverted"); else _explicitNullProperties?.Remove("isInverted"); } }
         private bool? _explicitNullValueIsInverted = default!;
         /// <summary>The ID of the member who maintains this resource</summary>
@@ -90,7 +90,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string MaintainerTeamKey { get => _explicitNullValueMaintainerTeamKey; set { _explicitNullValueMaintainerTeamKey = value; AdditionalData?.Remove("maintainerTeamKey"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maintainerTeamKey"); else _explicitNullProperties?.Remove("maintainerTeamKey"); } }
         private string _explicitNullValueMaintainerTeamKey = default!;
 #endif
-        /// <summary>A human-readable name for the AI Config</summary>
+        /// <summary>A human-readable name for the agent config</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }

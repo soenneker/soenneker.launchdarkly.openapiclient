@@ -43,7 +43,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs
             get => new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Skills.SkillsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.aiConfigs.item collection</summary>
-        /// <param name="position">The AI Config key</param>
+        /// <param name="position">The agent config key</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Item.WithConfigKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Item.WithConfigKeyItemRequestBuilder this[string position]
         {
@@ -71,7 +71,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs
         {
         }
         /// <summary>
-        /// Get a list of all AI Configs in the given project.
+        /// Get a list of all agent configs in the given project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigs"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigs>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigs.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new AI Config within the given project.
+        /// Create a new agent config within the given project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfig.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all AI Configs in the given project.
+        /// Get a list of all agent configs in the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs
             return requestInfo;
         }
         /// <summary>
-        /// Create a new AI Config within the given project.
+        /// Create a new agent config within the given project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +185,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.AiConfigsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all AI Configs in the given project.
+        /// Get a list of all agent configs in the given project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AiConfigsRequestBuilderGetQueryParameters 

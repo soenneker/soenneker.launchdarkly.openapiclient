@@ -19,7 +19,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
     public partial class VariationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.LaunchDarkly.OpenApiClient.api.v2.projects.item.aiConfigs.item.variations.item collection</summary>
-        /// <param name="position">The AI Config variation key</param>
+        /// <param name="position">The agent config variation key</param>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Item.Variations.Item.WithVariationKeyItemRequestBuilder"/></returns>
         public global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Item.Variations.Item.WithVariationKeyItemRequestBuilder this[string position]
         {
@@ -47,7 +47,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
         {
         }
         /// <summary>
-        /// Create a new variation for a given AI Config.The &lt;code&gt;model&lt;/code&gt; in the request body requires a &lt;code&gt;modelName&lt;/code&gt; and &lt;code&gt;parameters&lt;/code&gt;, for example:```  &quot;model&quot;: {    &quot;modelName&quot;: &quot;claude-3-opus-20240229&quot;,    &quot;parameters&quot;: {      &quot;max_tokens&quot;: 1024    }  }```
+        /// Create a new variation for a given agent config.The &lt;code&gt;model&lt;/code&gt; in the request body requires a &lt;code&gt;modelName&lt;/code&gt; and &lt;code&gt;parameters&lt;/code&gt;, for example:```  &quot;model&quot;: {    &quot;modelName&quot;: &quot;claude-3-opus-20240229&quot;,    &quot;parameters&quot;: {      &quot;max_tokens&quot;: 1024    }  }```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariation"/></returns>
         /// <param name="body">The request body</param>
@@ -80,7 +80,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariation>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new variation for a given AI Config.The &lt;code&gt;model&lt;/code&gt; in the request body requires a &lt;code&gt;modelName&lt;/code&gt; and &lt;code&gt;parameters&lt;/code&gt;, for example:```  &quot;model&quot;: {    &quot;modelName&quot;: &quot;claude-3-opus-20240229&quot;,    &quot;parameters&quot;: {      &quot;max_tokens&quot;: 1024    }  }```
+        /// Create a new variation for a given agent config.The &lt;code&gt;model&lt;/code&gt; in the request body requires a &lt;code&gt;modelName&lt;/code&gt; and &lt;code&gt;parameters&lt;/code&gt;, for example:```  &quot;model&quot;: {    &quot;modelName&quot;: &quot;claude-3-opus-20240229&quot;,    &quot;parameters&quot;: {      &quot;max_tokens&quot;: 1024    }  }```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

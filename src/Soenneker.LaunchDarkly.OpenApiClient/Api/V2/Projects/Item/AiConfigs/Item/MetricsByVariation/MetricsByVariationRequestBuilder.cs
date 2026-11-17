@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
         {
         }
         /// <summary>
-        /// Retrieve usage metrics for an AI Config by config key, with results split by variation.
+        /// Retrieve usage metrics for an agent config by config key, with results split by variation.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.LaunchDarkly.OpenApiClient.Models.MetricByVariation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Retrieve usage metrics for an AI Config by config key, with results split by variation.
+        /// Retrieve usage metrics for an agent config by config key, with results split by variation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +94,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Item.MetricsByVariation.MetricsByVariationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve usage metrics for an AI Config by config key, with results split by variation.
+        /// Retrieve usage metrics for an agent config by config key, with results split by variation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MetricsByVariationRequestBuilderGetQueryParameters 

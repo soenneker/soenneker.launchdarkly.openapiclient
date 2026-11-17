@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
-    /// <summary>The AI Config mode</summary>
+    /// <summary>The agent config mode</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AiConfigMode
     {

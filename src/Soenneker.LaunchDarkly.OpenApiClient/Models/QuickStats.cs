@@ -27,10 +27,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             else if (parseNode.GetChildNode("spendMonthToDate") is { } nullNodeSpendMonthToDate && nullNodeSpendMonthToDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpendMonthToDate = null;
         }
 
-        /// <summary>Number of active AI Configs</summary>
+        /// <summary>Number of active agent configs</summary>
         public int? ActiveConfigs { get => _explicitNullValueActiveConfigs; set { _explicitNullValueActiveConfigs = value; AdditionalData?.Remove("activeConfigs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeConfigs"); else _explicitNullProperties?.Remove("activeConfigs"); } }
         private int? _explicitNullValueActiveConfigs = default!;
-        /// <summary>Number of active experiments on AI Configs</summary>
+        /// <summary>Number of active experiments on agent configs</summary>
         public int? ActiveExperiments { get => _explicitNullValueActiveExperiments; set { _explicitNullValueActiveExperiments = value; AdditionalData?.Remove("activeExperiments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeExperiments"); else _explicitNullProperties?.Remove("activeExperiments"); } }
         private int? _explicitNullValueActiveExperiments = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

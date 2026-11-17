@@ -31,7 +31,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>AI Config representation for Views API - contains only fields actually used by the Views service</summary>
+        /// <summary>Agent config representation for Views API - contains only fields actually used by the Views service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig? AiConfig { get => _explicitNullValueAiConfig; set { _explicitNullValueAiConfig = value; AdditionalData?.Remove("aiConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aiConfig"); else _explicitNullProperties?.Remove("aiConfig"); } }

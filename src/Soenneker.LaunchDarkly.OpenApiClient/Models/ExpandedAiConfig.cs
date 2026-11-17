@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
     /// <summary>
-    /// AI Config representation for Views API - contains only fields actually used by the Views service
+    /// Agent config representation for Views API - contains only fields actually used by the Views service
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExpandedAiConfig : IAdditionalDataHolder, IParsable

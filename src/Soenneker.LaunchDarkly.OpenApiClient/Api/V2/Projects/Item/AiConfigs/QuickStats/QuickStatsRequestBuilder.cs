@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Qu
         {
         }
         /// <summary>
-        /// Retrieve aggregate quick stats for AI Configs in a project.
+        /// Retrieve aggregate quick stats for agent configs in a project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Qu
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.QuickStats.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve aggregate quick stats for AI Configs in a project.
+        /// Retrieve aggregate quick stats for agent configs in a project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.Qu
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.QuickStats.QuickStatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve aggregate quick stats for AI Configs in a project.
+        /// Retrieve aggregate quick stats for agent configs in a project.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class QuickStatsRequestBuilderGetQueryParameters 

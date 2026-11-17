@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 {
-    /// <summary>The state to move the variation to. Omit this field to keep the current state.- `archived`: Archive a published variation. You cannot archive a variation that is already archived. You also cannot archive the only variation of an AI Config. An AI Config itself cannot be archived.- `published`: Restore an archived variation. You cannot publish a variation that is already published.</summary>
+    /// <summary>The state to move the variation to. Omit this field to keep the current state.- `archived`: Archive a published variation. You cannot archive a variation that is already archived. You also cannot archive the only variation of an agent config. An agent config itself cannot be archived.- `published`: Restore an archived variation. You cannot publish a variation that is already published.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AiConfigVariationPatchState
     {
