@@ -85,7 +85,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ActionInput.CreateFromDiscriminatorValue); } },
                 { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ConditionInput.CreateFromDiscriminatorValue)?.AsList(); } },

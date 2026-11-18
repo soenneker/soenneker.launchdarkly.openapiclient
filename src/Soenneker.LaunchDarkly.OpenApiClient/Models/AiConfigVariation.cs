@@ -278,7 +278,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(23)
             {
                 { "_archivedAt", n => { ArchivedAt = n.GetLongValue(); } },
                 { "classifiers", n => { Classifiers = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Classifier.CreateFromDiscriminatorValue)?.AsList(); } },

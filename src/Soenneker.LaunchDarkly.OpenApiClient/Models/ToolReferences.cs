@@ -25,6 +25,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             else if (parseNode.GetChildNode("resourceKey") is { } nullNodeResourceKey && nullNodeResourceKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceKey = null;
             if (parseNode.GetChildNode("resourceType") is null) { _explicitNullValueResourceType = default!; _explicitNullProperties?.Remove("resourceType"); }
             else if (parseNode.GetChildNode("resourceType") is { } nullNodeResourceType && nullNodeResourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResourceType = null;
+            if (parseNode.GetChildNode("skills") is null) { _explicitNullValueSkills = default!; _explicitNullProperties?.Remove("skills"); }
+            else if (parseNode.GetChildNode("skills") is { } nullNodeSkills && nullNodeSkills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skills = null;
+            if (parseNode.GetChildNode("skillsTotalCount") is null) { _explicitNullValueSkillsTotalCount = default!; _explicitNullProperties?.Remove("skillsTotalCount"); }
+            else if (parseNode.GetChildNode("skillsTotalCount") is { } nullNodeSkillsTotalCount && nullNodeSkillsTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkillsTotalCount = null;
             if (parseNode.GetChildNode("totalCount") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("totalCount"); }
             else if (parseNode.GetChildNode("totalCount") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
         }
@@ -71,6 +75,19 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string ResourceType { get => _explicitNullValueResourceType; set { _explicitNullValueResourceType = value; AdditionalData?.Remove("resourceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resourceType"); else _explicitNullProperties?.Remove("resourceType"); } }
         private string _explicitNullValueResourceType = default!;
 #endif
+        /// <summary>One page of the agent skill versions that pin a version of this tool, ordered by skill key then skill version, newest first. It is paged by `limit` and `offset` like `items`. A tool cannot be deleted while any skill version pins it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference>? Skills { get => _explicitNullValueSkills; set { _explicitNullValueSkills = value; AdditionalData?.Remove("skills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skills"); else _explicitNullProperties?.Remove("skills"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference>? _explicitNullValueSkills = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference> Skills { get => _explicitNullValueSkills; set { _explicitNullValueSkills = value; AdditionalData?.Remove("skills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skills"); else _explicitNullProperties?.Remove("skills"); } }
+        private List<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference> _explicitNullValueSkills = default!;
+#endif
+        /// <summary>The total number of agent skill versions that pin this tool, across all pages.</summary>
+        public int? SkillsTotalCount { get => _explicitNullValueSkillsTotalCount; set { _explicitNullValueSkillsTotalCount = value; AdditionalData?.Remove("skillsTotalCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skillsTotalCount"); else _explicitNullProperties?.Remove("skillsTotalCount"); } }
+        private int? _explicitNullValueSkillsTotalCount = default!;
         /// <summary>The total number of references.</summary>
         public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("totalCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCount"); else _explicitNullProperties?.Remove("totalCount"); } }
         private int? _explicitNullValueTotalCount = default!;
@@ -97,12 +114,14 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReference>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PaginatedLinks>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PaginatedLinks.CreateFromDiscriminatorValue); } },
                 { "resourceKey", n => { ResourceKey = n.GetStringValue(); } },
                 { "resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "skills", n => { Skills = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "skillsTotalCount", n => { SkillsTotalCount = n.GetIntValue(); } },
                 { "totalCount", n => { TotalCount = n.GetIntValue(); } },
             };
         }
@@ -117,6 +136,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PaginatedLinks>("_links", Links);
             writer.WriteStringValue("resourceKey", ResourceKey);
             writer.WriteStringValue("resourceType", ResourceType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolSkillReference>("skills", Skills);
+            writer.WriteIntValue("skillsTotalCount", SkillsTotalCount);
             writer.WriteIntValue("totalCount", TotalCount);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

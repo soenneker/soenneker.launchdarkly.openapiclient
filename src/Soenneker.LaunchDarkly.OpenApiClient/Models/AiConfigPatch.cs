@@ -17,6 +17,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("clearDefaultThreshold") is null) { _explicitNullValueClearDefaultThreshold = default!; _explicitNullProperties?.Remove("clearDefaultThreshold"); }
+            else if (parseNode.GetChildNode("clearDefaultThreshold") is { } nullNodeClearDefaultThreshold && nullNodeClearDefaultThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClearDefaultThreshold = null;
+            if (parseNode.GetChildNode("defaultThreshold") is null) { _explicitNullValueDefaultThreshold = default!; _explicitNullProperties?.Remove("defaultThreshold"); }
+            else if (parseNode.GetChildNode("defaultThreshold") is { } nullNodeDefaultThreshold && nullNodeDefaultThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultThreshold = null;
             if (parseNode.GetChildNode("defaultVariationKey") is null) { _explicitNullValueDefaultVariationKey = default!; _explicitNullProperties?.Remove("defaultVariationKey"); }
             else if (parseNode.GetChildNode("defaultVariationKey") is { } nullNodeDefaultVariationKey && nullNodeDefaultVariationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultVariationKey = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -37,6 +41,12 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Set to `true` to remove the judge&apos;s threshold. Don&apos;t send it with `defaultThreshold`.The API returns a `400` error with `Threshold is not supported` when thresholds are not available for your account.</summary>
+        public bool? ClearDefaultThreshold { get => _explicitNullValueClearDefaultThreshold; set { _explicitNullValueClearDefaultThreshold = value; AdditionalData?.Remove("clearDefaultThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clearDefaultThreshold"); else _explicitNullProperties?.Remove("clearDefaultThreshold"); } }
+        private bool? _explicitNullValueClearDefaultThreshold = default!;
+        /// <summary>The judge&apos;s threshold: the pass line for its main score, from 0 to 1. It applies wherever the judge is used. If you omit it, the current threshold does not change. To remove the threshold, send `clearDefaultThreshold` instead.The API returns a `400` error in these cases:- `Threshold is only supported for judges`: You send this field and the agent config&apos;s `mode` is `agent` or `completion`.- `Threshold must be from 0 to 1`: The value is below 0 or above 1.- `Thresholds don&apos;t support classifier rules yet`: Every active variation of the judge uses classifier rules. Archived variations don&apos;t count.- `Threshold can&apos;t be set and cleared in the same request`: You send this field and `clearDefaultThreshold: true`.- `Threshold is not supported`: Thresholds are not available for your account. Remove the field from the request.</summary>
+        public double? DefaultThreshold { get => _explicitNullValueDefaultThreshold; set { _explicitNullValueDefaultThreshold = value; AdditionalData?.Remove("defaultThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultThreshold"); else _explicitNullProperties?.Remove("defaultThreshold"); } }
+        private double? _explicitNullValueDefaultThreshold = default!;
         /// <summary>Key of the variation this config serves by default</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,8 +143,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
+                { "clearDefaultThreshold", n => { ClearDefaultThreshold = n.GetBoolValue(); } },
+                { "defaultThreshold", n => { DefaultThreshold = n.GetDoubleValue(); } },
                 { "defaultVariationKey", n => { DefaultVariationKey = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "evaluationMetricKey", n => { EvaluationMetricKey = n.GetStringValue(); } },
@@ -152,6 +164,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("clearDefaultThreshold", ClearDefaultThreshold);
+            writer.WriteDoubleValue("defaultThreshold", DefaultThreshold);
             writer.WriteStringValue("defaultVariationKey", DefaultVariationKey);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("evaluationMetricKey", EvaluationMetricKey);

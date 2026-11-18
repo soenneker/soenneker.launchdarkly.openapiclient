@@ -17,6 +17,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("defaultThreshold") is null) { _explicitNullValueDefaultThreshold = default!; _explicitNullProperties?.Remove("defaultThreshold"); }
+            else if (parseNode.GetChildNode("defaultThreshold") is { } nullNodeDefaultThreshold && nullNodeDefaultThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultThreshold = null;
             if (parseNode.GetChildNode("defaultVariation") is null) { _explicitNullValueDefaultVariation = default!; _explicitNullProperties?.Remove("defaultVariation"); }
             else if (parseNode.GetChildNode("defaultVariation") is { } nullNodeDefaultVariation && nullNodeDefaultVariation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultVariation = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -43,6 +45,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The judge&apos;s threshold: the pass line for its main score, from 0 to 1. It applies wherever the judge is used. Omit it to create the judge with no threshold.Send this field only when `mode` is `judge`.The API returns a `400` error in these cases:- `Threshold is only supported for judges`: You send this field and `mode` is `agent` or `completion`.- `Threshold must be from 0 to 1`: The value is below 0 or above 1.- `Thresholds don&apos;t support classifier rules yet`: The default variation uses classifier rules.- `Threshold is not supported`: Thresholds are not available for your account. Remove the field from the request.</summary>
+        public double? DefaultThreshold { get => _explicitNullValueDefaultThreshold; set { _explicitNullValueDefaultThreshold = value; AdditionalData?.Remove("defaultThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultThreshold"); else _explicitNullProperties?.Remove("defaultThreshold"); } }
+        private double? _explicitNullValueDefaultThreshold = default!;
         /// <summary>The defaultVariation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -162,8 +167,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
+                { "defaultThreshold", n => { DefaultThreshold = n.GetDoubleValue(); } },
                 { "defaultVariation", n => { DefaultVariation = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPost>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPost.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "evaluationMetricKey", n => { EvaluationMetricKey = n.GetStringValue(); } },
@@ -184,6 +190,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("defaultThreshold", DefaultThreshold);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigVariationPost>("defaultVariation", DefaultVariation);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("evaluationMetricKey", EvaluationMetricKey);

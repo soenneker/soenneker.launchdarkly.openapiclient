@@ -43,6 +43,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             else if (parseNode.GetChildNode("denominator") is { } nullNodeDenominator && nullNodeDenominator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Denominator = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("environmentReleasePlanCount") is null) { _explicitNullValueEnvironmentReleasePlanCount = default!; _explicitNullProperties?.Remove("environmentReleasePlanCount"); }
+            else if (parseNode.GetChildNode("environmentReleasePlanCount") is { } nullNodeEnvironmentReleasePlanCount && nullNodeEnvironmentReleasePlanCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentReleasePlanCount = null;
             if (parseNode.GetChildNode("eventDefault") is null) { _explicitNullValueEventDefault = default!; _explicitNullProperties?.Remove("eventDefault"); }
             else if (parseNode.GetChildNode("eventDefault") is { } nullNodeEventDefault && nullNodeEventDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventDefault = null;
             if (parseNode.GetChildNode("eventKey") is null) { _explicitNullValueEventKey = default!; _explicitNullProperties?.Remove("eventKey"); }
@@ -200,6 +202,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
+        /// <summary>The number of environment release plans using this metric</summary>
+        public int? EnvironmentReleasePlanCount { get => _explicitNullValueEnvironmentReleasePlanCount; set { _explicitNullValueEnvironmentReleasePlanCount = value; AdditionalData?.Remove("environmentReleasePlanCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentReleasePlanCount"); else _explicitNullProperties?.Remove("environmentReleasePlanCount"); } }
+        private int? _explicitNullValueEnvironmentReleasePlanCount = default!;
         /// <summary>The eventDefault property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -472,7 +477,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(50)
             {
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsAccess>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsAccess.CreateFromDiscriminatorValue); } },
                 { "activeExperimentCount", n => { ActiveExperimentCount = n.GetIntValue(); } },
@@ -487,6 +492,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "dataSource", n => { DataSource = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricDataSourceRefRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricDataSourceRefRep.CreateFromDiscriminatorValue); } },
                 { "denominator", n => { Denominator = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricDenominatorRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricDenominatorRep.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "environmentReleasePlanCount", n => { EnvironmentReleasePlanCount = n.GetIntValue(); } },
                 { "eventDefault", n => { EventDefault = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricEventDefaultRep>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricEventDefaultRep.CreateFromDiscriminatorValue); } },
                 { "eventKey", n => { EventKey = n.GetStringValue(); } },
                 { "experimentCount", n => { ExperimentCount = n.GetIntValue(); } },
@@ -545,6 +551,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricDataSourceRefRep>("dataSource", DataSource);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricDenominatorRep>("denominator", Denominator);
             writer.WriteStringValue("description", Description);
+            writer.WriteIntValue("environmentReleasePlanCount", EnvironmentReleasePlanCount);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsMetricEventDefaultRep>("eventDefault", EventDefault);
             writer.WriteStringValue("eventKey", EventKey);
             writer.WriteIntValue("experimentCount", ExperimentCount);

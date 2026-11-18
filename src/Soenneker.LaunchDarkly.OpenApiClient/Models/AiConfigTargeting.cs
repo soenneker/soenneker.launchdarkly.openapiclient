@@ -138,7 +138,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "defaults", n => { Defaults = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigTargetingDefaults.CreateFromDiscriminatorValue); } },

@@ -92,7 +92,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "audiences", n => { Audiences = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.Audience>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.Audience.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.PhaseConfigurationProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.PhaseConfigurationProperty.CreateFromDiscriminatorValue); } },

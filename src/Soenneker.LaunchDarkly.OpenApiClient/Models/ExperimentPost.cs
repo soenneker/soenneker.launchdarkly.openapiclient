@@ -155,7 +155,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "analysisConfig", n => { AnalysisConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AnalysisConfigInput.CreateFromDiscriminatorValue); } },
                 { "dataSource", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExperimentPostDataSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataSource = default; _explicitNullProperties?.Remove("dataSource"); AdditionalData["dataSource"] = unknown; } else { DataSource = parsed; AdditionalData.Remove("dataSource"); } } },

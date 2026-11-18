@@ -78,7 +78,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "milliseconds", n => { Milliseconds = n.GetLongValue(); } },
                 { "rfc3339", n => { Rfc3339 = n.GetStringValue(); } },

@@ -1224,7 +1224,7 @@
           "Approvals"
         ],
         "summary": "List approval requests",
-        "description": "Get all approval requests.\n\n### Filtering approvals\n\nLaunchDarkly supports the \u0060filter\u0060 query param for filtering, with the following fields:\n\n- \u0060notifyMemberIds\u0060 filters for only approvals that are assigned to a member in the specified list. For example: \u0060filter=notifyMemberIds anyOf [\u0022memberId1\u0022, \u0022memberId2\u0022]\u0060.\n- \u0060requestorId\u0060 filters for only approvals that correspond to the ID of the member who requested the approval. For example: \u0060filter=requestorId equals 457034721476302714390214\u0060.\n- \u0060resourceId\u0060 filters for only approvals that correspond to the the specified resource identifier. For example: \u0060filter=resourceId equals proj/my-project:env/my-environment:flag/my-flag\u0060.\n- \u0060resourceKind\u0060 filters for only approvals that correspond to the specified resource kind. For example: \u0060filter=resourceKind equals flag\u0060. Currently, \u0060flag\u0060, \u0060segment\u0060, and \u0060aiConfig\u0060 resource kinds are supported.\n- \u0060reviewStatus\u0060 filters for only approvals which correspond to the review status in the specified list. The possible values are \u0060approved\u0060, \u0060declined\u0060, and \u0060pending\u0060. For example: \u0060filter=reviewStatus anyOf [\u0022pending\u0022, \u0022approved\u0022]\u0060.\n- \u0060status\u0060 filters for only approvals which correspond to the status in the specified list. The possible values are \u0060pending\u0060, \u0060scheduled\u0060, \u0060failed\u0060, and \u0060completed\u0060. For example: \u0060filter=status anyOf [\u0022pending\u0022, \u0022scheduled\u0022]\u0060.\n\nYou can also apply multiple filters at once. For example, setting \u0060filter=projectKey equals my-project, reviewStatus anyOf [\u0022pending\u0022,\u0022approved\u0022]\u0060 matches approval requests which correspond to the \u0060my-project\u0060 project key, and a review status of either \u0060pending\u0060 or \u0060approved\u0060.\n\n### Expanding approval response\n\nLaunchDarkly supports the \u0060expand\u0060 query param to include additional fields in the response, with the following fields:\n\n- \u0060flag\u0060 includes the flag the approval request belongs to\n- \u0060project\u0060 includes the project the approval request belongs to\n- \u0060environments\u0060 includes the environments the approval request relates to\n\nFor example, \u0060expand=project,flag\u0060 includes the \u0060project\u0060 and \u0060flag\u0060 fields in the response.\n",
+        "description": "Get all approval requests.\n\n### Filtering approvals\n\nLaunchDarkly supports the \u0060filter\u0060 query param for filtering, with the following fields:\n\n- \u0060notifyMemberIds\u0060 filters for only approvals that are assigned to a member in the specified list. For example: \u0060filter=notifyMemberIds anyOf [\u0022memberId1\u0022, \u0022memberId2\u0022]\u0060.\n- \u0060requestorId\u0060 filters for only approvals that correspond to the ID of the member who requested the approval. For example: \u0060filter=requestorId equals 457034721476302714390214\u0060.\n- \u0060resourceId\u0060 filters for only approvals that correspond to the the specified resource identifier. For example: \u0060filter=resourceId equals proj/my-project:env/my-environment:flag/my-flag\u0060.\n- \u0060resourceKind\u0060 filters for only approvals that correspond to the specified resource kind. For example: \u0060filter=resourceKind equals flag\u0060. Currently, \u0060flag\u0060, \u0060segment\u0060, and \u0060aiConfig\u0060 resource kinds are supported.\n- \u0060reviewStatus\u0060 filters for only approvals which correspond to the review status in the specified list. The possible values are \u0060approved\u0060, \u0060declined\u0060, and \u0060pending\u0060. For example: \u0060filter=reviewStatus anyOf [\u0022pending\u0022, \u0022approved\u0022]\u0060.\n- \u0060status\u0060 filters for only approvals which correspond to the status in the specified list. The possible values are \u0060pending\u0060, \u0060scheduled\u0060, \u0060failed\u0060, and \u0060completed\u0060. For example: \u0060filter=status anyOf [\u0022pending\u0022, \u0022scheduled\u0022]\u0060.\n- \u0060creationDate\u0060 filters for only approvals created before or after a time. Use the \u0060before\u0060 or \u0060after\u0060 operator with Unix milliseconds or an RFC 3339 timestamp in quotes. Both are exclusive. For example: \u0060filter=creationDate after 1794000000000\u0060 or \u0060filter=creationDate after \u00222026-11-10T00:00:00Z\u0022, creationDate before \u00222026-11-17T00:00:00Z\u0022\u0060. URL-encode a \u0060\u002B\u0060 in a timestamp\u0027s offset as \u0060%2B\u0060, or use \u0060Z\u0060.\n\nYou can also apply multiple filters at once. For example, setting \u0060filter=projectKey equals my-project, reviewStatus anyOf [\u0022pending\u0022,\u0022approved\u0022]\u0060 matches approval requests which correspond to the \u0060my-project\u0060 project key, and a review status of either \u0060pending\u0060 or \u0060approved\u0060.\n\n### Expanding approval response\n\nLaunchDarkly supports the \u0060expand\u0060 query param to include additional fields in the response, with the following fields:\n\n- \u0060flag\u0060 includes the flag the approval request belongs to\n- \u0060project\u0060 includes the project the approval request belongs to\n- \u0060environments\u0060 includes the environments the approval request relates to\n\nFor example, \u0060expand=project,flag\u0060 includes the \u0060project\u0060 and \u0060flag\u0060 fields in the response.\n",
         "operationId": "GetApprovalRequests",
         "parameters": [
           {
@@ -1278,7 +1278,7 @@
             }
           },
           "400": {
-            "description": "Unsupported filter field. Filter field must be one of: requestorId, projectKey, notifyMemberIds, reviewStatus, or status",
+            "description": "Unsupported filter field. Filter field must be one of: requestorId, projectKey, notifyMemberIds, reviewStatus, status, resourceKind, resourceId, or creationDate",
             "content": {
               "application/json": {
                 "schema": {
@@ -31158,7 +31158,7 @@
           "AgentControl"
         ],
         "summary": "List AI tool references",
-        "description": "Get all AgentControl config variations that currently reference this tool.",
+        "description": "Get all AgentControl config variations that currently reference this tool, and every agent skill version that pins it. The same \u0060limit\u0060 and \u0060offset\u0060 apply to \u0060items\u0060 and to \u0060skills\u0060, and each list is paged on its own. The pagination links follow whichever list has more entries, so keep requesting \u0060next\u0060 until both lists are complete, or use \u0060totalCount\u0060 and \u0060skillsTotalCount\u0060.",
         "operationId": "ListAiToolReferences",
         "parameters": [
           {
@@ -31304,6 +31304,16 @@
           },
           "404": {
             "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
             "content": {
               "application/json": {
                 "schema": {
@@ -57631,6 +57641,7 @@
                 }
               ],
               "name": "name",
+              "defaultThreshold": 0.9,
               "key": "key",
               "isInverted": true,
               "updatedAt": 4
@@ -57953,6 +57964,7 @@
                 }
               ],
               "name": "name",
+              "defaultThreshold": 0.9,
               "key": "key",
               "isInverted": true,
               "updatedAt": 4
@@ -58042,6 +58054,12 @@
             "type": "boolean",
             "description": "The success direction of a judge. Offline evaluations use it to decide whether a score passes.\n\n- \u0060true\u0060: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.\n- \u0060false\u0060: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.\n\nThe response includes this field only when \u0060mode\u0060 is \u0060judge\u0060. For a built-in judge key, the value is always the built-in direction. Built-in judge keys are \u0060ld-ai-judge-accuracy\u0060, \u0060ld-ai-judge-relevance\u0060, and \u0060ld-ai-judge-toxicity\u0060, with or without a \u0060-\u003Ctimestamp\u003E\u0060 suffix such as \u0060ld-ai-judge-accuracy-1760000000000\u0060. A custom judge with no stored direction omits this field.\n",
             "example": true
+          },
+          "defaultThreshold": {
+            "type": "number",
+            "description": "The judge\u0027s threshold: the pass line for its main score, from 0 to 1. It applies wherever the judge is used. The average score passes when it is at or above this value, or at or below it when \u0060isInverted\u0060 is \u0060true\u0060.\n\nThe response includes this field only when \u0060mode\u0060 is \u0060judge\u0060 and a threshold is set.\n",
+            "format": "double",
+            "example": 0.9
           },
           "dependencies": {
             "type": "array",
@@ -58369,6 +58387,7 @@
             }
           ],
           "name": "name",
+          "defaultThreshold": 0.9,
           "key": "key",
           "isInverted": true,
           "updatedAt": 4
@@ -58432,6 +58451,12 @@
             "type": "boolean",
             "description": "The success direction of a judge. Offline evaluations use it to decide whether a score passes.\n\n- \u0060true\u0060: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.\n- \u0060false\u0060: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.\n\n**Required for a custom judge.** A custom judge has \u0060mode\u0060 set to \u0060judge\u0060 and a \u0060key\u0060 that is not a built-in judge key. Built-in judge keys are \u0060ld-ai-judge-accuracy\u0060, \u0060ld-ai-judge-relevance\u0060, and \u0060ld-ai-judge-toxicity\u0060, with or without a \u0060-\u003Ctimestamp\u003E\u0060 suffix such as \u0060ld-ai-judge-accuracy-1760000000000\u0060. For a built-in judge key, this field is optional, and the API always uses the built-in direction.\n\nDo not send this field when \u0060mode\u0060 is \u0060agent\u0060 or \u0060completion\u0060.\n\nThis field is not in the schema\u0027s \u0060required\u0060 list, because only custom judges need it.\n\nThe API returns a \u0060400\u0060 error in these cases:\n- \u0060isInverted is required for a custom judge: ...\u0060: You create a custom judge without this field. Send \u0060true\u0060 or \u0060false\u0060.\n- \u0060isInverted is only supported for judge mode\u0060: You send this field and \u0060mode\u0060 is \u0060agent\u0060 or \u0060completion\u0060. Remove the field, or set \u0060mode\u0060 to \u0060judge\u0060.\n- \u0060isInverted is not supported\u0060: Custom judges are not available for your account. Remove the field from the request.\n",
             "example": true
+          },
+          "defaultThreshold": {
+            "type": "number",
+            "description": "The judge\u0027s threshold: the pass line for its main score, from 0 to 1. It applies wherever the judge is used. Omit it to create the judge with no threshold.\n\nSend this field only when \u0060mode\u0060 is \u0060judge\u0060.\n\nThe API returns a \u0060400\u0060 error in these cases:\n- \u0060Threshold is only supported for judges\u0060: You send this field and \u0060mode\u0060 is \u0060agent\u0060 or \u0060completion\u0060.\n- \u0060Threshold must be from 0 to 1\u0060: The value is below 0 or above 1.\n- \u0060Thresholds don\u0027t support classifier rules yet\u0060: The default variation uses classifier rules.\n- \u0060Threshold is not supported\u0060: Thresholds are not available for your account. Remove the field from the request.\n",
+            "format": "double",
+            "example": 0.9
           }
         },
         "example": {
@@ -58518,6 +58543,7 @@
             "viewKeys"
           ],
           "evaluationMetricKey": "evaluationMetricKey",
+          "defaultThreshold": 0.9,
           "key": "key",
           "isInverted": true,
           "tags": [
@@ -58566,6 +58592,17 @@
             "type": "boolean",
             "description": "The success direction of a judge. Offline evaluations use it to decide whether a score passes.\n\n- \u0060true\u0060: A lower score is better. Use this for a judge that scores bad output, such as a toxicity or hallucination judge.\n- \u0060false\u0060: A higher score is better. Use this for a judge that scores good output, such as an accuracy or relevance judge.\n\nSend this field only when the agent config\u0027s \u0060mode\u0060 is \u0060judge\u0060. If you omit it, the current direction does not change. For a built-in judge key, the API always returns the built-in direction. Built-in judge keys are \u0060ld-ai-judge-accuracy\u0060, \u0060ld-ai-judge-relevance\u0060, and \u0060ld-ai-judge-toxicity\u0060, with or without a \u0060-\u003Ctimestamp\u003E\u0060 suffix such as \u0060ld-ai-judge-accuracy-1760000000000\u0060.\n\nThe API returns a \u0060400\u0060 error in these cases:\n- \u0060isInverted is only supported for judge mode\u0060: You send this field and the agent config\u0027s \u0060mode\u0060 is \u0060agent\u0060 or \u0060completion\u0060. Remove the field.\n- \u0060isInverted is not supported\u0060: Custom judges are not available for your account. Remove the field from the request.\n",
             "example": true
+          },
+          "defaultThreshold": {
+            "type": "number",
+            "description": "The judge\u0027s threshold: the pass line for its main score, from 0 to 1. It applies wherever the judge is used. If you omit it, the current threshold does not change. To remove the threshold, send \u0060clearDefaultThreshold\u0060 instead.\n\nThe API returns a \u0060400\u0060 error in these cases:\n- \u0060Threshold is only supported for judges\u0060: You send this field and the agent config\u0027s \u0060mode\u0060 is \u0060agent\u0060 or \u0060completion\u0060.\n- \u0060Threshold must be from 0 to 1\u0060: The value is below 0 or above 1.\n- \u0060Thresholds don\u0027t support classifier rules yet\u0060: Every active variation of the judge uses classifier rules. Archived variations don\u0027t count.\n- \u0060Threshold can\u0027t be set and cleared in the same request\u0060: You send this field and \u0060clearDefaultThreshold: true\u0060.\n- \u0060Threshold is not supported\u0060: Thresholds are not available for your account. Remove the field from the request.\n",
+            "format": "double",
+            "example": 0.9
+          },
+          "clearDefaultThreshold": {
+            "type": "boolean",
+            "description": "Set to \u0060true\u0060 to remove the judge\u0027s threshold. Don\u0027t send it with \u0060defaultThreshold\u0060.\n\nThe API returns a \u0060400\u0060 error with \u0060Threshold is not supported\u0060 when thresholds are not available for your account.\n",
+            "example": true
           }
         },
         "example": {
@@ -58573,7 +58610,9 @@
           "maintainerTeamKey": "example-team-key",
           "name": "name",
           "description": "description",
+          "clearDefaultThreshold": true,
           "evaluationMetricKey": "evaluationMetricKey",
+          "defaultThreshold": 0.9,
           "defaultVariationKey": "defaultVariationKey",
           "isInverted": true,
           "tags": [
@@ -60290,6 +60329,8 @@
                       "id": "id"
                     }
                   ],
+                  "description": "description",
+                  "disabled": true,
                   "_id": "_id",
                   "trackEvents": true,
                   "variation": 1
@@ -60341,6 +60382,8 @@
                       "id": "id"
                     }
                   ],
+                  "description": "description",
+                  "disabled": true,
                   "_id": "_id",
                   "trackEvents": true,
                   "variation": 1
@@ -60640,6 +60683,7 @@
                     "attribute": "country",
                     "type": "contextAttribute"
                   },
+                  "environmentReleasePlanCount": 0,
                   "eventDefault": {
                     "disabled": true,
                     "value": 0
@@ -60881,6 +60925,7 @@
                     "attribute": "country",
                     "type": "contextAttribute"
                   },
+                  "environmentReleasePlanCount": 0,
                   "eventDefault": {
                     "disabled": true,
                     "value": 0
@@ -61383,6 +61428,8 @@
                   "id": "id"
                 }
               ],
+              "description": "description",
+              "disabled": true,
               "_id": "_id",
               "trackEvents": true,
               "variation": 1
@@ -61434,6 +61481,8 @@
                   "id": "id"
                 }
               ],
+              "description": "description",
+              "disabled": true,
               "_id": "_id",
               "trackEvents": true,
               "variation": 1
@@ -61644,6 +61693,14 @@
             "type": "string",
             "description": "The rule ID. Pass it as ruleId in targeting instructions that change this rule."
           },
+          "disabled": {
+            "type": "boolean",
+            "description": "Whether the rule is disabled. A disabled rule doesn\u0027t match any contexts."
+          },
+          "description": {
+            "type": "string",
+            "description": "The rule description"
+          },
           "clauses": {
             "type": "array",
             "items": {
@@ -61710,6 +61767,8 @@
               "id": "id"
             }
           ],
+          "description": "description",
+          "disabled": true,
           "_id": "_id",
           "trackEvents": true,
           "variation": 1
@@ -63015,8 +63074,25 @@
           },
           "version": {
             "type": "integer",
-            "description": "Version of the agent skill. Starts at 1, and each update that changes the name, description, or markdown creates a new version. Pass this value with \u0060key\u0060 in a variation\u0027s \u0060skills: [{key, version}]\u0060.",
+            "description": "Version of the agent skill. Starts at 1, and each update that changes the name, description, markdown, or tools creates a new version. Pass this value with \u0060key\u0060 in a variation\u0027s \u0060skills: [{key, version}]\u0060.",
             "example": 2
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PinnedSkillToolRef"
+            },
+            "description": "The AI tool versions this version of the agent skill pins, in the order they reach the agent.",
+            "example": [
+              {
+                "key": "get-weather",
+                "version": 1
+              },
+              {
+                "key": "search-docs",
+                "version": 3
+              }
+            ]
           },
           "createdAt": {
             "type": "integer",
@@ -63132,11 +63208,62 @@
           "markdown": "markdown",
           "description": "Extracts text and tables from PDF files.",
           "version": 2,
+          "tools": [
+            {
+              "key": "get-weather",
+              "version": 1
+            },
+            {
+              "key": "search-docs",
+              "version": 3
+            }
+          ],
           "key": "key",
           "tags": [
             "documents"
           ]
         }
+      },
+      "SkillToolRef": {
+        "required": [
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the AI tool.",
+            "example": "get-weather"
+          },
+          "version": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The version of the AI tool to pin. Leave it out to pin the tool\u0027s latest version at the time of the request.",
+            "example": 1
+          }
+        },
+        "description": "A reference to a version of an AI tool in the same project, pinned to an agent skill version."
+      },
+      "PinnedSkillToolRef": {
+        "required": [
+          "key",
+          "version"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key of the AI tool.",
+            "example": "get-weather"
+          },
+          "version": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The pinned version of the AI tool.",
+            "example": 1
+          }
+        },
+        "description": "A version of an AI tool in the same project that an agent skill version pins."
       },
       "AgentSkills": {
         "required": [
@@ -63294,6 +63421,16 @@
               "markdown": "markdown",
               "description": "Extracts text and tables from PDF files.",
               "version": 2,
+              "tools": [
+                {
+                  "key": "get-weather",
+                  "version": 1
+                },
+                {
+                  "key": "search-docs",
+                  "version": 3
+                }
+              ],
               "key": "key",
               "tags": [
                 "documents"
@@ -63408,6 +63545,16 @@
               "markdown": "markdown",
               "description": "Extracts text and tables from PDF files.",
               "version": 2,
+              "tools": [
+                {
+                  "key": "get-weather",
+                  "version": 1
+                },
+                {
+                  "key": "search-docs",
+                  "version": 3
+                }
+              ],
               "key": "key",
               "tags": [
                 "documents"
@@ -63462,6 +63609,22 @@
             "example": [
               "documents"
             ]
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkillToolRef"
+            },
+            "description": "AI tools in the same project to pin to the agent skill, in the order they reach the agent. Each tool key can appear once, and a skill can pin up to 20 tools by default. You need read access to each tool.",
+            "example": [
+              {
+                "key": "get-weather",
+                "version": 1
+              },
+              {
+                "key": "search-docs"
+              }
+            ]
           }
         },
         "example": {
@@ -63470,6 +63633,15 @@
           "markdown": "markdown",
           "maintainerTeamKey": "example-team-key",
           "description": "Extracts text and tables from PDF files.",
+          "tools": [
+            {
+              "key": "get-weather",
+              "version": 1
+            },
+            {
+              "key": "search-docs"
+            }
+          ],
           "key": "pdf-extraction",
           "tags": [
             "documents"
@@ -63512,6 +63684,22 @@
             "example": [
               "documents"
             ]
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SkillToolRef"
+            },
+            "description": "Replaces the AI tools pinned to the agent skill, in the order they reach the agent. Leave it out to keep the current tools, or send an empty array to remove them all. A change to the tools or their order creates a new version. Each tool key can appear once, and a skill can pin up to 20 tools by default. You need read access to each tool.",
+            "example": [
+              {
+                "key": "get-weather",
+                "version": 1
+              },
+              {
+                "key": "search-docs"
+              }
+            ]
           }
         },
         "example": {
@@ -63520,6 +63708,15 @@
           "markdown": "markdown",
           "maintainerTeamKey": "example-team-key",
           "description": "Extracts text and tables from PDF files.",
+          "tools": [
+            {
+              "key": "get-weather",
+              "version": 1
+            },
+            {
+              "key": "search-docs"
+            }
+          ],
           "tags": [
             "documents"
           ]
@@ -63569,6 +63766,37 @@
           "resourceVersion": 0,
           "variationKey": "variationKey",
           "aiConfigName": "aiConfigName"
+        }
+      },
+      "ToolSkillReference": {
+        "required": [
+          "skillKey",
+          "skillVersion",
+          "toolVersion"
+        ],
+        "type": "object",
+        "properties": {
+          "skillKey": {
+            "type": "string",
+            "description": "The key of the agent skill.",
+            "example": "weather-lookup"
+          },
+          "skillVersion": {
+            "type": "integer",
+            "description": "The version of the agent skill that pins the tool.",
+            "example": 2
+          },
+          "toolVersion": {
+            "type": "integer",
+            "description": "The version of the tool the skill version pins.",
+            "example": 1
+          }
+        },
+        "description": "An agent skill version that pins a version of an AI tool.",
+        "example": {
+          "toolVersion": 1,
+          "skillVersion": 2,
+          "skillKey": "weather-lookup"
         }
       },
       "AgentSkillReferences": {
@@ -66443,9 +66671,32 @@
           "totalCount": {
             "type": "integer",
             "description": "The total number of references."
+          },
+          "skills": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToolSkillReference"
+            },
+            "description": "One page of the agent skill versions that pin a version of this tool, ordered by skill key then skill version, newest first. It is paged by \u0060limit\u0060 and \u0060offset\u0060 like \u0060items\u0060. A tool cannot be deleted while any skill version pins it."
+          },
+          "skillsTotalCount": {
+            "type": "integer",
+            "description": "The total number of agent skill versions that pin this tool, across all pages."
           }
         },
         "example": {
+          "skills": [
+            {
+              "toolVersion": 1,
+              "skillVersion": 2,
+              "skillKey": "weather-lookup"
+            },
+            {
+              "toolVersion": 1,
+              "skillVersion": 2,
+              "skillKey": "weather-lookup"
+            }
+          ],
           "resourceKey": "resourceKey",
           "_links": {
             "next": {
@@ -66488,7 +66739,8 @@
               "aiConfigName": "aiConfigName"
             }
           ],
-          "resourceType": "resourceType"
+          "resourceType": "resourceType",
+          "skillsTotalCount": 1
         }
       },
       "AiConfigsAccess": {
@@ -67053,6 +67305,7 @@
                   "attribute": "country",
                   "type": "contextAttribute"
                 },
+                "environmentReleasePlanCount": 0,
                 "eventDefault": {
                   "disabled": true,
                   "value": 0
@@ -67294,6 +67547,7 @@
                   "attribute": "country",
                   "type": "contextAttribute"
                 },
+                "environmentReleasePlanCount": 0,
                 "eventDefault": {
                   "disabled": true,
                   "value": 0
@@ -67563,6 +67817,7 @@
               "attribute": "country",
               "type": "contextAttribute"
             },
+            "environmentReleasePlanCount": 0,
             "eventDefault": {
               "disabled": true,
               "value": 0
@@ -67610,6 +67865,11 @@
           "releasePolicyCount": {
             "type": "integer",
             "description": "The number of release policies using this metric",
+            "example": 0
+          },
+          "environmentReleasePlanCount": {
+            "type": "integer",
+            "description": "The number of environment release plans using this metric",
             "example": 0
           },
           "activeExperimentCount": {
@@ -68023,6 +68283,7 @@
             "attribute": "country",
             "type": "contextAttribute"
           },
+          "environmentReleasePlanCount": 0,
           "eventDefault": {
             "disabled": true,
             "value": 0
@@ -85629,6 +85890,11 @@
             "description": "The number of release policies using this metric",
             "example": 0
           },
+          "environmentReleasePlanCount": {
+            "type": "integer",
+            "description": "The number of environment release plans using this metric",
+            "example": 0
+          },
           "activeExperimentCount": {
             "type": "integer",
             "description": "The number of active experiments using this metric",
@@ -93224,6 +93490,11 @@
         "releasePolicyCount": {
           "type": "integer",
           "description": "The number of release policies using this metric",
+          "example": 0
+        },
+        "environmentReleasePlanCount": {
+          "type": "integer",
+          "description": "The number of environment release plans using this metric",
           "example": 0
         },
         "activeExperimentCount": {

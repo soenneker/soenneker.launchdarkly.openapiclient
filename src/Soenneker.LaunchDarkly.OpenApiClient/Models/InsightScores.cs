@@ -92,7 +92,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "lastPeriod", n => { LastPeriod = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightPeriod>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightPeriod.CreateFromDiscriminatorValue); } },
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightScoresLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightScoresLinksProperty.CreateFromDiscriminatorValue); } },

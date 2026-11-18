@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiTools.Item
         {
         }
         /// <summary>
-        /// Get all AgentControl config variations that currently reference this tool.
+        /// Get all AgentControl config variations that currently reference this tool, and every agent skill version that pins it. The same `limit` and `offset` apply to `items` and to `skills`, and each list is paged on its own. The pagination links follow whichever list has more entries, so keep requesting `next` until both lists are complete, or use `totalCount` and `skillsTotalCount`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReferences"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiTools.Item
             return await RequestAdapter.SendAsync<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReferences>(requestInfo, global::Soenneker.LaunchDarkly.OpenApiClient.Models.ToolReferences.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all AgentControl config variations that currently reference this tool.
+        /// Get all AgentControl config variations that currently reference this tool, and every agent skill version that pins it. The same `limit` and `offset` apply to `items` and to `skills`, and each list is paged on its own. The pagination links follow whichever list has more entries, so keep requesting `next` until both lists are complete, or use `totalCount` and `skillsTotalCount`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiTools.Item
             return new global::Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiTools.Item.References.ReferencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all AgentControl config variations that currently reference this tool.
+        /// Get all AgentControl config variations that currently reference this tool, and every agent skill version that pins it. The same `limit` and `offset` apply to `items` and to `skills`, and each list is paged on its own. The pagination links follow whichever list has more entries, so keep requesting `next` until both lists are complete, or use `totalCount` and `skillsTotalCount`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReferencesRequestBuilderGetQueryParameters 

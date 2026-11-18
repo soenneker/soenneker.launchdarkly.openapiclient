@@ -92,7 +92,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "_links", n => { Links = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRepFloatLinksProperty>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRepFloatLinksProperty.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRepFloatMetadataItem>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.SeriesListRepFloatMetadataItem.CreateFromDiscriminatorValue)?.AsList(); } },

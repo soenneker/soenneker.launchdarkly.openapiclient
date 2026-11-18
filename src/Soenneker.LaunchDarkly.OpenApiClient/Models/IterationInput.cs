@@ -174,7 +174,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "assignmentDataSource", n => { AssignmentDataSource = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AssignmentDataSourceInput>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AssignmentDataSourceInput.CreateFromDiscriminatorValue); } },
                 { "attributes", n => { Attributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

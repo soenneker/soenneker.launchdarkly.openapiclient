@@ -21,6 +21,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             else if (parseNode.GetChildNode("_access") is { } nullNodeAccess && nullNodeAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Access = null;
             if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
             else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("defaultThreshold") is null) { _explicitNullValueDefaultThreshold = default!; _explicitNullProperties?.Remove("defaultThreshold"); }
+            else if (parseNode.GetChildNode("defaultThreshold") is { } nullNodeDefaultThreshold && nullNodeDefaultThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultThreshold = null;
             if (parseNode.GetChildNode("dependencies") is null) { _explicitNullValueDependencies = default!; _explicitNullProperties?.Remove("dependencies"); }
             else if (parseNode.GetChildNode("dependencies") is { } nullNodeDependencies && nullNodeDependencies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dependencies = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -68,6 +70,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <summary>The createdAt property</summary>
         public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
         private long? _explicitNullValueCreatedAt = default!;
+        /// <summary>The judge&apos;s threshold: the pass line for its main score, from 0 to 1. It applies wherever the judge is used. The average score passes when it is at or above this value, or at or below it when `isInverted` is `true`.The response includes this field only when `mode` is `judge` and a threshold is set.</summary>
+        public double? DefaultThreshold { get => _explicitNullValueDefaultThreshold; set { _explicitNullValueDefaultThreshold = value; AdditionalData?.Remove("defaultThreshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultThreshold"); else _explicitNullProperties?.Remove("defaultThreshold"); } }
+        private double? _explicitNullValueDefaultThreshold = default!;
         /// <summary>Resources that depend on this config, grouped by type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,10 +219,11 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "_access", n => { Access = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsAccess>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsAccess.CreateFromDiscriminatorValue); } },
                 { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
+                { "defaultThreshold", n => { DefaultThreshold = n.GetDoubleValue(); } },
                 { "dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigDependency>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigDependency.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "evaluationMetricKey", n => { EvaluationMetricKey = n.GetStringValue(); } },
@@ -244,6 +250,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigsAccess>("_access", Access);
             writer.WriteLongValue("createdAt", CreatedAt);
+            writer.WriteDoubleValue("defaultThreshold", DefaultThreshold);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AiConfigDependency>("dependencies", Dependencies);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("evaluationMetricKey", EvaluationMetricKey);

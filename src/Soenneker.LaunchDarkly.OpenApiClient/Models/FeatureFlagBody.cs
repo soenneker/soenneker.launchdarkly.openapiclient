@@ -209,7 +209,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(16)
             {
                 { "clientSideAvailability", n => { ClientSideAvailability = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClientSideAvailabilityPost>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ClientSideAvailabilityPost.CreateFromDiscriminatorValue); } },
                 { "customProperties", n => { CustomProperties = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagBodyCustomProperties>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.FeatureFlagBodyCustomProperties.CreateFromDiscriminatorValue); } },

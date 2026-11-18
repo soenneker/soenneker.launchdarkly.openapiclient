@@ -91,7 +91,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "activity", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.AgentOptimizationResultActivity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActivity = default; _explicitNullProperties?.Remove("activity"); AdditionalData["activity"] = unknown; } else { Activity = parsed; AdditionalData.Remove("activity"); } } },
                 { "agentOptimizationId", n => { AgentOptimizationId = n.GetGuidValue(); } },

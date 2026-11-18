@@ -104,7 +104,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "aiConfig", n => { AiConfig = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedAiConfig.CreateFromDiscriminatorValue); } },
                 { "flag", n => { Flag = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.ExpandedFlag.CreateFromDiscriminatorValue); } },

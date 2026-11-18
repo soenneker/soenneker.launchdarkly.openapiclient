@@ -90,7 +90,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "advancementMode", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePlanProgressiveReleaseRepAdvancementMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAdvancementMode = default; _explicitNullProperties?.Remove("advancementMode"); AdditionalData["advancementMode"] = unknown; } else { AdvancementMode = parsed; AdditionalData.Remove("advancementMode"); } } },
                 { "cleanupBehavior", n => { var parsed = n.GetEnumValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.EnvironmentReleasePlanProgressiveReleaseRepCleanupBehavior>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCleanupBehavior = default; _explicitNullProperties?.Remove("cleanupBehavior"); AdditionalData["cleanupBehavior"] = unknown; } else { CleanupBehavior = parsed; AdditionalData.Remove("cleanupBehavior"); } } },

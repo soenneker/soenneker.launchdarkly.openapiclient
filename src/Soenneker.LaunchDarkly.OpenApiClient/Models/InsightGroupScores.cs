@@ -176,7 +176,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "creationRatio", n => { CreationRatio = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore.CreateFromDiscriminatorValue); } },
                 { "deploymentFailureRate", n => { DeploymentFailureRate = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.InsightsMetricScore.CreateFromDiscriminatorValue); } },
