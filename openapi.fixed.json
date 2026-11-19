@@ -29986,6 +29986,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "includeShadow",
+            "in": "query",
+            "description": "Whether to include Shadow Test events. When \u0060true\u0060, each metric also counts the matching \u0060$ld:ai-shadow:*\u0060 events, under the variation the Shadow Test ran. Defaults to \u0060false\u0060.",
+            "schema": {
+              "type": "boolean"
+            }
           }
         ],
         "responses": {
@@ -30110,6 +30118,14 @@
             "description": "A context key. Only metrics from events whose context of the \u0060contextKind\u0060 kind has this key are included. Requires \u0060contextKind\u0060.",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "includeShadow",
+            "in": "query",
+            "description": "Whether to include Shadow Test events. When \u0060true\u0060, each metric also counts the matching \u0060$ld:ai-shadow:*\u0060 events, under the variation the Shadow Test ran. Defaults to \u0060false\u0060.",
+            "schema": {
+              "type": "boolean"
             }
           }
         ],

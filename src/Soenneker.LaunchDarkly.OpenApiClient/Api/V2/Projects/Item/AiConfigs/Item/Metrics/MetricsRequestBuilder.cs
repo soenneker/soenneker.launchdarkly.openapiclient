@@ -22,7 +22,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics?env={env}&from={from}&to={to}{&contextKey*,contextKind*}", pathParameters)
+        public MetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics?env={env}&from={from}&to={to}{&contextKey*,contextKind*,includeShadow*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics?env={env}&from={from}&to={to}{&contextKey*,contextKind*}", rawUrl)
+        public MetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/v2/projects/{projectKey}/ai-configs/{configKey}/metrics?env={env}&from={from}&to={to}{&contextKey*,contextKind*,includeShadow*}", rawUrl)
         {
         }
         /// <summary>
@@ -131,6 +131,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.Projects.Item.AiConfigs.It
             /// <summary>The starting time, as milliseconds since epoch (inclusive).</summary>
             [QueryParameter("from")]
             public int? From { get; set; }
+            /// <summary>Whether to include Shadow Test events. When `true`, each metric also counts the matching `$ld:ai-shadow:*` events, under the variation the Shadow Test ran. Defaults to `false`.</summary>
+            [QueryParameter("includeShadow")]
+            public bool? IncludeShadow { get; set; }
             /// <summary>The ending time, as milliseconds since epoch (exclusive). May not be more than 100 days after `from`.</summary>
             [QueryParameter("to")]
             public int? To { get; set; }
