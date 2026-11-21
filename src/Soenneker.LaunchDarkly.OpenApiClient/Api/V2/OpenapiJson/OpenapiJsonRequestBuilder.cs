@@ -34,7 +34,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.OpenapiJson
         {
         }
         /// <summary>
-        /// Get the latest version of the OpenAPI specification for LaunchDarkly&apos;s API in JSON format. In the sandbox, click &apos;Play&apos; and enter any string in the &apos;Authorization&apos; field to test this endpoint.
+        /// Get the latest version of the OpenAPI specification for the LaunchDarkly API in JSON format. In the sandbox, click &apos;Play&apos; and enter any string in the &apos;Authorization&apos; field to test this endpoint.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Api.V2.OpenapiJson
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the latest version of the OpenAPI specification for LaunchDarkly&apos;s API in JSON format. In the sandbox, click &apos;Play&apos; and enter any string in the &apos;Authorization&apos; field to test this endpoint.
+        /// Get the latest version of the OpenAPI specification for the LaunchDarkly API in JSON format. In the sandbox, click &apos;Play&apos; and enter any string in the &apos;Authorization&apos; field to test this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

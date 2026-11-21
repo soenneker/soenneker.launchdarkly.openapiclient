@@ -19,6 +19,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("applicationKeys") is null) { _explicitNullValueApplicationKeys = default!; _explicitNullProperties?.Remove("applicationKeys"); }
             else if (parseNode.GetChildNode("applicationKeys") is { } nullNodeApplicationKeys && nullNodeApplicationKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplicationKeys = null;
+            if (parseNode.GetChildNode("createdAt") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("createdAt"); }
+            else if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
             else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -35,6 +37,8 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             else if (parseNode.GetChildNode("maintainer") is { } nullNodeMaintainer && nullNodeMaintainer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Maintainer = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("updatedAt") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updatedAt"); }
+            else if (parseNode.GetChildNode("updatedAt") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
             if (parseNode.GetChildNode("version") is null) { _explicitNullValueVersion = default!; _explicitNullProperties?.Remove("version"); }
             else if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
         }
@@ -51,6 +55,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public List<string> ApplicationKeys { get => _explicitNullValueApplicationKeys; set { _explicitNullValueApplicationKeys = value; AdditionalData?.Remove("applicationKeys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("applicationKeys"); else _explicitNullProperties?.Remove("applicationKeys"); } }
         private List<string> _explicitNullValueApplicationKeys = default!;
 #endif
+        /// <summary>The createdAt property</summary>
+        public long? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("createdAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private long? _explicitNullValueCreatedAt = default!;
         /// <summary>Whether this plan is the project&apos;s default. At most one active plan per project is the default.</summary>
         public bool? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
         private bool? _explicitNullValueDefault = default!;
@@ -110,6 +117,9 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>The updatedAt property</summary>
+        public long? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updatedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatedAt"); else _explicitNullProperties?.Remove("updatedAt"); } }
+        private long? _explicitNullValueUpdatedAt = default!;
         /// <summary>The version property</summary>
         public long? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private long? _explicitNullValueVersion = default!;
@@ -137,9 +147,10 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(10)
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "applicationKeys", n => { ApplicationKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "createdAt", n => { CreatedAt = n.GetLongValue(); } },
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReleasePlanEnvironment>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReleasePlanEnvironment.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -148,6 +159,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "maintainer", n => { Maintainer = n.GetObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainerResponse>(global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainerResponse.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "updatedAt", n => { UpdatedAt = n.GetLongValue(); } },
                 { "version", n => { Version = n.GetLongValue(); } },
             };
         }
@@ -159,6 +171,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("applicationKeys", ApplicationKeys);
+            writer.WriteLongValue("createdAt", CreatedAt);
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.LaunchDarkly.OpenApiClient.Models.FlagReleasePlanEnvironment>("environments", Environments);
@@ -167,6 +180,7 @@ namespace Soenneker.LaunchDarkly.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.LaunchDarkly.OpenApiClient.Models.MaintainerResponse>("maintainer", Maintainer);
             writer.WriteStringValue("name", Name);
+            writer.WriteLongValue("updatedAt", UpdatedAt);
             writer.WriteLongValue("version", Version);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
